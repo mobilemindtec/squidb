@@ -1,3 +1,9 @@
+## Atention!!
+
+This version is changed to working with last J2ObjC version and follow a simplify usage. To use see this sample project https://github.com/mobilemindtec/j2objc-app-test.git
+
+
+
 Change Log
 ==========
 
