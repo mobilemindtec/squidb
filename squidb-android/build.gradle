@@ -80,3 +80,18 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
+
+task clearJar(type: Delete) {
+    delete 'build/libs/ProjectName.jar'
+}
+
+task makeJar(type: Copy) {
+    from('build/bundles/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'ProjectName.jar')
+}
+ls bu
+makeJar.dependsOn(clearJar, build)
+
+tasks.assemble.finalizedBy(makeJar)

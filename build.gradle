@@ -32,3 +32,10 @@ if (JavaVersion.current().isJava8Compatible()) {
         }
     }
 }
+
+task j2objc(type: Exec) {
+  executable "sh"
+  args "-c", "./j2objc-compile.sh"
+}
+
+tasks.build.finalizedBy(j2objc)

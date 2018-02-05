@@ -26,11 +26,12 @@ for f in $BUILD/java/*.java; do
     -use-arc \
     --swift-friendly \
     --no-package-directories $f
-		#--verbose \
 
 done
 
-rm -R ios/Classes/*
+## prepare and copy ios sources to pod project
 
-cp ./squidb-ios/native/* ios/Classes
-cp $BUILD/objc/* ios/Classes
+APP_IOS_SOURCES=ios/SquiDB/Classes
+rm -R $APP_IOS_SOURCES/*
+cp $BUILD/objc/* $APP_IOS_SOURCES/
+cp ./squidb-ios/native/* $APP_IOS_SOURCES/
