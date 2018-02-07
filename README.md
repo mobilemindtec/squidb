@@ -1,3 +1,10 @@
+## Atention!!
+ 
+This version is changed to working with last J2ObjC version and follow a simplify usage. To use see this sample project https://github.com/mobilemindtec/j2objc-app-test.git
+
+
+
+
 [![Join the chat at https://gitter.im/yahoo/squidb](https://badges.gitter.im/yahoo/squidb.svg)](https://gitter.im/yahoo/squidb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/yahoo/squidb.svg?branch=master)](https://travis-ci.org/yahoo/squidb) [![Download](https://api.bintray.com/packages/yahoo/maven/squidb/images/download.svg) ](https://bintray.com/yahoo/maven/squidb/_latestVersion)
 
 ## Introducing SquiDB
