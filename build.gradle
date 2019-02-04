@@ -38,4 +38,5 @@ task j2objc(type: Exec) {
   args "-c", "./j2objc-compile.sh"
 }
 
+tasks.assemble.finalizedBy(j2objc)
 tasks.build.finalizedBy(j2objc)
