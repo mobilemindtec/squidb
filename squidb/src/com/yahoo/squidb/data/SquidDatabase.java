@@ -30,18 +30,10 @@ import com.yahoo.squidb.utility.VersionCode;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.stream.Collectors;
 
 /**
  * SquidDatabase is a database abstraction which wraps a SQLite database.
@@ -82,6 +74,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * read/write use cases. See {@link #getDatabase()}.
  */
 public abstract class SquidDatabase {
+
+
+    public boolean showSql = false;
+
+    public void setShowSql(boolean showSql) {
+        this.showSql = showSql;
+    }
 
     /**
      * @return the database name
@@ -739,10 +738,28 @@ public abstract class SquidDatabase {
     public ICursor rawQuery(String sql, Object[] sqlArgs) {
         acquireNonExclusiveLock();
         try {
+
+            if(this.showSql){
+                this.onShowSql(sql, sqlArgs);
+            }
+
             return getDatabase().rawQuery(sql, sqlArgs);
         } finally {
             releaseNonExclusiveLock();
         }
+    }
+
+    private void onShowSql(String sql, Object[] sqlArgs){
+
+        String argsAsList = Arrays.asList(sqlArgs).stream().map(
+                x -> x != null ? x.toString() : ""
+        ).collect(Collectors.joining(","));
+
+        Logger.d(
+                Logger.LOG_TAG,
+                "SQL: " + sql + " [" + argsAsList + "]");
+
+
     }
 
     /**
@@ -820,6 +837,11 @@ public abstract class SquidDatabase {
         CompiledStatement compiled = insert.compile(getCompileContext());
         acquireNonExclusiveLock();
         try {
+
+            if(this.showSql){
+                this.onShowSql(compiled.sql, compiled.sqlArgs);
+            }
+
             return getDatabase().executeInsert(compiled.sql, compiled.sqlArgs);
         } finally {
             releaseNonExclusiveLock();
@@ -835,6 +857,11 @@ public abstract class SquidDatabase {
         CompiledStatement compiled = delete.compile(getCompileContext());
         acquireNonExclusiveLock();
         try {
+
+            if(this.showSql){
+                this.onShowSql(compiled.sql, compiled.sqlArgs);
+            }
+
             return getDatabase().executeUpdateDelete(compiled.sql, compiled.sqlArgs);
         } finally {
             releaseNonExclusiveLock();
@@ -850,6 +877,11 @@ public abstract class SquidDatabase {
         CompiledStatement compiled = update.compile(getCompileContext());
         acquireNonExclusiveLock();
         try {
+
+            if(this.showSql){
+                this.onShowSql(compiled.sql, compiled.sqlArgs);
+            }
+
             return getDatabase().executeUpdateDelete(compiled.sql, compiled.sqlArgs);
         } finally {
             releaseNonExclusiveLock();

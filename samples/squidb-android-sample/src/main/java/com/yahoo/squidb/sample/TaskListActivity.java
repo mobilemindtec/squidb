@@ -6,11 +6,7 @@
 package com.yahoo.squidb.sample;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.LoaderManager;
+import android.app.*;
 import android.content.DialogInterface;
 import android.content.Loader;
 import android.os.Bundle;
@@ -18,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.yahoo.squidb.android.SquidCursorLoader;
 import com.yahoo.squidb.data.SquidCursor;
 import com.yahoo.squidb.sample.database.TasksDatabase;

@@ -47,7 +47,10 @@
 @protocol ComYahooSquidbDataSquidTransactionListener;
 @protocol ComYahooSquidbSqlSqlStatement;
 
-@interface ComYahooSquidbDataSquidDatabase : NSObject
+@interface ComYahooSquidbDataSquidDatabase : NSObject {
+ @public
+  jboolean showSql_;
+}
 
 #pragma mark Public
 
@@ -145,6 +148,8 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
 - (jboolean)saveExistingWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
 
 - (void)setDataChangedNotificationsEnabledWithBoolean:(jboolean)enabled;
+
+- (void)setShowSqlWithBoolean:(jboolean)showSql;
 
 - (void)setTransactionSuccessful;
 

@@ -3,13 +3,16 @@
  * Copyrights licensed under the Apache 2.0 License.
  * See the accompanying LICENSE file for terms.
  */
+apply plugin: 'java-library'
+
 buildscript {
     repositories {
         jcenter()
+        google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.3.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
@@ -17,6 +20,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
@@ -38,5 +42,4 @@ task j2objc(type: Exec) {
   args "-c", "./j2objc-compile.sh"
 }
 
-tasks.assemble.finalizedBy(j2objc)
 tasks.build.finalizedBy(j2objc)

@@ -8,13 +8,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 dependencies {
-    compile project(':squidb')
+    implementation project(':squidb')
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.0"
-
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    
+    defaultConfig {
+        targetSdkVersion 28
+        minSdkVersion 17
+    }
+    
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -29,7 +34,8 @@ android {
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.aar')) {
                 def fileName = "${archivesBaseName}-${version}.aar"
-                output.outputFile = new File(outputFile.parent, fileName)
+                //output.outputFileName = new File(outputFile.parent, fileName)
+                output.outputFileName  = fileName
             }
         }
     }
@@ -91,7 +97,7 @@ task makeJar(type: Copy) {
     include('classes.jar')
     rename ('classes.jar', 'ProjectName.jar')
 }
-ls bu
+
 makeJar.dependsOn(clearJar, build)
 
 tasks.assemble.finalizedBy(makeJar)

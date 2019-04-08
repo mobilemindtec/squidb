@@ -17,8 +17,8 @@ if (!generateIOSModels()) {
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         javaCompileOptions {
@@ -26,8 +26,8 @@ android {
                 arguments = [squidbOptions : squidbOptionsString]
             }
         }
-        minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 28
+        minSdkVersion 17
         versionCode 1
         versionName "1.0"
     }
@@ -40,12 +40,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':squidb')
-    compile project(':squidb-annotations')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':squidb')
+    implementation project(':squidb-annotations')
     annotationProcessor project(':squidb-processor')
 
     if (!generateIOSModels()) {
-        compile project(':squidb-android')
+        implementation project(':squidb-android')
     }
 }
