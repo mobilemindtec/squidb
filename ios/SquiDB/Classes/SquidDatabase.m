@@ -119,6 +119,9 @@
 
 - (void)clearPreparedStatementCache;
 
+- (void)onShowSqlWithNSString:(NSString *)sql
+            withNSObjectArray:(IOSObjectArray *)sqlArgs;
+
 - (jlong)insertInternalWithComYahooSquidbSqlInsert:(ComYahooSquidbSqlInsert *)insert;
 
 - (jint)deleteInternalWithComYahooSquidbSqlDelete:(ComYahooSquidbSqlDelete *)delete_;
@@ -210,6 +213,8 @@ __attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_closeAndDele
 __attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(ComYahooSquidbDataSquidDatabase *self, jboolean deleteAfterClose);
 
 __attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(ComYahooSquidbDataSquidDatabase *self);
+
+__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(ComYahooSquidbDataSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs);
 
 __attribute__((unused)) static jlong ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlInsert *insert);
 
@@ -682,14 +687,18 @@ J2OBJC_IGNORE_DESIGNATED_END
   [self acquireNonExclusiveLock];
   @try {
     if (self->showSql_) {
-      NSString *argsAsList = [((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilList>) nil_chk(JavaUtilArrays_asListWithNSObjectArray_(sqlArgs))) stream])) mapWithJavaUtilFunctionFunction:JreLoadStatic(ComYahooSquidbDataSquidDatabase_$Lambda$1, instance)])) collectWithJavaUtilStreamCollector:JavaUtilStreamCollectors_joiningWithJavaLangCharSequence_(@",")];
-      ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$$C", @"SQL: ", sql, @" [", argsAsList, ']'));
+      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
     }
     return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) rawQueryWithNSString:sql withNSObjectArray:sqlArgs];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
+}
+
+- (void)onShowSqlWithNSString:(NSString *)sql
+            withNSObjectArray:(IOSObjectArray *)sqlArgs {
+  ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
 }
 
 - (NSString *)simpleQueryForStringWithNSString:(NSString *)sql
@@ -1409,90 +1418,91 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 36, -1, -1, -1, -1, -1 },
     { NULL, "LComYahooSquidbDataICursor;", 0x1, 37, 38, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 39, 38, -1, -1, -1, -1 },
-    { NULL, "J", 0x1, 40, 38, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 39, 41, -1, -1, -1, -1 },
-    { NULL, "J", 0x1, 40, 41, -1, -1, -1, -1 },
-    { NULL, "J", 0x2, 42, 43, -1, -1, -1, -1 },
-    { NULL, "I", 0x2, 44, 45, -1, -1, -1, -1 },
-    { NULL, "I", 0x2, 46, 47, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, 39, 38, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 40, 38, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, 41, 38, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 40, 42, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, 41, 42, -1, -1, -1, -1 },
+    { NULL, "J", 0x2, 43, 44, -1, -1, -1, -1 },
+    { NULL, "I", 0x2, 45, 46, -1, -1, -1, -1 },
+    { NULL, "I", 0x2, 47, 48, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 48, 49, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 50, 49, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 49, 50, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 51, 50, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x11, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 51, 52, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 52, 53, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 53, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x2, 54, 3, -1, -1, -1, -1 },
-    { NULL, "Z", 0x4, 55, 56, -1, 57, -1, -1 },
-    { NULL, "Z", 0x2, 58, 56, -1, 57, -1, -1 },
-    { NULL, "Z", 0x4, 59, 60, -1, -1, -1, -1 },
-    { NULL, "Z", 0x4, 61, 60, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 62, 63, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 64, 63, -1, -1, -1, -1 },
-    { NULL, "Z", 0x4, 65, 66, -1, -1, -1, -1 },
-    { NULL, "Z", 0x84, 65, 67, -1, 68, -1, -1 },
-    { NULL, "Z", 0x4, 69, 66, -1, -1, -1, -1 },
-    { NULL, "Z", 0x4, 69, 70, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 71, 72, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 73, 70, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 74, 70, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 73, 38, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 74, 38, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, 54, 3, -1, -1, -1, -1 },
+    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x2, 55, 3, -1, -1, -1, -1 },
+    { NULL, "Z", 0x4, 56, 57, -1, 58, -1, -1 },
+    { NULL, "Z", 0x2, 59, 57, -1, 58, -1, -1 },
+    { NULL, "Z", 0x4, 60, 61, -1, -1, -1, -1 },
+    { NULL, "Z", 0x4, 62, 61, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 63, 64, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 65, 64, -1, -1, -1, -1 },
+    { NULL, "Z", 0x4, 66, 67, -1, -1, -1, -1 },
+    { NULL, "Z", 0x84, 66, 68, -1, 69, -1, -1 },
+    { NULL, "Z", 0x4, 70, 67, -1, -1, -1, -1 },
+    { NULL, "Z", 0x4, 70, 71, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 72, 73, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 74, 71, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 75, 71, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 74, 38, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 75, 38, -1, -1, -1, -1 },
     { NULL, "LComYahooSquidbUtilityVersionCode;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LComYahooSquidbSqlCompileContext;", 0x11, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x4, 75, 76, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLitePreparedStatement;", 0x1, 77, 70, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x1, 78, 79, -1, 80, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x2, 81, 79, -1, 82, -1, -1 },
-    { NULL, "V", 0x2, 83, 70, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataTableModel;", 0x81, 84, 85, -1, 86, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x81, 87, 88, -1, 89, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x1, 90, 79, -1, 91, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x4, 92, 93, -1, 94, -1, -1 },
-    { NULL, "Z", 0x1, 95, 96, -1, 97, -1, -1 },
-    { NULL, "I", 0x1, 98, 99, -1, 100, -1, -1 },
-    { NULL, "I", 0x1, 101, 22, -1, 102, -1, -1 },
-    { NULL, "I", 0x1, 95, 45, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 103, 104, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 105, 106, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 107, 108, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 109, 110, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 103, 47, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 111, 106, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 112, 110, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 113, 106, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 114, 106, -1, -1, -1, -1 },
-    { NULL, "Z", 0x14, 115, 106, -1, -1, -1, -1 },
-    { NULL, "Z", 0x14, 115, 110, -1, -1, -1, -1 },
-    { NULL, "J", 0x2, 116, 117, -1, -1, -1, -1 },
-    { NULL, "Z", 0x14, 118, 106, -1, -1, -1, -1 },
-    { NULL, "Z", 0x14, 118, 110, -1, -1, -1, -1 },
-    { NULL, "J", 0x1, 119, 43, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 120, 85, -1, 121, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 122, 88, -1, 123, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x4, 122, 79, -1, 80, -1, -1 },
-    { NULL, "I", 0x1, 124, 99, -1, 125, -1, -1 },
-    { NULL, "I", 0x1, 126, 22, -1, 127, -1, -1 },
-    { NULL, "V", 0x1, 128, 129, -1, 130, -1, -1 },
-    { NULL, "V", 0x1, 131, 129, -1, 130, -1, -1 },
+    { NULL, "V", 0x4, 76, 77, -1, -1, -1, -1 },
+    { NULL, "LComYahooSquidbDataISQLitePreparedStatement;", 0x1, 78, 71, -1, -1, -1, -1 },
+    { NULL, "LComYahooSquidbDataSquidCursor;", 0x1, 79, 80, -1, 81, -1, -1 },
+    { NULL, "LComYahooSquidbSqlQuery;", 0x2, 82, 80, -1, 83, -1, -1 },
+    { NULL, "V", 0x2, 84, 71, -1, -1, -1, -1 },
+    { NULL, "LComYahooSquidbDataTableModel;", 0x81, 85, 86, -1, 87, -1, -1 },
+    { NULL, "LComYahooSquidbDataAbstractModel;", 0x81, 88, 89, -1, 90, -1, -1 },
+    { NULL, "LComYahooSquidbDataAbstractModel;", 0x1, 91, 80, -1, 92, -1, -1 },
+    { NULL, "LComYahooSquidbDataAbstractModel;", 0x4, 93, 94, -1, 95, -1, -1 },
+    { NULL, "Z", 0x1, 96, 97, -1, 98, -1, -1 },
+    { NULL, "I", 0x1, 99, 100, -1, 101, -1, -1 },
+    { NULL, "I", 0x1, 102, 22, -1, 103, -1, -1 },
+    { NULL, "I", 0x1, 96, 46, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 104, 105, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 106, 107, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 108, 109, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 110, 111, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 104, 48, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 112, 107, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 113, 111, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 114, 107, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 115, 107, -1, -1, -1, -1 },
+    { NULL, "Z", 0x14, 116, 107, -1, -1, -1, -1 },
+    { NULL, "Z", 0x14, 116, 111, -1, -1, -1, -1 },
+    { NULL, "J", 0x2, 117, 118, -1, -1, -1, -1 },
+    { NULL, "Z", 0x14, 119, 107, -1, -1, -1, -1 },
+    { NULL, "Z", 0x14, 119, 111, -1, -1, -1, -1 },
+    { NULL, "J", 0x1, 120, 44, -1, -1, -1, -1 },
+    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 121, 86, -1, 122, -1, -1 },
+    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 123, 89, -1, 124, -1, -1 },
+    { NULL, "LComYahooSquidbDataSquidCursor;", 0x4, 123, 80, -1, 81, -1, -1 },
+    { NULL, "I", 0x1, 125, 100, -1, 126, -1, -1 },
+    { NULL, "I", 0x1, 127, 22, -1, 128, -1, -1 },
+    { NULL, "V", 0x1, 129, 130, -1, 131, -1, -1 },
+    { NULL, "V", 0x1, 132, 130, -1, 131, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 132, 1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 133, 1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 133, 134, -1, 135, -1, -1 },
-    { NULL, "V", 0x2, 136, 137, -1, 138, -1, -1 },
-    { NULL, "V", 0x2, 139, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 140, 79, -1, 141, -1, -1 },
-    { NULL, "Z", 0x1, 142, 143, -1, -1, -1, -1 },
-    { NULL, "Z", 0x2, 144, 143, -1, -1, -1, -1 },
-    { NULL, "Z", 0x2, 145, 146, 147, -1, -1, -1 },
+    { NULL, "V", 0x2, 134, 135, -1, 136, -1, -1 },
+    { NULL, "V", 0x2, 137, 138, -1, 139, -1, -1 },
+    { NULL, "V", 0x2, 140, 1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 141, 80, -1, 142, -1, -1 },
+    { NULL, "Z", 0x1, 143, 144, -1, -1, -1, -1 },
+    { NULL, "Z", 0x2, 145, 144, -1, -1, -1, -1 },
+    { NULL, "Z", 0x2, 146, 147, 148, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -1539,96 +1549,97 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
   methods[39].selector = @selector(clearPreparedStatementCache);
   methods[40].selector = @selector(description);
   methods[41].selector = @selector(rawQueryWithNSString:withNSObjectArray:);
-  methods[42].selector = @selector(simpleQueryForStringWithNSString:withNSObjectArray:);
-  methods[43].selector = @selector(simpleQueryForLongWithNSString:withNSObjectArray:);
-  methods[44].selector = @selector(simpleQueryForStringWithComYahooSquidbSqlQuery:);
-  methods[45].selector = @selector(simpleQueryForLongWithComYahooSquidbSqlQuery:);
-  methods[46].selector = @selector(insertInternalWithComYahooSquidbSqlInsert:);
-  methods[47].selector = @selector(deleteInternalWithComYahooSquidbSqlDelete:);
-  methods[48].selector = @selector(updateInternalWithComYahooSquidbSqlUpdate:);
-  methods[49].selector = @selector(beginTransaction);
-  methods[50].selector = @selector(beginTransactionNonExclusive);
-  methods[51].selector = @selector(beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:);
-  methods[52].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:);
-  methods[53].selector = @selector(setTransactionSuccessful);
-  methods[54].selector = @selector(inTransaction);
-  methods[55].selector = @selector(endTransaction);
-  methods[56].selector = @selector(yieldIfContendedSafely);
-  methods[57].selector = @selector(yieldIfContendedSafelyWithLong:);
-  methods[58].selector = @selector(acquireExclusiveLock);
-  methods[59].selector = @selector(releaseExclusiveLock);
-  methods[60].selector = @selector(acquireNonExclusiveLock);
-  methods[61].selector = @selector(releaseNonExclusiveLock);
-  methods[62].selector = @selector(setDatabaseWithComYahooSquidbDataISQLiteDatabase:);
-  methods[63].selector = @selector(readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase:);
-  methods[64].selector = @selector(tryAddColumnWithComYahooSquidbSqlProperty:);
-  methods[65].selector = @selector(propertyBelongsToTableWithComYahooSquidbSqlProperty:);
-  methods[66].selector = @selector(tryCreateTableWithComYahooSquidbSqlTable:);
-  methods[67].selector = @selector(tryDropTableWithComYahooSquidbSqlTable:);
-  methods[68].selector = @selector(tryCreateViewWithComYahooSquidbSqlView:);
-  methods[69].selector = @selector(tryDropViewWithComYahooSquidbSqlView:);
-  methods[70].selector = @selector(tryCreateIndexWithComYahooSquidbSqlIndex:);
-  methods[71].selector = @selector(tryCreateIndexWithNSString:withComYahooSquidbSqlTable:withBoolean:withComYahooSquidbSqlPropertyArray:);
-  methods[72].selector = @selector(tryDropIndexWithComYahooSquidbSqlIndex:);
-  methods[73].selector = @selector(tryDropIndexWithNSString:);
-  methods[74].selector = @selector(tryExecStatementWithComYahooSquidbSqlSqlStatement:);
-  methods[75].selector = @selector(tryExecSqlWithNSString:);
-  methods[76].selector = @selector(execSqlOrThrowWithNSString:);
-  methods[77].selector = @selector(tryExecSqlWithNSString:withNSObjectArray:);
-  methods[78].selector = @selector(execSqlOrThrowWithNSString:withNSObjectArray:);
-  methods[79].selector = @selector(getSqliteVersion);
-  methods[80].selector = @selector(getCompileContext);
-  methods[81].selector = @selector(buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:);
-  methods[82].selector = @selector(prepareStatementWithNSString:);
-  methods[83].selector = @selector(queryWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[84].selector = @selector(inferTableForQueryWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[85].selector = @selector(ensureSqlCompilesWithNSString:);
-  methods[86].selector = @selector(fetchWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
-  methods[87].selector = @selector(fetchByCriterionWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
-  methods[88].selector = @selector(fetchByQueryWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[89].selector = @selector(returnFetchResultWithIOSClass:withComYahooSquidbDataSquidCursor:);
-  methods[90].selector = @selector(delete__WithIOSClass:withLong:);
-  methods[91].selector = @selector(deleteWhereWithIOSClass:withComYahooSquidbSqlCriterion:);
-  methods[92].selector = @selector(deleteAllWithIOSClass:);
-  methods[93].selector = @selector(delete__WithComYahooSquidbSqlDelete:);
-  methods[94].selector = @selector(updateWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:);
-  methods[95].selector = @selector(updateAllWithComYahooSquidbDataTableModel:);
-  methods[96].selector = @selector(updateWithOnConflictWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[97].selector = @selector(updateAllWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[98].selector = @selector(updateWithComYahooSquidbSqlUpdate:);
-  methods[99].selector = @selector(persistWithComYahooSquidbDataTableModel:);
-  methods[100].selector = @selector(persistWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[101].selector = @selector(createNewWithComYahooSquidbDataTableModel:);
-  methods[102].selector = @selector(saveExistingWithComYahooSquidbDataTableModel:);
-  methods[103].selector = @selector(insertRowWithComYahooSquidbDataTableModel:);
-  methods[104].selector = @selector(insertRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[105].selector = @selector(insertRowLegacyWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTable:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[106].selector = @selector(updateRowWithComYahooSquidbDataTableModel:);
-  methods[107].selector = @selector(updateRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[108].selector = @selector(insertWithComYahooSquidbSqlInsert:);
-  methods[109].selector = @selector(fetchItemByIdWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
-  methods[110].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
-  methods[111].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[112].selector = @selector(countWithIOSClass:withComYahooSquidbSqlCriterion:);
-  methods[113].selector = @selector(countAllWithIOSClass:);
-  methods[114].selector = @selector(registerDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
-  methods[115].selector = @selector(unregisterDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
-  methods[116].selector = @selector(unregisterAllDataChangedNotifiers);
-  methods[117].selector = @selector(setDataChangedNotificationsEnabledWithBoolean:);
-  methods[118].selector = @selector(areDataChangedNotificationsEnabled);
-  methods[119].selector = @selector(notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
-  methods[120].selector = @selector(onDataChangedWithJavaUtilList:withComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
-  methods[121].selector = @selector(flushAccumulatedNotificationsWithBoolean:);
-  methods[122].selector = @selector(explainQueryPlanWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[123].selector = @selector(copyDatabaseWithJavaIoFile:);
-  methods[124].selector = @selector(copyDatabaseLockedWithJavaIoFile:);
-  methods[125].selector = @selector(copyFileIfExistsWithJavaIoFile:withJavaIoFile:);
+  methods[42].selector = @selector(onShowSqlWithNSString:withNSObjectArray:);
+  methods[43].selector = @selector(simpleQueryForStringWithNSString:withNSObjectArray:);
+  methods[44].selector = @selector(simpleQueryForLongWithNSString:withNSObjectArray:);
+  methods[45].selector = @selector(simpleQueryForStringWithComYahooSquidbSqlQuery:);
+  methods[46].selector = @selector(simpleQueryForLongWithComYahooSquidbSqlQuery:);
+  methods[47].selector = @selector(insertInternalWithComYahooSquidbSqlInsert:);
+  methods[48].selector = @selector(deleteInternalWithComYahooSquidbSqlDelete:);
+  methods[49].selector = @selector(updateInternalWithComYahooSquidbSqlUpdate:);
+  methods[50].selector = @selector(beginTransaction);
+  methods[51].selector = @selector(beginTransactionNonExclusive);
+  methods[52].selector = @selector(beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:);
+  methods[53].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:);
+  methods[54].selector = @selector(setTransactionSuccessful);
+  methods[55].selector = @selector(inTransaction);
+  methods[56].selector = @selector(endTransaction);
+  methods[57].selector = @selector(yieldIfContendedSafely);
+  methods[58].selector = @selector(yieldIfContendedSafelyWithLong:);
+  methods[59].selector = @selector(acquireExclusiveLock);
+  methods[60].selector = @selector(releaseExclusiveLock);
+  methods[61].selector = @selector(acquireNonExclusiveLock);
+  methods[62].selector = @selector(releaseNonExclusiveLock);
+  methods[63].selector = @selector(setDatabaseWithComYahooSquidbDataISQLiteDatabase:);
+  methods[64].selector = @selector(readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase:);
+  methods[65].selector = @selector(tryAddColumnWithComYahooSquidbSqlProperty:);
+  methods[66].selector = @selector(propertyBelongsToTableWithComYahooSquidbSqlProperty:);
+  methods[67].selector = @selector(tryCreateTableWithComYahooSquidbSqlTable:);
+  methods[68].selector = @selector(tryDropTableWithComYahooSquidbSqlTable:);
+  methods[69].selector = @selector(tryCreateViewWithComYahooSquidbSqlView:);
+  methods[70].selector = @selector(tryDropViewWithComYahooSquidbSqlView:);
+  methods[71].selector = @selector(tryCreateIndexWithComYahooSquidbSqlIndex:);
+  methods[72].selector = @selector(tryCreateIndexWithNSString:withComYahooSquidbSqlTable:withBoolean:withComYahooSquidbSqlPropertyArray:);
+  methods[73].selector = @selector(tryDropIndexWithComYahooSquidbSqlIndex:);
+  methods[74].selector = @selector(tryDropIndexWithNSString:);
+  methods[75].selector = @selector(tryExecStatementWithComYahooSquidbSqlSqlStatement:);
+  methods[76].selector = @selector(tryExecSqlWithNSString:);
+  methods[77].selector = @selector(execSqlOrThrowWithNSString:);
+  methods[78].selector = @selector(tryExecSqlWithNSString:withNSObjectArray:);
+  methods[79].selector = @selector(execSqlOrThrowWithNSString:withNSObjectArray:);
+  methods[80].selector = @selector(getSqliteVersion);
+  methods[81].selector = @selector(getCompileContext);
+  methods[82].selector = @selector(buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:);
+  methods[83].selector = @selector(prepareStatementWithNSString:);
+  methods[84].selector = @selector(queryWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[85].selector = @selector(inferTableForQueryWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[86].selector = @selector(ensureSqlCompilesWithNSString:);
+  methods[87].selector = @selector(fetchWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
+  methods[88].selector = @selector(fetchByCriterionWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
+  methods[89].selector = @selector(fetchByQueryWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[90].selector = @selector(returnFetchResultWithIOSClass:withComYahooSquidbDataSquidCursor:);
+  methods[91].selector = @selector(delete__WithIOSClass:withLong:);
+  methods[92].selector = @selector(deleteWhereWithIOSClass:withComYahooSquidbSqlCriterion:);
+  methods[93].selector = @selector(deleteAllWithIOSClass:);
+  methods[94].selector = @selector(delete__WithComYahooSquidbSqlDelete:);
+  methods[95].selector = @selector(updateWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:);
+  methods[96].selector = @selector(updateAllWithComYahooSquidbDataTableModel:);
+  methods[97].selector = @selector(updateWithOnConflictWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[98].selector = @selector(updateAllWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[99].selector = @selector(updateWithComYahooSquidbSqlUpdate:);
+  methods[100].selector = @selector(persistWithComYahooSquidbDataTableModel:);
+  methods[101].selector = @selector(persistWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[102].selector = @selector(createNewWithComYahooSquidbDataTableModel:);
+  methods[103].selector = @selector(saveExistingWithComYahooSquidbDataTableModel:);
+  methods[104].selector = @selector(insertRowWithComYahooSquidbDataTableModel:);
+  methods[105].selector = @selector(insertRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[106].selector = @selector(insertRowLegacyWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTable:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[107].selector = @selector(updateRowWithComYahooSquidbDataTableModel:);
+  methods[108].selector = @selector(updateRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
+  methods[109].selector = @selector(insertWithComYahooSquidbSqlInsert:);
+  methods[110].selector = @selector(fetchItemByIdWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
+  methods[111].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
+  methods[112].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[113].selector = @selector(countWithIOSClass:withComYahooSquidbSqlCriterion:);
+  methods[114].selector = @selector(countAllWithIOSClass:);
+  methods[115].selector = @selector(registerDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
+  methods[116].selector = @selector(unregisterDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
+  methods[117].selector = @selector(unregisterAllDataChangedNotifiers);
+  methods[118].selector = @selector(setDataChangedNotificationsEnabledWithBoolean:);
+  methods[119].selector = @selector(areDataChangedNotificationsEnabled);
+  methods[120].selector = @selector(notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
+  methods[121].selector = @selector(onDataChangedWithJavaUtilList:withComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
+  methods[122].selector = @selector(flushAccumulatedNotificationsWithBoolean:);
+  methods[123].selector = @selector(explainQueryPlanWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[124].selector = @selector(copyDatabaseWithJavaIoFile:);
+  methods[125].selector = @selector(copyDatabaseLockedWithJavaIoFile:);
+  methods[126].selector = @selector(copyFileIfExistsWithJavaIoFile:withJavaIoFile:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "showSql_", "Z", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "STRING_BUILDER_INITIAL_CAPACITY", "I", .constantValue.asInt = ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY, 0x1a, -1, -1, -1, -1 },
-    { "trackedPreparedInserts_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x2, -1, -1, 148, -1 },
-    { "preparedInsertCache_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 149, -1 },
+    { "trackedPreparedInserts_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x2, -1, -1, 149, -1 },
+    { "preparedInsertCache_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 150, -1 },
     { "preparedInsertCacheEnabled_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "attachedTo_", "LComYahooSquidbDataSquidDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "readWriteLock_", "LJavaUtilConcurrentLocksReentrantReadWriteLock;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
@@ -1636,19 +1647,19 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { "helper_", "LComYahooSquidbDataISQLiteOpenHelper;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "database_", "LComYahooSquidbDataISQLiteDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "sqliteVersion_", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "tableMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 150, -1 },
+    { "tableMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 151, -1 },
     { "isInMigration_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "isInMigrationFailedHook_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "databaseOpenFailedRetryCount_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "transactionSuccessState_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 151, -1 },
+    { "transactionSuccessState_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 152, -1 },
     { "notifiersLock_", "LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "dataChangedNotificationsEnabled_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "globalNotifiers_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 152, -1 },
-    { "tableNotifiers_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 153, -1 },
-    { "notifierAccumulator_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 154, -1 },
+    { "globalNotifiers_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 153, -1 },
+    { "tableNotifiers_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 154, -1 },
+    { "notifierAccumulator_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 155, -1 },
   };
-  static const void *ptrTable[] = { "setShowSql", "Z", "onTablesCreated", "LComYahooSquidbDataISQLiteDatabase;", "onUpgrade", "LComYahooSquidbDataISQLiteDatabase;II", "onDowngrade", "onMigrationFailed", "LComYahooSquidbDataSquidDatabase_MigrationFailedException;", "onDatabaseOpenFailed", "LJavaLangRuntimeException;I", "onConfigure", "onOpen", "onClose", "onError", "LNSString;LJavaLangThrowable;", "registerTableModels", "[LComYahooSquidbSqlSqlTable;", "<T:Lcom/yahoo/squidb/sql/SqlTable<*>;>([TT;)V", "createOpenHelper", "LNSString;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;I", "getSqlTable", "LIOSClass;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)Lcom/yahoo/squidb/sql/SqlTable<*>;", "getTable", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)Lcom/yahoo/squidb/sql/Table;", "setPreparedInsertCacheEnabled", "newPreparedInsertCache", "LJavaUtilSet;", "(Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;)Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "attachDatabase", "LComYahooSquidbDataSquidDatabase;", "detachDatabase", "attachTo", "detachFrom", "closeAndDeleteInternal", "toString", "rawQuery", "LNSString;[LNSObject;", "simpleQueryForString", "simpleQueryForLong", "LComYahooSquidbSqlQuery;", "insertInternal", "LComYahooSquidbSqlInsert;", "deleteInternal", "LComYahooSquidbSqlDelete;", "updateInternal", "LComYahooSquidbSqlUpdate;", "beginTransactionWithListener", "LComYahooSquidbDataSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setDatabase", "readSqliteVersionLocked", "tryAddColumn", "LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "propertyBelongsToTable", "tryCreateTable", "LComYahooSquidbSqlTable;", "tryDropTable", "tryCreateView", "LComYahooSquidbSqlView;", "tryDropView", "tryCreateIndex", "LComYahooSquidbSqlIndex;", "LNSString;LComYahooSquidbSqlTable;Z[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)Z", "tryDropIndex", "LNSString;", "tryExecStatement", "LComYahooSquidbSqlSqlStatement;", "tryExecSql", "execSqlOrThrow", "buildCompileContext", "LComYahooSquidbSqlCompileContext_Builder;", "prepareStatement", "query", "LIOSClass;LComYahooSquidbSqlQuery;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "inferTableForQuery", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/sql/Query;", "ensureSqlCompiles", "fetch", "LIOSClass;J[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByCriterion", "LIOSClass;LComYahooSquidbSqlCriterion;[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByQuery", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)TTYPE;", "returnFetchResult", "LIOSClass;LComYahooSquidbDataSquidCursor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;)TTYPE;", "delete", "LIOSClass;J", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;J)Z", "deleteWhere", "LIOSClass;LComYahooSquidbSqlCriterion;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "deleteAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)I", "update", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;", "updateAll", "LComYahooSquidbDataTableModel;", "updateWithOnConflict", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateAllWithOnConflict", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "persist", "persistWithOnConflict", "createNew", "saveExisting", "insertRow", "insertRowLegacy", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTable;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateRow", "insert", "fetchItemById", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "fetchFirstItem", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "count", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "countAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)I", "registerDataChangedNotifier", "LComYahooSquidbDataDataChangedNotifier;", "(Lcom/yahoo/squidb/data/DataChangedNotifier<*>;)V", "unregisterDataChangedNotifier", "setDataChangedNotificationsEnabled", "notifyForTable", "LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "onDataChanged", "LJavaUtilList;LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "flushAccumulatedNotifications", "explainQueryPlan", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)V", "copyDatabase", "LJavaIoFile;", "copyDatabaseLocked", "copyFileIfExists", "LJavaIoFile;LJavaIoFile;", "LJavaIoIOException;", "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "Ljava/util/Map<Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;", "Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "Ljava/util/Map<Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "LComYahooSquidbDataSquidDatabase_TransactionSuccessState;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;LComYahooSquidbDataSquidDatabase_SqlConstructorVisitor;LComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException;LComYahooSquidbDataSquidDatabase_MigrationFailedException;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase = { "SquidDatabase", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 126, 21, -1, 155, -1, -1, -1 };
+  static const void *ptrTable[] = { "setShowSql", "Z", "onTablesCreated", "LComYahooSquidbDataISQLiteDatabase;", "onUpgrade", "LComYahooSquidbDataISQLiteDatabase;II", "onDowngrade", "onMigrationFailed", "LComYahooSquidbDataSquidDatabase_MigrationFailedException;", "onDatabaseOpenFailed", "LJavaLangRuntimeException;I", "onConfigure", "onOpen", "onClose", "onError", "LNSString;LJavaLangThrowable;", "registerTableModels", "[LComYahooSquidbSqlSqlTable;", "<T:Lcom/yahoo/squidb/sql/SqlTable<*>;>([TT;)V", "createOpenHelper", "LNSString;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;I", "getSqlTable", "LIOSClass;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)Lcom/yahoo/squidb/sql/SqlTable<*>;", "getTable", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)Lcom/yahoo/squidb/sql/Table;", "setPreparedInsertCacheEnabled", "newPreparedInsertCache", "LJavaUtilSet;", "(Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;)Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "attachDatabase", "LComYahooSquidbDataSquidDatabase;", "detachDatabase", "attachTo", "detachFrom", "closeAndDeleteInternal", "toString", "rawQuery", "LNSString;[LNSObject;", "onShowSql", "simpleQueryForString", "simpleQueryForLong", "LComYahooSquidbSqlQuery;", "insertInternal", "LComYahooSquidbSqlInsert;", "deleteInternal", "LComYahooSquidbSqlDelete;", "updateInternal", "LComYahooSquidbSqlUpdate;", "beginTransactionWithListener", "LComYahooSquidbDataSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setDatabase", "readSqliteVersionLocked", "tryAddColumn", "LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "propertyBelongsToTable", "tryCreateTable", "LComYahooSquidbSqlTable;", "tryDropTable", "tryCreateView", "LComYahooSquidbSqlView;", "tryDropView", "tryCreateIndex", "LComYahooSquidbSqlIndex;", "LNSString;LComYahooSquidbSqlTable;Z[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)Z", "tryDropIndex", "LNSString;", "tryExecStatement", "LComYahooSquidbSqlSqlStatement;", "tryExecSql", "execSqlOrThrow", "buildCompileContext", "LComYahooSquidbSqlCompileContext_Builder;", "prepareStatement", "query", "LIOSClass;LComYahooSquidbSqlQuery;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "inferTableForQuery", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/sql/Query;", "ensureSqlCompiles", "fetch", "LIOSClass;J[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByCriterion", "LIOSClass;LComYahooSquidbSqlCriterion;[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByQuery", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)TTYPE;", "returnFetchResult", "LIOSClass;LComYahooSquidbDataSquidCursor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;)TTYPE;", "delete", "LIOSClass;J", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;J)Z", "deleteWhere", "LIOSClass;LComYahooSquidbSqlCriterion;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "deleteAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)I", "update", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;", "updateAll", "LComYahooSquidbDataTableModel;", "updateWithOnConflict", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateAllWithOnConflict", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "persist", "persistWithOnConflict", "createNew", "saveExisting", "insertRow", "insertRowLegacy", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTable;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateRow", "insert", "fetchItemById", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "fetchFirstItem", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "count", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "countAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)I", "registerDataChangedNotifier", "LComYahooSquidbDataDataChangedNotifier;", "(Lcom/yahoo/squidb/data/DataChangedNotifier<*>;)V", "unregisterDataChangedNotifier", "setDataChangedNotificationsEnabled", "notifyForTable", "LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "onDataChanged", "LJavaUtilList;LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "flushAccumulatedNotifications", "explainQueryPlan", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)V", "copyDatabase", "LJavaIoFile;", "copyDatabaseLocked", "copyFileIfExists", "LJavaIoFile;LJavaIoFile;", "LJavaIoIOException;", "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "Ljava/util/Map<Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;", "Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "Ljava/util/Map<Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "LComYahooSquidbDataSquidDatabase_TransactionSuccessState;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;LComYahooSquidbDataSquidDatabase_SqlConstructorVisitor;LComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException;LComYahooSquidbDataSquidDatabase_MigrationFailedException;" };
+  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase = { "SquidDatabase", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 127, 21, -1, 156, -1, -1, -1 };
   return &_ComYahooSquidbDataSquidDatabase;
 }
 
@@ -1861,10 +1872,18 @@ void ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(ComYahooSquidbD
   self->preparedInsertCache_ = ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, self->trackedPreparedInserts_);
 }
 
+void ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(ComYahooSquidbDataSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs) {
+  NSString *argsAsList = [((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilList>) nil_chk(JavaUtilArrays_asListWithNSObjectArray_(sqlArgs))) stream])) mapWithJavaUtilFunctionFunction:JreLoadStatic(ComYahooSquidbDataSquidDatabase_$Lambda$1, instance)])) collectWithJavaUtilStreamCollector:JavaUtilStreamCollectors_joiningWithJavaLangCharSequence_(@",")];
+  ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$$C", @"SQL: ", sql, @" [", argsAsList, ']'));
+}
+
 jlong ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlInsert *insert) {
   ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlInsert *) nil_chk(insert)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
+    if (self->showSql_) {
+      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+    }
     return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeInsertWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
@@ -1876,6 +1895,9 @@ jint ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(
   ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlDelete *) nil_chk(delete_)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
+    if (self->showSql_) {
+      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+    }
     return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
@@ -1887,6 +1909,9 @@ jint ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(
   ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlUpdate *) nil_chk(update)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
+    if (self->showSql_) {
+      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+    }
     return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
