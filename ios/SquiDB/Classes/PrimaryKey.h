@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsPrimaryKey < JavaLangAnnotationAnnotation >
+@protocol SquiDBPrimaryKey < JavaLangAnnotationAnnotation >
 
 @property (readonly) jboolean autoincrement;
 
@@ -27,18 +27,20 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsPrimaryKey : NSObject < ComYahooSquidbAnnotationsPrimaryKey > {
+@interface SquiDBPrimaryKey : NSObject < SquiDBPrimaryKey > {
  @public
   jboolean autoincrement_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsPrimaryKey)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBPrimaryKey)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsPrimaryKey> create_ComYahooSquidbAnnotationsPrimaryKey(jboolean autoincrement);
+FOUNDATION_EXPORT id<SquiDBPrimaryKey> create_SquiDBPrimaryKey(jboolean autoincrement);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsPrimaryKey)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBPrimaryKey)
+
+#define ComYahooSquidbAnnotationsPrimaryKey SquiDBPrimaryKey
 
 
 #if __has_feature(nullability)

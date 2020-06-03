@@ -14,17 +14,19 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
+@class SquiDBSQLiteDatabase;
 
-@protocol ComYahooAndroidSqliteDatabaseErrorHandler < JavaObject >
+@protocol SquiDBDatabaseErrorHandler < JavaObject >
 
-- (void)onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)dbObj;
+- (void)onCorruptionWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)dbObj;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteDatabaseErrorHandler)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDatabaseErrorHandler)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteDatabaseErrorHandler)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDatabaseErrorHandler)
+
+#define ComYahooAndroidSqliteDatabaseErrorHandler SquiDBDatabaseErrorHandler
 
 
 #if __has_feature(nullability)

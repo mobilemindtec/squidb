@@ -7,17 +7,17 @@
 #include "SQLiteDoneException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteDoneException
+@implementation SquiDBSQLiteDoneException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDoneException_init(self);
+  SquiDBSQLiteDoneException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(self, error);
+  SquiDBSQLiteDoneException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDoneException = { "SQLiteDoneException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDoneException;
+  static const J2ObjcClassInfo _SquiDBSQLiteDoneException = { "SQLiteDoneException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDoneException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDoneException_init(ComYahooAndroidSqliteSQLiteDoneException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteDoneException_init(SquiDBSQLiteDoneException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDoneException *new_ComYahooAndroidSqliteSQLiteDoneException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDoneException, init)
+SquiDBSQLiteDoneException *new_SquiDBSQLiteDoneException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDoneException, init)
 }
 
-ComYahooAndroidSqliteSQLiteDoneException *create_ComYahooAndroidSqliteSQLiteDoneException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDoneException, init)
+SquiDBSQLiteDoneException *create_SquiDBSQLiteDoneException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDoneException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(ComYahooAndroidSqliteSQLiteDoneException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteDoneException_initWithNSString_(SquiDBSQLiteDoneException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteDoneException *new_ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDoneException, initWithNSString_, error)
+SquiDBSQLiteDoneException *new_SquiDBSQLiteDoneException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDoneException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteDoneException *create_ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDoneException, initWithNSString_, error)
+SquiDBSQLiteDoneException *create_SquiDBSQLiteDoneException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDoneException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDoneException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDoneException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDoneException, "com.yahoo.android.sqlite", "SquiDB")

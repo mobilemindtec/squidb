@@ -6,11 +6,11 @@
 #include "ArgumentResolver.h"
 #include "J2ObjC_source.h"
 
-@interface ComYahooSquidbSqlArgumentResolver : NSObject
+@interface SquiDBArgumentResolver : NSObject
 
 @end
 
-@implementation ComYahooSquidbSqlArgumentResolver
+@implementation SquiDBArgumentResolver
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,12 @@
   methods[0].selector = @selector(resolveArgumentWithId:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "resolveArgument", "LNSObject;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlArgumentResolver = { "ArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlArgumentResolver;
+  static const J2ObjcClassInfo _SquiDBArgumentResolver = { "ArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBArgumentResolver;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlArgumentResolver)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBArgumentResolver)
+
+J2OBJC_NAME_MAPPING(SquiDBArgumentResolver, "com.yahoo.squidb.sql", "SquiDB")

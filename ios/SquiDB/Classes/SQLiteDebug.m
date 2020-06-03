@@ -10,50 +10,50 @@
 #include "SQLiteDebug.h"
 #include "java/util/ArrayList.h"
 
-@interface ComYahooAndroidSqliteSQLiteDebug ()
+@interface SquiDBSQLiteDebug ()
 
 - (instancetype)init;
 
 @end
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDebug_init(ComYahooAndroidSqliteSQLiteDebug *self);
+__attribute__((unused)) static void SquiDBSQLiteDebug_init(SquiDBSQLiteDebug *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDebug *new_ComYahooAndroidSqliteSQLiteDebug_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteDebug *new_SquiDBSQLiteDebug_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDebug *create_ComYahooAndroidSqliteSQLiteDebug_init(void);
+__attribute__((unused)) static SquiDBSQLiteDebug *create_SquiDBSQLiteDebug_init(void);
 
-@implementation ComYahooAndroidSqliteSQLiteDebug
+@implementation SquiDBSQLiteDebug
 
 + (jboolean)DEBUG_SQL_LOG {
-  return ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_LOG;
+  return SquiDBSQLiteDebug_DEBUG_SQL_LOG;
 }
 
 + (jboolean)DEBUG_SQL_STATEMENTS {
-  return ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_STATEMENTS;
+  return SquiDBSQLiteDebug_DEBUG_SQL_STATEMENTS;
 }
 
 + (jboolean)DEBUG_SQL_TIME {
-  return ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_TIME;
+  return SquiDBSQLiteDebug_DEBUG_SQL_TIME;
 }
 
 + (jboolean)DEBUG_LOG_SLOW_QUERIES {
-  return ComYahooAndroidSqliteSQLiteDebug_DEBUG_LOG_SLOW_QUERIES;
+  return SquiDBSQLiteDebug_DEBUG_LOG_SLOW_QUERIES;
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDebug_init(self);
+  SquiDBSQLiteDebug_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (jboolean)shouldLogSlowQueryWithLong:(jlong)elapsedTimeMillis {
-  return ComYahooAndroidSqliteSQLiteDebug_shouldLogSlowQueryWithLong_(elapsedTimeMillis);
+  return SquiDBSQLiteDebug_shouldLogSlowQueryWithLong_(elapsedTimeMillis);
 }
 
-+ (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                           withNSStringArray:(IOSObjectArray *)args {
-  ComYahooAndroidSqliteSQLiteDebug_dumpWithComYahooAndroidSqlitePrinter_withNSStringArray_(printer, args);
++ (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+            withNSStringArray:(IOSObjectArray *)args {
+  SquiDBSQLiteDebug_dumpWithSquiDBPrinter_withNSStringArray_(printer, args);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -67,41 +67,41 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(shouldLogSlowQueryWithLong:);
-  methods[2].selector = @selector(dumpWithComYahooAndroidSqlitePrinter:withNSStringArray:);
+  methods[2].selector = @selector(dumpWithSquiDBPrinter:withNSStringArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "DEBUG_SQL_LOG", "Z", .constantValue.asBOOL = ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_LOG, 0x19, -1, -1, -1, -1 },
-    { "DEBUG_SQL_STATEMENTS", "Z", .constantValue.asBOOL = ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_STATEMENTS, 0x19, -1, -1, -1, -1 },
-    { "DEBUG_SQL_TIME", "Z", .constantValue.asBOOL = ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_TIME, 0x19, -1, -1, -1, -1 },
-    { "DEBUG_LOG_SLOW_QUERIES", "Z", .constantValue.asBOOL = ComYahooAndroidSqliteSQLiteDebug_DEBUG_LOG_SLOW_QUERIES, 0x19, -1, -1, -1, -1 },
+    { "DEBUG_SQL_LOG", "Z", .constantValue.asBOOL = SquiDBSQLiteDebug_DEBUG_SQL_LOG, 0x19, -1, -1, -1, -1 },
+    { "DEBUG_SQL_STATEMENTS", "Z", .constantValue.asBOOL = SquiDBSQLiteDebug_DEBUG_SQL_STATEMENTS, 0x19, -1, -1, -1, -1 },
+    { "DEBUG_SQL_TIME", "Z", .constantValue.asBOOL = SquiDBSQLiteDebug_DEBUG_SQL_TIME, 0x19, -1, -1, -1, -1 },
+    { "DEBUG_LOG_SLOW_QUERIES", "Z", .constantValue.asBOOL = SquiDBSQLiteDebug_DEBUG_LOG_SLOW_QUERIES, 0x19, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "shouldLogSlowQuery", "J", "dump", "LComYahooAndroidSqlitePrinter;[LNSString;", "LComYahooAndroidSqliteSQLiteDebug_PagerStats;LComYahooAndroidSqliteSQLiteDebug_DbStats;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDebug = { "SQLiteDebug", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 4, -1, 4, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDebug;
+  static const void *ptrTable[] = { "shouldLogSlowQuery", "J", "dump", "LSquiDBPrinter;[LNSString;", "LSquiDBSQLiteDebug_PagerStats;LSquiDBSQLiteDebug_DbStats;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDebug = { "SQLiteDebug", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 4, -1, 4, -1, -1, -1 };
+  return &_SquiDBSQLiteDebug;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDebug_init(ComYahooAndroidSqliteSQLiteDebug *self) {
+void SquiDBSQLiteDebug_init(SquiDBSQLiteDebug *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDebug *new_ComYahooAndroidSqliteSQLiteDebug_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDebug, init)
+SquiDBSQLiteDebug *new_SquiDBSQLiteDebug_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDebug, init)
 }
 
-ComYahooAndroidSqliteSQLiteDebug *create_ComYahooAndroidSqliteSQLiteDebug_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDebug, init)
+SquiDBSQLiteDebug *create_SquiDBSQLiteDebug_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDebug, init)
 }
 
-jboolean ComYahooAndroidSqliteSQLiteDebug_shouldLogSlowQueryWithLong_(jlong elapsedTimeMillis) {
-  ComYahooAndroidSqliteSQLiteDebug_initialize();
+jboolean SquiDBSQLiteDebug_shouldLogSlowQueryWithLong_(jlong elapsedTimeMillis) {
+  SquiDBSQLiteDebug_initialize();
   jint slowQueryMillis = 10000;
   return slowQueryMillis >= 0 && elapsedTimeMillis >= slowQueryMillis;
 }
 
-void ComYahooAndroidSqliteSQLiteDebug_dumpWithComYahooAndroidSqlitePrinter_withNSStringArray_(id<ComYahooAndroidSqlitePrinter> printer, IOSObjectArray *args) {
-  ComYahooAndroidSqliteSQLiteDebug_initialize();
+void SquiDBSQLiteDebug_dumpWithSquiDBPrinter_withNSStringArray_(id<SquiDBPrinter> printer, IOSObjectArray *args) {
+  SquiDBSQLiteDebug_initialize();
   jboolean verbose = false;
   {
     IOSObjectArray *a__ = args;
@@ -114,16 +114,18 @@ void ComYahooAndroidSqliteSQLiteDebug_dumpWithComYahooAndroidSqlitePrinter_withN
       }
     }
   }
-  ComYahooAndroidSqliteSQLiteDatabase_dumpAllWithComYahooAndroidSqlitePrinter_withBoolean_(printer, verbose);
+  SquiDBSQLiteDatabase_dumpAllWithSquiDBPrinter_withBoolean_(printer, verbose);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDebug)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDebug)
 
-@implementation ComYahooAndroidSqliteSQLiteDebug_PagerStats
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDebug, "com.yahoo.android.sqlite", "SquiDB")
+
+@implementation SquiDBSQLiteDebug_PagerStats
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDebug_PagerStats_init(self);
+  SquiDBSQLiteDebug_PagerStats_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -143,28 +145,28 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "largestMemAlloc_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "dbStats_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x1, -1, -1, 0, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;", "LComYahooAndroidSqliteSQLiteDebug;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDebug_PagerStats = { "PagerStats", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x9, 1, 4, 1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDebug_PagerStats;
+  static const void *ptrTable[] = { "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;", "LSquiDBSQLiteDebug;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDebug_PagerStats = { "PagerStats", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x9, 1, 4, 1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDebug_PagerStats;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDebug_PagerStats_init(ComYahooAndroidSqliteSQLiteDebug_PagerStats *self) {
+void SquiDBSQLiteDebug_PagerStats_init(SquiDBSQLiteDebug_PagerStats *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDebug_PagerStats *new_ComYahooAndroidSqliteSQLiteDebug_PagerStats_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDebug_PagerStats, init)
+SquiDBSQLiteDebug_PagerStats *new_SquiDBSQLiteDebug_PagerStats_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDebug_PagerStats, init)
 }
 
-ComYahooAndroidSqliteSQLiteDebug_PagerStats *create_ComYahooAndroidSqliteSQLiteDebug_PagerStats_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDebug_PagerStats, init)
+SquiDBSQLiteDebug_PagerStats *create_SquiDBSQLiteDebug_PagerStats_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDebug_PagerStats, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDebug_PagerStats)
 
-@implementation ComYahooAndroidSqliteSQLiteDebug_DbStats
+@implementation SquiDBSQLiteDebug_DbStats
 
 - (instancetype)initWithNSString:(NSString *)dbName
                         withLong:(jlong)pageCount
@@ -173,7 +175,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
                          withInt:(jint)hits
                          withInt:(jint)misses
                          withInt:(jint)cachesize {
-  ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(self, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize);
+  SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(self, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize);
   return self;
 }
 
@@ -193,28 +195,28 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
     { "lookaside_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "cache_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;JJIIII", "LComYahooAndroidSqliteSQLiteDebug;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDebug_DbStats = { "DbStats", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x9, 1, 5, 1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDebug_DbStats;
+  static const void *ptrTable[] = { "LNSString;JJIIII", "LSquiDBSQLiteDebug;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDebug_DbStats = { "DbStats", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x9, 1, 5, 1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDebug_DbStats;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(ComYahooAndroidSqliteSQLiteDebug_DbStats *self, NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
+void SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(SquiDBSQLiteDebug_DbStats *self, NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
   NSObject_init(self);
   self->dbName_ = dbName;
-  self->pageSize_ = pageSize / 1024;
-  self->dbSize_ = (pageCount * pageSize) / 1024;
+  self->pageSize_ = JreLongDiv(pageSize, 1024);
+  self->dbSize_ = JreLongDiv((pageCount * pageSize), 1024);
   self->lookaside_ = lookaside;
   self->cache_ = JreStrcat("ICICI", hits, '/', misses, '/', cachesize);
 }
 
-ComYahooAndroidSqliteSQLiteDebug_DbStats *new_ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDebug_DbStats, initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize)
+SquiDBSQLiteDebug_DbStats *new_SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDebug_DbStats, initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize)
 }
 
-ComYahooAndroidSqliteSQLiteDebug_DbStats *create_ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDebug_DbStats, initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize)
+SquiDBSQLiteDebug_DbStats *create_SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDebug_DbStats, initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_, dbName, pageCount, pageSize, lookaside, hits, misses, cachesize)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDebug_DbStats)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDebug_DbStats)

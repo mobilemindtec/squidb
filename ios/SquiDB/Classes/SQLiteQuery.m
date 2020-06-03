@@ -14,35 +14,35 @@
 #include "SQLiteQuery.h"
 #include "SQLiteSession.h"
 
-inline NSString *ComYahooAndroidSqliteSQLiteQuery_get_TAG(void);
-static NSString *ComYahooAndroidSqliteSQLiteQuery_TAG = @"SQLiteQuery";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteQuery, TAG, NSString *)
+inline NSString *SquiDBSQLiteQuery_get_TAG(void);
+static NSString *SquiDBSQLiteQuery_TAG = @"SQLiteQuery";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteQuery, TAG, NSString *)
 
-@implementation ComYahooAndroidSqliteSQLiteQuery
+@implementation SquiDBSQLiteQuery
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                               withNSString:(NSString *)query {
-  ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(self, db, query);
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                withNSString:(NSString *)query {
+  SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(self, db, query);
   return self;
 }
 
-- (jint)fillWindowWithComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window
-                                                withInt:(jint)startPos
-                                                withInt:(jint)requiredPos
-                                            withBoolean:(jboolean)countAllRows {
+- (jint)fillWindowWithSquiDBCursorWindow:(SquiDBCursorWindow *)window
+                                 withInt:(jint)startPos
+                                 withInt:(jint)requiredPos
+                             withBoolean:(jboolean)countAllRows {
   [self acquireReference];
   @try {
-    [((ComYahooAndroidSqliteCursorWindow *) nil_chk(window)) acquireReference];
+    [((SquiDBCursorWindow *) nil_chk(window)) acquireReference];
     @try {
-      jint numRows = [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getSession])) executeForCursorWindowWithNSString:[self getSql] withNSObjectArray:[self getBindArgs] withComYahooAndroidSqliteCursorWindow:window withInt:startPos withInt:requiredPos withBoolean:countAllRows withInt:[self getConnectionFlags]];
+      jint numRows = [((SquiDBSQLiteSession *) nil_chk([self getSession])) executeForCursorWindowWithNSString:[self getSql] withNSObjectArray:[self getBindArgs] withSquiDBCursorWindow:window withInt:startPos withInt:requiredPos withBoolean:countAllRows withInt:[self getConnectionFlags]];
       return numRows;
     }
-    @catch (ComYahooAndroidSqliteSQLiteDatabaseCorruptException *ex) {
+    @catch (SquiDBSQLiteDatabaseCorruptException *ex) {
       [self onCorruption];
       @throw ex;
     }
-    @catch (ComYahooAndroidSqliteSQLiteException *ex) {
-      ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteQuery_TAG, JreStrcat("$$$$", @"exception: ", [ex getMessage], @"; query: ", [self getSql]));
+    @catch (SquiDBSQLiteException *ex) {
+      SquiDBLogger_eWithNSString_withNSString_(SquiDBSQLiteQuery_TAG, JreStrcat("$$$$", @"exception: ", [ex getMessage], @"; query: ", [self getSql]));
       @throw ex;
     }
     @finally {
@@ -67,30 +67,32 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteQuery, TAG, NSString *)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabase:withNSString:);
-  methods[1].selector = @selector(fillWindowWithComYahooAndroidSqliteCursorWindow:withInt:withInt:withBoolean:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabase:withNSString:);
+  methods[1].selector = @selector(fillWindowWithSquiDBCursorWindow:withInt:withInt:withBoolean:);
   methods[2].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabase;LNSString;", "fillWindow", "LComYahooAndroidSqliteCursorWindow;IIZ", "toString", &ComYahooAndroidSqliteSQLiteQuery_TAG };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteQuery = { "SQLiteQuery", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteQuery;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabase;LNSString;", "fillWindow", "LSquiDBCursorWindow;IIZ", "toString", &SquiDBSQLiteQuery_TAG };
+  static const J2ObjcClassInfo _SquiDBSQLiteQuery = { "SQLiteQuery", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteQuery;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteQuery *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query) {
-  ComYahooAndroidSqliteSQLiteProgram_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, db, query, nil);
+void SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteQuery *self, SquiDBSQLiteDatabase *db, NSString *query) {
+  SquiDBSQLiteProgram_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, db, query, nil);
 }
 
-ComYahooAndroidSqliteSQLiteQuery *new_ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteQuery, initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_, db, query)
+SquiDBSQLiteQuery *new_SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteDatabase *db, NSString *query) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteQuery, initWithSquiDBSQLiteDatabase_withNSString_, db, query)
 }
 
-ComYahooAndroidSqliteSQLiteQuery *create_ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteQuery, initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_, db, query)
+SquiDBSQLiteQuery *create_SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteDatabase *db, NSString *query) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteQuery, initWithSquiDBSQLiteDatabase_withNSString_, db, query)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteQuery)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteQuery)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteQuery, "com.yahoo.android.sqlite", "SquiDB")

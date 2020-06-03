@@ -15,24 +15,24 @@
 #include "Function.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlQueryFunction : ComYahooSquidbSqlFunction
+@interface SquiDBQueryFunction : SquiDBFunction
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
 #pragma mark Protected
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation;
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBQuery:(SquiDBQuery *)query;
 
 // Disallowed inherited constructors, do not use.
 
@@ -42,15 +42,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlQueryFunction)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBQueryFunction)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQueryFunction *self, ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT void SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQueryFunction *self, SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQueryFunction *new_ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBQueryFunction *new_SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQuery *query) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQueryFunction *create_ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBQueryFunction *create_SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQuery *query);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlQueryFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBQueryFunction)
+
+@compatibility_alias ComYahooSquidbSqlQueryFunction SquiDBQueryFunction;
 
 
 #if __has_feature(nullability)

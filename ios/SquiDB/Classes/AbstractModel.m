@@ -29,160 +29,160 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@class ComYahooSquidbDataAbstractModel_ValueCastingVisitor;
-@class ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor;
+@class SquiDBAbstractModel_ValueCastingVisitor;
+@class SquiDBAbstractModel_ValuesStorageSavingVisitor;
 
-@interface ComYahooSquidbDataAbstractModel ()
+@interface SquiDBAbstractModel ()
 
 - (void)prepareToReadProperties;
 
-- (void)readFieldIntoModelWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor
-                                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
+- (void)readFieldIntoModelWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor
+                                withSquiDBField:(SquiDBField *)field;
 
-- (id)getFromValuesWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-             withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values;
+- (id)getFromValuesWithSquiDBProperty:(SquiDBProperty *)property
+              withSquiDBValuesStorage:(SquiDBValuesStorage *)values;
 
-- (jboolean)valuesContainsKeyWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                   withComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)valuesContainsKeyWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                  withSquiDBProperty:(SquiDBProperty *)property;
 
 @end
 
-inline ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *ComYahooSquidbDataAbstractModel_get_saver(void);
-static ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *ComYahooSquidbDataAbstractModel_saver;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataAbstractModel, saver, ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *)
+inline SquiDBAbstractModel_ValuesStorageSavingVisitor *SquiDBAbstractModel_get_saver(void);
+static SquiDBAbstractModel_ValuesStorageSavingVisitor *SquiDBAbstractModel_saver;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBAbstractModel, saver, SquiDBAbstractModel_ValuesStorageSavingVisitor *)
 
-inline ComYahooSquidbDataAbstractModel_ValueCastingVisitor *ComYahooSquidbDataAbstractModel_get_valueCastingVisitor(void);
-static ComYahooSquidbDataAbstractModel_ValueCastingVisitor *ComYahooSquidbDataAbstractModel_valueCastingVisitor;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataAbstractModel, valueCastingVisitor, ComYahooSquidbDataAbstractModel_ValueCastingVisitor *)
+inline SquiDBAbstractModel_ValueCastingVisitor *SquiDBAbstractModel_get_valueCastingVisitor(void);
+static SquiDBAbstractModel_ValueCastingVisitor *SquiDBAbstractModel_valueCastingVisitor;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBAbstractModel, valueCastingVisitor, SquiDBAbstractModel_ValueCastingVisitor *)
 
-__attribute__((unused)) static void ComYahooSquidbDataAbstractModel_prepareToReadProperties(ComYahooSquidbDataAbstractModel *self);
+__attribute__((unused)) static void SquiDBAbstractModel_prepareToReadProperties(SquiDBAbstractModel *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataAbstractModel_readFieldIntoModelWithComYahooSquidbDataSquidCursor_withComYahooSquidbSqlField_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbDataSquidCursor *cursor, ComYahooSquidbSqlField *field);
+__attribute__((unused)) static void SquiDBAbstractModel_readFieldIntoModelWithSquiDBSquidCursor_withSquiDBField_(SquiDBAbstractModel *self, SquiDBSquidCursor *cursor, SquiDBField *field);
 
-__attribute__((unused)) static id ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbSqlProperty *property, ComYahooSquidbDataValuesStorage *values);
+__attribute__((unused)) static id SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(SquiDBAbstractModel *self, SquiDBProperty *property, SquiDBValuesStorage *values);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbDataValuesStorage *values, ComYahooSquidbSqlProperty *property);
+__attribute__((unused)) static jboolean SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(SquiDBAbstractModel *self, SquiDBValuesStorage *values, SquiDBProperty *property);
 
-@interface ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyWritingVisitor >
+@interface SquiDBAbstractModel_ValuesStorageSavingVisitor : NSObject < SquiDBProperty_PropertyWritingVisitor >
 
 - (instancetype)init;
 
-- (void)saveWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-      withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)newStore
-                                   withId:(id)value;
+- (void)saveWithSquiDBProperty:(SquiDBProperty *)property
+       withSquiDBValuesStorage:(SquiDBValuesStorage *)newStore
+                        withId:(id)value;
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                    withId:(id)value;
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBValuesStorage *)dst
+                                         withId:(id)value;
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                     withId:(id)value;
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBValuesStorage *)dst
+                                          withId:(id)value;
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                  withId:(id)value;
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBValuesStorage *)dst
+                                       withId:(id)value;
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                    withId:(id)value;
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBValuesStorage *)dst
+                                         withId:(id)value;
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                     withId:(id)value;
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBValuesStorage *)dst
+                                          withId:(id)value;
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                  withId:(id)value;
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBValuesStorage *)dst
+                                       withId:(id)value;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBAbstractModel_ValuesStorageSavingVisitor)
 
-__attribute__((unused)) static void ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *self);
+__attribute__((unused)) static void SquiDBAbstractModel_ValuesStorageSavingVisitor_init(SquiDBAbstractModel_ValuesStorageSavingVisitor *self);
 
-__attribute__((unused)) static ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *new_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBAbstractModel_ValuesStorageSavingVisitor *new_SquiDBAbstractModel_ValuesStorageSavingVisitor_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *create_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init(void);
+__attribute__((unused)) static SquiDBAbstractModel_ValuesStorageSavingVisitor *create_SquiDBAbstractModel_ValuesStorageSavingVisitor_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAbstractModel_ValuesStorageSavingVisitor)
 
-@interface ComYahooSquidbDataAbstractModel_ValueCastingVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyVisitor >
+@interface SquiDBAbstractModel_ValueCastingVisitor : NSObject < SquiDBProperty_PropertyVisitor >
 
 - (instancetype)init;
 
-- (id)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(id)data;
+- (id)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(id)data;
 
-- (id)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(id)data;
+- (id)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(id)data;
 
-- (id)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(id)data;
+- (id)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(id)data;
 
-- (id)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(id)data;
+- (id)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(id)data;
 
-- (id)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(id)data;
+- (id)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(id)data;
 
-- (id)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(id)data;
+- (id)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(id)data;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataAbstractModel_ValueCastingVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBAbstractModel_ValueCastingVisitor)
 
-__attribute__((unused)) static void ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init(ComYahooSquidbDataAbstractModel_ValueCastingVisitor *self);
+__attribute__((unused)) static void SquiDBAbstractModel_ValueCastingVisitor_init(SquiDBAbstractModel_ValueCastingVisitor *self);
 
-__attribute__((unused)) static ComYahooSquidbDataAbstractModel_ValueCastingVisitor *new_ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBAbstractModel_ValueCastingVisitor *new_SquiDBAbstractModel_ValueCastingVisitor_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataAbstractModel_ValueCastingVisitor *create_ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init(void);
+__attribute__((unused)) static SquiDBAbstractModel_ValueCastingVisitor *create_SquiDBAbstractModel_ValueCastingVisitor_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataAbstractModel_ValueCastingVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAbstractModel_ValueCastingVisitor)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataAbstractModel)
+J2OBJC_INITIALIZED_DEFN(SquiDBAbstractModel)
 
-@implementation ComYahooSquidbDataAbstractModel
+@implementation SquiDBAbstractModel
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataAbstractModel_init(self);
+  SquiDBAbstractModel_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (ComYahooSquidbDataValuesStorage *)getDefaultValues {
+- (SquiDBValuesStorage *)getDefaultValues {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (ComYahooSquidbDataValuesStorage *)getDatabaseValues {
+- (SquiDBValuesStorage *)getDatabaseValues {
   return values_;
 }
 
-- (ComYahooSquidbDataValuesStorage *)getSetValues {
+- (SquiDBValuesStorage *)getSetValues {
   return setValues_;
 }
 
-- (ComYahooSquidbDataValuesStorage *)getMergedValues {
-  ComYahooSquidbDataValuesStorage *mergedValues = [self newValuesStorage];
-  ComYahooSquidbDataValuesStorage *defaultValues = [self getDefaultValues];
+- (SquiDBValuesStorage *)getMergedValues {
+  SquiDBValuesStorage *mergedValues = [self newValuesStorage];
+  SquiDBValuesStorage *defaultValues = [self getDefaultValues];
   if (defaultValues != nil) {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(mergedValues)) putAllWithComYahooSquidbDataValuesStorage:defaultValues];
+    [((SquiDBValuesStorage *) nil_chk(mergedValues)) putAllWithSquiDBValuesStorage:defaultValues];
   }
   if (values_ != nil) {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(mergedValues)) putAllWithComYahooSquidbDataValuesStorage:values_];
+    [((SquiDBValuesStorage *) nil_chk(mergedValues)) putAllWithSquiDBValuesStorage:values_];
   }
   if (setValues_ != nil) {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(mergedValues)) putAllWithComYahooSquidbDataValuesStorage:setValues_];
+    [((SquiDBValuesStorage *) nil_chk(mergedValues)) putAllWithSquiDBValuesStorage:setValues_];
   }
   return mergedValues;
 }
 
-- (ComYahooSquidbDataValuesStorage *)newValuesStorage {
-  return new_ComYahooSquidbDataMapValuesStorage_init();
+- (SquiDBValuesStorage *)newValuesStorage {
+  return new_SquiDBMapValuesStorage_init();
 }
 
 - (void)clear {
@@ -196,41 +196,41 @@ J2OBJC_IGNORE_DESIGNATED_END
     values_ = setValues_;
   }
   else if (setValues_ != nil) {
-    [values_ putAllWithComYahooSquidbDataValuesStorage:setValues_];
+    [values_ putAllWithSquiDBValuesStorage:setValues_];
   }
   setValues_ = nil;
 }
 
 - (jboolean)isEqual:(id)other {
-  return other != nil && [[self java_getClass] isEqual:[other java_getClass]] && [((ComYahooSquidbDataValuesStorage *) nil_chk([self getMergedValues])) isEqual:[((ComYahooSquidbDataAbstractModel *) cast_chk(other, [ComYahooSquidbDataAbstractModel class])) getMergedValues]];
+  return other != nil && [[self java_getClass] isEqual:[other java_getClass]] && [((SquiDBValuesStorage *) nil_chk([self getMergedValues])) isEqual:[((SquiDBAbstractModel *) cast_chk(other, [SquiDBAbstractModel class])) getMergedValues]];
 }
 
 - (NSUInteger)hash {
-  return ((jint) [((ComYahooSquidbDataValuesStorage *) nil_chk([self getMergedValues])) hash]) ^ ((jint) [[self java_getClass] hash]);
+  return ((jint) [((SquiDBValuesStorage *) nil_chk([self getMergedValues])) hash]) ^ ((jint) [[self java_getClass] hash]);
 }
 
 - (NSString *)description {
   return JreStrcat("$$@$@C", [[self java_getClass] getSimpleName], @"\nset values:\n", setValues_, @"\nvalues:\n", values_, 0x000a);
 }
 
-- (ComYahooSquidbDataAbstractModel *)java_clone {
-  ComYahooSquidbDataAbstractModel *clone;
+- (SquiDBAbstractModel *)java_clone {
+  SquiDBAbstractModel *clone;
   @try {
-    clone = (ComYahooSquidbDataAbstractModel *) cast_chk([super java_clone], [ComYahooSquidbDataAbstractModel class]);
+    clone = (SquiDBAbstractModel *) cast_chk([super java_clone], [SquiDBAbstractModel class]);
   }
   @catch (JavaLangCloneNotSupportedException *e) {
     @throw new_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
   if (setValues_ != nil) {
-    ((ComYahooSquidbDataAbstractModel *) nil_chk(clone))->setValues_ = [self newValuesStorage];
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(clone->setValues_)) putAllWithComYahooSquidbDataValuesStorage:setValues_];
+    ((SquiDBAbstractModel *) nil_chk(clone))->setValues_ = [self newValuesStorage];
+    [((SquiDBValuesStorage *) nil_chk(clone->setValues_)) putAllWithSquiDBValuesStorage:setValues_];
   }
   if (values_ != nil) {
-    ((ComYahooSquidbDataAbstractModel *) nil_chk(clone))->values_ = [self newValuesStorage];
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(clone->values_)) putAllWithComYahooSquidbDataValuesStorage:values_];
+    ((SquiDBAbstractModel *) nil_chk(clone))->values_ = [self newValuesStorage];
+    [((SquiDBValuesStorage *) nil_chk(clone->values_)) putAllWithSquiDBValuesStorage:values_];
   }
   if (transitoryData_ != nil) {
-    ((ComYahooSquidbDataAbstractModel *) nil_chk(clone))->transitoryData_ = new_JavaUtilHashMap_initWithJavaUtilMap_(transitoryData_);
+    ((SquiDBAbstractModel *) nil_chk(clone))->transitoryData_ = new_JavaUtilHashMap_initWithJavaUtilMap_(transitoryData_);
   }
   return clone;
 }
@@ -239,18 +239,18 @@ J2OBJC_IGNORE_DESIGNATED_END
   return setValues_ != nil && [setValues_ size] > 0;
 }
 
-- (void)readPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbDataAbstractModel_prepareToReadProperties(self);
+- (void)readPropertiesFromValuesStorageWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                       withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBAbstractModel_prepareToReadProperties(self);
   if (values != nil) {
     {
       IOSObjectArray *a__ = properties;
-      ComYahooSquidbSqlProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-      ComYahooSquidbSqlProperty * const *e__ = b__ + a__->size_;
+      SquiDBProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+      SquiDBProperty * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlProperty *property = *b__++;
-        if ([values containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-          [((ComYahooSquidbDataValuesStorage *) nil_chk(self->values_)) putWithNSString:[property getName] withId:ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(self, property, values) withBoolean:true];
+        SquiDBProperty *property = *b__++;
+        if ([values containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+          [((SquiDBValuesStorage *) nil_chk(self->values_)) putWithNSString:[property getName] withId:SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(self, property, values) withBoolean:true];
         }
       }
     }
@@ -258,65 +258,65 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)readPropertiesFromMapWithJavaUtilMap:(id<JavaUtilMap>)values
-          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
+                     withSquiDBPropertyArray:(IOSObjectArray *)properties {
   if (values == nil) {
     return;
   }
-  [self readPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:new_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(values) withComYahooSquidbSqlPropertyArray:properties];
+  [self readPropertiesFromValuesStorageWithSquiDBValuesStorage:new_SquiDBMapValuesStorage_initWithJavaUtilMap_(values) withSquiDBPropertyArray:properties];
 }
 
 - (void)setPropertiesFromMapWithJavaUtilMap:(id<JavaUtilMap>)values
-         withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
+                    withSquiDBPropertyArray:(IOSObjectArray *)properties {
   if (values == nil) {
     return;
   }
-  [self setPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:new_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(values) withComYahooSquidbSqlPropertyArray:properties];
+  [self setPropertiesFromValuesStorageWithSquiDBValuesStorage:new_SquiDBMapValuesStorage_initWithJavaUtilMap_(values) withSquiDBPropertyArray:properties];
 }
 
-- (void)readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor {
-  ComYahooSquidbDataAbstractModel_prepareToReadProperties(self);
-  for (ComYahooSquidbSqlField * __strong field in nil_chk([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) getFields])) {
-    ComYahooSquidbDataAbstractModel_readFieldIntoModelWithComYahooSquidbDataSquidCursor_withComYahooSquidbSqlField_(self, cursor, field);
+- (void)readPropertiesFromCursorWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor {
+  SquiDBAbstractModel_prepareToReadProperties(self);
+  for (SquiDBField * __strong field in nil_chk([((SquiDBSquidCursor *) nil_chk(cursor)) getFields])) {
+    SquiDBAbstractModel_readFieldIntoModelWithSquiDBSquidCursor_withSquiDBField_(self, cursor, field);
   }
 }
 
-- (void)readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbDataAbstractModel_prepareToReadProperties(self);
+- (void)readPropertiesFromCursorWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor
+                              withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBAbstractModel_prepareToReadProperties(self);
   {
     IOSObjectArray *a__ = properties;
-    ComYahooSquidbSqlProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    ComYahooSquidbSqlProperty * const *e__ = b__ + a__->size_;
+    SquiDBProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+    SquiDBProperty * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      ComYahooSquidbSqlProperty *field = *b__++;
-      ComYahooSquidbDataAbstractModel_readFieldIntoModelWithComYahooSquidbDataSquidCursor_withComYahooSquidbSqlField_(self, cursor, field);
+      SquiDBProperty *field = *b__++;
+      SquiDBAbstractModel_readFieldIntoModelWithSquiDBSquidCursor_withSquiDBField_(self, cursor, field);
     }
   }
 }
 
 - (void)prepareToReadProperties {
-  ComYahooSquidbDataAbstractModel_prepareToReadProperties(self);
+  SquiDBAbstractModel_prepareToReadProperties(self);
 }
 
-- (void)readFieldIntoModelWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor
-                                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field {
-  ComYahooSquidbDataAbstractModel_readFieldIntoModelWithComYahooSquidbDataSquidCursor_withComYahooSquidbSqlField_(self, cursor, field);
+- (void)readFieldIntoModelWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor
+                                withSquiDBField:(SquiDBField *)field {
+  SquiDBAbstractModel_readFieldIntoModelWithSquiDBSquidCursor_withSquiDBField_(self, cursor, field);
 }
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return [self getWithComYahooSquidbSqlProperty:property withBoolean:true];
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property {
+  return [self getWithSquiDBProperty:property withBoolean:true];
 }
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                           withBoolean:(jboolean)throwOnFail {
-  if (setValues_ != nil && [setValues_ containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-    return ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(self, property, setValues_);
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property
+                withBoolean:(jboolean)throwOnFail {
+  if (setValues_ != nil && [setValues_ containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+    return SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(self, property, setValues_);
   }
-  else if (values_ != nil && [values_ containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-    return ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(self, property, values_);
+  else if (values_ != nil && [values_ containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+    return SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(self, property, values_);
   }
-  else if ([((ComYahooSquidbDataValuesStorage *) nil_chk([self getDefaultValues])) containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-    return ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(self, property, [self getDefaultValues]);
+  else if ([((SquiDBValuesStorage *) nil_chk([self getDefaultValues])) containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+    return SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(self, property, [self getDefaultValues]);
   }
   else if (throwOnFail) {
     @throw new_JavaLangUnsupportedOperationException_initWithNSString_(JreStrcat("$$", [property getName], @" not found in model. Make sure the value was set explicitly, read from a cursor, or that the model has a default value for this property."));
@@ -324,42 +324,42 @@ J2OBJC_IGNORE_DESIGNATED_END
   return nil;
 }
 
-- (id)getFromValuesWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-             withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values {
-  return ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(self, property, values);
+- (id)getFromValuesWithSquiDBProperty:(SquiDBProperty *)property
+              withSquiDBValuesStorage:(SquiDBValuesStorage *)values {
+  return SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(self, property, values);
 }
 
-- (jboolean)containsValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, setValues_, property) || ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, values_, property);
+- (jboolean)containsValueWithSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, setValues_, property) || SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, values_, property);
 }
 
-- (jboolean)containsNonNullValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  if (ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, setValues_, property)) {
-    return [((ComYahooSquidbDataValuesStorage *) nil_chk(setValues_)) getWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]] != nil;
+- (jboolean)containsNonNullValueWithSquiDBProperty:(SquiDBProperty *)property {
+  if (SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, setValues_, property)) {
+    return [((SquiDBValuesStorage *) nil_chk(setValues_)) getWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]] != nil;
   }
-  else if (ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, values_, property)) {
-    return [((ComYahooSquidbDataValuesStorage *) nil_chk(values_)) getWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]] != nil;
+  else if (SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, values_, property)) {
+    return [((SquiDBValuesStorage *) nil_chk(values_)) getWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]] != nil;
   }
   return false;
 }
 
-- (jboolean)fieldIsDirtyWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, setValues_, property);
+- (jboolean)fieldIsDirtyWithSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, setValues_, property);
 }
 
-- (jboolean)valuesContainsKeyWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                   withComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(self, values, property);
+- (jboolean)valuesContainsKeyWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                  withSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(self, values, property);
 }
 
-- (jboolean)shouldSaveValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id)newValue {
-  return [self shouldSaveValueWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withId:newValue];
+- (jboolean)shouldSaveValueWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id)newValue {
+  return [self shouldSaveValueWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withId:newValue];
 }
 
 - (jboolean)shouldSaveValueWithNSString:(NSString *)name
                                  withId:(id)newValue {
-  if ([((ComYahooSquidbDataValuesStorage *) nil_chk(setValues_)) containsKeyWithNSString:name]) {
+  if ([((SquiDBValuesStorage *) nil_chk(setValues_)) containsKeyWithNSString:name]) {
     return true;
   }
   if (values_ != nil && [values_ containsKeyWithNSString:name]) {
@@ -376,34 +376,34 @@ J2OBJC_IGNORE_DESIGNATED_END
   return true;
 }
 
-- (void)setWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                  withId:(id)value {
+- (void)setWithSquiDBProperty:(SquiDBProperty *)property
+                       withId:(id)value {
   if (setValues_ == nil) {
     setValues_ = [self newValuesStorage];
   }
-  if (![self shouldSaveValueWithComYahooSquidbSqlProperty:property withId:value]) {
+  if (![self shouldSaveValueWithSquiDBProperty:property withId:value]) {
     return;
   }
-  [((ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *) nil_chk(ComYahooSquidbDataAbstractModel_saver)) saveWithComYahooSquidbSqlProperty:property withComYahooSquidbDataValuesStorage:setValues_ withId:value];
+  [((SquiDBAbstractModel_ValuesStorageSavingVisitor *) nil_chk(SquiDBAbstractModel_saver)) saveWithSquiDBProperty:property withSquiDBValuesStorage:setValues_ withId:value];
 }
 
-- (void)setPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                       withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
+- (void)setPropertiesFromValuesStorageWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                      withSquiDBPropertyArray:(IOSObjectArray *)properties {
   if (values != nil) {
     if (setValues_ == nil) {
       setValues_ = [self newValuesStorage];
     }
     {
       IOSObjectArray *a__ = properties;
-      ComYahooSquidbSqlProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-      ComYahooSquidbSqlProperty * const *e__ = b__ + a__->size_;
+      SquiDBProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+      SquiDBProperty * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlProperty *property = *b__++;
-        NSString *key = [((ComYahooSquidbSqlProperty *) nil_chk(property)) getName];
+        SquiDBProperty *property = *b__++;
+        NSString *key = [((SquiDBProperty *) nil_chk(property)) getName];
         if ([values containsKeyWithNSString:key]) {
-          id value = [property acceptWithComYahooSquidbSqlProperty_PropertyVisitor:ComYahooSquidbDataAbstractModel_valueCastingVisitor withId:[values getWithNSString:key]];
+          id value = [property acceptWithSquiDBProperty_PropertyVisitor:SquiDBAbstractModel_valueCastingVisitor withId:[values getWithNSString:key]];
           if ([self shouldSaveValueWithNSString:key withId:value]) {
-            [((ComYahooSquidbDataValuesStorage *) nil_chk(self->setValues_)) putWithNSString:[property getName] withId:value withBoolean:true];
+            [((SquiDBValuesStorage *) nil_chk(self->setValues_)) putWithNSString:[property getName] withId:value withBoolean:true];
           }
         }
       }
@@ -411,12 +411,12 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (void)clearValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  if (setValues_ != nil && [setValues_ containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-    [setValues_ removeWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
+- (void)clearValueWithSquiDBProperty:(SquiDBProperty *)property {
+  if (setValues_ != nil && [setValues_ containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+    [setValues_ removeWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
   }
-  if (values_ != nil && [values_ containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]]) {
-    [values_ removeWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
+  if (values_ != nil && [values_ containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]]) {
+    [values_ removeWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
   }
 }
 
@@ -468,17 +468,17 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataValuesStorage;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataValuesStorage;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBValuesStorage;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBValuesStorage;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBValuesStorage;", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 0, 1, -1, -1, -1, -1 },
     { NULL, "I", 0x1, 2, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 3, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x1, 4, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBAbstractModel;", 0x1, 4, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x81, 5, 6, -1, 7, -1, -1 },
     { NULL, "V", 0x81, 8, 9, -1, 10, -1, -1 },
@@ -523,25 +523,25 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[10].selector = @selector(description);
   methods[11].selector = @selector(java_clone);
   methods[12].selector = @selector(isModified);
-  methods[13].selector = @selector(readPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:withComYahooSquidbSqlPropertyArray:);
-  methods[14].selector = @selector(readPropertiesFromMapWithJavaUtilMap:withComYahooSquidbSqlPropertyArray:);
-  methods[15].selector = @selector(setPropertiesFromMapWithJavaUtilMap:withComYahooSquidbSqlPropertyArray:);
-  methods[16].selector = @selector(readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:);
-  methods[17].selector = @selector(readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:withComYahooSquidbSqlPropertyArray:);
+  methods[13].selector = @selector(readPropertiesFromValuesStorageWithSquiDBValuesStorage:withSquiDBPropertyArray:);
+  methods[14].selector = @selector(readPropertiesFromMapWithJavaUtilMap:withSquiDBPropertyArray:);
+  methods[15].selector = @selector(setPropertiesFromMapWithJavaUtilMap:withSquiDBPropertyArray:);
+  methods[16].selector = @selector(readPropertiesFromCursorWithSquiDBSquidCursor:);
+  methods[17].selector = @selector(readPropertiesFromCursorWithSquiDBSquidCursor:withSquiDBPropertyArray:);
   methods[18].selector = @selector(prepareToReadProperties);
-  methods[19].selector = @selector(readFieldIntoModelWithComYahooSquidbDataSquidCursor:withComYahooSquidbSqlField:);
-  methods[20].selector = @selector(getWithComYahooSquidbSqlProperty:);
-  methods[21].selector = @selector(getWithComYahooSquidbSqlProperty:withBoolean:);
-  methods[22].selector = @selector(getFromValuesWithComYahooSquidbSqlProperty:withComYahooSquidbDataValuesStorage:);
-  methods[23].selector = @selector(containsValueWithComYahooSquidbSqlProperty:);
-  methods[24].selector = @selector(containsNonNullValueWithComYahooSquidbSqlProperty:);
-  methods[25].selector = @selector(fieldIsDirtyWithComYahooSquidbSqlProperty:);
-  methods[26].selector = @selector(valuesContainsKeyWithComYahooSquidbDataValuesStorage:withComYahooSquidbSqlProperty:);
-  methods[27].selector = @selector(shouldSaveValueWithComYahooSquidbSqlProperty:withId:);
+  methods[19].selector = @selector(readFieldIntoModelWithSquiDBSquidCursor:withSquiDBField:);
+  methods[20].selector = @selector(getWithSquiDBProperty:);
+  methods[21].selector = @selector(getWithSquiDBProperty:withBoolean:);
+  methods[22].selector = @selector(getFromValuesWithSquiDBProperty:withSquiDBValuesStorage:);
+  methods[23].selector = @selector(containsValueWithSquiDBProperty:);
+  methods[24].selector = @selector(containsNonNullValueWithSquiDBProperty:);
+  methods[25].selector = @selector(fieldIsDirtyWithSquiDBProperty:);
+  methods[26].selector = @selector(valuesContainsKeyWithSquiDBValuesStorage:withSquiDBProperty:);
+  methods[27].selector = @selector(shouldSaveValueWithSquiDBProperty:withId:);
   methods[28].selector = @selector(shouldSaveValueWithNSString:withId:);
-  methods[29].selector = @selector(setWithComYahooSquidbSqlProperty:withId:);
-  methods[30].selector = @selector(setPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:withComYahooSquidbSqlPropertyArray:);
-  methods[31].selector = @selector(clearValueWithComYahooSquidbSqlProperty:);
+  methods[29].selector = @selector(setWithSquiDBProperty:withId:);
+  methods[30].selector = @selector(setPropertiesFromValuesStorageWithSquiDBValuesStorage:withSquiDBPropertyArray:);
+  methods[31].selector = @selector(clearValueWithSquiDBProperty:);
   methods[32].selector = @selector(putTransitoryWithNSString:withId:);
   methods[33].selector = @selector(getTransitoryWithNSString:);
   methods[34].selector = @selector(clearTransitoryWithNSString:);
@@ -551,15 +551,15 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[38].selector = @selector(checkAndClearTransitoryWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "saver", "LComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 51, -1, -1 },
-    { "valueCastingVisitor", "LComYahooSquidbDataAbstractModel_ValueCastingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 52, -1, -1 },
-    { "setValues_", "LComYahooSquidbDataValuesStorage;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
-    { "values_", "LComYahooSquidbDataValuesStorage;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
+    { "saver", "LSquiDBAbstractModel_ValuesStorageSavingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 51, -1, -1 },
+    { "valueCastingVisitor", "LSquiDBAbstractModel_ValueCastingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 52, -1, -1 },
+    { "setValues_", "LSquiDBValuesStorage;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
+    { "values_", "LSquiDBValuesStorage;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
     { "transitoryData_", "LJavaUtilHashMap;", .constantValue.asLong = 0, 0x4, -1, -1, 53, -1 },
   };
-  static const void *ptrTable[] = { "equals", "LNSObject;", "hashCode", "toString", "clone", "readPropertiesFromValuesStorage", "LComYahooSquidbDataValuesStorage;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/data/ValuesStorage;[Lcom/yahoo/squidb/sql/Property<*>;)V", "readPropertiesFromMap", "LJavaUtilMap;[LComYahooSquidbSqlProperty;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;[Lcom/yahoo/squidb/sql/Property<*>;)V", "setPropertiesFromMap", "readPropertiesFromCursor", "LComYahooSquidbDataSquidCursor;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;)V", "LComYahooSquidbDataSquidCursor;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;[Lcom/yahoo/squidb/sql/Property<*>;)V", "readFieldIntoModel", "LComYahooSquidbDataSquidCursor;LComYahooSquidbSqlField;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;Lcom/yahoo/squidb/sql/Field<*>;)V", "get", "LComYahooSquidbSqlProperty;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;)TTYPE;", "LComYahooSquidbSqlProperty;Z", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;Z)TTYPE;", "getFromValues", "LComYahooSquidbSqlProperty;LComYahooSquidbDataValuesStorage;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;Lcom/yahoo/squidb/data/ValuesStorage;)TTYPE;", "containsValue", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "containsNonNullValue", "fieldIsDirty", "valuesContainsKey", "LComYahooSquidbDataValuesStorage;LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/data/ValuesStorage;Lcom/yahoo/squidb/sql/Property<*>;)Z", "shouldSaveValue", "LComYahooSquidbSqlProperty;LNSObject;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;TTYPE;)Z", "LNSString;LNSObject;", "set", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;TTYPE;)V", "setPropertiesFromValuesStorage", "clearValue", "(Lcom/yahoo/squidb/sql/Property<*>;)V", "putTransitory", "getTransitory", "LNSString;", "clearTransitory", "()Ljava/util/Set<Ljava/lang/String;>;", "hasTransitory", "checkAndClearTransitory", &ComYahooSquidbDataAbstractModel_saver, &ComYahooSquidbDataAbstractModel_valueCastingVisitor, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;", "LComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor;LComYahooSquidbDataAbstractModel_ValueCastingVisitor;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataAbstractModel = { "AbstractModel", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 39, 5, -1, 54, -1, -1, -1 };
-  return &_ComYahooSquidbDataAbstractModel;
+  static const void *ptrTable[] = { "equals", "LNSObject;", "hashCode", "toString", "clone", "readPropertiesFromValuesStorage", "LSquiDBValuesStorage;[LSquiDBProperty;", "(Lcom/yahoo/squidb/data/ValuesStorage;[Lcom/yahoo/squidb/sql/Property<*>;)V", "readPropertiesFromMap", "LJavaUtilMap;[LSquiDBProperty;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;[Lcom/yahoo/squidb/sql/Property<*>;)V", "setPropertiesFromMap", "readPropertiesFromCursor", "LSquiDBSquidCursor;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;)V", "LSquiDBSquidCursor;[LSquiDBProperty;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;[Lcom/yahoo/squidb/sql/Property<*>;)V", "readFieldIntoModel", "LSquiDBSquidCursor;LSquiDBField;", "(Lcom/yahoo/squidb/data/SquidCursor<*>;Lcom/yahoo/squidb/sql/Field<*>;)V", "get", "LSquiDBProperty;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;)TTYPE;", "LSquiDBProperty;Z", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;Z)TTYPE;", "getFromValues", "LSquiDBProperty;LSquiDBValuesStorage;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;Lcom/yahoo/squidb/data/ValuesStorage;)TTYPE;", "containsValue", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "containsNonNullValue", "fieldIsDirty", "valuesContainsKey", "LSquiDBValuesStorage;LSquiDBProperty;", "(Lcom/yahoo/squidb/data/ValuesStorage;Lcom/yahoo/squidb/sql/Property<*>;)Z", "shouldSaveValue", "LSquiDBProperty;LNSObject;", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;TTYPE;)Z", "LNSString;LNSObject;", "set", "<TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TTYPE;>;TTYPE;)V", "setPropertiesFromValuesStorage", "clearValue", "(Lcom/yahoo/squidb/sql/Property<*>;)V", "putTransitory", "getTransitory", "LNSString;", "clearTransitory", "()Ljava/util/Set<Ljava/lang/String;>;", "hasTransitory", "checkAndClearTransitory", &SquiDBAbstractModel_saver, &SquiDBAbstractModel_valueCastingVisitor, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;", "LSquiDBAbstractModel_ValuesStorageSavingVisitor;LSquiDBAbstractModel_ValueCastingVisitor;" };
+  static const J2ObjcClassInfo _SquiDBAbstractModel = { "AbstractModel", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 39, 5, -1, 54, -1, -1, -1 };
+  return &_SquiDBAbstractModel;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
@@ -567,23 +567,23 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbDataAbstractModel class]) {
-    ComYahooSquidbDataAbstractModel_saver = new_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init();
-    ComYahooSquidbDataAbstractModel_valueCastingVisitor = new_ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init();
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbDataAbstractModel)
+  if (self == [SquiDBAbstractModel class]) {
+    SquiDBAbstractModel_saver = new_SquiDBAbstractModel_ValuesStorageSavingVisitor_init();
+    SquiDBAbstractModel_valueCastingVisitor = new_SquiDBAbstractModel_ValueCastingVisitor_init();
+    J2OBJC_SET_INITIALIZED(SquiDBAbstractModel)
   }
 }
 
 @end
 
-void ComYahooSquidbDataAbstractModel_init(ComYahooSquidbDataAbstractModel *self) {
+void SquiDBAbstractModel_init(SquiDBAbstractModel *self) {
   NSObject_init(self);
   self->setValues_ = nil;
   self->values_ = nil;
   self->transitoryData_ = nil;
 }
 
-void ComYahooSquidbDataAbstractModel_prepareToReadProperties(ComYahooSquidbDataAbstractModel *self) {
+void SquiDBAbstractModel_prepareToReadProperties(SquiDBAbstractModel *self) {
   if (self->values_ == nil) {
     self->values_ = [self newValuesStorage];
   }
@@ -591,92 +591,94 @@ void ComYahooSquidbDataAbstractModel_prepareToReadProperties(ComYahooSquidbDataA
   self->transitoryData_ = nil;
 }
 
-void ComYahooSquidbDataAbstractModel_readFieldIntoModelWithComYahooSquidbDataSquidCursor_withComYahooSquidbSqlField_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbDataSquidCursor *cursor, ComYahooSquidbSqlField *field) {
+void SquiDBAbstractModel_readFieldIntoModelWithSquiDBSquidCursor_withSquiDBField_(SquiDBAbstractModel *self, SquiDBSquidCursor *cursor, SquiDBField *field) {
   @try {
-    if ([field isKindOfClass:[ComYahooSquidbSqlProperty class]]) {
-      ComYahooSquidbSqlProperty *property = (ComYahooSquidbSqlProperty *) cast_chk(field, [ComYahooSquidbSqlProperty class]);
-      [((ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *) nil_chk(ComYahooSquidbDataAbstractModel_saver)) saveWithComYahooSquidbSqlProperty:property withComYahooSquidbDataValuesStorage:self->values_ withId:[((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) getWithComYahooSquidbSqlProperty:property]];
+    if ([field isKindOfClass:[SquiDBProperty class]]) {
+      SquiDBProperty *property = (SquiDBProperty *) field;
+      [((SquiDBAbstractModel_ValuesStorageSavingVisitor *) nil_chk(SquiDBAbstractModel_saver)) saveWithSquiDBProperty:property withSquiDBValuesStorage:self->values_ withId:[((SquiDBSquidCursor *) nil_chk(cursor)) getWithSquiDBProperty:property]];
     }
   }
   @catch (JavaLangIllegalArgumentException *e) {
   }
 }
 
-id ComYahooSquidbDataAbstractModel_getFromValuesWithComYahooSquidbSqlProperty_withComYahooSquidbDataValuesStorage_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbSqlProperty *property, ComYahooSquidbDataValuesStorage *values) {
-  id value = [((ComYahooSquidbDataValuesStorage *) nil_chk(values)) getWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
-  return [property acceptWithComYahooSquidbSqlProperty_PropertyVisitor:ComYahooSquidbDataAbstractModel_valueCastingVisitor withId:value];
+id SquiDBAbstractModel_getFromValuesWithSquiDBProperty_withSquiDBValuesStorage_(SquiDBAbstractModel *self, SquiDBProperty *property, SquiDBValuesStorage *values) {
+  id value = [((SquiDBValuesStorage *) nil_chk(values)) getWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
+  return [property acceptWithSquiDBProperty_PropertyVisitor:SquiDBAbstractModel_valueCastingVisitor withId:value];
 }
 
-jboolean ComYahooSquidbDataAbstractModel_valuesContainsKeyWithComYahooSquidbDataValuesStorage_withComYahooSquidbSqlProperty_(ComYahooSquidbDataAbstractModel *self, ComYahooSquidbDataValuesStorage *values, ComYahooSquidbSqlProperty *property) {
-  return values != nil && [values containsKeyWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
+jboolean SquiDBAbstractModel_valuesContainsKeyWithSquiDBValuesStorage_withSquiDBProperty_(SquiDBAbstractModel *self, SquiDBValuesStorage *values, SquiDBProperty *property) {
+  return values != nil && [values containsKeyWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataAbstractModel)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBAbstractModel)
 
-@implementation ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor
+J2OBJC_NAME_MAPPING(SquiDBAbstractModel, "com.yahoo.squidb.data", "SquiDB")
+
+@implementation SquiDBAbstractModel_ValuesStorageSavingVisitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init(self);
+  SquiDBAbstractModel_ValuesStorageSavingVisitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)saveWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-      withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)newStore
-                                   withId:(id)value {
+- (void)saveWithSquiDBProperty:(SquiDBProperty *)property
+       withSquiDBValuesStorage:(SquiDBValuesStorage *)newStore
+                        withId:(id)value {
   if (value != nil) {
-    (void) [((ComYahooSquidbSqlProperty *) nil_chk(property)) acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:self withId:newStore withId:value];
+    (void) [((SquiDBProperty *) nil_chk(property)) acceptWithSquiDBProperty_PropertyWritingVisitor:self withId:newStore withId:value];
   }
   else {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(newStore)) putNullWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
+    [((SquiDBValuesStorage *) nil_chk(newStore)) putNullWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
   }
 }
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                    withId:(id)value {
-  [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withJavaLangDouble:(JavaLangDouble *) cast_chk(value, [JavaLangDouble class])];
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBValuesStorage *)dst
+                                         withId:(id)value {
+  [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withJavaLangDouble:(JavaLangDouble *) cast_chk(value, [JavaLangDouble class])];
   return nil;
 }
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                     withId:(id)value {
-  [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withJavaLangInteger:(JavaLangInteger *) cast_chk(value, [JavaLangInteger class])];
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBValuesStorage *)dst
+                                          withId:(id)value {
+  [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withJavaLangInteger:(JavaLangInteger *) cast_chk(value, [JavaLangInteger class])];
   return nil;
 }
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                  withId:(id)value {
-  [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withJavaLangLong:(JavaLangLong *) cast_chk(value, [JavaLangLong class])];
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBValuesStorage *)dst
+                                       withId:(id)value {
+  [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withJavaLangLong:(JavaLangLong *) cast_chk(value, [JavaLangLong class])];
   return nil;
 }
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                    withId:(id)value {
-  [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withNSString:(NSString *) cast_chk(value, [NSString class])];
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBValuesStorage *)dst
+                                         withId:(id)value {
+  [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withNSString:(NSString *) cast_chk(value, [NSString class])];
   return nil;
 }
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                     withId:(id)value {
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBValuesStorage *)dst
+                                          withId:(id)value {
   if ([value isKindOfClass:[JavaLangBoolean class]]) {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withJavaLangBoolean:(JavaLangBoolean *) cast_chk(value, [JavaLangBoolean class])];
+    [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withJavaLangBoolean:(JavaLangBoolean *) value];
   }
   else if ([value isKindOfClass:[JavaLangInteger class]]) {
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withJavaLangBoolean:JavaLangBoolean_valueOfWithBoolean_([((JavaLangInteger *) nil_chk(((JavaLangInteger *) cast_chk(value, [JavaLangInteger class])))) intValue] != 0)];
+    [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withJavaLangBoolean:JavaLangBoolean_valueOfWithBoolean_([((JavaLangInteger *) nil_chk(((JavaLangInteger *) value))) intValue] != 0)];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataValuesStorage *)dst
-                                                  withId:(id)value {
-  [((ComYahooSquidbDataValuesStorage *) nil_chk(dst)) putWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName] withByteArray:(IOSByteArray *) cast_chk(value, [IOSByteArray class])];
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBValuesStorage *)dst
+                                       withId:(id)value {
+  [((SquiDBValuesStorage *) nil_chk(dst)) putWithNSString:[((SquiDBProperty *) nil_chk(property)) getName] withByteArray:(IOSByteArray *) cast_chk(value, [IOSByteArray class])];
   return nil;
 }
 
@@ -695,58 +697,58 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(saveWithComYahooSquidbSqlProperty:withComYahooSquidbDataValuesStorage:withId:);
-  methods[2].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[3].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[4].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[5].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[6].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[7].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:withId:);
+  methods[1].selector = @selector(saveWithSquiDBProperty:withSquiDBValuesStorage:withId:);
+  methods[2].selector = @selector(visitDoubleWithSquiDBProperty:withId:withId:);
+  methods[3].selector = @selector(visitIntegerWithSquiDBProperty:withId:withId:);
+  methods[4].selector = @selector(visitLongWithSquiDBProperty:withId:withId:);
+  methods[5].selector = @selector(visitStringWithSquiDBProperty:withId:withId:);
+  methods[6].selector = @selector(visitBooleanWithSquiDBProperty:withId:withId:);
+  methods[7].selector = @selector(visitBlobWithSquiDBProperty:withId:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "save", "LComYahooSquidbSqlProperty;LComYahooSquidbDataValuesStorage;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)V", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "LComYahooSquidbDataAbstractModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<Ljava/lang/Void;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor = { "ValuesStorageSavingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 15, -1, -1, 16, -1 };
-  return &_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor;
+  static const void *ptrTable[] = { "save", "LSquiDBProperty;LSquiDBValuesStorage;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)V", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;)Ljava/lang/Void;", "LSquiDBAbstractModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<Ljava/lang/Void;Lcom/yahoo/squidb/data/ValuesStorage;Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _SquiDBAbstractModel_ValuesStorageSavingVisitor = { "ValuesStorageSavingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 15, -1, -1, 16, -1 };
+  return &_SquiDBAbstractModel_ValuesStorageSavingVisitor;
 }
 
 @end
 
-void ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *self) {
+void SquiDBAbstractModel_ValuesStorageSavingVisitor_init(SquiDBAbstractModel_ValuesStorageSavingVisitor *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *new_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor, init)
+SquiDBAbstractModel_ValuesStorageSavingVisitor *new_SquiDBAbstractModel_ValuesStorageSavingVisitor_init() {
+  J2OBJC_NEW_IMPL(SquiDBAbstractModel_ValuesStorageSavingVisitor, init)
 }
 
-ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor *create_ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor, init)
+SquiDBAbstractModel_ValuesStorageSavingVisitor *create_SquiDBAbstractModel_ValuesStorageSavingVisitor_init() {
+  J2OBJC_CREATE_IMPL(SquiDBAbstractModel_ValuesStorageSavingVisitor, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataAbstractModel_ValuesStorageSavingVisitor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBAbstractModel_ValuesStorageSavingVisitor)
 
-@implementation ComYahooSquidbDataAbstractModel_ValueCastingVisitor
+@implementation SquiDBAbstractModel_ValueCastingVisitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init(self);
+  SquiDBAbstractModel_ValueCastingVisitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(id)data {
+- (id)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(id)data {
   if (data == nil || [data isKindOfClass:[JavaLangInteger class]]) {
     return data;
   }
   else if ([data isKindOfClass:[NSNumber class]]) {
-    return JavaLangInteger_valueOfWithInt_([((NSNumber *) cast_chk(data, [NSNumber class])) intValue]);
+    return JavaLangInteger_valueOfWithInt_([((NSNumber *) data) intValue]);
   }
   else if ([data isKindOfClass:[JavaLangBoolean class]]) {
-    return JavaLangInteger_valueOfWithInt_([(JavaLangBoolean *) cast_chk(data, [JavaLangBoolean class]) booleanValue] ? 1 : 0);
+    return JavaLangInteger_valueOfWithInt_([(JavaLangBoolean *) data booleanValue] ? 1 : 0);
   }
   else if ([data isKindOfClass:[NSString class]]) {
     @try {
-      return JavaLangInteger_valueOfWithNSString_((NSString *) cast_chk(data, [NSString class]));
+      return JavaLangInteger_valueOfWithNSString_((NSString *) data);
     }
     @catch (JavaLangNumberFormatException *e) {
     }
@@ -754,20 +756,20 @@ J2OBJC_IGNORE_DESIGNATED_END
   @throw new_JavaLangClassCastException_initWithNSString_(JreStrcat("$@$", @"Value ", data, @" could not be cast to Integer"));
 }
 
-- (id)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(id)data {
+- (id)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(id)data {
   if (data == nil || [data isKindOfClass:[JavaLangLong class]]) {
     return data;
   }
   else if ([data isKindOfClass:[NSNumber class]]) {
-    return JavaLangLong_valueOfWithLong_([((NSNumber *) cast_chk(data, [NSNumber class])) longLongValue]);
+    return JavaLangLong_valueOfWithLong_([((NSNumber *) data) longLongValue]);
   }
   else if ([data isKindOfClass:[JavaLangBoolean class]]) {
-    return JavaLangLong_valueOfWithLong_([(JavaLangBoolean *) cast_chk(data, [JavaLangBoolean class]) booleanValue] ? 1LL : 0LL);
+    return JavaLangLong_valueOfWithLong_([(JavaLangBoolean *) data booleanValue] ? 1LL : 0LL);
   }
   else if ([data isKindOfClass:[NSString class]]) {
     @try {
-      return JavaLangLong_valueOfWithNSString_((NSString *) cast_chk(data, [NSString class]));
+      return JavaLangLong_valueOfWithNSString_((NSString *) data);
     }
     @catch (JavaLangNumberFormatException *e) {
     }
@@ -775,17 +777,17 @@ J2OBJC_IGNORE_DESIGNATED_END
   @throw new_JavaLangClassCastException_initWithNSString_(JreStrcat("$@$", @"Value ", data, @" could not be cast to Long"));
 }
 
-- (id)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(id)data {
+- (id)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(id)data {
   if (data == nil || [data isKindOfClass:[JavaLangDouble class]]) {
     return data;
   }
   else if ([data isKindOfClass:[NSNumber class]]) {
-    return JavaLangDouble_valueOfWithDouble_([((NSNumber *) cast_chk(data, [NSNumber class])) doubleValue]);
+    return JavaLangDouble_valueOfWithDouble_([((NSNumber *) data) doubleValue]);
   }
   else if ([data isKindOfClass:[NSString class]]) {
     @try {
-      return JavaLangDouble_valueOfWithNSString_((NSString *) cast_chk(data, [NSString class]));
+      return JavaLangDouble_valueOfWithNSString_((NSString *) data);
     }
     @catch (JavaLangNumberFormatException *e) {
     }
@@ -793,8 +795,8 @@ J2OBJC_IGNORE_DESIGNATED_END
   @throw new_JavaLangClassCastException_initWithNSString_(JreStrcat("$@$", @"Value ", data, @" could not be cast to Double"));
 }
 
-- (id)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(id)data {
+- (id)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(id)data {
   if (data == nil || [data isKindOfClass:[NSString class]]) {
     return data;
   }
@@ -803,19 +805,19 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (id)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(id)data {
+- (id)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(id)data {
   if (data == nil || [data isKindOfClass:[JavaLangBoolean class]]) {
     return data;
   }
   else if ([data isKindOfClass:[NSNumber class]]) {
-    return JavaLangBoolean_valueOfWithBoolean_([((NSNumber *) cast_chk(data, [NSNumber class])) intValue] != 0);
+    return JavaLangBoolean_valueOfWithBoolean_([((NSNumber *) data) intValue] != 0);
   }
   @throw new_JavaLangClassCastException_initWithNSString_(JreStrcat("$@$", @"Value ", data, @" could not be cast to Boolean"));
 }
 
-- (id)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(id)data {
+- (id)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(id)data {
   if (data != nil && !([data isKindOfClass:[IOSByteArray class]])) {
     @throw new_JavaLangClassCastException_initWithNSString_(JreStrcat("$@$", @"Data ", data, @" could not be cast to byte[]"));
   }
@@ -836,30 +838,30 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:);
-  methods[2].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:);
-  methods[3].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:);
-  methods[4].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:);
-  methods[5].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:);
-  methods[6].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:);
+  methods[1].selector = @selector(visitIntegerWithSquiDBProperty:withId:);
+  methods[2].selector = @selector(visitLongWithSquiDBProperty:withId:);
+  methods[3].selector = @selector(visitDoubleWithSquiDBProperty:withId:);
+  methods[4].selector = @selector(visitStringWithSquiDBProperty:withId:);
+  methods[5].selector = @selector(visitBooleanWithSquiDBProperty:withId:);
+  methods[6].selector = @selector(visitBlobWithSquiDBProperty:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "visitInteger", "LComYahooSquidbSqlProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Ljava/lang/Object;)Ljava/lang/Object;", "LComYahooSquidbDataAbstractModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Object;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataAbstractModel_ValueCastingVisitor = { "ValueCastingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 7, 0, 13, -1, -1, 14, -1 };
-  return &_ComYahooSquidbDataAbstractModel_ValueCastingVisitor;
+  static const void *ptrTable[] = { "visitInteger", "LSquiDBProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Ljava/lang/Object;)Ljava/lang/Object;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Ljava/lang/Object;)Ljava/lang/Object;", "LSquiDBAbstractModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Object;Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _SquiDBAbstractModel_ValueCastingVisitor = { "ValueCastingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 7, 0, 13, -1, -1, 14, -1 };
+  return &_SquiDBAbstractModel_ValueCastingVisitor;
 }
 
 @end
 
-void ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init(ComYahooSquidbDataAbstractModel_ValueCastingVisitor *self) {
+void SquiDBAbstractModel_ValueCastingVisitor_init(SquiDBAbstractModel_ValueCastingVisitor *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataAbstractModel_ValueCastingVisitor *new_ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataAbstractModel_ValueCastingVisitor, init)
+SquiDBAbstractModel_ValueCastingVisitor *new_SquiDBAbstractModel_ValueCastingVisitor_init() {
+  J2OBJC_NEW_IMPL(SquiDBAbstractModel_ValueCastingVisitor, init)
 }
 
-ComYahooSquidbDataAbstractModel_ValueCastingVisitor *create_ComYahooSquidbDataAbstractModel_ValueCastingVisitor_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataAbstractModel_ValueCastingVisitor, init)
+SquiDBAbstractModel_ValueCastingVisitor *create_SquiDBAbstractModel_ValueCastingVisitor_init() {
+  J2OBJC_CREATE_IMPL(SquiDBAbstractModel_ValueCastingVisitor, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataAbstractModel_ValueCastingVisitor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBAbstractModel_ValueCastingVisitor)

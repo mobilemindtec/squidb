@@ -14,18 +14,18 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbDataSquidCursor;
-@class ComYahooSquidbDataValuesStorage;
-@class ComYahooSquidbSqlProperty;
 @class IOSObjectArray;
 @class JavaUtilHashMap;
+@class SquiDBProperty;
+@class SquiDBSquidCursor;
+@class SquiDBValuesStorage;
 @protocol JavaUtilMap;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataAbstractModel : NSObject < NSCopying > {
+@interface SquiDBAbstractModel : NSObject < NSCopying > {
  @public
-  ComYahooSquidbDataValuesStorage *setValues_;
-  ComYahooSquidbDataValuesStorage *values_;
+  SquiDBValuesStorage *setValues_;
+  SquiDBValuesStorage *values_;
   JavaUtilHashMap *transitoryData_;
 }
 
@@ -41,32 +41,32 @@
 
 - (id)clearTransitoryWithNSString:(NSString *)key;
 
-- (void)clearValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (void)clearValueWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (ComYahooSquidbDataAbstractModel *)java_clone;
+- (SquiDBAbstractModel *)java_clone;
 
-- (jboolean)containsNonNullValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)containsNonNullValueWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (jboolean)containsValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)containsValueWithSquiDBProperty:(SquiDBProperty *)property;
 
 - (jboolean)isEqual:(id)other;
 
-- (jboolean)fieldIsDirtyWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)fieldIsDirtyWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                           withBoolean:(jboolean)throwOnFail;
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property
+                withBoolean:(jboolean)throwOnFail;
 
 - (id<JavaUtilSet>)getAllTransitoryKeys;
 
-- (ComYahooSquidbDataValuesStorage *)getDatabaseValues;
+- (SquiDBValuesStorage *)getDatabaseValues;
 
-- (ComYahooSquidbDataValuesStorage *)getDefaultValues;
+- (SquiDBValuesStorage *)getDefaultValues;
 
-- (ComYahooSquidbDataValuesStorage *)getMergedValues;
+- (SquiDBValuesStorage *)getMergedValues;
 
-- (ComYahooSquidbDataValuesStorage *)getSetValues;
+- (SquiDBValuesStorage *)getSetValues;
 
 - (id)getTransitoryWithNSString:(NSString *)key;
 
@@ -81,49 +81,51 @@
 - (void)putTransitoryWithNSString:(NSString *)key
                            withId:(id)value;
 
-- (void)readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor;
+- (void)readPropertiesFromCursorWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor;
 
-- (void)readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (void)readPropertiesFromCursorWithSquiDBSquidCursor:(SquiDBSquidCursor *)cursor
+                              withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
 - (void)readPropertiesFromMapWithJavaUtilMap:(id<JavaUtilMap>)values
-          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+                     withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (void)readPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (void)readPropertiesFromValuesStorageWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                       withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (void)setWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                  withId:(id)value;
+- (void)setWithSquiDBProperty:(SquiDBProperty *)property
+                       withId:(id)value;
 
 - (void)setPropertiesFromMapWithJavaUtilMap:(id<JavaUtilMap>)values
-         withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+                    withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (void)setPropertiesFromValuesStorageWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
-                                       withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (void)setPropertiesFromValuesStorageWithSquiDBValuesStorage:(SquiDBValuesStorage *)values
+                                      withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
 - (NSString *)description;
 
 #pragma mark Protected
 
-- (ComYahooSquidbDataValuesStorage *)newValuesStorage OBJC_METHOD_FAMILY_NONE;
+- (SquiDBValuesStorage *)newValuesStorage OBJC_METHOD_FAMILY_NONE;
 
-- (jboolean)shouldSaveValueWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id)newValue;
+- (jboolean)shouldSaveValueWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id)newValue;
 
 - (jboolean)shouldSaveValueWithNSString:(NSString *)name
                                  withId:(id)newValue;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbDataAbstractModel)
+J2OBJC_STATIC_INIT(SquiDBAbstractModel)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataAbstractModel, setValues_, ComYahooSquidbDataValuesStorage *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataAbstractModel, values_, ComYahooSquidbDataValuesStorage *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataAbstractModel, transitoryData_, JavaUtilHashMap *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractModel, setValues_, SquiDBValuesStorage *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractModel, values_, SquiDBValuesStorage *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractModel, transitoryData_, JavaUtilHashMap *)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataAbstractModel_init(ComYahooSquidbDataAbstractModel *self);
+FOUNDATION_EXPORT void SquiDBAbstractModel_init(SquiDBAbstractModel *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataAbstractModel)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAbstractModel)
+
+@compatibility_alias ComYahooSquidbDataAbstractModel SquiDBAbstractModel;
 
 
 #if __has_feature(nullability)

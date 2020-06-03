@@ -18,7 +18,7 @@
 @class IOSClass;
 @class IOSObjectArray;
 
-@protocol ComYahooSquidbAnnotationsModelGenErrors < JavaLangAnnotationAnnotation >
+@protocol SquiDBModelGenErrors < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSObjectArray *value;
 
@@ -28,20 +28,22 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsModelGenErrors : NSObject < ComYahooSquidbAnnotationsModelGenErrors > {
+@interface SquiDBModelGenErrors : NSObject < SquiDBModelGenErrors > {
  @public
   IOSObjectArray *value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsModelGenErrors)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBModelGenErrors)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsModelGenErrors> create_ComYahooSquidbAnnotationsModelGenErrors(IOSObjectArray *value);
+FOUNDATION_EXPORT id<SquiDBModelGenErrors> create_SquiDBModelGenErrors(IOSObjectArray *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsModelGenErrors)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBModelGenErrors)
 
-@protocol ComYahooSquidbAnnotationsModelGenErrors_ModelGenError < JavaLangAnnotationAnnotation >
+#define ComYahooSquidbAnnotationsModelGenErrors SquiDBModelGenErrors
+
+@protocol SquiDBModelGenErrors_ModelGenError < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSClass *specClass;
 @property (readonly) NSString *element;
@@ -53,7 +55,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsModelGenErrors)
 
 @end
 
-@interface ComYahooSquidbAnnotationsModelGenErrors_ModelGenError : NSObject < ComYahooSquidbAnnotationsModelGenErrors_ModelGenError > {
+@interface SquiDBModelGenErrors_ModelGenError : NSObject < SquiDBModelGenErrors_ModelGenError > {
  @public
   IOSClass *specClass_;
   NSString *element_;
@@ -62,11 +64,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsModelGenErrors)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsModelGenErrors_ModelGenError)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBModelGenErrors_ModelGenError)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsModelGenErrors_ModelGenError> create_ComYahooSquidbAnnotationsModelGenErrors_ModelGenError(NSString *element, NSString *message, IOSClass *specClass);
+FOUNDATION_EXPORT id<SquiDBModelGenErrors_ModelGenError> create_SquiDBModelGenErrors_ModelGenError(NSString *element, NSString *message, IOSClass *specClass);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsModelGenErrors_ModelGenError)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBModelGenErrors_ModelGenError)
 
 
 #if __has_feature(nullability)

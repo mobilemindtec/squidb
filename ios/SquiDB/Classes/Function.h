@@ -15,215 +15,222 @@
 #include "Field.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlCaseBuilder;
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSObjectArray;
+@class SquiDBCaseBuilder;
+@class SquiDBCompileContext;
+@class SquiDBCriterion;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
+@class SquiDBVersionCode;
 
-@interface ComYahooSquidbSqlFunction : ComYahooSquidbSqlField
-@property (readonly, class) ComYahooSquidbSqlFunction *TRUE_ NS_SWIFT_NAME(TRUE_);
-@property (readonly, class) ComYahooSquidbSqlFunction *FALSE_ NS_SWIFT_NAME(FALSE_);
+@interface SquiDBFunction : SquiDBField
+@property (readonly, class) SquiDBFunction *TRUE_ NS_SWIFT_NAME(TRUE_);
+@property (readonly, class) SquiDBFunction *FALSE_ NS_SWIFT_NAME(FALSE_);
 
-+ (ComYahooSquidbSqlFunction *)TRUE_;
++ (SquiDBFunction *)TRUE_;
 
-+ (ComYahooSquidbSqlFunction *)FALSE_;
++ (SquiDBFunction *)FALSE_;
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-+ (ComYahooSquidbSqlFunction *)absWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)absWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)addWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)addWithNSObjectArray:(IOSObjectArray *)args;
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
-+ (ComYahooSquidbSqlFunction *)avgWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)avgWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)avgDistinctWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)avgDistinctWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)bitwiseAndWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)bitwiseAndWithNSObjectArray:(IOSObjectArray *)args;
 
-+ (ComYahooSquidbSqlFunction *)bitwiseOrWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)bitwiseOrWithNSObjectArray:(IOSObjectArray *)args;
 
-+ (ComYahooSquidbSqlCaseBuilder *)caseExprWithId:(id)baseExpression;
++ (SquiDBCaseBuilder *)caseExprWithId:(id)baseExpression;
 
-+ (ComYahooSquidbSqlFunction *)caseWhenWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)when;
++ (SquiDBFunction *)caseWhenWithSquiDBCriterion:(SquiDBCriterion *)when;
 
-+ (ComYahooSquidbSqlCaseBuilder *)caseWhenWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)when
-                                                                  withId:(id)then;
++ (SquiDBCaseBuilder *)caseWhenWithSquiDBCriterion:(SquiDBCriterion *)when
+                                            withId:(id)then;
 
-+ (ComYahooSquidbSqlFunction *)caseWhenWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)when
-                                                               withId:(id)ifTrue
-                                                               withId:(id)ifFalse;
++ (SquiDBFunction *)caseWhenWithSquiDBCriterion:(SquiDBCriterion *)when
+                                         withId:(id)ifTrue
+                                         withId:(id)ifFalse;
 
-+ (ComYahooSquidbSqlFunction *)castWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                                 withNSString:(NSString *)newType;
++ (SquiDBFunction *)castWithSquiDBField:(SquiDBField *)field
+                           withNSString:(NSString *)newType;
 
-+ (ComYahooSquidbSqlFunction *)coalesceWithNSObjectArray:(IOSObjectArray *)values;
++ (SquiDBFunction *)coalesceWithNSObjectArray:(IOSObjectArray *)values;
 
-+ (ComYahooSquidbSqlFunction *)count;
++ (SquiDBFunction *)count;
 
-+ (ComYahooSquidbSqlFunction *)countWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)countWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)countDistinctWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)countDistinctWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)divideWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)divideWithNSObjectArray:(IOSObjectArray *)args;
 
-+ (ComYahooSquidbSqlFunction *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBFunction *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query;
 
-+ (ComYahooSquidbSqlFunction *)functionWithArgumentsWithNSString:(NSString *)functionName
-                                               withNSObjectArray:(IOSObjectArray *)arguments;
++ (SquiDBFunction *)functionWithArgumentsWithNSString:(NSString *)functionName
+                                    withNSObjectArray:(IOSObjectArray *)arguments;
 
 - (NSString *)getExpression;
 
-- (NSString *)getExpressionWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)forCompileContext;
+- (NSString *)getExpressionWithSquiDBCompileContext:(SquiDBCompileContext *)forCompileContext;
 
-- (NSString *)getExpressionWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)forSqliteVersion;
+- (NSString *)getExpressionWithSquiDBVersionCode:(SquiDBVersionCode *)forSqliteVersion;
 
-+ (ComYahooSquidbSqlFunction *)groupConcatWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)groupConcatWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)groupConcatWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                                        withNSString:(NSString *)separator;
++ (SquiDBFunction *)groupConcatWithSquiDBField:(SquiDBField *)field
+                                  withNSString:(NSString *)separator;
 
-+ (ComYahooSquidbSqlFunction *)groupConcatDistinctWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)groupConcatDistinctWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)lengthWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)lengthWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)lowerWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)lowerWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)maxWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)maxWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)minWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)minWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)moduloWithId:(id)lhs
-                                     withId:(id)rhs;
++ (SquiDBFunction *)moduloWithId:(id)lhs
+                          withId:(id)rhs;
 
-+ (ComYahooSquidbSqlFunction *)multiplyWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)multiplyWithNSObjectArray:(IOSObjectArray *)args;
 
-+ (ComYahooSquidbSqlFunction *)rawFunctionWithNSString:(NSString *)expression;
++ (SquiDBFunction *)rawFunctionWithNSString:(NSString *)expression;
 
-+ (ComYahooSquidbSqlFunction *)strConcatWithNSObjectArray:(IOSObjectArray *)objects;
++ (SquiDBFunction *)strConcatWithNSObjectArray:(IOSObjectArray *)objects;
 
-+ (ComYahooSquidbSqlFunction *)substrWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                                         withId:(id)start;
++ (SquiDBFunction *)substrWithSquiDBField:(SquiDBField *)field
+                                   withId:(id)start;
 
-+ (ComYahooSquidbSqlFunction *)substrWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                                         withId:(id)start
-                                                         withId:(id)length;
++ (SquiDBFunction *)substrWithSquiDBField:(SquiDBField *)field
+                                   withId:(id)start
+                                   withId:(id)length;
 
-+ (ComYahooSquidbSqlFunction *)subtractWithNSObjectArray:(IOSObjectArray *)args;
++ (SquiDBFunction *)subtractWithNSObjectArray:(IOSObjectArray *)args;
 
-+ (ComYahooSquidbSqlFunction *)sumWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)sumWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)sumDistinctWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)sumDistinctWithSquiDBField:(SquiDBField *)field;
 
-+ (ComYahooSquidbSqlFunction *)upperWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
++ (SquiDBFunction *)upperWithSquiDBField:(SquiDBField *)field;
 
 #pragma mark Protected
 
 - (instancetype __nonnull)initWithNSString:(NSString *)expression;
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation;
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation;
 
-- (void)appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                     withBoolean:(jboolean)forSqlValidation;
+- (void)appendQualifiedExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                          withBoolean:(jboolean)forSqlValidation;
 
 - (NSString *)expressionForComparison;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                              withNSString:(NSString *)arg1 NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlFunction)
+J2OBJC_STATIC_INIT(SquiDBFunction)
 
-inline ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_get_TRUE(void);
+inline SquiDBFunction *SquiDBFunction_get_TRUE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_TRUE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlFunction, TRUE, ComYahooSquidbSqlFunction *)
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_TRUE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBFunction, TRUE, SquiDBFunction *)
 
-inline ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_get_FALSE(void);
+inline SquiDBFunction *SquiDBFunction_get_FALSE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_FALSE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlFunction, FALSE, ComYahooSquidbSqlFunction *)
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_FALSE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBFunction, FALSE, SquiDBFunction *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlFunction_init(ComYahooSquidbSqlFunction *self);
+FOUNDATION_EXPORT void SquiDBFunction_init(SquiDBFunction *self);
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlFunction_initWithNSString_(ComYahooSquidbSqlFunction *self, NSString *expression);
+FOUNDATION_EXPORT void SquiDBFunction_initWithNSString_(SquiDBFunction *self, NSString *expression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_functionWithArgumentsWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_functionWithArgumentsWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_rawFunctionWithNSString_(NSString *expression);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_rawFunctionWithNSString_(NSString *expression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_fromQueryWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_fromQueryWithSquiDBQuery_(SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_upperWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_upperWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_lowerWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_lowerWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_substrWithComYahooSquidbSqlField_withId_(ComYahooSquidbSqlField *field, id start);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_substrWithSquiDBField_withId_(SquiDBField *field, id start);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_substrWithComYahooSquidbSqlField_withId_withId_(ComYahooSquidbSqlField *field, id start, id length);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_substrWithSquiDBField_withId_withId_(SquiDBField *field, id start, id length);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_strConcatWithNSObjectArray_(IOSObjectArray *objects);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_strConcatWithNSObjectArray_(IOSObjectArray *objects);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_count(void);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_count(void);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_countWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_countWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_countDistinctWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_countDistinctWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_lengthWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_lengthWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_maxWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_maxWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_minWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_minWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_sumWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_sumWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_sumDistinctWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_sumDistinctWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_avgWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_avgWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_avgDistinctWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_avgDistinctWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_absWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_absWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_groupConcatWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_groupConcatWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_groupConcatDistinctWithComYahooSquidbSqlField_(ComYahooSquidbSqlField *field);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_groupConcatDistinctWithSquiDBField_(SquiDBField *field);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_groupConcatWithComYahooSquidbSqlField_withNSString_(ComYahooSquidbSqlField *field, NSString *separator);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_groupConcatWithSquiDBField_withNSString_(SquiDBField *field, NSString *separator);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_caseWhenWithComYahooSquidbSqlCriterion_(ComYahooSquidbSqlCriterion *when);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_caseWhenWithSquiDBCriterion_(SquiDBCriterion *when);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_caseWhenWithComYahooSquidbSqlCriterion_withId_withId_(ComYahooSquidbSqlCriterion *when, id ifTrue, id ifFalse);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_caseWhenWithSquiDBCriterion_withId_withId_(SquiDBCriterion *when, id ifTrue, id ifFalse);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseBuilder *ComYahooSquidbSqlFunction_caseWhenWithComYahooSquidbSqlCriterion_withId_(ComYahooSquidbSqlCriterion *when, id then);
+FOUNDATION_EXPORT SquiDBCaseBuilder *SquiDBFunction_caseWhenWithSquiDBCriterion_withId_(SquiDBCriterion *when, id then);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseBuilder *ComYahooSquidbSqlFunction_caseExprWithId_(id baseExpression);
+FOUNDATION_EXPORT SquiDBCaseBuilder *SquiDBFunction_caseExprWithId_(id baseExpression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_castWithComYahooSquidbSqlField_withNSString_(ComYahooSquidbSqlField *field, NSString *newType);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_castWithSquiDBField_withNSString_(SquiDBField *field, NSString *newType);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_coalesceWithNSObjectArray_(IOSObjectArray *values);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_coalesceWithNSObjectArray_(IOSObjectArray *values);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_addWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_addWithNSObjectArray_(IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_subtractWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_subtractWithNSObjectArray_(IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_multiplyWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_multiplyWithNSObjectArray_(IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_divideWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_divideWithNSObjectArray_(IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_moduloWithId_withId_(id lhs, id rhs);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_moduloWithId_withId_(id lhs, id rhs);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_bitwiseAndWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_bitwiseAndWithNSObjectArray_(IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlFunction *ComYahooSquidbSqlFunction_bitwiseOrWithNSObjectArray_(IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBFunction *SquiDBFunction_bitwiseOrWithNSObjectArray_(IOSObjectArray *args);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBFunction)
+
+@compatibility_alias ComYahooSquidbSqlFunction SquiDBFunction;
 
 
 #if __has_feature(nullability)

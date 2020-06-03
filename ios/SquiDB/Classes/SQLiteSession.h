@@ -14,13 +14,13 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
-@class ComYahooAndroidSqliteSQLiteConnectionPool;
-@class ComYahooAndroidSqliteSQLiteStatementInfo;
 @class IOSObjectArray;
-@protocol ComYahooAndroidSqliteSQLiteTransactionListener;
+@class SquiDBCursorWindow;
+@class SquiDBSQLiteConnectionPool;
+@class SquiDBSQLiteStatementInfo;
+@protocol SquiDBSQLiteTransactionListener;
 
-@interface ComYahooAndroidSqliteSQLiteSession : NSObject
+@interface SquiDBSQLiteSession : NSObject
 @property (readonly, class) jint TRANSACTION_MODE_DEFERRED NS_SWIFT_NAME(TRANSACTION_MODE_DEFERRED);
 @property (readonly, class) jint TRANSACTION_MODE_IMMEDIATE NS_SWIFT_NAME(TRANSACTION_MODE_IMMEDIATE);
 @property (readonly, class) jint TRANSACTION_MODE_EXCLUSIVE NS_SWIFT_NAME(TRANSACTION_MODE_EXCLUSIVE);
@@ -33,10 +33,10 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteConnectionPool:(ComYahooAndroidSqliteSQLiteConnectionPool *)connectionPool;
+- (instancetype __nonnull)initWithSquiDBSQLiteConnectionPool:(SquiDBSQLiteConnectionPool *)connectionPool;
 
 - (void)beginTransactionWithInt:(jint)transactionMode
-withComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLiteTransactionListener>)transactionListener
+withSquiDBSQLiteTransactionListener:(id<SquiDBSQLiteTransactionListener>)transactionListener
                         withInt:(jint)connectionFlags;
 
 - (void)endTransaction;
@@ -51,7 +51,7 @@ withComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLi
 
 - (jint)executeForCursorWindowWithNSString:(NSString *)sql
                          withNSObjectArray:(IOSObjectArray *)bindArgs
-     withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window
+                    withSquiDBCursorWindow:(SquiDBCursorWindow *)window
                                    withInt:(jint)startPos
                                    withInt:(jint)requiredPos
                                withBoolean:(jboolean)countAllRows
@@ -77,7 +77,7 @@ withComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLi
 
 - (void)prepareWithNSString:(NSString *)sql
                     withInt:(jint)connectionFlags
-withComYahooAndroidSqliteSQLiteStatementInfo:(ComYahooAndroidSqliteSQLiteStatementInfo *)outStatementInfo;
+withSquiDBSQLiteStatementInfo:(SquiDBSQLiteStatementInfo *)outStatementInfo;
 
 - (void)setTransactionSuccessful;
 
@@ -90,27 +90,29 @@ withComYahooAndroidSqliteSQLiteStatementInfo:(ComYahooAndroidSqliteSQLiteStateme
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteSession)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteSession)
 
-inline jint ComYahooAndroidSqliteSQLiteSession_get_TRANSACTION_MODE_DEFERRED(void);
-#define ComYahooAndroidSqliteSQLiteSession_TRANSACTION_MODE_DEFERRED 0
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteSession, TRANSACTION_MODE_DEFERRED, jint)
+inline jint SquiDBSQLiteSession_get_TRANSACTION_MODE_DEFERRED(void);
+#define SquiDBSQLiteSession_TRANSACTION_MODE_DEFERRED 0
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteSession, TRANSACTION_MODE_DEFERRED, jint)
 
-inline jint ComYahooAndroidSqliteSQLiteSession_get_TRANSACTION_MODE_IMMEDIATE(void);
-#define ComYahooAndroidSqliteSQLiteSession_TRANSACTION_MODE_IMMEDIATE 1
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteSession, TRANSACTION_MODE_IMMEDIATE, jint)
+inline jint SquiDBSQLiteSession_get_TRANSACTION_MODE_IMMEDIATE(void);
+#define SquiDBSQLiteSession_TRANSACTION_MODE_IMMEDIATE 1
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteSession, TRANSACTION_MODE_IMMEDIATE, jint)
 
-inline jint ComYahooAndroidSqliteSQLiteSession_get_TRANSACTION_MODE_EXCLUSIVE(void);
-#define ComYahooAndroidSqliteSQLiteSession_TRANSACTION_MODE_EXCLUSIVE 2
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteSession, TRANSACTION_MODE_EXCLUSIVE, jint)
+inline jint SquiDBSQLiteSession_get_TRANSACTION_MODE_EXCLUSIVE(void);
+#define SquiDBSQLiteSession_TRANSACTION_MODE_EXCLUSIVE 2
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteSession, TRANSACTION_MODE_EXCLUSIVE, jint)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteSession_initWithComYahooAndroidSqliteSQLiteConnectionPool_(ComYahooAndroidSqliteSQLiteSession *self, ComYahooAndroidSqliteSQLiteConnectionPool *connectionPool);
+FOUNDATION_EXPORT void SquiDBSQLiteSession_initWithSquiDBSQLiteConnectionPool_(SquiDBSQLiteSession *self, SquiDBSQLiteConnectionPool *connectionPool);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteSession *new_ComYahooAndroidSqliteSQLiteSession_initWithComYahooAndroidSqliteSQLiteConnectionPool_(ComYahooAndroidSqliteSQLiteConnectionPool *connectionPool) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteSession *new_SquiDBSQLiteSession_initWithSquiDBSQLiteConnectionPool_(SquiDBSQLiteConnectionPool *connectionPool) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteSession *create_ComYahooAndroidSqliteSQLiteSession_initWithComYahooAndroidSqliteSQLiteConnectionPool_(ComYahooAndroidSqliteSQLiteConnectionPool *connectionPool);
+FOUNDATION_EXPORT SquiDBSQLiteSession *create_SquiDBSQLiteSession_initWithSquiDBSQLiteConnectionPool_(SquiDBSQLiteConnectionPool *connectionPool);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteSession)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteSession)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteSession SquiDBSQLiteSession;
 
 
 #if __has_feature(nullability)

@@ -15,10 +15,10 @@
 #include "J2ObjC_header.h"
 #include "SQLiteProgram.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
 @class IOSObjectArray;
+@class SquiDBSQLiteDatabase;
 
-@interface ComYahooAndroidSqliteSQLiteStatement : ComYahooAndroidSqliteSQLiteProgram
+@interface SquiDBSQLiteStatement : SquiDBSQLiteProgram
 
 #pragma mark Public
 
@@ -36,21 +36,23 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                         withNSString:(NSString *)sql
-                                                    withNSObjectArray:(IOSObjectArray *)bindArgs;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                          withNSString:(NSString *)sql
+                                     withNSObjectArray:(IOSObjectArray *)bindArgs;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteStatement)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteStatement)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteStatement *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
+FOUNDATION_EXPORT void SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(SquiDBSQLiteStatement *self, SquiDBSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteStatement *new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteStatement *new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(SquiDBSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteStatement *create_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
+FOUNDATION_EXPORT SquiDBSQLiteStatement *create_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(SquiDBSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteStatement)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteStatement)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteStatement SquiDBSQLiteStatement;
 
 
 #if __has_feature(nullability)

@@ -7,16 +7,16 @@
 #include "J2ObjC_source.h"
 #include "java/lang/IndexOutOfBoundsException.h"
 
-@implementation ComYahooAndroidSqliteCursorIndexOutOfBoundsException
+@implementation SquiDBCursorIndexOutOfBoundsException
 
 - (instancetype)initWithInt:(jint)index
                     withInt:(jint)size {
-  ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithInt_withInt_(self, index, size);
+  SquiDBCursorIndexOutOfBoundsException_initWithInt_withInt_(self, index, size);
   return self;
 }
 
 - (instancetype)initWithNSString:(NSString *)message {
-  ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithNSString_(self, message);
+  SquiDBCursorIndexOutOfBoundsException_initWithNSString_(self, message);
   return self;
 }
 
@@ -32,34 +32,36 @@
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "II", "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCursorIndexOutOfBoundsException = { "CursorIndexOutOfBoundsException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCursorIndexOutOfBoundsException;
+  static const J2ObjcClassInfo _SquiDBCursorIndexOutOfBoundsException = { "CursorIndexOutOfBoundsException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBCursorIndexOutOfBoundsException;
 }
 
 @end
 
-void ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithInt_withInt_(ComYahooAndroidSqliteCursorIndexOutOfBoundsException *self, jint index, jint size) {
+void SquiDBCursorIndexOutOfBoundsException_initWithInt_withInt_(SquiDBCursorIndexOutOfBoundsException *self, jint index, jint size) {
   JavaLangIndexOutOfBoundsException_initWithNSString_(self, JreStrcat("$I$I", @"Index ", index, @" requested, with a size of ", size));
 }
 
-ComYahooAndroidSqliteCursorIndexOutOfBoundsException *new_ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithInt_withInt_(jint index, jint size) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCursorIndexOutOfBoundsException, initWithInt_withInt_, index, size)
+SquiDBCursorIndexOutOfBoundsException *new_SquiDBCursorIndexOutOfBoundsException_initWithInt_withInt_(jint index, jint size) {
+  J2OBJC_NEW_IMPL(SquiDBCursorIndexOutOfBoundsException, initWithInt_withInt_, index, size)
 }
 
-ComYahooAndroidSqliteCursorIndexOutOfBoundsException *create_ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithInt_withInt_(jint index, jint size) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCursorIndexOutOfBoundsException, initWithInt_withInt_, index, size)
+SquiDBCursorIndexOutOfBoundsException *create_SquiDBCursorIndexOutOfBoundsException_initWithInt_withInt_(jint index, jint size) {
+  J2OBJC_CREATE_IMPL(SquiDBCursorIndexOutOfBoundsException, initWithInt_withInt_, index, size)
 }
 
-void ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithNSString_(ComYahooAndroidSqliteCursorIndexOutOfBoundsException *self, NSString *message) {
+void SquiDBCursorIndexOutOfBoundsException_initWithNSString_(SquiDBCursorIndexOutOfBoundsException *self, NSString *message) {
   JavaLangIndexOutOfBoundsException_initWithNSString_(self, message);
 }
 
-ComYahooAndroidSqliteCursorIndexOutOfBoundsException *new_ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithNSString_(NSString *message) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCursorIndexOutOfBoundsException, initWithNSString_, message)
+SquiDBCursorIndexOutOfBoundsException *new_SquiDBCursorIndexOutOfBoundsException_initWithNSString_(NSString *message) {
+  J2OBJC_NEW_IMPL(SquiDBCursorIndexOutOfBoundsException, initWithNSString_, message)
 }
 
-ComYahooAndroidSqliteCursorIndexOutOfBoundsException *create_ComYahooAndroidSqliteCursorIndexOutOfBoundsException_initWithNSString_(NSString *message) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCursorIndexOutOfBoundsException, initWithNSString_, message)
+SquiDBCursorIndexOutOfBoundsException *create_SquiDBCursorIndexOutOfBoundsException_initWithNSString_(NSString *message) {
+  J2OBJC_CREATE_IMPL(SquiDBCursorIndexOutOfBoundsException, initWithNSString_, message)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCursorIndexOutOfBoundsException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCursorIndexOutOfBoundsException)
+
+J2OBJC_NAME_MAPPING(SquiDBCursorIndexOutOfBoundsException, "com.yahoo.android.sqlite", "SquiDB")

@@ -17,86 +17,88 @@
 
 @class IOSObjectArray;
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlMathOperator_Enum) {
-  ComYahooSquidbSqlMathOperator_Enum_PLUS = 0,
-  ComYahooSquidbSqlMathOperator_Enum_MINUS = 1,
-  ComYahooSquidbSqlMathOperator_Enum_MULT = 2,
-  ComYahooSquidbSqlMathOperator_Enum_DIVIDE = 3,
-  ComYahooSquidbSqlMathOperator_Enum_MODULO = 4,
-  ComYahooSquidbSqlMathOperator_Enum_BITWISE_AND = 5,
-  ComYahooSquidbSqlMathOperator_Enum_BITWISE_OR = 6,
+typedef NS_ENUM(NSUInteger, SquiDBMathOperator_Enum) {
+  SquiDBMathOperator_Enum_PLUS = 0,
+  SquiDBMathOperator_Enum_MINUS = 1,
+  SquiDBMathOperator_Enum_MULT = 2,
+  SquiDBMathOperator_Enum_DIVIDE = 3,
+  SquiDBMathOperator_Enum_MODULO = 4,
+  SquiDBMathOperator_Enum_BITWISE_AND = 5,
+  SquiDBMathOperator_Enum_BITWISE_OR = 6,
 };
 
-@interface ComYahooSquidbSqlMathOperator : JavaLangEnum
+@interface SquiDBMathOperator : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *PLUS NS_SWIFT_NAME(PLUS);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *MINUS NS_SWIFT_NAME(MINUS);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *MULT NS_SWIFT_NAME(MULT);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *DIVIDE NS_SWIFT_NAME(DIVIDE);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *MODULO NS_SWIFT_NAME(MODULO);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *BITWISE_AND NS_SWIFT_NAME(BITWISE_AND);
-@property (readonly, class, nonnull) ComYahooSquidbSqlMathOperator *BITWISE_OR NS_SWIFT_NAME(BITWISE_OR);
-+ (ComYahooSquidbSqlMathOperator * __nonnull)PLUS;
+@property (readonly, class, nonnull) SquiDBMathOperator *PLUS NS_SWIFT_NAME(PLUS);
+@property (readonly, class, nonnull) SquiDBMathOperator *MINUS NS_SWIFT_NAME(MINUS);
+@property (readonly, class, nonnull) SquiDBMathOperator *MULT NS_SWIFT_NAME(MULT);
+@property (readonly, class, nonnull) SquiDBMathOperator *DIVIDE NS_SWIFT_NAME(DIVIDE);
+@property (readonly, class, nonnull) SquiDBMathOperator *MODULO NS_SWIFT_NAME(MODULO);
+@property (readonly, class, nonnull) SquiDBMathOperator *BITWISE_AND NS_SWIFT_NAME(BITWISE_AND);
+@property (readonly, class, nonnull) SquiDBMathOperator *BITWISE_OR NS_SWIFT_NAME(BITWISE_OR);
++ (SquiDBMathOperator * __nonnull)PLUS;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)MINUS;
++ (SquiDBMathOperator * __nonnull)MINUS;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)MULT;
++ (SquiDBMathOperator * __nonnull)MULT;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)DIVIDE;
++ (SquiDBMathOperator * __nonnull)DIVIDE;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)MODULO;
++ (SquiDBMathOperator * __nonnull)MODULO;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)BITWISE_AND;
++ (SquiDBMathOperator * __nonnull)BITWISE_AND;
 
-+ (ComYahooSquidbSqlMathOperator * __nonnull)BITWISE_OR;
++ (SquiDBMathOperator * __nonnull)BITWISE_OR;
 
 #pragma mark Public
 
 - (NSString *)description;
 
-+ (ComYahooSquidbSqlMathOperator *)valueOfWithNSString:(NSString *)name;
++ (SquiDBMathOperator *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (ComYahooSquidbSqlMathOperator_Enum)toNSEnum;
+- (SquiDBMathOperator_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlMathOperator)
+J2OBJC_STATIC_INIT(SquiDBMathOperator)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_values_[];
+FOUNDATION_EXPORT SquiDBMathOperator *SquiDBMathOperator_values_[];
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_PLUS(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, PLUS)
+inline SquiDBMathOperator *SquiDBMathOperator_get_PLUS(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, PLUS)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_MINUS(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, MINUS)
+inline SquiDBMathOperator *SquiDBMathOperator_get_MINUS(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, MINUS)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_MULT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, MULT)
+inline SquiDBMathOperator *SquiDBMathOperator_get_MULT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, MULT)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_DIVIDE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, DIVIDE)
+inline SquiDBMathOperator *SquiDBMathOperator_get_DIVIDE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, DIVIDE)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_MODULO(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, MODULO)
+inline SquiDBMathOperator *SquiDBMathOperator_get_MODULO(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, MODULO)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_BITWISE_AND(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, BITWISE_AND)
+inline SquiDBMathOperator *SquiDBMathOperator_get_BITWISE_AND(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, BITWISE_AND)
 
-inline ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_get_BITWISE_OR(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlMathOperator, BITWISE_OR)
+inline SquiDBMathOperator *SquiDBMathOperator_get_BITWISE_OR(void);
+J2OBJC_ENUM_CONSTANT(SquiDBMathOperator, BITWISE_OR)
 
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbSqlMathOperator_values(void);
+FOUNDATION_EXPORT IOSObjectArray *SquiDBMathOperator_values(void);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBMathOperator *SquiDBMathOperator_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBMathOperator *SquiDBMathOperator_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlMathOperator)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBMathOperator)
+
+@compatibility_alias ComYahooSquidbSqlMathOperator SquiDBMathOperator;
 
 
 #if __has_feature(nullability)

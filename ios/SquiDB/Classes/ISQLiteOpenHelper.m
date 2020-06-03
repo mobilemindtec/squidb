@@ -6,15 +6,15 @@
 #include "ISQLiteOpenHelper.h"
 #include "J2ObjC_source.h"
 
-@interface ComYahooSquidbDataISQLiteOpenHelper : NSObject
+@interface SquiDBISQLiteOpenHelper : NSObject
 
 @end
 
-@implementation ComYahooSquidbDataISQLiteOpenHelper
+@implementation SquiDBISQLiteOpenHelper
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooSquidbDataISQLiteDatabase;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLiteDatabase;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -27,10 +27,12 @@
   methods[2].selector = @selector(deleteDatabase);
   methods[3].selector = @selector(close);
   #pragma clang diagnostic pop
-  static const J2ObjcClassInfo _ComYahooSquidbDataISQLiteOpenHelper = { "ISQLiteOpenHelper", "com.yahoo.squidb.data", NULL, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataISQLiteOpenHelper;
+  static const J2ObjcClassInfo _SquiDBISQLiteOpenHelper = { "ISQLiteOpenHelper", "com.yahoo.squidb.data", NULL, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBISQLiteOpenHelper;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbDataISQLiteOpenHelper)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBISQLiteOpenHelper)
+
+J2OBJC_NAME_MAPPING(SquiDBISQLiteOpenHelper, "com.yahoo.squidb.data", "SquiDB")

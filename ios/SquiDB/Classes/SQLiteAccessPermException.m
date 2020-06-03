@@ -7,17 +7,17 @@
 #include "SQLiteAccessPermException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteAccessPermException
+@implementation SquiDBSQLiteAccessPermException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteAccessPermException_init(self);
+  SquiDBSQLiteAccessPermException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteAccessPermException_initWithNSString_(self, error);
+  SquiDBSQLiteAccessPermException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteAccessPermException = { "SQLiteAccessPermException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteAccessPermException;
+  static const J2ObjcClassInfo _SquiDBSQLiteAccessPermException = { "SQLiteAccessPermException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteAccessPermException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteAccessPermException_init(ComYahooAndroidSqliteSQLiteAccessPermException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteAccessPermException_init(SquiDBSQLiteAccessPermException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteAccessPermException *new_ComYahooAndroidSqliteSQLiteAccessPermException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteAccessPermException, init)
+SquiDBSQLiteAccessPermException *new_SquiDBSQLiteAccessPermException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteAccessPermException, init)
 }
 
-ComYahooAndroidSqliteSQLiteAccessPermException *create_ComYahooAndroidSqliteSQLiteAccessPermException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteAccessPermException, init)
+SquiDBSQLiteAccessPermException *create_SquiDBSQLiteAccessPermException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteAccessPermException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteAccessPermException_initWithNSString_(ComYahooAndroidSqliteSQLiteAccessPermException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteAccessPermException_initWithNSString_(SquiDBSQLiteAccessPermException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteAccessPermException *new_ComYahooAndroidSqliteSQLiteAccessPermException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteAccessPermException, initWithNSString_, error)
+SquiDBSQLiteAccessPermException *new_SquiDBSQLiteAccessPermException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteAccessPermException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteAccessPermException *create_ComYahooAndroidSqliteSQLiteAccessPermException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteAccessPermException, initWithNSString_, error)
+SquiDBSQLiteAccessPermException *create_SquiDBSQLiteAccessPermException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteAccessPermException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteAccessPermException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteAccessPermException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteAccessPermException, "com.yahoo.android.sqlite", "SquiDB")

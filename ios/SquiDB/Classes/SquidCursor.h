@@ -15,26 +15,26 @@
 #include "ICursor.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlProperty;
 @class IOSByteArray;
 @class IOSClass;
 @class IOSObjectArray;
+@class SquiDBProperty;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbDataSquidCursor : NSObject < ComYahooSquidbDataICursor >
+@interface SquiDBSquidCursor : NSObject < SquiDBICursor >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                               withIOSClass:(IOSClass *)modelHint
-                                           withJavaUtilList:(id<JavaUtilList>)fields;
+- (instancetype __nonnull)initWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                                   withIOSClass:(IOSClass *)modelHint
+                               withJavaUtilList:(id<JavaUtilList>)fields;
 
-- (instancetype __nonnull)initWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                           withJavaUtilList:(id<JavaUtilList>)fields;
+- (instancetype __nonnull)initWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                               withJavaUtilList:(id<JavaUtilList>)fields;
 
 - (void)close;
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property;
 
 - (IOSByteArray *)getBlobWithInt:(jint)columnIndex;
 
@@ -50,7 +50,7 @@
 
 - (jint)getCount;
 
-- (id<ComYahooSquidbDataICursor>)getCursor;
+- (id<SquiDBICursor>)getCursor;
 
 - (jdouble)getDoubleWithInt:(jint)columnIndex;
 
@@ -102,21 +102,23 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbDataSquidCursor)
+J2OBJC_STATIC_INIT(SquiDBSquidCursor)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(ComYahooSquidbDataSquidCursor *self, id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields);
+FOUNDATION_EXPORT void SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(SquiDBSquidCursor *self, id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields);
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidCursor *new_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidCursor *new_SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidCursor *create_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields);
+FOUNDATION_EXPORT SquiDBSquidCursor *create_SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(ComYahooSquidbDataSquidCursor *self, id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields);
+FOUNDATION_EXPORT void SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(SquiDBSquidCursor *self, id<SquiDBICursor> cursor, id<JavaUtilList> fields);
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidCursor *new_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidCursor *new_SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(id<SquiDBICursor> cursor, id<JavaUtilList> fields) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidCursor *create_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields);
+FOUNDATION_EXPORT SquiDBSquidCursor *create_SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(id<SquiDBICursor> cursor, id<JavaUtilList> fields);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidCursor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidCursor)
+
+@compatibility_alias ComYahooSquidbDataSquidCursor SquiDBSquidCursor;
 
 
 #if __has_feature(nullability)

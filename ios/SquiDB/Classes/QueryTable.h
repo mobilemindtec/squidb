@@ -15,13 +15,13 @@
 #include "J2ObjC_header.h"
 #include "SqlTable.h"
 
-@class ComYahooSquidbSqlQuery;
 @class IOSClass;
 @class IOSObjectArray;
+@class SquiDBQuery;
 
-@interface ComYahooSquidbSqlQueryTable : ComYahooSquidbSqlSqlTable {
+@interface SquiDBQueryTable : SquiDBSqlTable {
  @public
-  ComYahooSquidbSqlQuery *query_;
+  SquiDBQuery *query_;
 }
 
 #pragma mark Public
@@ -30,23 +30,36 @@
 
 #pragma mark Protected
 
-- (instancetype __nonnull)initWithIOSClass:(IOSClass *)modelClass
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
-                              withNSString:(NSString *)name
-                              withNSString:(NSString *)databaseName
-                withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (instancetype __nonnull)initPackagePrivateWithIOSClass:(IOSClass *)modelClass
+                                 withSquiDBPropertyArray:(IOSObjectArray *)properties
+                                            withNSString:(NSString *)name
+                                            withNSString:(NSString *)databaseName
+                                         withSquiDBQuery:(SquiDBQuery *)query;
 
 - (IOSObjectArray *)allFields;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
+                   withSquiDBPropertyArray:(IOSObjectArray *)arg1
+                              withNSString:(NSString *)arg2 NS_UNAVAILABLE;
+
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
+                   withSquiDBPropertyArray:(IOSObjectArray *)arg1
+                              withNSString:(NSString *)arg2
+                              withNSString:(NSString *)arg3 NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlQueryTable)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBQueryTable)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQueryTable, query_, ComYahooSquidbSqlQuery *)
+J2OBJC_FIELD_SETTER(SquiDBQueryTable, query_, SquiDBQuery *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlQueryTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlQueryTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT void SquiDBQueryTable_initPackagePrivateWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withSquiDBQuery_(SquiDBQueryTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, SquiDBQuery *query);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlQueryTable)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBQueryTable)
+
+@compatibility_alias ComYahooSquidbSqlQueryTable SquiDBQueryTable;
 
 
 #if __has_feature(nullability)

@@ -8,23 +8,23 @@
 #include "SQLiteException.h"
 #include "java/lang/Throwable.h"
 
-@implementation ComYahooAndroidSqliteSQLiteException
+@implementation SquiDBSQLiteException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+  SquiDBSQLiteException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+  SquiDBSQLiteException_initWithNSString_(self, error);
   return self;
 }
 
 - (instancetype)initWithNSString:(NSString *)error
            withJavaLangThrowable:(JavaLangThrowable *)cause {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(self, error, cause);
+  SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(self, error, cause);
   return self;
 }
 
@@ -42,46 +42,48 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(initWithNSString:withJavaLangThrowable:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;", "LNSString;LJavaLangThrowable;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteException = { "SQLiteException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteException;
+  static const J2ObjcClassInfo _SquiDBSQLiteException = { "SQLiteException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteException_init(ComYahooAndroidSqliteSQLiteException *self) {
-  ComYahooAndroidSqliteSQLException_init(self);
+void SquiDBSQLiteException_init(SquiDBSQLiteException *self) {
+  SquiDBSQLException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteException, init)
+SquiDBSQLiteException *new_SquiDBSQLiteException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteException, init)
 }
 
-ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteException, init)
+SquiDBSQLiteException *create_SquiDBSQLiteException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteException_initWithNSString_(ComYahooAndroidSqliteSQLiteException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLException_initWithNSString_(self, error);
+void SquiDBSQLiteException_initWithNSString_(SquiDBSQLiteException *self, NSString *error) {
+  SquiDBSQLException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteException, initWithNSString_, error)
+SquiDBSQLiteException *new_SquiDBSQLiteException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteException, initWithNSString_, error)
+SquiDBSQLiteException *create_SquiDBSQLiteException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteException, initWithNSString_, error)
 }
 
-void ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteException *self, NSString *error, JavaLangThrowable *cause) {
-  ComYahooAndroidSqliteSQLException_initWithNSString_withJavaLangThrowable_(self, error, cause);
+void SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(SquiDBSQLiteException *self, NSString *error, JavaLangThrowable *cause) {
+  SquiDBSQLException_initWithNSString_withJavaLangThrowable_(self, error, cause);
 }
 
-ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteException, initWithNSString_withJavaLangThrowable_, error, cause)
+SquiDBSQLiteException *new_SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteException, initWithNSString_withJavaLangThrowable_, error, cause)
 }
 
-ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteException, initWithNSString_withJavaLangThrowable_, error, cause)
+SquiDBSQLiteException *create_SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteException, initWithNSString_withJavaLangThrowable_, error, cause)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteException, "com.yahoo.android.sqlite", "SquiDB")

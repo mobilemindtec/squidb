@@ -15,25 +15,25 @@
 #include "J2ObjC_header.h"
 #include "SQLiteDatabase.h"
 
-@class ComYahooAndroidSqliteSQLiteProgram;
-@class ComYahooAndroidSqliteSQLiteQuery;
 @class IOSObjectArray;
-@protocol ComYahooAndroidSqliteSQLiteCursorDriver;
-@protocol ComYahooSquidbDataICursor;
+@class SquiDBSQLiteProgram;
+@class SquiDBSQLiteQuery;
+@protocol SquiDBICursor;
+@protocol SquiDBSQLiteCursorDriver;
 
-@interface ComYahooSquidbIosSquidCursorFactory : NSObject < ComYahooAndroidSqliteSQLiteDatabase_CursorFactory >
+@interface SquiDBSquidCursorFactory : NSObject < SquiDBSQLiteDatabase_CursorFactory >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSObjectArray:(IOSObjectArray *)sqlArgs;
 
-+ (void)bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram:(ComYahooAndroidSqliteSQLiteProgram *)program
-                                                   withNSObjectArray:(IOSObjectArray *)sqlArgs;
++ (void)bindArgumentsToProgramWithSquiDBSQLiteProgram:(SquiDBSQLiteProgram *)program
+                                    withNSObjectArray:(IOSObjectArray *)sqlArgs;
 
-- (id<ComYahooSquidbDataICursor>)newCursorWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                      withComYahooAndroidSqliteSQLiteCursorDriver:(id<ComYahooAndroidSqliteSQLiteCursorDriver>)masterQuery
-                                                                     withNSString:(NSString *)editTable
-                                             withComYahooAndroidSqliteSQLiteQuery:(ComYahooAndroidSqliteSQLiteQuery *)query OBJC_METHOD_FAMILY_NONE;
+- (id<SquiDBICursor>)newCursorWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                          withSquiDBSQLiteCursorDriver:(id<SquiDBSQLiteCursorDriver>)masterQuery
+                                          withNSString:(NSString *)editTable
+                                 withSquiDBSQLiteQuery:(SquiDBSQLiteQuery *)query OBJC_METHOD_FAMILY_NONE;
 
 // Disallowed inherited constructors, do not use.
 
@@ -41,17 +41,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbIosSquidCursorFactory)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidCursorFactory)
 
-FOUNDATION_EXPORT void ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(ComYahooSquidbIosSquidCursorFactory *self, IOSObjectArray *sqlArgs);
+FOUNDATION_EXPORT void SquiDBSquidCursorFactory_initWithNSObjectArray_(SquiDBSquidCursorFactory *self, IOSObjectArray *sqlArgs);
 
-FOUNDATION_EXPORT ComYahooSquidbIosSquidCursorFactory *new_ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidCursorFactory *new_SquiDBSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbIosSquidCursorFactory *create_ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs);
+FOUNDATION_EXPORT SquiDBSquidCursorFactory *create_SquiDBSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs);
 
-FOUNDATION_EXPORT void ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(ComYahooAndroidSqliteSQLiteProgram *program, IOSObjectArray *sqlArgs);
+FOUNDATION_EXPORT void SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(SquiDBSQLiteProgram *program, IOSObjectArray *sqlArgs);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosSquidCursorFactory)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidCursorFactory)
+
+@compatibility_alias ComYahooSquidbIosSquidCursorFactory SquiDBSquidCursorFactory;
 
 
 #if __has_feature(nullability)

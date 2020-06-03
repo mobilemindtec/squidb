@@ -14,21 +14,21 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbDataSquidDatabase;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlTableStatement_ConflictAlgorithm;
-@protocol ComYahooSquidbDataISQLitePreparedStatement;
+@class SquiDBSquidDatabase;
+@class SquiDBTable;
+@class SquiDBTableStatement_ConflictAlgorithm;
 @protocol JavaUtilSet;
+@protocol SquiDBISQLitePreparedStatement;
 
-@interface ComYahooSquidbDataPreparedInsertCache : NSObject
+@interface SquiDBPreparedInsertCache : NSObject
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithJavaUtilSet:(id<JavaUtilSet>)dbStatementTracking;
+- (instancetype __nonnull)initPackagePrivateWithJavaUtilSet:(id<JavaUtilSet>)dbStatementTracking;
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)getPreparedInsertWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)db
-                                                                            withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-                                                 withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (id<SquiDBISQLitePreparedStatement>)getPreparedInsertWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)db
+                                                               withSquiDBTable:(SquiDBTable *)table
+                                    withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
 // Disallowed inherited constructors, do not use.
 
@@ -36,15 +36,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataPreparedInsertCache)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBPreparedInsertCache)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataPreparedInsertCache_initWithJavaUtilSet_(ComYahooSquidbDataPreparedInsertCache *self, id<JavaUtilSet> dbStatementTracking);
+FOUNDATION_EXPORT void SquiDBPreparedInsertCache_initPackagePrivateWithJavaUtilSet_(SquiDBPreparedInsertCache *self, id<JavaUtilSet> dbStatementTracking);
 
-FOUNDATION_EXPORT ComYahooSquidbDataPreparedInsertCache *new_ComYahooSquidbDataPreparedInsertCache_initWithJavaUtilSet_(id<JavaUtilSet> dbStatementTracking) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBPreparedInsertCache *new_SquiDBPreparedInsertCache_initPackagePrivateWithJavaUtilSet_(id<JavaUtilSet> dbStatementTracking) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataPreparedInsertCache *create_ComYahooSquidbDataPreparedInsertCache_initWithJavaUtilSet_(id<JavaUtilSet> dbStatementTracking);
+FOUNDATION_EXPORT SquiDBPreparedInsertCache *create_SquiDBPreparedInsertCache_initPackagePrivateWithJavaUtilSet_(id<JavaUtilSet> dbStatementTracking);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataPreparedInsertCache)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBPreparedInsertCache)
+
+@compatibility_alias ComYahooSquidbDataPreparedInsertCache SquiDBPreparedInsertCache;
 
 
 #if __has_feature(nullability)

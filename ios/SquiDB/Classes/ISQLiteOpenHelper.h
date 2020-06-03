@@ -14,11 +14,11 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooSquidbDataISQLiteDatabase;
+@protocol SquiDBISQLiteDatabase;
 
-@protocol ComYahooSquidbDataISQLiteOpenHelper < JavaObject >
+@protocol SquiDBISQLiteOpenHelper < JavaObject >
 
-- (id<ComYahooSquidbDataISQLiteDatabase>)openForWriting;
+- (id<SquiDBISQLiteDatabase>)openForWriting;
 
 - (NSString *)getDatabasePath;
 
@@ -28,9 +28,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataISQLiteOpenHelper)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBISQLiteOpenHelper)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataISQLiteOpenHelper)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBISQLiteOpenHelper)
+
+#define ComYahooSquidbDataISQLiteOpenHelper SquiDBISQLiteOpenHelper
 
 
 #if __has_feature(nullability)

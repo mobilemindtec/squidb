@@ -51,29 +51,29 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooAndroidSqliteSQLiteDatabase () {
+@interface SquiDBSQLiteDatabase () {
  @public
   JavaLangThreadLocal *mThreadSession_;
-  id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> mCursorFactory_;
-  id<ComYahooAndroidSqliteDatabaseErrorHandler> mErrorHandler_;
+  id<SquiDBSQLiteDatabase_CursorFactory> mCursorFactory_;
+  id<SquiDBDatabaseErrorHandler> mErrorHandler_;
   id mLock_;
-  ComYahooAndroidSqliteCloseGuard *mCloseGuardLocked_;
-  ComYahooAndroidSqliteSQLiteDatabaseConfiguration *mConfigurationLocked_;
-  ComYahooAndroidSqliteSQLiteConnectionPool *mConnectionPoolLocked_;
+  SquiDBCloseGuard *mCloseGuardLocked_;
+  SquiDBSQLiteDatabaseConfiguration *mConfigurationLocked_;
+  SquiDBSQLiteConnectionPool *mConnectionPoolLocked_;
   jboolean mHasAttachedDbsLocked_;
 }
 
 - (instancetype)initWithNSString:(NSString *)path
                          withInt:(jint)openFlags
-withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)cursorFactory
-withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseErrorHandler>)errorHandler;
+withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)cursorFactory
+  withSquiDBDatabaseErrorHandler:(id<SquiDBDatabaseErrorHandler>)errorHandler;
 
 - (void)disposeWithBoolean:(jboolean)finalized;
 
 + (jboolean)isMainThread;
 
-- (void)beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLiteTransactionListener>)transactionListener
-                                                               withBoolean:(jboolean)exclusive;
+- (void)beginTransactionWithSquiDBSQLiteTransactionListener:(id<SquiDBSQLiteTransactionListener>)transactionListener
+                                                withBoolean:(jboolean)exclusive;
 
 - (jboolean)yieldIfContendedHelperWithBoolean:(jboolean)throwIfUnsafe
                                      withLong:(jlong)sleepAfterYieldDelay;
@@ -91,110 +91,110 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 
 + (JavaUtilArrayList *)getActiveDatabases;
 
-- (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                 withBoolean:(jboolean)verbose;
+- (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                  withBoolean:(jboolean)verbose;
 
 - (void)throwIfNotOpenLocked;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mThreadSession_, JavaLangThreadLocal *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mCursorFactory_, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mErrorHandler_, id<ComYahooAndroidSqliteDatabaseErrorHandler>)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mLock_, id)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mCloseGuardLocked_, ComYahooAndroidSqliteCloseGuard *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mConfigurationLocked_, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabase, mConnectionPoolLocked_, ComYahooAndroidSqliteSQLiteConnectionPool *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mThreadSession_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mCursorFactory_, id<SquiDBSQLiteDatabase_CursorFactory>)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mErrorHandler_, id<SquiDBDatabaseErrorHandler>)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mLock_, id)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mCloseGuardLocked_, SquiDBCloseGuard *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mConfigurationLocked_, SquiDBSQLiteDatabaseConfiguration *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabase, mConnectionPoolLocked_, SquiDBSQLiteConnectionPool *)
 
-inline NSString *ComYahooAndroidSqliteSQLiteDatabase_get_TAG(void);
-static NSString *ComYahooAndroidSqliteSQLiteDatabase_TAG = @"SQLiteDatabase";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteDatabase, TAG, NSString *)
+inline NSString *SquiDBSQLiteDatabase_get_TAG(void);
+static NSString *SquiDBSQLiteDatabase_TAG = @"SQLiteDatabase";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteDatabase, TAG, NSString *)
 
-inline jint ComYahooAndroidSqliteSQLiteDatabase_get_EVENT_DB_CORRUPT(void);
-#define ComYahooAndroidSqliteSQLiteDatabase_EVENT_DB_CORRUPT 75004
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDatabase, EVENT_DB_CORRUPT, jint)
+inline jint SquiDBSQLiteDatabase_get_EVENT_DB_CORRUPT(void);
+#define SquiDBSQLiteDatabase_EVENT_DB_CORRUPT 75004
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDatabase, EVENT_DB_CORRUPT, jint)
 
-inline JavaUtilWeakHashMap *ComYahooAndroidSqliteSQLiteDatabase_get_sActiveDatabases(void);
-inline JavaUtilWeakHashMap *ComYahooAndroidSqliteSQLiteDatabase_set_sActiveDatabases(JavaUtilWeakHashMap *value);
-static JavaUtilWeakHashMap *ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases;
-J2OBJC_STATIC_FIELD_OBJ(ComYahooAndroidSqliteSQLiteDatabase, sActiveDatabases, JavaUtilWeakHashMap *)
+inline JavaUtilWeakHashMap *SquiDBSQLiteDatabase_get_sActiveDatabases(void);
+inline JavaUtilWeakHashMap *SquiDBSQLiteDatabase_set_sActiveDatabases(JavaUtilWeakHashMap *value);
+static JavaUtilWeakHashMap *SquiDBSQLiteDatabase_sActiveDatabases;
+J2OBJC_STATIC_FIELD_OBJ(SquiDBSQLiteDatabase, sActiveDatabases, JavaUtilWeakHashMap *)
 
-inline IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase_get_CONFLICT_VALUES(void);
-static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_VALUES;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteDatabase, CONFLICT_VALUES, IOSObjectArray *)
+inline IOSObjectArray *SquiDBSQLiteDatabase_get_CONFLICT_VALUES(void);
+static IOSObjectArray *SquiDBSQLiteDatabase_CONFLICT_VALUES;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteDatabase, CONFLICT_VALUES, IOSObjectArray *)
 
-inline jint ComYahooAndroidSqliteSQLiteDatabase_get_OPEN_READ_MASK(void);
-#define ComYahooAndroidSqliteSQLiteDatabase_OPEN_READ_MASK 1
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDatabase, OPEN_READ_MASK, jint)
+inline jint SquiDBSQLiteDatabase_get_OPEN_READ_MASK(void);
+#define SquiDBSQLiteDatabase_OPEN_READ_MASK 1
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDatabase, OPEN_READ_MASK, jint)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(ComYahooAndroidSqliteSQLiteDatabase *self, NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(SquiDBSQLiteDatabase *self, NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase *new_ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteDatabase *new_SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase *create_ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler);
+__attribute__((unused)) static SquiDBSQLiteDatabase *create_SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, jboolean finalized);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_disposeWithBoolean_(SquiDBSQLiteDatabase *self, jboolean finalized);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteSQLiteDatabase_isMainThread(void);
+__attribute__((unused)) static jboolean SquiDBSQLiteDatabase_isMainThread(void);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, id<ComYahooAndroidSqliteSQLiteTransactionListener> transactionListener, jboolean exclusive);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(SquiDBSQLiteDatabase *self, id<SquiDBSQLiteTransactionListener> transactionListener, jboolean exclusive);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(ComYahooAndroidSqliteSQLiteDatabase *self, jboolean throwIfUnsafe, jlong sleepAfterYieldDelay);
+__attribute__((unused)) static jboolean SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(SquiDBSQLiteDatabase *self, jboolean throwIfUnsafe, jlong sleepAfterYieldDelay);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_open(ComYahooAndroidSqliteSQLiteDatabase *self);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_open(SquiDBSQLiteDatabase *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_openInner(ComYahooAndroidSqliteSQLiteDatabase *self);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_openInner(SquiDBSQLiteDatabase *self);
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteDatabase *self, NSString *sql, IOSObjectArray *bindArgs);
+__attribute__((unused)) static jint SquiDBSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(SquiDBSQLiteDatabase *self, NSString *sql, IOSObjectArray *bindArgs);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(ComYahooAndroidSqliteSQLiteDatabase *self);
+__attribute__((unused)) static jboolean SquiDBSQLiteDatabase_isReadOnlyLocked(SquiDBSQLiteDatabase *self);
 
-__attribute__((unused)) static NSString *ComYahooAndroidSqliteSQLiteDatabase_getPath(ComYahooAndroidSqliteSQLiteDatabase *self);
+__attribute__((unused)) static NSString *SquiDBSQLiteDatabase_getPath(SquiDBSQLiteDatabase *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(ComYahooAndroidSqliteSQLiteDatabase *self, JavaUtilArrayList *dbStatsList);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(SquiDBSQLiteDatabase *self, JavaUtilArrayList *dbStatsList);
 
-__attribute__((unused)) static JavaUtilArrayList *ComYahooAndroidSqliteSQLiteDatabase_getActiveDatabases(void);
+__attribute__((unused)) static JavaUtilArrayList *SquiDBSQLiteDatabase_getActiveDatabases(void);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_dumpWithComYahooAndroidSqlitePrinter_withBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, id<ComYahooAndroidSqlitePrinter> printer, jboolean verbose);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_dumpWithSquiDBPrinter_withBoolean_(SquiDBSQLiteDatabase *self, id<SquiDBPrinter> printer, jboolean verbose);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(ComYahooAndroidSqliteSQLiteDatabase *self);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_throwIfNotOpenLocked(SquiDBSQLiteDatabase *self);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$3(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$4(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$4(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$5(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteDatabase__Annotations$5(void);
 
-@interface ComYahooAndroidSqliteSQLiteDatabase_1 : JavaLangThreadLocal {
+@interface SquiDBSQLiteDatabase_1 : JavaLangThreadLocal {
  @public
-  ComYahooAndroidSqliteSQLiteDatabase *this$0_;
+  SquiDBSQLiteDatabase *this$0_;
 }
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)outer$;
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)outer$;
 
-- (ComYahooAndroidSqliteSQLiteSession *)initialValue OBJC_METHOD_FAMILY_NONE;
+- (SquiDBSQLiteSession *)initialValue OBJC_METHOD_FAMILY_NONE;
 
-- (ComYahooAndroidSqliteSQLiteSession *)get;
+- (SquiDBSQLiteSession *)get;
 
-- (ComYahooAndroidSqliteSQLiteSession *)childValueWithId:(ComYahooAndroidSqliteSQLiteSession *)arg0;
+- (SquiDBSQLiteSession *)childValueWithId:(SquiDBSQLiteSession *)arg0;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDatabase_1)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDatabase_1)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase_1 *self, ComYahooAndroidSqliteSQLiteDatabase *outer$);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase_1 *self, SquiDBSQLiteDatabase *outer$);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase_1 *new_ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteDatabase_1 *new_SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase_1 *create_ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *outer$);
+__attribute__((unused)) static SquiDBSQLiteDatabase_1 *create_SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *outer$);
 
-@interface ComYahooAndroidSqliteSQLiteDatabase_2 : NSObject < JavaIoFileFilter > {
+@interface SquiDBSQLiteDatabase_2 : NSObject < JavaIoFileFilter > {
  @public
   NSString *val$prefix_;
 }
@@ -205,89 +205,89 @@ __attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase_1 *create_Com
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDatabase_2)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDatabase_2)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(ComYahooAndroidSqliteSQLiteDatabase_2 *self, NSString *capture$0);
+__attribute__((unused)) static void SquiDBSQLiteDatabase_2_initWithNSString_(SquiDBSQLiteDatabase_2 *self, NSString *capture$0);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase_2 *new_ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(NSString *capture$0) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteDatabase_2 *new_SquiDBSQLiteDatabase_2_initWithNSString_(NSString *capture$0) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteDatabase_2 *create_ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(NSString *capture$0);
+__attribute__((unused)) static SquiDBSQLiteDatabase_2 *create_SquiDBSQLiteDatabase_2_initWithNSString_(NSString *capture$0);
 
-@interface ComYahooAndroidSqliteSQLiteDatabase_CursorFactory : NSObject
-
-@end
-
-@interface ComYahooAndroidSqliteSQLiteDatabase_CustomFunction : NSObject
+@interface SquiDBSQLiteDatabase_CursorFactory : NSObject
 
 @end
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteDatabase)
+@interface SquiDBSQLiteDatabase_CustomFunction : NSObject
 
-@implementation ComYahooAndroidSqliteSQLiteDatabase
+@end
+
+J2OBJC_INITIALIZED_DEFN(SquiDBSQLiteDatabase)
+
+@implementation SquiDBSQLiteDatabase
 
 + (jint)CONFLICT_ROLLBACK {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_ROLLBACK;
+  return SquiDBSQLiteDatabase_CONFLICT_ROLLBACK;
 }
 
 + (jint)CONFLICT_ABORT {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_ABORT;
+  return SquiDBSQLiteDatabase_CONFLICT_ABORT;
 }
 
 + (jint)CONFLICT_FAIL {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_FAIL;
+  return SquiDBSQLiteDatabase_CONFLICT_FAIL;
 }
 
 + (jint)CONFLICT_IGNORE {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_IGNORE;
+  return SquiDBSQLiteDatabase_CONFLICT_IGNORE;
 }
 
 + (jint)CONFLICT_REPLACE {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_REPLACE;
+  return SquiDBSQLiteDatabase_CONFLICT_REPLACE;
 }
 
 + (jint)CONFLICT_NONE {
-  return ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_NONE;
+  return SquiDBSQLiteDatabase_CONFLICT_NONE;
 }
 
 + (jint)SQLITE_MAX_LIKE_PATTERN_LENGTH {
-  return ComYahooAndroidSqliteSQLiteDatabase_SQLITE_MAX_LIKE_PATTERN_LENGTH;
+  return SquiDBSQLiteDatabase_SQLITE_MAX_LIKE_PATTERN_LENGTH;
 }
 
 + (jint)OPEN_READWRITE {
-  return ComYahooAndroidSqliteSQLiteDatabase_OPEN_READWRITE;
+  return SquiDBSQLiteDatabase_OPEN_READWRITE;
 }
 
 + (jint)OPEN_READONLY {
-  return ComYahooAndroidSqliteSQLiteDatabase_OPEN_READONLY;
+  return SquiDBSQLiteDatabase_OPEN_READONLY;
 }
 
 + (jint)NO_LOCALIZED_COLLATORS {
-  return ComYahooAndroidSqliteSQLiteDatabase_NO_LOCALIZED_COLLATORS;
+  return SquiDBSQLiteDatabase_NO_LOCALIZED_COLLATORS;
 }
 
 + (jint)CREATE_IF_NECESSARY {
-  return ComYahooAndroidSqliteSQLiteDatabase_CREATE_IF_NECESSARY;
+  return SquiDBSQLiteDatabase_CREATE_IF_NECESSARY;
 }
 
 + (jint)ENABLE_WRITE_AHEAD_LOGGING {
-  return ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
+  return SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
 }
 
 + (jint)MAX_SQL_CACHE_SIZE {
-  return ComYahooAndroidSqliteSQLiteDatabase_MAX_SQL_CACHE_SIZE;
+  return SquiDBSQLiteDatabase_MAX_SQL_CACHE_SIZE;
 }
 
 - (instancetype)initWithNSString:(NSString *)path
                          withInt:(jint)openFlags
-withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)cursorFactory
-withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseErrorHandler>)errorHandler {
-  ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(self, path, openFlags, cursorFactory, errorHandler);
+withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)cursorFactory
+  withSquiDBDatabaseErrorHandler:(id<SquiDBDatabaseErrorHandler>)errorHandler {
+  SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(self, path, openFlags, cursorFactory, errorHandler);
   return self;
 }
 
 - (void)java_finalize {
   @try {
-    ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(self, true);
+    SquiDBSQLiteDatabase_disposeWithBoolean_(self, true);
   }
   @finally {
     [super java_finalize];
@@ -295,15 +295,15 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 }
 
 - (void)onAllReferencesReleased {
-  ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(self, false);
+  SquiDBSQLiteDatabase_disposeWithBoolean_(self, false);
 }
 
 - (void)disposeWithBoolean:(jboolean)finalized {
-  ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(self, finalized);
+  SquiDBSQLiteDatabase_disposeWithBoolean_(self, finalized);
 }
 
 + (jint)releaseMemory {
-  return ComYahooAndroidSqliteSQLiteDatabase_releaseMemory();
+  return SquiDBSQLiteDatabase_releaseMemory();
 }
 
 - (void)setLockingEnabledWithBoolean:(jboolean)lockingEnabled {
@@ -311,64 +311,64 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 
 - (NSString *)getLabel {
   @synchronized(mLock_) {
-    return ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->label_;
+    return ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->label_;
   }
 }
 
 - (void)onCorruption {
-  [((id<ComYahooAndroidSqliteDatabaseErrorHandler>) nil_chk(mErrorHandler_)) onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:self];
+  [((id<SquiDBDatabaseErrorHandler>) nil_chk(mErrorHandler_)) onCorruptionWithSquiDBSQLiteDatabase:self];
 }
 
-- (ComYahooAndroidSqliteSQLiteSession *)getThreadSession {
+- (SquiDBSQLiteSession *)getThreadSession {
   return [((JavaLangThreadLocal *) nil_chk(mThreadSession_)) get];
 }
 
-- (ComYahooAndroidSqliteSQLiteSession *)createSession {
-  ComYahooAndroidSqliteSQLiteConnectionPool *pool;
+- (SquiDBSQLiteSession *)createSession {
+  SquiDBSQLiteConnectionPool *pool;
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
     pool = mConnectionPoolLocked_;
   }
-  return new_ComYahooAndroidSqliteSQLiteSession_initWithComYahooAndroidSqliteSQLiteConnectionPool_(pool);
+  return new_SquiDBSQLiteSession_initWithSquiDBSQLiteConnectionPool_(pool);
 }
 
 - (jint)getThreadDefaultConnectionFlagsWithBoolean:(jboolean)readOnly {
-  jint flags = readOnly ? ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY : ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY;
-  if (ComYahooAndroidSqliteSQLiteDatabase_isMainThread()) {
-    flags |= ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE;
+  jint flags = readOnly ? SquiDBSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY : SquiDBSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY;
+  if (SquiDBSQLiteDatabase_isMainThread()) {
+    flags |= SquiDBSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE;
   }
   return flags;
 }
 
 + (jboolean)isMainThread {
-  return ComYahooAndroidSqliteSQLiteDatabase_isMainThread();
+  return SquiDBSQLiteDatabase_isMainThread();
 }
 
 - (void)beginTransaction {
-  ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(self, nil, true);
+  SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(self, nil, true);
 }
 
 - (void)beginTransactionNonExclusive {
-  ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(self, nil, false);
+  SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(self, nil, false);
 }
 
-- (void)beginTransactionWithListenerWithComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLiteTransactionListener>)transactionListener {
-  ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(self, transactionListener, true);
+- (void)beginTransactionWithListenerWithSquiDBSQLiteTransactionListener:(id<SquiDBSQLiteTransactionListener>)transactionListener {
+  SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(self, transactionListener, true);
 }
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLiteTransactionListener>)transactionListener {
-  ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(self, transactionListener, false);
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSQLiteTransactionListener:(id<SquiDBSQLiteTransactionListener>)transactionListener {
+  SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(self, transactionListener, false);
 }
 
-- (void)beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener:(id<ComYahooAndroidSqliteSQLiteTransactionListener>)transactionListener
-                                                               withBoolean:(jboolean)exclusive {
-  ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(self, transactionListener, exclusive);
+- (void)beginTransactionWithSquiDBSQLiteTransactionListener:(id<SquiDBSQLiteTransactionListener>)transactionListener
+                                                withBoolean:(jboolean)exclusive {
+  SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(self, transactionListener, exclusive);
 }
 
 - (void)endTransaction {
   [self acquireReference];
   @try {
-    [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) endTransaction];
+    [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) endTransaction];
   }
   @finally {
     [self releaseReference];
@@ -378,7 +378,7 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 - (void)setTransactionSuccessful {
   [self acquireReference];
   @try {
-    [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) setTransactionSuccessful];
+    [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) setTransactionSuccessful];
   }
   @finally {
     [self releaseReference];
@@ -388,7 +388,7 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 - (jboolean)inTransaction {
   [self acquireReference];
   @try {
-    return [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) hasTransaction];
+    return [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) hasTransaction];
   }
   @finally {
     [self releaseReference];
@@ -398,7 +398,7 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 - (jboolean)isDbLockedByCurrentThread {
   [self acquireReference];
   @try {
-    return [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) hasConnection];
+    return [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) hasConnection];
   }
   @finally {
     [self releaseReference];
@@ -410,69 +410,69 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 }
 
 - (jboolean)yieldIfContended {
-  return ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, false, -1);
+  return SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, false, -1);
 }
 
 - (jboolean)yieldIfContendedSafely {
-  return ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, true, -1);
+  return SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, true, -1);
 }
 
 - (jboolean)yieldIfContendedSafelyWithLong:(jlong)sleepAfterYieldDelay {
-  return ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, true, sleepAfterYieldDelay);
+  return SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, true, sleepAfterYieldDelay);
 }
 
 - (jboolean)yieldIfContendedHelperWithBoolean:(jboolean)throwIfUnsafe
                                      withLong:(jlong)sleepAfterYieldDelay {
-  return ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, throwIfUnsafe, sleepAfterYieldDelay);
+  return SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(self, throwIfUnsafe, sleepAfterYieldDelay);
 }
 
 - (id<JavaUtilMap>)getSyncedTables {
   return new_JavaUtilHashMap_initWithInt_(0);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)openDatabaseWithNSString:(NSString *)path
-            withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
-                                                          withInt:(jint)flags {
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_(path, factory, flags);
++ (SquiDBSQLiteDatabase *)openDatabaseWithNSString:(NSString *)path
+            withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
+                                           withInt:(jint)flags {
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_(path, factory, flags);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)openDatabaseWithNSString:(NSString *)path
-            withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
-                                                          withInt:(jint)flags
-                    withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseErrorHandler>)errorHandler {
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(path, factory, flags, errorHandler);
++ (SquiDBSQLiteDatabase *)openDatabaseWithNSString:(NSString *)path
+            withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
+                                           withInt:(jint)flags
+                    withSquiDBDatabaseErrorHandler:(id<SquiDBDatabaseErrorHandler>)errorHandler {
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(path, factory, flags, errorHandler);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)openOrCreateDatabaseWithJavaIoFile:(JavaIoFile *)file
-                      withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory {
-  return ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithJavaIoFile_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(file, factory);
++ (SquiDBSQLiteDatabase *)openOrCreateDatabaseWithJavaIoFile:(JavaIoFile *)file
+                      withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory {
+  return SquiDBSQLiteDatabase_openOrCreateDatabaseWithJavaIoFile_withSquiDBSQLiteDatabase_CursorFactory_(file, factory);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)openOrCreateDatabaseWithNSString:(NSString *)path
-                    withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory {
-  return ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(path, factory);
++ (SquiDBSQLiteDatabase *)openOrCreateDatabaseWithNSString:(NSString *)path
+                    withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory {
+  return SquiDBSQLiteDatabase_openOrCreateDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_(path, factory);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)openOrCreateDatabaseWithNSString:(NSString *)path
-                    withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
-                            withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseErrorHandler>)errorHandler {
-  return ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(path, factory, errorHandler);
++ (SquiDBSQLiteDatabase *)openOrCreateDatabaseWithNSString:(NSString *)path
+                    withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
+                            withSquiDBDatabaseErrorHandler:(id<SquiDBDatabaseErrorHandler>)errorHandler {
+  return SquiDBSQLiteDatabase_openOrCreateDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(path, factory, errorHandler);
 }
 
 + (jboolean)deleteDatabaseWithJavaIoFile:(JavaIoFile *)file {
-  return ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(file);
+  return SquiDBSQLiteDatabase_deleteDatabaseWithJavaIoFile_(file);
 }
 
 - (void)reopenReadWrite {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    if (!ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(self)) {
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    if (!SquiDBSQLiteDatabase_isReadOnlyLocked(self)) {
       return;
     }
-    jint oldOpenFlags = ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_;
-    mConfigurationLocked_->openFlags_ = (mConfigurationLocked_->openFlags_ & ~ComYahooAndroidSqliteSQLiteDatabase_OPEN_READ_MASK) | ComYahooAndroidSqliteSQLiteDatabase_OPEN_READWRITE;
+    jint oldOpenFlags = ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_;
+    mConfigurationLocked_->openFlags_ = (mConfigurationLocked_->openFlags_ & ~SquiDBSQLiteDatabase_OPEN_READ_MASK) | SquiDBSQLiteDatabase_OPEN_READWRITE;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
       mConfigurationLocked_->openFlags_ = oldOpenFlags;
@@ -482,26 +482,26 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 }
 
 - (void)open {
-  ComYahooAndroidSqliteSQLiteDatabase_open(self);
+  SquiDBSQLiteDatabase_open(self);
 }
 
 - (void)openInner {
-  ComYahooAndroidSqliteSQLiteDatabase_openInner(self);
+  SquiDBSQLiteDatabase_openInner(self);
 }
 
-+ (ComYahooAndroidSqliteSQLiteDatabase *)createWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory {
-  return ComYahooAndroidSqliteSQLiteDatabase_createWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(factory);
++ (SquiDBSQLiteDatabase *)createWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory {
+  return SquiDBSQLiteDatabase_createWithSquiDBSQLiteDatabase_CursorFactory_(factory);
 }
 
 - (void)addCustomFunctionWithNSString:(NSString *)name
                               withInt:(jint)numArgs
-withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction>)function {
-  ComYahooAndroidSqliteSQLiteCustomFunction *wrapper = new_ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(name, numArgs, function);
+withSquiDBSQLiteDatabase_CustomFunction:(id<SquiDBSQLiteDatabase_CustomFunction>)function {
+  SquiDBSQLiteCustomFunction *wrapper = new_SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(name, numArgs, function);
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    [((JavaUtilArrayList *) nil_chk(((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->customFunctions_)) addWithId:wrapper];
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    [((JavaUtilArrayList *) nil_chk(((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->customFunctions_)) addWithId:wrapper];
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
       [mConfigurationLocked_->customFunctions_ removeWithId:wrapper];
@@ -511,7 +511,7 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
 }
 
 - (jint)getVersion {
-  return [JavaLangLong_valueOfWithLong_(ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA user_version;", nil)) intValue];
+  return [JavaLangLong_valueOfWithLong_(SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA user_version;", nil)) intValue];
 }
 
 - (void)setVersionWithInt:(jint)version_ {
@@ -519,22 +519,22 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
 }
 
 - (jlong)getMaximumSize {
-  jlong pageCount = ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA max_page_count;", nil);
+  jlong pageCount = SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA max_page_count;", nil);
   return pageCount * [self getPageSize];
 }
 
 - (jlong)setMaximumSizeWithLong:(jlong)numBytes {
   jlong pageSize = [self getPageSize];
-  jlong numPages = numBytes / pageSize;
-  if ((numBytes % pageSize) != 0) {
+  jlong numPages = JreLongDiv(numBytes, pageSize);
+  if ((JreLongMod(numBytes, pageSize)) != 0) {
     numPages++;
   }
-  jlong newPageCount = ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(self, JreStrcat("$J", @"PRAGMA max_page_count = ", numPages), nil);
+  jlong newPageCount = SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(self, JreStrcat("$J", @"PRAGMA max_page_count = ", numPages), nil);
   return newPageCount * pageSize;
 }
 
 - (jlong)getPageSize {
-  return ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA page_size;", nil);
+  return SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(self, @"PRAGMA page_size;", nil);
 }
 
 - (void)setPageSizeWithLong:(jlong)numBytes {
@@ -551,85 +551,85 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
 }
 
 + (NSString *)findEditTableWithNSString:(NSString *)tables {
-  return ComYahooAndroidSqliteSQLiteDatabase_findEditTableWithNSString_(tables);
+  return SquiDBSQLiteDatabase_findEditTableWithNSString_(tables);
 }
 
-- (ComYahooAndroidSqliteSQLiteStatement *)compileStatementWithNSString:(NSString *)sql {
+- (SquiDBSQLiteStatement *)compileStatementWithNSString:(NSString *)sql {
   [self acquireReference];
   @try {
-    return new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, sql, nil);
+    return new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, sql, nil);
   }
   @finally {
     [self releaseReference];
   }
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithBoolean:(jboolean)distinct
-                                     withNSString:(NSString *)table
-                                withNSStringArray:(IOSObjectArray *)columns
-                                     withNSString:(NSString *)selection
-                                withNSStringArray:(IOSObjectArray *)selectionArgs
-                                     withNSString:(NSString *)groupBy
-                                     withNSString:(NSString *)having
-                                     withNSString:(NSString *)orderBy
-                                     withNSString:(NSString *)limit {
-  return [self queryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:nil withBoolean:distinct withNSString:table withNSStringArray:columns withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:orderBy withNSString:limit];
+- (id<SquiDBICursor>)queryWithBoolean:(jboolean)distinct
+                         withNSString:(NSString *)table
+                    withNSStringArray:(IOSObjectArray *)columns
+                         withNSString:(NSString *)selection
+                    withNSStringArray:(IOSObjectArray *)selectionArgs
+                         withNSString:(NSString *)groupBy
+                         withNSString:(NSString *)having
+                         withNSString:(NSString *)orderBy
+                         withNSString:(NSString *)limit {
+  return [self queryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:nil withBoolean:distinct withNSString:table withNSStringArray:columns withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:orderBy withNSString:limit];
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)cursorFactory
-                                                                                           withBoolean:(jboolean)distinct
-                                                                                          withNSString:(NSString *)table
-                                                                                     withNSStringArray:(IOSObjectArray *)columns
-                                                                                          withNSString:(NSString *)selection
-                                                                                     withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                                          withNSString:(NSString *)groupBy
-                                                                                          withNSString:(NSString *)having
-                                                                                          withNSString:(NSString *)orderBy
-                                                                                          withNSString:(NSString *)limit {
+- (id<SquiDBICursor>)queryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)cursorFactory
+                                                                withBoolean:(jboolean)distinct
+                                                               withNSString:(NSString *)table
+                                                          withNSStringArray:(IOSObjectArray *)columns
+                                                               withNSString:(NSString *)selection
+                                                          withNSStringArray:(IOSObjectArray *)selectionArgs
+                                                               withNSString:(NSString *)groupBy
+                                                               withNSString:(NSString *)having
+                                                               withNSString:(NSString *)orderBy
+                                                               withNSString:(NSString *)limit {
   [self acquireReference];
   @try {
-    NSString *sql = ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(distinct, table, columns, selection, groupBy, having, orderBy, limit);
-    return [self rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:cursorFactory withNSString:sql withNSStringArray:selectionArgs withNSString:ComYahooAndroidSqliteSQLiteDatabase_findEditTableWithNSString_(table)];
+    NSString *sql = SquiDBSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(distinct, table, columns, selection, groupBy, having, orderBy, limit);
+    return [self rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:cursorFactory withNSString:sql withNSStringArray:selectionArgs withNSString:SquiDBSQLiteDatabase_findEditTableWithNSString_(table)];
   }
   @finally {
     [self releaseReference];
   }
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithNSString:(NSString *)table
-                                 withNSStringArray:(IOSObjectArray *)columns
-                                      withNSString:(NSString *)selection
-                                 withNSStringArray:(IOSObjectArray *)selectionArgs
-                                      withNSString:(NSString *)groupBy
-                                      withNSString:(NSString *)having
-                                      withNSString:(NSString *)orderBy {
+- (id<SquiDBICursor>)queryWithNSString:(NSString *)table
+                     withNSStringArray:(IOSObjectArray *)columns
+                          withNSString:(NSString *)selection
+                     withNSStringArray:(IOSObjectArray *)selectionArgs
+                          withNSString:(NSString *)groupBy
+                          withNSString:(NSString *)having
+                          withNSString:(NSString *)orderBy {
   return [self queryWithBoolean:false withNSString:table withNSStringArray:columns withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:orderBy withNSString:nil];
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithNSString:(NSString *)table
-                                 withNSStringArray:(IOSObjectArray *)columns
-                                      withNSString:(NSString *)selection
-                                 withNSStringArray:(IOSObjectArray *)selectionArgs
-                                      withNSString:(NSString *)groupBy
-                                      withNSString:(NSString *)having
-                                      withNSString:(NSString *)orderBy
-                                      withNSString:(NSString *)limit {
+- (id<SquiDBICursor>)queryWithNSString:(NSString *)table
+                     withNSStringArray:(IOSObjectArray *)columns
+                          withNSString:(NSString *)selection
+                     withNSStringArray:(IOSObjectArray *)selectionArgs
+                          withNSString:(NSString *)groupBy
+                          withNSString:(NSString *)having
+                          withNSString:(NSString *)orderBy
+                          withNSString:(NSString *)limit {
   return [self queryWithBoolean:false withNSString:table withNSStringArray:columns withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:orderBy withNSString:limit];
 }
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSStringArray:(IOSObjectArray *)selectionArgs {
-  return [self rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:nil withNSString:sql withNSStringArray:selectionArgs withNSString:nil];
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSStringArray:(IOSObjectArray *)selectionArgs {
+  return [self rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:nil withNSString:sql withNSStringArray:selectionArgs withNSString:nil];
 }
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)cursorFactory
-                                                                                             withNSString:(NSString *)sql
-                                                                                        withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                                             withNSString:(NSString *)editTable {
+- (id<SquiDBICursor>)rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)cursorFactory
+                                                                  withNSString:(NSString *)sql
+                                                             withNSStringArray:(IOSObjectArray *)selectionArgs
+                                                                  withNSString:(NSString *)editTable {
   [self acquireReference];
   @try {
-    id<ComYahooAndroidSqliteSQLiteCursorDriver> driver = new_ComYahooAndroidSqliteSQLiteDirectCursorDriver_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_(self, sql, editTable);
-    return [driver queryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:cursorFactory != nil ? cursorFactory : mCursorFactory_ withNSStringArray:selectionArgs];
+    id<SquiDBSQLiteCursorDriver> driver = new_SquiDBSQLiteDirectCursorDriver_initWithSquiDBSQLiteDatabase_withNSString_withNSString_(self, sql, editTable);
+    return [driver queryWithSquiDBSQLiteDatabase_CursorFactory:cursorFactory != nil ? cursorFactory : mCursorFactory_ withNSStringArray:selectionArgs];
   }
   @finally {
     [self releaseReference];
@@ -638,58 +638,58 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
 
 - (jlong)insertWithNSString:(NSString *)table
                withNSString:(NSString *)nullColumnHack
-withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values {
+    withSquiDBValuesStorage:(SquiDBValuesStorage *)values {
   @try {
-    return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withComYahooSquidbDataValuesStorage:values withInt:ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_NONE];
+    return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withSquiDBValuesStorage:values withInt:SquiDBSQLiteDatabase_CONFLICT_NONE];
   }
-  @catch (ComYahooAndroidSqliteSQLException *e) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreStrcat("$@", @"Error inserting ", values), e);
+  @catch (SquiDBSQLException *e) {
+    SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteDatabase_TAG, JreStrcat("$@", @"Error inserting ", values), e);
     return -1;
   }
 }
 
 - (jlong)insertOrThrowWithNSString:(NSString *)table
                       withNSString:(NSString *)nullColumnHack
-withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values {
-  return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withComYahooSquidbDataValuesStorage:values withInt:ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_NONE];
+           withSquiDBValuesStorage:(SquiDBValuesStorage *)values {
+  return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withSquiDBValuesStorage:values withInt:SquiDBSQLiteDatabase_CONFLICT_NONE];
 }
 
 - (jlong)replaceWithNSString:(NSString *)table
                 withNSString:(NSString *)nullColumnHack
-withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialValues {
+     withSquiDBValuesStorage:(SquiDBValuesStorage *)initialValues {
   @try {
-    return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withComYahooSquidbDataValuesStorage:initialValues withInt:ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_REPLACE];
+    return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withSquiDBValuesStorage:initialValues withInt:SquiDBSQLiteDatabase_CONFLICT_REPLACE];
   }
-  @catch (ComYahooAndroidSqliteSQLException *e) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreStrcat("$@", @"Error inserting ", initialValues), e);
+  @catch (SquiDBSQLException *e) {
+    SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteDatabase_TAG, JreStrcat("$@", @"Error inserting ", initialValues), e);
     return -1;
   }
 }
 
 - (jlong)replaceOrThrowWithNSString:(NSString *)table
                        withNSString:(NSString *)nullColumnHack
-withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialValues {
-  return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withComYahooSquidbDataValuesStorage:initialValues withInt:ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_REPLACE];
+            withSquiDBValuesStorage:(SquiDBValuesStorage *)initialValues {
+  return [self insertWithOnConflictWithNSString:table withNSString:nullColumnHack withSquiDBValuesStorage:initialValues withInt:SquiDBSQLiteDatabase_CONFLICT_REPLACE];
 }
 
 - (jlong)insertWithOnConflictWithNSString:(NSString *)table
                              withNSString:(NSString *)nullColumnHack
-      withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialValues
+                  withSquiDBValuesStorage:(SquiDBValuesStorage *)initialValues
                                   withInt:(jint)conflictAlgorithm {
   [self acquireReference];
   @try {
     JavaLangStringBuilder *sql = new_JavaLangStringBuilder_init();
     (void) [sql appendWithNSString:@"INSERT"];
-    (void) [sql appendWithNSString:IOSObjectArray_Get(nil_chk(ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_VALUES), conflictAlgorithm)];
+    (void) [sql appendWithNSString:IOSObjectArray_Get(nil_chk(SquiDBSQLiteDatabase_CONFLICT_VALUES), conflictAlgorithm)];
     (void) [sql appendWithNSString:@" INTO "];
     (void) [sql appendWithNSString:table];
     (void) [sql appendWithChar:'('];
     IOSObjectArray *bindArgs = nil;
-    jint size = (initialValues != nil && [initialValues size] > 0) ? [((ComYahooSquidbDataValuesStorage *) nil_chk(initialValues)) size] : 0;
+    jint size = (initialValues != nil && [initialValues size] > 0) ? [((SquiDBValuesStorage *) nil_chk(initialValues)) size] : 0;
     if (size > 0) {
       bindArgs = [IOSObjectArray newArrayWithLength:size type:NSObject_class_()];
       jint i = 0;
-      for (NSString * __strong colName in nil_chk([((ComYahooSquidbDataValuesStorage *) nil_chk(initialValues)) keySet])) {
+      for (NSString * __strong colName in nil_chk([((SquiDBValuesStorage *) nil_chk(initialValues)) keySet])) {
         (void) [sql appendWithNSString:(i > 0) ? @"," : @""];
         (void) [sql appendWithNSString:colName];
         (void) IOSObjectArray_Set(bindArgs, i++, [initialValues getWithNSString:colName]);
@@ -704,7 +704,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialVa
       (void) [sql appendWithNSString:JreStrcat("$$", nullColumnHack, @") VALUES (NULL")];
     }
     (void) [sql appendWithChar:')'];
-    ComYahooAndroidSqliteSQLiteStatement *statement = new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, [sql description], bindArgs);
+    SquiDBSQLiteStatement *statement = new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, [sql description], bindArgs);
     @try {
       return [statement executeInsert];
     }
@@ -722,7 +722,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialVa
            withNSStringArray:(IOSObjectArray *)whereArgs {
   [self acquireReference];
   @try {
-    ComYahooAndroidSqliteSQLiteStatement *statement = new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, JreStrcat("$$$", @"DELETE FROM ", table, (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(whereClause) ? JreStrcat("$$", @" WHERE ", whereClause) : @"")), whereArgs);
+    SquiDBSQLiteStatement *statement = new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, JreStrcat("$$$", @"DELETE FROM ", table, (!SquiDBSqlUtils_isEmptyWithNSString_(whereClause) ? JreStrcat("$$", @" WHERE ", whereClause) : @"")), whereArgs);
     @try {
       return [statement executeUpdateDelete];
     }
@@ -736,14 +736,14 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)initialVa
 }
 
 - (jint)updateWithNSString:(NSString *)table
-withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
+   withSquiDBValuesStorage:(SquiDBValuesStorage *)values
               withNSString:(NSString *)whereClause
          withNSStringArray:(IOSObjectArray *)whereArgs {
-  return [self updateWithOnConflictWithNSString:table withComYahooSquidbDataValuesStorage:values withNSString:whereClause withNSStringArray:whereArgs withInt:ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_NONE];
+  return [self updateWithOnConflictWithNSString:table withSquiDBValuesStorage:values withNSString:whereClause withNSStringArray:whereArgs withInt:SquiDBSQLiteDatabase_CONFLICT_NONE];
 }
 
 - (jint)updateWithOnConflictWithNSString:(NSString *)table
-     withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
+                 withSquiDBValuesStorage:(SquiDBValuesStorage *)values
                             withNSString:(NSString *)whereClause
                        withNSStringArray:(IOSObjectArray *)whereArgs
                                  withInt:(jint)conflictAlgorithm {
@@ -754,7 +754,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   @try {
     JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(120);
     (void) [sql appendWithNSString:@"UPDATE "];
-    (void) [sql appendWithNSString:IOSObjectArray_Get(nil_chk(ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_VALUES), conflictAlgorithm)];
+    (void) [sql appendWithNSString:IOSObjectArray_Get(nil_chk(SquiDBSQLiteDatabase_CONFLICT_VALUES), conflictAlgorithm)];
     (void) [sql appendWithNSString:table];
     (void) [sql appendWithNSString:@" SET "];
     jint setValuesSize = [values size];
@@ -772,11 +772,11 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
         (void) IOSObjectArray_Set(bindArgs, i, IOSObjectArray_Get(whereArgs, i - setValuesSize));
       }
     }
-    if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(whereClause)) {
+    if (!SquiDBSqlUtils_isEmptyWithNSString_(whereClause)) {
       (void) [sql appendWithNSString:@" WHERE "];
       (void) [sql appendWithNSString:whereClause];
     }
-    ComYahooAndroidSqliteSQLiteStatement *statement = new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, [sql description], bindArgs);
+    SquiDBSQLiteStatement *statement = new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, [sql description], bindArgs);
     @try {
       return [statement executeUpdateDelete];
     }
@@ -790,7 +790,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 }
 
 - (void)execSQLWithNSString:(NSString *)sql {
-  ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, nil);
+  SquiDBSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, nil);
 }
 
 - (void)execSQLWithNSString:(NSString *)sql
@@ -798,27 +798,27 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   if (bindArgs == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Empty bindArgs");
   }
-  ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, bindArgs);
+  SquiDBSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, bindArgs);
 }
 
 - (jint)executeSqlWithNSString:(NSString *)sql
              withNSObjectArray:(IOSObjectArray *)bindArgs {
-  return ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, bindArgs);
+  return SquiDBSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(self, sql, bindArgs);
 }
 
 - (jboolean)isReadOnly {
   @synchronized(mLock_) {
-    return ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(self);
+    return SquiDBSQLiteDatabase_isReadOnlyLocked(self);
   }
 }
 
 - (jboolean)isReadOnlyLocked {
-  return ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(self);
+  return SquiDBSQLiteDatabase_isReadOnlyLocked(self);
 }
 
 - (jboolean)isInMemoryDatabase {
   @synchronized(mLock_) {
-    return [((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_)) isInMemoryDb];
+    return [((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_)) isInMemoryDb];
   }
 }
 
@@ -833,7 +833,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 }
 
 - (NSString *)getPath {
-  return ComYahooAndroidSqliteSQLiteDatabase_getPath(self);
+  return SquiDBSQLiteDatabase_getPath(self);
 }
 
 - (void)setLocaleWithJavaUtilLocale:(JavaUtilLocale *)locale {
@@ -841,11 +841,11 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"locale must not be null.");
   }
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    JavaUtilLocale *oldLocale = ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->locale_;
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    JavaUtilLocale *oldLocale = ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->locale_;
     mConfigurationLocked_->locale_ = locale;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
       mConfigurationLocked_->locale_ = oldLocale;
@@ -855,15 +855,15 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 }
 
 - (void)setMaxSqlCacheSizeWithInt:(jint)cacheSize {
-  if (cacheSize > ComYahooAndroidSqliteSQLiteDatabase_MAX_SQL_CACHE_SIZE || cacheSize < 0) {
-    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$I", @"expected value between 0 and ", ComYahooAndroidSqliteSQLiteDatabase_MAX_SQL_CACHE_SIZE));
+  if (cacheSize > SquiDBSQLiteDatabase_MAX_SQL_CACHE_SIZE || cacheSize < 0) {
+    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$I", @"expected value between 0 and ", SquiDBSQLiteDatabase_MAX_SQL_CACHE_SIZE));
   }
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    jint oldMaxSqlCacheSize = ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->maxSqlCacheSize_;
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    jint oldMaxSqlCacheSize = ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->maxSqlCacheSize_;
     mConfigurationLocked_->maxSqlCacheSize_ = cacheSize;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
       mConfigurationLocked_->maxSqlCacheSize_ = oldMaxSqlCacheSize;
@@ -874,13 +874,13 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 
 - (void)setForeignKeyConstraintsEnabledWithBoolean:(jboolean)enable {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    if (((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->foreignKeyConstraintsEnabled_ == enable) {
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    if (((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->foreignKeyConstraintsEnabled_ == enable) {
       return;
     }
     mConfigurationLocked_->foreignKeyConstraintsEnabled_ = enable;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
       mConfigurationLocked_->foreignKeyConstraintsEnabled_ = !enable;
@@ -891,29 +891,29 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 
 - (jboolean)enableWriteAheadLogging {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    if ((((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0) {
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    if ((((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0) {
       return true;
     }
-    if (ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(self)) {
+    if (SquiDBSQLiteDatabase_isReadOnlyLocked(self)) {
       return false;
     }
     if ([mConfigurationLocked_ isInMemoryDb]) {
-      ComYahooSquidbUtilityLogger_iWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteDatabase_TAG, @"can't enable WAL for memory databases.");
+      SquiDBLogger_iWithNSString_withNSString_(SquiDBSQLiteDatabase_TAG, @"can't enable WAL for memory databases.");
       return false;
     }
     if (mHasAttachedDbsLocked_) {
-      if (ComYahooSquidbUtilityLogger_isLoggableWithNSString_withComYahooSquidbUtilityLogger_Level_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreLoadEnum(ComYahooSquidbUtilityLogger_Level, DEBUG))) {
-        ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreStrcat("$$$", @"this database: ", mConfigurationLocked_->label_, @" has attached databases. can't  enable WAL."));
+      if (SquiDBLogger_isLoggableWithNSString_withSquiDBLogger_Level_(SquiDBSQLiteDatabase_TAG, JreLoadEnum(SquiDBLogger_Level, DEBUG))) {
+        SquiDBLogger_dWithNSString_withNSString_(SquiDBSQLiteDatabase_TAG, JreStrcat("$$$", @"this database: ", mConfigurationLocked_->label_, @" has attached databases. can't  enable WAL."));
       }
       return false;
     }
-    mConfigurationLocked_->openFlags_ |= ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
+    mConfigurationLocked_->openFlags_ |= SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
-      mConfigurationLocked_->openFlags_ &= ~ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
+      mConfigurationLocked_->openFlags_ &= ~SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
       @throw ex;
     }
   }
@@ -922,16 +922,16 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 
 - (void)disableWriteAheadLogging {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    if ((((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) == 0) {
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    if ((((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) == 0) {
       return;
     }
-    mConfigurationLocked_->openFlags_ &= ~ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
+    mConfigurationLocked_->openFlags_ &= ~SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:mConfigurationLocked_];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(mConnectionPoolLocked_)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:mConfigurationLocked_];
     }
     @catch (JavaLangRuntimeException *ex) {
-      mConfigurationLocked_->openFlags_ |= ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
+      mConfigurationLocked_->openFlags_ |= SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING;
       @throw ex;
     }
   }
@@ -939,31 +939,31 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 
 - (jboolean)isWriteAheadLoggingEnabled {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
-    return (((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0;
+    SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
+    return (((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->openFlags_ & SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0;
   }
 }
 
 + (JavaUtilArrayList *)getDbStats {
-  return ComYahooAndroidSqliteSQLiteDatabase_getDbStats();
+  return SquiDBSQLiteDatabase_getDbStats();
 }
 
 - (void)collectDbStatsWithJavaUtilArrayList:(JavaUtilArrayList *)dbStatsList {
-  ComYahooAndroidSqliteSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(self, dbStatsList);
+  SquiDBSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(self, dbStatsList);
 }
 
 + (JavaUtilArrayList *)getActiveDatabases {
-  return ComYahooAndroidSqliteSQLiteDatabase_getActiveDatabases();
+  return SquiDBSQLiteDatabase_getActiveDatabases();
 }
 
-+ (void)dumpAllWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                    withBoolean:(jboolean)verbose {
-  ComYahooAndroidSqliteSQLiteDatabase_dumpAllWithComYahooAndroidSqlitePrinter_withBoolean_(printer, verbose);
++ (void)dumpAllWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                     withBoolean:(jboolean)verbose {
+  SquiDBSQLiteDatabase_dumpAllWithSquiDBPrinter_withBoolean_(printer, verbose);
 }
 
-- (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                 withBoolean:(jboolean)verbose {
-  ComYahooAndroidSqliteSQLiteDatabase_dumpWithComYahooAndroidSqlitePrinter_withBoolean_(self, printer, verbose);
+- (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                  withBoolean:(jboolean)verbose {
+  SquiDBSQLiteDatabase_dumpWithSquiDBPrinter_withBoolean_(self, printer, verbose);
 }
 
 - (id<JavaUtilList>)getAttachedDbs {
@@ -973,17 +973,17 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
       return nil;
     }
     if (!mHasAttachedDbsLocked_) {
-      [attachedDbs addWithId:new_ComYahooAndroidSqlitePair_initWithId_withId_(@"main", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->path_)];
+      [attachedDbs addWithId:new_SquiDBPair_initWithId_withId_(@"main", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfigurationLocked_))->path_)];
       return attachedDbs;
     }
     [self acquireReference];
   }
   @try {
-    id<ComYahooSquidbDataICursor> c = nil;
+    id<SquiDBICursor> c = nil;
     @try {
       c = [self rawQueryWithNSString:@"pragma database_list;" withNSStringArray:nil];
-      while ([((id<ComYahooSquidbDataICursor>) nil_chk(c)) moveToNext]) {
-        [attachedDbs addWithId:new_ComYahooAndroidSqlitePair_initWithId_withId_([c getStringWithInt:1], [c getStringWithInt:2])];
+      while ([((id<SquiDBICursor>) nil_chk(c)) moveToNext]) {
+        [attachedDbs addWithId:new_SquiDBPair_initWithId_withId_([c getStringWithInt:1], [c getStringWithInt:2])];
       }
     }
     @finally {
@@ -1005,21 +1005,21 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
     @try {
       attachedDbs = [self getAttachedDbs];
       if (attachedDbs == nil) {
-        @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$", @"databaselist for: ", ComYahooAndroidSqliteSQLiteDatabase_getPath(self), @" couldn't be retrieved. probably because the database is closed"));
+        @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$", @"databaselist for: ", SquiDBSQLiteDatabase_getPath(self), @" couldn't be retrieved. probably because the database is closed"));
       }
     }
-    @catch (ComYahooAndroidSqliteSQLiteException *e) {
+    @catch (SquiDBSQLiteException *e) {
       attachedDbs = new_JavaUtilArrayList_init();
-      [attachedDbs addWithId:new_ComYahooAndroidSqlitePair_initWithId_withId_(@"main", ComYahooAndroidSqliteSQLiteDatabase_getPath(self))];
+      [attachedDbs addWithId:new_SquiDBPair_initWithId_withId_(@"main", SquiDBSQLiteDatabase_getPath(self))];
     }
     for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(attachedDbs)) size]; i++) {
-      ComYahooAndroidSqlitePair *p = [attachedDbs getWithInt:i];
-      ComYahooAndroidSqliteSQLiteStatement *prog = nil;
+      SquiDBPair *p = [attachedDbs getWithInt:i];
+      SquiDBSQLiteStatement *prog = nil;
       @try {
-        prog = [self compileStatementWithNSString:JreStrcat("$$$", @"PRAGMA ", ((ComYahooAndroidSqlitePair *) nil_chk(p))->first_, @".integrity_check(1);")];
-        NSString *rslt = [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(prog)) simpleQueryForString];
+        prog = [self compileStatementWithNSString:JreStrcat("$$$", @"PRAGMA ", ((SquiDBPair *) nil_chk(p))->first_, @".integrity_check(1);")];
+        NSString *rslt = [((SquiDBSQLiteStatement *) nil_chk(prog)) simpleQueryForString];
         if (![((NSString *) nil_chk(rslt)) java_equalsIgnoreCase:@"ok"]) {
-          ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreStrcat("$$$$", @"PRAGMA integrity_check on ", p->second_, @" returned: ", rslt));
+          SquiDBLogger_eWithNSString_withNSString_(SquiDBSQLiteDatabase_TAG, JreStrcat("$$$$", @"PRAGMA integrity_check on ", p->second_, @" returned: ", rslt));
           return false;
         }
       }
@@ -1037,15 +1037,15 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
 }
 
 - (NSString *)description {
-  return JreStrcat("$$", @"SQLiteDatabase: ", ComYahooAndroidSqliteSQLiteDatabase_getPath(self));
+  return JreStrcat("$$", @"SQLiteDatabase: ", SquiDBSQLiteDatabase_getPath(self));
 }
 
 - (void)throwIfNotOpenLocked {
-  ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(self);
+  SquiDBSQLiteDatabase_throwIfNotOpenLocked(self);
 }
 
 - (void)dealloc {
-  JreCheckFinalize(self, [ComYahooAndroidSqliteSQLiteDatabase class]);
+  JreCheckFinalize(self, [SquiDBSQLiteDatabase class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -1058,8 +1058,8 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
     { NULL, "V", 0x1, 5, 4, -1, -1, 6, -1 },
     { NULL, "LNSString;", 0x0, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteSession;", 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteSession;", 0x0, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteSession;", 0x0, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteSession;", 0x0, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x0, 7, 4, -1, -1, -1, -1 },
     { NULL, "Z", 0x10a, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -1077,16 +1077,16 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
     { NULL, "Z", 0x1, 15, 16, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 17, 18, -1, -1, -1, -1 },
     { NULL, "LJavaUtilMap;", 0x1, -1, -1, -1, 19, 20, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 21, 22, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 21, 23, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 24, 25, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 24, 26, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 24, 27, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 21, 22, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 21, 23, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 24, 25, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 24, 26, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 24, 27, -1, -1, -1, -1 },
     { NULL, "Z", 0x9, 28, 29, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x9, 30, 31, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x9, 30, 31, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 32, 33, -1, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 34, 35, -1, -1, -1, -1 },
@@ -1097,13 +1097,13 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
     { NULL, "V", 0x1, 38, 39, -1, -1, 40, -1 },
     { NULL, "V", 0x1, 38, 41, -1, -1, 42, -1 },
     { NULL, "LNSString;", 0x9, 43, 44, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteStatement;", 0x1, 45, 44, 46, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 47, 48, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 49, 50, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 47, 51, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 47, 52, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 53, 54, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 55, 56, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteStatement;", 0x1, 45, 44, 46, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 47, 48, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 49, 50, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 47, 51, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 47, 52, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 53, 54, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 55, 56, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 57, 58, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 59, 58, 46, -1, -1, -1 },
     { NULL, "J", 0x1, 60, 58, -1, -1, -1, -1 },
@@ -1140,7 +1140,7 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withInt:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withComYahooAndroidSqliteDatabaseErrorHandler:);
+  methods[0].selector = @selector(initWithNSString:withInt:withSquiDBSQLiteDatabase_CursorFactory:withSquiDBDatabaseErrorHandler:);
   methods[1].selector = @selector(java_finalize);
   methods[2].selector = @selector(onAllReferencesReleased);
   methods[3].selector = @selector(disposeWithBoolean:);
@@ -1154,9 +1154,9 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   methods[11].selector = @selector(isMainThread);
   methods[12].selector = @selector(beginTransaction);
   methods[13].selector = @selector(beginTransactionNonExclusive);
-  methods[14].selector = @selector(beginTransactionWithListenerWithComYahooAndroidSqliteSQLiteTransactionListener:);
-  methods[15].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooAndroidSqliteSQLiteTransactionListener:);
-  methods[16].selector = @selector(beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener:withBoolean:);
+  methods[14].selector = @selector(beginTransactionWithListenerWithSquiDBSQLiteTransactionListener:);
+  methods[15].selector = @selector(beginTransactionWithListenerNonExclusiveWithSquiDBSQLiteTransactionListener:);
+  methods[16].selector = @selector(beginTransactionWithSquiDBSQLiteTransactionListener:withBoolean:);
   methods[17].selector = @selector(endTransaction);
   methods[18].selector = @selector(setTransactionSuccessful);
   methods[19].selector = @selector(inTransaction);
@@ -1167,17 +1167,17 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   methods[24].selector = @selector(yieldIfContendedSafelyWithLong:);
   methods[25].selector = @selector(yieldIfContendedHelperWithBoolean:withLong:);
   methods[26].selector = @selector(getSyncedTables);
-  methods[27].selector = @selector(openDatabaseWithNSString:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withInt:);
-  methods[28].selector = @selector(openDatabaseWithNSString:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withInt:withComYahooAndroidSqliteDatabaseErrorHandler:);
-  methods[29].selector = @selector(openOrCreateDatabaseWithJavaIoFile:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:);
-  methods[30].selector = @selector(openOrCreateDatabaseWithNSString:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:);
-  methods[31].selector = @selector(openOrCreateDatabaseWithNSString:withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withComYahooAndroidSqliteDatabaseErrorHandler:);
+  methods[27].selector = @selector(openDatabaseWithNSString:withSquiDBSQLiteDatabase_CursorFactory:withInt:);
+  methods[28].selector = @selector(openDatabaseWithNSString:withSquiDBSQLiteDatabase_CursorFactory:withInt:withSquiDBDatabaseErrorHandler:);
+  methods[29].selector = @selector(openOrCreateDatabaseWithJavaIoFile:withSquiDBSQLiteDatabase_CursorFactory:);
+  methods[30].selector = @selector(openOrCreateDatabaseWithNSString:withSquiDBSQLiteDatabase_CursorFactory:);
+  methods[31].selector = @selector(openOrCreateDatabaseWithNSString:withSquiDBSQLiteDatabase_CursorFactory:withSquiDBDatabaseErrorHandler:);
   methods[32].selector = @selector(deleteDatabaseWithJavaIoFile:);
   methods[33].selector = @selector(reopenReadWrite);
   methods[34].selector = @selector(open);
   methods[35].selector = @selector(openInner);
-  methods[36].selector = @selector(createWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:);
-  methods[37].selector = @selector(addCustomFunctionWithNSString:withInt:withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:);
+  methods[36].selector = @selector(createWithSquiDBSQLiteDatabase_CursorFactory:);
+  methods[37].selector = @selector(addCustomFunctionWithNSString:withInt:withSquiDBSQLiteDatabase_CustomFunction:);
   methods[38].selector = @selector(getVersion);
   methods[39].selector = @selector(setVersionWithInt:);
   methods[40].selector = @selector(getMaximumSize);
@@ -1189,19 +1189,19 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   methods[46].selector = @selector(findEditTableWithNSString:);
   methods[47].selector = @selector(compileStatementWithNSString:);
   methods[48].selector = @selector(queryWithBoolean:withNSString:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
-  methods[49].selector = @selector(queryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withBoolean:withNSString:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
+  methods[49].selector = @selector(queryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:withBoolean:withNSString:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
   methods[50].selector = @selector(queryWithNSString:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:);
   methods[51].selector = @selector(queryWithNSString:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
   methods[52].selector = @selector(rawQueryWithNSString:withNSStringArray:);
-  methods[53].selector = @selector(rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withNSString:withNSStringArray:withNSString:);
-  methods[54].selector = @selector(insertWithNSString:withNSString:withComYahooSquidbDataValuesStorage:);
-  methods[55].selector = @selector(insertOrThrowWithNSString:withNSString:withComYahooSquidbDataValuesStorage:);
-  methods[56].selector = @selector(replaceWithNSString:withNSString:withComYahooSquidbDataValuesStorage:);
-  methods[57].selector = @selector(replaceOrThrowWithNSString:withNSString:withComYahooSquidbDataValuesStorage:);
-  methods[58].selector = @selector(insertWithOnConflictWithNSString:withNSString:withComYahooSquidbDataValuesStorage:withInt:);
+  methods[53].selector = @selector(rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:withNSString:withNSStringArray:withNSString:);
+  methods[54].selector = @selector(insertWithNSString:withNSString:withSquiDBValuesStorage:);
+  methods[55].selector = @selector(insertOrThrowWithNSString:withNSString:withSquiDBValuesStorage:);
+  methods[56].selector = @selector(replaceWithNSString:withNSString:withSquiDBValuesStorage:);
+  methods[57].selector = @selector(replaceOrThrowWithNSString:withNSString:withSquiDBValuesStorage:);
+  methods[58].selector = @selector(insertWithOnConflictWithNSString:withNSString:withSquiDBValuesStorage:withInt:);
   methods[59].selector = @selector(delete__WithNSString:withNSString:withNSStringArray:);
-  methods[60].selector = @selector(updateWithNSString:withComYahooSquidbDataValuesStorage:withNSString:withNSStringArray:);
-  methods[61].selector = @selector(updateWithOnConflictWithNSString:withComYahooSquidbDataValuesStorage:withNSString:withNSStringArray:withInt:);
+  methods[60].selector = @selector(updateWithNSString:withSquiDBValuesStorage:withNSString:withNSStringArray:);
+  methods[61].selector = @selector(updateWithOnConflictWithNSString:withSquiDBValuesStorage:withNSString:withNSStringArray:withInt:);
   methods[62].selector = @selector(execSQLWithNSString:);
   methods[63].selector = @selector(execSQLWithNSString:withNSObjectArray:);
   methods[64].selector = @selector(executeSqlWithNSString:withNSObjectArray:);
@@ -1220,8 +1220,8 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   methods[77].selector = @selector(getDbStats);
   methods[78].selector = @selector(collectDbStatsWithJavaUtilArrayList:);
   methods[79].selector = @selector(getActiveDatabases);
-  methods[80].selector = @selector(dumpAllWithComYahooAndroidSqlitePrinter:withBoolean:);
-  methods[81].selector = @selector(dumpWithComYahooAndroidSqlitePrinter:withBoolean:);
+  methods[80].selector = @selector(dumpAllWithSquiDBPrinter:withBoolean:);
+  methods[81].selector = @selector(dumpWithSquiDBPrinter:withBoolean:);
   methods[82].selector = @selector(getAttachedDbs);
   methods[83].selector = @selector(isDatabaseIntegrityOk);
   methods[84].selector = @selector(description);
@@ -1229,70 +1229,70 @@ withComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 88, -1, -1 },
-    { "EVENT_DB_CORRUPT", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_EVENT_DB_CORRUPT, 0x1a, -1, -1, -1, -1 },
+    { "EVENT_DB_CORRUPT", "I", .constantValue.asInt = SquiDBSQLiteDatabase_EVENT_DB_CORRUPT, 0x1a, -1, -1, -1, -1 },
     { "sActiveDatabases", "LJavaUtilWeakHashMap;", .constantValue.asLong = 0, 0xa, -1, 89, 90, -1 },
     { "mThreadSession_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x12, -1, -1, 91, -1 },
-    { "mCursorFactory_", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mErrorHandler_", "LComYahooAndroidSqliteDatabaseErrorHandler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mCursorFactory_", "LSquiDBSQLiteDatabase_CursorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mErrorHandler_", "LSquiDBDatabaseErrorHandler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mLock_", "LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mCloseGuardLocked_", "LComYahooAndroidSqliteCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mConfigurationLocked_", "LComYahooAndroidSqliteSQLiteDatabaseConfiguration;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mConnectionPoolLocked_", "LComYahooAndroidSqliteSQLiteConnectionPool;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mCloseGuardLocked_", "LSquiDBCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mConfigurationLocked_", "LSquiDBSQLiteDatabaseConfiguration;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mConnectionPoolLocked_", "LSquiDBSQLiteConnectionPool;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mHasAttachedDbsLocked_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "CONFLICT_ROLLBACK", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_ROLLBACK, 0x19, -1, -1, -1, -1 },
-    { "CONFLICT_ABORT", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_ABORT, 0x19, -1, -1, -1, -1 },
-    { "CONFLICT_FAIL", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_FAIL, 0x19, -1, -1, -1, -1 },
-    { "CONFLICT_IGNORE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_IGNORE, 0x19, -1, -1, -1, -1 },
-    { "CONFLICT_REPLACE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_REPLACE, 0x19, -1, -1, -1, -1 },
-    { "CONFLICT_NONE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_NONE, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_ROLLBACK", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_ROLLBACK, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_ABORT", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_ABORT, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_FAIL", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_FAIL, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_IGNORE", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_IGNORE, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_REPLACE", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_REPLACE, 0x19, -1, -1, -1, -1 },
+    { "CONFLICT_NONE", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CONFLICT_NONE, 0x19, -1, -1, -1, -1 },
     { "CONFLICT_VALUES", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 92, -1, -1 },
-    { "SQLITE_MAX_LIKE_PATTERN_LENGTH", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_SQLITE_MAX_LIKE_PATTERN_LENGTH, 0x19, -1, -1, -1, -1 },
-    { "OPEN_READWRITE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_OPEN_READWRITE, 0x19, -1, -1, -1, -1 },
-    { "OPEN_READONLY", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_OPEN_READONLY, 0x19, -1, -1, -1, -1 },
-    { "OPEN_READ_MASK", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_OPEN_READ_MASK, 0x1a, -1, -1, -1, -1 },
-    { "NO_LOCALIZED_COLLATORS", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_NO_LOCALIZED_COLLATORS, 0x19, -1, -1, -1, -1 },
-    { "CREATE_IF_NECESSARY", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_CREATE_IF_NECESSARY, 0x19, -1, -1, -1, -1 },
-    { "ENABLE_WRITE_AHEAD_LOGGING", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING, 0x19, -1, -1, -1, -1 },
-    { "MAX_SQL_CACHE_SIZE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteDatabase_MAX_SQL_CACHE_SIZE, 0x19, -1, -1, -1, -1 },
+    { "SQLITE_MAX_LIKE_PATTERN_LENGTH", "I", .constantValue.asInt = SquiDBSQLiteDatabase_SQLITE_MAX_LIKE_PATTERN_LENGTH, 0x19, -1, -1, -1, -1 },
+    { "OPEN_READWRITE", "I", .constantValue.asInt = SquiDBSQLiteDatabase_OPEN_READWRITE, 0x19, -1, -1, -1, -1 },
+    { "OPEN_READONLY", "I", .constantValue.asInt = SquiDBSQLiteDatabase_OPEN_READONLY, 0x19, -1, -1, -1, -1 },
+    { "OPEN_READ_MASK", "I", .constantValue.asInt = SquiDBSQLiteDatabase_OPEN_READ_MASK, 0x1a, -1, -1, -1, -1 },
+    { "NO_LOCALIZED_COLLATORS", "I", .constantValue.asInt = SquiDBSQLiteDatabase_NO_LOCALIZED_COLLATORS, 0x19, -1, -1, -1, -1 },
+    { "CREATE_IF_NECESSARY", "I", .constantValue.asInt = SquiDBSQLiteDatabase_CREATE_IF_NECESSARY, 0x19, -1, -1, -1, -1 },
+    { "ENABLE_WRITE_AHEAD_LOGGING", "I", .constantValue.asInt = SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING, 0x19, -1, -1, -1, -1 },
+    { "MAX_SQL_CACHE_SIZE", "I", .constantValue.asInt = SquiDBSQLiteDatabase_MAX_SQL_CACHE_SIZE, 0x19, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;ILComYahooAndroidSqliteSQLiteDatabase_CursorFactory;LComYahooAndroidSqliteDatabaseErrorHandler;", "finalize", "LJavaLangThrowable;", "dispose", "Z", "setLockingEnabled", (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$0, "getThreadDefaultConnectionFlags", "beginTransactionWithListener", "LComYahooAndroidSqliteSQLiteTransactionListener;", "beginTransactionWithListenerNonExclusive", "beginTransaction", "LComYahooAndroidSqliteSQLiteTransactionListener;Z", (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$1, (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$2, "yieldIfContendedSafely", "J", "yieldIfContendedHelper", "ZJ", "()Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$3, "openDatabase", "LNSString;LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;I", "LNSString;LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;ILComYahooAndroidSqliteDatabaseErrorHandler;", "openOrCreateDatabase", "LJavaIoFile;LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", "LNSString;LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", "LNSString;LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;LComYahooAndroidSqliteDatabaseErrorHandler;", "deleteDatabase", "LJavaIoFile;", "create", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", "addCustomFunction", "LNSString;ILComYahooAndroidSqliteSQLiteDatabase_CustomFunction;", "setVersion", "I", "setMaximumSize", "setPageSize", "markTableSyncable", "LNSString;LNSString;", (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$4, "LNSString;LNSString;LNSString;", (void *)&ComYahooAndroidSqliteSQLiteDatabase__Annotations$5, "findEditTable", "LNSString;", "compileStatement", "LComYahooAndroidSqliteSQLException;", "query", "ZLNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "queryWithFactory", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;ZLNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "LNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;", "LNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "rawQuery", "LNSString;[LNSString;", "rawQueryWithFactory", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;LNSString;[LNSString;LNSString;", "insert", "LNSString;LNSString;LComYahooSquidbDataValuesStorage;", "insertOrThrow", "replace", "replaceOrThrow", "insertWithOnConflict", "LNSString;LNSString;LComYahooSquidbDataValuesStorage;I", "delete", "LNSString;LNSString;[LNSString;", "update", "LNSString;LComYahooSquidbDataValuesStorage;LNSString;[LNSString;", "updateWithOnConflict", "LNSString;LComYahooSquidbDataValuesStorage;LNSString;[LNSString;I", "execSQL", "LNSString;[LNSObject;", "executeSql", "needUpgrade", "setLocale", "LJavaUtilLocale;", "setMaxSqlCacheSize", "setForeignKeyConstraintsEnabled", "()Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;", "collectDbStats", "LJavaUtilArrayList;", "(Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;)V", "()Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDatabase;>;", "dumpAll", "LComYahooAndroidSqlitePrinter;Z", "dump", "()Ljava/util/List<Lcom/yahoo/android/sqlite/Pair<Ljava/lang/String;Ljava/lang/String;>;>;", "toString", &ComYahooAndroidSqliteSQLiteDatabase_TAG, &ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases, "Ljava/util/WeakHashMap<Lcom/yahoo/android/sqlite/SQLiteDatabase;Ljava/lang/Object;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/android/sqlite/SQLiteSession;>;", &ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_VALUES, "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;LComYahooAndroidSqliteSQLiteDatabase_CustomFunction;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabase = { "SQLiteDatabase", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 86, 26, -1, 93, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabase;
+  static const void *ptrTable[] = { "LNSString;ILSquiDBSQLiteDatabase_CursorFactory;LSquiDBDatabaseErrorHandler;", "finalize", "LJavaLangThrowable;", "dispose", "Z", "setLockingEnabled", (void *)&SquiDBSQLiteDatabase__Annotations$0, "getThreadDefaultConnectionFlags", "beginTransactionWithListener", "LSquiDBSQLiteTransactionListener;", "beginTransactionWithListenerNonExclusive", "beginTransaction", "LSquiDBSQLiteTransactionListener;Z", (void *)&SquiDBSQLiteDatabase__Annotations$1, (void *)&SquiDBSQLiteDatabase__Annotations$2, "yieldIfContendedSafely", "J", "yieldIfContendedHelper", "ZJ", "()Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", (void *)&SquiDBSQLiteDatabase__Annotations$3, "openDatabase", "LNSString;LSquiDBSQLiteDatabase_CursorFactory;I", "LNSString;LSquiDBSQLiteDatabase_CursorFactory;ILSquiDBDatabaseErrorHandler;", "openOrCreateDatabase", "LJavaIoFile;LSquiDBSQLiteDatabase_CursorFactory;", "LNSString;LSquiDBSQLiteDatabase_CursorFactory;", "LNSString;LSquiDBSQLiteDatabase_CursorFactory;LSquiDBDatabaseErrorHandler;", "deleteDatabase", "LJavaIoFile;", "create", "LSquiDBSQLiteDatabase_CursorFactory;", "addCustomFunction", "LNSString;ILSquiDBSQLiteDatabase_CustomFunction;", "setVersion", "I", "setMaximumSize", "setPageSize", "markTableSyncable", "LNSString;LNSString;", (void *)&SquiDBSQLiteDatabase__Annotations$4, "LNSString;LNSString;LNSString;", (void *)&SquiDBSQLiteDatabase__Annotations$5, "findEditTable", "LNSString;", "compileStatement", "LSquiDBSQLException;", "query", "ZLNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "queryWithFactory", "LSquiDBSQLiteDatabase_CursorFactory;ZLNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "LNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;", "LNSString;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "rawQuery", "LNSString;[LNSString;", "rawQueryWithFactory", "LSquiDBSQLiteDatabase_CursorFactory;LNSString;[LNSString;LNSString;", "insert", "LNSString;LNSString;LSquiDBValuesStorage;", "insertOrThrow", "replace", "replaceOrThrow", "insertWithOnConflict", "LNSString;LNSString;LSquiDBValuesStorage;I", "delete", "LNSString;LNSString;[LNSString;", "update", "LNSString;LSquiDBValuesStorage;LNSString;[LNSString;", "updateWithOnConflict", "LNSString;LSquiDBValuesStorage;LNSString;[LNSString;I", "execSQL", "LNSString;[LNSObject;", "executeSql", "needUpgrade", "setLocale", "LJavaUtilLocale;", "setMaxSqlCacheSize", "setForeignKeyConstraintsEnabled", "()Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;", "collectDbStats", "LJavaUtilArrayList;", "(Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;)V", "()Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDatabase;>;", "dumpAll", "LSquiDBPrinter;Z", "dump", "()Ljava/util/List<Lcom/yahoo/android/sqlite/Pair<Ljava/lang/String;Ljava/lang/String;>;>;", "toString", &SquiDBSQLiteDatabase_TAG, &SquiDBSQLiteDatabase_sActiveDatabases, "Ljava/util/WeakHashMap<Lcom/yahoo/android/sqlite/SQLiteDatabase;Ljava/lang/Object;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/android/sqlite/SQLiteSession;>;", &SquiDBSQLiteDatabase_CONFLICT_VALUES, "LSquiDBSQLiteDatabase_CursorFactory;LSquiDBSQLiteDatabase_CustomFunction;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabase = { "SQLiteDatabase", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 86, 26, -1, 93, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabase;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteSQLiteDatabase class]) {
+  if (self == [SquiDBSQLiteDatabase class]) {
     {
-      ComYahooAndroidSqliteSQLiteGlobal_sqlite3_initialize();
+      SquiDBSQLiteGlobal_sqlite3_initialize();
     }
-    ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases = new_JavaUtilWeakHashMap_init();
-    ComYahooAndroidSqliteSQLiteDatabase_CONFLICT_VALUES = [IOSObjectArray newArrayWithObjects:(id[]){ @"", @" OR ROLLBACK ", @" OR ABORT ", @" OR FAIL ", @" OR IGNORE ", @" OR REPLACE " } count:6 type:NSString_class_()];
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteSQLiteDatabase)
+    SquiDBSQLiteDatabase_sActiveDatabases = new_JavaUtilWeakHashMap_init();
+    SquiDBSQLiteDatabase_CONFLICT_VALUES = [IOSObjectArray newArrayWithObjects:(id[]){ @"", @" OR ROLLBACK ", @" OR ABORT ", @" OR FAIL ", @" OR IGNORE ", @" OR REPLACE " } count:6 type:NSString_class_()];
+    J2OBJC_SET_INITIALIZED(SquiDBSQLiteDatabase)
   }
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(ComYahooAndroidSqliteSQLiteDatabase *self, NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) {
-  ComYahooAndroidSqliteSQLiteClosable_init(self);
-  self->mThreadSession_ = new_ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(self);
+void SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(SquiDBSQLiteDatabase *self, NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler) {
+  SquiDBSQLiteClosable_init(self);
+  self->mThreadSession_ = new_SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(self);
   self->mLock_ = new_NSObject_init();
-  self->mCloseGuardLocked_ = ComYahooAndroidSqliteCloseGuard_get();
+  self->mCloseGuardLocked_ = SquiDBCloseGuard_get();
   self->mCursorFactory_ = cursorFactory;
-  self->mErrorHandler_ = errorHandler != nil ? errorHandler : new_ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init();
-  self->mConfigurationLocked_ = new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(path, openFlags);
+  self->mErrorHandler_ = errorHandler != nil ? errorHandler : new_SquiDBDefaultDatabaseErrorHandler_init();
+  self->mConfigurationLocked_ = new_SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(path, openFlags);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *new_ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabase, initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_, path, openFlags, cursorFactory, errorHandler)
+SquiDBSQLiteDatabase *new_SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabase, initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_, path, openFlags, cursorFactory, errorHandler)
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *create_ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, jint openFlags, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> cursorFactory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabase, initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_, path, openFlags, cursorFactory, errorHandler)
+SquiDBSQLiteDatabase *create_SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(NSString *path, jint openFlags, id<SquiDBSQLiteDatabase_CursorFactory> cursorFactory, id<SquiDBDatabaseErrorHandler> errorHandler) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabase, initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_, path, openFlags, cursorFactory, errorHandler)
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, jboolean finalized) {
-  ComYahooAndroidSqliteSQLiteConnectionPool *pool;
+void SquiDBSQLiteDatabase_disposeWithBoolean_(SquiDBSQLiteDatabase *self, jboolean finalized) {
+  SquiDBSQLiteConnectionPool *pool;
   @synchronized(self->mLock_) {
     if (self->mCloseGuardLocked_ != nil) {
       if (finalized) {
@@ -1304,8 +1304,8 @@ void ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(ComYahooAndroidSqli
     self->mConnectionPoolLocked_ = nil;
   }
   if (!finalized) {
-    @synchronized(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases) {
-      (void) [((JavaUtilWeakHashMap *) nil_chk(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases)) removeWithId:self];
+    @synchronized(SquiDBSQLiteDatabase_sActiveDatabases) {
+      (void) [((JavaUtilWeakHashMap *) nil_chk(SquiDBSQLiteDatabase_sActiveDatabases)) removeWithId:self];
     }
     if (pool != nil) {
       [pool close];
@@ -1313,65 +1313,65 @@ void ComYahooAndroidSqliteSQLiteDatabase_disposeWithBoolean_(ComYahooAndroidSqli
   }
 }
 
-jint ComYahooAndroidSqliteSQLiteDatabase_releaseMemory() {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteGlobal_releaseMemory();
+jint SquiDBSQLiteDatabase_releaseMemory() {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteGlobal_releaseMemory();
 }
 
-jboolean ComYahooAndroidSqliteSQLiteDatabase_isMainThread() {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
+jboolean SquiDBSQLiteDatabase_isMainThread() {
+  SquiDBSQLiteDatabase_initialize();
   return [NSThread isMainThread];
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_beginTransactionWithComYahooAndroidSqliteSQLiteTransactionListener_withBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, id<ComYahooAndroidSqliteSQLiteTransactionListener> transactionListener, jboolean exclusive) {
+void SquiDBSQLiteDatabase_beginTransactionWithSquiDBSQLiteTransactionListener_withBoolean_(SquiDBSQLiteDatabase *self, id<SquiDBSQLiteTransactionListener> transactionListener, jboolean exclusive) {
   [self acquireReference];
   @try {
-    [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) beginTransactionWithInt:exclusive ? ComYahooAndroidSqliteSQLiteSession_TRANSACTION_MODE_EXCLUSIVE : ComYahooAndroidSqliteSQLiteSession_TRANSACTION_MODE_IMMEDIATE withComYahooAndroidSqliteSQLiteTransactionListener:transactionListener withInt:[self getThreadDefaultConnectionFlagsWithBoolean:false]];
+    [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) beginTransactionWithInt:exclusive ? SquiDBSQLiteSession_TRANSACTION_MODE_EXCLUSIVE : SquiDBSQLiteSession_TRANSACTION_MODE_IMMEDIATE withSquiDBSQLiteTransactionListener:transactionListener withInt:[self getThreadDefaultConnectionFlagsWithBoolean:false]];
   }
   @finally {
     [self releaseReference];
   }
 }
 
-jboolean ComYahooAndroidSqliteSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(ComYahooAndroidSqliteSQLiteDatabase *self, jboolean throwIfUnsafe, jlong sleepAfterYieldDelay) {
+jboolean SquiDBSQLiteDatabase_yieldIfContendedHelperWithBoolean_withLong_(SquiDBSQLiteDatabase *self, jboolean throwIfUnsafe, jlong sleepAfterYieldDelay) {
   [self acquireReference];
   @try {
-    return [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([self getThreadSession])) yieldTransactionWithLong:sleepAfterYieldDelay withBoolean:throwIfUnsafe];
+    return [((SquiDBSQLiteSession *) nil_chk([self getThreadSession])) yieldTransactionWithLong:sleepAfterYieldDelay withBoolean:throwIfUnsafe];
   }
   @finally {
     [self releaseReference];
   }
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_(NSString *path, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory, jint flags) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(path, factory, flags, nil);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_(NSString *path, id<SquiDBSQLiteDatabase_CursorFactory> factory, jint flags) {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(path, factory, flags, nil);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory, jint flags, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  ComYahooAndroidSqliteSQLiteDatabase *db = new_ComYahooAndroidSqliteSQLiteDatabase_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(path, flags, factory, errorHandler);
-  ComYahooAndroidSqliteSQLiteDatabase_open(db);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(NSString *path, id<SquiDBSQLiteDatabase_CursorFactory> factory, jint flags, id<SquiDBDatabaseErrorHandler> errorHandler) {
+  SquiDBSQLiteDatabase_initialize();
+  SquiDBSQLiteDatabase *db = new_SquiDBSQLiteDatabase_initWithNSString_withInt_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(path, flags, factory, errorHandler);
+  SquiDBSQLiteDatabase_open(db);
   return db;
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithJavaIoFile_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(JavaIoFile *file, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_([((JavaIoFile *) nil_chk(file)) getPath], factory);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_openOrCreateDatabaseWithJavaIoFile_withSquiDBSQLiteDatabase_CursorFactory_(JavaIoFile *file, id<SquiDBSQLiteDatabase_CursorFactory> factory) {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteDatabase_openOrCreateDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_([((JavaIoFile *) nil_chk(file)) getPath], factory);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(NSString *path, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(path, factory, ComYahooAndroidSqliteSQLiteDatabase_CREATE_IF_NECESSARY, nil);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_openOrCreateDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_(NSString *path, id<SquiDBSQLiteDatabase_CursorFactory> factory) {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(path, factory, SquiDBSQLiteDatabase_CREATE_IF_NECESSARY, nil);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_openOrCreateDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withComYahooAndroidSqliteDatabaseErrorHandler_(NSString *path, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(path, factory, ComYahooAndroidSqliteSQLiteDatabase_CREATE_IF_NECESSARY, errorHandler);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_openOrCreateDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withSquiDBDatabaseErrorHandler_(NSString *path, id<SquiDBSQLiteDatabase_CursorFactory> factory, id<SquiDBDatabaseErrorHandler> errorHandler) {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(path, factory, SquiDBSQLiteDatabase_CREATE_IF_NECESSARY, errorHandler);
 }
 
-jboolean ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(JavaIoFile *file) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
+jboolean SquiDBSQLiteDatabase_deleteDatabaseWithJavaIoFile_(JavaIoFile *file) {
+  SquiDBSQLiteDatabase_initialize();
   if (file == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"file must not be null");
   }
@@ -1383,7 +1383,7 @@ jboolean ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(JavaI
   JavaIoFile *dir = [file getParentFile];
   if (dir != nil) {
     NSString *prefix = JreStrcat("$$", [file getName], @"-mj");
-    id<JavaIoFileFilter> filter = new_ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(prefix);
+    id<JavaIoFileFilter> filter = new_SquiDBSQLiteDatabase_2_initWithNSString_(prefix);
     {
       IOSObjectArray *a__ = [dir listFilesWithJavaIoFileFilter:filter];
       JavaIoFile * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
@@ -1397,42 +1397,42 @@ jboolean ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(JavaI
   return deleted;
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_open(ComYahooAndroidSqliteSQLiteDatabase *self) {
+void SquiDBSQLiteDatabase_open(SquiDBSQLiteDatabase *self) {
   @try {
     @try {
-      ComYahooAndroidSqliteSQLiteDatabase_openInner(self);
+      SquiDBSQLiteDatabase_openInner(self);
     }
-    @catch (ComYahooAndroidSqliteSQLiteDatabaseCorruptException *ex) {
+    @catch (SquiDBSQLiteDatabaseCorruptException *ex) {
       [self onCorruption];
-      ComYahooAndroidSqliteSQLiteDatabase_openInner(self);
+      SquiDBSQLiteDatabase_openInner(self);
     }
   }
-  @catch (ComYahooAndroidSqliteSQLiteException *ex) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteDatabase_TAG, JreStrcat("$$$", @"Failed to open database '", [self getLabel], @"'."), ex);
+  @catch (SquiDBSQLiteException *ex) {
+    SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteDatabase_TAG, JreStrcat("$$$", @"Failed to open database '", [self getLabel], @"'."), ex);
     [self close];
     @throw ex;
   }
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_openInner(ComYahooAndroidSqliteSQLiteDatabase *self) {
+void SquiDBSQLiteDatabase_openInner(SquiDBSQLiteDatabase *self) {
   @synchronized(self->mLock_) {
     JreAssert(self->mConnectionPoolLocked_ == nil, @"com/yahoo/android/sqlite/SQLiteDatabase.java:802 condition failed: assert mConnectionPoolLocked == null;");
-    self->mConnectionPoolLocked_ = ComYahooAndroidSqliteSQLiteConnectionPool_openWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(self->mConfigurationLocked_);
-    [((ComYahooAndroidSqliteCloseGuard *) nil_chk(self->mCloseGuardLocked_)) openWithNSString:@"close"];
+    self->mConnectionPoolLocked_ = SquiDBSQLiteConnectionPool_openWithSquiDBSQLiteDatabaseConfiguration_(self->mConfigurationLocked_);
+    [((SquiDBCloseGuard *) nil_chk(self->mCloseGuardLocked_)) openWithNSString:@"close"];
   }
-  @synchronized(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases) {
-    (void) [((JavaUtilWeakHashMap *) nil_chk(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases)) putWithId:self withId:nil];
+  @synchronized(SquiDBSQLiteDatabase_sActiveDatabases) {
+    (void) [((JavaUtilWeakHashMap *) nil_chk(SquiDBSQLiteDatabase_sActiveDatabases)) putWithId:self withId:nil];
   }
 }
 
-ComYahooAndroidSqliteSQLiteDatabase *ComYahooAndroidSqliteSQLiteDatabase_createWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory_(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  return ComYahooAndroidSqliteSQLiteDatabase_openDatabaseWithNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH, factory, ComYahooAndroidSqliteSQLiteDatabase_CREATE_IF_NECESSARY);
+SquiDBSQLiteDatabase *SquiDBSQLiteDatabase_createWithSquiDBSQLiteDatabase_CursorFactory_(id<SquiDBSQLiteDatabase_CursorFactory> factory) {
+  SquiDBSQLiteDatabase_initialize();
+  return SquiDBSQLiteDatabase_openDatabaseWithNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_(SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH, factory, SquiDBSQLiteDatabase_CREATE_IF_NECESSARY);
 }
 
-NSString *ComYahooAndroidSqliteSQLiteDatabase_findEditTableWithNSString_(NSString *tables) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(tables)) {
+NSString *SquiDBSQLiteDatabase_findEditTableWithNSString_(NSString *tables) {
+  SquiDBSQLiteDatabase_initialize();
+  if (!SquiDBSqlUtils_isEmptyWithNSString_(tables)) {
     jint spacepos = [((NSString *) nil_chk(tables)) java_indexOf:' '];
     jint commapos = [tables java_indexOf:','];
     if (spacepos > 0 && (spacepos < commapos || commapos < 0)) {
@@ -1448,10 +1448,10 @@ NSString *ComYahooAndroidSqliteSQLiteDatabase_findEditTableWithNSString_(NSStrin
   }
 }
 
-jint ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteDatabase *self, NSString *sql, IOSObjectArray *bindArgs) {
+jint SquiDBSQLiteDatabase_executeSqlWithNSString_withNSObjectArray_(SquiDBSQLiteDatabase *self, NSString *sql, IOSObjectArray *bindArgs) {
   [self acquireReference];
   @try {
-    if (ComYahooAndroidSqliteDatabaseUtils_getSqlStatementTypeWithNSString_(sql) == ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ATTACH) {
+    if (SquiDBDatabaseUtils_getSqlStatementTypeWithNSString_(sql) == SquiDBDatabaseUtils_STATEMENT_ATTACH) {
       jboolean disableWal = false;
       @synchronized(self->mLock_) {
         if (!self->mHasAttachedDbsLocked_) {
@@ -1463,7 +1463,7 @@ jint ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArra
         [self disableWriteAheadLogging];
       }
     }
-    ComYahooAndroidSqliteSQLiteStatement *statement = new_ComYahooAndroidSqliteSQLiteStatement_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, sql, bindArgs);
+    SquiDBSQLiteStatement *statement = new_SquiDBSQLiteStatement_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, sql, bindArgs);
     @try {
       return [statement executeUpdateDelete];
     }
@@ -1476,26 +1476,26 @@ jint ComYahooAndroidSqliteSQLiteDatabase_executeSqlWithNSString_withNSObjectArra
   }
 }
 
-jboolean ComYahooAndroidSqliteSQLiteDatabase_isReadOnlyLocked(ComYahooAndroidSqliteSQLiteDatabase *self) {
-  return (((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->openFlags_ & ComYahooAndroidSqliteSQLiteDatabase_OPEN_READ_MASK) == ComYahooAndroidSqliteSQLiteDatabase_OPEN_READONLY;
+jboolean SquiDBSQLiteDatabase_isReadOnlyLocked(SquiDBSQLiteDatabase *self) {
+  return (((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->openFlags_ & SquiDBSQLiteDatabase_OPEN_READ_MASK) == SquiDBSQLiteDatabase_OPEN_READONLY;
 }
 
-NSString *ComYahooAndroidSqliteSQLiteDatabase_getPath(ComYahooAndroidSqliteSQLiteDatabase *self) {
+NSString *SquiDBSQLiteDatabase_getPath(SquiDBSQLiteDatabase *self) {
   @synchronized(self->mLock_) {
-    return ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->path_;
+    return ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->path_;
   }
 }
 
-JavaUtilArrayList *ComYahooAndroidSqliteSQLiteDatabase_getDbStats() {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
+JavaUtilArrayList *SquiDBSQLiteDatabase_getDbStats() {
+  SquiDBSQLiteDatabase_initialize();
   JavaUtilArrayList *dbStatsList = new_JavaUtilArrayList_init();
-  for (ComYahooAndroidSqliteSQLiteDatabase * __strong db in nil_chk(ComYahooAndroidSqliteSQLiteDatabase_getActiveDatabases())) {
-    ComYahooAndroidSqliteSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(nil_chk(db), dbStatsList);
+  for (SquiDBSQLiteDatabase * __strong db in nil_chk(SquiDBSQLiteDatabase_getActiveDatabases())) {
+    SquiDBSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(nil_chk(db), dbStatsList);
   }
   return dbStatsList;
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(ComYahooAndroidSqliteSQLiteDatabase *self, JavaUtilArrayList *dbStatsList) {
+void SquiDBSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(SquiDBSQLiteDatabase *self, JavaUtilArrayList *dbStatsList) {
   @synchronized(self->mLock_) {
     if (self->mConnectionPoolLocked_ != nil) {
       [self->mConnectionPoolLocked_ collectDbStatsWithJavaUtilArrayList:dbStatsList];
@@ -1503,112 +1503,114 @@ void ComYahooAndroidSqliteSQLiteDatabase_collectDbStatsWithJavaUtilArrayList_(Co
   }
 }
 
-JavaUtilArrayList *ComYahooAndroidSqliteSQLiteDatabase_getActiveDatabases() {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
+JavaUtilArrayList *SquiDBSQLiteDatabase_getActiveDatabases() {
+  SquiDBSQLiteDatabase_initialize();
   JavaUtilArrayList *databases = new_JavaUtilArrayList_init();
-  @synchronized(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases) {
-    [databases addAllWithJavaUtilCollection:[((JavaUtilWeakHashMap *) nil_chk(ComYahooAndroidSqliteSQLiteDatabase_sActiveDatabases)) keySet]];
+  @synchronized(SquiDBSQLiteDatabase_sActiveDatabases) {
+    [databases addAllWithJavaUtilCollection:[((JavaUtilWeakHashMap *) nil_chk(SquiDBSQLiteDatabase_sActiveDatabases)) keySet]];
   }
   return databases;
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_dumpAllWithComYahooAndroidSqlitePrinter_withBoolean_(id<ComYahooAndroidSqlitePrinter> printer, jboolean verbose) {
-  ComYahooAndroidSqliteSQLiteDatabase_initialize();
-  for (ComYahooAndroidSqliteSQLiteDatabase * __strong db in nil_chk(ComYahooAndroidSqliteSQLiteDatabase_getActiveDatabases())) {
-    ComYahooAndroidSqliteSQLiteDatabase_dumpWithComYahooAndroidSqlitePrinter_withBoolean_(nil_chk(db), printer, verbose);
+void SquiDBSQLiteDatabase_dumpAllWithSquiDBPrinter_withBoolean_(id<SquiDBPrinter> printer, jboolean verbose) {
+  SquiDBSQLiteDatabase_initialize();
+  for (SquiDBSQLiteDatabase * __strong db in nil_chk(SquiDBSQLiteDatabase_getActiveDatabases())) {
+    SquiDBSQLiteDatabase_dumpWithSquiDBPrinter_withBoolean_(nil_chk(db), printer, verbose);
   }
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_dumpWithComYahooAndroidSqlitePrinter_withBoolean_(ComYahooAndroidSqliteSQLiteDatabase *self, id<ComYahooAndroidSqlitePrinter> printer, jboolean verbose) {
+void SquiDBSQLiteDatabase_dumpWithSquiDBPrinter_withBoolean_(SquiDBSQLiteDatabase *self, id<SquiDBPrinter> printer, jboolean verbose) {
   @synchronized(self->mLock_) {
     if (self->mConnectionPoolLocked_ != nil) {
-      [((id<ComYahooAndroidSqlitePrinter>) nil_chk(printer)) printlnWithNSString:@""];
-      [((ComYahooAndroidSqliteSQLiteConnectionPool *) nil_chk(self->mConnectionPoolLocked_)) dumpWithComYahooAndroidSqlitePrinter:printer withBoolean:verbose];
+      [((id<SquiDBPrinter>) nil_chk(printer)) printlnWithNSString:@""];
+      [((SquiDBSQLiteConnectionPool *) nil_chk(self->mConnectionPoolLocked_)) dumpWithSquiDBPrinter:printer withBoolean:verbose];
     }
   }
 }
 
-void ComYahooAndroidSqliteSQLiteDatabase_throwIfNotOpenLocked(ComYahooAndroidSqliteSQLiteDatabase *self) {
+void SquiDBSQLiteDatabase_throwIfNotOpenLocked(SquiDBSQLiteDatabase *self) {
   if (self->mConnectionPoolLocked_ == nil) {
-    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$", @"The database '", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->label_, @"' is not open."));
+    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$", @"The database '", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfigurationLocked_))->label_, @"' is not open."));
   }
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$0() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$1() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$2() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$2() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$3() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$3() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$4() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$4() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteDatabase__Annotations$5() {
+IOSObjectArray *SquiDBSQLiteDatabase__Annotations$5() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabase)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabase)
 
-@implementation ComYahooAndroidSqliteSQLiteDatabase_1
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDatabase, "com.yahoo.android.sqlite", "SquiDB")
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)outer$ {
-  ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(self, outer$);
+@implementation SquiDBSQLiteDatabase_1
+
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)outer$ {
+  SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(self, outer$);
   return self;
 }
 
-- (ComYahooAndroidSqliteSQLiteSession *)initialValue {
+- (SquiDBSQLiteSession *)initialValue {
   return [this$0_ createSession];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteSession;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteSession;", 0x4, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabase:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabase:);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LComYahooAndroidSqliteSQLiteDatabase;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LSquiDBSQLiteDatabase;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabase;", "Ljava/lang/ThreadLocal<Lcom/yahoo/android/sqlite/SQLiteSession;>;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabase_1 = { "", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x8018, 2, 1, 0, -1, -1, 1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabase_1;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabase;", "Ljava/lang/ThreadLocal<Lcom/yahoo/android/sqlite/SQLiteSession;>;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabase_1 = { "", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x8010, 2, 1, 0, -1, -1, 1, -1 };
+  return &_SquiDBSQLiteDatabase_1;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase_1 *self, ComYahooAndroidSqliteSQLiteDatabase *outer$) {
+void SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase_1 *self, SquiDBSQLiteDatabase *outer$) {
   self->this$0_ = outer$;
   JavaLangThreadLocal_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase_1 *new_ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *outer$) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabase_1, initWithComYahooAndroidSqliteSQLiteDatabase_, outer$)
+SquiDBSQLiteDatabase_1 *new_SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *outer$) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabase_1, initWithSquiDBSQLiteDatabase_, outer$)
 }
 
-ComYahooAndroidSqliteSQLiteDatabase_1 *create_ComYahooAndroidSqliteSQLiteDatabase_1_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *outer$) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabase_1, initWithComYahooAndroidSqliteSQLiteDatabase_, outer$)
+SquiDBSQLiteDatabase_1 *create_SquiDBSQLiteDatabase_1_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *outer$) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabase_1, initWithSquiDBSQLiteDatabase_, outer$)
 }
 
-@implementation ComYahooAndroidSqliteSQLiteDatabase_2
+@implementation SquiDBSQLiteDatabase_2
 
 - (instancetype)initWithNSString:(NSString *)capture$0 {
-  ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(self, capture$0);
+  SquiDBSQLiteDatabase_2_initWithNSString_(self, capture$0);
   return self;
 }
 
@@ -1618,8 +1620,8 @@ ComYahooAndroidSqliteSQLiteDatabase_1 *create_ComYahooAndroidSqliteSQLiteDatabas
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -1630,47 +1632,47 @@ ComYahooAndroidSqliteSQLiteDatabase_1 *create_ComYahooAndroidSqliteSQLiteDatabas
   static const J2ObjcFieldInfo fields[] = {
     { "val$prefix_", "LNSString;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "accept", "LJavaIoFile;", "LComYahooAndroidSqliteSQLiteDatabase;", "deleteDatabaseWithJavaIoFile:" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabase_2 = { "", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, 3, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabase_2;
+  static const void *ptrTable[] = { "LNSString;", "accept", "LJavaIoFile;", "LSquiDBSQLiteDatabase;", "deleteDatabaseWithJavaIoFile:" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabase_2 = { "", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x8018, 2, 1, 3, -1, 4, -1, -1 };
+  return &_SquiDBSQLiteDatabase_2;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(ComYahooAndroidSqliteSQLiteDatabase_2 *self, NSString *capture$0) {
+void SquiDBSQLiteDatabase_2_initWithNSString_(SquiDBSQLiteDatabase_2 *self, NSString *capture$0) {
   self->val$prefix_ = capture$0;
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDatabase_2 *new_ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(NSString *capture$0) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabase_2, initWithNSString_, capture$0)
+SquiDBSQLiteDatabase_2 *new_SquiDBSQLiteDatabase_2_initWithNSString_(NSString *capture$0) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabase_2, initWithNSString_, capture$0)
 }
 
-ComYahooAndroidSqliteSQLiteDatabase_2 *create_ComYahooAndroidSqliteSQLiteDatabase_2_initWithNSString_(NSString *capture$0) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabase_2, initWithNSString_, capture$0)
+SquiDBSQLiteDatabase_2 *create_SquiDBSQLiteDatabase_2_initWithNSString_(NSString *capture$0) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabase_2, initWithNSString_, capture$0)
 }
 
-@implementation ComYahooAndroidSqliteSQLiteDatabase_CursorFactory
+@implementation SquiDBSQLiteDatabase_CursorFactory
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooSquidbDataICursor;", 0x401, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x401, 0, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(newCursorWithComYahooAndroidSqliteSQLiteDatabase:withComYahooAndroidSqliteSQLiteCursorDriver:withNSString:withComYahooAndroidSqliteSQLiteQuery:);
+  methods[0].selector = @selector(newCursorWithSquiDBSQLiteDatabase:withSquiDBSQLiteCursorDriver:withNSString:withSquiDBSQLiteQuery:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "newCursor", "LComYahooAndroidSqliteSQLiteDatabase;LComYahooAndroidSqliteSQLiteCursorDriver;LNSString;LComYahooAndroidSqliteSQLiteQuery;", "LComYahooAndroidSqliteSQLiteDatabase;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabase_CursorFactory = { "CursorFactory", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabase_CursorFactory;
+  static const void *ptrTable[] = { "newCursor", "LSquiDBSQLiteDatabase;LSquiDBSQLiteCursorDriver;LNSString;LSquiDBSQLiteQuery;", "LSquiDBSQLiteDatabase;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabase_CursorFactory = { "CursorFactory", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabase_CursorFactory;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabase_CursorFactory)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabase_CursorFactory)
 
-@implementation ComYahooAndroidSqliteSQLiteDatabase_CustomFunction
+@implementation SquiDBSQLiteDatabase_CustomFunction
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -1681,11 +1683,11 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabase_CursorF
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(callbackWithNSStringArray:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "callback", "[LNSString;", "LComYahooAndroidSqliteSQLiteDatabase;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabase_CustomFunction = { "CustomFunction", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabase_CustomFunction;
+  static const void *ptrTable[] = { "callback", "[LNSString;", "LSquiDBSQLiteDatabase;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabase_CustomFunction = { "CustomFunction", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabase_CustomFunction;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabase_CustomFunction)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabase_CustomFunction)

@@ -15,85 +15,91 @@
 #include "CompilableWithArguments.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
 @class IOSObjectArray;
+@class SquiDBOperator;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbSqlCriterion : ComYahooSquidbSqlCompilableWithArguments {
+@interface SquiDBCriterion : SquiDBCompilableWithArguments {
  @public
-  ComYahooSquidbSqlOperator *operator__;
+  SquiDBOperator *operator__;
 }
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_;
+- (instancetype __nonnull)initWithSquiDBOperator:(SquiDBOperator *)operator_;
 
-- (ComYahooSquidbSqlCriterion *)and__WithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBCriterion *)and__WithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
-+ (ComYahooSquidbSqlCriterion *)and__WithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                                withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)criterions;
++ (SquiDBCriterion *)and__WithSquiDBCriterion:(SquiDBCriterion *)criterion
+                     withSquiDBCriterionArray:(IOSObjectArray *)criterions;
 
-+ (ComYahooSquidbSqlCriterion *)and__WithJavaUtilList:(id<JavaUtilList>)criterions;
++ (SquiDBCriterion *)and__WithJavaUtilList:(id<JavaUtilList>)criterions;
 
 - (jboolean)isEqual:(id)o;
 
-+ (ComYahooSquidbSqlCriterion *)existsWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBCriterion *)existsWithSquiDBQuery:(SquiDBQuery *)query;
 
-+ (ComYahooSquidbSqlCriterion *)fromRawSelectionWithNSString:(NSString *)selection
-                                           withNSStringArray:(IOSObjectArray *)selectionArgs;
++ (SquiDBCriterion *)fromRawSelectionWithNSString:(NSString *)selection
+                                withNSStringArray:(IOSObjectArray *)selectionArgs;
 
 - (NSUInteger)hash;
 
-+ (ComYahooSquidbSqlCriterion *)literalWithId:(id)value;
++ (SquiDBCriterion *)literalWithId:(id)value;
 
-- (ComYahooSquidbSqlCriterion *)negate;
+- (SquiDBCriterion *)negate;
 
-+ (ComYahooSquidbSqlCriterion *)not__WithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
++ (SquiDBCriterion *)not__WithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
-- (ComYahooSquidbSqlCriterion *)or__WithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBCriterion *)or__WithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
-+ (ComYahooSquidbSqlCriterion *)or__WithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                               withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)criterions;
++ (SquiDBCriterion *)or__WithSquiDBCriterion:(SquiDBCriterion *)criterion
+                    withSquiDBCriterionArray:(IOSObjectArray *)criterions;
 
-+ (ComYahooSquidbSqlCriterion *)or__WithJavaUtilList:(id<JavaUtilList>)criterions;
++ (SquiDBCriterion *)or__WithJavaUtilList:(id<JavaUtilList>)criterions;
 
 #pragma mark Protected
 
-- (void)populateWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                    withBoolean:(jboolean)forSqlValidation;
+- (void)populateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                         withBoolean:(jboolean)forSqlValidation;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCriterion)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCriterion, operator__, ComYahooSquidbSqlOperator *)
+J2OBJC_FIELD_SETTER(SquiDBCriterion, operator__, SquiDBOperator *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCriterion_initWithComYahooSquidbSqlOperator_(ComYahooSquidbSqlCriterion *self, ComYahooSquidbSqlOperator *operator_);
+FOUNDATION_EXPORT void SquiDBCriterion_initWithSquiDBOperator_(SquiDBCriterion *self, SquiDBOperator *operator_);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_and__WithComYahooSquidbSqlCriterion_withComYahooSquidbSqlCriterionArray_(ComYahooSquidbSqlCriterion *criterion, IOSObjectArray *criterions);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_and__WithSquiDBCriterion_withSquiDBCriterionArray_(SquiDBCriterion *criterion, IOSObjectArray *criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_and__WithJavaUtilList_(id<JavaUtilList> criterions);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_and__WithJavaUtilList_(id<JavaUtilList> criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_or__WithComYahooSquidbSqlCriterion_withComYahooSquidbSqlCriterionArray_(ComYahooSquidbSqlCriterion *criterion, IOSObjectArray *criterions);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_or__WithSquiDBCriterion_withSquiDBCriterionArray_(SquiDBCriterion *criterion, IOSObjectArray *criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_or__WithJavaUtilList_(id<JavaUtilList> criterions);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_or__WithJavaUtilList_(id<JavaUtilList> criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_not__WithComYahooSquidbSqlCriterion_(ComYahooSquidbSqlCriterion *criterion);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_not__WithSquiDBCriterion_(SquiDBCriterion *criterion);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_existsWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_existsWithSquiDBQuery_(SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_fromRawSelectionWithNSString_withNSStringArray_(NSString *selection, IOSObjectArray *selectionArgs);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_fromRawSelectionWithNSString_withNSStringArray_(NSString *selection, IOSObjectArray *selectionArgs);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCriterion *ComYahooSquidbSqlCriterion_literalWithId_(id value);
+FOUNDATION_EXPORT SquiDBCriterion *SquiDBCriterion_literalWithId_(id value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCriterion)
+
+@compatibility_alias ComYahooSquidbSqlCriterion SquiDBCriterion;
 
 
 #if __has_feature(nullability)

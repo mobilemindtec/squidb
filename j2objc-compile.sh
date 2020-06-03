@@ -6,6 +6,7 @@ rm -rf $BUILD
 mkdir -p $BUILD/{java,objc,bin}
 
 
+find "./squidb/src" -type f -name 'packages.properties' -exec cat {} + >> "$BUILD/java/packages.properties" ;
 find "./squidb/src" -name '*.java' -type f -exec cp {} "$BUILD/java/" \;
 find "./squidb-annotations/src" -name '*.java' -type f -exec cp {} "$BUILD/java/" \;
 find "./squidb-ios/src" -name '*.java' -type f -exec cp {} "$BUILD/java/" \;
@@ -23,6 +24,7 @@ for f in $BUILD/java/*.java; do
 	j2objc -d $BUILD/objc \
     -sourcepath "$BUILD/java/**.java" \
     -classpath $CLASS_PATH \
+    --prefixes $BUILD/java/packages.properties \
     --swift-friendly \
     --no-segmented-headers \
     -use-arc \

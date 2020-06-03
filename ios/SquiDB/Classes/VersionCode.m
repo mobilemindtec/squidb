@@ -16,7 +16,7 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface ComYahooSquidbUtilityVersionCode () {
+@interface SquiDBVersionCode () {
  @public
   jint majorVersion_;
   jint minorVersion_;
@@ -27,55 +27,55 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbUtilityVersionCode, trailing_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBVersionCode, trailing_, NSString *)
 
-inline NSString *ComYahooSquidbUtilityVersionCode_get_VERSION_REGEX(void);
-static NSString *ComYahooSquidbUtilityVersionCode_VERSION_REGEX = @"^([\\d]+)(?:\\.([\\d]+))?(?:\\.([\\d]+))?(?:\\.([\\d]+))?((?:[\\w\\-\\(\\)]+\\.)*[\\w\\-\\(\\)]+)?";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityVersionCode, VERSION_REGEX, NSString *)
+inline NSString *SquiDBVersionCode_get_VERSION_REGEX(void);
+static NSString *SquiDBVersionCode_VERSION_REGEX = @"^([\\d]+)(?:\\.([\\d]+))?(?:\\.([\\d]+))?(?:\\.([\\d]+))?((?:[\\w\\-\\(\\)]+\\.)*[\\w\\-\\(\\)]+)?";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBVersionCode, VERSION_REGEX, NSString *)
 
-inline JavaUtilRegexPattern *ComYahooSquidbUtilityVersionCode_get_pattern(void);
-inline JavaUtilRegexPattern *ComYahooSquidbUtilityVersionCode_set_pattern(JavaUtilRegexPattern *value);
-static JavaUtilRegexPattern *ComYahooSquidbUtilityVersionCode_pattern;
-J2OBJC_STATIC_FIELD_OBJ(ComYahooSquidbUtilityVersionCode, pattern, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *SquiDBVersionCode_get_pattern(void);
+inline JavaUtilRegexPattern *SquiDBVersionCode_set_pattern(JavaUtilRegexPattern *value);
+static JavaUtilRegexPattern *SquiDBVersionCode_pattern;
+J2OBJC_STATIC_FIELD_OBJ(SquiDBVersionCode, pattern, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBVersionCode__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBVersionCode__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBVersionCode__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBVersionCode__Annotations$3(void);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbUtilityVersionCode)
+J2OBJC_INITIALIZED_DEFN(SquiDBVersionCode)
 
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_7_4;
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_7_11;
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_8_3;
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
+SquiDBVersionCode *SquiDBVersionCode_V3_7_4;
+SquiDBVersionCode *SquiDBVersionCode_V3_7_11;
+SquiDBVersionCode *SquiDBVersionCode_V3_8_3;
+SquiDBVersionCode *SquiDBVersionCode_LATEST;
 
-@implementation ComYahooSquidbUtilityVersionCode
+@implementation SquiDBVersionCode
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_7_4 {
-  return ComYahooSquidbUtilityVersionCode_V3_7_4;
++ (SquiDBVersionCode *)V3_7_4 {
+  return SquiDBVersionCode_V3_7_4;
 }
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_7_11 {
-  return ComYahooSquidbUtilityVersionCode_V3_7_11;
++ (SquiDBVersionCode *)V3_7_11 {
+  return SquiDBVersionCode_V3_7_11;
 }
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_8_3 {
-  return ComYahooSquidbUtilityVersionCode_V3_8_3;
++ (SquiDBVersionCode *)V3_8_3 {
+  return SquiDBVersionCode_V3_8_3;
 }
 
-+ (ComYahooSquidbUtilityVersionCode *)LATEST {
-  return ComYahooSquidbUtilityVersionCode_LATEST;
++ (SquiDBVersionCode *)LATEST {
+  return SquiDBVersionCode_LATEST;
 }
 
 - (instancetype)initWithInt:(jint)major
                     withInt:(jint)minor
                     withInt:(jint)micro
                     withInt:(jint)nano {
-  ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(self, major, minor, micro, nano);
+  SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(self, major, minor, micro, nano);
   return self;
 }
 
@@ -84,7 +84,7 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
                     withInt:(jint)micro
                     withInt:(jint)nano
                withNSString:(NSString *)trailing {
-  ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(self, major, minor, micro, nano, trailing);
+  SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(self, major, minor, micro, nano, trailing);
   return self;
 }
 
@@ -108,43 +108,43 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
   return trailing_;
 }
 
-- (jboolean)isAtLeastWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)version_ {
+- (jboolean)isAtLeastWithSquiDBVersionCode:(SquiDBVersionCode *)version_ {
   return [self compareToWithId:version_] >= 0;
 }
 
 - (jboolean)isAtLeastWithNSString:(NSString *)versionString {
-  return [self isAtLeastWithComYahooSquidbUtilityVersionCode:ComYahooSquidbUtilityVersionCode_parseWithNSString_(versionString)];
+  return [self isAtLeastWithSquiDBVersionCode:SquiDBVersionCode_parseWithNSString_(versionString)];
 }
 
-- (jboolean)isLessThanWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)version_ {
+- (jboolean)isLessThanWithSquiDBVersionCode:(SquiDBVersionCode *)version_ {
   return [self compareToWithId:version_] < 0;
 }
 
 - (jboolean)isLessThanWithNSString:(NSString *)versionString {
-  return [self isLessThanWithComYahooSquidbUtilityVersionCode:ComYahooSquidbUtilityVersionCode_parseWithNSString_(versionString)];
+  return [self isLessThanWithSquiDBVersionCode:SquiDBVersionCode_parseWithNSString_(versionString)];
 }
 
-+ (ComYahooSquidbUtilityVersionCode *)parseWithNSString:(NSString *)versionString {
-  return ComYahooSquidbUtilityVersionCode_parseWithNSString_(versionString);
++ (SquiDBVersionCode *)parseWithNSString:(NSString *)versionString {
+  return SquiDBVersionCode_parseWithNSString_(versionString);
 }
 
 - (jboolean)isEqual:(id)o {
   if (self == o) {
     return true;
   }
-  if (!([o isKindOfClass:[ComYahooSquidbUtilityVersionCode class]])) {
+  if (!([o isKindOfClass:[SquiDBVersionCode class]])) {
     return false;
   }
-  ComYahooSquidbUtilityVersionCode *other = (ComYahooSquidbUtilityVersionCode *) cast_chk(o, [ComYahooSquidbUtilityVersionCode class]);
+  SquiDBVersionCode *other = (SquiDBVersionCode *) cast_chk(o, [SquiDBVersionCode class]);
   return [self compareToWithId:other] == 0;
 }
 
-- (jint)compareToWithId:(ComYahooSquidbUtilityVersionCode *)other {
-  (void) cast_chk(other, [ComYahooSquidbUtilityVersionCode class]);
+- (jint)compareToWithId:(SquiDBVersionCode *)other {
+  (void) cast_chk(other, [SquiDBVersionCode class]);
   if (self == other) {
     return 0;
   }
-  jint result = self->majorVersion_ - ((ComYahooSquidbUtilityVersionCode *) nil_chk(other))->majorVersion_;
+  jint result = self->majorVersion_ - ((SquiDBVersionCode *) nil_chk(other))->majorVersion_;
   if (result != 0) {
     return result;
   }
@@ -172,7 +172,7 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
   if (nanoVersion_ > 0) {
     (void) [((JavaLangStringBuilder *) nil_chk([builder appendWithChar:'.'])) appendWithInt:nanoVersion_];
   }
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(trailing_)) {
+  if (!SquiDBSqlUtils_isEmptyWithNSString_(trailing_)) {
     (void) [builder appendWithNSString:trailing_];
   }
   return [builder description];
@@ -200,7 +200,7 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
     { NULL, "Z", 0x1, 2, 4, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 5, 3, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 5, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x9, 6, 4, -1, -1, -1, -1 },
+    { NULL, "LSquiDBVersionCode;", 0x9, 6, 4, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 7, 8, -1, -1, -1, -1 },
     { NULL, "I", 0x1, 9, 3, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 10, -1, -1, -1, -1, -1 },
@@ -216,9 +216,9 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
   methods[4].selector = @selector(getMicroVersion);
   methods[5].selector = @selector(getNanoVersion);
   methods[6].selector = @selector(getTrailingText);
-  methods[7].selector = @selector(isAtLeastWithComYahooSquidbUtilityVersionCode:);
+  methods[7].selector = @selector(isAtLeastWithSquiDBVersionCode:);
   methods[8].selector = @selector(isAtLeastWithNSString:);
-  methods[9].selector = @selector(isLessThanWithComYahooSquidbUtilityVersionCode:);
+  methods[9].selector = @selector(isLessThanWithSquiDBVersionCode:);
   methods[10].selector = @selector(isLessThanWithNSString:);
   methods[11].selector = @selector(parseWithNSString:);
   methods[12].selector = @selector(isEqual:);
@@ -227,10 +227,10 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
   methods[15].selector = @selector(hash);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "V3_7_4", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x19, -1, 12, -1, 13 },
-    { "V3_7_11", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x19, -1, 14, -1, 15 },
-    { "V3_8_3", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x19, -1, 16, -1, 17 },
-    { "LATEST", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x19, -1, 18, -1, 19 },
+    { "V3_7_4", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x19, -1, 12, -1, 13 },
+    { "V3_7_11", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x19, -1, 14, -1, 15 },
+    { "V3_8_3", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x19, -1, 16, -1, 17 },
+    { "LATEST", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x19, -1, 18, -1, 19 },
     { "VERSION_REGEX", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 20, -1, -1 },
     { "pattern", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0xa, -1, 21, -1, -1 },
     { "majorVersion_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
@@ -239,36 +239,36 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
     { "nanoVersion_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "trailing_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "IIII", "IIIILNSString;", "isAtLeast", "LComYahooSquidbUtilityVersionCode;", "LNSString;", "isLessThan", "parse", "equals", "LNSObject;", "compareTo", "toString", "hashCode", &ComYahooSquidbUtilityVersionCode_V3_7_4, (void *)&ComYahooSquidbUtilityVersionCode__Annotations$0, &ComYahooSquidbUtilityVersionCode_V3_7_11, (void *)&ComYahooSquidbUtilityVersionCode__Annotations$1, &ComYahooSquidbUtilityVersionCode_V3_8_3, (void *)&ComYahooSquidbUtilityVersionCode__Annotations$2, &ComYahooSquidbUtilityVersionCode_LATEST, (void *)&ComYahooSquidbUtilityVersionCode__Annotations$3, &ComYahooSquidbUtilityVersionCode_VERSION_REGEX, &ComYahooSquidbUtilityVersionCode_pattern, "Ljava/lang/Object;Ljava/lang/Comparable<Lcom/yahoo/squidb/utility/VersionCode;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbUtilityVersionCode = { "VersionCode", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 16, 11, -1, -1, -1, 22, -1 };
-  return &_ComYahooSquidbUtilityVersionCode;
+  static const void *ptrTable[] = { "IIII", "IIIILNSString;", "isAtLeast", "LSquiDBVersionCode;", "LNSString;", "isLessThan", "parse", "equals", "LNSObject;", "compareTo", "toString", "hashCode", &SquiDBVersionCode_V3_7_4, (void *)&SquiDBVersionCode__Annotations$0, &SquiDBVersionCode_V3_7_11, (void *)&SquiDBVersionCode__Annotations$1, &SquiDBVersionCode_V3_8_3, (void *)&SquiDBVersionCode__Annotations$2, &SquiDBVersionCode_LATEST, (void *)&SquiDBVersionCode__Annotations$3, &SquiDBVersionCode_VERSION_REGEX, &SquiDBVersionCode_pattern, "Ljava/lang/Object;Ljava/lang/Comparable<Lcom/yahoo/squidb/utility/VersionCode;>;" };
+  static const J2ObjcClassInfo _SquiDBVersionCode = { "VersionCode", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 16, 11, -1, -1, -1, 22, -1 };
+  return &_SquiDBVersionCode;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbUtilityVersionCode class]) {
-    ComYahooSquidbUtilityVersionCode_V3_7_4 = new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(3, 7, 4, 0);
-    ComYahooSquidbUtilityVersionCode_V3_7_11 = new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(3, 7, 11, 0);
-    ComYahooSquidbUtilityVersionCode_V3_8_3 = new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(3, 8, 3, 0);
-    ComYahooSquidbUtilityVersionCode_LATEST = new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(3, 15, 0, 0);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbUtilityVersionCode)
+  if (self == [SquiDBVersionCode class]) {
+    SquiDBVersionCode_V3_7_4 = new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(3, 7, 4, 0);
+    SquiDBVersionCode_V3_7_11 = new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(3, 7, 11, 0);
+    SquiDBVersionCode_V3_8_3 = new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(3, 8, 3, 0);
+    SquiDBVersionCode_LATEST = new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(3, 15, 0, 0);
+    J2OBJC_SET_INITIALIZED(SquiDBVersionCode)
   }
 }
 
 @end
 
-void ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(ComYahooSquidbUtilityVersionCode *self, jint major, jint minor, jint micro, jint nano) {
-  ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(self, major, minor, micro, nano, nil);
+void SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(SquiDBVersionCode *self, jint major, jint minor, jint micro, jint nano) {
+  SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(self, major, minor, micro, nano, nil);
 }
 
-ComYahooSquidbUtilityVersionCode *new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityVersionCode, initWithInt_withInt_withInt_withInt_, major, minor, micro, nano)
+SquiDBVersionCode *new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) {
+  J2OBJC_NEW_IMPL(SquiDBVersionCode, initWithInt_withInt_withInt_withInt_, major, minor, micro, nano)
 }
 
-ComYahooSquidbUtilityVersionCode *create_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityVersionCode, initWithInt_withInt_withInt_withInt_, major, minor, micro, nano)
+SquiDBVersionCode *create_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) {
+  J2OBJC_CREATE_IMPL(SquiDBVersionCode, initWithInt_withInt_withInt_withInt_, major, minor, micro, nano)
 }
 
-void ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(ComYahooSquidbUtilityVersionCode *self, jint major, jint minor, jint micro, jint nano, NSString *trailing) {
+void SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(SquiDBVersionCode *self, jint major, jint minor, jint micro, jint nano, NSString *trailing) {
   NSObject_init(self);
   if (major < 0 || minor < 0 || micro < 0 || nano < 0) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Can't use a value less than zero to construct a VersionCode.");
@@ -280,23 +280,23 @@ void ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNS
   self->trailing_ = trailing;
 }
 
-ComYahooSquidbUtilityVersionCode *new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityVersionCode, initWithInt_withInt_withInt_withInt_withNSString_, major, minor, micro, nano, trailing)
+SquiDBVersionCode *new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) {
+  J2OBJC_NEW_IMPL(SquiDBVersionCode, initWithInt_withInt_withInt_withInt_withNSString_, major, minor, micro, nano, trailing)
 }
 
-ComYahooSquidbUtilityVersionCode *create_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityVersionCode, initWithInt_withInt_withInt_withInt_withNSString_, major, minor, micro, nano, trailing)
+SquiDBVersionCode *create_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) {
+  J2OBJC_CREATE_IMPL(SquiDBVersionCode, initWithInt_withInt_withInt_withInt_withNSString_, major, minor, micro, nano, trailing)
 }
 
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_parseWithNSString_(NSString *versionString) {
-  ComYahooSquidbUtilityVersionCode_initialize();
-  if (ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(versionString)) {
+SquiDBVersionCode *SquiDBVersionCode_parseWithNSString_(NSString *versionString) {
+  SquiDBVersionCode_initialize();
+  if (SquiDBSqlUtils_isEmptyWithNSString_(versionString)) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Empty versionString");
   }
-  if (ComYahooSquidbUtilityVersionCode_pattern == nil) {
-    ComYahooSquidbUtilityVersionCode_pattern = JavaUtilRegexPattern_compileWithNSString_(ComYahooSquidbUtilityVersionCode_VERSION_REGEX);
+  if (SquiDBVersionCode_pattern == nil) {
+    SquiDBVersionCode_pattern = JavaUtilRegexPattern_compileWithNSString_(SquiDBVersionCode_VERSION_REGEX);
   }
-  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(ComYahooSquidbUtilityVersionCode_pattern)) matcherWithJavaLangCharSequence:[((NSString *) nil_chk(versionString)) java_trim]];
+  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(SquiDBVersionCode_pattern)) matcherWithJavaLangCharSequence:[((NSString *) nil_chk(versionString)) java_trim]];
   if (![((JavaUtilRegexMatcher *) nil_chk(matcher)) find]) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$", @"Invalid versionString: ", versionString));
   }
@@ -313,23 +313,25 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_parseWithNSSt
   NSString *nanoString = [matcher groupWithInt:4];
   nano = nanoString == nil ? 0 : JavaLangInteger_parseIntWithNSString_(nanoString);
   NSString *trailing = [matcher groupWithInt:5];
-  return new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(major, minor, micro, nano, trailing);
+  return new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(major, minor, micro, nano, trailing);
 }
 
-IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$0() {
+IOSObjectArray *SquiDBVersionCode__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$1() {
+IOSObjectArray *SquiDBVersionCode__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$2() {
+IOSObjectArray *SquiDBVersionCode__Annotations$2() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbUtilityVersionCode__Annotations$3() {
+IOSObjectArray *SquiDBVersionCode__Annotations$3() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbUtilityVersionCode)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBVersionCode)
+
+J2OBJC_NAME_MAPPING(SquiDBVersionCode, "com.yahoo.squidb.utility", "SquiDB")

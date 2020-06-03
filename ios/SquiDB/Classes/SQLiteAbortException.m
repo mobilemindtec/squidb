@@ -7,17 +7,17 @@
 #include "SQLiteAbortException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteAbortException
+@implementation SquiDBSQLiteAbortException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteAbortException_init(self);
+  SquiDBSQLiteAbortException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(self, error);
+  SquiDBSQLiteAbortException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteAbortException = { "SQLiteAbortException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteAbortException;
+  static const J2ObjcClassInfo _SquiDBSQLiteAbortException = { "SQLiteAbortException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteAbortException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteAbortException_init(ComYahooAndroidSqliteSQLiteAbortException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteAbortException_init(SquiDBSQLiteAbortException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteAbortException *new_ComYahooAndroidSqliteSQLiteAbortException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteAbortException, init)
+SquiDBSQLiteAbortException *new_SquiDBSQLiteAbortException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteAbortException, init)
 }
 
-ComYahooAndroidSqliteSQLiteAbortException *create_ComYahooAndroidSqliteSQLiteAbortException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteAbortException, init)
+SquiDBSQLiteAbortException *create_SquiDBSQLiteAbortException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteAbortException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(ComYahooAndroidSqliteSQLiteAbortException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteAbortException_initWithNSString_(SquiDBSQLiteAbortException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteAbortException *new_ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteAbortException, initWithNSString_, error)
+SquiDBSQLiteAbortException *new_SquiDBSQLiteAbortException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteAbortException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteAbortException *create_ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteAbortException, initWithNSString_, error)
+SquiDBSQLiteAbortException *create_SquiDBSQLiteAbortException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteAbortException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteAbortException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteAbortException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteAbortException, "com.yahoo.android.sqlite", "SquiDB")

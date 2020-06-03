@@ -16,9 +16,9 @@
 
 @class IOSObjectArray;
 @class JavaUtilArrayList;
-@protocol ComYahooAndroidSqlitePrinter;
+@protocol SquiDBPrinter;
 
-@interface ComYahooAndroidSqliteSQLiteDebug : NSObject
+@interface SquiDBSQLiteDebug : NSObject
 @property (readonly, class) jboolean DEBUG_SQL_LOG NS_SWIFT_NAME(DEBUG_SQL_LOG);
 @property (readonly, class) jboolean DEBUG_SQL_STATEMENTS NS_SWIFT_NAME(DEBUG_SQL_STATEMENTS);
 @property (readonly, class) jboolean DEBUG_SQL_TIME NS_SWIFT_NAME(DEBUG_SQL_TIME);
@@ -34,38 +34,40 @@
 
 #pragma mark Public
 
-+ (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                           withNSStringArray:(IOSObjectArray *)args;
++ (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+            withNSStringArray:(IOSObjectArray *)args;
 
 + (jboolean)shouldLogSlowQueryWithLong:(jlong)elapsedTimeMillis;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDebug)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDebug)
 
-inline jboolean ComYahooAndroidSqliteSQLiteDebug_get_DEBUG_SQL_LOG(void);
-#define ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_LOG false
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDebug, DEBUG_SQL_LOG, jboolean)
+inline jboolean SquiDBSQLiteDebug_get_DEBUG_SQL_LOG(void);
+#define SquiDBSQLiteDebug_DEBUG_SQL_LOG false
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDebug, DEBUG_SQL_LOG, jboolean)
 
-inline jboolean ComYahooAndroidSqliteSQLiteDebug_get_DEBUG_SQL_STATEMENTS(void);
-#define ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_STATEMENTS false
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDebug, DEBUG_SQL_STATEMENTS, jboolean)
+inline jboolean SquiDBSQLiteDebug_get_DEBUG_SQL_STATEMENTS(void);
+#define SquiDBSQLiteDebug_DEBUG_SQL_STATEMENTS false
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDebug, DEBUG_SQL_STATEMENTS, jboolean)
 
-inline jboolean ComYahooAndroidSqliteSQLiteDebug_get_DEBUG_SQL_TIME(void);
-#define ComYahooAndroidSqliteSQLiteDebug_DEBUG_SQL_TIME false
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDebug, DEBUG_SQL_TIME, jboolean)
+inline jboolean SquiDBSQLiteDebug_get_DEBUG_SQL_TIME(void);
+#define SquiDBSQLiteDebug_DEBUG_SQL_TIME false
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDebug, DEBUG_SQL_TIME, jboolean)
 
-inline jboolean ComYahooAndroidSqliteSQLiteDebug_get_DEBUG_LOG_SLOW_QUERIES(void);
-#define ComYahooAndroidSqliteSQLiteDebug_DEBUG_LOG_SLOW_QUERIES false
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteDebug, DEBUG_LOG_SLOW_QUERIES, jboolean)
+inline jboolean SquiDBSQLiteDebug_get_DEBUG_LOG_SLOW_QUERIES(void);
+#define SquiDBSQLiteDebug_DEBUG_LOG_SLOW_QUERIES false
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteDebug, DEBUG_LOG_SLOW_QUERIES, jboolean)
 
-FOUNDATION_EXPORT jboolean ComYahooAndroidSqliteSQLiteDebug_shouldLogSlowQueryWithLong_(jlong elapsedTimeMillis);
+FOUNDATION_EXPORT jboolean SquiDBSQLiteDebug_shouldLogSlowQueryWithLong_(jlong elapsedTimeMillis);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDebug_dumpWithComYahooAndroidSqlitePrinter_withNSStringArray_(id<ComYahooAndroidSqlitePrinter> printer, IOSObjectArray *args);
+FOUNDATION_EXPORT void SquiDBSQLiteDebug_dumpWithSquiDBPrinter_withNSStringArray_(id<SquiDBPrinter> printer, IOSObjectArray *args);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDebug)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDebug)
 
-@interface ComYahooAndroidSqliteSQLiteDebug_PagerStats : NSObject {
+@compatibility_alias ComYahooAndroidSqliteSQLiteDebug SquiDBSQLiteDebug;
+
+@interface SquiDBSQLiteDebug_PagerStats : NSObject {
  @public
   jint memoryUsed_;
   jint pageCacheOverflow_;
@@ -79,19 +81,19 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDebug)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDebug_PagerStats)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDebug_PagerStats, dbStats_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDebug_PagerStats, dbStats_, JavaUtilArrayList *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDebug_PagerStats_init(ComYahooAndroidSqliteSQLiteDebug_PagerStats *self);
+FOUNDATION_EXPORT void SquiDBSQLiteDebug_PagerStats_init(SquiDBSQLiteDebug_PagerStats *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDebug_PagerStats *new_ComYahooAndroidSqliteSQLiteDebug_PagerStats_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDebug_PagerStats *new_SquiDBSQLiteDebug_PagerStats_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDebug_PagerStats *create_ComYahooAndroidSqliteSQLiteDebug_PagerStats_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteDebug_PagerStats *create_SquiDBSQLiteDebug_PagerStats_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDebug_PagerStats)
 
-@interface ComYahooAndroidSqliteSQLiteDebug_DbStats : NSObject {
+@interface SquiDBSQLiteDebug_DbStats : NSObject {
  @public
   NSString *dbName_;
   jlong pageSize_;
@@ -116,18 +118,18 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDebug_PagerStats)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDebug_DbStats)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDebug_DbStats)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDebug_DbStats, dbName_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDebug_DbStats, cache_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDebug_DbStats, dbName_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDebug_DbStats, cache_, NSString *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(ComYahooAndroidSqliteSQLiteDebug_DbStats *self, NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize);
+FOUNDATION_EXPORT void SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(SquiDBSQLiteDebug_DbStats *self, NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDebug_DbStats *new_ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDebug_DbStats *new_SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDebug_DbStats *create_ComYahooAndroidSqliteSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize);
+FOUNDATION_EXPORT SquiDBSQLiteDebug_DbStats *create_SquiDBSQLiteDebug_DbStats_initWithNSString_withLong_withLong_withInt_withInt_withInt_withInt_(NSString *dbName, jlong pageCount, jlong pageSize, jint lookaside, jint hits, jint misses, jint cachesize);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDebug_DbStats)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDebug_DbStats)
 
 
 #if __has_feature(nullability)

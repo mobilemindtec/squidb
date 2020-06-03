@@ -14,27 +14,27 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbUtilityVersionCode;
-@protocol ComYahooSquidbSqlArgumentResolver;
+@class SquiDBVersionCode;
+@protocol SquiDBArgumentResolver;
 
-@interface ComYahooSquidbSqlCompileContext : NSObject
+@interface SquiDBCompileContext : NSObject
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlCompileContext *)clearExtraWithNSString:(NSString *)key;
+- (SquiDBCompileContext *)clearExtraWithNSString:(NSString *)key;
 
-+ (ComYahooSquidbSqlCompileContext *)defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
++ (SquiDBCompileContext *)defaultContextForVersionCodeWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
-- (id<ComYahooSquidbSqlArgumentResolver>)getArgumentResolver;
+- (id<SquiDBArgumentResolver>)getArgumentResolver;
 
 - (id)getExtraWithNSString:(NSString *)key;
 
-- (ComYahooSquidbUtilityVersionCode *)getVersionCode;
+- (SquiDBVersionCode *)getVersionCode;
 
 - (jboolean)hasExtraWithNSString:(NSString *)key;
 
-- (ComYahooSquidbSqlCompileContext *)setExtraWithNSString:(NSString *)key
-                                                   withId:(id)value;
+- (SquiDBCompileContext *)setExtraWithNSString:(NSString *)key
+                                        withId:(id)value;
 
 // Disallowed inherited constructors, do not use.
 
@@ -42,26 +42,28 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCompileContext)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCompileContext)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompileContext *ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *sqliteVersion);
+FOUNDATION_EXPORT SquiDBCompileContext *SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(SquiDBVersionCode *sqliteVersion);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompileContext)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompileContext)
 
-@interface ComYahooSquidbSqlCompileContext_Builder : NSObject
+@compatibility_alias ComYahooSquidbSqlCompileContext SquiDBCompileContext;
+
+@interface SquiDBCompileContext_Builder : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)versionCode;
+- (instancetype __nonnull)initWithSquiDBVersionCode:(SquiDBVersionCode *)versionCode;
 
-- (ComYahooSquidbSqlCompileContext *)build;
+- (SquiDBCompileContext *)build;
 
-- (ComYahooSquidbSqlCompileContext_Builder *)clearExtraWithNSString:(NSString *)key;
+- (SquiDBCompileContext_Builder *)clearExtraWithNSString:(NSString *)key;
 
-- (ComYahooSquidbSqlCompileContext_Builder *)setArgumentResolverWithComYahooSquidbSqlArgumentResolver:(id<ComYahooSquidbSqlArgumentResolver>)argumentResolver;
+- (SquiDBCompileContext_Builder *)setArgumentResolverWithSquiDBArgumentResolver:(id<SquiDBArgumentResolver>)argumentResolver;
 
-- (ComYahooSquidbSqlCompileContext_Builder *)setExtraWithNSString:(NSString *)key
-                                                           withId:(id)value;
+- (SquiDBCompileContext_Builder *)setExtraWithNSString:(NSString *)key
+                                                withId:(id)value;
 
 // Disallowed inherited constructors, do not use.
 
@@ -69,15 +71,15 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompileContext)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCompileContext_Builder)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCompileContext_Builder)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbSqlCompileContext_Builder *self, ComYahooSquidbUtilityVersionCode *versionCode);
+FOUNDATION_EXPORT void SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBCompileContext_Builder *self, SquiDBVersionCode *versionCode);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompileContext_Builder *new_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *versionCode) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCompileContext_Builder *new_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBVersionCode *versionCode) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompileContext_Builder *create_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *versionCode);
+FOUNDATION_EXPORT SquiDBCompileContext_Builder *create_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBVersionCode *versionCode);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompileContext_Builder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompileContext_Builder)
 
 
 #if __has_feature(nullability)

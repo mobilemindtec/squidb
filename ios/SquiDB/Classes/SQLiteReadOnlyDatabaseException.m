@@ -7,17 +7,17 @@
 #include "SQLiteException.h"
 #include "SQLiteReadOnlyDatabaseException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException
+@implementation SquiDBSQLiteReadOnlyDatabaseException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_init(self);
+  SquiDBSQLiteReadOnlyDatabaseException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_initWithNSString_(self, error);
+  SquiDBSQLiteReadOnlyDatabaseException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException = { "SQLiteReadOnlyDatabaseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException;
+  static const J2ObjcClassInfo _SquiDBSQLiteReadOnlyDatabaseException = { "SQLiteReadOnlyDatabaseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteReadOnlyDatabaseException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_init(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteReadOnlyDatabaseException_init(SquiDBSQLiteReadOnlyDatabaseException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *new_ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException, init)
+SquiDBSQLiteReadOnlyDatabaseException *new_SquiDBSQLiteReadOnlyDatabaseException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteReadOnlyDatabaseException, init)
 }
 
-ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *create_ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException, init)
+SquiDBSQLiteReadOnlyDatabaseException *create_SquiDBSQLiteReadOnlyDatabaseException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteReadOnlyDatabaseException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_initWithNSString_(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteReadOnlyDatabaseException_initWithNSString_(SquiDBSQLiteReadOnlyDatabaseException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *new_ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException, initWithNSString_, error)
+SquiDBSQLiteReadOnlyDatabaseException *new_SquiDBSQLiteReadOnlyDatabaseException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteReadOnlyDatabaseException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException *create_ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException, initWithNSString_, error)
+SquiDBSQLiteReadOnlyDatabaseException *create_SquiDBSQLiteReadOnlyDatabaseException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteReadOnlyDatabaseException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteReadOnlyDatabaseException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteReadOnlyDatabaseException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteReadOnlyDatabaseException, "com.yahoo.android.sqlite", "SquiDB")

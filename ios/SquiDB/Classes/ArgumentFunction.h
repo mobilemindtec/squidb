@@ -15,31 +15,31 @@
 #include "Function.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlSqlBuilder;
 @class IOSObjectArray;
+@class SquiDBField;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlArgumentFunction : ComYahooSquidbSqlFunction
+@interface SquiDBArgumentFunction : SquiDBFunction
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
 #pragma mark Protected
 
-- (void)appendArgumentListWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                        withNSObjectArray:(IOSObjectArray *)arguments
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendArgumentListWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                             withNSObjectArray:(IOSObjectArray *)arguments
+                                   withBoolean:(jboolean)forSqlValidation;
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation;
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation;
 
 - (NSString *)separator;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithNSString:(NSString *)functionName
-                         withNSObjectArray:(IOSObjectArray *)arguments;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)functionName
+                                       withNSObjectArray:(IOSObjectArray *)arguments;
 
 // Disallowed inherited constructors, do not use.
 
@@ -49,15 +49,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlArgumentFunction)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBArgumentFunction)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(ComYahooSquidbSqlArgumentFunction *self, NSString *functionName, IOSObjectArray *arguments);
+FOUNDATION_EXPORT void SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(SquiDBArgumentFunction *self, NSString *functionName, IOSObjectArray *arguments);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlArgumentFunction *new_ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBArgumentFunction *new_SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlArgumentFunction *create_ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments);
+FOUNDATION_EXPORT SquiDBArgumentFunction *create_SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlArgumentFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBArgumentFunction)
+
+@compatibility_alias ComYahooSquidbSqlArgumentFunction SquiDBArgumentFunction;
 
 
 #if __has_feature(nullability)

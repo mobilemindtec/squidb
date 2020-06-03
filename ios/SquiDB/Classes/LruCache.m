@@ -15,7 +15,7 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface ComYahooAndroidSqliteLruCache () {
+@interface SquiDBLruCache () {
  @public
   JavaUtilLinkedHashMap *map_;
   jint size_;
@@ -32,14 +32,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteLruCache, map_, JavaUtilLinkedHashMap *)
+J2OBJC_FIELD_SETTER(SquiDBLruCache, map_, JavaUtilLinkedHashMap *)
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(ComYahooAndroidSqliteLruCache *self, id key, id value);
+__attribute__((unused)) static jint SquiDBLruCache_safeSizeOfWithId_withId_(SquiDBLruCache *self, id key, id value);
 
-@implementation ComYahooAndroidSqliteLruCache
+@implementation SquiDBLruCache
 
 - (instancetype)initWithInt:(jint)maxSize {
-  ComYahooAndroidSqliteLruCache_initWithInt_(self, maxSize);
+  SquiDBLruCache_initWithInt_(self, maxSize);
   return self;
 }
 
@@ -77,7 +77,7 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
       (void) [map_ putWithId:key withId:mapValue];
     }
     else {
-      size_ += ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, createdValue);
+      size_ += SquiDBLruCache_safeSizeOfWithId_withId_(self, key, createdValue);
     }
   }
   if (mapValue != nil) {
@@ -98,10 +98,10 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
   id previous;
   @synchronized(self) {
     putCount_++;
-    size_ += ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, value);
+    size_ += SquiDBLruCache_safeSizeOfWithId_withId_(self, key, value);
     previous = [((JavaUtilLinkedHashMap *) nil_chk(map_)) putWithId:key withId:value];
     if (previous != nil) {
-      size_ -= ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, previous);
+      size_ -= SquiDBLruCache_safeSizeOfWithId_withId_(self, key, previous);
     }
   }
   if (previous != nil) {
@@ -135,7 +135,7 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
       key = [toEvict getKey];
       value = [toEvict getValue];
       (void) [map_ removeWithId:key];
-      size_ -= ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, value);
+      size_ -= SquiDBLruCache_safeSizeOfWithId_withId_(self, key, value);
       evictionCount_++;
     }
     [self entryRemovedWithBoolean:true withId:key withId:value withId:nil];
@@ -150,7 +150,7 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
   @synchronized(self) {
     previous = [((JavaUtilLinkedHashMap *) nil_chk(map_)) removeWithId:key];
     if (previous != nil) {
-      size_ -= ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, previous);
+      size_ -= SquiDBLruCache_safeSizeOfWithId_withId_(self, key, previous);
     }
   }
   if (previous != nil) {
@@ -171,7 +171,7 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
 
 - (jint)safeSizeOfWithId:(id)key
                   withId:(id)value {
-  return ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(self, key, value);
+  return SquiDBLruCache_safeSizeOfWithId_withId_(self, key, value);
 }
 
 - (jint)sizeOfWithId:(id)key
@@ -234,7 +234,7 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
 - (NSString *)description {
   @synchronized(self) {
     jint accesses = hitCount_ + missCount_;
-    jint hitPercent = accesses != 0 ? (100 * hitCount_ / accesses) : 0;
+    jint hitPercent = accesses != 0 ? (JreIntDiv(100 * hitCount_, accesses)) : 0;
     return NSString_java_formatWithNSString_withNSObjectArray_(@"LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", [IOSObjectArray newArrayWithObjects:(id[]){ JavaLangInteger_valueOfWithInt_(maxSize_), JavaLangInteger_valueOfWithInt_(hitCount_), JavaLangInteger_valueOfWithInt_(missCount_), JavaLangInteger_valueOfWithInt_(hitPercent) } count:4 type:NSObject_class_()]);
   }
 }
@@ -297,13 +297,13 @@ __attribute__((unused)) static jint ComYahooAndroidSqliteLruCache_safeSizeOfWith
     { "missCount_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "I", "resize", "get", "LNSObject;", "(TK;)TV;", "put", "LNSObject;LNSObject;", "(TK;TV;)TV;", "trimToSize", "remove", "entryRemoved", "ZLNSObject;LNSObject;LNSObject;", "(ZTK;TV;TV;)V", "create", "safeSizeOf", "(TK;TV;)I", "sizeOf", "()Ljava/util/Map<TK;TV;>;", "toString", "Ljava/util/LinkedHashMap<TK;TV;>;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteLruCache = { "LruCache", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 20, 8, -1, -1, -1, 20, -1 };
-  return &_ComYahooAndroidSqliteLruCache;
+  static const J2ObjcClassInfo _SquiDBLruCache = { "LruCache", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 20, 8, -1, -1, -1, 20, -1 };
+  return &_SquiDBLruCache;
 }
 
 @end
 
-void ComYahooAndroidSqliteLruCache_initWithInt_(ComYahooAndroidSqliteLruCache *self, jint maxSize) {
+void SquiDBLruCache_initWithInt_(SquiDBLruCache *self, jint maxSize) {
   NSObject_init(self);
   if (maxSize <= 0) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"maxSize <= 0");
@@ -312,15 +312,15 @@ void ComYahooAndroidSqliteLruCache_initWithInt_(ComYahooAndroidSqliteLruCache *s
   self->map_ = new_JavaUtilLinkedHashMap_initWithInt_withFloat_withBoolean_(0, 0.75f, true);
 }
 
-ComYahooAndroidSqliteLruCache *new_ComYahooAndroidSqliteLruCache_initWithInt_(jint maxSize) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteLruCache, initWithInt_, maxSize)
+SquiDBLruCache *new_SquiDBLruCache_initWithInt_(jint maxSize) {
+  J2OBJC_NEW_IMPL(SquiDBLruCache, initWithInt_, maxSize)
 }
 
-ComYahooAndroidSqliteLruCache *create_ComYahooAndroidSqliteLruCache_initWithInt_(jint maxSize) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteLruCache, initWithInt_, maxSize)
+SquiDBLruCache *create_SquiDBLruCache_initWithInt_(jint maxSize) {
+  J2OBJC_CREATE_IMPL(SquiDBLruCache, initWithInt_, maxSize)
 }
 
-jint ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(ComYahooAndroidSqliteLruCache *self, id key, id value) {
+jint SquiDBLruCache_safeSizeOfWithId_withId_(SquiDBLruCache *self, id key, id value) {
   jint result = [self sizeOfWithId:key withId:value];
   if (result < 0) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$@C@", @"Negative size: ", key, '=', value));
@@ -328,4 +328,6 @@ jint ComYahooAndroidSqliteLruCache_safeSizeOfWithId_withId_(ComYahooAndroidSqlit
   return result;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteLruCache)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBLruCache)
+
+J2OBJC_NAME_MAPPING(SquiDBLruCache, "com.yahoo.android.sqlite", "SquiDB")

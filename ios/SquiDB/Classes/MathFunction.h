@@ -15,15 +15,15 @@
 #include "ArgumentFunction.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlMathOperator;
 @class IOSObjectArray;
+@class SquiDBField;
+@class SquiDBMathOperator;
 
-@interface ComYahooSquidbSqlMathFunction : ComYahooSquidbSqlArgumentFunction
+@interface SquiDBMathFunction : SquiDBArgumentFunction
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
 #pragma mark Protected
 
@@ -31,25 +31,27 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlMathOperator:(ComYahooSquidbSqlMathOperator *)operator_
-                                              withNSObjectArray:(IOSObjectArray *)args;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBMathOperator:(SquiDBMathOperator *)operator_
+                                                 withNSObjectArray:(IOSObjectArray *)args;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithNSString:(NSString *)arg0
-                         withNSObjectArray:(IOSObjectArray *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)arg0
+                                       withNSObjectArray:(IOSObjectArray *)arg1 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlMathFunction)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBMathFunction)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathFunction *self, ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args);
+FOUNDATION_EXPORT void SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathFunction *self, SquiDBMathOperator *operator_, IOSObjectArray *args);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlMathFunction *new_ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBMathFunction *new_SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathOperator *operator_, IOSObjectArray *args) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlMathFunction *create_ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args);
+FOUNDATION_EXPORT SquiDBMathFunction *create_SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathOperator *operator_, IOSObjectArray *args);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlMathFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBMathFunction)
+
+@compatibility_alias ComYahooSquidbSqlMathFunction SquiDBMathFunction;
 
 
 #if __has_feature(nullability)

@@ -15,12 +15,12 @@
 #include "AbstractCursor.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
 @class IOSByteArray;
+@class SquiDBCursorWindow;
 
-@interface ComYahooAndroidSqliteAbstractWindowedCursor : ComYahooAndroidSqliteAbstractCursor {
+@interface SquiDBAbstractWindowedCursor : SquiDBAbstractCursor {
  @public
-  ComYahooAndroidSqliteCursorWindow *mWindow_;
+  SquiDBCursorWindow *mWindow_;
 }
 
 #pragma mark Public
@@ -43,7 +43,7 @@
 
 - (jint)getTypeWithInt:(jint)columnIndex;
 
-- (ComYahooAndroidSqliteCursorWindow *)getWindow;
+- (SquiDBCursorWindow *)getWindow;
 
 - (jboolean)hasWindow;
 
@@ -57,7 +57,7 @@
 
 - (jboolean)isStringWithInt:(jint)columnIndex;
 
-- (void)setWindowWithComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window;
+- (void)setWindowWithSquiDBCursorWindow:(SquiDBCursorWindow *)window;
 
 #pragma mark Protected
 
@@ -71,13 +71,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteAbstractWindowedCursor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBAbstractWindowedCursor)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteAbstractWindowedCursor, mWindow_, ComYahooAndroidSqliteCursorWindow *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractWindowedCursor, mWindow_, SquiDBCursorWindow *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteAbstractWindowedCursor_init(ComYahooAndroidSqliteAbstractWindowedCursor *self);
+FOUNDATION_EXPORT void SquiDBAbstractWindowedCursor_init(SquiDBAbstractWindowedCursor *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteAbstractWindowedCursor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAbstractWindowedCursor)
+
+@compatibility_alias ComYahooAndroidSqliteAbstractWindowedCursor SquiDBAbstractWindowedCursor;
 
 
 #if __has_feature(nullability)

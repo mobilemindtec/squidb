@@ -7,11 +7,11 @@
 #include "J2ObjC_source.h"
 #include "TableModelName.h"
 
-@implementation ComYahooSquidbSqlTableModelName
+@implementation SquiDBTableModelName
 
 - (instancetype)initWithIOSClass:(IOSClass *)modelClass
                     withNSString:(NSString *)tableName {
-  ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(self, modelClass, tableName);
+  SquiDBTableModelName_initWithIOSClass_withNSString_(self, modelClass, tableName);
   return self;
 }
 
@@ -22,7 +22,7 @@
   if (o == nil || [self java_getClass] != [o java_getClass]) {
     return false;
   }
-  ComYahooSquidbSqlTableModelName *that = (ComYahooSquidbSqlTableModelName *) cast_chk(o, [ComYahooSquidbSqlTableModelName class]);
+  SquiDBTableModelName *that = (SquiDBTableModelName *) cast_chk(o, [SquiDBTableModelName class]);
   if (modelClass_ != nil ? ![modelClass_ isEqual:that->modelClass_] : that->modelClass_ != nil) {
     return false;
   }
@@ -53,24 +53,26 @@
     { "tableName_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LIOSClass;LNSString;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Ljava/lang/String;)V", "equals", "LNSObject;", "hashCode", "Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlTableModelName = { "TableModelName", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 3, 2, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlTableModelName;
+  static const J2ObjcClassInfo _SquiDBTableModelName = { "TableModelName", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 3, 2, -1, -1, -1, -1, -1 };
+  return &_SquiDBTableModelName;
 }
 
 @end
 
-void ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(ComYahooSquidbSqlTableModelName *self, IOSClass *modelClass, NSString *tableName) {
+void SquiDBTableModelName_initWithIOSClass_withNSString_(SquiDBTableModelName *self, IOSClass *modelClass, NSString *tableName) {
   NSObject_init(self);
   self->modelClass_ = modelClass;
   self->tableName_ = tableName;
 }
 
-ComYahooSquidbSqlTableModelName *new_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlTableModelName, initWithIOSClass_withNSString_, modelClass, tableName)
+SquiDBTableModelName *new_SquiDBTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) {
+  J2OBJC_NEW_IMPL(SquiDBTableModelName, initWithIOSClass_withNSString_, modelClass, tableName)
 }
 
-ComYahooSquidbSqlTableModelName *create_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlTableModelName, initWithIOSClass_withNSString_, modelClass, tableName)
+SquiDBTableModelName *create_SquiDBTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) {
+  J2OBJC_CREATE_IMPL(SquiDBTableModelName, initWithIOSClass_withNSString_, modelClass, tableName)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlTableModelName)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTableModelName)
+
+J2OBJC_NAME_MAPPING(SquiDBTableModelName, "com.yahoo.squidb.sql", "SquiDB")

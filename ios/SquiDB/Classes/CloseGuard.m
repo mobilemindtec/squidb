@@ -9,7 +9,7 @@
 #include "java/lang/NullPointerException.h"
 #include "java/lang/Throwable.h"
 
-@interface ComYahooAndroidSqliteCloseGuard () {
+@interface SquiDBCloseGuard () {
  @public
   JavaLangThrowable *allocationSite_;
 }
@@ -18,33 +18,33 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteCloseGuard, allocationSite_, JavaLangThrowable *)
+J2OBJC_FIELD_SETTER(SquiDBCloseGuard, allocationSite_, JavaLangThrowable *)
 
-inline ComYahooAndroidSqliteCloseGuard *ComYahooAndroidSqliteCloseGuard_get_NOOP(void);
-static ComYahooAndroidSqliteCloseGuard *ComYahooAndroidSqliteCloseGuard_NOOP;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteCloseGuard, NOOP, ComYahooAndroidSqliteCloseGuard *)
+inline SquiDBCloseGuard *SquiDBCloseGuard_get_NOOP(void);
+static SquiDBCloseGuard *SquiDBCloseGuard_NOOP;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBCloseGuard, NOOP, SquiDBCloseGuard *)
 
-inline jboolean ComYahooAndroidSqliteCloseGuard_get_ENABLED(void);
-inline jboolean ComYahooAndroidSqliteCloseGuard_set_ENABLED(jboolean value);
-static volatile_jboolean ComYahooAndroidSqliteCloseGuard_ENABLED = true;
-J2OBJC_STATIC_FIELD_PRIMITIVE_VOLATILE(ComYahooAndroidSqliteCloseGuard, ENABLED, jboolean)
+inline jboolean SquiDBCloseGuard_get_ENABLED(void);
+inline jboolean SquiDBCloseGuard_set_ENABLED(jboolean value);
+static volatile_jboolean SquiDBCloseGuard_ENABLED = true;
+J2OBJC_STATIC_FIELD_PRIMITIVE_VOLATILE(SquiDBCloseGuard, ENABLED, jboolean)
 
-inline id<ComYahooAndroidSqliteCloseGuard_Reporter> ComYahooAndroidSqliteCloseGuard_get_REPORTER(void);
-inline id<ComYahooAndroidSqliteCloseGuard_Reporter> ComYahooAndroidSqliteCloseGuard_set_REPORTER(id<ComYahooAndroidSqliteCloseGuard_Reporter> value);
-static volatile_id ComYahooAndroidSqliteCloseGuard_REPORTER;
-J2OBJC_STATIC_FIELD_OBJ_VOLATILE(ComYahooAndroidSqliteCloseGuard, REPORTER, id<ComYahooAndroidSqliteCloseGuard_Reporter>)
+inline id<SquiDBCloseGuard_Reporter> SquiDBCloseGuard_get_REPORTER(void);
+inline id<SquiDBCloseGuard_Reporter> SquiDBCloseGuard_set_REPORTER(id<SquiDBCloseGuard_Reporter> value);
+static volatile_id SquiDBCloseGuard_REPORTER;
+J2OBJC_STATIC_FIELD_OBJ_VOLATILE(SquiDBCloseGuard, REPORTER, id<SquiDBCloseGuard_Reporter>)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCloseGuard_init(ComYahooAndroidSqliteCloseGuard *self);
+__attribute__((unused)) static void SquiDBCloseGuard_init(SquiDBCloseGuard *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteCloseGuard *new_ComYahooAndroidSqliteCloseGuard_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCloseGuard *new_SquiDBCloseGuard_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteCloseGuard *create_ComYahooAndroidSqliteCloseGuard_init(void);
+__attribute__((unused)) static SquiDBCloseGuard *create_SquiDBCloseGuard_init(void);
 
-@interface ComYahooAndroidSqliteCloseGuard_Reporter : NSObject
+@interface SquiDBCloseGuard_Reporter : NSObject
 
 @end
 
-@interface ComYahooAndroidSqliteCloseGuard_DefaultReporter : NSObject < ComYahooAndroidSqliteCloseGuard_Reporter >
+@interface SquiDBCloseGuard_DefaultReporter : NSObject < SquiDBCloseGuard_Reporter >
 
 - (instancetype)init;
 
@@ -53,39 +53,39 @@ __attribute__((unused)) static ComYahooAndroidSqliteCloseGuard *create_ComYahooA
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteCloseGuard_DefaultReporter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCloseGuard_DefaultReporter)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCloseGuard_DefaultReporter_init(ComYahooAndroidSqliteCloseGuard_DefaultReporter *self);
+__attribute__((unused)) static void SquiDBCloseGuard_DefaultReporter_init(SquiDBCloseGuard_DefaultReporter *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteCloseGuard_DefaultReporter *new_ComYahooAndroidSqliteCloseGuard_DefaultReporter_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCloseGuard_DefaultReporter *new_SquiDBCloseGuard_DefaultReporter_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteCloseGuard_DefaultReporter *create_ComYahooAndroidSqliteCloseGuard_DefaultReporter_init(void);
+__attribute__((unused)) static SquiDBCloseGuard_DefaultReporter *create_SquiDBCloseGuard_DefaultReporter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteCloseGuard_DefaultReporter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCloseGuard_DefaultReporter)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteCloseGuard)
+J2OBJC_INITIALIZED_DEFN(SquiDBCloseGuard)
 
-@implementation ComYahooAndroidSqliteCloseGuard
+@implementation SquiDBCloseGuard
 
-+ (ComYahooAndroidSqliteCloseGuard *)get {
-  return ComYahooAndroidSqliteCloseGuard_get();
++ (SquiDBCloseGuard *)get {
+  return SquiDBCloseGuard_get();
 }
 
 + (void)setEnabledWithBoolean:(jboolean)enabled {
-  ComYahooAndroidSqliteCloseGuard_setEnabledWithBoolean_(enabled);
+  SquiDBCloseGuard_setEnabledWithBoolean_(enabled);
 }
 
-+ (void)setReporterWithComYahooAndroidSqliteCloseGuard_Reporter:(id<ComYahooAndroidSqliteCloseGuard_Reporter>)reporter {
-  ComYahooAndroidSqliteCloseGuard_setReporterWithComYahooAndroidSqliteCloseGuard_Reporter_(reporter);
++ (void)setReporterWithSquiDBCloseGuard_Reporter:(id<SquiDBCloseGuard_Reporter>)reporter {
+  SquiDBCloseGuard_setReporterWithSquiDBCloseGuard_Reporter_(reporter);
 }
 
-+ (id<ComYahooAndroidSqliteCloseGuard_Reporter>)getReporter {
-  return ComYahooAndroidSqliteCloseGuard_getReporter();
++ (id<SquiDBCloseGuard_Reporter>)getReporter {
+  return SquiDBCloseGuard_getReporter();
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteCloseGuard_init(self);
+  SquiDBCloseGuard_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -94,7 +94,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   if (closer == nil) {
     @throw new_JavaLangNullPointerException_initWithNSString_(@"closer == null");
   }
-  if (self == ComYahooAndroidSqliteCloseGuard_NOOP || !JreLoadVolatileBoolean(&ComYahooAndroidSqliteCloseGuard_ENABLED)) {
+  if (self == SquiDBCloseGuard_NOOP || !JreLoadVolatileBoolean(&SquiDBCloseGuard_ENABLED)) {
     return;
   }
   NSString *message = JreStrcat("$$$", @"Explicit termination method '", closer, @"' not called");
@@ -106,19 +106,19 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)warnIfOpen {
-  if (allocationSite_ == nil || !JreLoadVolatileBoolean(&ComYahooAndroidSqliteCloseGuard_ENABLED)) {
+  if (allocationSite_ == nil || !JreLoadVolatileBoolean(&SquiDBCloseGuard_ENABLED)) {
     return;
   }
   NSString *message = (@"A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.");
-  [((id<ComYahooAndroidSqliteCloseGuard_Reporter>) nil_chk(JreLoadVolatileId(&ComYahooAndroidSqliteCloseGuard_REPORTER))) reportWithNSString:message withJavaLangThrowable:allocationSite_];
+  [((id<SquiDBCloseGuard_Reporter>) nil_chk(JreLoadVolatileId(&SquiDBCloseGuard_REPORTER))) reportWithNSString:message withJavaLangThrowable:allocationSite_];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooAndroidSqliteCloseGuard;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCloseGuard;", 0x9, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x9, 0, 1, -1, -1, -1, -1 },
     { NULL, "V", 0x9, 2, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteCloseGuard_Reporter;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCloseGuard_Reporter;", 0x9, -1, -1, -1, -1, -1, -1 },
     { NULL, NULL, 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 5, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -129,7 +129,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(get);
   methods[1].selector = @selector(setEnabledWithBoolean:);
-  methods[2].selector = @selector(setReporterWithComYahooAndroidSqliteCloseGuard_Reporter:);
+  methods[2].selector = @selector(setReporterWithSquiDBCloseGuard_Reporter:);
   methods[3].selector = @selector(getReporter);
   methods[4].selector = @selector(init);
   methods[5].selector = @selector(openWithNSString:);
@@ -137,67 +137,69 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[7].selector = @selector(warnIfOpen);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "NOOP", "LComYahooAndroidSqliteCloseGuard;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
+    { "NOOP", "LSquiDBCloseGuard;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
     { "ENABLED", "Z", .constantValue.asLong = 0, 0x4a, -1, 7, -1, -1 },
-    { "REPORTER", "LComYahooAndroidSqliteCloseGuard_Reporter;", .constantValue.asLong = 0, 0x4a, -1, 8, -1, -1 },
+    { "REPORTER", "LSquiDBCloseGuard_Reporter;", .constantValue.asLong = 0, 0x4a, -1, 8, -1, -1 },
     { "allocationSite_", "LJavaLangThrowable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "setEnabled", "Z", "setReporter", "LComYahooAndroidSqliteCloseGuard_Reporter;", "open", "LNSString;", &ComYahooAndroidSqliteCloseGuard_NOOP, &ComYahooAndroidSqliteCloseGuard_ENABLED, &ComYahooAndroidSqliteCloseGuard_REPORTER, "LComYahooAndroidSqliteCloseGuard_Reporter;LComYahooAndroidSqliteCloseGuard_DefaultReporter;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCloseGuard = { "CloseGuard", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 8, 4, -1, 9, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCloseGuard;
+  static const void *ptrTable[] = { "setEnabled", "Z", "setReporter", "LSquiDBCloseGuard_Reporter;", "open", "LNSString;", &SquiDBCloseGuard_NOOP, &SquiDBCloseGuard_ENABLED, &SquiDBCloseGuard_REPORTER, "LSquiDBCloseGuard_Reporter;LSquiDBCloseGuard_DefaultReporter;" };
+  static const J2ObjcClassInfo _SquiDBCloseGuard = { "CloseGuard", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 8, 4, -1, 9, -1, -1, -1 };
+  return &_SquiDBCloseGuard;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteCloseGuard class]) {
-    ComYahooAndroidSqliteCloseGuard_NOOP = new_ComYahooAndroidSqliteCloseGuard_init();
-    (void) JreVolatileStrongAssign(&ComYahooAndroidSqliteCloseGuard_REPORTER, new_ComYahooAndroidSqliteCloseGuard_DefaultReporter_init());
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteCloseGuard)
+  if (self == [SquiDBCloseGuard class]) {
+    SquiDBCloseGuard_NOOP = new_SquiDBCloseGuard_init();
+    (void) JreVolatileStrongAssign(&SquiDBCloseGuard_REPORTER, new_SquiDBCloseGuard_DefaultReporter_init());
+    J2OBJC_SET_INITIALIZED(SquiDBCloseGuard)
   }
 }
 
 @end
 
-ComYahooAndroidSqliteCloseGuard *ComYahooAndroidSqliteCloseGuard_get() {
-  ComYahooAndroidSqliteCloseGuard_initialize();
-  if (!JreLoadVolatileBoolean(&ComYahooAndroidSqliteCloseGuard_ENABLED)) {
-    return ComYahooAndroidSqliteCloseGuard_NOOP;
+SquiDBCloseGuard *SquiDBCloseGuard_get() {
+  SquiDBCloseGuard_initialize();
+  if (!JreLoadVolatileBoolean(&SquiDBCloseGuard_ENABLED)) {
+    return SquiDBCloseGuard_NOOP;
   }
-  return new_ComYahooAndroidSqliteCloseGuard_init();
+  return new_SquiDBCloseGuard_init();
 }
 
-void ComYahooAndroidSqliteCloseGuard_setEnabledWithBoolean_(jboolean enabled) {
-  ComYahooAndroidSqliteCloseGuard_initialize();
-  JreAssignVolatileBoolean(&ComYahooAndroidSqliteCloseGuard_ENABLED, enabled);
+void SquiDBCloseGuard_setEnabledWithBoolean_(jboolean enabled) {
+  SquiDBCloseGuard_initialize();
+  JreAssignVolatileBoolean(&SquiDBCloseGuard_ENABLED, enabled);
 }
 
-void ComYahooAndroidSqliteCloseGuard_setReporterWithComYahooAndroidSqliteCloseGuard_Reporter_(id<ComYahooAndroidSqliteCloseGuard_Reporter> reporter) {
-  ComYahooAndroidSqliteCloseGuard_initialize();
+void SquiDBCloseGuard_setReporterWithSquiDBCloseGuard_Reporter_(id<SquiDBCloseGuard_Reporter> reporter) {
+  SquiDBCloseGuard_initialize();
   if (reporter == nil) {
     @throw new_JavaLangNullPointerException_initWithNSString_(@"reporter == null");
   }
-  (void) JreVolatileStrongAssign(&ComYahooAndroidSqliteCloseGuard_REPORTER, reporter);
+  (void) JreVolatileStrongAssign(&SquiDBCloseGuard_REPORTER, reporter);
 }
 
-id<ComYahooAndroidSqliteCloseGuard_Reporter> ComYahooAndroidSqliteCloseGuard_getReporter() {
-  ComYahooAndroidSqliteCloseGuard_initialize();
-  return JreLoadVolatileId(&ComYahooAndroidSqliteCloseGuard_REPORTER);
+id<SquiDBCloseGuard_Reporter> SquiDBCloseGuard_getReporter() {
+  SquiDBCloseGuard_initialize();
+  return JreLoadVolatileId(&SquiDBCloseGuard_REPORTER);
 }
 
-void ComYahooAndroidSqliteCloseGuard_init(ComYahooAndroidSqliteCloseGuard *self) {
+void SquiDBCloseGuard_init(SquiDBCloseGuard *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteCloseGuard *new_ComYahooAndroidSqliteCloseGuard_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCloseGuard, init)
+SquiDBCloseGuard *new_SquiDBCloseGuard_init() {
+  J2OBJC_NEW_IMPL(SquiDBCloseGuard, init)
 }
 
-ComYahooAndroidSqliteCloseGuard *create_ComYahooAndroidSqliteCloseGuard_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCloseGuard, init)
+SquiDBCloseGuard *create_SquiDBCloseGuard_init() {
+  J2OBJC_CREATE_IMPL(SquiDBCloseGuard, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCloseGuard)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCloseGuard)
 
-@implementation ComYahooAndroidSqliteCloseGuard_Reporter
+J2OBJC_NAME_MAPPING(SquiDBCloseGuard, "com.yahoo.android.sqlite", "SquiDB")
+
+@implementation SquiDBCloseGuard_Reporter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -208,27 +210,27 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCloseGuard)
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(reportWithNSString:withJavaLangThrowable:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "report", "LNSString;LJavaLangThrowable;", "LComYahooAndroidSqliteCloseGuard;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCloseGuard_Reporter = { "Reporter", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCloseGuard_Reporter;
+  static const void *ptrTable[] = { "report", "LNSString;LJavaLangThrowable;", "LSquiDBCloseGuard;" };
+  static const J2ObjcClassInfo _SquiDBCloseGuard_Reporter = { "Reporter", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, -1, -1 };
+  return &_SquiDBCloseGuard_Reporter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCloseGuard_Reporter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBCloseGuard_Reporter)
 
-@implementation ComYahooAndroidSqliteCloseGuard_DefaultReporter
+@implementation SquiDBCloseGuard_DefaultReporter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteCloseGuard_DefaultReporter_init(self);
+  SquiDBCloseGuard_DefaultReporter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)reportWithNSString:(NSString *)message
      withJavaLangThrowable:(JavaLangThrowable *)allocationSite {
-  ComYahooSquidbUtilityLogger_wWithNSString_withNSString_withJavaLangThrowable_(ComYahooSquidbUtilityLogger_LOG_TAG, message, allocationSite);
+  SquiDBLogger_wWithNSString_withNSString_withJavaLangThrowable_(SquiDBLogger_LOG_TAG, message, allocationSite);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -242,23 +244,23 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(reportWithNSString:withJavaLangThrowable:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "report", "LNSString;LJavaLangThrowable;", "LComYahooAndroidSqliteCloseGuard;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCloseGuard_DefaultReporter = { "DefaultReporter", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1a, 2, 0, 2, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCloseGuard_DefaultReporter;
+  static const void *ptrTable[] = { "report", "LNSString;LJavaLangThrowable;", "LSquiDBCloseGuard;" };
+  static const J2ObjcClassInfo _SquiDBCloseGuard_DefaultReporter = { "DefaultReporter", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1a, 2, 0, 2, -1, -1, -1, -1 };
+  return &_SquiDBCloseGuard_DefaultReporter;
 }
 
 @end
 
-void ComYahooAndroidSqliteCloseGuard_DefaultReporter_init(ComYahooAndroidSqliteCloseGuard_DefaultReporter *self) {
+void SquiDBCloseGuard_DefaultReporter_init(SquiDBCloseGuard_DefaultReporter *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteCloseGuard_DefaultReporter *new_ComYahooAndroidSqliteCloseGuard_DefaultReporter_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCloseGuard_DefaultReporter, init)
+SquiDBCloseGuard_DefaultReporter *new_SquiDBCloseGuard_DefaultReporter_init() {
+  J2OBJC_NEW_IMPL(SquiDBCloseGuard_DefaultReporter, init)
 }
 
-ComYahooAndroidSqliteCloseGuard_DefaultReporter *create_ComYahooAndroidSqliteCloseGuard_DefaultReporter_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCloseGuard_DefaultReporter, init)
+SquiDBCloseGuard_DefaultReporter *create_SquiDBCloseGuard_DefaultReporter_init() {
+  J2OBJC_CREATE_IMPL(SquiDBCloseGuard_DefaultReporter, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCloseGuard_DefaultReporter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCloseGuard_DefaultReporter)

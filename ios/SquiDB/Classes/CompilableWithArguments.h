@@ -14,52 +14,58 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbUtilityVersionCode;
+@class SquiDBCompileContext;
+@class SquiDBSqlBuilder;
+@class SquiDBVersionCode;
 
-@interface ComYahooSquidbSqlCompilableWithArguments : NSObject
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *VERSION_FOR_TO_STRING NS_SWIFT_NAME(VERSION_FOR_TO_STRING);
+@interface SquiDBCompilableWithArguments : NSObject
+@property (readonly, class) SquiDBVersionCode *VERSION_FOR_TO_STRING NS_SWIFT_NAME(VERSION_FOR_TO_STRING);
 
-+ (ComYahooSquidbUtilityVersionCode *)VERSION_FOR_TO_STRING;
++ (SquiDBVersionCode *)VERSION_FOR_TO_STRING;
 
 #pragma mark Public
 
-- (NSString *)toRawSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (NSString *)toRawSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
-- (NSString *)toRawSqlWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (NSString *)toRawSqlWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
 - (NSString *)description;
 
 #pragma mark Protected
 
-- (ComYahooSquidbSqlSqlBuilder *)buildSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                                                                 withBoolean:(jboolean)withBoundArguments
-                                                                 withBoolean:(jboolean)forSqlValidation;
+- (SquiDBSqlBuilder *)buildSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                                           withBoolean:(jboolean)withBoundArguments
+                                           withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlSqlBuilder *)buildSqlWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion
-                                                                  withBoolean:(jboolean)withBoundArguments
-                                                                  withBoolean:(jboolean)forSqlValidation;
+- (SquiDBSqlBuilder *)buildSqlWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion
+                                        withBoolean:(jboolean)withBoundArguments
+                                        withBoolean:(jboolean)forSqlValidation;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)init;
+- (instancetype __nonnull)initPackagePrivate;
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlCompilableWithArguments)
+J2OBJC_STATIC_INIT(SquiDBCompilableWithArguments)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbSqlCompilableWithArguments_get_VERSION_FOR_TO_STRING(void);
+inline SquiDBVersionCode *SquiDBCompilableWithArguments_get_VERSION_FOR_TO_STRING(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlCompilableWithArguments, VERSION_FOR_TO_STRING, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBCompilableWithArguments, VERSION_FOR_TO_STRING, SquiDBVersionCode *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCompilableWithArguments_init(ComYahooSquidbSqlCompilableWithArguments *self);
+FOUNDATION_EXPORT void SquiDBCompilableWithArguments_initPackagePrivate(SquiDBCompilableWithArguments *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompilableWithArguments)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompilableWithArguments)
+
+@compatibility_alias ComYahooSquidbSqlCompilableWithArguments SquiDBCompilableWithArguments;
 
 
 #if __has_feature(nullability)

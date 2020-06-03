@@ -15,64 +15,66 @@
 #include "J2ObjC_header.h"
 #include "Table.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCriterion;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
-@protocol ComYahooSquidbSqlProperty_PropertyVisitor;
+@class SquiDBCompileContext;
+@class SquiDBCriterion;
+@protocol SquiDBProperty_PropertyVisitor;
 
-@interface ComYahooSquidbSqlVirtualTable : ComYahooSquidbSqlTable
+@interface SquiDBVirtualTable : SquiDBTable
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)modelClass
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
+                   withSquiDBPropertyArray:(IOSObjectArray *)properties
                               withNSString:(NSString *)name
                               withNSString:(NSString *)databaseName
                               withNSString:(NSString *)module;
 
-- (void)appendCreateTableSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                                      withJavaLangStringBuilder:(JavaLangStringBuilder *)sql
-                  withComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)propertyVisitor;
+- (void)appendCreateTableSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                           withJavaLangStringBuilder:(JavaLangStringBuilder *)sql
+                  withSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)propertyVisitor;
 
-- (ComYahooSquidbSqlVirtualTable *)asWithNSString:(NSString *)newAlias;
+- (SquiDBVirtualTable *)asWithNSString:(NSString *)newAlias;
 
 - (NSString *)getModuleName;
 
-- (ComYahooSquidbSqlCriterion *)matchWithNSString:(NSString *)value;
+- (SquiDBCriterion *)matchWithNSString:(NSString *)value;
 
-- (ComYahooSquidbSqlVirtualTable *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName;
+- (SquiDBVirtualTable *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName;
 
 - (NSString *)description;
 
 #pragma mark Protected
 
-- (ComYahooSquidbSqlVirtualTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
-                                          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)newProperties;
+- (SquiDBVirtualTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
+                                          withSquiDBPropertyArray:(IOSObjectArray *)newProperties;
 
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)arg1
+                   withSquiDBPropertyArray:(IOSObjectArray *)arg1
                               withNSString:(NSString *)arg2 NS_UNAVAILABLE;
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)arg1
+                   withSquiDBPropertyArray:(IOSObjectArray *)arg1
                               withNSString:(NSString *)arg2
                               withNSString:(NSString *)arg3 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlVirtualTable)
+J2OBJC_STATIC_INIT(SquiDBVirtualTable)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlVirtualTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_(ComYahooSquidbSqlVirtualTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module);
+FOUNDATION_EXPORT void SquiDBVirtualTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_(SquiDBVirtualTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlVirtualTable *new_ComYahooSquidbSqlVirtualTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_(IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBVirtualTable *new_SquiDBVirtualTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_(IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlVirtualTable *create_ComYahooSquidbSqlVirtualTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_(IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module);
+FOUNDATION_EXPORT SquiDBVirtualTable *create_SquiDBVirtualTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_(IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, NSString *module);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlVirtualTable)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBVirtualTable)
+
+@compatibility_alias ComYahooSquidbSqlVirtualTable SquiDBVirtualTable;
 
 
 #if __has_feature(nullability)

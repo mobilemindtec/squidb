@@ -11,16 +11,16 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation ComYahooSquidbSqlRawFunction
+@implementation SquiDBRawFunction
 
-- (instancetype)initWithNSString:(NSString *)expression {
-  ComYahooSquidbSqlRawFunction_initWithNSString_(self, expression);
+- (instancetype)initPackagePrivateWithNSString:(NSString *)expression {
+  SquiDBRawFunction_initPackagePrivateWithNSString_(self, expression);
   return self;
 }
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:expression_];
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:expression_];
 }
 
 - (NSString *)getExpression {
@@ -36,27 +36,27 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:);
-  methods[1].selector = @selector(appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[0].selector = @selector(initPackagePrivateWithNSString:);
+  methods[1].selector = @selector(appendFunctionExpressionWithSquiDBSqlBuilder:withBoolean:);
   methods[2].selector = @selector(getExpression);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LNSString;", "appendFunctionExpression", "LComYahooSquidbSqlSqlBuilder;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TTYPE;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlRawFunction = { "RawFunction", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, 3, -1 };
-  return &_ComYahooSquidbSqlRawFunction;
+  static const void *ptrTable[] = { "LNSString;", "appendFunctionExpression", "LSquiDBSqlBuilder;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TTYPE;>;" };
+  static const J2ObjcClassInfo _SquiDBRawFunction = { "RawFunction", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, 3, -1 };
+  return &_SquiDBRawFunction;
 }
 
 @end
 
-void ComYahooSquidbSqlRawFunction_initWithNSString_(ComYahooSquidbSqlRawFunction *self, NSString *expression) {
-  ComYahooSquidbSqlFunction_initWithNSString_(self, expression);
+void SquiDBRawFunction_initPackagePrivateWithNSString_(SquiDBRawFunction *self, NSString *expression) {
+  SquiDBFunction_initWithNSString_(self, expression);
 }
 
-ComYahooSquidbSqlRawFunction *new_ComYahooSquidbSqlRawFunction_initWithNSString_(NSString *expression) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlRawFunction, initWithNSString_, expression)
+SquiDBRawFunction *new_SquiDBRawFunction_initPackagePrivateWithNSString_(NSString *expression) {
+  J2OBJC_NEW_IMPL(SquiDBRawFunction, initPackagePrivateWithNSString_, expression)
 }
 
-ComYahooSquidbSqlRawFunction *create_ComYahooSquidbSqlRawFunction_initWithNSString_(NSString *expression) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlRawFunction, initWithNSString_, expression)
+SquiDBRawFunction *create_SquiDBRawFunction_initPackagePrivateWithNSString_(NSString *expression) {
+  J2OBJC_CREATE_IMPL(SquiDBRawFunction, initPackagePrivateWithNSString_, expression)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlRawFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBRawFunction)

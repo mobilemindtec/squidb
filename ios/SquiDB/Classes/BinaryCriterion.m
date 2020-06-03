@@ -11,46 +11,46 @@
 #include "SqlBuilder.h"
 #include "java/lang/StringBuilder.h"
 
-@implementation ComYahooSquidbSqlBinaryCriterion
+@implementation SquiDBBinaryCriterion
 
-- (instancetype)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                 withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                        withId:(id)value {
-  ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(self, expression, operator_, value);
+- (instancetype)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                               withSquiDBOperator:(SquiDBOperator *)operator_
+                                           withId:(id)value {
+  SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(self, expression, operator_, value);
   return self;
 }
 
-- (void)populateWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                    withBoolean:(jboolean)forSqlValidation {
-  [self beforePopulateOperatorWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
-  [self populateOperatorWithJavaLangStringBuilder:((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_];
-  [self afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+- (void)populateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                         withBoolean:(jboolean)forSqlValidation {
+  [self beforePopulateOperatorWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
+  [self populateOperatorWithJavaLangStringBuilder:((SquiDBSqlBuilder *) nil_chk(builder))->sql_];
+  [self afterPopulateOperatorWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
 }
 
-- (void)beforePopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                  withBoolean:(jboolean)forSqlValidation {
-  [((ComYahooSquidbSqlField *) nil_chk(field_)) appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+- (void)beforePopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                       withBoolean:(jboolean)forSqlValidation {
+  [((SquiDBField *) nil_chk(field_)) appendQualifiedExpressionWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
 }
 
 - (void)populateOperatorWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
   (void) [((JavaLangStringBuilder *) nil_chk(sql)) appendWithId:operator__];
 }
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation {
-  [((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:value_ withBoolean:forSqlValidation];
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation {
+  [((SquiDBSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:value_ withBoolean:forSqlValidation];
 }
 
-- (ComYahooSquidbSqlCriterion *)negate {
-  ComYahooSquidbSqlOperator *contrary = [((ComYahooSquidbSqlOperator *) nil_chk(operator__)) getContrary];
+- (SquiDBCriterion *)negate {
+  SquiDBOperator *contrary = [((SquiDBOperator *) nil_chk(operator__)) getContrary];
   if (contrary != nil) {
-    return [self constructNegatedCriterionWithComYahooSquidbSqlOperator:contrary];
+    return [self constructNegatedCriterionWithSquiDBOperator:contrary];
   }
   return [super negate];
 }
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator {
-  return new_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(field_, negatedOperator, value_);
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator {
+  return new_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(field_, negatedOperator, value_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -60,43 +60,43 @@
     { NULL, "V", 0x4, 4, 3, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 5, 6, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 7, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlBinaryCriterion;", 0x4, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBBinaryCriterion;", 0x4, 8, 9, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlField:withComYahooSquidbSqlOperator:withId:);
-  methods[1].selector = @selector(populateWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[2].selector = @selector(beforePopulateOperatorWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[0].selector = @selector(initPackagePrivateWithSquiDBField:withSquiDBOperator:withId:);
+  methods[1].selector = @selector(populateWithSquiDBSqlBuilder:withBoolean:);
+  methods[2].selector = @selector(beforePopulateOperatorWithSquiDBSqlBuilder:withBoolean:);
   methods[3].selector = @selector(populateOperatorWithJavaLangStringBuilder:);
-  methods[4].selector = @selector(afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[4].selector = @selector(afterPopulateOperatorWithSquiDBSqlBuilder:withBoolean:);
   methods[5].selector = @selector(negate);
-  methods[6].selector = @selector(constructNegatedCriterionWithComYahooSquidbSqlOperator:);
+  methods[6].selector = @selector(constructNegatedCriterionWithSquiDBOperator:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "field_", "LComYahooSquidbSqlField;", .constantValue.asLong = 0, 0x14, -1, -1, 10, -1 },
+    { "field_", "LSquiDBField;", .constantValue.asLong = 0, 0x14, -1, -1, 10, -1 },
     { "value_", "LNSObject;", .constantValue.asLong = 0, 0x14, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlField;LComYahooSquidbSqlOperator;LNSObject;", "(Lcom/yahoo/squidb/sql/Field<*>;Lcom/yahoo/squidb/sql/Operator;Ljava/lang/Object;)V", "populate", "LComYahooSquidbSqlSqlBuilder;Z", "beforePopulateOperator", "populateOperator", "LJavaLangStringBuilder;", "afterPopulateOperator", "constructNegatedCriterion", "LComYahooSquidbSqlOperator;", "Lcom/yahoo/squidb/sql/Field<*>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlBinaryCriterion = { "BinaryCriterion", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 7, 2, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlBinaryCriterion;
+  static const void *ptrTable[] = { "LSquiDBField;LSquiDBOperator;LNSObject;", "(Lcom/yahoo/squidb/sql/Field<*>;Lcom/yahoo/squidb/sql/Operator;Ljava/lang/Object;)V", "populate", "LSquiDBSqlBuilder;Z", "beforePopulateOperator", "populateOperator", "LJavaLangStringBuilder;", "afterPopulateOperator", "constructNegatedCriterion", "LSquiDBOperator;", "Lcom/yahoo/squidb/sql/Field<*>;" };
+  static const J2ObjcClassInfo _SquiDBBinaryCriterion = { "BinaryCriterion", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 7, 2, -1, -1, -1, -1, -1 };
+  return &_SquiDBBinaryCriterion;
 }
 
 @end
 
-void ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlBinaryCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  ComYahooSquidbSqlCriterion_initWithComYahooSquidbSqlOperator_(self, operator_);
+void SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBBinaryCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  SquiDBCriterion_initWithSquiDBOperator_(self, operator_);
   self->field_ = expression;
   self->value_ = value;
 }
 
-ComYahooSquidbSqlBinaryCriterion *new_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlBinaryCriterion, initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_, expression, operator_, value)
+SquiDBBinaryCriterion *new_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  J2OBJC_NEW_IMPL(SquiDBBinaryCriterion, initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_, expression, operator_, value)
 }
 
-ComYahooSquidbSqlBinaryCriterion *create_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlBinaryCriterion, initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_, expression, operator_, value)
+SquiDBBinaryCriterion *create_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  J2OBJC_CREATE_IMPL(SquiDBBinaryCriterion, initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_, expression, operator_, value)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlBinaryCriterion)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBBinaryCriterion)

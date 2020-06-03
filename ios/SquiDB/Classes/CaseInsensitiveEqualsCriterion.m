@@ -11,55 +11,55 @@
 #include "SqlBuilder.h"
 #include "java/lang/StringBuilder.h"
 
-@implementation ComYahooSquidbSqlCaseInsensitiveEqualsCriterion
+@implementation SquiDBCaseInsensitiveEqualsCriterion
 
-- (instancetype)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                 withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                        withId:(id)value {
-  ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(self, expression, operator_, value);
+- (instancetype)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                               withSquiDBOperator:(SquiDBOperator *)operator_
+                                           withId:(id)value {
+  SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(self, expression, operator_, value);
   return self;
 }
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation {
-  [super afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" COLLATE NOCASE "];
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation {
+  [super afterPopulateOperatorWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" COLLATE NOCASE "];
 }
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator {
-  return new_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(field_, negatedOperator, value_);
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator {
+  return new_SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(field_, negatedOperator, value_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, 0, -1, 1, -1, -1 },
     { NULL, "V", 0x4, 2, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlBinaryCriterion;", 0x4, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LSquiDBBinaryCriterion;", 0x4, 4, 5, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlField:withComYahooSquidbSqlOperator:withId:);
-  methods[1].selector = @selector(afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[2].selector = @selector(constructNegatedCriterionWithComYahooSquidbSqlOperator:);
+  methods[0].selector = @selector(initPackagePrivateWithSquiDBField:withSquiDBOperator:withId:);
+  methods[1].selector = @selector(afterPopulateOperatorWithSquiDBSqlBuilder:withBoolean:);
+  methods[2].selector = @selector(constructNegatedCriterionWithSquiDBOperator:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlField;LComYahooSquidbSqlOperator;LNSObject;", "(Lcom/yahoo/squidb/sql/Field<*>;Lcom/yahoo/squidb/sql/Operator;Ljava/lang/Object;)V", "afterPopulateOperator", "LComYahooSquidbSqlSqlBuilder;Z", "constructNegatedCriterion", "LComYahooSquidbSqlOperator;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCaseInsensitiveEqualsCriterion = { "CaseInsensitiveEqualsCriterion", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion;
+  static const void *ptrTable[] = { "LSquiDBField;LSquiDBOperator;LNSObject;", "(Lcom/yahoo/squidb/sql/Field<*>;Lcom/yahoo/squidb/sql/Operator;Ljava/lang/Object;)V", "afterPopulateOperator", "LSquiDBSqlBuilder;Z", "constructNegatedCriterion", "LSquiDBOperator;" };
+  static const J2ObjcClassInfo _SquiDBCaseInsensitiveEqualsCriterion = { "CaseInsensitiveEqualsCriterion", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBCaseInsensitiveEqualsCriterion;
 }
 
 @end
 
-void ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(self, expression, operator_, value);
+void SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBCaseInsensitiveEqualsCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(self, expression, operator_, value);
 }
 
-ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *new_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion, initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_, expression, operator_, value)
+SquiDBCaseInsensitiveEqualsCriterion *new_SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  J2OBJC_NEW_IMPL(SquiDBCaseInsensitiveEqualsCriterion, initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_, expression, operator_, value)
 }
 
-ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *create_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion, initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_, expression, operator_, value)
+SquiDBCaseInsensitiveEqualsCriterion *create_SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) {
+  J2OBJC_CREATE_IMPL(SquiDBCaseInsensitiveEqualsCriterion, initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_, expression, operator_, value)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCaseInsensitiveEqualsCriterion)

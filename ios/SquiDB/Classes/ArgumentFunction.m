@@ -12,7 +12,7 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbSqlArgumentFunction () {
+@interface SquiDBArgumentFunction () {
  @public
   NSString *functionName_;
   IOSObjectArray *arguments_;
@@ -20,32 +20,32 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlArgumentFunction, functionName_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlArgumentFunction, arguments_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBArgumentFunction, functionName_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBArgumentFunction, arguments_, IOSObjectArray *)
 
-@implementation ComYahooSquidbSqlArgumentFunction
+@implementation SquiDBArgumentFunction
 
-- (instancetype)initWithNSString:(NSString *)functionName
-               withNSObjectArray:(IOSObjectArray *)arguments {
-  ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(self, functionName, arguments);
+- (instancetype)initPackagePrivateWithNSString:(NSString *)functionName
+                             withNSObjectArray:(IOSObjectArray *)arguments {
+  SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(self, functionName, arguments);
   return self;
 }
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:functionName_])) appendWithNSString:@"("];
-  [self appendArgumentListWithComYahooSquidbSqlSqlBuilder:builder withNSObjectArray:arguments_ withBoolean:forSqlValidation];
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:functionName_])) appendWithNSString:@"("];
+  [self appendArgumentListWithSquiDBSqlBuilder:builder withNSObjectArray:arguments_ withBoolean:forSqlValidation];
   (void) [builder->sql_ appendWithNSString:@")"];
 }
 
-- (void)appendArgumentListWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                        withNSObjectArray:(IOSObjectArray *)arguments
-                                              withBoolean:(jboolean)forSqlValidation {
+- (void)appendArgumentListWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                             withNSObjectArray:(IOSObjectArray *)arguments
+                                   withBoolean:(jboolean)forSqlValidation {
   for (jint i = 0; i < ((IOSObjectArray *) nil_chk(arguments))->size_; i++) {
     if (i > 0) {
-      (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:[self separator]];
+      (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:[self separator]];
     }
-    [((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:IOSObjectArray_Get(arguments, i) withBoolean:forSqlValidation];
+    [((SquiDBSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:IOSObjectArray_Get(arguments, i) withBoolean:forSqlValidation];
   }
 }
 
@@ -63,34 +63,34 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlArgumentFunction, arguments_, IOSObjectArra
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withNSObjectArray:);
-  methods[1].selector = @selector(appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[2].selector = @selector(appendArgumentListWithComYahooSquidbSqlSqlBuilder:withNSObjectArray:withBoolean:);
+  methods[0].selector = @selector(initPackagePrivateWithNSString:withNSObjectArray:);
+  methods[1].selector = @selector(appendFunctionExpressionWithSquiDBSqlBuilder:withBoolean:);
+  methods[2].selector = @selector(appendArgumentListWithSquiDBSqlBuilder:withNSObjectArray:withBoolean:);
   methods[3].selector = @selector(separator);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "functionName_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "arguments_", "[LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;[LNSObject;", "appendFunctionExpression", "LComYahooSquidbSqlSqlBuilder;Z", "appendArgumentList", "LComYahooSquidbSqlSqlBuilder;[LNSObject;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TTYPE;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlArgumentFunction = { "ArgumentFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 4, 2, -1, -1, -1, 5, -1 };
-  return &_ComYahooSquidbSqlArgumentFunction;
+  static const void *ptrTable[] = { "LNSString;[LNSObject;", "appendFunctionExpression", "LSquiDBSqlBuilder;Z", "appendArgumentList", "LSquiDBSqlBuilder;[LNSObject;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TTYPE;>;" };
+  static const J2ObjcClassInfo _SquiDBArgumentFunction = { "ArgumentFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 4, 2, -1, -1, -1, 5, -1 };
+  return &_SquiDBArgumentFunction;
 }
 
 @end
 
-void ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(ComYahooSquidbSqlArgumentFunction *self, NSString *functionName, IOSObjectArray *arguments) {
-  ComYahooSquidbSqlFunction_init(self);
+void SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(SquiDBArgumentFunction *self, NSString *functionName, IOSObjectArray *arguments) {
+  SquiDBFunction_init(self);
   self->functionName_ = functionName;
   self->arguments_ = arguments;
 }
 
-ComYahooSquidbSqlArgumentFunction *new_ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlArgumentFunction, initWithNSString_withNSObjectArray_, functionName, arguments)
+SquiDBArgumentFunction *new_SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) {
+  J2OBJC_NEW_IMPL(SquiDBArgumentFunction, initPackagePrivateWithNSString_withNSObjectArray_, functionName, arguments)
 }
 
-ComYahooSquidbSqlArgumentFunction *create_ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlArgumentFunction, initWithNSString_withNSObjectArray_, functionName, arguments)
+SquiDBArgumentFunction *create_SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(NSString *functionName, IOSObjectArray *arguments) {
+  J2OBJC_CREATE_IMPL(SquiDBArgumentFunction, initPackagePrivateWithNSString_withNSObjectArray_, functionName, arguments)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlArgumentFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBArgumentFunction)

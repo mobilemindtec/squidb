@@ -11,9 +11,9 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsTableModelSpec__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTableModelSpec__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsTableModelSpec
+@implementation SquiDBTableModelSpec
 
 @synthesize className__ = className___;
 @synthesize tableName = tableName_;
@@ -34,7 +34,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsTableMod
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsTableModelSpec_class_();
+  return SquiDBTableModelSpec_class_();
 }
 
 - (NSString *)description {
@@ -73,15 +73,15 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsTableMod
     { "virtualModule_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "noRowIdAlias_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsTableModelSpec__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsTableModelSpec = { "TableModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 5, 5, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsTableModelSpec;
+  static const void *ptrTable[] = { (void *)&SquiDBTableModelSpec__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBTableModelSpec = { "TableModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 5, 5, -1, -1, -1, -1, 0 };
+  return &_SquiDBTableModelSpec;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsTableModelSpec> create_ComYahooSquidbAnnotationsTableModelSpec(NSString *className__, jboolean noRowIdAlias, NSString *tableConstraint, NSString *tableName, NSString *virtualModule) {
-  ComYahooSquidbAnnotationsTableModelSpec *self = AUTORELEASE([[ComYahooSquidbAnnotationsTableModelSpec alloc] init]);
+id<SquiDBTableModelSpec> create_SquiDBTableModelSpec(NSString *className__, jboolean noRowIdAlias, NSString *tableConstraint, NSString *tableName, NSString *virtualModule) {
+  SquiDBTableModelSpec *self = AUTORELEASE([[SquiDBTableModelSpec alloc] init]);
   self->className___ = RETAIN_(className__);
   self->noRowIdAlias_ = noRowIdAlias;
   self->tableConstraint_ = RETAIN_(tableConstraint);
@@ -90,8 +90,10 @@ id<ComYahooSquidbAnnotationsTableModelSpec> create_ComYahooSquidbAnnotationsTabl
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsTableModelSpec__Annotations$0() {
+IOSObjectArray *SquiDBTableModelSpec__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsTableModelSpec)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBTableModelSpec)
+
+J2OBJC_NAME_MAPPING(SquiDBTableModelSpec, "com.yahoo.squidb.annotations", "SquiDB")

@@ -16,105 +16,107 @@
 #include "J2ObjC_header.h"
 #include "SqlStatement.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCompiledStatement;
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlProperty;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlTrigger_TriggerType;
-@class ComYahooSquidbSqlView;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSObjectArray;
+@class SquiDBCompileContext;
+@class SquiDBCompiledStatement;
+@class SquiDBCriterion;
+@class SquiDBProperty;
+@class SquiDBSqlBuilder;
+@class SquiDBTable;
+@class SquiDBTrigger_TriggerType;
+@class SquiDBVersionCode;
+@class SquiDBView;
 
-@interface ComYahooSquidbSqlTrigger : ComYahooSquidbSqlDBObject < ComYahooSquidbSqlSqlStatement >
+@interface SquiDBTrigger : SquiDBDBObject < SquiDBSqlStatement >
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlTrigger *)afterWithNSString:(NSString *)name;
++ (SquiDBTrigger *)afterWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlTrigger *)asWithNSString:(NSString *)arg0;
+- (SquiDBTrigger *)asWithNSString:(NSString *)arg0;
 
-+ (ComYahooSquidbSqlTrigger *)beforeWithNSString:(NSString *)name;
++ (SquiDBTrigger *)beforeWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (SquiDBCompiledStatement *)compileWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (SquiDBCompiledStatement *)compileWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
-- (ComYahooSquidbSqlTrigger *)deleteOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
+- (SquiDBTrigger *)deleteOnWithSquiDBTable:(SquiDBTable *)table;
 
-- (ComYahooSquidbSqlTrigger *)deleteOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
+- (SquiDBTrigger *)deleteOnWithSquiDBView:(SquiDBView *)view;
 
-- (ComYahooSquidbSqlTrigger *)insertOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
+- (SquiDBTrigger *)insertOnWithSquiDBTable:(SquiDBTable *)table;
 
-- (ComYahooSquidbSqlTrigger *)insertOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
+- (SquiDBTrigger *)insertOnWithSquiDBView:(SquiDBView *)view;
 
-+ (ComYahooSquidbSqlTrigger *)insteadOfWithNSString:(NSString *)name;
++ (SquiDBTrigger *)insteadOfWithNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlProperty *)newValueOfWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property OBJC_METHOD_FAMILY_NONE;
++ (SquiDBProperty *)newValueOfWithSquiDBProperty:(SquiDBProperty *)property OBJC_METHOD_FAMILY_NONE;
 
-+ (ComYahooSquidbSqlProperty *)oldValueOfWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
++ (SquiDBProperty *)oldValueOfWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (ComYahooSquidbSqlTrigger *)performWithComYahooSquidbSqlTableStatementArray:(IOSObjectArray *)statements;
+- (SquiDBTrigger *)performWithSquiDBTableStatementArray:(IOSObjectArray *)statements;
 
-+ (ComYahooSquidbSqlTrigger *)tempAfterWithNSString:(NSString *)name;
++ (SquiDBTrigger *)tempAfterWithNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlTrigger *)tempBeforeWithNSString:(NSString *)name;
++ (SquiDBTrigger *)tempBeforeWithNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlTrigger *)tempInsteadOfWithNSString:(NSString *)name;
++ (SquiDBTrigger *)tempInsteadOfWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlTrigger *)updateOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-                              withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns;
+- (SquiDBTrigger *)updateOnWithSquiDBTable:(SquiDBTable *)table
+                   withSquiDBPropertyArray:(IOSObjectArray *)columns;
 
-- (ComYahooSquidbSqlTrigger *)updateOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view
-                             withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns;
+- (SquiDBTrigger *)updateOnWithSquiDBView:(SquiDBView *)view
+                  withSquiDBPropertyArray:(IOSObjectArray *)columns;
 
-- (ComYahooSquidbSqlTrigger *)whenWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBTrigger *)whenWithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
 #pragma mark Protected
 
 - (instancetype __nonnull)initWithNSString:(NSString *)name
-  withComYahooSquidbSqlTrigger_TriggerType:(ComYahooSquidbSqlTrigger_TriggerType *)triggerType;
+             withSquiDBTrigger_TriggerType:(SquiDBTrigger_TriggerType *)triggerType;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
-- (instancetype __nonnull)initWithNSString:(NSString *)arg0
-                              withNSString:(NSString *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)arg0
+                                            withNSString:(NSString *)arg1 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlTrigger)
+J2OBJC_STATIC_INIT(SquiDBTrigger)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(ComYahooSquidbSqlTrigger *self, NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType);
+FOUNDATION_EXPORT void SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(SquiDBTrigger *self, NSString *name, SquiDBTrigger_TriggerType *triggerType);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *new_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBTrigger *new_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(NSString *name, SquiDBTrigger_TriggerType *triggerType) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *create_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType);
+FOUNDATION_EXPORT SquiDBTrigger *create_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(NSString *name, SquiDBTrigger_TriggerType *triggerType);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_beforeWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_beforeWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_afterWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_afterWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_insteadOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_insteadOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempBeforeWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_tempBeforeWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempAfterWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_tempAfterWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempInsteadOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTrigger *SquiDBTrigger_tempInsteadOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlProperty *ComYahooSquidbSqlTrigger_oldValueOfWithComYahooSquidbSqlProperty_(ComYahooSquidbSqlProperty *property);
+FOUNDATION_EXPORT SquiDBProperty *SquiDBTrigger_oldValueOfWithSquiDBProperty_(SquiDBProperty *property);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlProperty *ComYahooSquidbSqlTrigger_newValueOfWithComYahooSquidbSqlProperty_(ComYahooSquidbSqlProperty *property);
+FOUNDATION_EXPORT SquiDBProperty *SquiDBTrigger_newValueOfWithSquiDBProperty_(SquiDBProperty *property);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTrigger)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTrigger)
+
+@compatibility_alias ComYahooSquidbSqlTrigger SquiDBTrigger;
 
 
 #if __has_feature(nullability)

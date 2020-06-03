@@ -11,12 +11,12 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsIgnore__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBIgnore__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsIgnore
+@implementation SquiDBIgnore
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsIgnore_class_();
+  return SquiDBIgnore_class_();
 }
 
 - (NSString *)description {
@@ -32,20 +32,22 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsIgnore__
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsIgnore__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsIgnore = { "Ignore", "com.yahoo.squidb.annotations", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsIgnore;
+  static const void *ptrTable[] = { (void *)&SquiDBIgnore__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBIgnore = { "Ignore", "com.yahoo.squidb.annotations", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
+  return &_SquiDBIgnore;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsIgnore> create_ComYahooSquidbAnnotationsIgnore() {
-  ComYahooSquidbAnnotationsIgnore *self = AUTORELEASE([[ComYahooSquidbAnnotationsIgnore alloc] init]);
+id<SquiDBIgnore> create_SquiDBIgnore() {
+  SquiDBIgnore *self = AUTORELEASE([[SquiDBIgnore alloc] init]);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsIgnore__Annotations$0() {
+IOSObjectArray *SquiDBIgnore__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, FIELD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsIgnore)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBIgnore)
+
+J2OBJC_NAME_MAPPING(SquiDBIgnore, "com.yahoo.squidb.annotations", "SquiDB")

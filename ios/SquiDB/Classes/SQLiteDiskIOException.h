@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteSQLiteDiskIOException : ComYahooAndroidSqliteSQLiteException
+@interface SquiDBSQLiteDiskIOException : SquiDBSQLiteException
 
 #pragma mark Public
 
@@ -32,21 +32,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDiskIOException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDiskIOException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDiskIOException_init(ComYahooAndroidSqliteSQLiteDiskIOException *self);
+FOUNDATION_EXPORT void SquiDBSQLiteDiskIOException_init(SquiDBSQLiteDiskIOException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDiskIOException *new_ComYahooAndroidSqliteSQLiteDiskIOException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDiskIOException *new_SquiDBSQLiteDiskIOException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDiskIOException *create_ComYahooAndroidSqliteSQLiteDiskIOException_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteDiskIOException *create_SquiDBSQLiteDiskIOException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(ComYahooAndroidSqliteSQLiteDiskIOException *self, NSString *error);
+FOUNDATION_EXPORT void SquiDBSQLiteDiskIOException_initWithNSString_(SquiDBSQLiteDiskIOException *self, NSString *error);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDiskIOException *new_ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDiskIOException *new_SquiDBSQLiteDiskIOException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDiskIOException *create_ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(NSString *error);
+FOUNDATION_EXPORT SquiDBSQLiteDiskIOException *create_SquiDBSQLiteDiskIOException_initWithNSString_(NSString *error);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDiskIOException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDiskIOException)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteDiskIOException SquiDBSQLiteDiskIOException;
 
 
 #if __has_feature(nullability)

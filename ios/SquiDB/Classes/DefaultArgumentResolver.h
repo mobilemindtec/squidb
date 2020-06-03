@@ -15,7 +15,7 @@
 #include "ArgumentResolver.h"
 #include "J2ObjC_header.h"
 
-@interface ComYahooSquidbSqlDefaultArgumentResolver : NSObject < ComYahooSquidbSqlArgumentResolver >
+@interface SquiDBDefaultArgumentResolver : NSObject < SquiDBArgumentResolver >
 
 #pragma mark Public
 
@@ -31,15 +31,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlDefaultArgumentResolver)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDefaultArgumentResolver)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlDefaultArgumentResolver_init(ComYahooSquidbSqlDefaultArgumentResolver *self);
+FOUNDATION_EXPORT void SquiDBDefaultArgumentResolver_init(SquiDBDefaultArgumentResolver *self);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDefaultArgumentResolver *new_ComYahooSquidbSqlDefaultArgumentResolver_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBDefaultArgumentResolver *new_SquiDBDefaultArgumentResolver_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDefaultArgumentResolver *create_ComYahooSquidbSqlDefaultArgumentResolver_init(void);
+FOUNDATION_EXPORT SquiDBDefaultArgumentResolver *create_SquiDBDefaultArgumentResolver_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlDefaultArgumentResolver)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDefaultArgumentResolver)
+
+@compatibility_alias ComYahooSquidbSqlDefaultArgumentResolver SquiDBDefaultArgumentResolver;
 
 
 #if __has_feature(nullability)

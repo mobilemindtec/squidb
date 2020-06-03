@@ -14,16 +14,16 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
-@protocol ComYahooAndroidSqliteSQLiteDatabase_CursorFactory;
-@protocol ComYahooSquidbDataICursor;
+@class SquiDBSQLiteDatabase;
 @protocol JavaLangCharSequence;
 @protocol JavaUtilMap;
 @protocol JavaUtilSet;
+@protocol SquiDBICursor;
+@protocol SquiDBSQLiteDatabase_CursorFactory;
 
-@interface ComYahooAndroidSqliteSQLiteQueryBuilder : NSObject
+@interface SquiDBSQLiteQueryBuilder : NSObject
 
 #pragma mark Public
 
@@ -85,24 +85,24 @@
 
 - (NSString *)getTables;
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                            withNSStringArray:(IOSObjectArray *)projectionIn
-                                                                 withNSString:(NSString *)selection
-                                                            withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                 withNSString:(NSString *)groupBy
-                                                                 withNSString:(NSString *)having
-                                                                 withNSString:(NSString *)sortOrder;
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSStringArray:(IOSObjectArray *)projectionIn
+                                      withNSString:(NSString *)selection
+                                 withNSStringArray:(IOSObjectArray *)selectionArgs
+                                      withNSString:(NSString *)groupBy
+                                      withNSString:(NSString *)having
+                                      withNSString:(NSString *)sortOrder;
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                            withNSStringArray:(IOSObjectArray *)projectionIn
-                                                                 withNSString:(NSString *)selection
-                                                            withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                 withNSString:(NSString *)groupBy
-                                                                 withNSString:(NSString *)having
-                                                                 withNSString:(NSString *)sortOrder
-                                                                 withNSString:(NSString *)limit;
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSStringArray:(IOSObjectArray *)projectionIn
+                                      withNSString:(NSString *)selection
+                                 withNSStringArray:(IOSObjectArray *)selectionArgs
+                                      withNSString:(NSString *)groupBy
+                                      withNSString:(NSString *)having
+                                      withNSString:(NSString *)sortOrder
+                                      withNSString:(NSString *)limit;
 
-- (void)setCursorFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory;
+- (void)setCursorFactoryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory;
 
 - (void)setDistinctWithBoolean:(jboolean)distinct;
 
@@ -114,19 +114,21 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteSQLiteQueryBuilder)
+J2OBJC_STATIC_INIT(SquiDBSQLiteQueryBuilder)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteQueryBuilder_init(ComYahooAndroidSqliteSQLiteQueryBuilder *self);
+FOUNDATION_EXPORT void SquiDBSQLiteQueryBuilder_init(SquiDBSQLiteQueryBuilder *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteQueryBuilder *new_ComYahooAndroidSqliteSQLiteQueryBuilder_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteQueryBuilder *new_SquiDBSQLiteQueryBuilder_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteQueryBuilder *create_ComYahooAndroidSqliteSQLiteQueryBuilder_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteQueryBuilder *create_SquiDBSQLiteQueryBuilder_init(void);
 
-FOUNDATION_EXPORT NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(jboolean distinct, NSString *tables, IOSObjectArray *columns, NSString *where, NSString *groupBy, NSString *having, NSString *orderBy, NSString *limit);
+FOUNDATION_EXPORT NSString *SquiDBSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(jboolean distinct, NSString *tables, IOSObjectArray *columns, NSString *where, NSString *groupBy, NSString *having, NSString *orderBy, NSString *limit);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(JavaLangStringBuilder *s, IOSObjectArray *columns);
+FOUNDATION_EXPORT void SquiDBSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(JavaLangStringBuilder *s, IOSObjectArray *columns);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteQueryBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteQueryBuilder)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteQueryBuilder SquiDBSQLiteQueryBuilder;
 
 
 #if __has_feature(nullability)

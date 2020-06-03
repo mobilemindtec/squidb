@@ -7,11 +7,11 @@
 #include "J2ObjC_source.h"
 #include "SQLiteStatementInfo.h"
 
-@implementation ComYahooAndroidSqliteSQLiteStatementInfo
+@implementation SquiDBSQLiteStatementInfo
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteStatementInfo_init(self);
+  SquiDBSQLiteStatementInfo_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -30,22 +30,24 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "columnNames_", "[LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "readOnly_", "Z", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteStatementInfo = { "SQLiteStatementInfo", "com.yahoo.android.sqlite", NULL, methods, fields, 7, 0x11, 1, 3, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteStatementInfo;
+  static const J2ObjcClassInfo _SquiDBSQLiteStatementInfo = { "SQLiteStatementInfo", "com.yahoo.android.sqlite", NULL, methods, fields, 7, 0x11, 1, 3, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteStatementInfo;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteStatementInfo_init(ComYahooAndroidSqliteSQLiteStatementInfo *self) {
+void SquiDBSQLiteStatementInfo_init(SquiDBSQLiteStatementInfo *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteStatementInfo *new_ComYahooAndroidSqliteSQLiteStatementInfo_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteStatementInfo, init)
+SquiDBSQLiteStatementInfo *new_SquiDBSQLiteStatementInfo_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteStatementInfo, init)
 }
 
-ComYahooAndroidSqliteSQLiteStatementInfo *create_ComYahooAndroidSqliteSQLiteStatementInfo_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteStatementInfo, init)
+SquiDBSQLiteStatementInfo *create_SquiDBSQLiteStatementInfo_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteStatementInfo, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteStatementInfo)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteStatementInfo)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteStatementInfo, "com.yahoo.android.sqlite", "SquiDB")

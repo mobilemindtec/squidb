@@ -17,186 +17,188 @@
 
 @class IOSObjectArray;
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlOperator_Enum) {
-  ComYahooSquidbSqlOperator_Enum_eq = 0,
-  ComYahooSquidbSqlOperator_Enum_neq = 1,
-  ComYahooSquidbSqlOperator_Enum_is = 2,
-  ComYahooSquidbSqlOperator_Enum_isNot = 3,
-  ComYahooSquidbSqlOperator_Enum_gt = 4,
-  ComYahooSquidbSqlOperator_Enum_lt = 5,
-  ComYahooSquidbSqlOperator_Enum_gte = 6,
-  ComYahooSquidbSqlOperator_Enum_lte = 7,
-  ComYahooSquidbSqlOperator_Enum_and = 8,
-  ComYahooSquidbSqlOperator_Enum_or = 9,
-  ComYahooSquidbSqlOperator_Enum_not = 10,
-  ComYahooSquidbSqlOperator_Enum_exists = 11,
-  ComYahooSquidbSqlOperator_Enum_like = 12,
-  ComYahooSquidbSqlOperator_Enum_notLike = 13,
-  ComYahooSquidbSqlOperator_Enum_in = 14,
-  ComYahooSquidbSqlOperator_Enum_notIn = 15,
-  ComYahooSquidbSqlOperator_Enum_between = 16,
-  ComYahooSquidbSqlOperator_Enum_notBetween = 17,
-  ComYahooSquidbSqlOperator_Enum_glob = 18,
-  ComYahooSquidbSqlOperator_Enum_notGlob = 19,
-  ComYahooSquidbSqlOperator_Enum_match = 20,
+typedef NS_ENUM(NSUInteger, SquiDBOperator_Enum) {
+  SquiDBOperator_Enum_eq = 0,
+  SquiDBOperator_Enum_neq = 1,
+  SquiDBOperator_Enum_is = 2,
+  SquiDBOperator_Enum_isNot = 3,
+  SquiDBOperator_Enum_gt = 4,
+  SquiDBOperator_Enum_lt = 5,
+  SquiDBOperator_Enum_gte = 6,
+  SquiDBOperator_Enum_lte = 7,
+  SquiDBOperator_Enum_and = 8,
+  SquiDBOperator_Enum_or = 9,
+  SquiDBOperator_Enum_not = 10,
+  SquiDBOperator_Enum_exists = 11,
+  SquiDBOperator_Enum_like = 12,
+  SquiDBOperator_Enum_notLike = 13,
+  SquiDBOperator_Enum_in = 14,
+  SquiDBOperator_Enum_notIn = 15,
+  SquiDBOperator_Enum_between = 16,
+  SquiDBOperator_Enum_notBetween = 17,
+  SquiDBOperator_Enum_glob = 18,
+  SquiDBOperator_Enum_notGlob = 19,
+  SquiDBOperator_Enum_match = 20,
 };
 
-@interface ComYahooSquidbSqlOperator : JavaLangEnum
+@interface SquiDBOperator : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *eq NS_SWIFT_NAME(eq);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *neq NS_SWIFT_NAME(neq);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *is NS_SWIFT_NAME(is);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *isNot NS_SWIFT_NAME(isNot);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *gt NS_SWIFT_NAME(gt);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *lt NS_SWIFT_NAME(lt);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *gte NS_SWIFT_NAME(gte);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *lte NS_SWIFT_NAME(lte);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *and_ NS_SWIFT_NAME(and_);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *or_ NS_SWIFT_NAME(or_);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *not_ NS_SWIFT_NAME(not_);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *exists NS_SWIFT_NAME(exists);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *like NS_SWIFT_NAME(like);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *notLike NS_SWIFT_NAME(notLike);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *in NS_SWIFT_NAME(in);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *notIn NS_SWIFT_NAME(notIn);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *between NS_SWIFT_NAME(between);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *notBetween NS_SWIFT_NAME(notBetween);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *glob NS_SWIFT_NAME(glob);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *notGlob NS_SWIFT_NAME(notGlob);
-@property (readonly, class, nonnull) ComYahooSquidbSqlOperator *match NS_SWIFT_NAME(match);
-+ (ComYahooSquidbSqlOperator * __nonnull)eq;
+@property (readonly, class, nonnull) SquiDBOperator *eq NS_SWIFT_NAME(eq);
+@property (readonly, class, nonnull) SquiDBOperator *neq NS_SWIFT_NAME(neq);
+@property (readonly, class, nonnull) SquiDBOperator *is NS_SWIFT_NAME(is);
+@property (readonly, class, nonnull) SquiDBOperator *isNot NS_SWIFT_NAME(isNot);
+@property (readonly, class, nonnull) SquiDBOperator *gt NS_SWIFT_NAME(gt);
+@property (readonly, class, nonnull) SquiDBOperator *lt NS_SWIFT_NAME(lt);
+@property (readonly, class, nonnull) SquiDBOperator *gte NS_SWIFT_NAME(gte);
+@property (readonly, class, nonnull) SquiDBOperator *lte NS_SWIFT_NAME(lte);
+@property (readonly, class, nonnull) SquiDBOperator *and_ NS_SWIFT_NAME(and_);
+@property (readonly, class, nonnull) SquiDBOperator *or_ NS_SWIFT_NAME(or_);
+@property (readonly, class, nonnull) SquiDBOperator *not_ NS_SWIFT_NAME(not_);
+@property (readonly, class, nonnull) SquiDBOperator *exists NS_SWIFT_NAME(exists);
+@property (readonly, class, nonnull) SquiDBOperator *like NS_SWIFT_NAME(like);
+@property (readonly, class, nonnull) SquiDBOperator *notLike NS_SWIFT_NAME(notLike);
+@property (readonly, class, nonnull) SquiDBOperator *in NS_SWIFT_NAME(in);
+@property (readonly, class, nonnull) SquiDBOperator *notIn NS_SWIFT_NAME(notIn);
+@property (readonly, class, nonnull) SquiDBOperator *between NS_SWIFT_NAME(between);
+@property (readonly, class, nonnull) SquiDBOperator *notBetween NS_SWIFT_NAME(notBetween);
+@property (readonly, class, nonnull) SquiDBOperator *glob NS_SWIFT_NAME(glob);
+@property (readonly, class, nonnull) SquiDBOperator *notGlob NS_SWIFT_NAME(notGlob);
+@property (readonly, class, nonnull) SquiDBOperator *match NS_SWIFT_NAME(match);
++ (SquiDBOperator * __nonnull)eq;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)neq;
++ (SquiDBOperator * __nonnull)neq;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)is;
++ (SquiDBOperator * __nonnull)is;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)isNot;
++ (SquiDBOperator * __nonnull)isNot;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)gt;
++ (SquiDBOperator * __nonnull)gt;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)lt;
++ (SquiDBOperator * __nonnull)lt;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)gte;
++ (SquiDBOperator * __nonnull)gte;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)lte;
++ (SquiDBOperator * __nonnull)lte;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)and_;
++ (SquiDBOperator * __nonnull)and_;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)or_;
++ (SquiDBOperator * __nonnull)or_;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)not_;
++ (SquiDBOperator * __nonnull)not_;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)exists;
++ (SquiDBOperator * __nonnull)exists;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)like;
++ (SquiDBOperator * __nonnull)like;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)notLike;
++ (SquiDBOperator * __nonnull)notLike;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)in;
++ (SquiDBOperator * __nonnull)in;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)notIn;
++ (SquiDBOperator * __nonnull)notIn;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)between;
++ (SquiDBOperator * __nonnull)between;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)notBetween;
++ (SquiDBOperator * __nonnull)notBetween;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)glob;
++ (SquiDBOperator * __nonnull)glob;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)notGlob;
++ (SquiDBOperator * __nonnull)notGlob;
 
-+ (ComYahooSquidbSqlOperator * __nonnull)match;
++ (SquiDBOperator * __nonnull)match;
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlOperator *)getContrary;
+- (SquiDBOperator *)getContrary;
 
 - (NSString *)description;
 
-+ (ComYahooSquidbSqlOperator *)valueOfWithNSString:(NSString *)name;
++ (SquiDBOperator *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (ComYahooSquidbSqlOperator_Enum)toNSEnum;
+- (SquiDBOperator_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlOperator)
+J2OBJC_STATIC_INIT(SquiDBOperator)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_values_[];
+FOUNDATION_EXPORT SquiDBOperator *SquiDBOperator_values_[];
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_eq(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, eq)
+inline SquiDBOperator *SquiDBOperator_get_eq(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, eq)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_neq(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, neq)
+inline SquiDBOperator *SquiDBOperator_get_neq(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, neq)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_is(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, is)
+inline SquiDBOperator *SquiDBOperator_get_is(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, is)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_isNot(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, isNot)
+inline SquiDBOperator *SquiDBOperator_get_isNot(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, isNot)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_gt(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, gt)
+inline SquiDBOperator *SquiDBOperator_get_gt(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, gt)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_lt(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, lt)
+inline SquiDBOperator *SquiDBOperator_get_lt(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, lt)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_gte(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, gte)
+inline SquiDBOperator *SquiDBOperator_get_gte(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, gte)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_lte(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, lte)
+inline SquiDBOperator *SquiDBOperator_get_lte(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, lte)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_and(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, and)
+inline SquiDBOperator *SquiDBOperator_get_and(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, and)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_or(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, or)
+inline SquiDBOperator *SquiDBOperator_get_or(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, or)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_not(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, not)
+inline SquiDBOperator *SquiDBOperator_get_not(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, not)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_exists(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, exists)
+inline SquiDBOperator *SquiDBOperator_get_exists(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, exists)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_like(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, like)
+inline SquiDBOperator *SquiDBOperator_get_like(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, like)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_notLike(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, notLike)
+inline SquiDBOperator *SquiDBOperator_get_notLike(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, notLike)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_in(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, in)
+inline SquiDBOperator *SquiDBOperator_get_in(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, in)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_notIn(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, notIn)
+inline SquiDBOperator *SquiDBOperator_get_notIn(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, notIn)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_between(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, between)
+inline SquiDBOperator *SquiDBOperator_get_between(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, between)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_notBetween(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, notBetween)
+inline SquiDBOperator *SquiDBOperator_get_notBetween(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, notBetween)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_glob(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, glob)
+inline SquiDBOperator *SquiDBOperator_get_glob(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, glob)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_notGlob(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, notGlob)
+inline SquiDBOperator *SquiDBOperator_get_notGlob(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, notGlob)
 
-inline ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_get_match(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlOperator, match)
+inline SquiDBOperator *SquiDBOperator_get_match(void);
+J2OBJC_ENUM_CONSTANT(SquiDBOperator, match)
 
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbSqlOperator_values(void);
+FOUNDATION_EXPORT IOSObjectArray *SquiDBOperator_values(void);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBOperator *SquiDBOperator_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBOperator *SquiDBOperator_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlOperator)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBOperator)
+
+@compatibility_alias ComYahooSquidbSqlOperator SquiDBOperator;
 
 
 #if __has_feature(nullability)

@@ -7,17 +7,17 @@
 #include "SQLiteDatabaseLockedException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteDatabaseLockedException
+@implementation SquiDBSQLiteDatabaseLockedException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDatabaseLockedException_init(self);
+  SquiDBSQLiteDatabaseLockedException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteDatabaseLockedException_initWithNSString_(self, error);
+  SquiDBSQLiteDatabaseLockedException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabaseLockedException = { "SQLiteDatabaseLockedException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabaseLockedException;
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabaseLockedException = { "SQLiteDatabaseLockedException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabaseLockedException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabaseLockedException_init(ComYahooAndroidSqliteSQLiteDatabaseLockedException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteDatabaseLockedException_init(SquiDBSQLiteDatabaseLockedException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseLockedException *new_ComYahooAndroidSqliteSQLiteDatabaseLockedException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseLockedException, init)
+SquiDBSQLiteDatabaseLockedException *new_SquiDBSQLiteDatabaseLockedException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseLockedException, init)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseLockedException *create_ComYahooAndroidSqliteSQLiteDatabaseLockedException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseLockedException, init)
+SquiDBSQLiteDatabaseLockedException *create_SquiDBSQLiteDatabaseLockedException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseLockedException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteDatabaseLockedException_initWithNSString_(ComYahooAndroidSqliteSQLiteDatabaseLockedException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteDatabaseLockedException_initWithNSString_(SquiDBSQLiteDatabaseLockedException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseLockedException *new_ComYahooAndroidSqliteSQLiteDatabaseLockedException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseLockedException, initWithNSString_, error)
+SquiDBSQLiteDatabaseLockedException *new_SquiDBSQLiteDatabaseLockedException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseLockedException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseLockedException *create_ComYahooAndroidSqliteSQLiteDatabaseLockedException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseLockedException, initWithNSString_, error)
+SquiDBSQLiteDatabaseLockedException *create_SquiDBSQLiteDatabaseLockedException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseLockedException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabaseLockedException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabaseLockedException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDatabaseLockedException, "com.yahoo.android.sqlite", "SquiDB")

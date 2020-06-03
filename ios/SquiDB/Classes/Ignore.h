@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsIgnore < JavaLangAnnotationAnnotation >
+@protocol SquiDBIgnore < JavaLangAnnotationAnnotation >
 
 - (jboolean)isEqual:(id)obj;
 
@@ -25,15 +25,17 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsIgnore : NSObject < ComYahooSquidbAnnotationsIgnore >
+@interface SquiDBIgnore : NSObject < SquiDBIgnore >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsIgnore)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBIgnore)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsIgnore> create_ComYahooSquidbAnnotationsIgnore(void);
+FOUNDATION_EXPORT id<SquiDBIgnore> create_SquiDBIgnore(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsIgnore)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBIgnore)
+
+#define ComYahooSquidbAnnotationsIgnore SquiDBIgnore
 
 
 #if __has_feature(nullability)

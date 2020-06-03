@@ -15,60 +15,62 @@
 #include "Criterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
 @class JavaLangStringBuilder;
+@class SquiDBField;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlBinaryCriterion : ComYahooSquidbSqlCriterion {
+@interface SquiDBBinaryCriterion : SquiDBCriterion {
  @public
-  ComYahooSquidbSqlField *field_;
+  SquiDBField *field_;
   id value_;
 }
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlCriterion *)negate;
+- (SquiDBCriterion *)negate;
 
 #pragma mark Protected
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation;
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation;
 
-- (void)beforePopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                  withBoolean:(jboolean)forSqlValidation;
+- (void)beforePopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                       withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator;
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator;
 
-- (void)populateWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                    withBoolean:(jboolean)forSqlValidation;
+- (void)populateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                         withBoolean:(jboolean)forSqlValidation;
 
 - (void)populateOperatorWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                                  withId:(id)value;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                                         withSquiDBOperator:(SquiDBOperator *)operator_
+                                                     withId:(id)value;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithSquiDBOperator:(SquiDBOperator *)arg0 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlBinaryCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBBinaryCriterion)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlBinaryCriterion, field_, ComYahooSquidbSqlField *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlBinaryCriterion, value_, id)
+J2OBJC_FIELD_SETTER(SquiDBBinaryCriterion, field_, SquiDBField *)
+J2OBJC_FIELD_SETTER(SquiDBBinaryCriterion, value_, id)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlBinaryCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value);
+FOUNDATION_EXPORT void SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBBinaryCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id value);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlBinaryCriterion *new_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBBinaryCriterion *new_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlBinaryCriterion *create_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value);
+FOUNDATION_EXPORT SquiDBBinaryCriterion *create_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlBinaryCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBBinaryCriterion)
+
+@compatibility_alias ComYahooSquidbSqlBinaryCriterion SquiDBBinaryCriterion;
 
 
 #if __has_feature(nullability)

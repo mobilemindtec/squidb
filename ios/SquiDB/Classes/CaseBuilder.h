@@ -14,18 +14,18 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlFunction;
+@class SquiDBFunction;
 
-@interface ComYahooSquidbSqlCaseBuilder : NSObject
+@interface SquiDBCaseBuilder : NSObject
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlCaseBuilder *)elseExprWithId:(id)value;
+- (SquiDBCaseBuilder *)elseExprWithId:(id)value;
 
-- (ComYahooSquidbSqlFunction *)end;
+- (SquiDBFunction *)end;
 
-- (ComYahooSquidbSqlCaseBuilder *)whenWithId:(id)when
-                                      withId:(id)then;
+- (SquiDBCaseBuilder *)whenWithId:(id)when
+                           withId:(id)then;
 
 #pragma mark Package-Private
 
@@ -37,15 +37,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCaseBuilder)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCaseBuilder)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCaseBuilder_initWithId_(ComYahooSquidbSqlCaseBuilder *self, id baseExpression);
+FOUNDATION_EXPORT void SquiDBCaseBuilder_initWithId_(SquiDBCaseBuilder *self, id baseExpression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseBuilder *new_ComYahooSquidbSqlCaseBuilder_initWithId_(id baseExpression) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCaseBuilder *new_SquiDBCaseBuilder_initWithId_(id baseExpression) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseBuilder *create_ComYahooSquidbSqlCaseBuilder_initWithId_(id baseExpression);
+FOUNDATION_EXPORT SquiDBCaseBuilder *create_SquiDBCaseBuilder_initWithId_(id baseExpression);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCaseBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCaseBuilder)
+
+@compatibility_alias ComYahooSquidbSqlCaseBuilder SquiDBCaseBuilder;
 
 
 #if __has_feature(nullability)

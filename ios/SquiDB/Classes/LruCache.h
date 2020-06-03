@@ -16,7 +16,7 @@
 
 @protocol JavaUtilMap;
 
-@interface ComYahooAndroidSqliteLruCache : NSObject
+@interface SquiDBLruCache : NSObject
 
 #pragma mark Public
 
@@ -71,15 +71,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteLruCache)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBLruCache)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteLruCache_initWithInt_(ComYahooAndroidSqliteLruCache *self, jint maxSize);
+FOUNDATION_EXPORT void SquiDBLruCache_initWithInt_(SquiDBLruCache *self, jint maxSize);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteLruCache *new_ComYahooAndroidSqliteLruCache_initWithInt_(jint maxSize) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBLruCache *new_SquiDBLruCache_initWithInt_(jint maxSize) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteLruCache *create_ComYahooAndroidSqliteLruCache_initWithInt_(jint maxSize);
+FOUNDATION_EXPORT SquiDBLruCache *create_SquiDBLruCache_initWithInt_(jint maxSize);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteLruCache)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBLruCache)
+
+@compatibility_alias ComYahooAndroidSqliteLruCache SquiDBLruCache;
 
 
 #if __has_feature(nullability)

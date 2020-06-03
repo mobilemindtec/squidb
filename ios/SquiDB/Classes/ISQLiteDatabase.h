@@ -15,19 +15,19 @@
 #include "J2ObjC_header.h"
 
 @class IOSObjectArray;
-@protocol ComYahooSquidbDataICursor;
-@protocol ComYahooSquidbDataISQLitePreparedStatement;
-@protocol ComYahooSquidbDataSquidTransactionListener;
+@protocol SquiDBICursor;
+@protocol SquiDBISQLitePreparedStatement;
+@protocol SquiDBSquidTransactionListener;
 
-@protocol ComYahooSquidbDataISQLiteDatabase < JavaObject >
+@protocol SquiDBISQLiteDatabase < JavaObject >
 
 - (void)beginTransaction;
 
 - (void)beginTransactionNonExclusive;
 
-- (void)beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
 - (void)setTransactionSuccessful;
 
@@ -43,8 +43,8 @@
 
 - (void)setVersionWithInt:(jint)version_;
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSObjectArray:(IOSObjectArray *)bindArgs;
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSObjectArray:(IOSObjectArray *)bindArgs;
 
 - (NSString *)simpleQueryForStringWithNSString:(NSString *)sql
                              withNSObjectArray:(IOSObjectArray *)bindArgs;
@@ -65,7 +65,7 @@
 
 - (void)ensureSqlCompilesWithNSString:(NSString *)sql;
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
+- (id<SquiDBISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
 
 - (jboolean)isOpen;
 
@@ -103,9 +103,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataISQLiteDatabase)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBISQLiteDatabase)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataISQLiteDatabase)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBISQLiteDatabase)
+
+#define ComYahooSquidbDataISQLiteDatabase SquiDBISQLiteDatabase
 
 
 #if __has_feature(nullability)

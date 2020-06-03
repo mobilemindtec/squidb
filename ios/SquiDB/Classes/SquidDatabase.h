@@ -15,39 +15,39 @@
 #include "J2ObjC_header.h"
 #include "java/lang/RuntimeException.h"
 
-@class ComYahooSquidbDataAbstractModel;
-@class ComYahooSquidbDataDataChangedNotifier;
-@class ComYahooSquidbDataSquidCursor;
-@class ComYahooSquidbDataSquidDatabase_MigrationFailedException;
-@class ComYahooSquidbDataSquidDatabase_OpenHelperDelegate;
-@class ComYahooSquidbDataTableModel;
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCompileContext_Builder;
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlDelete;
-@class ComYahooSquidbSqlIndex;
-@class ComYahooSquidbSqlInsert;
-@class ComYahooSquidbSqlProperty;
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlTableStatement_ConflictAlgorithm;
-@class ComYahooSquidbSqlUpdate;
-@class ComYahooSquidbSqlView;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaIoFile;
 @class JavaLangRuntimeException;
 @class JavaLangThrowable;
-@protocol ComYahooSquidbDataICursor;
-@protocol ComYahooSquidbDataISQLiteDatabase;
-@protocol ComYahooSquidbDataISQLiteOpenHelper;
-@protocol ComYahooSquidbDataISQLitePreparedStatement;
-@protocol ComYahooSquidbDataSquidTransactionListener;
-@protocol ComYahooSquidbSqlSqlStatement;
+@class SquiDBAbstractModel;
+@class SquiDBCompileContext;
+@class SquiDBCompileContext_Builder;
+@class SquiDBCriterion;
+@class SquiDBDataChangedNotifier;
+@class SquiDBDelete;
+@class SquiDBIndex;
+@class SquiDBInsert;
+@class SquiDBProperty;
+@class SquiDBQuery;
+@class SquiDBSqlTable;
+@class SquiDBSquidCursor;
+@class SquiDBSquidDatabase_MigrationFailedException;
+@class SquiDBSquidDatabase_OpenHelperDelegate;
+@class SquiDBTable;
+@class SquiDBTableModel;
+@class SquiDBTableStatement_ConflictAlgorithm;
+@class SquiDBUpdate;
+@class SquiDBVersionCode;
+@class SquiDBView;
+@protocol SquiDBICursor;
+@protocol SquiDBISQLiteDatabase;
+@protocol SquiDBISQLiteOpenHelper;
+@protocol SquiDBISQLitePreparedStatement;
+@protocol SquiDBSqlStatement;
+@protocol SquiDBSquidTransactionListener;
 
-@interface ComYahooSquidbDataSquidDatabase : NSObject {
+@interface SquiDBSquidDatabase : NSObject {
  @public
   jboolean showSql_;
 }
@@ -58,15 +58,15 @@
 
 - (jboolean)areDataChangedNotificationsEnabled;
 
-- (NSString *)attachDatabaseWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)other;
+- (NSString *)attachDatabaseWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)other;
 
 - (void)beginTransaction;
 
 - (void)beginTransactionNonExclusive;
 
-- (void)beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
 - (void)clear;
 
@@ -75,23 +75,23 @@
 - (jboolean)copyDatabaseWithJavaIoFile:(JavaIoFile *)toDir OBJC_METHOD_FAMILY_NONE;
 
 - (jint)countWithIOSClass:(IOSClass *)modelClass
-withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+      withSquiDBCriterion:(SquiDBCriterion *)criterion;
 
 - (jint)countAllWithIOSClass:(IOSClass *)modelClass;
 
-- (jboolean)createNewWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
+- (jboolean)createNewWithSquiDBTableModel:(SquiDBTableModel *)item;
 
 - (jboolean)delete__WithIOSClass:(IOSClass *)modelClass
                         withLong:(jlong)id_;
 
-- (jint)delete__WithComYahooSquidbSqlDelete:(ComYahooSquidbSqlDelete *)delete_;
+- (jint)delete__WithSquiDBDelete:(SquiDBDelete *)delete_;
 
 - (jint)deleteAllWithIOSClass:(IOSClass *)modelClass;
 
 - (jint)deleteWhereWithIOSClass:(IOSClass *)modelClass
- withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where;
+            withSquiDBCriterion:(SquiDBCriterion *)where;
 
-- (jboolean)detachDatabaseWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)other;
+- (jboolean)detachDatabaseWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)other;
 
 - (void)endTransaction;
 
@@ -101,51 +101,51 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
                  withNSObjectArray:(IOSObjectArray *)bindArgs;
 
 - (void)explainQueryPlanWithIOSClass:(IOSClass *)modelClass
-          withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+                     withSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbDataTableModel *)fetchWithIOSClass:(IOSClass *)modelClass
-                                           withLong:(jlong)id_
-                 withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (SquiDBTableModel *)fetchWithIOSClass:(IOSClass *)modelClass
+                               withLong:(jlong)id_
+                withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (ComYahooSquidbDataAbstractModel *)fetchByCriterionWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (SquiDBAbstractModel *)fetchByCriterionWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBCriterion:(SquiDBCriterion *)criterion
+                              withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (ComYahooSquidbDataAbstractModel *)fetchByQueryWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBAbstractModel *)fetchByQueryWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbSqlCompileContext *)getCompileContext;
+- (SquiDBCompileContext *)getCompileContext;
 
 - (NSString *)getDatabasePath;
 
 - (NSString *)getName;
 
-- (ComYahooSquidbUtilityVersionCode *)getSqliteVersion;
+- (SquiDBVersionCode *)getSqliteVersion;
 
-- (jlong)insertWithComYahooSquidbSqlInsert:(ComYahooSquidbSqlInsert *)insert;
+- (jlong)insertWithSquiDBInsert:(SquiDBInsert *)insert;
 
 - (jboolean)inTransaction;
 
 - (jboolean)isOpen;
 
-- (jboolean)persistWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
+- (jboolean)persistWithSquiDBTableModel:(SquiDBTableModel *)item;
 
-- (jboolean)persistWithOnConflictWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-            withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jboolean)persistWithOnConflictWithSquiDBTableModel:(SquiDBTableModel *)item
+           withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
+- (id<SquiDBISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
 
-- (ComYahooSquidbDataSquidCursor *)queryWithIOSClass:(IOSClass *)modelClass
-                          withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBSquidCursor *)queryWithIOSClass:(IOSClass *)modelClass
+                         withSquiDBQuery:(SquiDBQuery *)query;
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSObjectArray:(IOSObjectArray *)sqlArgs;
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSObjectArray:(IOSObjectArray *)sqlArgs;
 
 - (void)recreate;
 
-- (void)registerDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:(ComYahooSquidbDataDataChangedNotifier *)notifier;
+- (void)registerDataChangedNotifierWithSquiDBDataChangedNotifier:(SquiDBDataChangedNotifier *)notifier;
 
-- (jboolean)saveExistingWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
+- (jboolean)saveExistingWithSquiDBTableModel:(SquiDBTableModel *)item;
 
 - (void)setDataChangedNotificationsEnabledWithBoolean:(jboolean)enabled;
 
@@ -153,46 +153,46 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
 
 - (void)setTransactionSuccessful;
 
-- (jlong)simpleQueryForLongWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (jlong)simpleQueryForLongWithSquiDBQuery:(SquiDBQuery *)query;
 
 - (jlong)simpleQueryForLongWithNSString:(NSString *)sql
                       withNSObjectArray:(IOSObjectArray *)sqlArgs;
 
-- (NSString *)simpleQueryForStringWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (NSString *)simpleQueryForStringWithSquiDBQuery:(SquiDBQuery *)query;
 
 - (NSString *)simpleQueryForStringWithNSString:(NSString *)sql
                              withNSObjectArray:(IOSObjectArray *)sqlArgs;
 
 - (NSString *)description;
 
-- (jboolean)tryCreateViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
+- (jboolean)tryCreateViewWithSquiDBView:(SquiDBView *)view;
 
-- (jboolean)tryDropViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
+- (jboolean)tryDropViewWithSquiDBView:(SquiDBView *)view;
 
 - (jboolean)tryExecSqlWithNSString:(NSString *)sql;
 
 - (jboolean)tryExecSqlWithNSString:(NSString *)sql
                  withNSObjectArray:(IOSObjectArray *)bindArgs;
 
-- (jboolean)tryExecStatementWithComYahooSquidbSqlSqlStatement:(id<ComYahooSquidbSqlSqlStatement>)statement;
+- (jboolean)tryExecStatementWithSquiDBSqlStatement:(id<SquiDBSqlStatement>)statement;
 
 - (void)unregisterAllDataChangedNotifiers;
 
-- (void)unregisterDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:(ComYahooSquidbDataDataChangedNotifier *)notifier;
+- (void)unregisterDataChangedNotifierWithSquiDBDataChangedNotifier:(SquiDBDataChangedNotifier *)notifier;
 
-- (jint)updateWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where
-            withComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_;
+- (jint)updateWithSquiDBCriterion:(SquiDBCriterion *)where
+             withSquiDBTableModel:(SquiDBTableModel *)template_;
 
-- (jint)updateWithComYahooSquidbSqlUpdate:(ComYahooSquidbSqlUpdate *)update;
+- (jint)updateWithSquiDBUpdate:(SquiDBUpdate *)update;
 
-- (jint)updateAllWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_;
+- (jint)updateAllWithSquiDBTableModel:(SquiDBTableModel *)template_;
 
-- (jint)updateAllWithOnConflictWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_
-          withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jint)updateAllWithOnConflictWithSquiDBTableModel:(SquiDBTableModel *)template_
+         withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (jint)updateWithOnConflictWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where
-                          withComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_
-     withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jint)updateWithOnConflictWithSquiDBCriterion:(SquiDBCriterion *)where
+                           withSquiDBTableModel:(SquiDBTableModel *)template_
+     withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
 - (jboolean)yieldIfContendedSafely;
 
@@ -204,30 +204,30 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
 
 - (void)acquireNonExclusiveLock;
 
-- (void)buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:(ComYahooSquidbSqlCompileContext_Builder *)builder;
+- (void)buildCompileContextWithSquiDBCompileContext_Builder:(SquiDBCompileContext_Builder *)builder;
 
-- (id<ComYahooSquidbDataISQLiteOpenHelper>)createOpenHelperWithNSString:(NSString *)databaseName
-                 withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *)delegate
-                                                                withInt:(jint)version_;
+- (id<SquiDBISQLiteOpenHelper>)createOpenHelperWithNSString:(NSString *)databaseName
+                 withSquiDBSquidDatabase_OpenHelperDelegate:(SquiDBSquidDatabase_OpenHelperDelegate *)delegate
+                                                    withInt:(jint)version_;
 
-- (ComYahooSquidbDataSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
-                               withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                           withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (SquiDBSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
+                              withSquiDBCriterion:(SquiDBCriterion *)criterion
+                          withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (ComYahooSquidbDataSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbDataSquidCursor *)fetchItemByIdWithIOSClass:(IOSClass *)modelClass
-                                                    withLong:(jlong)id_
-                          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (SquiDBSquidCursor *)fetchItemByIdWithIOSClass:(IOSClass *)modelClass
+                                        withLong:(jlong)id_
+                         withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (id<ComYahooSquidbDataISQLiteDatabase>)getDatabase;
+- (id<SquiDBISQLiteDatabase>)getDatabase;
 
 - (IOSObjectArray *)getIndexes;
 
-- (ComYahooSquidbSqlSqlTable *)getSqlTableWithIOSClass:(IOSClass *)modelClass;
+- (SquiDBSqlTable *)getSqlTableWithIOSClass:(IOSClass *)modelClass;
 
-- (ComYahooSquidbSqlTable *)getTableWithIOSClass:(IOSClass *)modelClass;
+- (SquiDBTable *)getTableWithIOSClass:(IOSClass *)modelClass;
 
 - (IOSObjectArray *)getTables;
 
@@ -235,91 +235,93 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
 
 - (IOSObjectArray *)getViews;
 
-- (jboolean)insertRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
+- (jboolean)insertRowWithSquiDBTableModel:(SquiDBTableModel *)item;
 
-- (jboolean)insertRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jboolean)insertRowWithSquiDBTableModel:(SquiDBTableModel *)item
+withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (void)onCloseWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onCloseWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (void)onConfigureWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onConfigureWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
 - (void)onDatabaseOpenFailedWithJavaLangRuntimeException:(JavaLangRuntimeException *)failure
                                                  withInt:(jint)openFailureCount;
 
-- (jboolean)onDowngradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                     withInt:(jint)oldVersion
-                                                     withInt:(jint)newVersion;
+- (jboolean)onDowngradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                         withInt:(jint)oldVersion
+                                         withInt:(jint)newVersion;
 
 - (void)onErrorWithNSString:(NSString *)message
       withJavaLangThrowable:(JavaLangThrowable *)error;
 
-- (void)onMigrationFailedWithComYahooSquidbDataSquidDatabase_MigrationFailedException:(ComYahooSquidbDataSquidDatabase_MigrationFailedException *)failure;
+- (void)onMigrationFailedWithSquiDBSquidDatabase_MigrationFailedException:(SquiDBSquidDatabase_MigrationFailedException *)failure;
 
-- (void)onOpenWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onOpenWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (void)onTablesCreatedWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onTablesCreatedWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (jboolean)onUpgradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                   withInt:(jint)oldVersion
-                                                   withInt:(jint)newVersion;
+- (jboolean)onUpgradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                       withInt:(jint)oldVersion
+                                       withInt:(jint)newVersion;
 
 - (void)releaseExclusiveLock;
 
 - (void)releaseNonExclusiveLock;
 
-- (ComYahooSquidbDataAbstractModel *)returnFetchResultWithIOSClass:(IOSClass *)modelClass
-                                 withComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor;
+- (SquiDBAbstractModel *)returnFetchResultWithIOSClass:(IOSClass *)modelClass
+                                 withSquiDBSquidCursor:(SquiDBSquidCursor *)cursor;
 
 - (void)setPreparedInsertCacheEnabledWithBoolean:(jboolean)enabled;
 
-- (jboolean)tryAddColumnWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)tryAddColumnWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (jboolean)tryCreateIndexWithComYahooSquidbSqlIndex:(ComYahooSquidbSqlIndex *)index;
+- (jboolean)tryCreateIndexWithSquiDBIndex:(SquiDBIndex *)index;
 
 - (jboolean)tryCreateIndexWithNSString:(NSString *)indexName
-            withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
+                       withSquiDBTable:(SquiDBTable *)table
                            withBoolean:(jboolean)unique
-    withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+               withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (jboolean)tryCreateTableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
+- (jboolean)tryCreateTableWithSquiDBTable:(SquiDBTable *)table;
 
-- (jboolean)tryDropIndexWithComYahooSquidbSqlIndex:(ComYahooSquidbSqlIndex *)index;
+- (jboolean)tryDropIndexWithSquiDBIndex:(SquiDBIndex *)index;
 
 - (jboolean)tryDropIndexWithNSString:(NSString *)indexName;
 
-- (jboolean)tryDropTableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
+- (jboolean)tryDropTableWithSquiDBTable:(SquiDBTable *)table;
 
-- (jboolean)updateRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item;
+- (jboolean)updateRowWithSquiDBTableModel:(SquiDBTableModel *)item;
 
-- (jboolean)updateRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jboolean)updateRowWithSquiDBTableModel:(SquiDBTableModel *)item
+withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSquidDatabase_init(ComYahooSquidbDataSquidDatabase *self);
+FOUNDATION_EXPORT void SquiDBSquidDatabase_init(SquiDBSquidDatabase *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase)
 
-@interface ComYahooSquidbDataSquidDatabase_OpenHelperDelegate : NSObject
+@compatibility_alias ComYahooSquidbDataSquidDatabase SquiDBSquidDatabase;
+
+@interface SquiDBSquidDatabase_OpenHelperDelegate : NSObject
 
 #pragma mark Public
 
-- (void)onConfigureWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onConfigureWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (void)onCreateWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onCreateWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (void)onDowngradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                 withInt:(jint)oldVersion
-                                                 withInt:(jint)newVersion;
+- (void)onDowngradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                     withInt:(jint)oldVersion
+                                     withInt:(jint)newVersion;
 
-- (void)onOpenWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)onOpenWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (void)onUpgradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                               withInt:(jint)oldVersion
-                                               withInt:(jint)newVersion;
+- (void)onUpgradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                   withInt:(jint)oldVersion
+                                   withInt:(jint)newVersion;
 
 // Disallowed inherited constructors, do not use.
 
@@ -327,11 +329,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_OpenHelperDelegate)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase_OpenHelperDelegate)
 
-@interface ComYahooSquidbDataSquidDatabase_MigrationFailedException : JavaLangRuntimeException {
+@interface SquiDBSquidDatabase_MigrationFailedException : JavaLangRuntimeException {
  @public
   NSString *dbName_;
   jint oldVersion_;
@@ -367,23 +369,23 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_MigrationFailedException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_MigrationFailedException)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase_MigrationFailedException, dbName_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase_MigrationFailedException, dbName_, NSString *)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(ComYahooSquidbDataSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion);
+FOUNDATION_EXPORT void SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(SquiDBSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion);
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidDatabase_MigrationFailedException *new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidDatabase_MigrationFailedException *new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidDatabase_MigrationFailedException *create_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion);
+FOUNDATION_EXPORT SquiDBSquidDatabase_MigrationFailedException *create_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(ComYahooSquidbDataSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT void SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(SquiDBSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable);
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidDatabase_MigrationFailedException *new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidDatabase_MigrationFailedException *new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataSquidDatabase_MigrationFailedException *create_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT SquiDBSquidDatabase_MigrationFailedException *create_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_MigrationFailedException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase_MigrationFailedException)
 
 
 #if __has_feature(nullability)

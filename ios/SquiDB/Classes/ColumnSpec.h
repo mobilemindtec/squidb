@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsColumnSpec < JavaLangAnnotationAnnotation >
+@protocol SquiDBColumnSpec < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *name;
 @property (readonly) NSString *constraints;
@@ -29,7 +29,7 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsColumnSpec : NSObject < ComYahooSquidbAnnotationsColumnSpec > {
+@interface SquiDBColumnSpec : NSObject < SquiDBColumnSpec > {
  @public
   NSString *name_;
   NSString *constraints_;
@@ -44,21 +44,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsColumnSpec)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBColumnSpec)
 
-inline NSString *ComYahooSquidbAnnotationsColumnSpec_get_DEFAULT_NONE(void);
+inline NSString *SquiDBColumnSpec_get_DEFAULT_NONE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NONE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbAnnotationsColumnSpec, DEFAULT_NONE, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBColumnSpec_DEFAULT_NONE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBColumnSpec, DEFAULT_NONE, NSString *)
 
-inline NSString *ComYahooSquidbAnnotationsColumnSpec_get_DEFAULT_NULL(void);
+inline NSString *SquiDBColumnSpec_get_DEFAULT_NULL(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbAnnotationsColumnSpec, DEFAULT_NULL, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBColumnSpec_DEFAULT_NULL;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBColumnSpec, DEFAULT_NULL, NSString *)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsColumnSpec> create_ComYahooSquidbAnnotationsColumnSpec(NSString *constraints, NSString *defaultValue, NSString *name);
+FOUNDATION_EXPORT id<SquiDBColumnSpec> create_SquiDBColumnSpec(NSString *constraints, NSString *defaultValue, NSString *name);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsColumnSpec)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBColumnSpec)
+
+#define ComYahooSquidbAnnotationsColumnSpec SquiDBColumnSpec
 
 
 #if __has_feature(nullability)

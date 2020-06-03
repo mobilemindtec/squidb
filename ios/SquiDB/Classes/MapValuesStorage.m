@@ -19,26 +19,26 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface ComYahooSquidbDataMapValuesStorage () {
+@interface SquiDBMapValuesStorage () {
  @public
   id<JavaUtilMap> values_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataMapValuesStorage, values_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBMapValuesStorage, values_, id<JavaUtilMap>)
 
-@implementation ComYahooSquidbDataMapValuesStorage
+@implementation SquiDBMapValuesStorage
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataMapValuesStorage_init(self);
+  SquiDBMapValuesStorage_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)values {
-  ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(self, values);
+  SquiDBMapValuesStorage_initWithJavaUtilMap_(self, values);
   return self;
 }
 
@@ -107,12 +107,12 @@ J2OBJC_IGNORE_DESIGNATED_END
   (void) [((id<JavaUtilMap>) nil_chk(values_)) putWithId:key withId:value];
 }
 
-- (void)putAllWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)other {
-  if ([other isKindOfClass:[ComYahooSquidbDataMapValuesStorage class]]) {
-    [((id<JavaUtilMap>) nil_chk(values_)) putAllWithJavaUtilMap:((ComYahooSquidbDataMapValuesStorage *) nil_chk(((ComYahooSquidbDataMapValuesStorage *) cast_chk(other, [ComYahooSquidbDataMapValuesStorage class]))))->values_];
+- (void)putAllWithSquiDBValuesStorage:(SquiDBValuesStorage *)other {
+  if ([other isKindOfClass:[SquiDBMapValuesStorage class]]) {
+    [((id<JavaUtilMap>) nil_chk(values_)) putAllWithJavaUtilMap:((SquiDBMapValuesStorage *) nil_chk(((SquiDBMapValuesStorage *) other)))->values_];
   }
   else {
-    id<JavaUtilSet> valuesSet = [((ComYahooSquidbDataValuesStorage *) nil_chk(other)) valueSet];
+    id<JavaUtilSet> valuesSet = [((SquiDBValuesStorage *) nil_chk(other)) valueSet];
     for (id<JavaUtilMap_Entry> __strong entry_ in nil_chk(valuesSet)) {
       [self putWithNSString:[((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey] withId:[entry_ getValue] withBoolean:false];
     }
@@ -128,7 +128,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (jboolean)isEqual:(id)o {
-  return ([o isKindOfClass:[ComYahooSquidbDataMapValuesStorage class]]) && [((id<JavaUtilMap>) nil_chk(values_)) isEqual:((ComYahooSquidbDataMapValuesStorage *) nil_chk(((ComYahooSquidbDataMapValuesStorage *) cast_chk(o, [ComYahooSquidbDataMapValuesStorage class]))))->values_];
+  return ([o isKindOfClass:[SquiDBMapValuesStorage class]]) && [((id<JavaUtilMap>) nil_chk(values_)) isEqual:((SquiDBMapValuesStorage *) nil_chk(((SquiDBMapValuesStorage *) cast_chk(o, [SquiDBMapValuesStorage class]))))->values_];
 }
 
 - (NSUInteger)hash {
@@ -178,7 +178,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[13].selector = @selector(putWithNSString:withJavaLangShort:);
   methods[14].selector = @selector(putWithNSString:withNSString:);
   methods[15].selector = @selector(putWithNSString:withByteArray:);
-  methods[16].selector = @selector(putAllWithComYahooSquidbDataValuesStorage:);
+  methods[16].selector = @selector(putAllWithSquiDBValuesStorage:);
   methods[17].selector = @selector(valueSet);
   methods[18].selector = @selector(keySet);
   methods[19].selector = @selector(isEqual:);
@@ -187,40 +187,42 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "values_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 24, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;)V", "containsKey", "LNSString;", "get", "remove", "putNull", "put", "LNSString;LJavaLangBoolean;", "LNSString;LJavaLangByte;", "LNSString;LJavaLangDouble;", "LNSString;LJavaLangFloat;", "LNSString;LJavaLangInteger;", "LNSString;LJavaLangLong;", "LNSString;LJavaLangShort;", "LNSString;LNSString;", "LNSString;[B", "putAll", "LComYahooSquidbDataValuesStorage;", "()Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;", "()Ljava/util/Set<Ljava/lang/String;>;", "equals", "LNSObject;", "hashCode", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataMapValuesStorage = { "MapValuesStorage", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1, 21, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataMapValuesStorage;
+  static const void *ptrTable[] = { "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;)V", "containsKey", "LNSString;", "get", "remove", "putNull", "put", "LNSString;LJavaLangBoolean;", "LNSString;LJavaLangByte;", "LNSString;LJavaLangDouble;", "LNSString;LJavaLangFloat;", "LNSString;LJavaLangInteger;", "LNSString;LJavaLangLong;", "LNSString;LJavaLangShort;", "LNSString;LNSString;", "LNSString;[B", "putAll", "LSquiDBValuesStorage;", "()Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;", "()Ljava/util/Set<Ljava/lang/String;>;", "equals", "LNSObject;", "hashCode", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _SquiDBMapValuesStorage = { "MapValuesStorage", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1, 21, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBMapValuesStorage;
 }
 
 @end
 
-void ComYahooSquidbDataMapValuesStorage_init(ComYahooSquidbDataMapValuesStorage *self) {
-  ComYahooSquidbDataValuesStorage_init(self);
+void SquiDBMapValuesStorage_init(SquiDBMapValuesStorage *self) {
+  SquiDBValuesStorage_init(self);
   self->values_ = new_JavaUtilHashMap_init();
 }
 
-ComYahooSquidbDataMapValuesStorage *new_ComYahooSquidbDataMapValuesStorage_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataMapValuesStorage, init)
+SquiDBMapValuesStorage *new_SquiDBMapValuesStorage_init() {
+  J2OBJC_NEW_IMPL(SquiDBMapValuesStorage, init)
 }
 
-ComYahooSquidbDataMapValuesStorage *create_ComYahooSquidbDataMapValuesStorage_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataMapValuesStorage, init)
+SquiDBMapValuesStorage *create_SquiDBMapValuesStorage_init() {
+  J2OBJC_CREATE_IMPL(SquiDBMapValuesStorage, init)
 }
 
-void ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(ComYahooSquidbDataMapValuesStorage *self, id<JavaUtilMap> values) {
-  ComYahooSquidbDataValuesStorage_init(self);
+void SquiDBMapValuesStorage_initWithJavaUtilMap_(SquiDBMapValuesStorage *self, id<JavaUtilMap> values) {
+  SquiDBValuesStorage_init(self);
   if (values == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Can't create a MapValuesStorage with null Map");
   }
   self->values_ = values;
 }
 
-ComYahooSquidbDataMapValuesStorage *new_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataMapValuesStorage, initWithJavaUtilMap_, values)
+SquiDBMapValuesStorage *new_SquiDBMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) {
+  J2OBJC_NEW_IMPL(SquiDBMapValuesStorage, initWithJavaUtilMap_, values)
 }
 
-ComYahooSquidbDataMapValuesStorage *create_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataMapValuesStorage, initWithJavaUtilMap_, values)
+SquiDBMapValuesStorage *create_SquiDBMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) {
+  J2OBJC_CREATE_IMPL(SquiDBMapValuesStorage, initWithJavaUtilMap_, values)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataMapValuesStorage)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBMapValuesStorage)
+
+J2OBJC_NAME_MAPPING(SquiDBMapValuesStorage, "com.yahoo.squidb.data", "SquiDB")

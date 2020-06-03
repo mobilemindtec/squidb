@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsInheritedModelSpec < JavaLangAnnotationAnnotation >
+@protocol SquiDBInheritedModelSpec < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *className__;
 @property (readonly) NSString *inheritsFrom;
@@ -28,7 +28,7 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsInheritedModelSpec : NSObject < ComYahooSquidbAnnotationsInheritedModelSpec > {
+@interface SquiDBInheritedModelSpec : NSObject < SquiDBInheritedModelSpec > {
  @public
   NSString *className___;
   NSString *inheritsFrom_;
@@ -36,11 +36,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsInheritedModelSpec)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBInheritedModelSpec)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsInheritedModelSpec> create_ComYahooSquidbAnnotationsInheritedModelSpec(NSString *className__, NSString *inheritsFrom);
+FOUNDATION_EXPORT id<SquiDBInheritedModelSpec> create_SquiDBInheritedModelSpec(NSString *className__, NSString *inheritsFrom);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsInheritedModelSpec)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBInheritedModelSpec)
+
+#define ComYahooSquidbAnnotationsInheritedModelSpec SquiDBInheritedModelSpec
 
 
 #if __has_feature(nullability)

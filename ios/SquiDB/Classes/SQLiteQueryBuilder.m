@@ -24,13 +24,13 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface ComYahooAndroidSqliteSQLiteQueryBuilder () {
+@interface SquiDBSQLiteQueryBuilder () {
  @public
   id<JavaUtilMap> mProjectionMap_;
   NSString *mTables_;
   JavaLangStringBuilder *mWhereClause_;
   jboolean mDistinct_;
-  id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> mFactory_;
+  id<SquiDBSQLiteDatabase_CursorFactory> mFactory_;
   jboolean mStrict_;
 }
 
@@ -38,47 +38,47 @@
                                  withNSString:(NSString *)name
                                  withNSString:(NSString *)clause;
 
-- (void)validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                   withNSString:(NSString *)sql;
+- (void)validateQuerySqlWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                    withNSString:(NSString *)sql;
 
 - (IOSObjectArray *)computeProjectionWithNSStringArray:(IOSObjectArray *)projectionIn;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteQueryBuilder, mProjectionMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteQueryBuilder, mTables_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteQueryBuilder, mWhereClause_, JavaLangStringBuilder *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteQueryBuilder, mFactory_, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteQueryBuilder, mProjectionMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteQueryBuilder, mTables_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteQueryBuilder, mWhereClause_, JavaLangStringBuilder *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteQueryBuilder, mFactory_, id<SquiDBSQLiteDatabase_CursorFactory>)
 
-inline NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_get_TAG(void);
-static NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_TAG = @"SQLiteQueryBuilder";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteQueryBuilder, TAG, NSString *)
+inline NSString *SquiDBSQLiteQueryBuilder_get_TAG(void);
+static NSString *SquiDBSQLiteQueryBuilder_TAG = @"SQLiteQueryBuilder";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteQueryBuilder, TAG, NSString *)
 
-inline JavaUtilRegexPattern *ComYahooAndroidSqliteSQLiteQueryBuilder_get_sLimitPattern(void);
-static JavaUtilRegexPattern *ComYahooAndroidSqliteSQLiteQueryBuilder_sLimitPattern;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteQueryBuilder, sLimitPattern, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *SquiDBSQLiteQueryBuilder_get_sLimitPattern(void);
+static JavaUtilRegexPattern *SquiDBSQLiteQueryBuilder_sLimitPattern;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteQueryBuilder, sLimitPattern, JavaUtilRegexPattern *)
 
-inline NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_get_BASE_COLUMNS_COUNT(void);
-static NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_BASE_COLUMNS_COUNT = @"_count";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteQueryBuilder, BASE_COLUMNS_COUNT, NSString *)
+inline NSString *SquiDBSQLiteQueryBuilder_get_BASE_COLUMNS_COUNT(void);
+static NSString *SquiDBSQLiteQueryBuilder_BASE_COLUMNS_COUNT = @"_count";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteQueryBuilder, BASE_COLUMNS_COUNT, NSString *)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(JavaLangStringBuilder *s, NSString *name, NSString *clause);
+__attribute__((unused)) static void SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(JavaLangStringBuilder *s, NSString *name, NSString *clause);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteQueryBuilder_validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteQueryBuilder *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql);
+__attribute__((unused)) static void SquiDBSQLiteQueryBuilder_validateQuerySqlWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteQueryBuilder *self, SquiDBSQLiteDatabase *db, NSString *sql);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSStringArray_(ComYahooAndroidSqliteSQLiteQueryBuilder *self, IOSObjectArray *projectionIn);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteQueryBuilder_computeProjectionWithNSStringArray_(SquiDBSQLiteQueryBuilder *self, IOSObjectArray *projectionIn);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteQueryBuilder__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteQueryBuilder__Annotations$1(void);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteQueryBuilder)
+J2OBJC_INITIALIZED_DEFN(SquiDBSQLiteQueryBuilder)
 
-@implementation ComYahooAndroidSqliteSQLiteQueryBuilder
+@implementation SquiDBSQLiteQueryBuilder
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_init(self);
+  SquiDBSQLiteQueryBuilder_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -112,14 +112,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   if ([mWhereClause_ java_length] == 0) {
     (void) [((JavaLangStringBuilder *) nil_chk(mWhereClause_)) appendWithChar:'('];
   }
-  ComYahooAndroidSqliteDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(mWhereClause_, inWhere);
+  SquiDBDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(mWhereClause_, inWhere);
 }
 
 - (void)setProjectionMapWithJavaUtilMap:(id<JavaUtilMap>)columnMap {
   mProjectionMap_ = columnMap;
 }
 
-- (void)setCursorFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory {
+- (void)setCursorFactoryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory {
   mFactory_ = factory;
 }
 
@@ -135,55 +135,55 @@ J2OBJC_IGNORE_DESIGNATED_END
                              withNSString:(NSString *)having
                              withNSString:(NSString *)orderBy
                              withNSString:(NSString *)limit {
-  return ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(distinct, tables, columns, where, groupBy, having, orderBy, limit);
+  return SquiDBSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(distinct, tables, columns, where, groupBy, having, orderBy, limit);
 }
 
 + (void)appendClauseWithJavaLangStringBuilder:(JavaLangStringBuilder *)s
                                  withNSString:(NSString *)name
                                  withNSString:(NSString *)clause {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(s, name, clause);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(s, name, clause);
 }
 
 + (void)appendColumnsWithJavaLangStringBuilder:(JavaLangStringBuilder *)s
                              withNSStringArray:(IOSObjectArray *)columns {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(s, columns);
+  SquiDBSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(s, columns);
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                            withNSStringArray:(IOSObjectArray *)projectionIn
-                                                                 withNSString:(NSString *)selection
-                                                            withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                 withNSString:(NSString *)groupBy
-                                                                 withNSString:(NSString *)having
-                                                                 withNSString:(NSString *)sortOrder {
-  return [self queryWithComYahooAndroidSqliteSQLiteDatabase:db withNSStringArray:projectionIn withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:sortOrder withNSString:nil];
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSStringArray:(IOSObjectArray *)projectionIn
+                                      withNSString:(NSString *)selection
+                                 withNSStringArray:(IOSObjectArray *)selectionArgs
+                                      withNSString:(NSString *)groupBy
+                                      withNSString:(NSString *)having
+                                      withNSString:(NSString *)sortOrder {
+  return [self queryWithSquiDBSQLiteDatabase:db withNSStringArray:projectionIn withNSString:selection withNSStringArray:selectionArgs withNSString:groupBy withNSString:having withNSString:sortOrder withNSString:nil];
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                            withNSStringArray:(IOSObjectArray *)projectionIn
-                                                                 withNSString:(NSString *)selection
-                                                            withNSStringArray:(IOSObjectArray *)selectionArgs
-                                                                 withNSString:(NSString *)groupBy
-                                                                 withNSString:(NSString *)having
-                                                                 withNSString:(NSString *)sortOrder
-                                                                 withNSString:(NSString *)limit {
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSStringArray:(IOSObjectArray *)projectionIn
+                                      withNSString:(NSString *)selection
+                                 withNSStringArray:(IOSObjectArray *)selectionArgs
+                                      withNSString:(NSString *)groupBy
+                                      withNSString:(NSString *)having
+                                      withNSString:(NSString *)sortOrder
+                                      withNSString:(NSString *)limit {
   if (mTables_ == nil) {
     return nil;
   }
   if (mStrict_ && selection != nil && [selection java_length] > 0) {
     NSString *sqlForValidation = [self buildQueryWithNSStringArray:projectionIn withNSString:JreStrcat("C$C", '(', selection, ')') withNSString:groupBy withNSString:having withNSString:sortOrder withNSString:limit];
-    ComYahooAndroidSqliteSQLiteQueryBuilder_validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(self, db, sqlForValidation);
+    SquiDBSQLiteQueryBuilder_validateQuerySqlWithSquiDBSQLiteDatabase_withNSString_(self, db, sqlForValidation);
   }
   NSString *sql = [self buildQueryWithNSStringArray:projectionIn withNSString:selection withNSString:groupBy withNSString:having withNSString:sortOrder withNSString:limit];
-  if (ComYahooSquidbUtilityLogger_isLoggableWithNSString_withComYahooSquidbUtilityLogger_Level_(ComYahooAndroidSqliteSQLiteQueryBuilder_TAG, JreLoadEnum(ComYahooSquidbUtilityLogger_Level, DEBUG))) {
-    ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteQueryBuilder_TAG, JreStrcat("$$", @"Performing query: ", sql));
+  if (SquiDBLogger_isLoggableWithNSString_withSquiDBLogger_Level_(SquiDBSQLiteQueryBuilder_TAG, JreLoadEnum(SquiDBLogger_Level, DEBUG))) {
+    SquiDBLogger_dWithNSString_withNSString_(SquiDBSQLiteQueryBuilder_TAG, JreStrcat("$$", @"Performing query: ", sql));
   }
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db)) rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:mFactory_ withNSString:sql withNSStringArray:selectionArgs withNSString:ComYahooAndroidSqliteSQLiteDatabase_findEditTableWithNSString_(mTables_)];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db)) rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:mFactory_ withNSString:sql withNSStringArray:selectionArgs withNSString:SquiDBSQLiteDatabase_findEditTableWithNSString_(mTables_)];
 }
 
-- (void)validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                   withNSString:(NSString *)sql {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(self, db, sql);
+- (void)validateQuerySqlWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                    withNSString:(NSString *)sql {
+  SquiDBSQLiteQueryBuilder_validateQuerySqlWithSquiDBSQLiteDatabase_withNSString_(self, db, sql);
 }
 
 - (NSString *)buildQueryWithNSStringArray:(IOSObjectArray *)projectionIn
@@ -192,7 +192,7 @@ J2OBJC_IGNORE_DESIGNATED_END
                              withNSString:(NSString *)having
                              withNSString:(NSString *)sortOrder
                              withNSString:(NSString *)limit {
-  IOSObjectArray *projection = ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
+  IOSObjectArray *projection = SquiDBSQLiteQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
   JavaLangStringBuilder *where = new_JavaLangStringBuilder_init();
   jboolean hasBaseWhereClause = mWhereClause_ != nil && [mWhereClause_ java_length] > 0;
   if (hasBaseWhereClause) {
@@ -207,7 +207,7 @@ J2OBJC_IGNORE_DESIGNATED_END
     (void) [where appendWithNSString:selection];
     (void) [where appendWithChar:')'];
   }
-  return ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(mDistinct_, mTables_, projection, [where description], groupBy, having, sortOrder, limit);
+  return SquiDBSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(mDistinct_, mTables_, projection, [where description], groupBy, having, sortOrder, limit);
 }
 
 - (NSString *)buildQueryWithNSStringArray:(IOSObjectArray *)projectionIn
@@ -269,13 +269,13 @@ J2OBJC_IGNORE_DESIGNATED_END
     }
     (void) [query appendWithNSString:IOSObjectArray_Get(subQueries, i)];
   }
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" ORDER BY ", sortOrder);
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" LIMIT ", limit);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" ORDER BY ", sortOrder);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" LIMIT ", limit);
   return [query description];
 }
 
 - (IOSObjectArray *)computeProjectionWithNSStringArray:(IOSObjectArray *)projectionIn {
-  return ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
+  return SquiDBSQLiteQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -292,8 +292,8 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "LNSString;", 0x9, 13, 14, -1, -1, -1, -1 },
     { NULL, "V", 0xa, 15, 16, -1, -1, -1, -1 },
     { NULL, "V", 0x9, 17, 18, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 19, 20, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 19, 21, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 19, 20, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 19, 21, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 22, 23, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 24, 25, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 24, 26, -1, -1, 27, -1 },
@@ -312,14 +312,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[4].selector = @selector(appendWhereWithJavaLangCharSequence:);
   methods[5].selector = @selector(appendWhereEscapeStringWithNSString:);
   methods[6].selector = @selector(setProjectionMapWithJavaUtilMap:);
-  methods[7].selector = @selector(setCursorFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:);
+  methods[7].selector = @selector(setCursorFactoryWithSquiDBSQLiteDatabase_CursorFactory:);
   methods[8].selector = @selector(setStrictWithBoolean:);
   methods[9].selector = @selector(buildQueryStringWithBoolean:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:withNSString:);
   methods[10].selector = @selector(appendClauseWithJavaLangStringBuilder:withNSString:withNSString:);
   methods[11].selector = @selector(appendColumnsWithJavaLangStringBuilder:withNSStringArray:);
-  methods[12].selector = @selector(queryWithComYahooAndroidSqliteSQLiteDatabase:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:);
-  methods[13].selector = @selector(queryWithComYahooAndroidSqliteSQLiteDatabase:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
-  methods[14].selector = @selector(validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase:withNSString:);
+  methods[12].selector = @selector(queryWithSquiDBSQLiteDatabase:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:);
+  methods[13].selector = @selector(queryWithSquiDBSQLiteDatabase:withNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
+  methods[14].selector = @selector(validateQuerySqlWithSquiDBSQLiteDatabase:withNSString:);
   methods[15].selector = @selector(buildQueryWithNSStringArray:withNSString:withNSString:withNSString:withNSString:withNSString:);
   methods[16].selector = @selector(buildQueryWithNSStringArray:withNSString:withNSStringArray:withNSString:withNSString:withNSString:withNSString:);
   methods[17].selector = @selector(buildUnionSubQueryWithNSString:withNSStringArray:withJavaUtilSet:withInt:withNSString:withNSString:withNSString:withNSString:);
@@ -335,24 +335,24 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "mTables_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mWhereClause_", "LJavaLangStringBuilder;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mDistinct_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "mFactory_", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mFactory_", "LSquiDBSQLiteDatabase_CursorFactory;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mStrict_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "setDistinct", "Z", "setTables", "LNSString;", "appendWhere", "LJavaLangCharSequence;", "appendWhereEscapeString", "setProjectionMap", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;)V", "setCursorFactory", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;", "setStrict", "buildQueryString", "ZLNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;LNSString;", "appendClause", "LJavaLangStringBuilder;LNSString;LNSString;", "appendColumns", "LJavaLangStringBuilder;[LNSString;", "query", "LComYahooAndroidSqliteSQLiteDatabase;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;", "LComYahooAndroidSqliteSQLiteDatabase;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "validateQuerySql", "LComYahooAndroidSqliteSQLiteDatabase;LNSString;", "buildQuery", "[LNSString;LNSString;LNSString;LNSString;LNSString;LNSString;", "[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", (void *)&ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$0, "buildUnionSubQuery", "LNSString;[LNSString;LJavaUtilSet;ILNSString;LNSString;LNSString;LNSString;", "(Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", "LNSString;[LNSString;LJavaUtilSet;ILNSString;LNSString;[LNSString;LNSString;LNSString;", "(Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", (void *)&ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$1, "buildUnionQuery", "[LNSString;LNSString;LNSString;", "computeProjection", "[LNSString;", &ComYahooAndroidSqliteSQLiteQueryBuilder_TAG, &ComYahooAndroidSqliteSQLiteQueryBuilder_sLimitPattern, &ComYahooAndroidSqliteSQLiteQueryBuilder_BASE_COLUMNS_COUNT, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteQueryBuilder = { "SQLiteQueryBuilder", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 21, 9, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteQueryBuilder;
+  static const void *ptrTable[] = { "setDistinct", "Z", "setTables", "LNSString;", "appendWhere", "LJavaLangCharSequence;", "appendWhereEscapeString", "setProjectionMap", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;)V", "setCursorFactory", "LSquiDBSQLiteDatabase_CursorFactory;", "setStrict", "buildQueryString", "ZLNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;LNSString;", "appendClause", "LJavaLangStringBuilder;LNSString;LNSString;", "appendColumns", "LJavaLangStringBuilder;[LNSString;", "query", "LSquiDBSQLiteDatabase;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;", "LSquiDBSQLiteDatabase;[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", "validateQuerySql", "LSquiDBSQLiteDatabase;LNSString;", "buildQuery", "[LNSString;LNSString;LNSString;LNSString;LNSString;LNSString;", "[LNSString;LNSString;[LNSString;LNSString;LNSString;LNSString;LNSString;", (void *)&SquiDBSQLiteQueryBuilder__Annotations$0, "buildUnionSubQuery", "LNSString;[LNSString;LJavaUtilSet;ILNSString;LNSString;LNSString;LNSString;", "(Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", "LNSString;[LNSString;LJavaUtilSet;ILNSString;LNSString;[LNSString;LNSString;LNSString;", "(Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", (void *)&SquiDBSQLiteQueryBuilder__Annotations$1, "buildUnionQuery", "[LNSString;LNSString;LNSString;", "computeProjection", "[LNSString;", &SquiDBSQLiteQueryBuilder_TAG, &SquiDBSQLiteQueryBuilder_sLimitPattern, &SquiDBSQLiteQueryBuilder_BASE_COLUMNS_COUNT, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteQueryBuilder = { "SQLiteQueryBuilder", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 21, 9, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteQueryBuilder;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteSQLiteQueryBuilder class]) {
-    ComYahooAndroidSqliteSQLiteQueryBuilder_sLimitPattern = JavaUtilRegexPattern_compileWithNSString_(@"\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteSQLiteQueryBuilder)
+  if (self == [SquiDBSQLiteQueryBuilder class]) {
+    SquiDBSQLiteQueryBuilder_sLimitPattern = JavaUtilRegexPattern_compileWithNSString_(@"\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
+    J2OBJC_SET_INITIALIZED(SquiDBSQLiteQueryBuilder)
   }
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteQueryBuilder_init(ComYahooAndroidSqliteSQLiteQueryBuilder *self) {
+void SquiDBSQLiteQueryBuilder_init(SquiDBSQLiteQueryBuilder *self) {
   NSObject_init(self);
   self->mProjectionMap_ = nil;
   self->mTables_ = @"";
@@ -361,20 +361,20 @@ void ComYahooAndroidSqliteSQLiteQueryBuilder_init(ComYahooAndroidSqliteSQLiteQue
   self->mFactory_ = nil;
 }
 
-ComYahooAndroidSqliteSQLiteQueryBuilder *new_ComYahooAndroidSqliteSQLiteQueryBuilder_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteQueryBuilder, init)
+SquiDBSQLiteQueryBuilder *new_SquiDBSQLiteQueryBuilder_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteQueryBuilder, init)
 }
 
-ComYahooAndroidSqliteSQLiteQueryBuilder *create_ComYahooAndroidSqliteSQLiteQueryBuilder_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteQueryBuilder, init)
+SquiDBSQLiteQueryBuilder *create_SquiDBSQLiteQueryBuilder_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteQueryBuilder, init)
 }
 
-NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(jboolean distinct, NSString *tables, IOSObjectArray *columns, NSString *where, NSString *groupBy, NSString *having, NSString *orderBy, NSString *limit) {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_initialize();
-  if (ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(groupBy) && !ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(having)) {
+NSString *SquiDBSQLiteQueryBuilder_buildQueryStringWithBoolean_withNSString_withNSStringArray_withNSString_withNSString_withNSString_withNSString_withNSString_(jboolean distinct, NSString *tables, IOSObjectArray *columns, NSString *where, NSString *groupBy, NSString *having, NSString *orderBy, NSString *limit) {
+  SquiDBSQLiteQueryBuilder_initialize();
+  if (SquiDBSqlUtils_isEmptyWithNSString_(groupBy) && !SquiDBSqlUtils_isEmptyWithNSString_(having)) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"HAVING clauses are only permitted when using a groupBy clause");
   }
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(limit) && ![((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(ComYahooAndroidSqliteSQLiteQueryBuilder_sLimitPattern)) matcherWithJavaLangCharSequence:limit])) matches]) {
+  if (!SquiDBSqlUtils_isEmptyWithNSString_(limit) && ![((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(SquiDBSQLiteQueryBuilder_sLimitPattern)) matcherWithJavaLangCharSequence:limit])) matches]) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$", @"invalid LIMIT clauses:", limit));
   }
   JavaLangStringBuilder *query = new_JavaLangStringBuilder_initWithInt_(120);
@@ -383,31 +383,31 @@ NSString *ComYahooAndroidSqliteSQLiteQueryBuilder_buildQueryStringWithBoolean_wi
     (void) [query appendWithNSString:@"DISTINCT "];
   }
   if (columns != nil && columns->size_ != 0) {
-    ComYahooAndroidSqliteSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(query, columns);
+    SquiDBSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(query, columns);
   }
   else {
     (void) [query appendWithNSString:@"* "];
   }
   (void) [query appendWithNSString:@"FROM "];
   (void) [query appendWithNSString:tables];
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" WHERE ", where);
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" GROUP BY ", groupBy);
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" HAVING ", having);
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" ORDER BY ", orderBy);
-  ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" LIMIT ", limit);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" WHERE ", where);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" GROUP BY ", groupBy);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" HAVING ", having);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" ORDER BY ", orderBy);
+  SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(query, @" LIMIT ", limit);
   return [query description];
 }
 
-void ComYahooAndroidSqliteSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(JavaLangStringBuilder *s, NSString *name, NSString *clause) {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_initialize();
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(clause)) {
+void SquiDBSQLiteQueryBuilder_appendClauseWithJavaLangStringBuilder_withNSString_withNSString_(JavaLangStringBuilder *s, NSString *name, NSString *clause) {
+  SquiDBSQLiteQueryBuilder_initialize();
+  if (!SquiDBSqlUtils_isEmptyWithNSString_(clause)) {
     (void) [((JavaLangStringBuilder *) nil_chk(s)) appendWithNSString:name];
     (void) [s appendWithNSString:clause];
   }
 }
 
-void ComYahooAndroidSqliteSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(JavaLangStringBuilder *s, IOSObjectArray *columns) {
-  ComYahooAndroidSqliteSQLiteQueryBuilder_initialize();
+void SquiDBSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuilder_withNSStringArray_(JavaLangStringBuilder *s, IOSObjectArray *columns) {
+  SquiDBSQLiteQueryBuilder_initialize();
   jint n = ((IOSObjectArray *) nil_chk(columns))->size_;
   for (jint i = 0; i < n; i++) {
     NSString *column = IOSObjectArray_Get(columns, i);
@@ -421,11 +421,11 @@ void ComYahooAndroidSqliteSQLiteQueryBuilder_appendColumnsWithJavaLangStringBuil
   (void) [((JavaLangStringBuilder *) nil_chk(s)) appendWithChar:' '];
 }
 
-void ComYahooAndroidSqliteSQLiteQueryBuilder_validateQuerySqlWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteQueryBuilder *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql) {
-  [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db)) getThreadSession])) prepareWithNSString:sql withInt:[db getThreadDefaultConnectionFlagsWithBoolean:true] withComYahooAndroidSqliteSQLiteStatementInfo:nil];
+void SquiDBSQLiteQueryBuilder_validateQuerySqlWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteQueryBuilder *self, SquiDBSQLiteDatabase *db, NSString *sql) {
+  [((SquiDBSQLiteSession *) nil_chk([((SquiDBSQLiteDatabase *) nil_chk(db)) getThreadSession])) prepareWithNSString:sql withInt:[db getThreadDefaultConnectionFlagsWithBoolean:true] withSquiDBSQLiteStatementInfo:nil];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSStringArray_(ComYahooAndroidSqliteSQLiteQueryBuilder *self, IOSObjectArray *projectionIn) {
+IOSObjectArray *SquiDBSQLiteQueryBuilder_computeProjectionWithNSStringArray_(SquiDBSQLiteQueryBuilder *self, IOSObjectArray *projectionIn) {
   if (projectionIn != nil && projectionIn->size_ > 0) {
     if (self->mProjectionMap_ != nil) {
       IOSObjectArray *projection = [IOSObjectArray newArrayWithLength:projectionIn->size_ type:NSString_class_()];
@@ -456,7 +456,7 @@ IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSS
     jint i = 0;
     while ([((id<JavaUtilIterator>) nil_chk(entryIter)) hasNext]) {
       id<JavaUtilMap_Entry> entry_ = [entryIter next];
-      if ([((NSString *) nil_chk([((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey])) isEqual:ComYahooAndroidSqliteSQLiteQueryBuilder_BASE_COLUMNS_COUNT]) {
+      if ([((NSString *) nil_chk([((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey])) isEqual:SquiDBSQLiteQueryBuilder_BASE_COLUMNS_COUNT]) {
         continue;
       }
       (void) IOSObjectArray_Set(projection, i++, [entry_ getValue]);
@@ -466,12 +466,14 @@ IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder_computeProjectionWithNSS
   return nil;
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$0() {
+IOSObjectArray *SquiDBSQLiteQueryBuilder__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteQueryBuilder__Annotations$1() {
+IOSObjectArray *SquiDBSQLiteQueryBuilder__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteQueryBuilder)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteQueryBuilder)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteQueryBuilder, "com.yahoo.android.sqlite", "SquiDB")

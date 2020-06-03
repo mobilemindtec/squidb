@@ -15,14 +15,14 @@
 #include "DataChangedNotifier.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbDataAbstractModel;
-@class ComYahooSquidbDataSquidDatabase;
-@class ComYahooSquidbSqlSqlTable;
 @class IOSObjectArray;
+@class SquiDBAbstractModel;
+@class SquiDBSqlTable;
+@class SquiDBSquidDatabase;
 @protocol JavaUtilCollection;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataSimpleDataChangedNotifier : ComYahooSquidbDataDataChangedNotifier
+@interface SquiDBSimpleDataChangedNotifier : SquiDBDataChangedNotifier
 
 #pragma mark Public
 
@@ -30,33 +30,35 @@
 
 - (instancetype __nonnull)initWithJavaUtilCollection:(id<JavaUtilCollection>)tables;
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlSqlTableArray:(IOSObjectArray *)tables;
+- (instancetype __nonnull)initWithSquiDBSqlTableArray:(IOSObjectArray *)tables;
 
 #pragma mark Protected
 
 - (jboolean)accumulateNotificationObjectsWithJavaUtilSet:(id<JavaUtilSet>)accumulatorSet
-                           withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                     withComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-   withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)operation
-                     withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
+                                      withSquiDBSqlTable:(SquiDBSqlTable *)table
+                                 withSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+               withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)operation
+                                 withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
                                                 withLong:(jlong)rowId;
 
 - (void)onDataChanged;
 
-- (void)sendNotificationWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                     withId:(ComYahooSquidbDataSimpleDataChangedNotifier *)notifyObject;
+- (void)sendNotificationWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                         withId:(SquiDBSimpleDataChangedNotifier *)notifyObject;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSimpleDataChangedNotifier)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSimpleDataChangedNotifier)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSimpleDataChangedNotifier_init(ComYahooSquidbDataSimpleDataChangedNotifier *self);
+FOUNDATION_EXPORT void SquiDBSimpleDataChangedNotifier_init(SquiDBSimpleDataChangedNotifier *self);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSimpleDataChangedNotifier_initWithComYahooSquidbSqlSqlTableArray_(ComYahooSquidbDataSimpleDataChangedNotifier *self, IOSObjectArray *tables);
+FOUNDATION_EXPORT void SquiDBSimpleDataChangedNotifier_initWithSquiDBSqlTableArray_(SquiDBSimpleDataChangedNotifier *self, IOSObjectArray *tables);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataSimpleDataChangedNotifier_initWithJavaUtilCollection_(ComYahooSquidbDataSimpleDataChangedNotifier *self, id<JavaUtilCollection> tables);
+FOUNDATION_EXPORT void SquiDBSimpleDataChangedNotifier_initWithJavaUtilCollection_(SquiDBSimpleDataChangedNotifier *self, id<JavaUtilCollection> tables);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSimpleDataChangedNotifier)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSimpleDataChangedNotifier)
+
+@compatibility_alias ComYahooSquidbDataSimpleDataChangedNotifier SquiDBSimpleDataChangedNotifier;
 
 
 #if __has_feature(nullability)

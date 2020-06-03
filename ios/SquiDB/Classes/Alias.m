@@ -11,14 +11,14 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsAlias__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBAlias__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsAlias
+@implementation SquiDBAlias
 
 @synthesize value = value_;
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsAlias_class_();
+  return SquiDBAlias_class_();
 }
 
 - (NSString *)description {
@@ -45,21 +45,23 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsAlias__A
   static const J2ObjcFieldInfo fields[] = {
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsAlias__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsAlias = { "Alias", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsAlias;
+  static const void *ptrTable[] = { (void *)&SquiDBAlias__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBAlias = { "Alias", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_SquiDBAlias;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsAlias> create_ComYahooSquidbAnnotationsAlias(NSString *value) {
-  ComYahooSquidbAnnotationsAlias *self = AUTORELEASE([[ComYahooSquidbAnnotationsAlias alloc] init]);
+id<SquiDBAlias> create_SquiDBAlias(NSString *value) {
+  SquiDBAlias *self = AUTORELEASE([[SquiDBAlias alloc] init]);
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsAlias__Annotations$0() {
+IOSObjectArray *SquiDBAlias__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, FIELD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsAlias)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBAlias)
+
+J2OBJC_NAME_MAPPING(SquiDBAlias, "com.yahoo.squidb.annotations", "SquiDB")

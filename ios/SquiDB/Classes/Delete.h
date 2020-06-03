@@ -15,32 +15,32 @@
 #include "J2ObjC_header.h"
 #include "TableStatement.h"
 
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlView;
+@class SquiDBCriterion;
+@class SquiDBSqlBuilder;
+@class SquiDBSqlTable;
+@class SquiDBTable;
+@class SquiDBView;
 
-@interface ComYahooSquidbSqlDelete : ComYahooSquidbSqlTableStatement
+@interface SquiDBDelete : SquiDBTableStatement
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlDelete *)fromWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
++ (SquiDBDelete *)fromWithSquiDBTable:(SquiDBTable *)table;
 
-+ (ComYahooSquidbSqlDelete *)fromWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
++ (SquiDBDelete *)fromWithSquiDBView:(SquiDBView *)view;
 
-- (ComYahooSquidbSqlSqlTable *)getTable;
+- (SquiDBSqlTable *)getTable;
 
-- (ComYahooSquidbSqlDelete *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBDelete *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
 #pragma mark Protected
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table;
+- (instancetype __nonnull)initWithSquiDBSqlTable:(SquiDBSqlTable *)table;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
@@ -48,19 +48,21 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlDelete)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDelete)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlDelete *self, ComYahooSquidbSqlSqlTable *table);
+FOUNDATION_EXPORT void SquiDBDelete_initWithSquiDBSqlTable_(SquiDBDelete *self, SquiDBSqlTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDelete *new_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBDelete *new_SquiDBDelete_initWithSquiDBSqlTable_(SquiDBSqlTable *table) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDelete *create_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table);
+FOUNDATION_EXPORT SquiDBDelete *create_SquiDBDelete_initWithSquiDBSqlTable_(SquiDBSqlTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDelete *ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlTable_(ComYahooSquidbSqlTable *table);
+FOUNDATION_EXPORT SquiDBDelete *SquiDBDelete_fromWithSquiDBTable_(SquiDBTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlDelete *ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view);
+FOUNDATION_EXPORT SquiDBDelete *SquiDBDelete_fromWithSquiDBView_(SquiDBView *view);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlDelete)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDelete)
+
+@compatibility_alias ComYahooSquidbSqlDelete SquiDBDelete;
 
 
 #if __has_feature(nullability)

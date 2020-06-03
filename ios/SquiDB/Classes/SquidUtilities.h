@@ -14,14 +14,14 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbDataSquidDatabase;
 @class IOSObjectArray;
 @class JavaIoFile;
 @class JavaLangStringBuilder;
-@protocol ComYahooSquidbDataICursor;
+@class SquiDBSquidDatabase;
 @protocol JavaUtilCollection;
+@protocol SquiDBICursor;
 
-@interface ComYahooSquidbUtilitySquidUtilities : NSObject
+@interface SquiDBSquidUtilities : NSObject
 
 #pragma mark Public
 
@@ -30,69 +30,71 @@
 + (void)addAllWithJavaUtilCollection:(id<JavaUtilCollection>)collection
                    withNSObjectArray:(IOSObjectArray *)objects;
 
-+ (void)copyDatabaseWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                           withNSString:(NSString *)toFolder OBJC_METHOD_FAMILY_NONE;
++ (void)copyDatabaseWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                               withNSString:(NSString *)toFolder OBJC_METHOD_FAMILY_NONE;
 
 + (void)copyFileWithJavaIoFile:(JavaIoFile *)inArg
                 withJavaIoFile:(JavaIoFile *)outArg OBJC_METHOD_FAMILY_NONE;
 
-+ (void)dumpCurrentRowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor;
++ (void)dumpCurrentRowWithSquiDBICursor:(id<SquiDBICursor>)cursor;
 
-+ (void)dumpCurrentRowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                            withInt:(jint)maxColumnWidth;
++ (void)dumpCurrentRowWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                                withInt:(jint)maxColumnWidth;
 
-+ (void)dumpCurrentRowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                            withInt:(jint)maxColumnWidth
-                          withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
++ (void)dumpCurrentRowWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                                withInt:(jint)maxColumnWidth
+              withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
 
-+ (void)dumpCurrentRowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                          withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
++ (void)dumpCurrentRowWithSquiDBICursor:(id<SquiDBICursor>)cursor
+              withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
 
-+ (void)dumpCursorWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor;
++ (void)dumpCursorWithSquiDBICursor:(id<SquiDBICursor>)cursor;
 
-+ (void)dumpCursorWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                        withInt:(jint)maxColumnWidth;
++ (void)dumpCursorWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                            withInt:(jint)maxColumnWidth;
 
-+ (void)dumpCursorWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                        withInt:(jint)maxColumnWidth
-                      withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
++ (void)dumpCursorWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                            withInt:(jint)maxColumnWidth
+          withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
 
-+ (void)dumpCursorWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                      withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
++ (void)dumpCursorWithSquiDBICursor:(id<SquiDBICursor>)cursor
+          withJavaLangStringBuilder:(JavaLangStringBuilder *)builder;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbUtilitySquidUtilities)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidUtilities)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_init(ComYahooSquidbUtilitySquidUtilities *self);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_init(SquiDBSquidUtilities *self);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilitySquidUtilities *new_ComYahooSquidbUtilitySquidUtilities_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSquidUtilities *new_SquiDBSquidUtilities_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilitySquidUtilities *create_ComYahooSquidbUtilitySquidUtilities_init(void);
+FOUNDATION_EXPORT SquiDBSquidUtilities *create_SquiDBSquidUtilities_init(void);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCursorWithComYahooSquidbDataICursor_(id<ComYahooSquidbDataICursor> cursor);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCursorWithSquiDBICursor_(id<SquiDBICursor> cursor);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCursorWithComYahooSquidbDataICursor_withInt_(id<ComYahooSquidbDataICursor> cursor, jint maxColumnWidth);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCursorWithSquiDBICursor_withInt_(id<SquiDBICursor> cursor, jint maxColumnWidth);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCursorWithComYahooSquidbDataICursor_withJavaLangStringBuilder_(id<ComYahooSquidbDataICursor> cursor, JavaLangStringBuilder *builder);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCursorWithSquiDBICursor_withJavaLangStringBuilder_(id<SquiDBICursor> cursor, JavaLangStringBuilder *builder);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCursorWithComYahooSquidbDataICursor_withInt_withJavaLangStringBuilder_(id<ComYahooSquidbDataICursor> cursor, jint maxColumnWidth, JavaLangStringBuilder *builder);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCursorWithSquiDBICursor_withInt_withJavaLangStringBuilder_(id<SquiDBICursor> cursor, jint maxColumnWidth, JavaLangStringBuilder *builder);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCurrentRowWithComYahooSquidbDataICursor_(id<ComYahooSquidbDataICursor> cursor);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCurrentRowWithSquiDBICursor_(id<SquiDBICursor> cursor);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCurrentRowWithComYahooSquidbDataICursor_withInt_(id<ComYahooSquidbDataICursor> cursor, jint maxColumnWidth);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCurrentRowWithSquiDBICursor_withInt_(id<SquiDBICursor> cursor, jint maxColumnWidth);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCurrentRowWithComYahooSquidbDataICursor_withJavaLangStringBuilder_(id<ComYahooSquidbDataICursor> cursor, JavaLangStringBuilder *builder);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCurrentRowWithSquiDBICursor_withJavaLangStringBuilder_(id<SquiDBICursor> cursor, JavaLangStringBuilder *builder);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_dumpCurrentRowWithComYahooSquidbDataICursor_withInt_withJavaLangStringBuilder_(id<ComYahooSquidbDataICursor> cursor, jint maxColumnWidth, JavaLangStringBuilder *builder);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_dumpCurrentRowWithSquiDBICursor_withInt_withJavaLangStringBuilder_(id<SquiDBICursor> cursor, jint maxColumnWidth, JavaLangStringBuilder *builder);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(id<JavaUtilCollection> collection, IOSObjectArray *objects);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(id<JavaUtilCollection> collection, IOSObjectArray *objects);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_copyDatabaseWithComYahooSquidbDataSquidDatabase_withNSString_(ComYahooSquidbDataSquidDatabase *database, NSString *toFolder);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_copyDatabaseWithSquiDBSquidDatabase_withNSString_(SquiDBSquidDatabase *database, NSString *toFolder);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilitySquidUtilities_copyFileWithJavaIoFile_withJavaIoFile_(JavaIoFile *inArg, JavaIoFile *outArg);
+FOUNDATION_EXPORT void SquiDBSquidUtilities_copyFileWithJavaIoFile_withJavaIoFile_(JavaIoFile *inArg, JavaIoFile *outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilitySquidUtilities)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidUtilities)
+
+@compatibility_alias ComYahooSquidbUtilitySquidUtilities SquiDBSquidUtilities;
 
 
 #if __has_feature(nullability)

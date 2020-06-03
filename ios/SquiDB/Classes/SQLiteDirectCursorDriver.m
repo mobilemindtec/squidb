@@ -12,41 +12,41 @@
 #include "SQLiteQuery.h"
 #include "java/lang/RuntimeException.h"
 
-@interface ComYahooAndroidSqliteSQLiteDirectCursorDriver () {
+@interface SquiDBSQLiteDirectCursorDriver () {
  @public
-  ComYahooAndroidSqliteSQLiteDatabase *mDatabase_;
+  SquiDBSQLiteDatabase *mDatabase_;
   NSString *mEditTable_;
   NSString *mSql_;
-  ComYahooAndroidSqliteSQLiteQuery *mQuery_;
+  SquiDBSQLiteQuery *mQuery_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mDatabase_, ComYahooAndroidSqliteSQLiteDatabase *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mEditTable_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mSql_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mQuery_, ComYahooAndroidSqliteSQLiteQuery *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDirectCursorDriver, mDatabase_, SquiDBSQLiteDatabase *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDirectCursorDriver, mEditTable_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDirectCursorDriver, mSql_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDirectCursorDriver, mQuery_, SquiDBSQLiteQuery *)
 
-@implementation ComYahooAndroidSqliteSQLiteDirectCursorDriver
+@implementation SquiDBSQLiteDirectCursorDriver
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                               withNSString:(NSString *)sql
-                                               withNSString:(NSString *)editTable {
-  ComYahooAndroidSqliteSQLiteDirectCursorDriver_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_(self, db, sql, editTable);
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                withNSString:(NSString *)sql
+                                withNSString:(NSString *)editTable {
+  SquiDBSQLiteDirectCursorDriver_initWithSquiDBSQLiteDatabase_withNSString_withNSString_(self, db, sql, editTable);
   return self;
 }
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
-                                                                          withNSStringArray:(IOSObjectArray *)selectionArgs {
-  ComYahooAndroidSqliteSQLiteQuery *query = new_ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(mDatabase_, mSql_);
-  id<ComYahooSquidbDataICursor> cursor;
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
+                                               withNSStringArray:(IOSObjectArray *)selectionArgs {
+  SquiDBSQLiteQuery *query = new_SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(mDatabase_, mSql_);
+  id<SquiDBICursor> cursor;
   @try {
     [query bindAllArgsAsStringsWithNSStringArray:selectionArgs];
     if (factory == nil) {
-      cursor = new_ComYahooAndroidSqliteSQLiteCursor_initWithComYahooAndroidSqliteSQLiteCursorDriver_withNSString_withComYahooAndroidSqliteSQLiteQuery_(self, mEditTable_, query);
+      cursor = new_SquiDBSQLiteCursor_initWithSquiDBSQLiteCursorDriver_withNSString_withSquiDBSQLiteQuery_(self, mEditTable_, query);
     }
     else {
-      cursor = [factory newCursorWithComYahooAndroidSqliteSQLiteDatabase:mDatabase_ withComYahooAndroidSqliteSQLiteCursorDriver:self withNSString:mEditTable_ withComYahooAndroidSqliteSQLiteQuery:query];
+      cursor = [factory newCursorWithSquiDBSQLiteDatabase:mDatabase_ withSquiDBSQLiteCursorDriver:self withNSString:mEditTable_ withSquiDBSQLiteQuery:query];
     }
   }
   @catch (JavaLangRuntimeException *ex) {
@@ -61,13 +61,13 @@ J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mQuery_, ComY
 }
 
 - (void)setBindArgumentsWithNSStringArray:(IOSObjectArray *)bindArgs {
-  [((ComYahooAndroidSqliteSQLiteQuery *) nil_chk(mQuery_)) bindAllArgsAsStringsWithNSStringArray:bindArgs];
+  [((SquiDBSQLiteQuery *) nil_chk(mQuery_)) bindAllArgsAsStringsWithNSStringArray:bindArgs];
 }
 
 - (void)cursorDeactivated {
 }
 
-- (void)cursorRequeriedWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor {
+- (void)cursorRequeriedWithSquiDBICursor:(id<SquiDBICursor>)cursor {
 }
 
 - (NSString *)description {
@@ -77,7 +77,7 @@ J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mQuery_, ComY
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 1, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 3, 4, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -87,40 +87,42 @@ J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDirectCursorDriver, mQuery_, ComY
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabase:withNSString:withNSString:);
-  methods[1].selector = @selector(queryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withNSStringArray:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabase:withNSString:withNSString:);
+  methods[1].selector = @selector(queryWithSquiDBSQLiteDatabase_CursorFactory:withNSStringArray:);
   methods[2].selector = @selector(cursorClosed);
   methods[3].selector = @selector(setBindArgumentsWithNSStringArray:);
   methods[4].selector = @selector(cursorDeactivated);
-  methods[5].selector = @selector(cursorRequeriedWithComYahooSquidbDataICursor:);
+  methods[5].selector = @selector(cursorRequeriedWithSquiDBICursor:);
   methods[6].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "mDatabase_", "LComYahooAndroidSqliteSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mDatabase_", "LSquiDBSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mEditTable_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mSql_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mQuery_", "LComYahooAndroidSqliteSQLiteQuery;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mQuery_", "LSquiDBSQLiteQuery;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabase;LNSString;LNSString;", "query", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;[LNSString;", "setBindArguments", "[LNSString;", "cursorRequeried", "LComYahooSquidbDataICursor;", "toString" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDirectCursorDriver = { "SQLiteDirectCursorDriver", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 7, 4, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDirectCursorDriver;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabase;LNSString;LNSString;", "query", "LSquiDBSQLiteDatabase_CursorFactory;[LNSString;", "setBindArguments", "[LNSString;", "cursorRequeried", "LSquiDBICursor;", "toString" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDirectCursorDriver = { "SQLiteDirectCursorDriver", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 7, 4, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDirectCursorDriver;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDirectCursorDriver_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_(ComYahooAndroidSqliteSQLiteDirectCursorDriver *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, NSString *editTable) {
+void SquiDBSQLiteDirectCursorDriver_initWithSquiDBSQLiteDatabase_withNSString_withNSString_(SquiDBSQLiteDirectCursorDriver *self, SquiDBSQLiteDatabase *db, NSString *sql, NSString *editTable) {
   NSObject_init(self);
   self->mDatabase_ = db;
   self->mEditTable_ = editTable;
   self->mSql_ = sql;
 }
 
-ComYahooAndroidSqliteSQLiteDirectCursorDriver *new_ComYahooAndroidSqliteSQLiteDirectCursorDriver_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, NSString *editTable) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDirectCursorDriver, initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_, db, sql, editTable)
+SquiDBSQLiteDirectCursorDriver *new_SquiDBSQLiteDirectCursorDriver_initWithSquiDBSQLiteDatabase_withNSString_withNSString_(SquiDBSQLiteDatabase *db, NSString *sql, NSString *editTable) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDirectCursorDriver, initWithSquiDBSQLiteDatabase_withNSString_withNSString_, db, sql, editTable)
 }
 
-ComYahooAndroidSqliteSQLiteDirectCursorDriver *create_ComYahooAndroidSqliteSQLiteDirectCursorDriver_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, NSString *editTable) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDirectCursorDriver, initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSString_, db, sql, editTable)
+SquiDBSQLiteDirectCursorDriver *create_SquiDBSQLiteDirectCursorDriver_initWithSquiDBSQLiteDatabase_withNSString_withNSString_(SquiDBSQLiteDatabase *db, NSString *sql, NSString *editTable) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDirectCursorDriver, initWithSquiDBSQLiteDatabase_withNSString_withNSString_, db, sql, editTable)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDirectCursorDriver)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDirectCursorDriver)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDirectCursorDriver, "com.yahoo.android.sqlite", "SquiDB")

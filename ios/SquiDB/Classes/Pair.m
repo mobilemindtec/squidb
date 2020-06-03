@@ -7,29 +7,29 @@
 #include "Pair.h"
 #include "java/util/Objects.h"
 
-@implementation ComYahooAndroidSqlitePair
+@implementation SquiDBPair
 
 - (instancetype)initWithId:(id)first
                     withId:(id)second {
-  ComYahooAndroidSqlitePair_initWithId_withId_(self, first, second);
+  SquiDBPair_initWithId_withId_(self, first, second);
   return self;
 }
 
 - (jboolean)isEqual:(id)o {
-  if (!([o isKindOfClass:[ComYahooAndroidSqlitePair class]])) {
+  if (!([o isKindOfClass:[SquiDBPair class]])) {
     return false;
   }
-  ComYahooAndroidSqlitePair *p = (ComYahooAndroidSqlitePair *) cast_chk(o, [ComYahooAndroidSqlitePair class]);
-  return JavaUtilObjects_equalsWithId_withId_(((ComYahooAndroidSqlitePair *) nil_chk(p))->first_, first_) && JavaUtilObjects_equalsWithId_withId_(p->second_, second_);
+  SquiDBPair *p = (SquiDBPair *) cast_chk(o, [SquiDBPair class]);
+  return JavaUtilObjects_equalsWithId_withId_(((SquiDBPair *) nil_chk(p))->first_, first_) && JavaUtilObjects_equalsWithId_withId_(p->second_, second_);
 }
 
 - (NSUInteger)hash {
   return (first_ == nil ? 0 : ((jint) [first_ hash])) ^ (second_ == nil ? 0 : ((jint) [second_ hash]));
 }
 
-+ (ComYahooAndroidSqlitePair *)createWithId:(id)a
-                                     withId:(id)b {
-  return ComYahooAndroidSqlitePair_createWithId_withId_(a, b);
++ (SquiDBPair *)createWithId:(id)a
+                      withId:(id)b {
+  return SquiDBPair_createWithId_withId_(a, b);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -37,7 +37,7 @@
     { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
     { NULL, "Z", 0x1, 2, 3, -1, -1, -1, -1 },
     { NULL, "I", 0x1, 4, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqlitePair;", 0x9, 5, 0, -1, 6, -1, -1 },
+    { NULL, "LSquiDBPair;", 0x9, 5, 0, -1, 6, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -52,29 +52,31 @@
     { "second_", "LNSObject;", .constantValue.asLong = 0, 0x11, -1, -1, 8, -1 },
   };
   static const void *ptrTable[] = { "LNSObject;LNSObject;", "(TF;TS;)V", "equals", "LNSObject;", "hashCode", "create", "<A:Ljava/lang/Object;B:Ljava/lang/Object;>(TA;TB;)Lcom/yahoo/android/sqlite/Pair<TA;TB;>;", "TF;", "TS;", "<F:Ljava/lang/Object;S:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqlitePair = { "Pair", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 4, 2, -1, -1, -1, 9, -1 };
-  return &_ComYahooAndroidSqlitePair;
+  static const J2ObjcClassInfo _SquiDBPair = { "Pair", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 4, 2, -1, -1, -1, 9, -1 };
+  return &_SquiDBPair;
 }
 
 @end
 
-void ComYahooAndroidSqlitePair_initWithId_withId_(ComYahooAndroidSqlitePair *self, id first, id second) {
+void SquiDBPair_initWithId_withId_(SquiDBPair *self, id first, id second) {
   NSObject_init(self);
   self->first_ = first;
   self->second_ = second;
 }
 
-ComYahooAndroidSqlitePair *new_ComYahooAndroidSqlitePair_initWithId_withId_(id first, id second) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqlitePair, initWithId_withId_, first, second)
+SquiDBPair *new_SquiDBPair_initWithId_withId_(id first, id second) {
+  J2OBJC_NEW_IMPL(SquiDBPair, initWithId_withId_, first, second)
 }
 
-ComYahooAndroidSqlitePair *create_ComYahooAndroidSqlitePair_initWithId_withId_(id first, id second) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqlitePair, initWithId_withId_, first, second)
+SquiDBPair *create_SquiDBPair_initWithId_withId_(id first, id second) {
+  J2OBJC_CREATE_IMPL(SquiDBPair, initWithId_withId_, first, second)
 }
 
-ComYahooAndroidSqlitePair *ComYahooAndroidSqlitePair_createWithId_withId_(id a, id b) {
-  ComYahooAndroidSqlitePair_initialize();
-  return new_ComYahooAndroidSqlitePair_initWithId_withId_(a, b);
+SquiDBPair *SquiDBPair_createWithId_withId_(id a, id b) {
+  SquiDBPair_initialize();
+  return new_SquiDBPair_initWithId_withId_(a, b);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqlitePair)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBPair)
+
+J2OBJC_NAME_MAPPING(SquiDBPair, "com.yahoo.android.sqlite", "SquiDB")

@@ -7,17 +7,17 @@
 #include "SQLiteBlobTooBigException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteBlobTooBigException
+@implementation SquiDBSQLiteBlobTooBigException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteBlobTooBigException_init(self);
+  SquiDBSQLiteBlobTooBigException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteBlobTooBigException_initWithNSString_(self, error);
+  SquiDBSQLiteBlobTooBigException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteBlobTooBigException = { "SQLiteBlobTooBigException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteBlobTooBigException;
+  static const J2ObjcClassInfo _SquiDBSQLiteBlobTooBigException = { "SQLiteBlobTooBigException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteBlobTooBigException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteBlobTooBigException_init(ComYahooAndroidSqliteSQLiteBlobTooBigException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteBlobTooBigException_init(SquiDBSQLiteBlobTooBigException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteBlobTooBigException *new_ComYahooAndroidSqliteSQLiteBlobTooBigException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteBlobTooBigException, init)
+SquiDBSQLiteBlobTooBigException *new_SquiDBSQLiteBlobTooBigException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteBlobTooBigException, init)
 }
 
-ComYahooAndroidSqliteSQLiteBlobTooBigException *create_ComYahooAndroidSqliteSQLiteBlobTooBigException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteBlobTooBigException, init)
+SquiDBSQLiteBlobTooBigException *create_SquiDBSQLiteBlobTooBigException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteBlobTooBigException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteBlobTooBigException_initWithNSString_(ComYahooAndroidSqliteSQLiteBlobTooBigException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteBlobTooBigException_initWithNSString_(SquiDBSQLiteBlobTooBigException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteBlobTooBigException *new_ComYahooAndroidSqliteSQLiteBlobTooBigException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteBlobTooBigException, initWithNSString_, error)
+SquiDBSQLiteBlobTooBigException *new_SquiDBSQLiteBlobTooBigException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteBlobTooBigException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteBlobTooBigException *create_ComYahooAndroidSqliteSQLiteBlobTooBigException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteBlobTooBigException, initWithNSString_, error)
+SquiDBSQLiteBlobTooBigException *create_SquiDBSQLiteBlobTooBigException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteBlobTooBigException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteBlobTooBigException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteBlobTooBigException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteBlobTooBigException, "com.yahoo.android.sqlite", "SquiDB")

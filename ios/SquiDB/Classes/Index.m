@@ -8,27 +8,27 @@
 #include "J2ObjC_source.h"
 #include "Table.h"
 
-@interface ComYahooSquidbSqlIndex () {
+@interface SquiDBIndex () {
  @public
   NSString *name_;
-  ComYahooSquidbSqlTable *table_;
+  SquiDBTable *table_;
   jboolean unique_;
   IOSObjectArray *properties_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlIndex, name_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlIndex, table_, ComYahooSquidbSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlIndex, properties_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBIndex, name_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBIndex, table_, SquiDBTable *)
+J2OBJC_FIELD_SETTER(SquiDBIndex, properties_, IOSObjectArray *)
 
-@implementation ComYahooSquidbSqlIndex
+@implementation SquiDBIndex
 
 - (instancetype)initWithNSString:(NSString *)name
-      withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
+                 withSquiDBTable:(SquiDBTable *)table
                      withBoolean:(jboolean)unique
-withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(self, name, table, unique, properties);
+         withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(self, name, table, unique, properties);
   return self;
 }
 
@@ -36,7 +36,7 @@ withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
   return name_;
 }
 
-- (ComYahooSquidbSqlTable *)getTable {
+- (SquiDBTable *)getTable {
   return table_;
 }
 
@@ -52,14 +52,14 @@ withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x81, -1, 0, -1, 1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTable;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTable;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlProperty;", 0x1, -1, -1, -1, 2, -1, -1 },
+    { NULL, "[LSquiDBProperty;", 0x1, -1, -1, -1, 2, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withComYahooSquidbSqlTable:withBoolean:withComYahooSquidbSqlPropertyArray:);
+  methods[0].selector = @selector(initWithNSString:withSquiDBTable:withBoolean:withSquiDBPropertyArray:);
   methods[1].selector = @selector(getName);
   methods[2].selector = @selector(getTable);
   methods[3].selector = @selector(isUnique);
@@ -67,18 +67,18 @@ withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "name_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "table_", "LComYahooSquidbSqlTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "table_", "LSquiDBTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "unique_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "properties_", "[LComYahooSquidbSqlProperty;", .constantValue.asLong = 0, 0x12, -1, -1, 3, -1 },
+    { "properties_", "[LSquiDBProperty;", .constantValue.asLong = 0, 0x12, -1, -1, 3, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LComYahooSquidbSqlTable;Z[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)V", "()[Lcom/yahoo/squidb/sql/Property<*>;", "[Lcom/yahoo/squidb/sql/Property<*>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlIndex = { "Index", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 5, 4, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlIndex;
+  static const void *ptrTable[] = { "LNSString;LSquiDBTable;Z[LSquiDBProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)V", "()[Lcom/yahoo/squidb/sql/Property<*>;", "[Lcom/yahoo/squidb/sql/Property<*>;" };
+  static const J2ObjcClassInfo _SquiDBIndex = { "Index", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 5, 4, -1, -1, -1, -1, -1 };
+  return &_SquiDBIndex;
 }
 
 @end
 
-void ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlIndex *self, NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties) {
+void SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(SquiDBIndex *self, NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties) {
   NSObject_init(self);
   self->name_ = name;
   self->table_ = table;
@@ -86,12 +86,14 @@ void ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBool
   self->properties_ = properties;
 }
 
-ComYahooSquidbSqlIndex *new_ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlIndex, initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_, name, table, unique, properties)
+SquiDBIndex *new_SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties) {
+  J2OBJC_NEW_IMPL(SquiDBIndex, initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_, name, table, unique, properties)
 }
 
-ComYahooSquidbSqlIndex *create_ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlIndex, initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_, name, table, unique, properties)
+SquiDBIndex *create_SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties) {
+  J2OBJC_CREATE_IMPL(SquiDBIndex, initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_, name, table, unique, properties)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlIndex)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBIndex)
+
+J2OBJC_NAME_MAPPING(SquiDBIndex, "com.yahoo.squidb.sql", "SquiDB")

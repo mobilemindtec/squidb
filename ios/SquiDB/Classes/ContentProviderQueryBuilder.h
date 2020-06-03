@@ -14,50 +14,52 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbUtilityProjectionMap;
 @class IOSObjectArray;
+@class SquiDBProjectionMap;
+@class SquiDBQuery;
+@class SquiDBSqlTable;
 
-@interface ComYahooSquidbUtilityContentProviderQueryBuilder : NSObject
+@interface SquiDBContentProviderQueryBuilder : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
-                                   withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)dataSource;
+- (instancetype __nonnull)initWithSquiDBPropertyArray:(IOSObjectArray *)properties
+                                   withSquiDBSqlTable:(SquiDBSqlTable *)dataSource;
 
-- (ComYahooSquidbSqlQuery *)buildWithNSStringArray:(IOSObjectArray *)projection
-                                      withNSString:(NSString *)selection
-                                 withNSStringArray:(IOSObjectArray *)selectionArgs
-                                      withNSString:(NSString *)sortOrder;
+- (SquiDBQuery *)buildWithNSStringArray:(IOSObjectArray *)projection
+                           withNSString:(NSString *)selection
+                      withNSStringArray:(IOSObjectArray *)selectionArgs
+                           withNSString:(NSString *)sortOrder;
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setDataSourceWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)dataSource;
+- (SquiDBContentProviderQueryBuilder *)setDataSourceWithSquiDBSqlTable:(SquiDBSqlTable *)dataSource;
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setDefaultOrderWithComYahooSquidbSqlOrderArray:(IOSObjectArray *)orders;
+- (SquiDBContentProviderQueryBuilder *)setDefaultOrderWithSquiDBOrderArray:(IOSObjectArray *)orders;
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setProjectionMapWithComYahooSquidbUtilityProjectionMap:(ComYahooSquidbUtilityProjectionMap *)projectionMap;
+- (SquiDBContentProviderQueryBuilder *)setProjectionMapWithSquiDBProjectionMap:(SquiDBProjectionMap *)projectionMap;
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setStrictWithBoolean:(jboolean)strict;
+- (SquiDBContentProviderQueryBuilder *)setStrictWithBoolean:(jboolean)strict;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbUtilityContentProviderQueryBuilder)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBContentProviderQueryBuilder)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityContentProviderQueryBuilder_init(ComYahooSquidbUtilityContentProviderQueryBuilder *self);
+FOUNDATION_EXPORT void SquiDBContentProviderQueryBuilder_init(SquiDBContentProviderQueryBuilder *self);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityContentProviderQueryBuilder *new_ComYahooSquidbUtilityContentProviderQueryBuilder_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBContentProviderQueryBuilder *new_SquiDBContentProviderQueryBuilder_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityContentProviderQueryBuilder *create_ComYahooSquidbUtilityContentProviderQueryBuilder_init(void);
+FOUNDATION_EXPORT SquiDBContentProviderQueryBuilder *create_SquiDBContentProviderQueryBuilder_init(void);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(ComYahooSquidbUtilityContentProviderQueryBuilder *self, IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource);
+FOUNDATION_EXPORT void SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(SquiDBContentProviderQueryBuilder *self, IOSObjectArray *properties, SquiDBSqlTable *dataSource);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityContentProviderQueryBuilder *new_ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBContentProviderQueryBuilder *new_SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(IOSObjectArray *properties, SquiDBSqlTable *dataSource) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityContentProviderQueryBuilder *create_ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource);
+FOUNDATION_EXPORT SquiDBContentProviderQueryBuilder *create_SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(IOSObjectArray *properties, SquiDBSqlTable *dataSource);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityContentProviderQueryBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBContentProviderQueryBuilder)
+
+@compatibility_alias ComYahooSquidbUtilityContentProviderQueryBuilder SquiDBContentProviderQueryBuilder;
 
 
 #if __has_feature(nullability)

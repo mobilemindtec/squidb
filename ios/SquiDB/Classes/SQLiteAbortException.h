@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteSQLiteAbortException : ComYahooAndroidSqliteSQLiteException
+@interface SquiDBSQLiteAbortException : SquiDBSQLiteException
 
 #pragma mark Public
 
@@ -32,21 +32,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteAbortException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteAbortException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteAbortException_init(ComYahooAndroidSqliteSQLiteAbortException *self);
+FOUNDATION_EXPORT void SquiDBSQLiteAbortException_init(SquiDBSQLiteAbortException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteAbortException *new_ComYahooAndroidSqliteSQLiteAbortException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteAbortException *new_SquiDBSQLiteAbortException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteAbortException *create_ComYahooAndroidSqliteSQLiteAbortException_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteAbortException *create_SquiDBSQLiteAbortException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(ComYahooAndroidSqliteSQLiteAbortException *self, NSString *error);
+FOUNDATION_EXPORT void SquiDBSQLiteAbortException_initWithNSString_(SquiDBSQLiteAbortException *self, NSString *error);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteAbortException *new_ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteAbortException *new_SquiDBSQLiteAbortException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteAbortException *create_ComYahooAndroidSqliteSQLiteAbortException_initWithNSString_(NSString *error);
+FOUNDATION_EXPORT SquiDBSQLiteAbortException *create_SquiDBSQLiteAbortException_initWithNSString_(NSString *error);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteAbortException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteAbortException)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteAbortException SquiDBSQLiteAbortException;
 
 
 #if __has_feature(nullability)

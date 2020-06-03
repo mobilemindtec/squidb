@@ -24,10 +24,10 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface ComYahooSquidbSqlUpdate () {
+@interface SquiDBUpdate () {
  @public
-  ComYahooSquidbSqlSqlTable *table_;
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm_;
+  SquiDBSqlTable *table_;
+  SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm_;
   id<JavaUtilMap> valuesToUpdate_;
   id<JavaUtilList> criterions_;
 }
@@ -36,48 +36,48 @@
 
 - (void)visitConflictAlgorithmWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
 
-- (void)visitWhereWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                      withBoolean:(jboolean)forSqlValidation;
+- (void)visitWhereWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                           withBoolean:(jboolean)forSqlValidation;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlUpdate, table_, ComYahooSquidbSqlSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlUpdate, conflictAlgorithm_, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlUpdate, valuesToUpdate_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlUpdate, criterions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBUpdate, table_, SquiDBSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBUpdate, conflictAlgorithm_, SquiDBTableStatement_ConflictAlgorithm *)
+J2OBJC_FIELD_SETTER(SquiDBUpdate, valuesToUpdate_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBUpdate, criterions_, id<JavaUtilList>)
 
-__attribute__((unused)) static void ComYahooSquidbSqlUpdate_assertValues(ComYahooSquidbSqlUpdate *self);
+__attribute__((unused)) static void SquiDBUpdate_assertValues(SquiDBUpdate *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(ComYahooSquidbSqlUpdate *self, JavaLangStringBuilder *sql);
+__attribute__((unused)) static void SquiDBUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(SquiDBUpdate *self, JavaLangStringBuilder *sql);
 
-__attribute__((unused)) static void ComYahooSquidbSqlUpdate_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlUpdate *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBUpdate_visitWhereWithSquiDBSqlBuilder_withBoolean_(SquiDBUpdate *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-@implementation ComYahooSquidbSqlUpdate
+@implementation SquiDBUpdate
 
-- (instancetype)initWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table {
-  ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(self, table);
+- (instancetype)initWithSquiDBSqlTable:(SquiDBSqlTable *)table {
+  SquiDBUpdate_initWithSquiDBSqlTable_(self, table);
   return self;
 }
 
-+ (ComYahooSquidbSqlUpdate *)tableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  return ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlTable_(table);
++ (SquiDBUpdate *)tableWithSquiDBTable:(SquiDBTable *)table {
+  return SquiDBUpdate_tableWithSquiDBTable_(table);
 }
 
-+ (ComYahooSquidbSqlUpdate *)tableWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  return ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlView_(view);
++ (SquiDBUpdate *)tableWithSquiDBView:(SquiDBView *)view {
+  return SquiDBUpdate_tableWithSquiDBView_(view);
 }
 
-- (ComYahooSquidbSqlSqlTable *)getTable {
+- (SquiDBSqlTable *)getTable {
   return table_;
 }
 
-- (ComYahooSquidbSqlUpdate *)onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+- (SquiDBUpdate *)onConflictWithSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
   self->conflictAlgorithm_ = conflictAlgorithm;
   [self invalidateCompileCache];
   return self;
 }
 
-- (ComYahooSquidbSqlUpdate *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
+- (SquiDBUpdate *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion {
   if (criterion != nil) {
     [((id<JavaUtilList>) nil_chk(self->criterions_)) addWithId:criterion];
     [self invalidateCompileCache];
@@ -85,8 +85,8 @@ __attribute__((unused)) static void ComYahooSquidbSqlUpdate_visitWhereWithComYah
   return self;
 }
 
-- (ComYahooSquidbSqlUpdate *)setWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)column
-                                                       withId:(id)value {
+- (SquiDBUpdate *)setWithSquiDBProperty:(SquiDBProperty *)column
+                                 withId:(id)value {
   if (column == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"column must not be null");
   }
@@ -95,92 +95,92 @@ __attribute__((unused)) static void ComYahooSquidbSqlUpdate_visitWhereWithComYah
   return self;
 }
 
-- (ComYahooSquidbSqlUpdate *)setWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns
-                                                 withNSObjectArray:(IOSObjectArray *)values {
+- (SquiDBUpdate *)setWithSquiDBPropertyArray:(IOSObjectArray *)columns
+                           withNSObjectArray:(IOSObjectArray *)values {
   if (((IOSObjectArray *) nil_chk(columns))->size_ != ((IOSObjectArray *) nil_chk(values))->size_) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"You must provide the same number of columns and values");
   }
   for (jint i = 0; i < columns->size_; i++) {
-    (void) [self setWithComYahooSquidbSqlProperty:IOSObjectArray_Get(columns, i) withId:IOSObjectArray_Get(values, i)];
+    (void) [self setWithSquiDBProperty:IOSObjectArray_Get(columns, i) withId:IOSObjectArray_Get(values, i)];
   }
   [self invalidateCompileCache];
   return self;
 }
 
-- (ComYahooSquidbSqlUpdate *)setWithJavaUtilList:(id<JavaUtilList>)columns
-                                withJavaUtilList:(id<JavaUtilList>)values {
+- (SquiDBUpdate *)setWithJavaUtilList:(id<JavaUtilList>)columns
+                     withJavaUtilList:(id<JavaUtilList>)values {
   jint size = [((id<JavaUtilList>) nil_chk(columns)) size];
   if (size != [((id<JavaUtilList>) nil_chk(values)) size]) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"You must provide the same number of columns and values");
   }
   for (jint i = 0; i < size; i++) {
-    (void) [self setWithComYahooSquidbSqlProperty:[columns getWithInt:i] withId:[values getWithInt:i]];
+    (void) [self setWithSquiDBProperty:[columns getWithInt:i] withId:[values getWithInt:i]];
   }
   [self invalidateCompileCache];
   return self;
 }
 
-- (ComYahooSquidbSqlUpdate *)fromTemplateWithComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)template_ {
-  if (![((ComYahooSquidbDataAbstractModel *) nil_chk(template_)) isModified]) {
+- (SquiDBUpdate *)fromTemplateWithSquiDBAbstractModel:(SquiDBAbstractModel *)template_ {
+  if (![((SquiDBAbstractModel *) nil_chk(template_)) isModified]) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Template has no values set to use for update");
   }
-  ComYahooSquidbDataValuesStorage *setValues = [template_ getSetValues];
-  for (id<JavaUtilMap_Entry> __strong entry_ in nil_chk([((ComYahooSquidbDataValuesStorage *) nil_chk(setValues)) valueSet])) {
+  SquiDBValuesStorage *setValues = [template_ getSetValues];
+  for (id<JavaUtilMap_Entry> __strong entry_ in nil_chk([((SquiDBValuesStorage *) nil_chk(setValues)) valueSet])) {
     (void) [((id<JavaUtilMap>) nil_chk(valuesToUpdate_)) putWithId:[((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey] withId:[entry_ getValue]];
   }
   [self invalidateCompileCache];
   return self;
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlUpdate_assertValues(self);
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"UPDATE "];
-  ComYahooSquidbSqlUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(self, builder->sql_);
-  (void) [((JavaLangStringBuilder *) nil_chk([builder->sql_ appendWithNSString:[((ComYahooSquidbSqlSqlTable *) nil_chk(table_)) getExpression]])) appendWithNSString:@" SET "];
-  [self visitValuesWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
-  ComYahooSquidbSqlUpdate_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  SquiDBUpdate_assertValues(self);
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"UPDATE "];
+  SquiDBUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(self, builder->sql_);
+  (void) [((JavaLangStringBuilder *) nil_chk([builder->sql_ appendWithNSString:[((SquiDBSqlTable *) nil_chk(table_)) getExpression]])) appendWithNSString:@" SET "];
+  [self visitValuesWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
+  SquiDBUpdate_visitWhereWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
 - (void)assertValues {
-  ComYahooSquidbSqlUpdate_assertValues(self);
+  SquiDBUpdate_assertValues(self);
 }
 
 - (void)visitConflictAlgorithmWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
-  ComYahooSquidbSqlUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(self, sql);
+  SquiDBUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(self, sql);
 }
 
-- (void)visitValuesWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                       withBoolean:(jboolean)forSqlValidation {
+- (void)visitValuesWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                            withBoolean:(jboolean)forSqlValidation {
   jboolean appendComma = false;
   for (NSString * __strong column in nil_chk([((id<JavaUtilMap>) nil_chk(valuesToUpdate_)) keySet])) {
     if (appendComma) {
-      (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@","];
+      (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@","];
     }
     appendComma = true;
-    (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:column])) appendWithNSString:@" = "];
+    (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:column])) appendWithNSString:@" = "];
     id value = [valuesToUpdate_ getWithId:column];
     [builder addValueToSqlWithId:value withBoolean:forSqlValidation];
   }
 }
 
-- (void)visitWhereWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                      withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlUpdate_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitWhereWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                           withBoolean:(jboolean)forSqlValidation {
+  SquiDBUpdate_visitWhereWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x4, -1, 0, -1, 1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x9, 2, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x9, 2, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSqlTable;", 0x1, -1, -1, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 6, 7, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 8, 9, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 10, 11, -1, 12, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 10, 13, -1, 14, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 10, 15, -1, 16, -1, -1 },
-    { NULL, "LComYahooSquidbSqlUpdate;", 0x1, 17, 18, -1, -1, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x9, 2, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x9, 2, 4, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSqlTable;", 0x1, -1, -1, -1, 5, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 6, 7, -1, -1, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 10, 11, -1, 12, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 10, 13, -1, 14, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 10, 15, -1, 16, -1, -1 },
+    { NULL, "LSquiDBUpdate;", 0x1, 17, 18, -1, -1, -1, -1 },
     { NULL, "V", 0x0, 19, 20, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 21, 22, -1, -1, -1, -1 },
@@ -190,79 +190,81 @@ __attribute__((unused)) static void ComYahooSquidbSqlUpdate_visitWhereWithComYah
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlSqlTable:);
-  methods[1].selector = @selector(tableWithComYahooSquidbSqlTable:);
-  methods[2].selector = @selector(tableWithComYahooSquidbSqlView:);
+  methods[0].selector = @selector(initWithSquiDBSqlTable:);
+  methods[1].selector = @selector(tableWithSquiDBTable:);
+  methods[2].selector = @selector(tableWithSquiDBView:);
   methods[3].selector = @selector(getTable);
-  methods[4].selector = @selector(onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[5].selector = @selector(whereWithComYahooSquidbSqlCriterion:);
-  methods[6].selector = @selector(setWithComYahooSquidbSqlProperty:withId:);
-  methods[7].selector = @selector(setWithComYahooSquidbSqlPropertyArray:withNSObjectArray:);
+  methods[4].selector = @selector(onConflictWithSquiDBTableStatement_ConflictAlgorithm:);
+  methods[5].selector = @selector(whereWithSquiDBCriterion:);
+  methods[6].selector = @selector(setWithSquiDBProperty:withId:);
+  methods[7].selector = @selector(setWithSquiDBPropertyArray:withNSObjectArray:);
   methods[8].selector = @selector(setWithJavaUtilList:withJavaUtilList:);
-  methods[9].selector = @selector(fromTemplateWithComYahooSquidbDataAbstractModel:);
-  methods[10].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[9].selector = @selector(fromTemplateWithSquiDBAbstractModel:);
+  methods[10].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
   methods[11].selector = @selector(assertValues);
   methods[12].selector = @selector(visitConflictAlgorithmWithJavaLangStringBuilder:);
-  methods[13].selector = @selector(visitValuesWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[14].selector = @selector(visitWhereWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[13].selector = @selector(visitValuesWithSquiDBSqlBuilder:withBoolean:);
+  methods[14].selector = @selector(visitWhereWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "table_", "LComYahooSquidbSqlSqlTable;", .constantValue.asLong = 0, 0x12, -1, -1, 25, -1 },
-    { "conflictAlgorithm_", "LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "table_", "LSquiDBSqlTable;", .constantValue.asLong = 0, 0x12, -1, -1, 25, -1 },
+    { "conflictAlgorithm_", "LSquiDBTableStatement_ConflictAlgorithm;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "valuesToUpdate_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 26, -1 },
     { "criterions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 27, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "table", "LComYahooSquidbSqlTable;", "LComYahooSquidbSqlView;", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "onConflict", "LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "where", "LComYahooSquidbSqlCriterion;", "set", "LComYahooSquidbSqlProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/Object;)Lcom/yahoo/squidb/sql/Update;", "[LComYahooSquidbSqlProperty;[LNSObject;", "([Lcom/yahoo/squidb/sql/Property<*>;[Ljava/lang/Object;)Lcom/yahoo/squidb/sql/Update;", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Property<*>;>;Ljava/util/List<Ljava/lang/Object;>;)Lcom/yahoo/squidb/sql/Update;", "fromTemplate", "LComYahooSquidbDataAbstractModel;", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", "visitConflictAlgorithm", "LJavaLangStringBuilder;", "visitValues", "visitWhere", "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlUpdate = { "Update", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 15, 4, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlUpdate;
+  static const void *ptrTable[] = { "LSquiDBSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "table", "LSquiDBTable;", "LSquiDBView;", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "onConflict", "LSquiDBTableStatement_ConflictAlgorithm;", "where", "LSquiDBCriterion;", "set", "LSquiDBProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/Object;)Lcom/yahoo/squidb/sql/Update;", "[LSquiDBProperty;[LNSObject;", "([Lcom/yahoo/squidb/sql/Property<*>;[Ljava/lang/Object;)Lcom/yahoo/squidb/sql/Update;", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Property<*>;>;Ljava/util/List<Ljava/lang/Object;>;)Lcom/yahoo/squidb/sql/Update;", "fromTemplate", "LSquiDBAbstractModel;", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", "visitConflictAlgorithm", "LJavaLangStringBuilder;", "visitValues", "visitWhere", "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;" };
+  static const J2ObjcClassInfo _SquiDBUpdate = { "Update", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 15, 4, -1, -1, -1, -1, -1 };
+  return &_SquiDBUpdate;
 }
 
 @end
 
-void ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlUpdate *self, ComYahooSquidbSqlSqlTable *table) {
-  ComYahooSquidbSqlTableStatement_init(self);
-  self->conflictAlgorithm_ = JreLoadEnum(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, NONE);
+void SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBUpdate *self, SquiDBSqlTable *table) {
+  SquiDBTableStatement_init(self);
+  self->conflictAlgorithm_ = JreLoadEnum(SquiDBTableStatement_ConflictAlgorithm, NONE);
   self->valuesToUpdate_ = new_JavaUtilHashMap_init();
   self->criterions_ = new_JavaUtilArrayList_init();
   self->table_ = table;
 }
 
-ComYahooSquidbSqlUpdate *new_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlUpdate, initWithComYahooSquidbSqlSqlTable_, table)
+SquiDBUpdate *new_SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBSqlTable *table) {
+  J2OBJC_NEW_IMPL(SquiDBUpdate, initWithSquiDBSqlTable_, table)
 }
 
-ComYahooSquidbSqlUpdate *create_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlUpdate, initWithComYahooSquidbSqlSqlTable_, table)
+SquiDBUpdate *create_SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBSqlTable *table) {
+  J2OBJC_CREATE_IMPL(SquiDBUpdate, initWithSquiDBSqlTable_, table)
 }
 
-ComYahooSquidbSqlUpdate *ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlTable_(ComYahooSquidbSqlTable *table) {
-  ComYahooSquidbSqlUpdate_initialize();
-  return new_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(table);
+SquiDBUpdate *SquiDBUpdate_tableWithSquiDBTable_(SquiDBTable *table) {
+  SquiDBUpdate_initialize();
+  return new_SquiDBUpdate_initWithSquiDBSqlTable_(table);
 }
 
-ComYahooSquidbSqlUpdate *ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view) {
-  ComYahooSquidbSqlUpdate_initialize();
-  return new_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(view);
+SquiDBUpdate *SquiDBUpdate_tableWithSquiDBView_(SquiDBView *view) {
+  SquiDBUpdate_initialize();
+  return new_SquiDBUpdate_initWithSquiDBSqlTable_(view);
 }
 
-void ComYahooSquidbSqlUpdate_assertValues(ComYahooSquidbSqlUpdate *self) {
+void SquiDBUpdate_assertValues(SquiDBUpdate *self) {
   if ([((id<JavaUtilMap>) nil_chk(self->valuesToUpdate_)) isEmpty]) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"No columns specified for update");
   }
 }
 
-void ComYahooSquidbSqlUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(ComYahooSquidbSqlUpdate *self, JavaLangStringBuilder *sql) {
-  if (JreLoadEnum(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, NONE) != self->conflictAlgorithm_) {
+void SquiDBUpdate_visitConflictAlgorithmWithJavaLangStringBuilder_(SquiDBUpdate *self, JavaLangStringBuilder *sql) {
+  if (JreLoadEnum(SquiDBTableStatement_ConflictAlgorithm, NONE) != self->conflictAlgorithm_) {
     (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:@"OR "])) appendWithId:self->conflictAlgorithm_])) appendWithNSString:@" "];
   }
 }
 
-void ComYahooSquidbSqlUpdate_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlUpdate *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
+void SquiDBUpdate_visitWhereWithSquiDBSqlBuilder_withBoolean_(SquiDBUpdate *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
   if ([((id<JavaUtilList>) nil_chk(self->criterions_)) isEmpty]) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->criterions_ withNSString:@" AND " withBoolean:forSqlValidation];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlUpdate)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBUpdate)
+
+J2OBJC_NAME_MAPPING(SquiDBUpdate, "com.yahoo.squidb.sql", "SquiDB")

@@ -15,50 +15,52 @@
 #include "J2ObjC_header.h"
 
 @class JavaLangThrowable;
-@protocol ComYahooAndroidSqliteCloseGuard_Reporter;
+@protocol SquiDBCloseGuard_Reporter;
 
-@interface ComYahooAndroidSqliteCloseGuard : NSObject
+@interface SquiDBCloseGuard : NSObject
 
 #pragma mark Public
 
 - (void)close;
 
-+ (ComYahooAndroidSqliteCloseGuard *)get;
++ (SquiDBCloseGuard *)get;
 
-+ (id<ComYahooAndroidSqliteCloseGuard_Reporter>)getReporter;
++ (id<SquiDBCloseGuard_Reporter>)getReporter;
 
 - (void)openWithNSString:(NSString *)closer;
 
 + (void)setEnabledWithBoolean:(jboolean)enabled;
 
-+ (void)setReporterWithComYahooAndroidSqliteCloseGuard_Reporter:(id<ComYahooAndroidSqliteCloseGuard_Reporter>)reporter;
++ (void)setReporterWithSquiDBCloseGuard_Reporter:(id<SquiDBCloseGuard_Reporter>)reporter;
 
 - (void)warnIfOpen;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteCloseGuard)
+J2OBJC_STATIC_INIT(SquiDBCloseGuard)
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteCloseGuard *ComYahooAndroidSqliteCloseGuard_get(void);
+FOUNDATION_EXPORT SquiDBCloseGuard *SquiDBCloseGuard_get(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteCloseGuard_setEnabledWithBoolean_(jboolean enabled);
+FOUNDATION_EXPORT void SquiDBCloseGuard_setEnabledWithBoolean_(jboolean enabled);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteCloseGuard_setReporterWithComYahooAndroidSqliteCloseGuard_Reporter_(id<ComYahooAndroidSqliteCloseGuard_Reporter> reporter);
+FOUNDATION_EXPORT void SquiDBCloseGuard_setReporterWithSquiDBCloseGuard_Reporter_(id<SquiDBCloseGuard_Reporter> reporter);
 
-FOUNDATION_EXPORT id<ComYahooAndroidSqliteCloseGuard_Reporter> ComYahooAndroidSqliteCloseGuard_getReporter(void);
+FOUNDATION_EXPORT id<SquiDBCloseGuard_Reporter> SquiDBCloseGuard_getReporter(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteCloseGuard)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCloseGuard)
 
-@protocol ComYahooAndroidSqliteCloseGuard_Reporter < JavaObject >
+@compatibility_alias ComYahooAndroidSqliteCloseGuard SquiDBCloseGuard;
+
+@protocol SquiDBCloseGuard_Reporter < JavaObject >
 
 - (void)reportWithNSString:(NSString *)message
      withJavaLangThrowable:(JavaLangThrowable *)allocationSite;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteCloseGuard_Reporter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCloseGuard_Reporter)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteCloseGuard_Reporter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCloseGuard_Reporter)
 
 
 #if __has_feature(nullability)

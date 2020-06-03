@@ -7,17 +7,17 @@
 #include "SQLiteDatatypeMismatchException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteDatatypeMismatchException
+@implementation SquiDBSQLiteDatatypeMismatchException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDatatypeMismatchException_init(self);
+  SquiDBSQLiteDatatypeMismatchException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteDatatypeMismatchException_initWithNSString_(self, error);
+  SquiDBSQLiteDatatypeMismatchException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatatypeMismatchException = { "SQLiteDatatypeMismatchException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatatypeMismatchException;
+  static const J2ObjcClassInfo _SquiDBSQLiteDatatypeMismatchException = { "SQLiteDatatypeMismatchException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatatypeMismatchException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatatypeMismatchException_init(ComYahooAndroidSqliteSQLiteDatatypeMismatchException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteDatatypeMismatchException_init(SquiDBSQLiteDatatypeMismatchException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDatatypeMismatchException *new_ComYahooAndroidSqliteSQLiteDatatypeMismatchException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatatypeMismatchException, init)
+SquiDBSQLiteDatatypeMismatchException *new_SquiDBSQLiteDatatypeMismatchException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatatypeMismatchException, init)
 }
 
-ComYahooAndroidSqliteSQLiteDatatypeMismatchException *create_ComYahooAndroidSqliteSQLiteDatatypeMismatchException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatatypeMismatchException, init)
+SquiDBSQLiteDatatypeMismatchException *create_SquiDBSQLiteDatatypeMismatchException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatatypeMismatchException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteDatatypeMismatchException_initWithNSString_(ComYahooAndroidSqliteSQLiteDatatypeMismatchException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteDatatypeMismatchException_initWithNSString_(SquiDBSQLiteDatatypeMismatchException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteDatatypeMismatchException *new_ComYahooAndroidSqliteSQLiteDatatypeMismatchException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatatypeMismatchException, initWithNSString_, error)
+SquiDBSQLiteDatatypeMismatchException *new_SquiDBSQLiteDatatypeMismatchException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatatypeMismatchException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteDatatypeMismatchException *create_ComYahooAndroidSqliteSQLiteDatatypeMismatchException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatatypeMismatchException, initWithNSString_, error)
+SquiDBSQLiteDatatypeMismatchException *create_SquiDBSQLiteDatatypeMismatchException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatatypeMismatchException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatatypeMismatchException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatatypeMismatchException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDatatypeMismatchException, "com.yahoo.android.sqlite", "SquiDB")

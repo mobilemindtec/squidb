@@ -7,17 +7,17 @@
 #include "SQLiteBindOrColumnIndexOutOfRangeException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException
+@implementation SquiDBSQLiteBindOrColumnIndexOutOfRangeException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_init(self);
+  SquiDBSQLiteBindOrColumnIndexOutOfRangeException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(self, error);
+  SquiDBSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException = { "SQLiteBindOrColumnIndexOutOfRangeException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException;
+  static const J2ObjcClassInfo _SquiDBSQLiteBindOrColumnIndexOutOfRangeException = { "SQLiteBindOrColumnIndexOutOfRangeException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteBindOrColumnIndexOutOfRangeException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_init(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteBindOrColumnIndexOutOfRangeException_init(SquiDBSQLiteBindOrColumnIndexOutOfRangeException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *new_ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException, init)
+SquiDBSQLiteBindOrColumnIndexOutOfRangeException *new_SquiDBSQLiteBindOrColumnIndexOutOfRangeException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteBindOrColumnIndexOutOfRangeException, init)
 }
 
-ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *create_ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException, init)
+SquiDBSQLiteBindOrColumnIndexOutOfRangeException *create_SquiDBSQLiteBindOrColumnIndexOutOfRangeException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteBindOrColumnIndexOutOfRangeException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(SquiDBSQLiteBindOrColumnIndexOutOfRangeException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *new_ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException, initWithNSString_, error)
+SquiDBSQLiteBindOrColumnIndexOutOfRangeException *new_SquiDBSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteBindOrColumnIndexOutOfRangeException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException *create_ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException, initWithNSString_, error)
+SquiDBSQLiteBindOrColumnIndexOutOfRangeException *create_SquiDBSQLiteBindOrColumnIndexOutOfRangeException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteBindOrColumnIndexOutOfRangeException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteBindOrColumnIndexOutOfRangeException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteBindOrColumnIndexOutOfRangeException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteBindOrColumnIndexOutOfRangeException, "com.yahoo.android.sqlite", "SquiDB")

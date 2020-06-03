@@ -15,19 +15,19 @@
 #include "J2ObjC_header.h"
 #include "java/lang/Comparable.h"
 
-@interface ComYahooSquidbUtilityVersionCode : NSObject < JavaLangComparable >
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *V3_7_4 NS_SWIFT_NAME(V3_7_4);
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *V3_7_11 NS_SWIFT_NAME(V3_7_11);
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *V3_8_3 NS_SWIFT_NAME(V3_8_3);
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *LATEST NS_SWIFT_NAME(LATEST);
+@interface SquiDBVersionCode : NSObject < JavaLangComparable >
+@property (readonly, class) SquiDBVersionCode *V3_7_4 NS_SWIFT_NAME(V3_7_4);
+@property (readonly, class) SquiDBVersionCode *V3_7_11 NS_SWIFT_NAME(V3_7_11);
+@property (readonly, class) SquiDBVersionCode *V3_8_3 NS_SWIFT_NAME(V3_8_3);
+@property (readonly, class) SquiDBVersionCode *LATEST NS_SWIFT_NAME(LATEST);
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_7_4;
++ (SquiDBVersionCode *)V3_7_4;
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_7_11;
++ (SquiDBVersionCode *)V3_7_11;
 
-+ (ComYahooSquidbUtilityVersionCode *)V3_8_3;
++ (SquiDBVersionCode *)V3_8_3;
 
-+ (ComYahooSquidbUtilityVersionCode *)LATEST;
++ (SquiDBVersionCode *)LATEST;
 
 #pragma mark Public
 
@@ -42,7 +42,7 @@
                               withInt:(jint)nano
                          withNSString:(NSString *)trailing;
 
-- (jint)compareToWithId:(ComYahooSquidbUtilityVersionCode *)other;
+- (jint)compareToWithId:(SquiDBVersionCode *)other;
 
 - (jboolean)isEqual:(id)o;
 
@@ -60,13 +60,13 @@
 
 - (jboolean)isAtLeastWithNSString:(NSString *)versionString;
 
-- (jboolean)isAtLeastWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)version_;
+- (jboolean)isAtLeastWithSquiDBVersionCode:(SquiDBVersionCode *)version_;
 
 - (jboolean)isLessThanWithNSString:(NSString *)versionString;
 
-- (jboolean)isLessThanWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)version_;
+- (jboolean)isLessThanWithSquiDBVersionCode:(SquiDBVersionCode *)version_;
 
-+ (ComYahooSquidbUtilityVersionCode *)parseWithNSString:(NSString *)versionString;
++ (SquiDBVersionCode *)parseWithNSString:(NSString *)versionString;
 
 - (NSString *)description;
 
@@ -76,43 +76,45 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbUtilityVersionCode)
+J2OBJC_STATIC_INIT(SquiDBVersionCode)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_get_V3_7_4(void);
+inline SquiDBVersionCode *SquiDBVersionCode_get_V3_7_4(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_7_4;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityVersionCode, V3_7_4, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBVersionCode_V3_7_4;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBVersionCode, V3_7_4, SquiDBVersionCode *)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_get_V3_7_11(void);
+inline SquiDBVersionCode *SquiDBVersionCode_get_V3_7_11(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_7_11;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityVersionCode, V3_7_11, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBVersionCode_V3_7_11;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBVersionCode, V3_7_11, SquiDBVersionCode *)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_get_V3_8_3(void);
+inline SquiDBVersionCode *SquiDBVersionCode_get_V3_8_3(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_V3_8_3;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityVersionCode, V3_8_3, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBVersionCode_V3_8_3;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBVersionCode, V3_8_3, SquiDBVersionCode *)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_get_LATEST(void);
+inline SquiDBVersionCode *SquiDBVersionCode_get_LATEST(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_LATEST;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityVersionCode, LATEST, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBVersionCode_LATEST;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBVersionCode, LATEST, SquiDBVersionCode *)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(ComYahooSquidbUtilityVersionCode *self, jint major, jint minor, jint micro, jint nano);
+FOUNDATION_EXPORT void SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(SquiDBVersionCode *self, jint major, jint minor, jint micro, jint nano);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBVersionCode *new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *create_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano);
+FOUNDATION_EXPORT SquiDBVersionCode *create_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(jint major, jint minor, jint micro, jint nano);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(ComYahooSquidbUtilityVersionCode *self, jint major, jint minor, jint micro, jint nano, NSString *trailing);
+FOUNDATION_EXPORT void SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(SquiDBVersionCode *self, jint major, jint minor, jint micro, jint nano, NSString *trailing);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBVersionCode *new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *create_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing);
+FOUNDATION_EXPORT SquiDBVersionCode *create_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_withNSString_(jint major, jint minor, jint micro, jint nano, NSString *trailing);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbUtilityVersionCode_parseWithNSString_(NSString *versionString);
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBVersionCode_parseWithNSString_(NSString *versionString);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityVersionCode)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBVersionCode)
+
+@compatibility_alias ComYahooSquidbUtilityVersionCode SquiDBVersionCode;
 
 
 #if __has_feature(nullability)

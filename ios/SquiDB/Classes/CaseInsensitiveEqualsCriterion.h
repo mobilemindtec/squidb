@@ -15,36 +15,38 @@
 #include "BinaryCriterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlCaseInsensitiveEqualsCriterion : ComYahooSquidbSqlBinaryCriterion
+@interface SquiDBCaseInsensitiveEqualsCriterion : SquiDBBinaryCriterion
 
 #pragma mark Protected
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation;
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator;
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                                  withId:(id)value;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                                         withSquiDBOperator:(SquiDBOperator *)operator_
+                                                     withId:(id)value;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCaseInsensitiveEqualsCriterion)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value);
+FOUNDATION_EXPORT void SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBCaseInsensitiveEqualsCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id value);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *new_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCaseInsensitiveEqualsCriterion *new_SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCaseInsensitiveEqualsCriterion *create_ComYahooSquidbSqlCaseInsensitiveEqualsCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value);
+FOUNDATION_EXPORT SquiDBCaseInsensitiveEqualsCriterion *create_SquiDBCaseInsensitiveEqualsCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(SquiDBField *expression, SquiDBOperator *operator_, id value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCaseInsensitiveEqualsCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCaseInsensitiveEqualsCriterion)
+
+@compatibility_alias ComYahooSquidbSqlCaseInsensitiveEqualsCriterion SquiDBCaseInsensitiveEqualsCriterion;
 
 
 #if __has_feature(nullability)

@@ -14,7 +14,7 @@
 
 #include "J2ObjC_header.h"
 
-@interface ComYahooAndroidSqlitePair : NSObject {
+@interface SquiDBPair : NSObject {
  @public
   id first_;
   id second_;
@@ -25,8 +25,8 @@
 - (instancetype __nonnull)initWithId:(id)first
                               withId:(id)second;
 
-+ (ComYahooAndroidSqlitePair *)createWithId:(id)a
-                                     withId:(id)b;
++ (SquiDBPair *)createWithId:(id)a
+                      withId:(id)b;
 
 - (jboolean)isEqual:(id)o;
 
@@ -38,20 +38,22 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqlitePair)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBPair)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqlitePair, first_, id)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqlitePair, second_, id)
+J2OBJC_FIELD_SETTER(SquiDBPair, first_, id)
+J2OBJC_FIELD_SETTER(SquiDBPair, second_, id)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqlitePair_initWithId_withId_(ComYahooAndroidSqlitePair *self, id first, id second);
+FOUNDATION_EXPORT void SquiDBPair_initWithId_withId_(SquiDBPair *self, id first, id second);
 
-FOUNDATION_EXPORT ComYahooAndroidSqlitePair *new_ComYahooAndroidSqlitePair_initWithId_withId_(id first, id second) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBPair *new_SquiDBPair_initWithId_withId_(id first, id second) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqlitePair *create_ComYahooAndroidSqlitePair_initWithId_withId_(id first, id second);
+FOUNDATION_EXPORT SquiDBPair *create_SquiDBPair_initWithId_withId_(id first, id second);
 
-FOUNDATION_EXPORT ComYahooAndroidSqlitePair *ComYahooAndroidSqlitePair_createWithId_withId_(id a, id b);
+FOUNDATION_EXPORT SquiDBPair *SquiDBPair_createWithId_withId_(id a, id b);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqlitePair)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBPair)
+
+@compatibility_alias ComYahooAndroidSqlitePair SquiDBPair;
 
 
 #if __has_feature(nullability)

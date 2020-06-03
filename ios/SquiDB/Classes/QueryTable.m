@@ -11,19 +11,19 @@
 #include "SqlTable.h"
 #include "java/util/List.h"
 
-@implementation ComYahooSquidbSqlQueryTable
+@implementation SquiDBQueryTable
 
-- (instancetype)initWithIOSClass:(IOSClass *)modelClass
-withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
-                    withNSString:(NSString *)name
-                    withNSString:(NSString *)databaseName
-      withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbSqlQueryTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withComYahooSquidbSqlQuery_(self, modelClass, properties, name, databaseName, query);
+- (instancetype)initPackagePrivateWithIOSClass:(IOSClass *)modelClass
+                       withSquiDBPropertyArray:(IOSObjectArray *)properties
+                                  withNSString:(NSString *)name
+                                  withNSString:(NSString *)databaseName
+                               withSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBQueryTable_initPackagePrivateWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withSquiDBQuery_(self, modelClass, properties, name, databaseName, query);
   return self;
 }
 
 - (IOSObjectArray *)qualifiedFields {
-  return [self qualifyFieldsWithJavaUtilList:[((ComYahooSquidbSqlQuery *) nil_chk(query_)) getFields]];
+  return [self qualifyFieldsWithJavaUtilList:[((SquiDBQuery *) nil_chk(query_)) getFields]];
 }
 
 - (IOSObjectArray *)allFields {
@@ -38,29 +38,29 @@ withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x4, -1, 0, -1, 1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlField;", 0x1, -1, -1, -1, 2, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlField;", 0x4, -1, -1, -1, 2, -1, -1 },
+    { NULL, "[LSquiDBField;", 0x1, -1, -1, -1, 2, -1, -1 },
+    { NULL, "[LSquiDBField;", 0x4, -1, -1, -1, 2, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithIOSClass:withComYahooSquidbSqlPropertyArray:withNSString:withNSString:withComYahooSquidbSqlQuery:);
+  methods[0].selector = @selector(initPackagePrivateWithIOSClass:withSquiDBPropertyArray:withNSString:withNSString:withSquiDBQuery:);
   methods[1].selector = @selector(qualifiedFields);
   methods[2].selector = @selector(allFields);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "query_", "LComYahooSquidbSqlQuery;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "query_", "LSquiDBQuery;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LIOSClass;[LComYahooSquidbSqlProperty;LNSString;LNSString;LComYahooSquidbSqlQuery;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/String;Ljava/lang/String;Lcom/yahoo/squidb/sql/Query;)V", "()[Lcom/yahoo/squidb/sql/Field<*>;", "Lcom/yahoo/squidb/sql/SqlTable<Lcom/yahoo/squidb/data/ViewModel;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlQueryTable = { "QueryTable", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x400, 3, 1, -1, -1, -1, 3, -1 };
-  return &_ComYahooSquidbSqlQueryTable;
+  static const void *ptrTable[] = { "LIOSClass;[LSquiDBProperty;LNSString;LNSString;LSquiDBQuery;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/String;Ljava/lang/String;Lcom/yahoo/squidb/sql/Query;)V", "()[Lcom/yahoo/squidb/sql/Field<*>;", "Lcom/yahoo/squidb/sql/SqlTable<Lcom/yahoo/squidb/data/ViewModel;>;" };
+  static const J2ObjcClassInfo _SquiDBQueryTable = { "QueryTable", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x400, 3, 1, -1, -1, -1, 3, -1 };
+  return &_SquiDBQueryTable;
 }
 
 @end
 
-void ComYahooSquidbSqlQueryTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlQueryTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlSqlTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_(self, modelClass, properties, name, databaseName);
+void SquiDBQueryTable_initPackagePrivateWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withSquiDBQuery_(SquiDBQueryTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *name, NSString *databaseName, SquiDBQuery *query) {
+  SquiDBSqlTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_(self, modelClass, properties, name, databaseName);
   self->query_ = query;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlQueryTable)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBQueryTable)

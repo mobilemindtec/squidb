@@ -15,27 +15,29 @@
 #include "DatabaseErrorHandler.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
+@class SquiDBSQLiteDatabase;
 
-@interface ComYahooAndroidSqliteDefaultDatabaseErrorHandler : NSObject < ComYahooAndroidSqliteDatabaseErrorHandler >
+@interface SquiDBDefaultDatabaseErrorHandler : NSObject < SquiDBDatabaseErrorHandler >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)dbObj;
+- (void)onCorruptionWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)dbObj;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteDefaultDatabaseErrorHandler)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDefaultDatabaseErrorHandler)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init(ComYahooAndroidSqliteDefaultDatabaseErrorHandler *self);
+FOUNDATION_EXPORT void SquiDBDefaultDatabaseErrorHandler_init(SquiDBDefaultDatabaseErrorHandler *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDefaultDatabaseErrorHandler *new_ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBDefaultDatabaseErrorHandler *new_SquiDBDefaultDatabaseErrorHandler_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDefaultDatabaseErrorHandler *create_ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init(void);
+FOUNDATION_EXPORT SquiDBDefaultDatabaseErrorHandler *create_SquiDBDefaultDatabaseErrorHandler_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteDefaultDatabaseErrorHandler)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDefaultDatabaseErrorHandler)
+
+@compatibility_alias ComYahooAndroidSqliteDefaultDatabaseErrorHandler SquiDBDefaultDatabaseErrorHandler;
 
 
 #if __has_feature(nullability)

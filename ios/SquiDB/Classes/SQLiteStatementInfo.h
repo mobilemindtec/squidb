@@ -16,7 +16,7 @@
 
 @class IOSObjectArray;
 
-@interface ComYahooAndroidSqliteSQLiteStatementInfo : NSObject {
+@interface SquiDBSQLiteStatementInfo : NSObject {
  @public
   jint numParameters_;
   IOSObjectArray *columnNames_;
@@ -29,17 +29,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteStatementInfo)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteStatementInfo)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteStatementInfo, columnNames_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteStatementInfo, columnNames_, IOSObjectArray *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteStatementInfo_init(ComYahooAndroidSqliteSQLiteStatementInfo *self);
+FOUNDATION_EXPORT void SquiDBSQLiteStatementInfo_init(SquiDBSQLiteStatementInfo *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteStatementInfo *new_ComYahooAndroidSqliteSQLiteStatementInfo_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteStatementInfo *new_SquiDBSQLiteStatementInfo_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteStatementInfo *create_ComYahooAndroidSqliteSQLiteStatementInfo_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteStatementInfo *create_SquiDBSQLiteStatementInfo_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteStatementInfo)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteStatementInfo)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteStatementInfo SquiDBSQLiteStatementInfo;
 
 
 #if __has_feature(nullability)

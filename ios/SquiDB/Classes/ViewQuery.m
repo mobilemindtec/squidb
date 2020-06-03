@@ -11,9 +11,9 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewQuery__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBViewQuery__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsViewQuery
+@implementation SquiDBViewQuery
 
 @synthesize freeze = freeze_;
 
@@ -22,7 +22,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewQuer
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsViewQuery_class_();
+  return SquiDBViewQuery_class_();
 }
 
 - (NSString *)description {
@@ -49,21 +49,23 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewQuer
   static const J2ObjcFieldInfo fields[] = {
     { "freeze_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsViewQuery__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsViewQuery = { "ViewQuery", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsViewQuery;
+  static const void *ptrTable[] = { (void *)&SquiDBViewQuery__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBViewQuery = { "ViewQuery", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_SquiDBViewQuery;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsViewQuery> create_ComYahooSquidbAnnotationsViewQuery(jboolean freeze) {
-  ComYahooSquidbAnnotationsViewQuery *self = AUTORELEASE([[ComYahooSquidbAnnotationsViewQuery alloc] init]);
+id<SquiDBViewQuery> create_SquiDBViewQuery(jboolean freeze) {
+  SquiDBViewQuery *self = AUTORELEASE([[SquiDBViewQuery alloc] init]);
   self->freeze_ = freeze;
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsViewQuery__Annotations$0() {
+IOSObjectArray *SquiDBViewQuery__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, FIELD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsViewQuery)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBViewQuery)
+
+J2OBJC_NAME_MAPPING(SquiDBViewQuery, "com.yahoo.squidb.annotations", "SquiDB")

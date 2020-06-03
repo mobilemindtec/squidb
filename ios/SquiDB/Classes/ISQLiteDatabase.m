@@ -6,11 +6,11 @@
 #include "ISQLiteDatabase.h"
 #include "J2ObjC_source.h"
 
-@interface ComYahooSquidbDataISQLiteDatabase : NSObject
+@interface SquiDBISQLiteDatabase : NSObject
 
 @end
 
-@implementation ComYahooSquidbDataISQLiteDatabase
+@implementation SquiDBISQLiteDatabase
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -25,7 +25,7 @@
     { NULL, "Z", 0x401, 3, 4, -1, -1, -1, -1 },
     { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 5, 6, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x401, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x401, 7, 8, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, 9, 8, -1, -1, -1, -1 },
     { NULL, "J", 0x401, 10, 8, -1, -1, -1, -1 },
     { NULL, "J", 0x401, 11, 8, -1, -1, -1, -1 },
@@ -33,7 +33,7 @@
     { NULL, "V", 0x401, 13, 14, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 13, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 15, 14, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLitePreparedStatement;", 0x401, 16, 14, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLitePreparedStatement;", 0x401, 16, 14, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -57,8 +57,8 @@
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(beginTransaction);
   methods[1].selector = @selector(beginTransactionNonExclusive);
-  methods[2].selector = @selector(beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:);
-  methods[3].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:);
+  methods[2].selector = @selector(beginTransactionWithListenerWithSquiDBSquidTransactionListener:);
+  methods[3].selector = @selector(beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:);
   methods[4].selector = @selector(setTransactionSuccessful);
   methods[5].selector = @selector(endTransaction);
   methods[6].selector = @selector(inTransaction);
@@ -93,11 +93,13 @@
   methods[35].selector = @selector(setPageSizeWithLong:);
   methods[36].selector = @selector(getWrappedObject);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "beginTransactionWithListener", "LComYahooSquidbDataSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setVersion", "I", "rawQuery", "LNSString;[LNSObject;", "simpleQueryForString", "simpleQueryForLong", "executeInsert", "executeUpdateDelete", "execSQL", "LNSString;", "ensureSqlCompiles", "prepareStatement", "needUpgrade", "setForeignKeyConstraintsEnabled", "Z", "setMaxSqlCacheSize", "setMaximumSize", "setPageSize" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataISQLiteDatabase = { "ISQLiteDatabase", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x609, 37, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataISQLiteDatabase;
+  static const void *ptrTable[] = { "beginTransactionWithListener", "LSquiDBSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setVersion", "I", "rawQuery", "LNSString;[LNSObject;", "simpleQueryForString", "simpleQueryForLong", "executeInsert", "executeUpdateDelete", "execSQL", "LNSString;", "ensureSqlCompiles", "prepareStatement", "needUpgrade", "setForeignKeyConstraintsEnabled", "Z", "setMaxSqlCacheSize", "setMaximumSize", "setPageSize" };
+  static const J2ObjcClassInfo _SquiDBISQLiteDatabase = { "ISQLiteDatabase", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x609, 37, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBISQLiteDatabase;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbDataISQLiteDatabase)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBISQLiteDatabase)
+
+J2OBJC_NAME_MAPPING(SquiDBISQLiteDatabase, "com.yahoo.squidb.data", "SquiDB")

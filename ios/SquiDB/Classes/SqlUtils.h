@@ -16,10 +16,10 @@
 
 @class IOSByteArray;
 @class JavaLangStringBuilder;
-@protocol ComYahooSquidbSqlArgumentResolver;
 @protocol JavaUtilCollection;
+@protocol SquiDBArgumentResolver;
 
-@interface ComYahooSquidbSqlSqlUtils : NSObject
+@interface SquiDBSqlUtils : NSObject
 
 #pragma mark Public
 
@@ -36,7 +36,7 @@
 #pragma mark Package-Private
 
 + (void)addInlineCollectionToSqlStringWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql
-                          withComYahooSquidbSqlArgumentResolver:(id<ComYahooSquidbSqlArgumentResolver>)argResolver
+                                     withSquiDBArgumentResolver:(id<SquiDBArgumentResolver>)argResolver
                                          withJavaUtilCollection:(id<JavaUtilCollection>)values;
 
 + (NSString *)byteArrayToBlobLiteralWithByteArray:(IOSByteArray *)blob;
@@ -44,29 +44,31 @@
 + (NSString *)sanitizeStringAsLiteralWithNSString:(NSString *)literal;
 
 + (NSString *)toSanitizedStringWithId:(id)value
-withComYahooSquidbSqlArgumentResolver:(id<ComYahooSquidbSqlArgumentResolver>)argResolver;
+           withSquiDBArgumentResolver:(id<SquiDBArgumentResolver>)argResolver;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlSqlUtils)
+J2OBJC_STATIC_INIT(SquiDBSqlUtils)
 
-FOUNDATION_EXPORT jboolean ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(NSString *str);
+FOUNDATION_EXPORT jboolean SquiDBSqlUtils_isEmptyWithNSString_(NSString *str);
 
-FOUNDATION_EXPORT jboolean ComYahooSquidbSqlSqlUtils_equalsWithNSString_withNSString_(NSString *a, NSString *b);
+FOUNDATION_EXPORT jboolean SquiDBSqlUtils_equalsWithNSString_withNSString_(NSString *a, NSString *b);
 
-FOUNDATION_EXPORT id ComYahooSquidbSqlSqlUtils_resolveArgReferencesWithId_(id arg);
+FOUNDATION_EXPORT id SquiDBSqlUtils_resolveArgReferencesWithId_(id arg);
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlSqlUtils_addInlineCollectionToSqlStringWithJavaLangStringBuilder_withComYahooSquidbSqlArgumentResolver_withJavaUtilCollection_(JavaLangStringBuilder *sql, id<ComYahooSquidbSqlArgumentResolver> argResolver, id<JavaUtilCollection> values);
+FOUNDATION_EXPORT void SquiDBSqlUtils_addInlineCollectionToSqlStringWithJavaLangStringBuilder_withSquiDBArgumentResolver_withJavaUtilCollection_(JavaLangStringBuilder *sql, id<SquiDBArgumentResolver> argResolver, id<JavaUtilCollection> values);
 
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlUtils_toSanitizedStringWithId_withComYahooSquidbSqlArgumentResolver_(id value, id<ComYahooSquidbSqlArgumentResolver> argResolver);
+FOUNDATION_EXPORT NSString *SquiDBSqlUtils_toSanitizedStringWithId_withSquiDBArgumentResolver_(id value, id<SquiDBArgumentResolver> argResolver);
 
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlUtils_byteArrayToBlobLiteralWithByteArray_(IOSByteArray *blob);
+FOUNDATION_EXPORT NSString *SquiDBSqlUtils_byteArrayToBlobLiteralWithByteArray_(IOSByteArray *blob);
 
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlUtils_sanitizeStringAsLiteralWithNSString_(NSString *literal);
+FOUNDATION_EXPORT NSString *SquiDBSqlUtils_sanitizeStringAsLiteralWithNSString_(NSString *literal);
 
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlUtils_escapeLikePatternWithNSString_withChar_(NSString *pattern, jchar escape);
+FOUNDATION_EXPORT NSString *SquiDBSqlUtils_escapeLikePatternWithNSString_withChar_(NSString *pattern, jchar escape);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlSqlUtils)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSqlUtils)
+
+@compatibility_alias ComYahooSquidbSqlSqlUtils SquiDBSqlUtils;
 
 
 #if __has_feature(nullability)

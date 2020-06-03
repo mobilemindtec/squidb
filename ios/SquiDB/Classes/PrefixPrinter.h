@@ -15,12 +15,12 @@
 #include "J2ObjC_header.h"
 #include "Printer.h"
 
-@interface ComYahooAndroidSqlitePrefixPrinter : NSObject < ComYahooAndroidSqlitePrinter >
+@interface SquiDBPrefixPrinter : NSObject < SquiDBPrinter >
 
 #pragma mark Public
 
-+ (id<ComYahooAndroidSqlitePrinter>)createWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                                              withNSString:(NSString *)prefix;
++ (id<SquiDBPrinter>)createWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                                withNSString:(NSString *)prefix;
 
 - (void)printlnWithNSString:(NSString *)str;
 
@@ -30,11 +30,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqlitePrefixPrinter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBPrefixPrinter)
 
-FOUNDATION_EXPORT id<ComYahooAndroidSqlitePrinter> ComYahooAndroidSqlitePrefixPrinter_createWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix);
+FOUNDATION_EXPORT id<SquiDBPrinter> SquiDBPrefixPrinter_createWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqlitePrefixPrinter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBPrefixPrinter)
+
+@compatibility_alias ComYahooAndroidSqlitePrefixPrinter SquiDBPrefixPrinter;
 
 
 #if __has_feature(nullability)

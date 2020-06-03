@@ -14,7 +14,7 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooSquidbDataSquidTransactionListener < JavaObject >
+@protocol SquiDBSquidTransactionListener < JavaObject >
 
 - (void)onBegin;
 
@@ -24,9 +24,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidTransactionListener)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidTransactionListener)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidTransactionListener)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidTransactionListener)
+
+#define ComYahooSquidbDataSquidTransactionListener SquiDBSquidTransactionListener
 
 
 #if __has_feature(nullability)

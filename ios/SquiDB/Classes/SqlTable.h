@@ -15,12 +15,12 @@
 #include "DBObject.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
 @class IOSClass;
 @class IOSObjectArray;
+@class SquiDBField;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbSqlSqlTable : ComYahooSquidbSqlDBObject {
+@interface SquiDBSqlTable : SquiDBDBObject {
  @public
   IOSClass *modelClass_;
   IOSObjectArray *properties_;
@@ -28,46 +28,55 @@
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlSqlTable *)asWithNSString:(NSString *)newAlias;
+- (SquiDBSqlTable *)asWithNSString:(NSString *)newAlias;
 
 - (IOSClass *)getModelClass;
 
 - (IOSObjectArray *)getProperties;
 
-- (ComYahooSquidbSqlField *)qualifyFieldWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field;
+- (SquiDBField *)qualifyFieldWithSquiDBField:(SquiDBField *)field;
 
-- (IOSObjectArray *)qualifyFieldsWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
+- (IOSObjectArray *)qualifyFieldsWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
 - (IOSObjectArray *)qualifyFieldsWithJavaUtilList:(id<JavaUtilList>)fields;
 
 #pragma mark Protected
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)modelClass
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
+                   withSquiDBPropertyArray:(IOSObjectArray *)properties
                               withNSString:(NSString *)expression;
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)modelClass
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
+                   withSquiDBPropertyArray:(IOSObjectArray *)properties
                               withNSString:(NSString *)expression
                               withNSString:(NSString *)qualifier;
 
 - (IOSObjectArray *)allFields;
 
-- (ComYahooSquidbSqlSqlTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
-                                      withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)newProperties;
+- (SquiDBSqlTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
+                                      withSquiDBPropertyArray:(IOSObjectArray *)newProperties;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)arg0
+                                            withNSString:(NSString *)arg1 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlSqlTable)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSqlTable)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlTable, modelClass_, IOSClass *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlTable, properties_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBSqlTable, modelClass_, IOSClass *)
+J2OBJC_FIELD_SETTER(SquiDBSqlTable, properties_, IOSObjectArray *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlSqlTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_(ComYahooSquidbSqlSqlTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression);
+FOUNDATION_EXPORT void SquiDBSqlTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_(SquiDBSqlTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression);
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlSqlTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_(ComYahooSquidbSqlSqlTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *qualifier);
+FOUNDATION_EXPORT void SquiDBSqlTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_(SquiDBSqlTable *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *qualifier);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlSqlTable)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSqlTable)
+
+@compatibility_alias ComYahooSquidbSqlSqlTable SquiDBSqlTable;
 
 
 #if __has_feature(nullability)

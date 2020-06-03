@@ -15,43 +15,45 @@
 #include "BinaryCriterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 @protocol JavaUtilCollection;
 
-@interface ComYahooSquidbSqlInCollectionCriterion : ComYahooSquidbSqlBinaryCriterion
+@interface SquiDBInCollectionCriterion : SquiDBBinaryCriterion
 
 #pragma mark Protected
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation;
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator;
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                  withJavaUtilCollection:(id<JavaUtilCollection>)value;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                                         withSquiDBOperator:(SquiDBOperator *)operator_
+                                     withJavaUtilCollection:(id<JavaUtilCollection>)value;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)arg0
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)arg1
-                                                  withId:(id)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)arg0
+                                         withSquiDBOperator:(SquiDBOperator *)arg1
+                                                     withId:(id)arg2 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlInCollectionCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBInCollectionCriterion)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlInCollectionCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withJavaUtilCollection_(ComYahooSquidbSqlInCollectionCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id<JavaUtilCollection> value);
+FOUNDATION_EXPORT void SquiDBInCollectionCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withJavaUtilCollection_(SquiDBInCollectionCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id<JavaUtilCollection> value);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlInCollectionCriterion *new_ComYahooSquidbSqlInCollectionCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withJavaUtilCollection_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id<JavaUtilCollection> value) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBInCollectionCriterion *new_SquiDBInCollectionCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withJavaUtilCollection_(SquiDBField *expression, SquiDBOperator *operator_, id<JavaUtilCollection> value) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlInCollectionCriterion *create_ComYahooSquidbSqlInCollectionCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withJavaUtilCollection_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id<JavaUtilCollection> value);
+FOUNDATION_EXPORT SquiDBInCollectionCriterion *create_SquiDBInCollectionCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withJavaUtilCollection_(SquiDBField *expression, SquiDBOperator *operator_, id<JavaUtilCollection> value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlInCollectionCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBInCollectionCriterion)
+
+@compatibility_alias ComYahooSquidbSqlInCollectionCriterion SquiDBInCollectionCriterion;
 
 
 #if __has_feature(nullability)

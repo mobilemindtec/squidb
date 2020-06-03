@@ -19,7 +19,7 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbDataDataChangedNotifier () {
+@interface SquiDBDataChangedNotifier () {
  @public
   id<JavaUtilSet> tables_;
   jboolean enabled_;
@@ -28,14 +28,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataDataChangedNotifier, tables_, id<JavaUtilSet>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataDataChangedNotifier, notifyObjectAccumulator_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(SquiDBDataChangedNotifier, tables_, id<JavaUtilSet>)
+J2OBJC_FIELD_SETTER(SquiDBDataChangedNotifier, notifyObjectAccumulator_, JavaLangThreadLocal *)
 
-__attribute__((unused)) static void ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(ComYahooSquidbDataDataChangedNotifier_DBOperation *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(SquiDBDataChangedNotifier_DBOperation *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbDataDataChangedNotifier_DBOperation *new_ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBDataChangedNotifier_DBOperation *new_SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-@interface ComYahooSquidbDataDataChangedNotifier_1 : JavaLangThreadLocal
+@interface SquiDBDataChangedNotifier_1 : JavaLangThreadLocal
 
 - (instancetype)init;
 
@@ -47,30 +47,30 @@ __attribute__((unused)) static ComYahooSquidbDataDataChangedNotifier_DBOperation
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataDataChangedNotifier_1)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDataChangedNotifier_1)
 
-__attribute__((unused)) static void ComYahooSquidbDataDataChangedNotifier_1_init(ComYahooSquidbDataDataChangedNotifier_1 *self);
+__attribute__((unused)) static void SquiDBDataChangedNotifier_1_init(SquiDBDataChangedNotifier_1 *self);
 
-__attribute__((unused)) static ComYahooSquidbDataDataChangedNotifier_1 *new_ComYahooSquidbDataDataChangedNotifier_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBDataChangedNotifier_1 *new_SquiDBDataChangedNotifier_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataDataChangedNotifier_1 *create_ComYahooSquidbDataDataChangedNotifier_1_init(void);
+__attribute__((unused)) static SquiDBDataChangedNotifier_1 *create_SquiDBDataChangedNotifier_1_init(void);
 
-@implementation ComYahooSquidbDataDataChangedNotifier
+@implementation SquiDBDataChangedNotifier
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataDataChangedNotifier_init(self);
+  SquiDBDataChangedNotifier_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithComYahooSquidbSqlSqlTableArray:(IOSObjectArray *)tables {
-  ComYahooSquidbDataDataChangedNotifier_initWithComYahooSquidbSqlSqlTableArray_(self, tables);
+- (instancetype)initWithSquiDBSqlTableArray:(IOSObjectArray *)tables {
+  SquiDBDataChangedNotifier_initWithSquiDBSqlTableArray_(self, tables);
   return self;
 }
 
 - (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)tables {
-  ComYahooSquidbDataDataChangedNotifier_initWithJavaUtilCollection_(self, tables);
+  SquiDBDataChangedNotifier_initWithJavaUtilCollection_(self, tables);
   return self;
 }
 
@@ -82,43 +82,43 @@ J2OBJC_IGNORE_DESIGNATED_END
   self->enabled_ = enabled;
 }
 
-- (jboolean)onDataChangedWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                   withComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
- withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)operation
-                   withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-                                              withLong:(jlong)rowId {
-  return enabled_ && [self accumulateNotificationObjectsWithJavaUtilSet:[((JavaLangThreadLocal *) nil_chk(notifyObjectAccumulator_)) get] withComYahooSquidbSqlSqlTable:table withComYahooSquidbDataSquidDatabase:database withComYahooSquidbDataDataChangedNotifier_DBOperation:operation withComYahooSquidbDataAbstractModel:modelValues withLong:rowId];
+- (jboolean)onDataChangedWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+  withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)operation
+                    withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                                   withLong:(jlong)rowId {
+  return enabled_ && [self accumulateNotificationObjectsWithJavaUtilSet:[((JavaLangThreadLocal *) nil_chk(notifyObjectAccumulator_)) get] withSquiDBSqlTable:table withSquiDBSquidDatabase:database withSquiDBDataChangedNotifier_DBOperation:operation withSquiDBAbstractModel:modelValues withLong:rowId];
 }
 
 - (jboolean)accumulateNotificationObjectsWithJavaUtilSet:(id<JavaUtilSet>)accumulatorSet
-                           withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                     withComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-   withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)operation
-                     withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
+                                      withSquiDBSqlTable:(SquiDBSqlTable *)table
+                                 withSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+               withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)operation
+                                 withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
                                                 withLong:(jlong)rowId {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (void)flushAccumulatedNotificationsWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                             withBoolean:(jboolean)shouldSendNotifications {
+- (void)flushAccumulatedNotificationsWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                                 withBoolean:(jboolean)shouldSendNotifications {
   id<JavaUtilSet> accumulatedNotifications = [((JavaLangThreadLocal *) nil_chk(notifyObjectAccumulator_)) get];
   if (enabled_ && shouldSendNotifications) {
-    [self sendNotificationsToAllWithComYahooSquidbDataSquidDatabase:database withJavaUtilSet:accumulatedNotifications];
+    [self sendNotificationsToAllWithSquiDBSquidDatabase:database withJavaUtilSet:accumulatedNotifications];
   }
   [((id<JavaUtilSet>) nil_chk(accumulatedNotifications)) clear];
 }
 
-- (void)sendNotificationsToAllWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                  withJavaUtilSet:(id<JavaUtilSet>)notifyObjects {
+- (void)sendNotificationsToAllWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                      withJavaUtilSet:(id<JavaUtilSet>)notifyObjects {
   for (id __strong notifyObject in nil_chk(notifyObjects)) {
-    [self sendNotificationWithComYahooSquidbDataSquidDatabase:database withId:notifyObject];
+    [self sendNotificationWithSquiDBSquidDatabase:database withId:notifyObject];
   }
 }
 
-- (void)sendNotificationWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                     withId:(id)notifyObject {
+- (void)sendNotificationWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                         withId:(id)notifyObject {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
 }
@@ -140,87 +140,89 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlSqlTableArray:);
+  methods[1].selector = @selector(initWithSquiDBSqlTableArray:);
   methods[2].selector = @selector(initWithJavaUtilCollection:);
   methods[3].selector = @selector(whichTables);
   methods[4].selector = @selector(setEnabledWithBoolean:);
-  methods[5].selector = @selector(onDataChangedWithComYahooSquidbSqlSqlTable:withComYahooSquidbDataSquidDatabase:withComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withLong:);
-  methods[6].selector = @selector(accumulateNotificationObjectsWithJavaUtilSet:withComYahooSquidbSqlSqlTable:withComYahooSquidbDataSquidDatabase:withComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withLong:);
-  methods[7].selector = @selector(flushAccumulatedNotificationsWithComYahooSquidbDataSquidDatabase:withBoolean:);
-  methods[8].selector = @selector(sendNotificationsToAllWithComYahooSquidbDataSquidDatabase:withJavaUtilSet:);
-  methods[9].selector = @selector(sendNotificationWithComYahooSquidbDataSquidDatabase:withId:);
+  methods[5].selector = @selector(onDataChangedWithSquiDBSqlTable:withSquiDBSquidDatabase:withSquiDBDataChangedNotifier_DBOperation:withSquiDBAbstractModel:withLong:);
+  methods[6].selector = @selector(accumulateNotificationObjectsWithJavaUtilSet:withSquiDBSqlTable:withSquiDBSquidDatabase:withSquiDBDataChangedNotifier_DBOperation:withSquiDBAbstractModel:withLong:);
+  methods[7].selector = @selector(flushAccumulatedNotificationsWithSquiDBSquidDatabase:withBoolean:);
+  methods[8].selector = @selector(sendNotificationsToAllWithSquiDBSquidDatabase:withJavaUtilSet:);
+  methods[9].selector = @selector(sendNotificationWithSquiDBSquidDatabase:withId:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "tables_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x12, -1, -1, 21, -1 },
     { "enabled_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "notifyObjectAccumulator_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 22, -1 },
   };
-  static const void *ptrTable[] = { "[LComYahooSquidbSqlSqlTable;", "([Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "LJavaUtilCollection;", "(Ljava/util/Collection<+Lcom/yahoo/squidb/sql/SqlTable<*>;>;)V", "()Ljava/util/Set<Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "setEnabled", "Z", "onDataChanged", "LComYahooSquidbSqlSqlTable;LComYahooSquidbDataSquidDatabase;LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;J", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Lcom/yahoo/squidb/data/SquidDatabase;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;J)Z", "accumulateNotificationObjects", "LJavaUtilSet;LComYahooSquidbSqlSqlTable;LComYahooSquidbDataSquidDatabase;LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;J", "(Ljava/util/Set<TT;>;Lcom/yahoo/squidb/sql/SqlTable<*>;Lcom/yahoo/squidb/data/SquidDatabase;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;J)Z", "flushAccumulatedNotifications", "LComYahooSquidbDataSquidDatabase;Z", "sendNotificationsToAll", "LComYahooSquidbDataSquidDatabase;LJavaUtilSet;", "(Lcom/yahoo/squidb/data/SquidDatabase;Ljava/util/Set<TT;>;)V", "sendNotification", "LComYahooSquidbDataSquidDatabase;LNSObject;", "(Lcom/yahoo/squidb/data/SquidDatabase;TT;)V", "Ljava/util/Set<Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<TT;>;>;", "LComYahooSquidbDataDataChangedNotifier_DBOperation;", "<T:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataDataChangedNotifier = { "DataChangedNotifier", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 10, 3, -1, 23, -1, 24, -1 };
-  return &_ComYahooSquidbDataDataChangedNotifier;
+  static const void *ptrTable[] = { "[LSquiDBSqlTable;", "([Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "LJavaUtilCollection;", "(Ljava/util/Collection<+Lcom/yahoo/squidb/sql/SqlTable<*>;>;)V", "()Ljava/util/Set<Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "setEnabled", "Z", "onDataChanged", "LSquiDBSqlTable;LSquiDBSquidDatabase;LSquiDBDataChangedNotifier_DBOperation;LSquiDBAbstractModel;J", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Lcom/yahoo/squidb/data/SquidDatabase;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;J)Z", "accumulateNotificationObjects", "LJavaUtilSet;LSquiDBSqlTable;LSquiDBSquidDatabase;LSquiDBDataChangedNotifier_DBOperation;LSquiDBAbstractModel;J", "(Ljava/util/Set<TT;>;Lcom/yahoo/squidb/sql/SqlTable<*>;Lcom/yahoo/squidb/data/SquidDatabase;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;J)Z", "flushAccumulatedNotifications", "LSquiDBSquidDatabase;Z", "sendNotificationsToAll", "LSquiDBSquidDatabase;LJavaUtilSet;", "(Lcom/yahoo/squidb/data/SquidDatabase;Ljava/util/Set<TT;>;)V", "sendNotification", "LSquiDBSquidDatabase;LNSObject;", "(Lcom/yahoo/squidb/data/SquidDatabase;TT;)V", "Ljava/util/Set<Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<TT;>;>;", "LSquiDBDataChangedNotifier_DBOperation;", "<T:Ljava/lang/Object;>Ljava/lang/Object;" };
+  static const J2ObjcClassInfo _SquiDBDataChangedNotifier = { "DataChangedNotifier", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 10, 3, -1, 23, -1, 24, -1 };
+  return &_SquiDBDataChangedNotifier;
 }
 
 @end
 
-void ComYahooSquidbDataDataChangedNotifier_init(ComYahooSquidbDataDataChangedNotifier *self) {
+void SquiDBDataChangedNotifier_init(SquiDBDataChangedNotifier *self) {
   NSObject_init(self);
   self->tables_ = new_JavaUtilHashSet_init();
   self->enabled_ = true;
-  self->notifyObjectAccumulator_ = new_ComYahooSquidbDataDataChangedNotifier_1_init();
+  self->notifyObjectAccumulator_ = new_SquiDBDataChangedNotifier_1_init();
 }
 
-void ComYahooSquidbDataDataChangedNotifier_initWithComYahooSquidbSqlSqlTableArray_(ComYahooSquidbDataDataChangedNotifier *self, IOSObjectArray *tables) {
+void SquiDBDataChangedNotifier_initWithSquiDBSqlTableArray_(SquiDBDataChangedNotifier *self, IOSObjectArray *tables) {
   NSObject_init(self);
   self->tables_ = new_JavaUtilHashSet_init();
   self->enabled_ = true;
-  self->notifyObjectAccumulator_ = new_ComYahooSquidbDataDataChangedNotifier_1_init();
-  ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->tables_, tables);
+  self->notifyObjectAccumulator_ = new_SquiDBDataChangedNotifier_1_init();
+  SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->tables_, tables);
 }
 
-void ComYahooSquidbDataDataChangedNotifier_initWithJavaUtilCollection_(ComYahooSquidbDataDataChangedNotifier *self, id<JavaUtilCollection> tables) {
+void SquiDBDataChangedNotifier_initWithJavaUtilCollection_(SquiDBDataChangedNotifier *self, id<JavaUtilCollection> tables) {
   NSObject_init(self);
   self->tables_ = new_JavaUtilHashSet_init();
   self->enabled_ = true;
-  self->notifyObjectAccumulator_ = new_ComYahooSquidbDataDataChangedNotifier_1_init();
+  self->notifyObjectAccumulator_ = new_SquiDBDataChangedNotifier_1_init();
   [self->tables_ addAllWithJavaUtilCollection:tables];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataDataChangedNotifier)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDataChangedNotifier)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataDataChangedNotifier_DBOperation)
+J2OBJC_NAME_MAPPING(SquiDBDataChangedNotifier, "com.yahoo.squidb.data", "SquiDB")
 
-ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_values_[3];
+J2OBJC_INITIALIZED_DEFN(SquiDBDataChangedNotifier_DBOperation)
 
-@implementation ComYahooSquidbDataDataChangedNotifier_DBOperation
+SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_values_[3];
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation *)INSERT {
-  return JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT);
+@implementation SquiDBDataChangedNotifier_DBOperation
+
++ (SquiDBDataChangedNotifier_DBOperation *)INSERT {
+  return JreEnum(SquiDBDataChangedNotifier_DBOperation, INSERT);
 }
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation *)UPDATE {
-  return JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE);
++ (SquiDBDataChangedNotifier_DBOperation *)UPDATE {
+  return JreEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE);
 }
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation *)DELETE {
-  return JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE);
++ (SquiDBDataChangedNotifier_DBOperation *)DELETE {
+  return JreEnum(SquiDBDataChangedNotifier_DBOperation, DELETE);
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbDataDataChangedNotifier_DBOperation_values();
+  return SquiDBDataChangedNotifier_DBOperation_values();
 }
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbDataDataChangedNotifier_DBOperation_valueOfWithNSString_(name);
++ (SquiDBDataChangedNotifier_DBOperation *)valueOfWithNSString:(NSString *)name {
+  return SquiDBDataChangedNotifier_DBOperation_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum)toNSEnum {
-  return (ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum)[self ordinal];
+- (SquiDBDataChangedNotifier_DBOperation_Enum)toNSEnum {
+  return (SquiDBDataChangedNotifier_DBOperation_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "[LComYahooSquidbDataDataChangedNotifier_DBOperation;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataDataChangedNotifier_DBOperation;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBDataChangedNotifier_DBOperation;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBDataChangedNotifier_DBOperation;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -229,43 +231,43 @@ ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChanged
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "INSERT", "LComYahooSquidbDataDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
-    { "UPDATE", "LComYahooSquidbDataDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "DELETE", "LComYahooSquidbDataDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "INSERT", "LSquiDBDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "UPDATE", "LSquiDBDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "DELETE", "LSquiDBDataChangedNotifier_DBOperation;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT), &JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE), &JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE), "LComYahooSquidbDataDataChangedNotifier;", "Ljava/lang/Enum<Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataDataChangedNotifier_DBOperation = { "DBOperation", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x4019, 2, 3, 5, -1, -1, 6, -1 };
-  return &_ComYahooSquidbDataDataChangedNotifier_DBOperation;
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(SquiDBDataChangedNotifier_DBOperation, INSERT), &JreEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE), &JreEnum(SquiDBDataChangedNotifier_DBOperation, DELETE), "LSquiDBDataChangedNotifier;", "Ljava/lang/Enum<Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;>;" };
+  static const J2ObjcClassInfo _SquiDBDataChangedNotifier_DBOperation = { "DBOperation", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x4019, 2, 3, 5, -1, -1, 6, -1 };
+  return &_SquiDBDataChangedNotifier_DBOperation;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbDataDataChangedNotifier_DBOperation class]) {
-    JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT) = new_ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbDataDataChangedNotifier_DBOperation_class_(), 0), 0);
-    JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE) = new_ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbDataDataChangedNotifier_DBOperation_class_(), 1), 1);
-    JreEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE) = new_ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbDataDataChangedNotifier_DBOperation_class_(), 2), 2);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbDataDataChangedNotifier_DBOperation)
+  if (self == [SquiDBDataChangedNotifier_DBOperation class]) {
+    JreEnum(SquiDBDataChangedNotifier_DBOperation, INSERT) = new_SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(SquiDBDataChangedNotifier_DBOperation_class_(), 0), 0);
+    JreEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE) = new_SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(SquiDBDataChangedNotifier_DBOperation_class_(), 1), 1);
+    JreEnum(SquiDBDataChangedNotifier_DBOperation, DELETE) = new_SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(JreEnumConstantName(SquiDBDataChangedNotifier_DBOperation_class_(), 2), 2);
+    J2OBJC_SET_INITIALIZED(SquiDBDataChangedNotifier_DBOperation)
   }
 }
 
 @end
 
-void ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(ComYahooSquidbDataDataChangedNotifier_DBOperation *self, NSString *__name, jint __ordinal) {
+void SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(SquiDBDataChangedNotifier_DBOperation *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComYahooSquidbDataDataChangedNotifier_DBOperation *new_ComYahooSquidbDataDataChangedNotifier_DBOperation_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataDataChangedNotifier_DBOperation, initWithNSString_withInt_, __name, __ordinal)
+SquiDBDataChangedNotifier_DBOperation *new_SquiDBDataChangedNotifier_DBOperation_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBDataChangedNotifier_DBOperation, initWithNSString_withInt_, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbDataDataChangedNotifier_DBOperation_values() {
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbDataDataChangedNotifier_DBOperation_values_ count:3 type:ComYahooSquidbDataDataChangedNotifier_DBOperation_class_()];
+IOSObjectArray *SquiDBDataChangedNotifier_DBOperation_values() {
+  SquiDBDataChangedNotifier_DBOperation_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBDataChangedNotifier_DBOperation_values_ count:3 type:SquiDBDataChangedNotifier_DBOperation_class_()];
 }
 
-ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_initialize();
+SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_valueOfWithNSString_(NSString *name) {
+  SquiDBDataChangedNotifier_DBOperation_initialize();
   for (int i = 0; i < 3; i++) {
-    ComYahooSquidbDataDataChangedNotifier_DBOperation *e = ComYahooSquidbDataDataChangedNotifier_DBOperation_values_[i];
+    SquiDBDataChangedNotifier_DBOperation *e = SquiDBDataChangedNotifier_DBOperation_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -274,21 +276,21 @@ ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChanged
   return nil;
 }
 
-ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_initialize();
+SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_fromOrdinal(NSUInteger ordinal) {
+  SquiDBDataChangedNotifier_DBOperation_initialize();
   if (ordinal >= 3) {
     return nil;
   }
-  return ComYahooSquidbDataDataChangedNotifier_DBOperation_values_[ordinal];
+  return SquiDBDataChangedNotifier_DBOperation_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataDataChangedNotifier_DBOperation)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDataChangedNotifier_DBOperation)
 
-@implementation ComYahooSquidbDataDataChangedNotifier_1
+@implementation SquiDBDataChangedNotifier_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataDataChangedNotifier_1_init(self);
+  SquiDBDataChangedNotifier_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -308,21 +310,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "()Ljava/util/Set<TT;>;", "LComYahooSquidbDataDataChangedNotifier;", "Ljava/lang/ThreadLocal<Ljava/util/Set<TT;>;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataDataChangedNotifier_1 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, 2, -1 };
-  return &_ComYahooSquidbDataDataChangedNotifier_1;
+  static const void *ptrTable[] = { "()Ljava/util/Set<TT;>;", "LSquiDBDataChangedNotifier;", "Ljava/lang/ThreadLocal<Ljava/util/Set<TT;>;>;" };
+  static const J2ObjcClassInfo _SquiDBDataChangedNotifier_1 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8010, 2, 0, 1, -1, -1, 2, -1 };
+  return &_SquiDBDataChangedNotifier_1;
 }
 
 @end
 
-void ComYahooSquidbDataDataChangedNotifier_1_init(ComYahooSquidbDataDataChangedNotifier_1 *self) {
+void SquiDBDataChangedNotifier_1_init(SquiDBDataChangedNotifier_1 *self) {
   JavaLangThreadLocal_init(self);
 }
 
-ComYahooSquidbDataDataChangedNotifier_1 *new_ComYahooSquidbDataDataChangedNotifier_1_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataDataChangedNotifier_1, init)
+SquiDBDataChangedNotifier_1 *new_SquiDBDataChangedNotifier_1_init() {
+  J2OBJC_NEW_IMPL(SquiDBDataChangedNotifier_1, init)
 }
 
-ComYahooSquidbDataDataChangedNotifier_1 *create_ComYahooSquidbDataDataChangedNotifier_1_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataDataChangedNotifier_1, init)
+SquiDBDataChangedNotifier_1 *create_SquiDBDataChangedNotifier_1_init() {
+  J2OBJC_CREATE_IMPL(SquiDBDataChangedNotifier_1, init)
 }

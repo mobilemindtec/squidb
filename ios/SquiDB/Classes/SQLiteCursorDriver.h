@@ -15,17 +15,17 @@
 #include "J2ObjC_header.h"
 
 @class IOSObjectArray;
-@protocol ComYahooAndroidSqliteSQLiteDatabase_CursorFactory;
-@protocol ComYahooSquidbDataICursor;
+@protocol SquiDBICursor;
+@protocol SquiDBSQLiteDatabase_CursorFactory;
 
-@protocol ComYahooAndroidSqliteSQLiteCursorDriver < JavaObject >
+@protocol SquiDBSQLiteCursorDriver < JavaObject >
 
-- (id<ComYahooSquidbDataICursor>)queryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
-                                                                          withNSStringArray:(IOSObjectArray *)bindArgs;
+- (id<SquiDBICursor>)queryWithSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
+                                               withNSStringArray:(IOSObjectArray *)bindArgs;
 
 - (void)cursorDeactivated;
 
-- (void)cursorRequeriedWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor;
+- (void)cursorRequeriedWithSquiDBICursor:(id<SquiDBICursor>)cursor;
 
 - (void)cursorClosed;
 
@@ -33,9 +33,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteCursorDriver)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteCursorDriver)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteCursorDriver)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteCursorDriver)
+
+#define ComYahooAndroidSqliteSQLiteCursorDriver SquiDBSQLiteCursorDriver
 
 
 #if __has_feature(nullability)

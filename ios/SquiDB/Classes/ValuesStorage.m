@@ -17,11 +17,11 @@
 #include "java/lang/UnsupportedOperationException.h"
 #include "java/util/Set.h"
 
-@implementation ComYahooSquidbDataValuesStorage
+@implementation SquiDBValuesStorage
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataValuesStorage_init(self);
+  SquiDBValuesStorage_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -108,7 +108,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)putAllWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)other {
+- (void)putAllWithSquiDBValuesStorage:(SquiDBValuesStorage *)other {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
 }
@@ -132,28 +132,28 @@ J2OBJC_IGNORE_DESIGNATED_END
     [self putNullWithNSString:key];
   }
   else if ([value isKindOfClass:[JavaLangBoolean class]]) {
-    [self putWithNSString:key withJavaLangBoolean:(JavaLangBoolean *) cast_chk(value, [JavaLangBoolean class])];
+    [self putWithNSString:key withJavaLangBoolean:(JavaLangBoolean *) value];
   }
   else if ([value isKindOfClass:[JavaLangByte class]]) {
-    [self putWithNSString:key withJavaLangByte:(JavaLangByte *) cast_chk(value, [JavaLangByte class])];
+    [self putWithNSString:key withJavaLangByte:(JavaLangByte *) value];
   }
   else if ([value isKindOfClass:[JavaLangDouble class]]) {
-    [self putWithNSString:key withJavaLangDouble:(JavaLangDouble *) cast_chk(value, [JavaLangDouble class])];
+    [self putWithNSString:key withJavaLangDouble:(JavaLangDouble *) value];
   }
   else if ([value isKindOfClass:[JavaLangFloat class]]) {
-    [self putWithNSString:key withJavaLangFloat:(JavaLangFloat *) cast_chk(value, [JavaLangFloat class])];
+    [self putWithNSString:key withJavaLangFloat:(JavaLangFloat *) value];
   }
   else if ([value isKindOfClass:[JavaLangInteger class]]) {
-    [self putWithNSString:key withJavaLangInteger:(JavaLangInteger *) cast_chk(value, [JavaLangInteger class])];
+    [self putWithNSString:key withJavaLangInteger:(JavaLangInteger *) value];
   }
   else if ([value isKindOfClass:[JavaLangLong class]]) {
-    [self putWithNSString:key withJavaLangLong:(JavaLangLong *) cast_chk(value, [JavaLangLong class])];
+    [self putWithNSString:key withJavaLangLong:(JavaLangLong *) value];
   }
   else if ([value isKindOfClass:[JavaLangShort class]]) {
-    [self putWithNSString:key withJavaLangShort:(JavaLangShort *) cast_chk(value, [JavaLangShort class])];
+    [self putWithNSString:key withJavaLangShort:(JavaLangShort *) value];
   }
   else if ([value isKindOfClass:[NSString class]]) {
-    [self putWithNSString:key withNSString:(NSString *) cast_chk(value, [NSString class])];
+    [self putWithNSString:key withNSString:(NSString *) value];
   }
   else if ([value isKindOfClass:[IOSByteArray class]]) {
     [self putWithNSString:key withByteArray:(IOSByteArray *) cast_chk(value, [IOSByteArray class])];
@@ -217,22 +217,24 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[12].selector = @selector(putWithNSString:withJavaLangShort:);
   methods[13].selector = @selector(putWithNSString:withNSString:);
   methods[14].selector = @selector(putWithNSString:withByteArray:);
-  methods[15].selector = @selector(putAllWithComYahooSquidbDataValuesStorage:);
+  methods[15].selector = @selector(putAllWithSquiDBValuesStorage:);
   methods[16].selector = @selector(valueSet);
   methods[17].selector = @selector(keySet);
   methods[18].selector = @selector(putWithNSString:withId:withBoolean:);
   methods[19].selector = @selector(isEqual:);
   methods[20].selector = @selector(hash);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "containsKey", "LNSString;", "get", "remove", "putNull", "put", "LNSString;LJavaLangBoolean;", "LNSString;LJavaLangByte;", "LNSString;LJavaLangDouble;", "LNSString;LJavaLangFloat;", "LNSString;LJavaLangInteger;", "LNSString;LJavaLangLong;", "LNSString;LJavaLangShort;", "LNSString;LNSString;", "LNSString;[B", "putAll", "LComYahooSquidbDataValuesStorage;", "()Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;", "()Ljava/util/Set<Ljava/lang/String;>;", "LNSString;LNSObject;Z", "equals", "LNSObject;", "hashCode" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataValuesStorage = { "ValuesStorage", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x401, 21, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataValuesStorage;
+  static const void *ptrTable[] = { "containsKey", "LNSString;", "get", "remove", "putNull", "put", "LNSString;LJavaLangBoolean;", "LNSString;LJavaLangByte;", "LNSString;LJavaLangDouble;", "LNSString;LJavaLangFloat;", "LNSString;LJavaLangInteger;", "LNSString;LJavaLangLong;", "LNSString;LJavaLangShort;", "LNSString;LNSString;", "LNSString;[B", "putAll", "LSquiDBValuesStorage;", "()Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;", "()Ljava/util/Set<Ljava/lang/String;>;", "LNSString;LNSObject;Z", "equals", "LNSObject;", "hashCode" };
+  static const J2ObjcClassInfo _SquiDBValuesStorage = { "ValuesStorage", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x401, 21, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBValuesStorage;
 }
 
 @end
 
-void ComYahooSquidbDataValuesStorage_init(ComYahooSquidbDataValuesStorage *self) {
+void SquiDBValuesStorage_init(SquiDBValuesStorage *self) {
   NSObject_init(self);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataValuesStorage)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBValuesStorage)
+
+J2OBJC_NAME_MAPPING(SquiDBValuesStorage, "com.yahoo.squidb.data", "SquiDB")

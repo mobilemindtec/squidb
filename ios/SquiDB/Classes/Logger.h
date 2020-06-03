@@ -15,11 +15,11 @@
 #include "J2ObjC_header.h"
 #include "java/lang/Enum.h"
 
-@class ComYahooSquidbUtilityLogger_Level;
 @class IOSObjectArray;
 @class JavaLangThrowable;
+@class SquiDBLogger_Level;
 
-@interface ComYahooSquidbUtilityLogger : NSObject
+@interface SquiDBLogger : NSObject
 @property (readonly, copy, class) NSString *LOG_TAG NS_SWIFT_NAME(LOG_TAG);
 
 + (NSString *)LOG_TAG;
@@ -50,16 +50,16 @@ withJavaLangThrowable:(JavaLangThrowable *)t;
 withJavaLangThrowable:(JavaLangThrowable *)t;
 
 + (jboolean)isLoggableWithNSString:(NSString *)tag
-withComYahooSquidbUtilityLogger_Level:(ComYahooSquidbUtilityLogger_Level *)level;
+            withSquiDBLogger_Level:(SquiDBLogger_Level *)level;
 
-- (void)logWithComYahooSquidbUtilityLogger_Level:(ComYahooSquidbUtilityLogger_Level *)level
-                                    withNSString:(NSString *)tag
-                                    withNSString:(NSString *)message
-                           withJavaLangThrowable:(JavaLangThrowable *)t;
+- (void)logWithSquiDBLogger_Level:(SquiDBLogger_Level *)level
+                     withNSString:(NSString *)tag
+                     withNSString:(NSString *)message
+            withJavaLangThrowable:(JavaLangThrowable *)t;
 
-+ (void)setLoggerWithComYahooSquidbUtilityLogger:(ComYahooSquidbUtilityLogger *)newLogger;
++ (void)setLoggerWithSquiDBLogger:(SquiDBLogger *)newLogger;
 
-+ (void)setLogLevelWithComYahooSquidbUtilityLogger_Level:(ComYahooSquidbUtilityLogger_Level *)newLevel;
++ (void)setLogLevelWithSquiDBLogger_Level:(SquiDBLogger_Level *)newLevel;
 
 + (void)wWithNSString:(NSString *)tag
          withNSString:(NSString *)message;
@@ -77,130 +77,132 @@ withJavaLangThrowable:(JavaLangThrowable *)t;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbUtilityLogger)
+J2OBJC_STATIC_INIT(SquiDBLogger)
 
-inline NSString *ComYahooSquidbUtilityLogger_get_LOG_TAG(void);
+inline NSString *SquiDBLogger_get_LOG_TAG(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbUtilityLogger_LOG_TAG;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbUtilityLogger, LOG_TAG, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBLogger_LOG_TAG;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBLogger, LOG_TAG, NSString *)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_init(ComYahooSquidbUtilityLogger *self);
+FOUNDATION_EXPORT void SquiDBLogger_init(SquiDBLogger *self);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_setLoggerWithComYahooSquidbUtilityLogger_(ComYahooSquidbUtilityLogger *newLogger);
+FOUNDATION_EXPORT void SquiDBLogger_setLoggerWithSquiDBLogger_(SquiDBLogger *newLogger);
 
-FOUNDATION_EXPORT jboolean ComYahooSquidbUtilityLogger_isLoggableWithNSString_withComYahooSquidbUtilityLogger_Level_(NSString *tag, ComYahooSquidbUtilityLogger_Level *level);
+FOUNDATION_EXPORT jboolean SquiDBLogger_isLoggableWithNSString_withSquiDBLogger_Level_(NSString *tag, SquiDBLogger_Level *level);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_setLogLevelWithComYahooSquidbUtilityLogger_Level_(ComYahooSquidbUtilityLogger_Level *newLevel);
+FOUNDATION_EXPORT void SquiDBLogger_setLogLevelWithSquiDBLogger_Level_(SquiDBLogger_Level *newLevel);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_iWithNSString_withNSString_(NSString *tag, NSString *message);
+FOUNDATION_EXPORT void SquiDBLogger_iWithNSString_withNSString_(NSString *tag, NSString *message);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_iWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
+FOUNDATION_EXPORT void SquiDBLogger_iWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(NSString *tag, NSString *message);
+FOUNDATION_EXPORT void SquiDBLogger_dWithNSString_withNSString_(NSString *tag, NSString *message);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_dWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
+FOUNDATION_EXPORT void SquiDBLogger_dWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_wWithNSString_withNSString_(NSString *tag, NSString *message);
+FOUNDATION_EXPORT void SquiDBLogger_wWithNSString_withNSString_(NSString *tag, NSString *message);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_wWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
+FOUNDATION_EXPORT void SquiDBLogger_wWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(NSString *tag, NSString *message);
+FOUNDATION_EXPORT void SquiDBLogger_eWithNSString_withNSString_(NSString *tag, NSString *message);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
+FOUNDATION_EXPORT void SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_wtfWithNSString_withNSString_(NSString *tag, NSString *message);
+FOUNDATION_EXPORT void SquiDBLogger_wtfWithNSString_withNSString_(NSString *tag, NSString *message);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_wtfWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
+FOUNDATION_EXPORT void SquiDBLogger_wtfWithNSString_withNSString_withJavaLangThrowable_(NSString *tag, NSString *message, JavaLangThrowable *t);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityLogger)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBLogger)
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbUtilityLogger_Level_Enum) {
-  ComYahooSquidbUtilityLogger_Level_Enum_ASSERT = 0,
-  ComYahooSquidbUtilityLogger_Level_Enum_ERROR = 1,
-  ComYahooSquidbUtilityLogger_Level_Enum_WARN = 2,
-  ComYahooSquidbUtilityLogger_Level_Enum_DEBUG = 3,
-  ComYahooSquidbUtilityLogger_Level_Enum_INFO = 4,
+@compatibility_alias ComYahooSquidbUtilityLogger SquiDBLogger;
+
+typedef NS_ENUM(NSUInteger, SquiDBLogger_Level_Enum) {
+  SquiDBLogger_Level_Enum_ASSERT = 0,
+  SquiDBLogger_Level_Enum_ERROR = 1,
+  SquiDBLogger_Level_Enum_WARN = 2,
+  SquiDBLogger_Level_Enum_DEBUG = 3,
+  SquiDBLogger_Level_Enum_INFO = 4,
 };
 
-@interface ComYahooSquidbUtilityLogger_Level : JavaLangEnum
+@interface SquiDBLogger_Level : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbUtilityLogger_Level *ASSERT NS_SWIFT_NAME(ASSERT);
-@property (readonly, class, nonnull) ComYahooSquidbUtilityLogger_Level *ERROR NS_SWIFT_NAME(ERROR);
-@property (readonly, class, nonnull) ComYahooSquidbUtilityLogger_Level *WARN NS_SWIFT_NAME(WARN);
-@property (readonly, class, nonnull) ComYahooSquidbUtilityLogger_Level *DEBUG_ NS_SWIFT_NAME(DEBUG_);
-@property (readonly, class, nonnull) ComYahooSquidbUtilityLogger_Level *INFO NS_SWIFT_NAME(INFO);
-+ (ComYahooSquidbUtilityLogger_Level * __nonnull)ASSERT;
+@property (readonly, class, nonnull) SquiDBLogger_Level *ASSERT NS_SWIFT_NAME(ASSERT);
+@property (readonly, class, nonnull) SquiDBLogger_Level *ERROR NS_SWIFT_NAME(ERROR);
+@property (readonly, class, nonnull) SquiDBLogger_Level *WARN NS_SWIFT_NAME(WARN);
+@property (readonly, class, nonnull) SquiDBLogger_Level *DEBUG_ NS_SWIFT_NAME(DEBUG_);
+@property (readonly, class, nonnull) SquiDBLogger_Level *INFO NS_SWIFT_NAME(INFO);
++ (SquiDBLogger_Level * __nonnull)ASSERT;
 
-+ (ComYahooSquidbUtilityLogger_Level * __nonnull)ERROR;
++ (SquiDBLogger_Level * __nonnull)ERROR;
 
-+ (ComYahooSquidbUtilityLogger_Level * __nonnull)WARN;
++ (SquiDBLogger_Level * __nonnull)WARN;
 
-+ (ComYahooSquidbUtilityLogger_Level * __nonnull)DEBUG_;
++ (SquiDBLogger_Level * __nonnull)DEBUG_;
 
-+ (ComYahooSquidbUtilityLogger_Level * __nonnull)INFO;
++ (SquiDBLogger_Level * __nonnull)INFO;
 
 #pragma mark Public
 
-+ (ComYahooSquidbUtilityLogger_Level *)valueOfWithNSString:(NSString *)name;
++ (SquiDBLogger_Level *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (ComYahooSquidbUtilityLogger_Level_Enum)toNSEnum;
+- (SquiDBLogger_Level_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbUtilityLogger_Level)
+J2OBJC_STATIC_INIT(SquiDBLogger_Level)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_values_[];
+FOUNDATION_EXPORT SquiDBLogger_Level *SquiDBLogger_Level_values_[];
 
-inline ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_get_ASSERT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbUtilityLogger_Level, ASSERT)
+inline SquiDBLogger_Level *SquiDBLogger_Level_get_ASSERT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBLogger_Level, ASSERT)
 
-inline ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_get_ERROR(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbUtilityLogger_Level, ERROR)
+inline SquiDBLogger_Level *SquiDBLogger_Level_get_ERROR(void);
+J2OBJC_ENUM_CONSTANT(SquiDBLogger_Level, ERROR)
 
-inline ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_get_WARN(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbUtilityLogger_Level, WARN)
+inline SquiDBLogger_Level *SquiDBLogger_Level_get_WARN(void);
+J2OBJC_ENUM_CONSTANT(SquiDBLogger_Level, WARN)
 
-inline ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_get_DEBUG(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbUtilityLogger_Level, DEBUG)
+inline SquiDBLogger_Level *SquiDBLogger_Level_get_DEBUG(void);
+J2OBJC_ENUM_CONSTANT(SquiDBLogger_Level, DEBUG)
 
-inline ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_get_INFO(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbUtilityLogger_Level, INFO)
+inline SquiDBLogger_Level *SquiDBLogger_Level_get_INFO(void);
+J2OBJC_ENUM_CONSTANT(SquiDBLogger_Level, INFO)
 
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbUtilityLogger_Level_values(void);
+FOUNDATION_EXPORT IOSObjectArray *SquiDBLogger_Level_values(void);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBLogger_Level *SquiDBLogger_Level_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityLogger_Level *ComYahooSquidbUtilityLogger_Level_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBLogger_Level *SquiDBLogger_Level_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityLogger_Level)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBLogger_Level)
 
-@interface ComYahooSquidbUtilityLogger_DefaultLogger : ComYahooSquidbUtilityLogger
+@interface SquiDBLogger_DefaultLogger : SquiDBLogger
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)logWithComYahooSquidbUtilityLogger_Level:(ComYahooSquidbUtilityLogger_Level *)level
-                                    withNSString:(NSString *)tag
-                                    withNSString:(NSString *)message
-                           withJavaLangThrowable:(JavaLangThrowable *)t;
+- (void)logWithSquiDBLogger_Level:(SquiDBLogger_Level *)level
+                     withNSString:(NSString *)tag
+                     withNSString:(NSString *)message
+            withJavaLangThrowable:(JavaLangThrowable *)t;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbUtilityLogger_DefaultLogger)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBLogger_DefaultLogger)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityLogger_DefaultLogger_init(ComYahooSquidbUtilityLogger_DefaultLogger *self);
+FOUNDATION_EXPORT void SquiDBLogger_DefaultLogger_init(SquiDBLogger_DefaultLogger *self);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityLogger_DefaultLogger *new_ComYahooSquidbUtilityLogger_DefaultLogger_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBLogger_DefaultLogger *new_SquiDBLogger_DefaultLogger_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityLogger_DefaultLogger *create_ComYahooSquidbUtilityLogger_DefaultLogger_init(void);
+FOUNDATION_EXPORT SquiDBLogger_DefaultLogger *create_SquiDBLogger_DefaultLogger_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityLogger_DefaultLogger)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBLogger_DefaultLogger)
 
 
 #if __has_feature(nullability)

@@ -23,98 +23,98 @@
 #include "java/lang/StringBuilder.h"
 #include "java/util/Locale.h"
 
-@implementation ComYahooAndroidSqliteDatabaseUtils
+@implementation SquiDBDatabaseUtils
 
 + (jint)STATEMENT_SELECT {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_SELECT;
+  return SquiDBDatabaseUtils_STATEMENT_SELECT;
 }
 
 + (jint)STATEMENT_UPDATE {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UPDATE;
+  return SquiDBDatabaseUtils_STATEMENT_UPDATE;
 }
 
 + (jint)STATEMENT_ATTACH {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ATTACH;
+  return SquiDBDatabaseUtils_STATEMENT_ATTACH;
 }
 
 + (jint)STATEMENT_BEGIN {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_BEGIN;
+  return SquiDBDatabaseUtils_STATEMENT_BEGIN;
 }
 
 + (jint)STATEMENT_COMMIT {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT;
+  return SquiDBDatabaseUtils_STATEMENT_COMMIT;
 }
 
 + (jint)STATEMENT_ABORT {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ABORT;
+  return SquiDBDatabaseUtils_STATEMENT_ABORT;
 }
 
 + (jint)STATEMENT_PRAGMA {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_PRAGMA;
+  return SquiDBDatabaseUtils_STATEMENT_PRAGMA;
 }
 
 + (jint)STATEMENT_DDL {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_DDL;
+  return SquiDBDatabaseUtils_STATEMENT_DDL;
 }
 
 + (jint)STATEMENT_UNPREPARED {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UNPREPARED;
+  return SquiDBDatabaseUtils_STATEMENT_UNPREPARED;
 }
 
 + (jint)STATEMENT_OTHER {
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_OTHER;
+  return SquiDBDatabaseUtils_STATEMENT_OTHER;
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteDatabaseUtils_init(self);
+  SquiDBDatabaseUtils_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (jint)getSqlStatementTypeWithNSString:(NSString *)sql {
-  return ComYahooAndroidSqliteDatabaseUtils_getSqlStatementTypeWithNSString_(sql);
+  return SquiDBDatabaseUtils_getSqlStatementTypeWithNSString_(sql);
 }
 
 + (jint)getTypeOfObjectWithId:(id)obj {
-  return ComYahooAndroidSqliteDatabaseUtils_getTypeOfObjectWithId_(obj);
+  return SquiDBDatabaseUtils_getTypeOfObjectWithId_(obj);
 }
 
 + (jint)findRowIdColumnIndexWithNSStringArray:(IOSObjectArray *)columnNames {
-  return ComYahooAndroidSqliteDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(columnNames);
+  return SquiDBDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(columnNames);
 }
 
 + (jint)cursorPickFillWindowStartPositionWithInt:(jint)cursorPosition
                                          withInt:(jint)cursorWindowCapacity {
-  return ComYahooAndroidSqliteDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(cursorPosition, cursorWindowCapacity);
+  return SquiDBDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(cursorPosition, cursorWindowCapacity);
 }
 
 + (void)appendEscapedSQLStringWithJavaLangStringBuilder:(JavaLangStringBuilder *)sb
                                            withNSString:(NSString *)sqlString {
-  ComYahooAndroidSqliteDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(sb, sqlString);
+  SquiDBDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(sb, sqlString);
 }
 
-+ (jlong)longForQueryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                withNSString:(NSString *)query
-                                           withNSStringArray:(IOSObjectArray *)selectionArgs {
-  return ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(db, query, selectionArgs);
++ (jlong)longForQueryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSString:(NSString *)query
+                            withNSStringArray:(IOSObjectArray *)selectionArgs {
+  return SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(db, query, selectionArgs);
 }
 
-+ (jlong)longForQueryWithComYahooAndroidSqliteSQLiteStatement:(ComYahooAndroidSqliteSQLiteStatement *)prog
-                                            withNSStringArray:(IOSObjectArray *)selectionArgs {
-  return ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteStatement_withNSStringArray_(prog, selectionArgs);
++ (jlong)longForQueryWithSquiDBSQLiteStatement:(SquiDBSQLiteStatement *)prog
+                             withNSStringArray:(IOSObjectArray *)selectionArgs {
+  return SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteStatement_withNSStringArray_(prog, selectionArgs);
 }
 
-+ (void)cursorFillWindowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                              withInt:(jint)position
-                withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window {
-  ComYahooAndroidSqliteDatabaseUtils_cursorFillWindowWithComYahooSquidbDataICursor_withInt_withComYahooAndroidSqliteCursorWindow_(cursor, position, window);
++ (void)cursorFillWindowWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                                  withInt:(jint)position
+                   withSquiDBCursorWindow:(SquiDBCursorWindow *)window {
+  SquiDBDatabaseUtils_cursorFillWindowWithSquiDBICursor_withInt_withSquiDBCursorWindow_(cursor, position, window);
 }
 
-+ (void)bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram:(ComYahooAndroidSqliteSQLiteProgram *)prog
-                                                          withInt:(jint)index
-                                                           withId:(id)value {
-  ComYahooAndroidSqliteDatabaseUtils_bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram_withInt_withId_(prog, index, value);
++ (void)bindObjectToProgramWithSquiDBSQLiteProgram:(SquiDBSQLiteProgram *)prog
+                                           withInt:(jint)index
+                                            withId:(id)value {
+  SquiDBDatabaseUtils_bindObjectToProgramWithSquiDBSQLiteProgram_withInt_withId_(prog, index, value);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -139,103 +139,103 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[3].selector = @selector(findRowIdColumnIndexWithNSStringArray:);
   methods[4].selector = @selector(cursorPickFillWindowStartPositionWithInt:withInt:);
   methods[5].selector = @selector(appendEscapedSQLStringWithJavaLangStringBuilder:withNSString:);
-  methods[6].selector = @selector(longForQueryWithComYahooAndroidSqliteSQLiteDatabase:withNSString:withNSStringArray:);
-  methods[7].selector = @selector(longForQueryWithComYahooAndroidSqliteSQLiteStatement:withNSStringArray:);
-  methods[8].selector = @selector(cursorFillWindowWithComYahooSquidbDataICursor:withInt:withComYahooAndroidSqliteCursorWindow:);
-  methods[9].selector = @selector(bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram:withInt:withId:);
+  methods[6].selector = @selector(longForQueryWithSquiDBSQLiteDatabase:withNSString:withNSStringArray:);
+  methods[7].selector = @selector(longForQueryWithSquiDBSQLiteStatement:withNSStringArray:);
+  methods[8].selector = @selector(cursorFillWindowWithSquiDBICursor:withInt:withSquiDBCursorWindow:);
+  methods[9].selector = @selector(bindObjectToProgramWithSquiDBSQLiteProgram:withInt:withId:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "STATEMENT_SELECT", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_SELECT, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_UPDATE", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UPDATE, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_ATTACH", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ATTACH, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_BEGIN", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_BEGIN, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_COMMIT", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_ABORT", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ABORT, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_PRAGMA", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_PRAGMA, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_DDL", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_DDL, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_UNPREPARED", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UNPREPARED, 0x19, -1, -1, -1, -1 },
-    { "STATEMENT_OTHER", "I", .constantValue.asInt = ComYahooAndroidSqliteDatabaseUtils_STATEMENT_OTHER, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_SELECT", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_SELECT, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_UPDATE", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_UPDATE, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_ATTACH", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_ATTACH, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_BEGIN", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_BEGIN, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_COMMIT", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_COMMIT, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_ABORT", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_ABORT, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_PRAGMA", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_PRAGMA, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_DDL", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_DDL, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_UNPREPARED", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_UNPREPARED, 0x19, -1, -1, -1, -1 },
+    { "STATEMENT_OTHER", "I", .constantValue.asInt = SquiDBDatabaseUtils_STATEMENT_OTHER, 0x19, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "getSqlStatementType", "LNSString;", "getTypeOfObject", "LNSObject;", "findRowIdColumnIndex", "[LNSString;", "cursorPickFillWindowStartPosition", "II", "appendEscapedSQLString", "LJavaLangStringBuilder;LNSString;", "longForQuery", "LComYahooAndroidSqliteSQLiteDatabase;LNSString;[LNSString;", "LComYahooAndroidSqliteSQLiteStatement;[LNSString;", "cursorFillWindow", "LComYahooSquidbDataICursor;ILComYahooAndroidSqliteCursorWindow;", "bindObjectToProgram", "LComYahooAndroidSqliteSQLiteProgram;ILNSObject;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteDatabaseUtils = { "DatabaseUtils", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 10, 10, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteDatabaseUtils;
+  static const void *ptrTable[] = { "getSqlStatementType", "LNSString;", "getTypeOfObject", "LNSObject;", "findRowIdColumnIndex", "[LNSString;", "cursorPickFillWindowStartPosition", "II", "appendEscapedSQLString", "LJavaLangStringBuilder;LNSString;", "longForQuery", "LSquiDBSQLiteDatabase;LNSString;[LNSString;", "LSquiDBSQLiteStatement;[LNSString;", "cursorFillWindow", "LSquiDBICursor;ILSquiDBCursorWindow;", "bindObjectToProgram", "LSquiDBSQLiteProgram;ILNSObject;" };
+  static const J2ObjcClassInfo _SquiDBDatabaseUtils = { "DatabaseUtils", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 10, 10, -1, -1, -1, -1, -1 };
+  return &_SquiDBDatabaseUtils;
 }
 
 @end
 
-void ComYahooAndroidSqliteDatabaseUtils_init(ComYahooAndroidSqliteDatabaseUtils *self) {
+void SquiDBDatabaseUtils_init(SquiDBDatabaseUtils *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteDatabaseUtils *new_ComYahooAndroidSqliteDatabaseUtils_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteDatabaseUtils, init)
+SquiDBDatabaseUtils *new_SquiDBDatabaseUtils_init() {
+  J2OBJC_NEW_IMPL(SquiDBDatabaseUtils, init)
 }
 
-ComYahooAndroidSqliteDatabaseUtils *create_ComYahooAndroidSqliteDatabaseUtils_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteDatabaseUtils, init)
+SquiDBDatabaseUtils *create_SquiDBDatabaseUtils_init() {
+  J2OBJC_CREATE_IMPL(SquiDBDatabaseUtils, init)
 }
 
-jint ComYahooAndroidSqliteDatabaseUtils_getSqlStatementTypeWithNSString_(NSString *sql) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
+jint SquiDBDatabaseUtils_getSqlStatementTypeWithNSString_(NSString *sql) {
+  SquiDBDatabaseUtils_initialize();
   sql = [((NSString *) nil_chk(sql)) java_trim];
   if ([((NSString *) nil_chk(sql)) java_length] < 3) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_OTHER;
+    return SquiDBDatabaseUtils_STATEMENT_OTHER;
   }
   NSString *prefixSql = [((NSString *) nil_chk([sql java_substring:0 endIndex:3])) java_uppercaseStringWithJRELocale:JreLoadStatic(JavaUtilLocale, ROOT)];
   if ([((NSString *) nil_chk(prefixSql)) isEqual:@"SEL"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_SELECT;
+    return SquiDBDatabaseUtils_STATEMENT_SELECT;
   }
   else if ([prefixSql isEqual:@"INS"] || [prefixSql isEqual:@"UPD"] || [prefixSql isEqual:@"REP"] || [prefixSql isEqual:@"DEL"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UPDATE;
+    return SquiDBDatabaseUtils_STATEMENT_UPDATE;
   }
   else if ([prefixSql isEqual:@"ATT"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ATTACH;
+    return SquiDBDatabaseUtils_STATEMENT_ATTACH;
   }
   else if ([prefixSql isEqual:@"COM"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT;
+    return SquiDBDatabaseUtils_STATEMENT_COMMIT;
   }
   else if ([prefixSql isEqual:@"END"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT;
+    return SquiDBDatabaseUtils_STATEMENT_COMMIT;
   }
   else if ([prefixSql isEqual:@"ROL"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ABORT;
+    return SquiDBDatabaseUtils_STATEMENT_ABORT;
   }
   else if ([prefixSql isEqual:@"BEG"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_BEGIN;
+    return SquiDBDatabaseUtils_STATEMENT_BEGIN;
   }
   else if ([prefixSql isEqual:@"PRA"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_PRAGMA;
+    return SquiDBDatabaseUtils_STATEMENT_PRAGMA;
   }
   else if ([prefixSql isEqual:@"CRE"] || [prefixSql isEqual:@"DRO"] || [prefixSql isEqual:@"ALT"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_DDL;
+    return SquiDBDatabaseUtils_STATEMENT_DDL;
   }
   else if ([prefixSql isEqual:@"ANA"] || [prefixSql isEqual:@"DET"]) {
-    return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UNPREPARED;
+    return SquiDBDatabaseUtils_STATEMENT_UNPREPARED;
   }
-  return ComYahooAndroidSqliteDatabaseUtils_STATEMENT_OTHER;
+  return SquiDBDatabaseUtils_STATEMENT_OTHER;
 }
 
-jint ComYahooAndroidSqliteDatabaseUtils_getTypeOfObjectWithId_(id obj) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
+jint SquiDBDatabaseUtils_getTypeOfObjectWithId_(id obj) {
+  SquiDBDatabaseUtils_initialize();
   if (obj == nil) {
-    return ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+    return SquiDBICursor_FIELD_TYPE_NULL;
   }
   else if ([obj isKindOfClass:[IOSByteArray class]]) {
-    return ComYahooSquidbDataICursor_FIELD_TYPE_BLOB;
+    return SquiDBICursor_FIELD_TYPE_BLOB;
   }
   else if ([obj isKindOfClass:[JavaLangFloat class]] || [obj isKindOfClass:[JavaLangDouble class]]) {
-    return ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT;
+    return SquiDBICursor_FIELD_TYPE_FLOAT;
   }
   else if ([obj isKindOfClass:[JavaLangLong class]] || [obj isKindOfClass:[JavaLangInteger class]] || [obj isKindOfClass:[JavaLangShort class]] || [obj isKindOfClass:[JavaLangByte class]]) {
-    return ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER;
+    return SquiDBICursor_FIELD_TYPE_INTEGER;
   }
   else {
-    return ComYahooSquidbDataICursor_FIELD_TYPE_STRING;
+    return SquiDBICursor_FIELD_TYPE_STRING;
   }
 }
 
-jint ComYahooAndroidSqliteDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(IOSObjectArray *columnNames) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
+jint SquiDBDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(IOSObjectArray *columnNames) {
+  SquiDBDatabaseUtils_initialize();
   jint length = ((IOSObjectArray *) nil_chk(columnNames))->size_;
   for (jint i = 0; i < length; i++) {
     if ([((NSString *) nil_chk(IOSObjectArray_Get(columnNames, i))) isEqual:@"_id"]) {
@@ -245,13 +245,13 @@ jint ComYahooAndroidSqliteDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(I
   return -1;
 }
 
-jint ComYahooAndroidSqliteDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(jint cursorPosition, jint cursorWindowCapacity) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
-  return JavaLangMath_maxWithInt_withInt_(cursorPosition - cursorWindowCapacity / 3, 0);
+jint SquiDBDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(jint cursorPosition, jint cursorWindowCapacity) {
+  SquiDBDatabaseUtils_initialize();
+  return JavaLangMath_maxWithInt_withInt_(cursorPosition - JreIntDiv(cursorWindowCapacity, 3), 0);
 }
 
-void ComYahooAndroidSqliteDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *sb, NSString *sqlString) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
+void SquiDBDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *sb, NSString *sqlString) {
+  SquiDBDatabaseUtils_initialize();
   (void) [((JavaLangStringBuilder *) nil_chk(sb)) appendWithChar:'\''];
   if ([((NSString *) nil_chk(sqlString)) java_indexOf:'\''] != -1) {
     jint length = [sqlString java_length];
@@ -269,31 +269,31 @@ void ComYahooAndroidSqliteDatabaseUtils_appendEscapedSQLStringWithJavaLangString
   (void) [sb appendWithChar:'\''];
 }
 
-jlong ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query, IOSObjectArray *selectionArgs) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
-  ComYahooAndroidSqliteSQLiteStatement *prog = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db)) compileStatementWithNSString:query];
+jlong SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(SquiDBSQLiteDatabase *db, NSString *query, IOSObjectArray *selectionArgs) {
+  SquiDBDatabaseUtils_initialize();
+  SquiDBSQLiteStatement *prog = [((SquiDBSQLiteDatabase *) nil_chk(db)) compileStatementWithNSString:query];
   @try {
-    return ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteStatement_withNSStringArray_(prog, selectionArgs);
+    return SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteStatement_withNSStringArray_(prog, selectionArgs);
   }
   @finally {
-    [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(prog)) close];
+    [((SquiDBSQLiteStatement *) nil_chk(prog)) close];
   }
 }
 
-jlong ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteStatement_withNSStringArray_(ComYahooAndroidSqliteSQLiteStatement *prog, IOSObjectArray *selectionArgs) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(prog)) bindAllArgsAsStringsWithNSStringArray:selectionArgs];
+jlong SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteStatement_withNSStringArray_(SquiDBSQLiteStatement *prog, IOSObjectArray *selectionArgs) {
+  SquiDBDatabaseUtils_initialize();
+  [((SquiDBSQLiteStatement *) nil_chk(prog)) bindAllArgsAsStringsWithNSStringArray:selectionArgs];
   return [prog simpleQueryForLong];
 }
 
-void ComYahooAndroidSqliteDatabaseUtils_cursorFillWindowWithComYahooSquidbDataICursor_withInt_withComYahooAndroidSqliteCursorWindow_(id<ComYahooSquidbDataICursor> cursor, jint position, ComYahooAndroidSqliteCursorWindow *window) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
-  if (position < 0 || position >= [((id<ComYahooSquidbDataICursor>) nil_chk(cursor)) getCount]) {
+void SquiDBDatabaseUtils_cursorFillWindowWithSquiDBICursor_withInt_withSquiDBCursorWindow_(id<SquiDBICursor> cursor, jint position, SquiDBCursorWindow *window) {
+  SquiDBDatabaseUtils_initialize();
+  if (position < 0 || position >= [((id<SquiDBICursor>) nil_chk(cursor)) getCount]) {
     return;
   }
-  jint oldPos = [((id<ComYahooSquidbDataICursor>) nil_chk(cursor)) getPosition];
+  jint oldPos = [((id<SquiDBICursor>) nil_chk(cursor)) getPosition];
   jint numColumns = [cursor getColumnCount];
-  [((ComYahooAndroidSqliteCursorWindow *) nil_chk(window)) clear];
+  [((SquiDBCursorWindow *) nil_chk(window)) clear];
   [window setStartPositionWithInt:position];
   [window setNumColumnsWithInt:numColumns];
   if ([cursor moveToPositionWithInt:position]) {
@@ -305,23 +305,23 @@ void ComYahooAndroidSqliteDatabaseUtils_cursorFillWindowWithComYahooSquidbDataIC
         jint type = [cursor getTypeWithInt:i];
         jboolean success;
         switch (type) {
-          case ComYahooSquidbDataICursor_FIELD_TYPE_NULL:
+          case SquiDBICursor_FIELD_TYPE_NULL:
           success = [window putNullWithInt:position withInt:i];
           break;
-          case ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER:
+          case SquiDBICursor_FIELD_TYPE_INTEGER:
           success = [window putLongWithLong:[cursor getLongWithInt:i] withInt:position withInt:i];
           break;
-          case ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT:
+          case SquiDBICursor_FIELD_TYPE_FLOAT:
           success = [window putDoubleWithDouble:[cursor getDoubleWithInt:i] withInt:position withInt:i];
           break;
-          case ComYahooSquidbDataICursor_FIELD_TYPE_BLOB:
+          case SquiDBICursor_FIELD_TYPE_BLOB:
           {
             IOSByteArray *value = [cursor getBlobWithInt:i];
             success = value != nil ? [window putBlobWithByteArray:value withInt:position withInt:i] : [window putNullWithInt:position withInt:i];
             break;
           }
           default:
-          case ComYahooSquidbDataICursor_FIELD_TYPE_STRING:
+          case SquiDBICursor_FIELD_TYPE_STRING:
           {
             NSString *value = [cursor getStringWithInt:i];
             success = value != nil ? [window putStringWithNSString:value withInt:position withInt:i] : [window putNullWithInt:position withInt:i];
@@ -340,32 +340,34 @@ void ComYahooAndroidSqliteDatabaseUtils_cursorFillWindowWithComYahooSquidbDataIC
   [cursor moveToPositionWithInt:oldPos];
 }
 
-void ComYahooAndroidSqliteDatabaseUtils_bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram_withInt_withId_(ComYahooAndroidSqliteSQLiteProgram *prog, jint index, id value) {
-  ComYahooAndroidSqliteDatabaseUtils_initialize();
+void SquiDBDatabaseUtils_bindObjectToProgramWithSquiDBSQLiteProgram_withInt_withId_(SquiDBSQLiteProgram *prog, jint index, id value) {
+  SquiDBDatabaseUtils_initialize();
   if (value == nil) {
-    [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindNullWithInt:index];
+    [((SquiDBSQLiteProgram *) nil_chk(prog)) bindNullWithInt:index];
   }
   else if ([value isKindOfClass:[JavaLangDouble class]] || [value isKindOfClass:[JavaLangFloat class]]) {
-    [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindDoubleWithInt:index withDouble:[((NSNumber *) cast_chk(value, [NSNumber class])) doubleValue]];
+    [((SquiDBSQLiteProgram *) nil_chk(prog)) bindDoubleWithInt:index withDouble:[((NSNumber *) cast_chk(value, [NSNumber class])) doubleValue]];
   }
   else if ([value isKindOfClass:[NSNumber class]]) {
-    [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:[((NSNumber *) cast_chk(value, [NSNumber class])) longLongValue]];
+    [((SquiDBSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:[((NSNumber *) value) longLongValue]];
   }
   else if ([value isKindOfClass:[JavaLangBoolean class]]) {
-    JavaLangBoolean *bool_ = (JavaLangBoolean *) cast_chk(value, [JavaLangBoolean class]);
+    JavaLangBoolean *bool_ = (JavaLangBoolean *) value;
     if ([bool_ booleanValue]) {
-      [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:1];
+      [((SquiDBSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:1];
     }
     else {
-      [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:0];
+      [((SquiDBSQLiteProgram *) nil_chk(prog)) bindLongWithInt:index withLong:0];
     }
   }
   else if ([value isKindOfClass:[IOSByteArray class]]) {
-    [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindBlobWithInt:index withByteArray:(IOSByteArray *) cast_chk(value, [IOSByteArray class])];
+    [((SquiDBSQLiteProgram *) nil_chk(prog)) bindBlobWithInt:index withByteArray:(IOSByteArray *) cast_chk(value, [IOSByteArray class])];
   }
   else {
-    [((ComYahooAndroidSqliteSQLiteProgram *) nil_chk(prog)) bindStringWithInt:index withNSString:[value description]];
+    [((SquiDBSQLiteProgram *) nil_chk(prog)) bindStringWithInt:index withNSString:[value description]];
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteDatabaseUtils)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDatabaseUtils)
+
+J2OBJC_NAME_MAPPING(SquiDBDatabaseUtils, "com.yahoo.android.sqlite", "SquiDB")

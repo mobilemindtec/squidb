@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "Printer.h"
 
-@interface ComYahooAndroidSqlitePrinter : NSObject
+@interface SquiDBPrinter : NSObject
 
 @end
 
-@implementation ComYahooAndroidSqlitePrinter
+@implementation SquiDBPrinter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,12 @@
   methods[0].selector = @selector(printlnWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "println", "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqlitePrinter = { "Printer", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqlitePrinter;
+  static const J2ObjcClassInfo _SquiDBPrinter = { "Printer", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBPrinter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqlitePrinter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBPrinter)
+
+J2OBJC_NAME_MAPPING(SquiDBPrinter, "com.yahoo.android.sqlite", "SquiDB")

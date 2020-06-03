@@ -15,47 +15,49 @@
 #include "CompilableWithArguments.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlSqlBuilder;
 @class IOSObjectArray;
+@class SquiDBField;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlOrder : ComYahooSquidbSqlCompilableWithArguments
+@interface SquiDBOrder : SquiDBCompilableWithArguments
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlOrder *)ascWithId:(id)expression;
++ (SquiDBOrder *)ascWithId:(id)expression;
 
-+ (ComYahooSquidbSqlOrder *)byArrayWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                            withNSObjectArray:(IOSObjectArray *)order;
++ (SquiDBOrder *)byArrayWithSquiDBField:(SquiDBField *)field
+                      withNSObjectArray:(IOSObjectArray *)order;
 
-+ (ComYahooSquidbSqlOrder *)descWithId:(id)expression;
++ (SquiDBOrder *)descWithId:(id)expression;
 
-+ (ComYahooSquidbSqlOrder *)fromExpressionWithNSString:(NSString *)expression;
++ (SquiDBOrder *)fromExpressionWithNSString:(NSString *)expression;
 
-- (ComYahooSquidbSqlOrder *)reverse;
+- (SquiDBOrder *)reverse;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)init NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlOrder)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBOrder)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOrder *ComYahooSquidbSqlOrder_ascWithId_(id expression);
+FOUNDATION_EXPORT SquiDBOrder *SquiDBOrder_ascWithId_(id expression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOrder *ComYahooSquidbSqlOrder_descWithId_(id expression);
+FOUNDATION_EXPORT SquiDBOrder *SquiDBOrder_descWithId_(id expression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOrder *ComYahooSquidbSqlOrder_byArrayWithComYahooSquidbSqlField_withNSObjectArray_(ComYahooSquidbSqlField *field, IOSObjectArray *order);
+FOUNDATION_EXPORT SquiDBOrder *SquiDBOrder_byArrayWithSquiDBField_withNSObjectArray_(SquiDBField *field, IOSObjectArray *order);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlOrder *ComYahooSquidbSqlOrder_fromExpressionWithNSString_(NSString *expression);
+FOUNDATION_EXPORT SquiDBOrder *SquiDBOrder_fromExpressionWithNSString_(NSString *expression);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlOrder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBOrder)
+
+@compatibility_alias ComYahooSquidbSqlOrder SquiDBOrder;
 
 
 #if __has_feature(nullability)

@@ -15,43 +15,45 @@
 #include "BinaryCriterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlBetweenCriterion : ComYahooSquidbSqlBinaryCriterion
+@interface SquiDBBetweenCriterion : SquiDBBinaryCriterion
 
 #pragma mark Protected
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation;
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator;
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                                  withId:(id)lower
-                                                  withId:(id)upper;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                                         withSquiDBOperator:(SquiDBOperator *)operator_
+                                                     withId:(id)lower
+                                                     withId:(id)upper;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)arg0
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)arg1
-                                                  withId:(id)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)arg0
+                                         withSquiDBOperator:(SquiDBOperator *)arg1
+                                                     withId:(id)arg2 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlBetweenCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBBetweenCriterion)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlBetweenCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withId_(ComYahooSquidbSqlBetweenCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id lower, id upper);
+FOUNDATION_EXPORT void SquiDBBetweenCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withId_(SquiDBBetweenCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id lower, id upper);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlBetweenCriterion *new_ComYahooSquidbSqlBetweenCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id lower, id upper) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBBetweenCriterion *new_SquiDBBetweenCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withId_(SquiDBField *expression, SquiDBOperator *operator_, id lower, id upper) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlBetweenCriterion *create_ComYahooSquidbSqlBetweenCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withId_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id lower, id upper);
+FOUNDATION_EXPORT SquiDBBetweenCriterion *create_SquiDBBetweenCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withId_(SquiDBField *expression, SquiDBOperator *operator_, id lower, id upper);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlBetweenCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBBetweenCriterion)
+
+@compatibility_alias ComYahooSquidbSqlBetweenCriterion SquiDBBetweenCriterion;
 
 
 #if __has_feature(nullability)

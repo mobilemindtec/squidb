@@ -17,111 +17,117 @@
 #include "SqlStatement.h"
 #include "java/lang/Enum.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCompiledStatement;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSObjectArray;
+@class SquiDBCompileContext;
+@class SquiDBCompiledStatement;
+@class SquiDBSqlTable;
+@class SquiDBVersionCode;
 
-@interface ComYahooSquidbSqlTableStatement : ComYahooSquidbSqlCompilableWithArguments < ComYahooSquidbSqlSqlStatement >
+@interface SquiDBTableStatement : SquiDBCompilableWithArguments < SquiDBSqlStatement >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (SquiDBCompiledStatement *)compileWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (SquiDBCompiledStatement *)compileWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
-- (ComYahooSquidbSqlSqlTable *)getTable;
+- (SquiDBSqlTable *)getTable;
 
-- (NSString *)sqlForValidationWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (NSString *)sqlForValidationWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
-- (NSString *)sqlForValidationWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (NSString *)sqlForValidationWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
 #pragma mark Protected
 
 - (void)invalidateCompileCache;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlTableStatement)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBTableStatement)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlTableStatement_init(ComYahooSquidbSqlTableStatement *self);
+FOUNDATION_EXPORT void SquiDBTableStatement_init(SquiDBTableStatement *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTableStatement)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableStatement)
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum) {
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_NONE = 0,
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_ROLLBACK = 1,
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_ABORT = 2,
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_FAIL = 3,
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_IGNORE = 4,
-  ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum_REPLACE = 5,
+@compatibility_alias ComYahooSquidbSqlTableStatement SquiDBTableStatement;
+
+typedef NS_ENUM(NSUInteger, SquiDBTableStatement_ConflictAlgorithm_Enum) {
+  SquiDBTableStatement_ConflictAlgorithm_Enum_NONE = 0,
+  SquiDBTableStatement_ConflictAlgorithm_Enum_ROLLBACK = 1,
+  SquiDBTableStatement_ConflictAlgorithm_Enum_ABORT = 2,
+  SquiDBTableStatement_ConflictAlgorithm_Enum_FAIL = 3,
+  SquiDBTableStatement_ConflictAlgorithm_Enum_IGNORE = 4,
+  SquiDBTableStatement_ConflictAlgorithm_Enum_REPLACE = 5,
 };
 
-@interface ComYahooSquidbSqlTableStatement_ConflictAlgorithm : JavaLangEnum
+@interface SquiDBTableStatement_ConflictAlgorithm : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *NONE NS_SWIFT_NAME(NONE);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ROLLBACK NS_SWIFT_NAME(ROLLBACK);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ABORT NS_SWIFT_NAME(ABORT);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *FAIL NS_SWIFT_NAME(FAIL);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *IGNORE NS_SWIFT_NAME(IGNORE);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTableStatement_ConflictAlgorithm *REPLACE NS_SWIFT_NAME(REPLACE);
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)NONE;
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *NONE NS_SWIFT_NAME(NONE);
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *ROLLBACK NS_SWIFT_NAME(ROLLBACK);
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *ABORT NS_SWIFT_NAME(ABORT);
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *FAIL NS_SWIFT_NAME(FAIL);
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *IGNORE NS_SWIFT_NAME(IGNORE);
+@property (readonly, class, nonnull) SquiDBTableStatement_ConflictAlgorithm *REPLACE NS_SWIFT_NAME(REPLACE);
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)NONE;
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)ROLLBACK;
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)ROLLBACK;
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)ABORT;
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)ABORT;
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)FAIL;
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)FAIL;
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)IGNORE;
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)IGNORE;
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm * __nonnull)REPLACE;
++ (SquiDBTableStatement_ConflictAlgorithm * __nonnull)REPLACE;
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)valueOfWithNSString:(NSString *)name;
++ (SquiDBTableStatement_ConflictAlgorithm *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (ComYahooSquidbSqlTableStatement_ConflictAlgorithm_Enum)toNSEnum;
+- (SquiDBTableStatement_ConflictAlgorithm_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm)
+J2OBJC_STATIC_INIT(SquiDBTableStatement_ConflictAlgorithm)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_values_[];
+FOUNDATION_EXPORT SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_values_[];
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_NONE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, NONE)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_NONE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, NONE)
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_ROLLBACK(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, ROLLBACK)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_ROLLBACK(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, ROLLBACK)
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_ABORT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, ABORT)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_ABORT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, ABORT)
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_FAIL(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, FAIL)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_FAIL(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, FAIL)
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_IGNORE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, IGNORE)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_IGNORE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, IGNORE)
 
-inline ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_get_REPLACE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTableStatement_ConflictAlgorithm, REPLACE)
+inline SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_get_REPLACE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTableStatement_ConflictAlgorithm, REPLACE)
 
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_values(void);
+FOUNDATION_EXPORT IOSObjectArray *SquiDBTableStatement_ConflictAlgorithm_values(void);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTableStatement_ConflictAlgorithm *ComYahooSquidbSqlTableStatement_ConflictAlgorithm_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBTableStatement_ConflictAlgorithm *SquiDBTableStatement_ConflictAlgorithm_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTableStatement_ConflictAlgorithm)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableStatement_ConflictAlgorithm)
 
 
 #if __has_feature(nullability)

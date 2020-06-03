@@ -13,19 +13,19 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation ComYahooSquidbSqlDistinctArgumentFunction
+@implementation SquiDBDistinctArgumentFunction
 
-- (instancetype)initWithNSString:(NSString *)functionName
-                          withId:(id)argument {
-  ComYahooSquidbSqlDistinctArgumentFunction_initWithNSString_withId_(self, functionName, argument);
+- (instancetype)initPackagePrivateWithNSString:(NSString *)functionName
+                                        withId:(id)argument {
+  SquiDBDistinctArgumentFunction_initPackagePrivateWithNSString_withId_(self, functionName, argument);
   return self;
 }
 
-- (void)appendArgumentListWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                        withNSObjectArray:(IOSObjectArray *)arguments
-                                              withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"DISTINCT "];
-  [super appendArgumentListWithComYahooSquidbSqlSqlBuilder:builder withNSObjectArray:arguments withBoolean:forSqlValidation];
+- (void)appendArgumentListWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                             withNSObjectArray:(IOSObjectArray *)arguments
+                                   withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"DISTINCT "];
+  [super appendArgumentListWithSquiDBSqlBuilder:builder withNSObjectArray:arguments withBoolean:forSqlValidation];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -36,26 +36,26 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withId:);
-  methods[1].selector = @selector(appendArgumentListWithComYahooSquidbSqlSqlBuilder:withNSObjectArray:withBoolean:);
+  methods[0].selector = @selector(initPackagePrivateWithNSString:withId:);
+  methods[1].selector = @selector(appendArgumentListWithSquiDBSqlBuilder:withNSObjectArray:withBoolean:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LNSString;LNSObject;", "appendArgumentList", "LComYahooSquidbSqlSqlBuilder;[LNSObject;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/ArgumentFunction<TTYPE;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlDistinctArgumentFunction = { "DistinctArgumentFunction", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
-  return &_ComYahooSquidbSqlDistinctArgumentFunction;
+  static const void *ptrTable[] = { "LNSString;LNSObject;", "appendArgumentList", "LSquiDBSqlBuilder;[LNSObject;Z", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/ArgumentFunction<TTYPE;>;" };
+  static const J2ObjcClassInfo _SquiDBDistinctArgumentFunction = { "DistinctArgumentFunction", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
+  return &_SquiDBDistinctArgumentFunction;
 }
 
 @end
 
-void ComYahooSquidbSqlDistinctArgumentFunction_initWithNSString_withId_(ComYahooSquidbSqlDistinctArgumentFunction *self, NSString *functionName, id argument) {
-  ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(self, functionName, [IOSObjectArray newArrayWithObjects:(id[]){ argument } count:1 type:NSObject_class_()]);
+void SquiDBDistinctArgumentFunction_initPackagePrivateWithNSString_withId_(SquiDBDistinctArgumentFunction *self, NSString *functionName, id argument) {
+  SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(self, functionName, [IOSObjectArray newArrayWithObjects:(id[]){ argument } count:1 type:NSObject_class_()]);
 }
 
-ComYahooSquidbSqlDistinctArgumentFunction *new_ComYahooSquidbSqlDistinctArgumentFunction_initWithNSString_withId_(NSString *functionName, id argument) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlDistinctArgumentFunction, initWithNSString_withId_, functionName, argument)
+SquiDBDistinctArgumentFunction *new_SquiDBDistinctArgumentFunction_initPackagePrivateWithNSString_withId_(NSString *functionName, id argument) {
+  J2OBJC_NEW_IMPL(SquiDBDistinctArgumentFunction, initPackagePrivateWithNSString_withId_, functionName, argument)
 }
 
-ComYahooSquidbSqlDistinctArgumentFunction *create_ComYahooSquidbSqlDistinctArgumentFunction_initWithNSString_withId_(NSString *functionName, id argument) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlDistinctArgumentFunction, initWithNSString_withId_, functionName, argument)
+SquiDBDistinctArgumentFunction *create_SquiDBDistinctArgumentFunction_initPackagePrivateWithNSString_withId_(NSString *functionName, id argument) {
+  J2OBJC_CREATE_IMPL(SquiDBDistinctArgumentFunction, initPackagePrivateWithNSString_withId_, functionName, argument)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlDistinctArgumentFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDistinctArgumentFunction)

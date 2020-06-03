@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsViewModelSpec < JavaLangAnnotationAnnotation >
+@protocol SquiDBViewModelSpec < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *className__;
 @property (readonly) NSString *viewName;
@@ -29,7 +29,7 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsViewModelSpec : NSObject < ComYahooSquidbAnnotationsViewModelSpec > {
+@interface SquiDBViewModelSpec : NSObject < SquiDBViewModelSpec > {
  @public
   NSString *className___;
   NSString *viewName_;
@@ -38,11 +38,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsViewModelSpec)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBViewModelSpec)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsViewModelSpec> create_ComYahooSquidbAnnotationsViewModelSpec(NSString *className__, jboolean isSubquery, NSString *viewName);
+FOUNDATION_EXPORT id<SquiDBViewModelSpec> create_SquiDBViewModelSpec(NSString *className__, jboolean isSubquery, NSString *viewName);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsViewModelSpec)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBViewModelSpec)
+
+#define ComYahooSquidbAnnotationsViewModelSpec SquiDBViewModelSpec
 
 
 #if __has_feature(nullability)

@@ -13,199 +13,201 @@
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/StringBuilder.h"
 
-@class ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;
+@class SquiDBCompoundSelect_CompoundSelectOperator;
 
-@interface ComYahooSquidbSqlCompoundSelect () {
+@interface SquiDBCompoundSelect () {
  @public
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator__;
+  SquiDBCompoundSelect_CompoundSelectOperator *operator__;
 }
 
-- (instancetype)initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator:(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)operator_
-                                                    withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (instancetype)initWithSquiDBCompoundSelect_CompoundSelectOperator:(SquiDBCompoundSelect_CompoundSelectOperator *)operator_
+                                                    withSquiDBQuery:(SquiDBQuery *)query;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompoundSelect, operator__, ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)
+J2OBJC_FIELD_SETTER(SquiDBCompoundSelect, operator__, SquiDBCompoundSelect_CompoundSelectOperator *)
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect *self, ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query);
+__attribute__((unused)) static void SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect *self, SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query);
 
-__attribute__((unused)) static ComYahooSquidbSqlCompoundSelect *new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCompoundSelect *new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlCompoundSelect *create_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query);
+__attribute__((unused)) static SquiDBCompoundSelect *create_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query);
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum) {
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum_UNION = 0,
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum_UNION_ALL = 1,
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum_INTERSECT = 2,
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum_EXCEPT = 3,
+typedef NS_ENUM(NSUInteger, SquiDBCompoundSelect_CompoundSelectOperator_Enum) {
+  SquiDBCompoundSelect_CompoundSelectOperator_Enum_UNION = 0,
+  SquiDBCompoundSelect_CompoundSelectOperator_Enum_UNION_ALL = 1,
+  SquiDBCompoundSelect_CompoundSelectOperator_Enum_INTERSECT = 2,
+  SquiDBCompoundSelect_CompoundSelectOperator_Enum_EXCEPT = 3,
 };
 
-@interface ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator : JavaLangEnum {
+@interface SquiDBCompoundSelect_CompoundSelectOperator : JavaLangEnum {
  @public
   NSString *expression_;
 }
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *UNION NS_SWIFT_NAME(UNION);
-@property (readonly, class, nonnull) ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *UNION_ALL NS_SWIFT_NAME(UNION_ALL);
-@property (readonly, class, nonnull) ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *INTERSECT NS_SWIFT_NAME(INTERSECT);
-@property (readonly, class, nonnull) ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *EXCEPT NS_SWIFT_NAME(EXCEPT);
+@property (readonly, class, nonnull) SquiDBCompoundSelect_CompoundSelectOperator *UNION NS_SWIFT_NAME(UNION);
+@property (readonly, class, nonnull) SquiDBCompoundSelect_CompoundSelectOperator *UNION_ALL NS_SWIFT_NAME(UNION_ALL);
+@property (readonly, class, nonnull) SquiDBCompoundSelect_CompoundSelectOperator *INTERSECT NS_SWIFT_NAME(INTERSECT);
+@property (readonly, class, nonnull) SquiDBCompoundSelect_CompoundSelectOperator *EXCEPT NS_SWIFT_NAME(EXCEPT);
 - (NSString *)description;
 
 + (IOSObjectArray *)values;
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)valueOfWithNSString:(NSString *)name;
++ (SquiDBCompoundSelect_CompoundSelectOperator *)valueOfWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum)toNSEnum;
+- (SquiDBCompoundSelect_CompoundSelectOperator_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator)
+J2OBJC_STATIC_INIT(SquiDBCompoundSelect_CompoundSelectOperator)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values_[];
+FOUNDATION_EXPORT SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_values_[];
 
-inline ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_get_UNION(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION)
+inline SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_get_UNION(void);
+J2OBJC_ENUM_CONSTANT(SquiDBCompoundSelect_CompoundSelectOperator, UNION)
 
-inline ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_get_UNION_ALL(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION_ALL)
+inline SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_get_UNION_ALL(void);
+J2OBJC_ENUM_CONSTANT(SquiDBCompoundSelect_CompoundSelectOperator, UNION_ALL)
 
-inline ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_get_INTERSECT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, INTERSECT)
+inline SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_get_INTERSECT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBCompoundSelect_CompoundSelectOperator, INTERSECT)
 
-inline ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_get_EXCEPT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, EXCEPT)
+inline SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_get_EXCEPT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBCompoundSelect_CompoundSelectOperator, EXCEPT)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, expression_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBCompoundSelect_CompoundSelectOperator, expression_, NSString *)
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *self, NSString *expression, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(SquiDBCompoundSelect_CompoundSelectOperator *self, NSString *expression, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(NSString *expression, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCompoundSelect_CompoundSelectOperator *new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(NSString *expression, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCompoundSelect_CompoundSelectOperator_values(void);
 
-__attribute__((unused)) static ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(NSString *name);
+__attribute__((unused)) static SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompoundSelect_CompoundSelectOperator)
 
-@implementation ComYahooSquidbSqlCompoundSelect
+@implementation SquiDBCompoundSelect
 
-- (instancetype)initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator:(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)operator_
-                                                    withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(self, operator_, query);
+- (instancetype)initWithSquiDBCompoundSelect_CompoundSelectOperator:(SquiDBCompoundSelect_CompoundSelectOperator *)operator_
+                                                    withSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(self, operator_, query);
   return self;
 }
 
-+ (ComYahooSquidbSqlCompoundSelect *)union__WithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  return ComYahooSquidbSqlCompoundSelect_union__WithComYahooSquidbSqlQuery_(query);
++ (SquiDBCompoundSelect *)union__WithSquiDBQuery:(SquiDBQuery *)query {
+  return SquiDBCompoundSelect_union__WithSquiDBQuery_(query);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect *)unionAllWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  return ComYahooSquidbSqlCompoundSelect_unionAllWithComYahooSquidbSqlQuery_(query);
++ (SquiDBCompoundSelect *)unionAllWithSquiDBQuery:(SquiDBQuery *)query {
+  return SquiDBCompoundSelect_unionAllWithSquiDBQuery_(query);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect *)intersectWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  return ComYahooSquidbSqlCompoundSelect_intersectWithComYahooSquidbSqlQuery_(query);
++ (SquiDBCompoundSelect *)intersectWithSquiDBQuery:(SquiDBQuery *)query {
+  return SquiDBCompoundSelect_intersectWithSquiDBQuery_(query);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect *)exceptWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  return ComYahooSquidbSqlCompoundSelect_exceptWithComYahooSquidbSqlQuery_(query);
++ (SquiDBCompoundSelect *)exceptWithSquiDBQuery:(SquiDBQuery *)query {
+  return SquiDBCompoundSelect_exceptWithSquiDBQuery_(query);
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:[((ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *) nil_chk(operator__)) description]])) appendWithNSString:@" "];
-  [((ComYahooSquidbSqlQuery *) nil_chk(query_)) appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:[((SquiDBCompoundSelect_CompoundSelectOperator *) nil_chk(operator__)) description]])) appendWithNSString:@" "];
+  [((SquiDBQuery *) nil_chk(query_)) appendToSqlBuilderWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompoundSelect;", 0x9, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompoundSelect;", 0x9, 3, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompoundSelect;", 0x9, 4, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompoundSelect;", 0x9, 5, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompoundSelect;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompoundSelect;", 0x9, 3, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompoundSelect;", 0x9, 4, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompoundSelect;", 0x9, 5, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x0, 6, 7, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator:withComYahooSquidbSqlQuery:);
-  methods[1].selector = @selector(union__WithComYahooSquidbSqlQuery:);
-  methods[2].selector = @selector(unionAllWithComYahooSquidbSqlQuery:);
-  methods[3].selector = @selector(intersectWithComYahooSquidbSqlQuery:);
-  methods[4].selector = @selector(exceptWithComYahooSquidbSqlQuery:);
-  methods[5].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[0].selector = @selector(initWithSquiDBCompoundSelect_CompoundSelectOperator:withSquiDBQuery:);
+  methods[1].selector = @selector(union__WithSquiDBQuery:);
+  methods[2].selector = @selector(unionAllWithSquiDBQuery:);
+  methods[3].selector = @selector(intersectWithSquiDBQuery:);
+  methods[4].selector = @selector(exceptWithSquiDBQuery:);
+  methods[5].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "operator__", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x12, 8, -1, -1, -1 },
-    { "query_", "LComYahooSquidbSqlQuery;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "operator__", "LSquiDBCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x12, 8, -1, -1, -1 },
+    { "query_", "LSquiDBQuery;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;LComYahooSquidbSqlQuery;", "union", "LComYahooSquidbSqlQuery;", "unionAll", "intersect", "except", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", "operator", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompoundSelect = { "CompoundSelect", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 6, 2, -1, 9, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompoundSelect;
+  static const void *ptrTable[] = { "LSquiDBCompoundSelect_CompoundSelectOperator;LSquiDBQuery;", "union", "LSquiDBQuery;", "unionAll", "intersect", "except", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", "operator", "LSquiDBCompoundSelect_CompoundSelectOperator;" };
+  static const J2ObjcClassInfo _SquiDBCompoundSelect = { "CompoundSelect", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 6, 2, -1, 9, -1, -1, -1 };
+  return &_SquiDBCompoundSelect;
 }
 
 @end
 
-void ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect *self, ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlCompilableWithArguments_init(self);
+void SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect *self, SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query) {
+  SquiDBCompilableWithArguments_initPackagePrivate(self);
   self->operator__ = operator_;
   self->query_ = query;
 }
 
-ComYahooSquidbSqlCompoundSelect *new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompoundSelect, initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_, operator_, query)
+SquiDBCompoundSelect *new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query) {
+  J2OBJC_NEW_IMPL(SquiDBCompoundSelect, initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_, operator_, query)
 }
 
-ComYahooSquidbSqlCompoundSelect *create_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *operator_, ComYahooSquidbSqlQuery *query) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompoundSelect, initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_, operator_, query)
+SquiDBCompoundSelect *create_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(SquiDBCompoundSelect_CompoundSelectOperator *operator_, SquiDBQuery *query) {
+  J2OBJC_CREATE_IMPL(SquiDBCompoundSelect, initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_, operator_, query)
 }
 
-ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_union__WithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlCompoundSelect_initialize();
-  return new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(JreLoadEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION), query);
+SquiDBCompoundSelect *SquiDBCompoundSelect_union__WithSquiDBQuery_(SquiDBQuery *query) {
+  SquiDBCompoundSelect_initialize();
+  return new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(JreLoadEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION), query);
 }
 
-ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_unionAllWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlCompoundSelect_initialize();
-  return new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(JreLoadEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION_ALL), query);
+SquiDBCompoundSelect *SquiDBCompoundSelect_unionAllWithSquiDBQuery_(SquiDBQuery *query) {
+  SquiDBCompoundSelect_initialize();
+  return new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(JreLoadEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION_ALL), query);
 }
 
-ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_intersectWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlCompoundSelect_initialize();
-  return new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(JreLoadEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, INTERSECT), query);
+SquiDBCompoundSelect *SquiDBCompoundSelect_intersectWithSquiDBQuery_(SquiDBQuery *query) {
+  SquiDBCompoundSelect_initialize();
+  return new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(JreLoadEnum(SquiDBCompoundSelect_CompoundSelectOperator, INTERSECT), query);
 }
 
-ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_exceptWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlCompoundSelect_initialize();
-  return new_ComYahooSquidbSqlCompoundSelect_initWithComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_withComYahooSquidbSqlQuery_(JreLoadEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, EXCEPT), query);
+SquiDBCompoundSelect *SquiDBCompoundSelect_exceptWithSquiDBQuery_(SquiDBQuery *query) {
+  SquiDBCompoundSelect_initialize();
+  return new_SquiDBCompoundSelect_initWithSquiDBCompoundSelect_CompoundSelectOperator_withSquiDBQuery_(JreLoadEnum(SquiDBCompoundSelect_CompoundSelectOperator, EXCEPT), query);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompoundSelect)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompoundSelect)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator)
+J2OBJC_NAME_MAPPING(SquiDBCompoundSelect, "com.yahoo.squidb.sql", "SquiDB")
 
-ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values_[4];
+J2OBJC_INITIALIZED_DEFN(SquiDBCompoundSelect_CompoundSelectOperator)
 
-@implementation ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator
+SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_values_[4];
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)UNION {
-  return JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION);
+@implementation SquiDBCompoundSelect_CompoundSelectOperator
+
++ (SquiDBCompoundSelect_CompoundSelectOperator *)UNION {
+  return JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)UNION_ALL {
-  return JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION_ALL);
++ (SquiDBCompoundSelect_CompoundSelectOperator *)UNION_ALL {
+  return JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION_ALL);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)INTERSECT {
-  return JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, INTERSECT);
++ (SquiDBCompoundSelect_CompoundSelectOperator *)INTERSECT {
+  return JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, INTERSECT);
 }
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)EXCEPT {
-  return JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, EXCEPT);
++ (SquiDBCompoundSelect_CompoundSelectOperator *)EXCEPT {
+  return JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, EXCEPT);
 }
 
 - (NSString *)description {
@@ -213,22 +215,22 @@ ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoun
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values();
+  return SquiDBCompoundSelect_CompoundSelectOperator_values();
 }
 
-+ (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(name);
++ (SquiDBCompoundSelect_CompoundSelectOperator *)valueOfWithNSString:(NSString *)name {
+  return SquiDBCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum)toNSEnum {
-  return (ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_Enum)[self ordinal];
+- (SquiDBCompoundSelect_CompoundSelectOperator_Enum)toNSEnum {
+  return (SquiDBCompoundSelect_CompoundSelectOperator_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBCompoundSelect_CompoundSelectOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompoundSelect_CompoundSelectOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -238,47 +240,47 @@ ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoun
   methods[2].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "UNION", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "UNION_ALL", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
-    { "INTERSECT", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
-    { "EXCEPT", "LComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "UNION", "LSquiDBCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "UNION_ALL", "LSquiDBCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "INTERSECT", "LSquiDBCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "EXCEPT", "LSquiDBCompoundSelect_CompoundSelectOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
     { "expression_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION), &JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION_ALL), &JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, INTERSECT), &JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, EXCEPT), "LComYahooSquidbSqlCompoundSelect;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/CompoundSelect$CompoundSelectOperator;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator = { "CompoundSelectOperator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 3, 5, 7, -1, -1, 8, -1 };
-  return &_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator;
+  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION), &JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION_ALL), &JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, INTERSECT), &JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, EXCEPT), "LSquiDBCompoundSelect;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/CompoundSelect$CompoundSelectOperator;>;" };
+  static const J2ObjcClassInfo _SquiDBCompoundSelect_CompoundSelectOperator = { "CompoundSelectOperator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 3, 5, 7, -1, -1, 8, -1 };
+  return &_SquiDBCompoundSelect_CompoundSelectOperator;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator class]) {
-    JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION) = new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"UNION", JreEnumConstantName(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_class_(), 0), 0);
-    JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, UNION_ALL) = new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"UNION ALL", JreEnumConstantName(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_class_(), 1), 1);
-    JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, INTERSECT) = new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"INTERSECT", JreEnumConstantName(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_class_(), 2), 2);
-    JreEnum(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, EXCEPT) = new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"EXCEPT", JreEnumConstantName(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_class_(), 3), 3);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator)
+  if (self == [SquiDBCompoundSelect_CompoundSelectOperator class]) {
+    JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION) = new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"UNION", JreEnumConstantName(SquiDBCompoundSelect_CompoundSelectOperator_class_(), 0), 0);
+    JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, UNION_ALL) = new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"UNION ALL", JreEnumConstantName(SquiDBCompoundSelect_CompoundSelectOperator_class_(), 1), 1);
+    JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, INTERSECT) = new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"INTERSECT", JreEnumConstantName(SquiDBCompoundSelect_CompoundSelectOperator_class_(), 2), 2);
+    JreEnum(SquiDBCompoundSelect_CompoundSelectOperator, EXCEPT) = new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(@"EXCEPT", JreEnumConstantName(SquiDBCompoundSelect_CompoundSelectOperator_class_(), 3), 3);
+    J2OBJC_SET_INITIALIZED(SquiDBCompoundSelect_CompoundSelectOperator)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *self, NSString *expression, NSString *__name, jint __ordinal) {
+void SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(SquiDBCompoundSelect_CompoundSelectOperator *self, NSString *expression, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
   self->expression_ = expression;
 }
 
-ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *new_ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(NSString *expression, NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator, initWithNSString_withNSString_withInt_, expression, __name, __ordinal)
+SquiDBCompoundSelect_CompoundSelectOperator *new_SquiDBCompoundSelect_CompoundSelectOperator_initWithNSString_withNSString_withInt_(NSString *expression, NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBCompoundSelect_CompoundSelectOperator, initWithNSString_withNSString_withInt_, expression, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values() {
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values_ count:4 type:ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_class_()];
+IOSObjectArray *SquiDBCompoundSelect_CompoundSelectOperator_values() {
+  SquiDBCompoundSelect_CompoundSelectOperator_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBCompoundSelect_CompoundSelectOperator_values_ count:4 type:SquiDBCompoundSelect_CompoundSelectOperator_class_()];
 }
 
-ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initialize();
+SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_valueOfWithNSString_(NSString *name) {
+  SquiDBCompoundSelect_CompoundSelectOperator_initialize();
   for (int i = 0; i < 4; i++) {
-    ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *e = ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values_[i];
+    SquiDBCompoundSelect_CompoundSelectOperator *e = SquiDBCompoundSelect_CompoundSelectOperator_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -287,12 +289,12 @@ ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoun
   return nil;
 }
 
-ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator *ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_initialize();
+SquiDBCompoundSelect_CompoundSelectOperator *SquiDBCompoundSelect_CompoundSelectOperator_fromOrdinal(NSUInteger ordinal) {
+  SquiDBCompoundSelect_CompoundSelectOperator_initialize();
   if (ordinal >= 4) {
     return nil;
   }
-  return ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator_values_[ordinal];
+  return SquiDBCompoundSelect_CompoundSelectOperator_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompoundSelect_CompoundSelectOperator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompoundSelect_CompoundSelectOperator)

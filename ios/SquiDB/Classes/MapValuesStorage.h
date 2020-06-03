@@ -26,7 +26,7 @@
 @protocol JavaUtilMap;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataMapValuesStorage : ComYahooSquidbDataValuesStorage
+@interface SquiDBMapValuesStorage : SquiDBValuesStorage
 
 #pragma mark Public
 
@@ -71,7 +71,7 @@
 - (void)putWithNSString:(NSString *)key
            withNSString:(NSString *)value;
 
-- (void)putAllWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)other;
+- (void)putAllWithSquiDBValuesStorage:(SquiDBValuesStorage *)other;
 
 - (void)putNullWithNSString:(NSString *)key;
 
@@ -83,21 +83,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataMapValuesStorage)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBMapValuesStorage)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataMapValuesStorage_init(ComYahooSquidbDataMapValuesStorage *self);
+FOUNDATION_EXPORT void SquiDBMapValuesStorage_init(SquiDBMapValuesStorage *self);
 
-FOUNDATION_EXPORT ComYahooSquidbDataMapValuesStorage *new_ComYahooSquidbDataMapValuesStorage_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBMapValuesStorage *new_SquiDBMapValuesStorage_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataMapValuesStorage *create_ComYahooSquidbDataMapValuesStorage_init(void);
+FOUNDATION_EXPORT SquiDBMapValuesStorage *create_SquiDBMapValuesStorage_init(void);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(ComYahooSquidbDataMapValuesStorage *self, id<JavaUtilMap> values);
+FOUNDATION_EXPORT void SquiDBMapValuesStorage_initWithJavaUtilMap_(SquiDBMapValuesStorage *self, id<JavaUtilMap> values);
 
-FOUNDATION_EXPORT ComYahooSquidbDataMapValuesStorage *new_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBMapValuesStorage *new_SquiDBMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataMapValuesStorage *create_ComYahooSquidbDataMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values);
+FOUNDATION_EXPORT SquiDBMapValuesStorage *create_SquiDBMapValuesStorage_initWithJavaUtilMap_(id<JavaUtilMap> values);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataMapValuesStorage)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBMapValuesStorage)
+
+@compatibility_alias ComYahooSquidbDataMapValuesStorage SquiDBMapValuesStorage;
 
 
 #if __has_feature(nullability)

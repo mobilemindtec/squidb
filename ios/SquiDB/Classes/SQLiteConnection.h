@@ -14,20 +14,20 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
-@class ComYahooAndroidSqliteSQLiteConnectionPool;
-@class ComYahooAndroidSqliteSQLiteDatabaseConfiguration;
-@class ComYahooAndroidSqliteSQLiteStatementInfo;
 @class IOSObjectArray;
 @class JavaUtilArrayList;
-@protocol ComYahooAndroidSqlitePrinter;
+@class SquiDBCursorWindow;
+@class SquiDBSQLiteConnectionPool;
+@class SquiDBSQLiteDatabaseConfiguration;
+@class SquiDBSQLiteStatementInfo;
+@protocol SquiDBPrinter;
 
-@interface ComYahooAndroidSqliteSQLiteConnection : NSObject
+@interface SquiDBSQLiteConnection : NSObject
 
 #pragma mark Public
 
-- (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                 withBoolean:(jboolean)verbose;
+- (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                  withBoolean:(jboolean)verbose;
 
 - (void)executeWithNSString:(NSString *)sql
           withNSObjectArray:(IOSObjectArray *)bindArgs;
@@ -37,7 +37,7 @@
 
 - (jint)executeForCursorWindowWithNSString:(NSString *)sql
                          withNSObjectArray:(IOSObjectArray *)bindArgs
-     withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window
+                    withSquiDBCursorWindow:(SquiDBCursorWindow *)window
                                    withInt:(jint)startPos
                                    withInt:(jint)requiredPos
                                withBoolean:(jboolean)countAllRows;
@@ -56,7 +56,7 @@
 - (jboolean)isPrimaryConnection;
 
 - (void)prepareWithNSString:(NSString *)sql
-withComYahooAndroidSqliteSQLiteStatementInfo:(ComYahooAndroidSqliteSQLiteStatementInfo *)outStatementInfo;
+withSquiDBSQLiteStatementInfo:(SquiDBSQLiteStatementInfo *)outStatementInfo;
 
 - (NSString *)description;
 
@@ -74,17 +74,17 @@ withComYahooAndroidSqliteSQLiteStatementInfo:(ComYahooAndroidSqliteSQLiteStateme
 
 - (NSString *)describeCurrentOperationUnsafe;
 
-- (void)dumpUnsafeWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                       withBoolean:(jboolean)verbose;
+- (void)dumpUnsafeWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                        withBoolean:(jboolean)verbose;
 
 - (jboolean)isPreparedStatementInCacheWithNSString:(NSString *)sql;
 
-+ (ComYahooAndroidSqliteSQLiteConnection *)openWithComYahooAndroidSqliteSQLiteConnectionPool:(ComYahooAndroidSqliteSQLiteConnectionPool *)pool
-                                        withComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration
-                                                                                     withInt:(jint)connectionId
-                                                                                 withBoolean:(jboolean)primaryConnection;
++ (SquiDBSQLiteConnection *)openWithSquiDBSQLiteConnectionPool:(SquiDBSQLiteConnectionPool *)pool
+                         withSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration
+                                                       withInt:(jint)connectionId
+                                                   withBoolean:(jboolean)primaryConnection;
 
-- (void)reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration;
+- (void)reconfigureWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration;
 
 - (void)setOnlyAllowReadOnlyOperationsWithBoolean:(jboolean)readOnly;
 
@@ -94,11 +94,13 @@ withComYahooAndroidSqliteSQLiteStatementInfo:(ComYahooAndroidSqliteSQLiteStateme
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteSQLiteConnection)
+J2OBJC_STATIC_INIT(SquiDBSQLiteConnection)
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnection_openWithComYahooAndroidSqliteSQLiteConnectionPool_withComYahooAndroidSqliteSQLiteDatabaseConfiguration_withInt_withBoolean_(ComYahooAndroidSqliteSQLiteConnectionPool *pool, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration, jint connectionId, jboolean primaryConnection);
+FOUNDATION_EXPORT SquiDBSQLiteConnection *SquiDBSQLiteConnection_openWithSquiDBSQLiteConnectionPool_withSquiDBSQLiteDatabaseConfiguration_withInt_withBoolean_(SquiDBSQLiteConnectionPool *pool, SquiDBSQLiteDatabaseConfiguration *configuration, jint connectionId, jboolean primaryConnection);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnection)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteConnection)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteConnection SquiDBSQLiteConnection;
 
 
 #if __has_feature(nullability)

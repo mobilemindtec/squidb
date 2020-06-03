@@ -14,17 +14,17 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbUtilityVersionCode;
 @class JavaLangStringBuilder;
+@class SquiDBCompileContext;
+@class SquiDBVersionCode;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbSqlSqlBuilder : NSObject {
+@interface SquiDBSqlBuilder : NSObject {
  @public
   JavaLangStringBuilder *sql_;
-  ComYahooSquidbSqlCompileContext *compileContext_;
-  ComYahooSquidbUtilityVersionCode *sqliteVersion_;
+  SquiDBCompileContext *compileContext_;
+  SquiDBVersionCode *sqliteVersion_;
   id<JavaUtilList> args_;
 }
 
@@ -41,8 +41,8 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                                                      withBoolean:(jboolean)withBoundArguments;
+- (instancetype __nonnull)initWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                                           withBoolean:(jboolean)withBoundArguments;
 
 - (void)addCollectionArgWithJavaUtilCollection:(id<JavaUtilCollection>)value;
 
@@ -58,20 +58,22 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlSqlBuilder)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSqlBuilder)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlBuilder, sql_, JavaLangStringBuilder *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlBuilder, compileContext_, ComYahooSquidbSqlCompileContext *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlBuilder, sqliteVersion_, ComYahooSquidbUtilityVersionCode *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlSqlBuilder, args_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBSqlBuilder, sql_, JavaLangStringBuilder *)
+J2OBJC_FIELD_SETTER(SquiDBSqlBuilder, compileContext_, SquiDBCompileContext *)
+J2OBJC_FIELD_SETTER(SquiDBSqlBuilder, sqliteVersion_, SquiDBVersionCode *)
+J2OBJC_FIELD_SETTER(SquiDBSqlBuilder, args_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlSqlBuilder_initWithComYahooSquidbSqlCompileContext_withBoolean_(ComYahooSquidbSqlSqlBuilder *self, ComYahooSquidbSqlCompileContext *compileContext, jboolean withBoundArguments);
+FOUNDATION_EXPORT void SquiDBSqlBuilder_initWithSquiDBCompileContext_withBoolean_(SquiDBSqlBuilder *self, SquiDBCompileContext *compileContext, jboolean withBoundArguments);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlSqlBuilder *new_ComYahooSquidbSqlSqlBuilder_initWithComYahooSquidbSqlCompileContext_withBoolean_(ComYahooSquidbSqlCompileContext *compileContext, jboolean withBoundArguments) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSqlBuilder *new_SquiDBSqlBuilder_initWithSquiDBCompileContext_withBoolean_(SquiDBCompileContext *compileContext, jboolean withBoundArguments) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlSqlBuilder *create_ComYahooSquidbSqlSqlBuilder_initWithComYahooSquidbSqlCompileContext_withBoolean_(ComYahooSquidbSqlCompileContext *compileContext, jboolean withBoundArguments);
+FOUNDATION_EXPORT SquiDBSqlBuilder *create_SquiDBSqlBuilder_initWithSquiDBCompileContext_withBoolean_(SquiDBCompileContext *compileContext, jboolean withBoundArguments);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlSqlBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSqlBuilder)
+
+@compatibility_alias ComYahooSquidbSqlSqlBuilder SquiDBSqlBuilder;
 
 
 #if __has_feature(nullability)

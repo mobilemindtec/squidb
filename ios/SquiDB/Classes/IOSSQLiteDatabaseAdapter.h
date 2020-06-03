@@ -15,25 +15,25 @@
 #include "ISQLiteDatabase.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
 @class IOSObjectArray;
-@protocol ComYahooSquidbDataICursor;
-@protocol ComYahooSquidbDataISQLitePreparedStatement;
-@protocol ComYahooSquidbDataSquidTransactionListener;
+@class SquiDBSQLiteDatabase;
+@protocol SquiDBICursor;
+@protocol SquiDBISQLitePreparedStatement;
+@protocol SquiDBSquidTransactionListener;
 
-@interface ComYahooSquidbIosIOSSQLiteDatabaseAdapter : NSObject < ComYahooSquidbDataISQLiteDatabase >
+@interface SquiDBIOSSQLiteDatabaseAdapter : NSObject < SquiDBISQLiteDatabase >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db;
 
 - (void)beginTransaction;
 
 - (void)beginTransactionNonExclusive;
 
-- (void)beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
 - (void)close;
 
@@ -64,7 +64,7 @@
 
 - (jint)getVersion;
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getWrappedObject;
+- (SquiDBSQLiteDatabase *)getWrappedObject;
 
 - (jboolean)inTransaction;
 
@@ -80,10 +80,10 @@
 
 - (jboolean)needUpgradeWithInt:(jint)newVersion;
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
+- (id<SquiDBISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql;
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSObjectArray:(IOSObjectArray *)bindArgs;
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSObjectArray:(IOSObjectArray *)bindArgs;
 
 - (void)setForeignKeyConstraintsEnabledWithBoolean:(jboolean)enable;
 
@@ -115,15 +115,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbIosIOSSQLiteDatabaseAdapter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBIOSSQLiteDatabaseAdapter)
 
-FOUNDATION_EXPORT void ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooSquidbIosIOSSQLiteDatabaseAdapter *self, ComYahooAndroidSqliteSQLiteDatabase *db);
+FOUNDATION_EXPORT void SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBIOSSQLiteDatabaseAdapter *self, SquiDBSQLiteDatabase *db);
 
-FOUNDATION_EXPORT ComYahooSquidbIosIOSSQLiteDatabaseAdapter *new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *db) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBIOSSQLiteDatabaseAdapter *new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *db) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbIosIOSSQLiteDatabaseAdapter *create_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *db);
+FOUNDATION_EXPORT SquiDBIOSSQLiteDatabaseAdapter *create_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *db);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBIOSSQLiteDatabaseAdapter)
+
+@compatibility_alias ComYahooSquidbIosIOSSQLiteDatabaseAdapter SquiDBIOSSQLiteDatabaseAdapter;
 
 
 #if __has_feature(nullability)

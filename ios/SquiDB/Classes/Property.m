@@ -23,67 +23,67 @@
 #include "java/lang/UnsupportedOperationException.h"
 #include "java/lang/reflect/Constructor.h"
 
-@interface ComYahooSquidbSqlProperty () {
+@interface SquiDBProperty () {
  @public
-  ComYahooSquidbSqlFunction *function_;
+  SquiDBFunction *function_;
 }
 
-- (ComYahooSquidbSqlProperty *)cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                                                                 withNSString:(NSString *)expression
-                                                                                 withNSString:(NSString *)alias;
+- (SquiDBProperty *)cloneWithExpressionAndAliasWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                                           withNSString:(NSString *)expression
+                                                           withNSString:(NSString *)alias;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlProperty, function_, ComYahooSquidbSqlFunction *)
+J2OBJC_FIELD_SETTER(SquiDBProperty, function_, SquiDBFunction *)
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asWithNSString_withNSString_(ComYahooSquidbSqlProperty *self, NSString *tableAlias, NSString *columnAlias);
+__attribute__((unused)) static SquiDBProperty *SquiDBProperty_asWithNSString_withNSString_(SquiDBProperty *self, NSString *tableAlias, NSString *columnAlias);
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *newAlias);
+__attribute__((unused)) static SquiDBProperty *SquiDBProperty_asWithSquiDBSqlTable_withNSString_(SquiDBProperty *self, SquiDBSqlTable *newTable, NSString *newAlias);
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *newAlias);
+__attribute__((unused)) static SquiDBProperty *SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(SquiDBProperty *self, SquiDBSqlTable *newTable, NSString *newAlias);
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *expression, NSString *alias);
+__attribute__((unused)) static SquiDBProperty *SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty *self, SquiDBTableModelName *tableModelName, NSString *expression, NSString *alias);
 
-@interface ComYahooSquidbSqlProperty_PropertyVisitor : NSObject
-
-@end
-
-@interface ComYahooSquidbSqlProperty_PropertyWritingVisitor : NSObject
+@interface SquiDBProperty_PropertyVisitor : NSObject
 
 @end
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asWithNSString_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, NSString *tableAlias, NSString *columnAlias);
+@interface SquiDBProperty_PropertyWritingVisitor : NSObject
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *columnAlias);
+@end
 
-__attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *columnAlias);
+__attribute__((unused)) static SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asWithNSString_withNSString_(SquiDBProperty_StringProperty *self, NSString *tableAlias, NSString *columnAlias);
 
-@implementation ComYahooSquidbSqlProperty
+__attribute__((unused)) static SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asWithSquiDBSqlTable_withNSString_(SquiDBProperty_StringProperty *self, SquiDBSqlTable *newTable, NSString *columnAlias);
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)columnName {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, columnName);
+__attribute__((unused)) static SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(SquiDBProperty_StringProperty *self, SquiDBSqlTable *newTable, NSString *columnAlias);
+
+@implementation SquiDBProperty
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)columnName {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, columnName);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)columnName
-                                           withNSString:(NSString *)columnDef {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, columnName, columnDef);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)columnName
+                                withNSString:(NSString *)columnDef {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, columnName, columnDef);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)columnName
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)columnName
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, alias, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)alias {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)alias {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
   return self;
 }
 
@@ -95,13 +95,13 @@ __attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYaho
   return columnDefinition_ != nil && [columnDefinition_ java_contains:@"PRIMARY KEY"];
 }
 
-- (void)appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                     withBoolean:(jboolean)forSqlValidation {
+- (void)appendQualifiedExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                          withBoolean:(jboolean)forSqlValidation {
   if (function_ != nil) {
-    [function_ appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+    [function_ appendToSqlBuilderWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
   }
   else {
-    [super appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+    [super appendQualifiedExpressionWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
   }
 }
 
@@ -119,57 +119,57 @@ __attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYaho
   return [super expressionForComparison];
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (ComYahooSquidbSqlProperty *)java_clone {
+- (SquiDBProperty *)java_clone {
   @try {
-    return (ComYahooSquidbSqlProperty *) cast_chk([super java_clone], [ComYahooSquidbSqlProperty class]);
+    return (SquiDBProperty *) cast_chk([super java_clone], [SquiDBProperty class]);
   }
   @catch (JavaLangCloneNotSupportedException *e) {
     @throw new_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
 }
 
-- (ComYahooSquidbSqlProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty class]);
+- (SquiDBProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty *)asWithNSString:(NSString *)tableAlias
-                                 withNSString:(NSString *)columnAlias {
-  return ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias);
+- (SquiDBProperty *)asWithNSString:(NSString *)tableAlias
+                      withNSString:(NSString *)columnAlias {
+  return SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias);
 }
 
-- (ComYahooSquidbSqlProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                  withNSString:(NSString *)newAlias {
-  return ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, newAlias);
+- (SquiDBProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                            withNSString:(NSString *)newAlias {
+  return SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, newAlias);
 }
 
-- (ComYahooSquidbSqlProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                    withNSString:(NSString *)newAlias {
-  return ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, newAlias);
+- (SquiDBProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                              withNSString:(NSString *)newAlias {
+  return SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, newAlias);
 }
 
-- (ComYahooSquidbSqlProperty *)cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                                                                 withNSString:(NSString *)expression
-                                                                                 withNSString:(NSString *)alias {
-  return ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, expression, alias);
+- (SquiDBProperty *)cloneWithExpressionAndAliasWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                                           withNSString:(NSString *)expression
+                                                           withNSString:(NSString *)alias {
+  return SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, expression, alias);
 }
 
 - (NSString *)description {
-  return JreStrcat("$$$$$", [super description], @" Table=", ((ComYahooSquidbSqlTableModelName *) nil_chk(tableModelName_))->tableName_, @" ColumnDefinition=", columnDefinition_);
+  return JreStrcat("$$$$$", [super description], @" Table=", ((SquiDBTableModelName *) nil_chk(tableModelName_))->tableName_, @" ColumnDefinition=", columnDefinition_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -185,133 +185,105 @@ __attribute__((unused)) static ComYahooSquidbSqlProperty_StringProperty *ComYaho
     { NULL, "LNSString;", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x401, 7, 8, -1, 9, -1, -1 },
     { NULL, "LNSObject;", 0x401, 7, 10, -1, 11, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x1, 12, -1, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x1, 14, 15, -1, 16, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x1, 14, 19, -1, 20, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x1, 21, 19, -1, 20, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x2, 22, 1, -1, 23, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x1, 12, -1, -1, 13, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x1, 14, 15, -1, 16, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x1, 14, 19, -1, 20, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x1, 21, 19, -1, 20, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x2, 22, 1, -1, 23, -1, -1 },
     { NULL, "LNSString;", 0x1, 24, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
   methods[4].selector = @selector(getColumnDefinition);
   methods[5].selector = @selector(isPrimaryKey);
-  methods[6].selector = @selector(appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[6].selector = @selector(appendQualifiedExpressionWithSquiDBSqlBuilder:withBoolean:);
   methods[7].selector = @selector(getExpression);
   methods[8].selector = @selector(expressionForComparison);
-  methods[9].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[10].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
+  methods[9].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[10].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
   methods[11].selector = @selector(java_clone);
   methods[12].selector = @selector(asWithNSString:);
   methods[13].selector = @selector(asWithNSString:withNSString:);
-  methods[14].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[15].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[16].selector = @selector(cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
+  methods[14].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[15].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
+  methods[16].selector = @selector(cloneWithExpressionAndAliasWithSquiDBTableModelName:withNSString:withNSString:);
   methods[17].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "tableModelName_", "LComYahooSquidbSqlTableModelName;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
+    { "tableModelName_", "LSquiDBTableModelName;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
     { "columnDefinition_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
-    { "function_", "LComYahooSquidbSqlFunction;", .constantValue.asLong = 0, 0x2, -1, -1, 25, -1 },
+    { "function_", "LSquiDBFunction;", .constantValue.asLong = 0, 0x2, -1, -1, 25, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<*>;Ljava/lang/String;)V", "appendQualifiedExpression", "LComYahooSquidbSqlSqlBuilder;Z", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "clone", "()Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "as", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "asSelectionFromTable", "cloneWithExpressionAndAlias", "(Lcom/yahoo/squidb/sql/TableModelName;Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "toString", "Lcom/yahoo/squidb/sql/Function<*>;", "LComYahooSquidbSqlProperty_PropertyVisitor;LComYahooSquidbSqlProperty_PropertyWritingVisitor;LComYahooSquidbSqlProperty_IntegerProperty;LComYahooSquidbSqlProperty_StringProperty;LComYahooSquidbSqlProperty_DoubleProperty;LComYahooSquidbSqlProperty_LongProperty;LComYahooSquidbSqlProperty_BooleanProperty;LComYahooSquidbSqlProperty_BlobProperty;LComYahooSquidbSqlProperty_EnumProperty;", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Field<TTYPE;>;Ljava/lang/Cloneable;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty = { "Property", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401, 18, 3, -1, 26, -1, 27, -1 };
-  return &_ComYahooSquidbSqlProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<*>;Ljava/lang/String;)V", "appendQualifiedExpression", "LSquiDBSqlBuilder;Z", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "clone", "()Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "as", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "asSelectionFromTable", "cloneWithExpressionAndAlias", "(Lcom/yahoo/squidb/sql/TableModelName;Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property<TTYPE;>;", "toString", "Lcom/yahoo/squidb/sql/Function<*>;", "LSquiDBProperty_PropertyVisitor;LSquiDBProperty_PropertyWritingVisitor;LSquiDBProperty_IntegerProperty;LSquiDBProperty_StringProperty;LSquiDBProperty_DoubleProperty;LSquiDBProperty_LongProperty;LSquiDBProperty_BooleanProperty;LSquiDBProperty_BlobProperty;LSquiDBProperty_EnumProperty;", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Field<TTYPE;>;Ljava/lang/Cloneable;" };
+  static const J2ObjcClassInfo _SquiDBProperty = { "Property", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401, 18, 3, -1, 26, -1, 27, -1 };
+  return &_SquiDBProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *columnName) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, nil, nil);
+void SquiDBProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty *self, SquiDBTableModelName *tableModelName, NSString *columnName) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, nil, nil);
 }
 
-void ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *columnName, NSString *columnDef) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, nil, columnDef);
+void SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty *self, SquiDBTableModelName *tableModelName, NSString *columnName, NSString *columnDef) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, columnName, nil, columnDef);
 }
 
-void ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *columnName, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlField_initWithNSString_withNSString_(self, columnName, tableModelName == nil ? nil : tableModelName->tableName_);
+void SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty *self, SquiDBTableModelName *tableModelName, NSString *columnName, NSString *alias, NSString *columnDefinition) {
+  SquiDBField_initWithNSString_withNSString_(self, columnName, tableModelName == nil ? nil : tableModelName->tableName_);
   self->function_ = nil;
   self->tableModelName_ = tableModelName;
   self->alias_ = alias;
   self->columnDefinition_ = columnDefinition;
 }
 
-void ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlFunction *function, NSString *alias) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, nil, nil, alias, nil);
+void SquiDBProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty *self, SquiDBFunction *function, NSString *alias) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, nil, nil, alias, nil);
   self->function_ = function;
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asWithNSString_withNSString_(ComYahooSquidbSqlProperty *self, NSString *tableAlias, NSString *columnAlias) {
-  if (ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(tableAlias) || self->function_ != nil) {
+SquiDBProperty *SquiDBProperty_asWithNSString_withNSString_(SquiDBProperty *self, NSString *tableAlias, NSString *columnAlias) {
+  if (SquiDBSqlUtils_isEmptyWithNSString_(tableAlias) || self->function_ != nil) {
     return [self asWithNSString:columnAlias];
   }
-  return ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, new_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(((ComYahooSquidbSqlTableModelName *) nil_chk(self->tableModelName_))->modelClass_, tableAlias), [self getExpression], columnAlias);
+  return SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(self, new_SquiDBTableModelName_initWithIOSClass_withNSString_(((SquiDBTableModelName *) nil_chk(self->tableModelName_))->modelClass_, tableAlias), [self getExpression], columnAlias);
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *newAlias) {
+SquiDBProperty *SquiDBProperty_asWithSquiDBSqlTable_withNSString_(SquiDBProperty *self, SquiDBSqlTable *newTable, NSString *newAlias) {
   if (self->function_ != nil) {
     return [self asWithNSString:newAlias];
   }
   if (newTable == nil) {
     return [self asWithNSString:newAlias];
   }
-  return ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, new_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_([newTable getModelClass], [newTable getName]), [self getExpression], newAlias);
+  return SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(self, new_SquiDBTableModelName_initWithIOSClass_withNSString_([newTable getModelClass], [newTable getName]), [self getExpression], newAlias);
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *newAlias) {
-  ComYahooSquidbSqlTableModelName *newTableModelName = newTable == nil ? nil : new_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_([newTable getModelClass], [newTable getName]);
-  return ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, newTableModelName, [self getName], newAlias);
+SquiDBProperty *SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(SquiDBProperty *self, SquiDBSqlTable *newTable, NSString *newAlias) {
+  SquiDBTableModelName *newTableModelName = newTable == nil ? nil : new_SquiDBTableModelName_initWithIOSClass_withNSString_([newTable getModelClass], [newTable getName]);
+  return SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(self, newTableModelName, [self getName], newAlias);
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlProperty_cloneWithExpressionAndAliasWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *expression, NSString *alias) {
+SquiDBProperty *SquiDBProperty_cloneWithExpressionAndAliasWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty *self, SquiDBTableModelName *tableModelName, NSString *expression, NSString *alias) {
   @try {
-    return [((JavaLangReflectConstructor *) nil_chk(([[self java_getClass] getConstructor:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlTableModelName_class_(), NSString_class_(), NSString_class_(), NSString_class_() } count:4 type:IOSClass_class_()]]))) newInstanceWithNSObjectArray:[IOSObjectArray newArrayWithObjects:(id[]){ tableModelName, expression, alias, nil } count:4 type:NSObject_class_()]];
+    return [((JavaLangReflectConstructor *) nil_chk(([[self java_getClass] getConstructor:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBTableModelName_class_(), NSString_class_(), NSString_class_(), NSString_class_() } count:4 type:IOSClass_class_()]]))) newInstanceWithNSObjectArray:[IOSObjectArray newArrayWithObjects:(id[]){ tableModelName, expression, alias, nil } count:4 type:NSObject_class_()]];
   }
   @catch (JavaLangException *e) {
     @throw new_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty)
 
-@implementation ComYahooSquidbSqlProperty_PropertyVisitor
+J2OBJC_NAME_MAPPING(SquiDBProperty, "com.yahoo.squidb.sql", "SquiDB")
 
-+ (const J2ObjcClassInfo *)__metadata {
-  static J2ObjcMethodInfo methods[] = {
-    { NULL, "LNSObject;", 0x401, 0, 1, -1, 2, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 3, 1, -1, 4, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 5, 1, -1, 6, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 7, 1, -1, 8, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 9, 1, -1, 10, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 11, 1, -1, 12, -1, -1 },
-  };
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
-  #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:);
-  methods[1].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:);
-  methods[2].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:);
-  methods[3].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:);
-  methods[4].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:);
-  methods[5].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:);
-  #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "visitInteger", "LComYahooSquidbSqlProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;TPARAMETER;)TRETURN;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;TPARAMETER;)TRETURN;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;TPARAMETER;)TRETURN;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;TPARAMETER;)TRETURN;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;TPARAMETER;)TRETURN;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_PropertyVisitor = { "PropertyVisitor", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 6, 0, 13, -1, -1, 14, -1 };
-  return &_ComYahooSquidbSqlProperty_PropertyVisitor;
-}
-
-@end
-
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_PropertyVisitor)
-
-@implementation ComYahooSquidbSqlProperty_PropertyWritingVisitor
+@implementation SquiDBProperty_PropertyVisitor
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -325,98 +297,128 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_PropertyVisitor)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[1].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[2].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[3].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[4].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[5].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:withId:);
+  methods[0].selector = @selector(visitIntegerWithSquiDBProperty:withId:);
+  methods[1].selector = @selector(visitLongWithSquiDBProperty:withId:);
+  methods[2].selector = @selector(visitDoubleWithSquiDBProperty:withId:);
+  methods[3].selector = @selector(visitStringWithSquiDBProperty:withId:);
+  methods[4].selector = @selector(visitBooleanWithSquiDBProperty:withId:);
+  methods[5].selector = @selector(visitBlobWithSquiDBProperty:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "visitInteger", "LComYahooSquidbSqlProperty;LNSObject;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;TDST;TPARAMETER;)TRETURN;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;TDST;TPARAMETER;)TRETURN;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;TDST;TPARAMETER;)TRETURN;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;TDST;TPARAMETER;)TRETURN;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;TDST;TPARAMETER;)TRETURN;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;TDST;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_PropertyWritingVisitor = { "PropertyWritingVisitor", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 6, 0, 13, -1, -1, 14, -1 };
-  return &_ComYahooSquidbSqlProperty_PropertyWritingVisitor;
+  static const void *ptrTable[] = { "visitInteger", "LSquiDBProperty;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;TPARAMETER;)TRETURN;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;TPARAMETER;)TRETURN;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;TPARAMETER;)TRETURN;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;TPARAMETER;)TRETURN;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;TPARAMETER;)TRETURN;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;TPARAMETER;)TRETURN;", "LSquiDBProperty;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>Ljava/lang/Object;" };
+  static const J2ObjcClassInfo _SquiDBProperty_PropertyVisitor = { "PropertyVisitor", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 6, 0, 13, -1, -1, 14, -1 };
+  return &_SquiDBProperty_PropertyVisitor;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_PropertyWritingVisitor)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBProperty_PropertyVisitor)
 
-@implementation ComYahooSquidbSqlProperty_IntegerProperty
+@implementation SquiDBProperty_PropertyWritingVisitor
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LNSObject;", 0x401, 0, 1, -1, 2, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 3, 1, -1, 4, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 5, 1, -1, 6, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 7, 1, -1, 8, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 9, 1, -1, 10, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 11, 1, -1, 12, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
+  methods[0].selector = @selector(visitIntegerWithSquiDBProperty:withId:withId:);
+  methods[1].selector = @selector(visitLongWithSquiDBProperty:withId:withId:);
+  methods[2].selector = @selector(visitDoubleWithSquiDBProperty:withId:withId:);
+  methods[3].selector = @selector(visitStringWithSquiDBProperty:withId:withId:);
+  methods[4].selector = @selector(visitBooleanWithSquiDBProperty:withId:withId:);
+  methods[5].selector = @selector(visitBlobWithSquiDBProperty:withId:withId:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "visitInteger", "LSquiDBProperty;LNSObject;LNSObject;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;TDST;TPARAMETER;)TRETURN;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;TDST;TPARAMETER;)TRETURN;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;TDST;TPARAMETER;)TRETURN;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;TDST;TPARAMETER;)TRETURN;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;TDST;TPARAMETER;)TRETURN;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;TDST;TPARAMETER;)TRETURN;", "LSquiDBProperty;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>Ljava/lang/Object;" };
+  static const J2ObjcClassInfo _SquiDBProperty_PropertyWritingVisitor = { "PropertyWritingVisitor", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x609, 6, 0, 13, -1, -1, 14, -1 };
+  return &_SquiDBProperty_PropertyWritingVisitor;
+}
+
+@end
+
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBProperty_PropertyWritingVisitor)
+
+@implementation SquiDBProperty_IntegerProperty
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)alias {
-  ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)alias {
+  SquiDBProperty_IntegerProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
   return self;
 }
 
-+ (ComYahooSquidbSqlProperty_IntegerProperty *)fromFunctionWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                                                            withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_IntegerProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
++ (SquiDBProperty_IntegerProperty *)fromFunctionWithSquiDBFunction:(SquiDBFunction *)function
+                                                      withNSString:(NSString *)selectAs {
+  return SquiDBProperty_IntegerProperty_fromFunctionWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-+ (ComYahooSquidbSqlProperty_IntegerProperty *)literalWithInt:(jint)literal
-                                                 withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_IntegerProperty_literalWithInt_withNSString_(literal, selectAs);
++ (SquiDBProperty_IntegerProperty *)literalWithInt:(jint)literal
+                                      withNSString:(NSString *)selectAs {
+  return SquiDBProperty_IntegerProperty_literalWithInt_withNSString_(literal, selectAs);
 }
 
-+ (ComYahooSquidbSqlProperty_IntegerProperty *)countProperty {
-  return ComYahooSquidbSqlProperty_IntegerProperty_countProperty();
++ (SquiDBProperty_IntegerProperty *)countProperty {
+  return SquiDBProperty_IntegerProperty_countProperty();
 }
 
-+ (ComYahooSquidbSqlProperty_IntegerProperty *)countPropertyWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)field
-                                                                           withBoolean:(jboolean)distinct {
-  return ComYahooSquidbSqlProperty_IntegerProperty_countPropertyWithComYahooSquidbSqlField_withBoolean_(field, distinct);
++ (SquiDBProperty_IntegerProperty *)countPropertyWithSquiDBField:(SquiDBField *)field
+                                                     withBoolean:(jboolean)distinct {
+  return SquiDBProperty_IntegerProperty_countPropertyWithSquiDBField_withBoolean_(field, distinct);
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitIntegerWithComYahooSquidbSqlProperty:self withId:data];
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitIntegerWithSquiDBProperty:self withId:data];
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitIntegerWithComYahooSquidbSqlProperty:self withId:dst withId:data];
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitIntegerWithSquiDBProperty:self withId:dst withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_IntegerProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_IntegerProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_IntegerProperty class]);
+- (SquiDBProperty_IntegerProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_IntegerProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_IntegerProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_IntegerProperty *)asWithNSString:(NSString *)tableAlias
-                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_IntegerProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_IntegerProperty class]);
+- (SquiDBProperty_IntegerProperty *)asWithNSString:(NSString *)tableAlias
+                                      withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_IntegerProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_IntegerProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_IntegerProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                  withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_IntegerProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_IntegerProperty class]);
+- (SquiDBProperty_IntegerProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                            withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_IntegerProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_IntegerProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_IntegerProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                    withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_IntegerProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_IntegerProperty class]);
+- (SquiDBProperty_IntegerProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                              withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_IntegerProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_IntegerProperty class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -425,192 +427,192 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_PropertyWritingVi
     { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x9, 9, 10, -1, 11, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x9, 9, 10, -1, 11, -1, -1 },
     { NULL, "LNSObject;", 0x1, 12, 13, -1, 14, -1, -1 },
     { NULL, "LNSObject;", 0x1, 12, 15, -1, 16, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x1, 17, 18, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x1, 17, 19, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x1, 17, 20, -1, 21, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_IntegerProperty;", 0x1, 22, 20, -1, 21, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x1, 17, 18, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x1, 17, 19, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x1, 17, 20, -1, 21, -1, -1 },
+    { NULL, "LSquiDBProperty_IntegerProperty;", 0x1, 22, 20, -1, 21, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
-  methods[4].selector = @selector(fromFunctionWithComYahooSquidbSqlFunction:withNSString:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
+  methods[4].selector = @selector(fromFunctionWithSquiDBFunction:withNSString:);
   methods[5].selector = @selector(literalWithInt:withNSString:);
   methods[6].selector = @selector(countProperty);
-  methods[7].selector = @selector(countPropertyWithComYahooSquidbSqlField:withBoolean:);
-  methods[8].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[9].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
+  methods[7].selector = @selector(countPropertyWithSquiDBField:withBoolean:);
+  methods[8].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[9].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
   methods[10].selector = @selector(asWithNSString:);
   methods[11].selector = @selector(asWithNSString:withNSString:);
-  methods[12].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[13].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
+  methods[12].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[13].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "literal", "ILNSString;", "countProperty", "LComYahooSquidbSqlField;Z", "(Lcom/yahoo/squidb/sql/Field<*>;Z)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "asSelectionFromTable", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_IntegerProperty = { "IntegerProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 14, 0, 23, -1, -1, 24, -1 };
-  return &_ComYahooSquidbSqlProperty_IntegerProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "literal", "ILNSString;", "countProperty", "LSquiDBField;Z", "(Lcom/yahoo/squidb/sql/Field<*>;Z)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$IntegerProperty;", "asSelectionFromTable", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_IntegerProperty = { "IntegerProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 14, 0, 23, -1, -1, 24, -1 };
+  return &_SquiDBProperty_IntegerProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_IntegerProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+void SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_IntegerProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_IntegerProperty *new_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *create_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_IntegerProperty *create_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-void ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_IntegerProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+void SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_IntegerProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_IntegerProperty *new_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *create_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_IntegerProperty *create_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_IntegerProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+void SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_IntegerProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_IntegerProperty *new_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *create_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_IntegerProperty *create_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_IntegerProperty *self, ComYahooSquidbSqlFunction *function, NSString *alias) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+void SquiDBProperty_IntegerProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_IntegerProperty *self, SquiDBFunction *function, NSString *alias) {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_IntegerProperty *new_SquiDBProperty_IntegerProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *create_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_IntegerProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_IntegerProperty *create_SquiDBProperty_IntegerProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_IntegerProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *ComYahooSquidbSqlProperty_IntegerProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_IntegerProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
+SquiDBProperty_IntegerProperty *SquiDBProperty_IntegerProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_IntegerProperty_initialize();
+  return new_SquiDBProperty_IntegerProperty_initWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *ComYahooSquidbSqlProperty_IntegerProperty_literalWithInt_withNSString_(jint literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_IntegerProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_IntegerProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfInt_(literal), selectAs, nil);
+SquiDBProperty_IntegerProperty *SquiDBProperty_IntegerProperty_literalWithInt_withNSString_(jint literal, NSString *selectAs) {
+  SquiDBProperty_IntegerProperty_initialize();
+  return new_SquiDBProperty_IntegerProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfInt_(literal), selectAs, nil);
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *ComYahooSquidbSqlProperty_IntegerProperty_countProperty() {
-  ComYahooSquidbSqlProperty_IntegerProperty_initialize();
-  return ComYahooSquidbSqlProperty_IntegerProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction_count(), @"count");
+SquiDBProperty_IntegerProperty *SquiDBProperty_IntegerProperty_countProperty() {
+  SquiDBProperty_IntegerProperty_initialize();
+  return SquiDBProperty_IntegerProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction_count(), @"count");
 }
 
-ComYahooSquidbSqlProperty_IntegerProperty *ComYahooSquidbSqlProperty_IntegerProperty_countPropertyWithComYahooSquidbSqlField_withBoolean_(ComYahooSquidbSqlField *field, jboolean distinct) {
-  ComYahooSquidbSqlProperty_IntegerProperty_initialize();
-  ComYahooSquidbSqlFunction *function = distinct ? ComYahooSquidbSqlFunction_countDistinctWithComYahooSquidbSqlField_(field) : ComYahooSquidbSqlFunction_countWithComYahooSquidbSqlField_(field);
-  return ComYahooSquidbSqlProperty_IntegerProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, @"count");
+SquiDBProperty_IntegerProperty *SquiDBProperty_IntegerProperty_countPropertyWithSquiDBField_withBoolean_(SquiDBField *field, jboolean distinct) {
+  SquiDBProperty_IntegerProperty_initialize();
+  SquiDBFunction *function = distinct ? SquiDBFunction_countDistinctWithSquiDBField_(field) : SquiDBFunction_countWithSquiDBField_(field);
+  return SquiDBProperty_IntegerProperty_fromFunctionWithSquiDBFunction_withNSString_(function, @"count");
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_IntegerProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_IntegerProperty)
 
-@implementation ComYahooSquidbSqlProperty_StringProperty
+@implementation SquiDBProperty_StringProperty
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)alias {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)alias {
+  SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
   return self;
 }
 
-+ (ComYahooSquidbSqlProperty_StringProperty *)fromFunctionWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                                                           withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_StringProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-+ (ComYahooSquidbSqlProperty_StringProperty *)literalWithNSString:(NSString *)literal
++ (SquiDBProperty_StringProperty *)fromFunctionWithSquiDBFunction:(SquiDBFunction *)function
                                                      withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_StringProperty_literalWithNSString_withNSString_(literal, selectAs);
+  return SquiDBProperty_StringProperty_fromFunctionWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitStringWithComYahooSquidbSqlProperty:self withId:data];
++ (SquiDBProperty_StringProperty *)literalWithNSString:(NSString *)literal
+                                          withNSString:(NSString *)selectAs {
+  return SquiDBProperty_StringProperty_literalWithNSString_withNSString_(literal, selectAs);
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitStringWithComYahooSquidbSqlProperty:self withId:dst withId:data];
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitStringWithSquiDBProperty:self withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_StringProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_StringProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_StringProperty class]);
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitStringWithSquiDBProperty:self withId:dst withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_StringProperty *)asWithNSString:(NSString *)tableAlias
-                                                withNSString:(NSString *)columnAlias {
-  return ComYahooSquidbSqlProperty_StringProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias);
+- (SquiDBProperty_StringProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_StringProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_StringProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_StringProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                 withNSString:(NSString *)columnAlias {
-  return ComYahooSquidbSqlProperty_StringProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias);
+- (SquiDBProperty_StringProperty *)asWithNSString:(NSString *)tableAlias
+                                     withNSString:(NSString *)columnAlias {
+  return SquiDBProperty_StringProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias);
 }
 
-- (ComYahooSquidbSqlProperty_StringProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                   withNSString:(NSString *)columnAlias {
-  return ComYahooSquidbSqlProperty_StringProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias);
+- (SquiDBProperty_StringProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                           withNSString:(NSString *)columnAlias {
+  return SquiDBProperty_StringProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias);
 }
 
-- (ComYahooSquidbSqlCriterion *)isEmpty {
-  return [((ComYahooSquidbSqlCriterion *) nil_chk([self isNull])) or__WithComYahooSquidbSqlCriterion:[self eqWithId:@""]];
+- (SquiDBProperty_StringProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                             withNSString:(NSString *)columnAlias {
+  return SquiDBProperty_StringProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias);
 }
 
-- (ComYahooSquidbSqlCriterion *)isNotEmpty {
-  return [((ComYahooSquidbSqlCriterion *) nil_chk([self isNotNull])) and__WithComYahooSquidbSqlCriterion:[self neqWithId:@""]];
+- (SquiDBCriterion *)isEmpty {
+  return [((SquiDBCriterion *) nil_chk([self isNull])) or__WithSquiDBCriterion:[self eqWithId:@""]];
 }
 
-- (ComYahooSquidbSqlCriterion *)matchWithNSString:(NSString *)value {
-  return new_ComYahooSquidbSqlBinaryCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_(self, JreLoadEnum(ComYahooSquidbSqlOperator, match), value);
+- (SquiDBCriterion *)isNotEmpty {
+  return [((SquiDBCriterion *) nil_chk([self isNotNull])) and__WithSquiDBCriterion:[self neqWithId:@""]];
+}
+
+- (SquiDBCriterion *)matchWithNSString:(NSString *)value {
+  return new_SquiDBBinaryCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_(self, JreLoadEnum(SquiDBOperator, match), value);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -619,532 +621,532 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_IntegerProperty)
     { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
     { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x1, 14, 8, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x1, 14, 16, -1, 17, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_StringProperty;", 0x1, 18, 16, -1, 17, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, 19, 15, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x1, 14, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x1, 14, 16, -1, 17, -1, -1 },
+    { NULL, "LSquiDBProperty_StringProperty;", 0x1, 18, 16, -1, 17, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, 19, 15, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
-  methods[4].selector = @selector(fromFunctionWithComYahooSquidbSqlFunction:withNSString:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
+  methods[4].selector = @selector(fromFunctionWithSquiDBFunction:withNSString:);
   methods[5].selector = @selector(literalWithNSString:withNSString:);
-  methods[6].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[7].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
+  methods[6].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[7].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
   methods[8].selector = @selector(asWithNSString:);
   methods[9].selector = @selector(asWithNSString:withNSString:);
-  methods[10].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[11].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
+  methods[10].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[11].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
   methods[12].selector = @selector(isEmpty);
   methods[13].selector = @selector(isNotEmpty);
   methods[14].selector = @selector(matchWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$StringProperty;", "literal", "LNSString;LNSString;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$StringProperty;", "asSelectionFromTable", "match", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_StringProperty = { "StringProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 15, 0, 20, -1, -1, 21, -1 };
-  return &_ComYahooSquidbSqlProperty_StringProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$StringProperty;", "literal", "LNSString;LNSString;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$StringProperty;", "asSelectionFromTable", "match", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_StringProperty = { "StringProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 15, 0, 20, -1, -1, 21, -1 };
+  return &_SquiDBProperty_StringProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+void SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_StringProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_StringProperty *new_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-ComYahooSquidbSqlProperty_StringProperty *create_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_StringProperty *create_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-void ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+void SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_StringProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_StringProperty *new_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_StringProperty *create_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_StringProperty *create_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+void SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_StringProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_StringProperty *new_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_StringProperty *create_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_StringProperty *create_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_StringProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlFunction *function, NSString *alias) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+void SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_StringProperty *self, SquiDBFunction *function, NSString *alias) {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_StringProperty *new_SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_StringProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_StringProperty *create_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_StringProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_StringProperty *create_SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_StringProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_StringProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
+SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_StringProperty_initialize();
+  return new_SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_literalWithNSString_withNSString_(NSString *literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_StringProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, ComYahooSquidbSqlSqlUtils_sanitizeStringAsLiteralWithNSString_(literal), selectAs, nil);
+SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_literalWithNSString_withNSString_(NSString *literal, NSString *selectAs) {
+  SquiDBProperty_StringProperty_initialize();
+  return new_SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, SquiDBSqlUtils_sanitizeStringAsLiteralWithNSString_(literal), selectAs, nil);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asWithNSString_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, NSString *tableAlias, NSString *columnAlias) {
-  return (ComYahooSquidbSqlProperty_StringProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_StringProperty class]);
+SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asWithNSString_withNSString_(SquiDBProperty_StringProperty *self, NSString *tableAlias, NSString *columnAlias) {
+  return (SquiDBProperty_StringProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_StringProperty class]);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *columnAlias) {
-  return (ComYahooSquidbSqlProperty_StringProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_StringProperty class]);
+SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asWithSquiDBSqlTable_withNSString_(SquiDBProperty_StringProperty *self, SquiDBSqlTable *newTable, NSString *columnAlias) {
+  return (SquiDBProperty_StringProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_StringProperty class]);
 }
 
-ComYahooSquidbSqlProperty_StringProperty *ComYahooSquidbSqlProperty_StringProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(ComYahooSquidbSqlProperty_StringProperty *self, ComYahooSquidbSqlSqlTable *newTable, NSString *columnAlias) {
-  return (ComYahooSquidbSqlProperty_StringProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_StringProperty class]);
+SquiDBProperty_StringProperty *SquiDBProperty_StringProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(SquiDBProperty_StringProperty *self, SquiDBSqlTable *newTable, NSString *columnAlias) {
+  return (SquiDBProperty_StringProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_StringProperty class]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_StringProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_StringProperty)
 
-@implementation ComYahooSquidbSqlProperty_DoubleProperty
+@implementation SquiDBProperty_DoubleProperty
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)selectAs {
-  ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)selectAs {
+  SquiDBProperty_DoubleProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
   return self;
 }
 
-+ (ComYahooSquidbSqlProperty_DoubleProperty *)fromFunctionWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                                                           withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_DoubleProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-+ (ComYahooSquidbSqlProperty_DoubleProperty *)literalWithDouble:(jdouble)literal
-                                                   withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_DoubleProperty_literalWithDouble_withNSString_(literal, selectAs);
-}
-
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitDoubleWithComYahooSquidbSqlProperty:self withId:data];
-}
-
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitDoubleWithComYahooSquidbSqlProperty:self withId:dst withId:data];
-}
-
-- (ComYahooSquidbSqlProperty_DoubleProperty *)asWithNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_DoubleProperty *) cast_chk([super asWithNSString:columnAlias], [ComYahooSquidbSqlProperty_DoubleProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_DoubleProperty *)asWithNSString:(NSString *)tableAlias
-                                                withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_DoubleProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_DoubleProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_DoubleProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_DoubleProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_DoubleProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_DoubleProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                   withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_DoubleProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_DoubleProperty class]);
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
-    { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
-    { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_DoubleProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
-  };
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
-  #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
-  methods[4].selector = @selector(fromFunctionWithComYahooSquidbSqlFunction:withNSString:);
-  methods[5].selector = @selector(literalWithDouble:withNSString:);
-  methods[6].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[7].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
-  methods[8].selector = @selector(asWithNSString:);
-  methods[9].selector = @selector(asWithNSString:withNSString:);
-  methods[10].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[11].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
-  #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Double;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Double;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$DoubleProperty;", "literal", "DLNSString;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$DoubleProperty;", "asSelectionFromTable", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_DoubleProperty = { "DoubleProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 12, 0, 20, -1, -1, 21, -1 };
-  return &_ComYahooSquidbSqlProperty_DoubleProperty;
-}
-
-@end
-
-void ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_DoubleProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *create_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
-}
-
-void ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_DoubleProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *create_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
-}
-
-void ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_DoubleProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *create_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
-}
-
-void ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_DoubleProperty *self, ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *create_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_DoubleProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *ComYahooSquidbSqlProperty_DoubleProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_DoubleProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-ComYahooSquidbSqlProperty_DoubleProperty *ComYahooSquidbSqlProperty_DoubleProperty_literalWithDouble_withNSString_(jdouble literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_DoubleProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_DoubleProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfDouble_(literal), selectAs, nil);
-}
-
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_DoubleProperty)
-
-@implementation ComYahooSquidbSqlProperty_LongProperty
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)selectAs {
-  ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
-  return self;
-}
-
-+ (ComYahooSquidbSqlProperty_LongProperty *)fromFunctionWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                                                         withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_LongProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-+ (ComYahooSquidbSqlProperty_LongProperty *)literalWithLong:(jlong)literal
-                                               withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_LongProperty_literalWithLong_withNSString_(literal, selectAs);
-}
-
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitLongWithComYahooSquidbSqlProperty:self withId:data];
-}
-
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitLongWithComYahooSquidbSqlProperty:self withId:dst withId:data];
-}
-
-- (ComYahooSquidbSqlProperty_LongProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_LongProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_LongProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_LongProperty *)asWithNSString:(NSString *)tableAlias
-                                              withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_LongProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_LongProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_LongProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                               withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_LongProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_LongProperty class]);
-}
-
-- (ComYahooSquidbSqlProperty_LongProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_LongProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_LongProperty class]);
-}
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
-    { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
-    { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
-  };
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
-  #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
-  methods[4].selector = @selector(fromFunctionWithComYahooSquidbSqlFunction:withNSString:);
-  methods[5].selector = @selector(literalWithLong:withNSString:);
-  methods[6].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[7].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
-  methods[8].selector = @selector(asWithNSString:);
-  methods[9].selector = @selector(asWithNSString:withNSString:);
-  methods[10].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[11].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
-  #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Long;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Long;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$LongProperty;", "literal", "JLNSString;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$LongProperty;", "asSelectionFromTable", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_LongProperty = { "LongProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 12, 0, 20, -1, -1, 21, -1 };
-  return &_ComYahooSquidbSqlProperty_LongProperty;
-}
-
-@end
-
-void ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_LongProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
-}
-
-ComYahooSquidbSqlProperty_LongProperty *new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
-}
-
-ComYahooSquidbSqlProperty_LongProperty *create_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
-}
-
-void ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_LongProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
-}
-
-ComYahooSquidbSqlProperty_LongProperty *new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
-}
-
-ComYahooSquidbSqlProperty_LongProperty *create_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
-}
-
-void ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_LongProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
-}
-
-ComYahooSquidbSqlProperty_LongProperty *new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
-}
-
-ComYahooSquidbSqlProperty_LongProperty *create_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
-}
-
-void ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_LongProperty *self, ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
-}
-
-ComYahooSquidbSqlProperty_LongProperty *new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
-}
-
-ComYahooSquidbSqlProperty_LongProperty *create_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_LongProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
-}
-
-ComYahooSquidbSqlProperty_LongProperty *ComYahooSquidbSqlProperty_LongProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_LongProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-ComYahooSquidbSqlProperty_LongProperty *ComYahooSquidbSqlProperty_LongProperty_literalWithLong_withNSString_(jlong literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_LongProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_LongProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfLong_(literal), selectAs, nil);
-}
-
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_LongProperty)
-
-@implementation ComYahooSquidbSqlProperty_BooleanProperty
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
-  return self;
-}
-
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)selectAs {
-  ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
-  return self;
-}
-
-+ (ComYahooSquidbSqlProperty_BooleanProperty *)fromFunctionWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                                                            withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_BooleanProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
-}
-
-+ (ComYahooSquidbSqlProperty_BooleanProperty *)literalWithBoolean:(jboolean)literal
++ (SquiDBProperty_DoubleProperty *)fromFunctionWithSquiDBFunction:(SquiDBFunction *)function
                                                      withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_BooleanProperty_literalWithBoolean_withNSString_(literal, selectAs);
+  return SquiDBProperty_DoubleProperty_fromFunctionWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitBooleanWithComYahooSquidbSqlProperty:self withId:data];
++ (SquiDBProperty_DoubleProperty *)literalWithDouble:(jdouble)literal
+                                        withNSString:(NSString *)selectAs {
+  return SquiDBProperty_DoubleProperty_literalWithDouble_withNSString_(literal, selectAs);
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitBooleanWithComYahooSquidbSqlProperty:self withId:dst withId:data];
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitDoubleWithSquiDBProperty:self withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_BooleanProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_BooleanProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_BooleanProperty class]);
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitDoubleWithSquiDBProperty:self withId:dst withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_BooleanProperty *)asWithNSString:(NSString *)tableAlias
-                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BooleanProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_BooleanProperty class]);
+- (SquiDBProperty_DoubleProperty *)asWithNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_DoubleProperty *) cast_chk([super asWithNSString:columnAlias], [SquiDBProperty_DoubleProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_BooleanProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                  withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BooleanProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_BooleanProperty class]);
+- (SquiDBProperty_DoubleProperty *)asWithNSString:(NSString *)tableAlias
+                                     withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_DoubleProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_DoubleProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_BooleanProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                    withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BooleanProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_BooleanProperty class]);
+- (SquiDBProperty_DoubleProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                           withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_DoubleProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_DoubleProperty class]);
 }
 
-- (ComYahooSquidbSqlCriterion *)isTrue {
-  return [self neqWithId:JreLoadStatic(ComYahooSquidbSqlFunction, FALSE)];
+- (SquiDBProperty_DoubleProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                             withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_DoubleProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_DoubleProperty class]);
 }
 
-- (ComYahooSquidbSqlCriterion *)isFalse {
-  return [self eqWithId:JreLoadStatic(ComYahooSquidbSqlFunction, FALSE)];
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBProperty_DoubleProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
+  methods[4].selector = @selector(fromFunctionWithSquiDBFunction:withNSString:);
+  methods[5].selector = @selector(literalWithDouble:withNSString:);
+  methods[6].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[7].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
+  methods[8].selector = @selector(asWithNSString:);
+  methods[9].selector = @selector(asWithNSString:withNSString:);
+  methods[10].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[11].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Double;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Double;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$DoubleProperty;", "literal", "DLNSString;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$DoubleProperty;", "asSelectionFromTable", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_DoubleProperty = { "DoubleProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 12, 0, 20, -1, -1, 21, -1 };
+  return &_SquiDBProperty_DoubleProperty;
 }
 
-- (ComYahooSquidbSqlCriterion *)eqWithBoolean:(jboolean)b {
+@end
+
+void SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_DoubleProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
+}
+
+SquiDBProperty_DoubleProperty *new_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
+}
+
+SquiDBProperty_DoubleProperty *create_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
+}
+
+void SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_DoubleProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+}
+
+SquiDBProperty_DoubleProperty *new_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+}
+
+SquiDBProperty_DoubleProperty *create_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+}
+
+void SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_DoubleProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+}
+
+SquiDBProperty_DoubleProperty *new_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+}
+
+SquiDBProperty_DoubleProperty *create_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+}
+
+void SquiDBProperty_DoubleProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_DoubleProperty *self, SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
+}
+
+SquiDBProperty_DoubleProperty *new_SquiDBProperty_DoubleProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
+}
+
+SquiDBProperty_DoubleProperty *create_SquiDBProperty_DoubleProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_DoubleProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
+}
+
+SquiDBProperty_DoubleProperty *SquiDBProperty_DoubleProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_DoubleProperty_initialize();
+  return new_SquiDBProperty_DoubleProperty_initWithSquiDBFunction_withNSString_(function, selectAs);
+}
+
+SquiDBProperty_DoubleProperty *SquiDBProperty_DoubleProperty_literalWithDouble_withNSString_(jdouble literal, NSString *selectAs) {
+  SquiDBProperty_DoubleProperty_initialize();
+  return new_SquiDBProperty_DoubleProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfDouble_(literal), selectAs, nil);
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_DoubleProperty)
+
+@implementation SquiDBProperty_LongProperty
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
+  return self;
+}
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+  return self;
+}
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+  return self;
+}
+
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)selectAs {
+  SquiDBProperty_LongProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
+  return self;
+}
+
++ (SquiDBProperty_LongProperty *)fromFunctionWithSquiDBFunction:(SquiDBFunction *)function
+                                                   withNSString:(NSString *)selectAs {
+  return SquiDBProperty_LongProperty_fromFunctionWithSquiDBFunction_withNSString_(function, selectAs);
+}
+
++ (SquiDBProperty_LongProperty *)literalWithLong:(jlong)literal
+                                    withNSString:(NSString *)selectAs {
+  return SquiDBProperty_LongProperty_literalWithLong_withNSString_(literal, selectAs);
+}
+
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitLongWithSquiDBProperty:self withId:data];
+}
+
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitLongWithSquiDBProperty:self withId:dst withId:data];
+}
+
+- (SquiDBProperty_LongProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_LongProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_LongProperty class]);
+}
+
+- (SquiDBProperty_LongProperty *)asWithNSString:(NSString *)tableAlias
+                                   withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_LongProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_LongProperty class]);
+}
+
+- (SquiDBProperty_LongProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                         withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_LongProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_LongProperty class]);
+}
+
+- (SquiDBProperty_LongProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                           withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_LongProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_LongProperty class]);
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
+  methods[4].selector = @selector(fromFunctionWithSquiDBFunction:withNSString:);
+  methods[5].selector = @selector(literalWithLong:withNSString:);
+  methods[6].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[7].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
+  methods[8].selector = @selector(asWithNSString:);
+  methods[9].selector = @selector(asWithNSString:withNSString:);
+  methods[10].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[11].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Long;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Long;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$LongProperty;", "literal", "JLNSString;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$LongProperty;", "asSelectionFromTable", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_LongProperty = { "LongProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 12, 0, 20, -1, -1, 21, -1 };
+  return &_SquiDBProperty_LongProperty;
+}
+
+@end
+
+void SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_LongProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
+}
+
+SquiDBProperty_LongProperty *new_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
+}
+
+SquiDBProperty_LongProperty *create_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
+}
+
+void SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_LongProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+}
+
+SquiDBProperty_LongProperty *new_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+}
+
+SquiDBProperty_LongProperty *create_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+}
+
+void SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_LongProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+}
+
+SquiDBProperty_LongProperty *new_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+}
+
+SquiDBProperty_LongProperty *create_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_LongProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+}
+
+void SquiDBProperty_LongProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_LongProperty *self, SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
+}
+
+SquiDBProperty_LongProperty *new_SquiDBProperty_LongProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_LongProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
+}
+
+SquiDBProperty_LongProperty *create_SquiDBProperty_LongProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_LongProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
+}
+
+SquiDBProperty_LongProperty *SquiDBProperty_LongProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_LongProperty_initialize();
+  return new_SquiDBProperty_LongProperty_initWithSquiDBFunction_withNSString_(function, selectAs);
+}
+
+SquiDBProperty_LongProperty *SquiDBProperty_LongProperty_literalWithLong_withNSString_(jlong literal, NSString *selectAs) {
+  SquiDBProperty_LongProperty_initialize();
+  return new_SquiDBProperty_LongProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfLong_(literal), selectAs, nil);
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_LongProperty)
+
+@implementation SquiDBProperty_BooleanProperty
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
+  return self;
+}
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+  return self;
+}
+
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+  return self;
+}
+
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)selectAs {
+  SquiDBProperty_BooleanProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
+  return self;
+}
+
++ (SquiDBProperty_BooleanProperty *)fromFunctionWithSquiDBFunction:(SquiDBFunction *)function
+                                                      withNSString:(NSString *)selectAs {
+  return SquiDBProperty_BooleanProperty_fromFunctionWithSquiDBFunction_withNSString_(function, selectAs);
+}
+
++ (SquiDBProperty_BooleanProperty *)literalWithBoolean:(jboolean)literal
+                                          withNSString:(NSString *)selectAs {
+  return SquiDBProperty_BooleanProperty_literalWithBoolean_withNSString_(literal, selectAs);
+}
+
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitBooleanWithSquiDBProperty:self withId:data];
+}
+
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitBooleanWithSquiDBProperty:self withId:dst withId:data];
+}
+
+- (SquiDBProperty_BooleanProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_BooleanProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_BooleanProperty class]);
+}
+
+- (SquiDBProperty_BooleanProperty *)asWithNSString:(NSString *)tableAlias
+                                      withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BooleanProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_BooleanProperty class]);
+}
+
+- (SquiDBProperty_BooleanProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                            withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BooleanProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_BooleanProperty class]);
+}
+
+- (SquiDBProperty_BooleanProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                              withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BooleanProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_BooleanProperty class]);
+}
+
+- (SquiDBCriterion *)isTrue {
+  return [self neqWithId:JreLoadStatic(SquiDBFunction, FALSE)];
+}
+
+- (SquiDBCriterion *)isFalse {
+  return [self eqWithId:JreLoadStatic(SquiDBFunction, FALSE)];
+}
+
+- (SquiDBCriterion *)eqWithBoolean:(jboolean)b {
   return b ? [self isTrue] : [self isFalse];
 }
 
-- (ComYahooSquidbSqlCriterion *)neqWithBoolean:(jboolean)b {
+- (SquiDBCriterion *)neqWithBoolean:(jboolean)b {
   return b ? [self isFalse] : [self isTrue];
 }
 
@@ -1154,157 +1156,157 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_LongProperty)
     { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x9, 5, 3, -1, 6, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x9, 7, 8, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, 9, 10, -1, 11, -1, -1 },
     { NULL, "LNSObject;", 0x1, 9, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BooleanProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, 20, 21, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCriterion;", 0x1, 22, 21, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x1, 14, 15, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x1, 14, 16, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x1, 14, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBProperty_BooleanProperty;", 0x1, 19, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, 20, 21, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCriterion;", 0x1, 22, 21, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
-  methods[4].selector = @selector(fromFunctionWithComYahooSquidbSqlFunction:withNSString:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
+  methods[4].selector = @selector(fromFunctionWithSquiDBFunction:withNSString:);
   methods[5].selector = @selector(literalWithBoolean:withNSString:);
-  methods[6].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[7].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
+  methods[6].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[7].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
   methods[8].selector = @selector(asWithNSString:);
   methods[9].selector = @selector(asWithNSString:withNSString:);
-  methods[10].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[11].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
+  methods[10].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[11].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
   methods[12].selector = @selector(isTrue);
   methods[13].selector = @selector(isFalse);
   methods[14].selector = @selector(eqWithBoolean:);
   methods[15].selector = @selector(neqWithBoolean:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BooleanProperty;", "literal", "ZLNSString;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BooleanProperty;", "asSelectionFromTable", "eq", "Z", "neq", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_BooleanProperty = { "BooleanProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 16, 0, 23, -1, -1, 24, -1 };
-  return &_ComYahooSquidbSqlProperty_BooleanProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)V", "fromFunction", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/Integer;>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BooleanProperty;", "literal", "ZLNSString;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BooleanProperty;", "asSelectionFromTable", "eq", "Z", "neq", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_BooleanProperty = { "BooleanProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 16, 0, 23, -1, -1, 24, -1 };
+  return &_SquiDBProperty_BooleanProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_BooleanProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+void SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_BooleanProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_BooleanProperty *new_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *create_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_BooleanProperty *create_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-void ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_BooleanProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+void SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_BooleanProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_BooleanProperty *new_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *create_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_BooleanProperty *create_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_BooleanProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+void SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_BooleanProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_BooleanProperty *new_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *create_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_BooleanProperty *create_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_BooleanProperty *self, ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, selectAs);
+void SquiDBProperty_BooleanProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_BooleanProperty *self, SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_initWithSquiDBFunction_withNSString_(self, function, selectAs);
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
+SquiDBProperty_BooleanProperty *new_SquiDBProperty_BooleanProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *create_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BooleanProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, selectAs)
+SquiDBProperty_BooleanProperty *create_SquiDBProperty_BooleanProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BooleanProperty, initWithSquiDBFunction_withNSString_, function, selectAs)
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *ComYahooSquidbSqlProperty_BooleanProperty_fromFunctionWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_BooleanProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlFunction_withNSString_(function, selectAs);
+SquiDBProperty_BooleanProperty *SquiDBProperty_BooleanProperty_fromFunctionWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *selectAs) {
+  SquiDBProperty_BooleanProperty_initialize();
+  return new_SquiDBProperty_BooleanProperty_initWithSquiDBFunction_withNSString_(function, selectAs);
 }
 
-ComYahooSquidbSqlProperty_BooleanProperty *ComYahooSquidbSqlProperty_BooleanProperty_literalWithBoolean_withNSString_(jboolean literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_BooleanProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_BooleanProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfInt_(literal ? 1 : 0), selectAs, nil);
+SquiDBProperty_BooleanProperty *SquiDBProperty_BooleanProperty_literalWithBoolean_withNSString_(jboolean literal, NSString *selectAs) {
+  SquiDBProperty_BooleanProperty_initialize();
+  return new_SquiDBProperty_BooleanProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, NSString_java_valueOfInt_(literal ? 1 : 0), selectAs, nil);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_BooleanProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_BooleanProperty)
 
-@implementation ComYahooSquidbSqlProperty_BlobProperty
+@implementation SquiDBProperty_BlobProperty
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
   return self;
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyVisitor:(id<ComYahooSquidbSqlProperty_PropertyVisitor>)visitor
-                                                   withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyVisitor>) nil_chk(visitor)) visitBlobWithComYahooSquidbSqlProperty:self withId:data];
+- (id)acceptWithSquiDBProperty_PropertyVisitor:(id<SquiDBProperty_PropertyVisitor>)visitor
+                                        withId:(id)data {
+  return [((id<SquiDBProperty_PropertyVisitor>) nil_chk(visitor)) visitBlobWithSquiDBProperty:self withId:data];
 }
 
-- (id)acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:(id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>)visitor
-                                                          withId:(id)dst
-                                                          withId:(id)data {
-  return [((id<ComYahooSquidbSqlProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitBlobWithComYahooSquidbSqlProperty:self withId:dst withId:data];
+- (id)acceptWithSquiDBProperty_PropertyWritingVisitor:(id<SquiDBProperty_PropertyWritingVisitor>)visitor
+                                               withId:(id)dst
+                                               withId:(id)data {
+  return [((id<SquiDBProperty_PropertyWritingVisitor>) nil_chk(visitor)) visitBlobWithSquiDBProperty:self withId:dst withId:data];
 }
 
-- (ComYahooSquidbSqlProperty_BlobProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_BlobProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_BlobProperty class]);
+- (SquiDBProperty_BlobProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_BlobProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_BlobProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_BlobProperty *)asWithNSString:(NSString *)tableAlias
-                                              withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BlobProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_BlobProperty class]);
+- (SquiDBProperty_BlobProperty *)asWithNSString:(NSString *)tableAlias
+                                   withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BlobProperty *) cast_chk(SquiDBProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_BlobProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_BlobProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                               withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BlobProperty *) cast_chk(ComYahooSquidbSqlProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_BlobProperty class]);
+- (SquiDBProperty_BlobProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                         withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BlobProperty *) cast_chk(SquiDBProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_BlobProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_BlobProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_BlobProperty *) cast_chk(ComYahooSquidbSqlProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_BlobProperty class]);
+- (SquiDBProperty_BlobProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                           withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_BlobProperty *) cast_chk(SquiDBProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_BlobProperty class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -1314,120 +1316,120 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_BooleanProperty)
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, 3, 4, -1, 5, -1, -1 },
     { NULL, "LNSObject;", 0x1, 3, 6, -1, 7, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BlobProperty;", 0x1, 8, 9, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BlobProperty;", 0x1, 8, 10, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BlobProperty;", 0x1, 8, 11, -1, 12, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_BlobProperty;", 0x1, 13, 11, -1, 12, -1, -1 },
+    { NULL, "LSquiDBProperty_BlobProperty;", 0x1, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BlobProperty;", 0x1, 8, 10, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_BlobProperty;", 0x1, 8, 11, -1, 12, -1, -1 },
+    { NULL, "LSquiDBProperty_BlobProperty;", 0x1, 13, 11, -1, 12, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyVisitor:withId:);
-  methods[4].selector = @selector(acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:withId:withId:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(acceptWithSquiDBProperty_PropertyVisitor:withId:);
+  methods[4].selector = @selector(acceptWithSquiDBProperty_PropertyWritingVisitor:withId:withId:);
   methods[5].selector = @selector(asWithNSString:);
   methods[6].selector = @selector(asWithNSString:withNSString:);
-  methods[7].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[8].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
+  methods[7].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[8].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "accept", "LComYahooSquidbSqlProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LComYahooSquidbSqlProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BlobProperty;", "asSelectionFromTable", "LComYahooSquidbSqlProperty;", "Lcom/yahoo/squidb/sql/Property<[B>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_BlobProperty = { "BlobProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 9, 0, 14, -1, -1, 15, -1 };
-  return &_ComYahooSquidbSqlProperty_BlobProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "accept", "LSquiDBProperty_PropertyVisitor;LNSObject;", "<RETURN:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyVisitor<TRETURN;TPARAMETER;>;TPARAMETER;)TRETURN;", "LSquiDBProperty_PropertyWritingVisitor;LNSObject;LNSObject;", "<RETURN:Ljava/lang/Object;DST:Ljava/lang/Object;PARAMETER:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<TRETURN;TDST;TPARAMETER;>;TDST;TPARAMETER;)TRETURN;", "as", "LNSString;", "LNSString;LNSString;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$BlobProperty;", "asSelectionFromTable", "LSquiDBProperty;", "Lcom/yahoo/squidb/sql/Property<[B>;" };
+  static const J2ObjcClassInfo _SquiDBProperty_BlobProperty = { "BlobProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 9, 0, 14, -1, -1, 15, -1 };
+  return &_SquiDBProperty_BlobProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_BlobProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+void SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_BlobProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *new_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_BlobProperty *new_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *create_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_BlobProperty *create_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-void ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_BlobProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+void SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_BlobProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *new_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_BlobProperty *new_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *create_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_BlobProperty *create_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_BlobProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+void SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_BlobProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *new_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_BlobProperty *new_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_BlobProperty *create_ComYahooSquidbSqlProperty_BlobProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_BlobProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_BlobProperty *create_SquiDBProperty_BlobProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_BlobProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_BlobProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_BlobProperty)
 
-@implementation ComYahooSquidbSqlProperty_EnumProperty
+@implementation SquiDBProperty_EnumProperty
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name {
-  ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name {
+  SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlTableModelName:(ComYahooSquidbSqlTableModelName *)tableModelName
-                                           withNSString:(NSString *)name
-                                           withNSString:(NSString *)alias
-                                           withNSString:(NSString *)columnDefinition {
-  ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+- (instancetype)initWithSquiDBTableModelName:(SquiDBTableModelName *)tableModelName
+                                withNSString:(NSString *)name
+                                withNSString:(NSString *)alias
+                                withNSString:(NSString *)columnDefinition {
+  SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFunction:(ComYahooSquidbSqlFunction *)function
-                                     withNSString:(NSString *)alias {
-  ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+- (instancetype)initWithSquiDBFunction:(SquiDBFunction *)function
+                          withNSString:(NSString *)alias {
+  SquiDBProperty_EnumProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
   return self;
 }
 
-+ (ComYahooSquidbSqlProperty_EnumProperty *)literalWithJavaLangEnum:(JavaLangEnum *)literal
-                                                       withNSString:(NSString *)selectAs {
-  return ComYahooSquidbSqlProperty_EnumProperty_literalWithJavaLangEnum_withNSString_(literal, selectAs);
++ (SquiDBProperty_EnumProperty *)literalWithJavaLangEnum:(JavaLangEnum *)literal
+                                            withNSString:(NSString *)selectAs {
+  return SquiDBProperty_EnumProperty_literalWithJavaLangEnum_withNSString_(literal, selectAs);
 }
 
-- (ComYahooSquidbSqlProperty_EnumProperty *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlProperty_EnumProperty *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlProperty_EnumProperty class]);
+- (SquiDBProperty_EnumProperty *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBProperty_EnumProperty *) cast_chk([super asWithNSString:newAlias], [SquiDBProperty_EnumProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_EnumProperty *)asWithNSString:(NSString *)tableAlias
-                                              withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_EnumProperty *) cast_chk(ComYahooSquidbSqlProperty_StringProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [ComYahooSquidbSqlProperty_EnumProperty class]);
+- (SquiDBProperty_EnumProperty *)asWithNSString:(NSString *)tableAlias
+                                   withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_EnumProperty *) cast_chk(SquiDBProperty_StringProperty_asWithNSString_withNSString_(self, tableAlias, columnAlias), [SquiDBProperty_EnumProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_EnumProperty *)asWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                               withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_EnumProperty *) cast_chk(ComYahooSquidbSqlProperty_StringProperty_asWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_EnumProperty class]);
+- (SquiDBProperty_EnumProperty *)asWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                         withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_EnumProperty *) cast_chk(SquiDBProperty_StringProperty_asWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_EnumProperty class]);
 }
 
-- (ComYahooSquidbSqlProperty_EnumProperty *)asSelectionFromTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)newTable
-                                                                                 withNSString:(NSString *)columnAlias {
-  return (ComYahooSquidbSqlProperty_EnumProperty *) cast_chk(ComYahooSquidbSqlProperty_StringProperty_asSelectionFromTableWithComYahooSquidbSqlSqlTable_withNSString_(self, newTable, columnAlias), [ComYahooSquidbSqlProperty_EnumProperty class]);
+- (SquiDBProperty_EnumProperty *)asSelectionFromTableWithSquiDBSqlTable:(SquiDBSqlTable *)newTable
+                                                           withNSString:(NSString *)columnAlias {
+  return (SquiDBProperty_EnumProperty *) cast_chk(SquiDBProperty_StringProperty_asSelectionFromTableWithSquiDBSqlTable_withNSString_(self, newTable, columnAlias), [SquiDBProperty_EnumProperty class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -1436,83 +1438,83 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_BlobProperty)
     { NULL, NULL, 0x1, -1, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_EnumProperty;", 0x9, 5, 6, -1, 7, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_EnumProperty;", 0x1, 8, 9, -1, 10, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_EnumProperty;", 0x1, 8, 11, -1, 12, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_EnumProperty;", 0x1, 8, 13, -1, 14, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_EnumProperty;", 0x1, 15, 13, -1, 14, -1, -1 },
+    { NULL, "LSquiDBProperty_EnumProperty;", 0x9, 5, 6, -1, 7, -1, -1 },
+    { NULL, "LSquiDBProperty_EnumProperty;", 0x1, 8, 9, -1, 10, -1, -1 },
+    { NULL, "LSquiDBProperty_EnumProperty;", 0x1, 8, 11, -1, 12, -1, -1 },
+    { NULL, "LSquiDBProperty_EnumProperty;", 0x1, 8, 13, -1, 14, -1, -1 },
+    { NULL, "LSquiDBProperty_EnumProperty;", 0x1, 15, 13, -1, 14, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:);
-  methods[2].selector = @selector(initWithComYahooSquidbSqlTableModelName:withNSString:withNSString:withNSString:);
-  methods[3].selector = @selector(initWithComYahooSquidbSqlFunction:withNSString:);
+  methods[0].selector = @selector(initWithSquiDBTableModelName:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:);
+  methods[2].selector = @selector(initWithSquiDBTableModelName:withNSString:withNSString:withNSString:);
+  methods[3].selector = @selector(initWithSquiDBFunction:withNSString:);
   methods[4].selector = @selector(literalWithJavaLangEnum:withNSString:);
   methods[5].selector = @selector(asWithNSString:);
   methods[6].selector = @selector(asWithNSString:withNSString:);
-  methods[7].selector = @selector(asWithComYahooSquidbSqlSqlTable:withNSString:);
-  methods[8].selector = @selector(asSelectionFromTableWithComYahooSquidbSqlSqlTable:withNSString:);
+  methods[7].selector = @selector(asWithSquiDBSqlTable:withNSString:);
+  methods[8].selector = @selector(asSelectionFromTableWithSquiDBSqlTable:withNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbSqlTableModelName;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;", "LComYahooSquidbSqlTableModelName;LNSString;LNSString;LNSString;", "LComYahooSquidbSqlFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)V", "literal", "LJavaLangEnum;LNSString;", "<T:Ljava/lang/Enum<TT;>;>(TT;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "as", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "LComYahooSquidbSqlSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "asSelectionFromTable", "LComYahooSquidbSqlProperty;", "<T:Ljava/lang/Enum<TT;>;>Lcom/yahoo/squidb/sql/Property$StringProperty;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlProperty_EnumProperty = { "EnumProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 9, 0, 16, -1, -1, 17, -1 };
-  return &_ComYahooSquidbSqlProperty_EnumProperty;
+  static const void *ptrTable[] = { "LSquiDBTableModelName;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;", "LSquiDBTableModelName;LNSString;LNSString;LNSString;", "LSquiDBFunction;LNSString;", "(Lcom/yahoo/squidb/sql/Function<Ljava/lang/String;>;Ljava/lang/String;)V", "literal", "LJavaLangEnum;LNSString;", "<T:Ljava/lang/Enum<TT;>;>(TT;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "as", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "LSquiDBSqlTable;LNSString;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/lang/String;)Lcom/yahoo/squidb/sql/Property$EnumProperty<TT;>;", "asSelectionFromTable", "LSquiDBProperty;", "<T:Ljava/lang/Enum<TT;>;>Lcom/yahoo/squidb/sql/Property$StringProperty;" };
+  static const J2ObjcClassInfo _SquiDBProperty_EnumProperty = { "EnumProperty", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x9, 9, 0, 16, -1, -1, 17, -1 };
+  return &_SquiDBProperty_EnumProperty;
 }
 
 @end
 
-void ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlProperty_EnumProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(self, tableModelName, name);
+void SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_(SquiDBProperty_EnumProperty *self, SquiDBTableModelName *tableModelName, NSString *name) {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_(self, tableModelName, name);
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *new_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_EnumProperty *new_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *create_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_, tableModelName, name)
+SquiDBProperty_EnumProperty *create_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_(SquiDBTableModelName *tableModelName, NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_, tableModelName, name)
 }
 
-void ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlProperty_EnumProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
+void SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBProperty_EnumProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_(self, tableModelName, name, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *new_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_EnumProperty *new_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *create_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
+SquiDBProperty_EnumProperty *create_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_withNSString_, tableModelName, name, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlProperty_EnumProperty *self, ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
+void SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBProperty_EnumProperty *self, SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  SquiDBProperty_StringProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(self, tableModelName, name, alias, columnDefinition);
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *new_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_EnumProperty *new_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *create_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(ComYahooSquidbSqlTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
+SquiDBProperty_EnumProperty *create_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(SquiDBTableModelName *tableModelName, NSString *name, NSString *alias, NSString *columnDefinition) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBTableModelName_withNSString_withNSString_withNSString_, tableModelName, name, alias, columnDefinition)
 }
 
-void ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlProperty_EnumProperty *self, ComYahooSquidbSqlFunction *function, NSString *alias) {
-  ComYahooSquidbSqlProperty_StringProperty_initWithComYahooSquidbSqlFunction_withNSString_(self, function, alias);
+void SquiDBProperty_EnumProperty_initWithSquiDBFunction_withNSString_(SquiDBProperty_EnumProperty *self, SquiDBFunction *function, NSString *alias) {
+  SquiDBProperty_StringProperty_initWithSquiDBFunction_withNSString_(self, function, alias);
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *new_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_EnumProperty *new_SquiDBProperty_EnumProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_NEW_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *create_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlFunction_withNSString_(ComYahooSquidbSqlFunction *function, NSString *alias) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlProperty_EnumProperty, initWithComYahooSquidbSqlFunction_withNSString_, function, alias)
+SquiDBProperty_EnumProperty *create_SquiDBProperty_EnumProperty_initWithSquiDBFunction_withNSString_(SquiDBFunction *function, NSString *alias) {
+  J2OBJC_CREATE_IMPL(SquiDBProperty_EnumProperty, initWithSquiDBFunction_withNSString_, function, alias)
 }
 
-ComYahooSquidbSqlProperty_EnumProperty *ComYahooSquidbSqlProperty_EnumProperty_literalWithJavaLangEnum_withNSString_(JavaLangEnum *literal, NSString *selectAs) {
-  ComYahooSquidbSqlProperty_EnumProperty_initialize();
-  return new_ComYahooSquidbSqlProperty_EnumProperty_initWithComYahooSquidbSqlTableModelName_withNSString_withNSString_withNSString_(nil, literal == nil ? @"null" : ComYahooSquidbSqlSqlUtils_sanitizeStringAsLiteralWithNSString_([literal name]), selectAs, nil);
+SquiDBProperty_EnumProperty *SquiDBProperty_EnumProperty_literalWithJavaLangEnum_withNSString_(JavaLangEnum *literal, NSString *selectAs) {
+  SquiDBProperty_EnumProperty_initialize();
+  return new_SquiDBProperty_EnumProperty_initWithSquiDBTableModelName_withNSString_withNSString_withNSString_(nil, literal == nil ? @"null" : SquiDBSqlUtils_sanitizeStringAsLiteralWithNSString_([literal name]), selectAs, nil);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlProperty_EnumProperty)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProperty_EnumProperty)

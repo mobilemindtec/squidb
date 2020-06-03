@@ -11,25 +11,25 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbSqlQueryFunction () {
+@interface SquiDBQueryFunction () {
  @public
-  ComYahooSquidbSqlQuery *query_;
+  SquiDBQuery *query_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQueryFunction, query_, ComYahooSquidbSqlQuery *)
+J2OBJC_FIELD_SETTER(SquiDBQueryFunction, query_, SquiDBQuery *)
 
-@implementation ComYahooSquidbSqlQueryFunction
+@implementation SquiDBQueryFunction
 
-- (instancetype)initWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(self, query);
+- (instancetype)initPackagePrivateWithSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(self, query);
   return self;
 }
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation {
-  [((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:query_ withBoolean:forSqlValidation];
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation {
+  [((SquiDBSqlBuilder *) nil_chk(builder)) addValueToSqlWithId:query_ withBoolean:forSqlValidation];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -40,30 +40,30 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQueryFunction, query_, ComYahooSquidbSqlQue
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlQuery:);
-  methods[1].selector = @selector(appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[0].selector = @selector(initPackagePrivateWithSquiDBQuery:);
+  methods[1].selector = @selector(appendFunctionExpressionWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "query_", "LComYahooSquidbSqlQuery;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "query_", "LSquiDBQuery;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlQuery;", "appendFunctionExpression", "LComYahooSquidbSqlSqlBuilder;Z", "<T:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TT;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlQueryFunction = { "QueryFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 3, -1 };
-  return &_ComYahooSquidbSqlQueryFunction;
+  static const void *ptrTable[] = { "LSquiDBQuery;", "appendFunctionExpression", "LSquiDBSqlBuilder;Z", "<T:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/Function<TT;>;" };
+  static const J2ObjcClassInfo _SquiDBQueryFunction = { "QueryFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 3, -1 };
+  return &_SquiDBQueryFunction;
 }
 
 @end
 
-void ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQueryFunction *self, ComYahooSquidbSqlQuery *query) {
-  ComYahooSquidbSqlFunction_init(self);
+void SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQueryFunction *self, SquiDBQuery *query) {
+  SquiDBFunction_init(self);
   self->query_ = query;
 }
 
-ComYahooSquidbSqlQueryFunction *new_ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlQueryFunction, initWithComYahooSquidbSqlQuery_, query)
+SquiDBQueryFunction *new_SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQuery *query) {
+  J2OBJC_NEW_IMPL(SquiDBQueryFunction, initPackagePrivateWithSquiDBQuery_, query)
 }
 
-ComYahooSquidbSqlQueryFunction *create_ComYahooSquidbSqlQueryFunction_initWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlQueryFunction, initWithComYahooSquidbSqlQuery_, query)
+SquiDBQueryFunction *create_SquiDBQueryFunction_initPackagePrivateWithSquiDBQuery_(SquiDBQuery *query) {
+  J2OBJC_CREATE_IMPL(SquiDBQueryFunction, initPackagePrivateWithSquiDBQuery_, query)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlQueryFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBQueryFunction)

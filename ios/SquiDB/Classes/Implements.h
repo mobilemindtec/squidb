@@ -18,7 +18,7 @@
 @class IOSClass;
 @class IOSObjectArray;
 
-@protocol ComYahooSquidbAnnotationsImplements < JavaLangAnnotationAnnotation >
+@protocol SquiDBImplements < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSObjectArray *interfaceClasses;
 @property (readonly) IOSObjectArray *interfaceDefinitions;
@@ -29,7 +29,7 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsImplements : NSObject < ComYahooSquidbAnnotationsImplements > {
+@interface SquiDBImplements : NSObject < SquiDBImplements > {
  @public
   IOSObjectArray *interfaceClasses_;
   IOSObjectArray *interfaceDefinitions_;
@@ -37,13 +37,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsImplements)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBImplements)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsImplements> create_ComYahooSquidbAnnotationsImplements(IOSObjectArray *interfaceClasses, IOSObjectArray *interfaceDefinitions);
+FOUNDATION_EXPORT id<SquiDBImplements> create_SquiDBImplements(IOSObjectArray *interfaceClasses, IOSObjectArray *interfaceDefinitions);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsImplements)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBImplements)
 
-@protocol ComYahooSquidbAnnotationsImplements_InterfaceSpec < JavaLangAnnotationAnnotation >
+#define ComYahooSquidbAnnotationsImplements SquiDBImplements
+
+@protocol SquiDBImplements_InterfaceSpec < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSClass *interfaceClass;
 @property (readonly) IOSObjectArray *interfaceTypeArgs;
@@ -55,7 +57,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsImplements)
 
 @end
 
-@interface ComYahooSquidbAnnotationsImplements_InterfaceSpec : NSObject < ComYahooSquidbAnnotationsImplements_InterfaceSpec > {
+@interface SquiDBImplements_InterfaceSpec : NSObject < SquiDBImplements_InterfaceSpec > {
  @public
   IOSClass *interfaceClass_;
   IOSObjectArray *interfaceTypeArgs_;
@@ -64,11 +66,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsImplements)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsImplements_InterfaceSpec)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBImplements_InterfaceSpec)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsImplements_InterfaceSpec> create_ComYahooSquidbAnnotationsImplements_InterfaceSpec(IOSClass *interfaceClass, IOSObjectArray *interfaceTypeArgNames, IOSObjectArray *interfaceTypeArgs);
+FOUNDATION_EXPORT id<SquiDBImplements_InterfaceSpec> create_SquiDBImplements_InterfaceSpec(IOSClass *interfaceClass, IOSObjectArray *interfaceTypeArgNames, IOSObjectArray *interfaceTypeArgs);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsImplements_InterfaceSpec)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBImplements_InterfaceSpec)
 
 
 #if __has_feature(nullability)

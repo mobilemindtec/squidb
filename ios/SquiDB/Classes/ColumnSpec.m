@@ -11,19 +11,19 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsColumnSpec__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBColumnSpec__Annotations$0(void);
 
-NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NONE = @"!NONE!";
-NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL = @"!NULL!";
+NSString *SquiDBColumnSpec_DEFAULT_NONE = @"!NONE!";
+NSString *SquiDBColumnSpec_DEFAULT_NULL = @"!NULL!";
 
-@implementation ComYahooSquidbAnnotationsColumnSpec
+@implementation SquiDBColumnSpec
 
 + (NSString *)DEFAULT_NONE {
-  return ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NONE;
+  return SquiDBColumnSpec_DEFAULT_NONE;
 }
 
 + (NSString *)DEFAULT_NULL {
-  return ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL;
+  return SquiDBColumnSpec_DEFAULT_NULL;
 }
 
 @synthesize name = name_;
@@ -43,7 +43,7 @@ NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL = @"!NULL!";
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsColumnSpec_class_();
+  return SquiDBColumnSpec_class_();
 }
 
 - (NSString *)description {
@@ -78,23 +78,25 @@ NSString *ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL = @"!NULL!";
     { "constraints_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "defaultValue_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { &ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NONE, &ComYahooSquidbAnnotationsColumnSpec_DEFAULT_NULL, (void *)&ComYahooSquidbAnnotationsColumnSpec__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsColumnSpec = { "ColumnSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 5, -1, -1, -1, -1, 2 };
-  return &_ComYahooSquidbAnnotationsColumnSpec;
+  static const void *ptrTable[] = { &SquiDBColumnSpec_DEFAULT_NONE, &SquiDBColumnSpec_DEFAULT_NULL, (void *)&SquiDBColumnSpec__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBColumnSpec = { "ColumnSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 5, -1, -1, -1, -1, 2 };
+  return &_SquiDBColumnSpec;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsColumnSpec> create_ComYahooSquidbAnnotationsColumnSpec(NSString *constraints, NSString *defaultValue, NSString *name) {
-  ComYahooSquidbAnnotationsColumnSpec *self = AUTORELEASE([[ComYahooSquidbAnnotationsColumnSpec alloc] init]);
+id<SquiDBColumnSpec> create_SquiDBColumnSpec(NSString *constraints, NSString *defaultValue, NSString *name) {
+  SquiDBColumnSpec *self = AUTORELEASE([[SquiDBColumnSpec alloc] init]);
   self->constraints_ = RETAIN_(constraints);
   self->defaultValue_ = RETAIN_(defaultValue);
   self->name_ = RETAIN_(name);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsColumnSpec__Annotations$0() {
+IOSObjectArray *SquiDBColumnSpec__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, FIELD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsColumnSpec)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBColumnSpec)
+
+J2OBJC_NAME_MAPPING(SquiDBColumnSpec, "com.yahoo.squidb.annotations", "SquiDB")

@@ -12,69 +12,69 @@
 #include "SquidDatabase.h"
 #include "java/io/File.h"
 
-@interface ComYahooSquidbIosIOSOpenHelper () {
+@interface SquiDBIOSOpenHelper () {
  @public
-  ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *delegate_;
+  SquiDBSquidDatabase_OpenHelperDelegate *delegate_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSOpenHelper, delegate_, ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *)
+J2OBJC_FIELD_SETTER(SquiDBIOSOpenHelper, delegate_, SquiDBSquidDatabase_OpenHelperDelegate *)
 
-@implementation ComYahooSquidbIosIOSOpenHelper
+@implementation SquiDBIOSOpenHelper
 
 - (instancetype)initWithNSString:(NSString *)path
                     withNSString:(NSString *)name
-withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *)delegate
+withSquiDBSquidDatabase_OpenHelperDelegate:(SquiDBSquidDatabase_OpenHelperDelegate *)delegate
                          withInt:(jint)version_ {
-  ComYahooSquidbIosIOSOpenHelper_initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_(self, path, name, delegate, version_);
+  SquiDBIOSOpenHelper_initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_(self, path, name, delegate, version_);
   return self;
 }
 
-- (id<ComYahooSquidbDataISQLiteDatabase>)openForWriting {
-  ComYahooAndroidSqliteSQLiteDatabase *database = [super getWritableDatabase];
-  return new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(database);
+- (id<SquiDBISQLiteDatabase>)openForWriting {
+  SquiDBSQLiteDatabase *database = [super getWritableDatabase];
+  return new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(database);
 }
 
 - (NSString *)getDatabasePath {
   return [((JavaIoFile *) nil_chk([self getDatabaseFile])) getAbsolutePath];
 }
 
-- (void)onCreateWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db {
-  [((ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onCreateWithComYahooSquidbDataISQLiteDatabase:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(db)];
+- (void)onCreateWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db {
+  [((SquiDBSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onCreateWithSquiDBISQLiteDatabase:new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(db)];
 }
 
-- (void)onUpgradeWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                 withInt:(jint)oldVersion
-                                                 withInt:(jint)newVersion {
-  [((ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onUpgradeWithComYahooSquidbDataISQLiteDatabase:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(db) withInt:oldVersion withInt:newVersion];
+- (void)onUpgradeWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                  withInt:(jint)oldVersion
+                                  withInt:(jint)newVersion {
+  [((SquiDBSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onUpgradeWithSquiDBISQLiteDatabase:new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(db) withInt:oldVersion withInt:newVersion];
 }
 
-- (void)onDowngradeWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                   withInt:(jint)oldVersion
-                                                   withInt:(jint)newVersion {
-  [((ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onDowngradeWithComYahooSquidbDataISQLiteDatabase:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(db) withInt:oldVersion withInt:newVersion];
+- (void)onDowngradeWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                    withInt:(jint)oldVersion
+                                    withInt:(jint)newVersion {
+  [((SquiDBSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onDowngradeWithSquiDBISQLiteDatabase:new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(db) withInt:oldVersion withInt:newVersion];
 }
 
-- (void)onConfigureWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db {
-  [((ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onConfigureWithComYahooSquidbDataISQLiteDatabase:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(db)];
+- (void)onConfigureWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db {
+  [((SquiDBSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onConfigureWithSquiDBISQLiteDatabase:new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(db)];
 }
 
-- (void)onOpenWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db {
-  [((ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onOpenWithComYahooSquidbDataISQLiteDatabase:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(db)];
+- (void)onOpenWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db {
+  [((SquiDBSquidDatabase_OpenHelperDelegate *) nil_chk(delegate_)) onOpenWithSquiDBISQLiteDatabase:new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(db)];
 }
 
 - (jboolean)deleteDatabase {
   @synchronized(self) {
     JavaIoFile *file = [self getDatabaseFile];
-    return file != nil && [file exists] && ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(file);
+    return file != nil && [file exists] && SquiDBSQLiteDatabase_deleteDatabaseWithJavaIoFile_(file);
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLiteDatabase;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLiteDatabase;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 3, 4, -1, -1, -1, -1 },
@@ -86,37 +86,39 @@ withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:(ComYahooSquidbDataSquidD
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withNSString:withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:withInt:);
+  methods[0].selector = @selector(initWithNSString:withNSString:withSquiDBSquidDatabase_OpenHelperDelegate:withInt:);
   methods[1].selector = @selector(openForWriting);
   methods[2].selector = @selector(getDatabasePath);
-  methods[3].selector = @selector(onCreateWithComYahooAndroidSqliteSQLiteDatabase:);
-  methods[4].selector = @selector(onUpgradeWithComYahooAndroidSqliteSQLiteDatabase:withInt:withInt:);
-  methods[5].selector = @selector(onDowngradeWithComYahooAndroidSqliteSQLiteDatabase:withInt:withInt:);
-  methods[6].selector = @selector(onConfigureWithComYahooAndroidSqliteSQLiteDatabase:);
-  methods[7].selector = @selector(onOpenWithComYahooAndroidSqliteSQLiteDatabase:);
+  methods[3].selector = @selector(onCreateWithSquiDBSQLiteDatabase:);
+  methods[4].selector = @selector(onUpgradeWithSquiDBSQLiteDatabase:withInt:withInt:);
+  methods[5].selector = @selector(onDowngradeWithSquiDBSQLiteDatabase:withInt:withInt:);
+  methods[6].selector = @selector(onConfigureWithSquiDBSQLiteDatabase:);
+  methods[7].selector = @selector(onOpenWithSquiDBSQLiteDatabase:);
   methods[8].selector = @selector(deleteDatabase);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "delegate_", "LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "delegate_", "LSquiDBSquidDatabase_OpenHelperDelegate;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LNSString;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;I", "onCreate", "LComYahooAndroidSqliteSQLiteDatabase;", "onUpgrade", "LComYahooAndroidSqliteSQLiteDatabase;II", "onDowngrade", "onConfigure", "onOpen" };
-  static const J2ObjcClassInfo _ComYahooSquidbIosIOSOpenHelper = { "IOSOpenHelper", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbIosIOSOpenHelper;
+  static const void *ptrTable[] = { "LNSString;LNSString;LSquiDBSquidDatabase_OpenHelperDelegate;I", "onCreate", "LSquiDBSQLiteDatabase;", "onUpgrade", "LSquiDBSQLiteDatabase;II", "onDowngrade", "onConfigure", "onOpen" };
+  static const J2ObjcClassInfo _SquiDBIOSOpenHelper = { "IOSOpenHelper", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBIOSOpenHelper;
 }
 
 @end
 
-void ComYahooSquidbIosIOSOpenHelper_initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_(ComYahooSquidbIosIOSOpenHelper *self, NSString *path, NSString *name, ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
-  ComYahooAndroidSqliteSQLiteOpenHelper_initWithNSString_withNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_(self, path, name, nil, version_);
+void SquiDBIOSOpenHelper_initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_(SquiDBIOSOpenHelper *self, NSString *path, NSString *name, SquiDBSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
+  SquiDBSQLiteOpenHelper_initWithNSString_withNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_(self, path, name, nil, version_);
   self->delegate_ = delegate;
 }
 
-ComYahooSquidbIosIOSOpenHelper *new_ComYahooSquidbIosIOSOpenHelper_initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_(NSString *path, NSString *name, ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbIosIOSOpenHelper, initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_, path, name, delegate, version_)
+SquiDBIOSOpenHelper *new_SquiDBIOSOpenHelper_initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_(NSString *path, NSString *name, SquiDBSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
+  J2OBJC_NEW_IMPL(SquiDBIOSOpenHelper, initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_, path, name, delegate, version_)
 }
 
-ComYahooSquidbIosIOSOpenHelper *create_ComYahooSquidbIosIOSOpenHelper_initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_(NSString *path, NSString *name, ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbIosIOSOpenHelper, initWithNSString_withNSString_withComYahooSquidbDataSquidDatabase_OpenHelperDelegate_withInt_, path, name, delegate, version_)
+SquiDBIOSOpenHelper *create_SquiDBIOSOpenHelper_initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_(NSString *path, NSString *name, SquiDBSquidDatabase_OpenHelperDelegate *delegate, jint version_) {
+  J2OBJC_CREATE_IMPL(SquiDBIOSOpenHelper, initWithNSString_withNSString_withSquiDBSquidDatabase_OpenHelperDelegate_withInt_, path, name, delegate, version_)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosIOSOpenHelper)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBIOSOpenHelper)
+
+J2OBJC_NAME_MAPPING(SquiDBIOSOpenHelper, "com.yahoo.squidb.ios", "SquiDB")

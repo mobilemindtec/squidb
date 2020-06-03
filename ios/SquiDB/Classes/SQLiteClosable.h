@@ -15,7 +15,7 @@
 #include "J2ObjC_header.h"
 #include "java/io/Closeable.h"
 
-@interface ComYahooAndroidSqliteSQLiteClosable : NSObject < JavaIoCloseable >
+@interface SquiDBSQLiteClosable : NSObject < JavaIoCloseable >
 
 #pragma mark Public
 
@@ -37,11 +37,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteClosable)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteClosable)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteClosable_init(ComYahooAndroidSqliteSQLiteClosable *self);
+FOUNDATION_EXPORT void SquiDBSQLiteClosable_init(SquiDBSQLiteClosable *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteClosable)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteClosable)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteClosable SquiDBSQLiteClosable;
 
 
 #if __has_feature(nullability)

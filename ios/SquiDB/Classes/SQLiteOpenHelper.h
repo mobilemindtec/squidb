@@ -14,25 +14,25 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
 @class JavaIoFile;
-@protocol ComYahooAndroidSqliteDatabaseErrorHandler;
-@protocol ComYahooAndroidSqliteSQLiteDatabase_CursorFactory;
+@class SquiDBSQLiteDatabase;
+@protocol SquiDBDatabaseErrorHandler;
+@protocol SquiDBSQLiteDatabase_CursorFactory;
 
-@interface ComYahooAndroidSqliteSQLiteOpenHelper : NSObject
+@interface SquiDBSQLiteOpenHelper : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)path
                               withNSString:(NSString *)name
-withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
+    withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
                                    withInt:(jint)version_;
 
 - (instancetype __nonnull)initWithNSString:(NSString *)path
                               withNSString:(NSString *)name
-withComYahooAndroidSqliteSQLiteDatabase_CursorFactory:(id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory>)factory
+    withSquiDBSQLiteDatabase_CursorFactory:(id<SquiDBSQLiteDatabase_CursorFactory>)factory
                                    withInt:(jint)version_
-withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseErrorHandler>)errorHandler;
+            withSquiDBDatabaseErrorHandler:(id<SquiDBDatabaseErrorHandler>)errorHandler;
 
 - (void)close;
 
@@ -40,35 +40,41 @@ withComYahooAndroidSqliteDatabaseErrorHandler:(id<ComYahooAndroidSqliteDatabaseE
 
 - (NSString *)getDatabaseName;
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getReadableDatabase;
+- (SquiDBSQLiteDatabase *)getReadableDatabase;
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getWritableDatabase;
+- (SquiDBSQLiteDatabase *)getWritableDatabase;
 
-- (void)onConfigureWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db;
+- (void)onConfigureWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db;
 
-- (void)onCreateWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db;
+- (void)onCreateWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db;
 
-- (void)onDowngradeWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                   withInt:(jint)oldVersion
-                                                   withInt:(jint)newVersion;
+- (void)onDowngradeWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                    withInt:(jint)oldVersion
+                                    withInt:(jint)newVersion;
 
-- (void)onOpenWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db;
+- (void)onOpenWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db;
 
-- (void)onUpgradeWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                 withInt:(jint)oldVersion
-                                                 withInt:(jint)newVersion;
+- (void)onUpgradeWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                  withInt:(jint)oldVersion
+                                  withInt:(jint)newVersion;
 
 - (void)setWriteAheadLoggingEnabledWithBoolean:(jboolean)enabled;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)init NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteSQLiteOpenHelper)
+J2OBJC_STATIC_INIT(SquiDBSQLiteOpenHelper)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteOpenHelper_initWithNSString_withNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_(ComYahooAndroidSqliteSQLiteOpenHelper *self, NSString *path, NSString *name, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory, jint version_);
+FOUNDATION_EXPORT void SquiDBSQLiteOpenHelper_initWithNSString_withNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_(SquiDBSQLiteOpenHelper *self, NSString *path, NSString *name, id<SquiDBSQLiteDatabase_CursorFactory> factory, jint version_);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteOpenHelper_initWithNSString_withNSString_withComYahooAndroidSqliteSQLiteDatabase_CursorFactory_withInt_withComYahooAndroidSqliteDatabaseErrorHandler_(ComYahooAndroidSqliteSQLiteOpenHelper *self, NSString *path, NSString *name, id<ComYahooAndroidSqliteSQLiteDatabase_CursorFactory> factory, jint version_, id<ComYahooAndroidSqliteDatabaseErrorHandler> errorHandler);
+FOUNDATION_EXPORT void SquiDBSQLiteOpenHelper_initWithNSString_withNSString_withSquiDBSQLiteDatabase_CursorFactory_withInt_withSquiDBDatabaseErrorHandler_(SquiDBSQLiteOpenHelper *self, NSString *path, NSString *name, id<SquiDBSQLiteDatabase_CursorFactory> factory, jint version_, id<SquiDBDatabaseErrorHandler> errorHandler);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteOpenHelper)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteOpenHelper)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteOpenHelper SquiDBSQLiteOpenHelper;
 
 
 #if __has_feature(nullability)

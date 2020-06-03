@@ -72,17 +72,17 @@
 #pragma clang diagnostic ignored "-Wprotocol"
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbDataSquidDatabase () {
+@interface SquiDBSquidDatabase () {
  @public
   id<JavaUtilSet> trackedPreparedInserts_;
   JavaLangThreadLocal *preparedInsertCache_;
   jboolean preparedInsertCacheEnabled_;
-  ComYahooSquidbDataSquidDatabase *attachedTo_;
+  SquiDBSquidDatabase *attachedTo_;
   JavaUtilConcurrentLocksReentrantReadWriteLock *readWriteLock_;
   id databaseInstanceLock_;
-  id<ComYahooSquidbDataISQLiteOpenHelper> helper_;
-  id<ComYahooSquidbDataISQLiteDatabase> database_;
-  ComYahooSquidbUtilityVersionCode *sqliteVersion_;
+  id<SquiDBISQLiteOpenHelper> helper_;
+  id<SquiDBISQLiteDatabase> database_;
+  SquiDBVersionCode *sqliteVersion_;
   id<JavaUtilMap> tableMap_;
   jboolean isInMigration_;
   jboolean isInMigrationFailedHook_;
@@ -95,17 +95,17 @@
   JavaLangThreadLocal *notifierAccumulator_;
 }
 
-- (void)registerTableModelsWithComYahooSquidbSqlSqlTableArray:(IOSObjectArray *)tables;
+- (void)registerTableModelsWithSquiDBSqlTableArray:(IOSObjectArray *)tables;
 
-- (id<ComYahooSquidbDataISQLiteOpenHelper>)getOpenHelper;
+- (id<SquiDBISQLiteOpenHelper>)getOpenHelper;
 
 - (void)openForWritingLocked;
 
 - (JavaLangThreadLocal *)newPreparedInsertCacheWithJavaUtilSet:(id<JavaUtilSet>)openStatementTracking OBJC_METHOD_FAMILY_NONE;
 
-- (NSString *)attachToWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)attachTo;
+- (NSString *)attachToWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)attachTo;
 
-- (jboolean)detachFromWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)detachFrom;
+- (jboolean)detachFromWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)detachFrom;
 
 - (NSString *)getAttachedName;
 
@@ -122,36 +122,36 @@
 - (void)onShowSqlWithNSString:(NSString *)sql
             withNSObjectArray:(IOSObjectArray *)sqlArgs;
 
-- (jlong)insertInternalWithComYahooSquidbSqlInsert:(ComYahooSquidbSqlInsert *)insert;
+- (jlong)insertInternalWithSquiDBInsert:(SquiDBInsert *)insert;
 
-- (jint)deleteInternalWithComYahooSquidbSqlDelete:(ComYahooSquidbSqlDelete *)delete_;
+- (jint)deleteInternalWithSquiDBDelete:(SquiDBDelete *)delete_;
 
-- (jint)updateInternalWithComYahooSquidbSqlUpdate:(ComYahooSquidbSqlUpdate *)update;
+- (jint)updateInternalWithSquiDBUpdate:(SquiDBUpdate *)update;
 
-- (void)setDatabaseWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (void)setDatabaseWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (ComYahooSquidbUtilityVersionCode *)readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db;
+- (SquiDBVersionCode *)readSqliteVersionLockedWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db;
 
-- (jboolean)propertyBelongsToTableWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property;
+- (jboolean)propertyBelongsToTableWithSquiDBProperty:(SquiDBProperty *)property;
 
-- (ComYahooSquidbSqlQuery *)inferTableForQueryWithIOSClass:(IOSClass *)modelClass
-                                withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBQuery *)inferTableForQueryWithIOSClass:(IOSClass *)modelClass
+                                withSquiDBQuery:(SquiDBQuery *)query;
 
 - (void)ensureSqlCompilesWithNSString:(NSString *)sql;
 
-- (jlong)insertRowLegacyWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-                              withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-   withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (jlong)insertRowLegacyWithSquiDBTableModel:(SquiDBTableModel *)item
+                             withSquiDBTable:(SquiDBTable *)table
+  withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (void)notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)op
-                                        withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-                                              withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                                                   withLong:(jlong)rowId;
+- (void)notifyForTableWithSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)op
+                                        withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                                             withSquiDBSqlTable:(SquiDBSqlTable *)table
+                                                       withLong:(jlong)rowId;
 
 - (void)onDataChangedWithJavaUtilList:(id<JavaUtilList>)notifiers
-withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)op
-  withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-        withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
+withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)op
+              withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                   withSquiDBSqlTable:(SquiDBSqlTable *)table
                              withLong:(jlong)rowId;
 
 - (void)flushAccumulatedNotificationsWithBoolean:(jboolean)transactionSuccess;
@@ -163,119 +163,119 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, trackedPreparedInserts_, id<JavaUtilSet>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, preparedInsertCache_, JavaLangThreadLocal *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, attachedTo_, ComYahooSquidbDataSquidDatabase *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, readWriteLock_, JavaUtilConcurrentLocksReentrantReadWriteLock *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, databaseInstanceLock_, id)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, helper_, id<ComYahooSquidbDataISQLiteOpenHelper>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, database_, id<ComYahooSquidbDataISQLiteDatabase>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, sqliteVersion_, ComYahooSquidbUtilityVersionCode *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, tableMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, transactionSuccessState_, JavaLangThreadLocal *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, notifiersLock_, id)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, globalNotifiers_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, tableNotifiers_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase, notifierAccumulator_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, trackedPreparedInserts_, id<JavaUtilSet>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, preparedInsertCache_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, attachedTo_, SquiDBSquidDatabase *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, readWriteLock_, JavaUtilConcurrentLocksReentrantReadWriteLock *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, databaseInstanceLock_, id)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, helper_, id<SquiDBISQLiteOpenHelper>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, database_, id<SquiDBISQLiteDatabase>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, sqliteVersion_, SquiDBVersionCode *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, tableMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, transactionSuccessState_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, notifiersLock_, id)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, globalNotifiers_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, tableNotifiers_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase, notifierAccumulator_, JavaLangThreadLocal *)
 
-inline jint ComYahooSquidbDataSquidDatabase_get_STRING_BUILDER_INITIAL_CAPACITY(void);
-#define ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY 128
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataSquidDatabase, STRING_BUILDER_INITIAL_CAPACITY, jint)
+inline jint SquiDBSquidDatabase_get_STRING_BUILDER_INITIAL_CAPACITY(void);
+#define SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY 128
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSquidDatabase, STRING_BUILDER_INITIAL_CAPACITY, jint)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSqlTableArray_(ComYahooSquidbDataSquidDatabase *self, IOSObjectArray *tables);
+__attribute__((unused)) static void SquiDBSquidDatabase_registerTableModelsWithSquiDBSqlTableArray_(SquiDBSquidDatabase *self, IOSObjectArray *tables);
 
-__attribute__((unused)) static id<ComYahooSquidbDataISQLiteOpenHelper> ComYahooSquidbDataSquidDatabase_getOpenHelper(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static id<SquiDBISQLiteOpenHelper> SquiDBSquidDatabase_getOpenHelper(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static ComYahooSquidbSqlSqlTable *ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSClass_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass);
+__attribute__((unused)) static SquiDBSqlTable *SquiDBSquidDatabase_getSqlTableWithIOSClass_(SquiDBSquidDatabase *self, IOSClass *modelClass);
 
-__attribute__((unused)) static ComYahooSquidbSqlTable *ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass);
+__attribute__((unused)) static SquiDBTable *SquiDBSquidDatabase_getTableWithIOSClass_(SquiDBSquidDatabase *self, IOSClass *modelClass);
 
-__attribute__((unused)) static id<ComYahooSquidbDataISQLiteDatabase> ComYahooSquidbDataSquidDatabase_getDatabase(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static id<SquiDBISQLiteDatabase> SquiDBSquidDatabase_getDatabase(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_openForWritingLocked(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_openForWritingLocked(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static JavaLangThreadLocal *ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(ComYahooSquidbDataSquidDatabase *self, id<JavaUtilSet> openStatementTracking);
+__attribute__((unused)) static JavaLangThreadLocal *SquiDBSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(SquiDBSquidDatabase *self, id<JavaUtilSet> openStatementTracking);
 
-__attribute__((unused)) static NSString *ComYahooSquidbDataSquidDatabase_attachToWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataSquidDatabase *attachTo);
+__attribute__((unused)) static NSString *SquiDBSquidDatabase_attachToWithSquiDBSquidDatabase_(SquiDBSquidDatabase *self, SquiDBSquidDatabase *attachTo);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_detachFromWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataSquidDatabase *detachFrom);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_detachFromWithSquiDBSquidDatabase_(SquiDBSquidDatabase *self, SquiDBSquidDatabase *detachFrom);
 
-__attribute__((unused)) static NSString *ComYahooSquidbDataSquidDatabase_getAttachedName(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static NSString *SquiDBSquidDatabase_getAttachedName(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_isOpen(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_isOpen(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_recreateLocked(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_recreateLocked(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_closeLocked(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_closeLocked(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_closeAndDeleteLocked(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_closeAndDeleteLocked(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(ComYahooSquidbDataSquidDatabase *self, jboolean deleteAfterClose);
+__attribute__((unused)) static void SquiDBSquidDatabase_closeAndDeleteInternalWithBoolean_(SquiDBSquidDatabase *self, jboolean deleteAfterClose);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_clearPreparedStatementCache(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(ComYahooSquidbDataSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs);
+__attribute__((unused)) static void SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(SquiDBSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs);
 
-__attribute__((unused)) static jlong ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlInsert *insert);
+__attribute__((unused)) static jlong SquiDBSquidDatabase_insertInternalWithSquiDBInsert_(SquiDBSquidDatabase *self, SquiDBInsert *insert);
 
-__attribute__((unused)) static jint ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlDelete *delete_);
+__attribute__((unused)) static jint SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(SquiDBSquidDatabase *self, SquiDBDelete *delete_);
 
-__attribute__((unused)) static jint ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlUpdate *update);
+__attribute__((unused)) static jint SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(SquiDBSquidDatabase *self, SquiDBUpdate *update);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_inTransaction(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_inTransaction(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(ComYahooSquidbDataSquidDatabase *self, id<ComYahooSquidbDataISQLiteDatabase> db);
+__attribute__((unused)) static void SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(SquiDBSquidDatabase *self, id<SquiDBISQLiteDatabase> db);
 
-__attribute__((unused)) static ComYahooSquidbUtilityVersionCode *ComYahooSquidbDataSquidDatabase_readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase_(ComYahooSquidbDataSquidDatabase *self, id<ComYahooSquidbDataISQLiteDatabase> db);
+__attribute__((unused)) static SquiDBVersionCode *SquiDBSquidDatabase_readSqliteVersionLockedWithSquiDBISQLiteDatabase_(SquiDBSquidDatabase *self, id<SquiDBISQLiteDatabase> db);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_propertyBelongsToTableWithComYahooSquidbSqlProperty_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlProperty *property);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_propertyBelongsToTableWithSquiDBProperty_(SquiDBSquidDatabase *self, SquiDBProperty *property);
 
-__attribute__((unused)) static ComYahooSquidbSqlCompileContext *ComYahooSquidbDataSquidDatabase_getCompileContext(ComYahooSquidbDataSquidDatabase *self);
+__attribute__((unused)) static SquiDBCompileContext *SquiDBSquidDatabase_getCompileContext(SquiDBSquidDatabase *self);
 
-__attribute__((unused)) static ComYahooSquidbSqlQuery *ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass, ComYahooSquidbSqlQuery *query);
+__attribute__((unused)) static SquiDBQuery *SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(SquiDBSquidDatabase *self, IOSClass *modelClass, SquiDBQuery *query);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_ensureSqlCompilesWithNSString_(ComYahooSquidbDataSquidDatabase *self, NSString *sql);
+__attribute__((unused)) static void SquiDBSquidDatabase_ensureSqlCompilesWithNSString_(SquiDBSquidDatabase *self, NSString *sql);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm);
 
-__attribute__((unused)) static jlong ComYahooSquidbDataSquidDatabase_insertRowLegacyWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTable_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTable *table, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm);
+__attribute__((unused)) static jlong SquiDBSquidDatabase_insertRowLegacyWithSquiDBTableModel_withSquiDBTable_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTable *table, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataDataChangedNotifier_DBOperation *op, ComYahooSquidbDataAbstractModel *modelValues, ComYahooSquidbSqlSqlTable *table, jlong rowId);
+__attribute__((unused)) static void SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(SquiDBSquidDatabase *self, SquiDBDataChangedNotifier_DBOperation *op, SquiDBAbstractModel *modelValues, SquiDBSqlTable *table, jlong rowId);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_onDataChangedWithJavaUtilList_withComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(ComYahooSquidbDataSquidDatabase *self, id<JavaUtilList> notifiers, ComYahooSquidbDataDataChangedNotifier_DBOperation *op, ComYahooSquidbDataAbstractModel *modelValues, ComYahooSquidbSqlSqlTable *table, jlong rowId);
+__attribute__((unused)) static void SquiDBSquidDatabase_onDataChangedWithJavaUtilList_withSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(SquiDBSquidDatabase *self, id<JavaUtilList> notifiers, SquiDBDataChangedNotifier_DBOperation *op, SquiDBAbstractModel *modelValues, SquiDBSqlTable *table, jlong rowId);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_flushAccumulatedNotificationsWithBoolean_(ComYahooSquidbDataSquidDatabase *self, jboolean transactionSuccess);
+__attribute__((unused)) static void SquiDBSquidDatabase_flushAccumulatedNotificationsWithBoolean_(SquiDBSquidDatabase *self, jboolean transactionSuccess);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_copyDatabaseLockedWithJavaIoFile_(ComYahooSquidbDataSquidDatabase *self, JavaIoFile *toDir);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_copyDatabaseLockedWithJavaIoFile_(SquiDBSquidDatabase *self, JavaIoFile *toDir);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(ComYahooSquidbDataSquidDatabase *self, JavaIoFile *inArg, JavaIoFile *toDir);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(SquiDBSquidDatabase *self, JavaIoFile *inArg, JavaIoFile *toDir);
 
-@interface ComYahooSquidbDataSquidDatabase_1 : JavaLangThreadLocal {
+@interface SquiDBSquidDatabase_1 : JavaLangThreadLocal {
  @public
   id<JavaUtilSet> val$openStatementTracking_;
 }
 
 - (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)capture$0;
 
-- (ComYahooSquidbDataPreparedInsertCache *)initialValue OBJC_METHOD_FAMILY_NONE;
+- (SquiDBPreparedInsertCache *)initialValue OBJC_METHOD_FAMILY_NONE;
 
-- (ComYahooSquidbDataPreparedInsertCache *)get;
+- (SquiDBPreparedInsertCache *)get;
 
-- (ComYahooSquidbDataPreparedInsertCache *)childValueWithId:(ComYahooSquidbDataPreparedInsertCache *)arg0;
+- (SquiDBPreparedInsertCache *)childValueWithId:(SquiDBPreparedInsertCache *)arg0;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_1)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_1)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(ComYahooSquidbDataSquidDatabase_1 *self, id<JavaUtilSet> capture$0);
+__attribute__((unused)) static void SquiDBSquidDatabase_1_initWithJavaUtilSet_(SquiDBSquidDatabase_1 *self, id<JavaUtilSet> capture$0);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_1 *new_ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_1 *new_SquiDBSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_1 *create_ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0);
+__attribute__((unused)) static SquiDBSquidDatabase_1 *create_SquiDBSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0);
 
-@interface ComYahooSquidbDataSquidDatabase_TransactionSuccessState : NSObject {
+@interface SquiDBSquidDatabase_TransactionSuccessState : NSObject {
  @public
   id<JavaUtilDeque> nestedSuccessStack_;
   jboolean outerTransactionSuccess_;
@@ -297,130 +297,130 @@ __attribute__((unused)) static ComYahooSquidbDataSquidDatabase_1 *create_ComYaho
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_TransactionSuccessState)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_TransactionSuccessState)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidDatabase_TransactionSuccessState, nestedSuccessStack_, id<JavaUtilDeque>)
+J2OBJC_FIELD_SETTER(SquiDBSquidDatabase_TransactionSuccessState, nestedSuccessStack_, id<JavaUtilDeque>)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_init(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_TransactionSuccessState *new_ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_TransactionSuccessState *new_SquiDBSquidDatabase_TransactionSuccessState_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_TransactionSuccessState *create_ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_TransactionSuccessState *create_SquiDBSquidDatabase_TransactionSuccessState_init(void);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static jboolean ComYahooSquidbDataSquidDatabase_TransactionSuccessState_inTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static jboolean SquiDBSquidDatabase_TransactionSuccessState_inTransaction(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_setTransactionSuccessful(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_setTransactionSuccessful(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_endTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_endTransaction(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_reset(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_TransactionSuccessState_reset(SquiDBSquidDatabase_TransactionSuccessState *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_TransactionSuccessState)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase_TransactionSuccessState)
 
-@interface ComYahooSquidbDataSquidDatabase_2 : JavaLangThreadLocal
+@interface SquiDBSquidDatabase_2 : JavaLangThreadLocal
 
 - (instancetype)init;
 
-- (ComYahooSquidbDataSquidDatabase_TransactionSuccessState *)initialValue OBJC_METHOD_FAMILY_NONE;
+- (SquiDBSquidDatabase_TransactionSuccessState *)initialValue OBJC_METHOD_FAMILY_NONE;
 
-- (ComYahooSquidbDataSquidDatabase_TransactionSuccessState *)get;
+- (SquiDBSquidDatabase_TransactionSuccessState *)get;
 
-- (ComYahooSquidbDataSquidDatabase_TransactionSuccessState *)childValueWithId:(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *)arg0;
+- (SquiDBSquidDatabase_TransactionSuccessState *)childValueWithId:(SquiDBSquidDatabase_TransactionSuccessState *)arg0;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_2)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_2)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_2_init(ComYahooSquidbDataSquidDatabase_2 *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_2_init(SquiDBSquidDatabase_2 *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_2 *new_ComYahooSquidbDataSquidDatabase_2_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_2 *new_SquiDBSquidDatabase_2_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_2 *create_SquiDBSquidDatabase_2_init(void);
 
-@interface ComYahooSquidbDataSquidDatabase_OpenHelperDelegate () {
+@interface SquiDBSquidDatabase_OpenHelperDelegate () {
  @public
-  ComYahooSquidbDataSquidDatabase *this$0_;
+  SquiDBSquidDatabase *this$0_;
 }
 
-- (instancetype)initWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)outer$;
+- (instancetype)initWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)outer$;
 
 @end
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *self, ComYahooSquidbDataSquidDatabase *outer$);
+__attribute__((unused)) static void SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase_OpenHelperDelegate *self, SquiDBSquidDatabase *outer$);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *new_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_OpenHelperDelegate *new_SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *create_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *outer$);
+__attribute__((unused)) static SquiDBSquidDatabase_OpenHelperDelegate *create_SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase *outer$);
 
-@interface ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyVisitor >
+@interface SquiDBSquidDatabase_SqlConstructorVisitor : NSObject < SquiDBProperty_PropertyVisitor >
 
 - (instancetype)init;
 
 - (JavaLangVoid *)appendColumnDefinitionWithNSString:(NSString *)type
-                       withComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
+                                  withSquiDBProperty:(SquiDBProperty *)property
                            withJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(JavaLangStringBuilder *)sql;
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(JavaLangStringBuilder *)sql;
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(JavaLangStringBuilder *)sql;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_SqlConstructorVisitor)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_SqlConstructorVisitor_init(SquiDBSquidDatabase_SqlConstructorVisitor *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *new_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_SqlConstructorVisitor *new_SquiDBSquidDatabase_SqlConstructorVisitor_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *create_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_SqlConstructorVisitor *create_SquiDBSquidDatabase_SqlConstructorVisitor_init(void);
 
-__attribute__((unused)) static JavaLangVoid *ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *self, NSString *type, ComYahooSquidbSqlProperty *property, JavaLangStringBuilder *sql);
+__attribute__((unused)) static JavaLangVoid *SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(SquiDBSquidDatabase_SqlConstructorVisitor *self, NSString *type, SquiDBProperty *property, JavaLangStringBuilder *sql);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase_SqlConstructorVisitor)
 
-@interface ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException : JavaLangRuntimeException
+@interface SquiDBSquidDatabase_RecreateDuringMigrationException : JavaLangRuntimeException
 
 - (instancetype)init;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_RecreateDuringMigrationException)
 
-inline jlong ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_get_serialVersionUID(void);
-#define ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_serialVersionUID 480910684116077495LL
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException, serialVersionUID, jlong)
+inline jlong SquiDBSquidDatabase_RecreateDuringMigrationException_get_serialVersionUID(void);
+#define SquiDBSquidDatabase_RecreateDuringMigrationException_serialVersionUID 480910684116077495LL
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSquidDatabase_RecreateDuringMigrationException, serialVersionUID, jlong)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_RecreateDuringMigrationException_init(SquiDBSquidDatabase_RecreateDuringMigrationException *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *new_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_RecreateDuringMigrationException *new_SquiDBSquidDatabase_RecreateDuringMigrationException_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *create_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_RecreateDuringMigrationException *create_SquiDBSquidDatabase_RecreateDuringMigrationException_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidDatabase_RecreateDuringMigrationException)
 
-inline jlong ComYahooSquidbDataSquidDatabase_MigrationFailedException_get_serialVersionUID(void);
-#define ComYahooSquidbDataSquidDatabase_MigrationFailedException_serialVersionUID 2949995666882182744LL
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataSquidDatabase_MigrationFailedException, serialVersionUID, jlong)
+inline jlong SquiDBSquidDatabase_MigrationFailedException_get_serialVersionUID(void);
+#define SquiDBSquidDatabase_MigrationFailedException_serialVersionUID 2949995666882182744LL
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSquidDatabase_MigrationFailedException, serialVersionUID, jlong)
 
-@interface ComYahooSquidbDataSquidDatabase_3 : JavaLangThreadLocal
+@interface SquiDBSquidDatabase_3 : JavaLangThreadLocal
 
 - (instancetype)init;
 
@@ -432,33 +432,33 @@ J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataSquidDatabase_MigrationFailedExce
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidDatabase_3)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidDatabase_3)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_3_init(ComYahooSquidbDataSquidDatabase_3 *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_3_init(SquiDBSquidDatabase_3 *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_3 *new_ComYahooSquidbDataSquidDatabase_3_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_3 *new_SquiDBSquidDatabase_3_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_3 *create_ComYahooSquidbDataSquidDatabase_3_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_3 *create_SquiDBSquidDatabase_3_init(void);
 
-@interface ComYahooSquidbDataSquidDatabase_$Lambda$1 : NSObject < JavaUtilFunctionFunction >
+@interface SquiDBSquidDatabase_$Lambda$1 : NSObject < JavaUtilFunctionFunction >
 
 - (id)applyWithId:(id)x;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbDataSquidDatabase_$Lambda$1)
+J2OBJC_STATIC_INIT(SquiDBSquidDatabase_$Lambda$1)
 
-inline ComYahooSquidbDataSquidDatabase_$Lambda$1 *ComYahooSquidbDataSquidDatabase_$Lambda$1_get_instance(void);
-static ComYahooSquidbDataSquidDatabase_$Lambda$1 *ComYahooSquidbDataSquidDatabase_$Lambda$1_instance;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataSquidDatabase_$Lambda$1, instance, ComYahooSquidbDataSquidDatabase_$Lambda$1 *)
+inline SquiDBSquidDatabase_$Lambda$1 *SquiDBSquidDatabase_$Lambda$1_get_instance(void);
+static SquiDBSquidDatabase_$Lambda$1 *SquiDBSquidDatabase_$Lambda$1_instance;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSquidDatabase_$Lambda$1, instance, SquiDBSquidDatabase_$Lambda$1 *)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidDatabase_$Lambda$1_init(ComYahooSquidbDataSquidDatabase_$Lambda$1 *self);
+__attribute__((unused)) static void SquiDBSquidDatabase_$Lambda$1_init(SquiDBSquidDatabase_$Lambda$1 *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_$Lambda$1 *new_ComYahooSquidbDataSquidDatabase_$Lambda$1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidDatabase_$Lambda$1 *new_SquiDBSquidDatabase_$Lambda$1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidDatabase_$Lambda$1 *create_ComYahooSquidbDataSquidDatabase_$Lambda$1_init(void);
+__attribute__((unused)) static SquiDBSquidDatabase_$Lambda$1 *create_SquiDBSquidDatabase_$Lambda$1_init(void);
 
-@implementation ComYahooSquidbDataSquidDatabase
+@implementation SquiDBSquidDatabase
 
 - (void)setShowSqlWithBoolean:(jboolean)showSql {
   self->showSql_ = showSql;
@@ -490,24 +490,24 @@ __attribute__((unused)) static ComYahooSquidbDataSquidDatabase_$Lambda$1 *create
   return nil;
 }
 
-- (void)onTablesCreatedWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
+- (void)onTablesCreatedWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
 }
 
-- (jboolean)onUpgradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                   withInt:(jint)oldVersion
-                                                   withInt:(jint)newVersion {
+- (jboolean)onUpgradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                       withInt:(jint)oldVersion
+                                       withInt:(jint)newVersion {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (jboolean)onDowngradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                     withInt:(jint)oldVersion
-                                                     withInt:(jint)newVersion {
+- (jboolean)onDowngradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                         withInt:(jint)oldVersion
+                                         withInt:(jint)newVersion {
   return true;
 }
 
-- (void)onMigrationFailedWithComYahooSquidbDataSquidDatabase_MigrationFailedException:(ComYahooSquidbDataSquidDatabase_MigrationFailedException *)failure {
+- (void)onMigrationFailedWithSquiDBSquidDatabase_MigrationFailedException:(SquiDBSquidDatabase_MigrationFailedException *)failure {
   @throw nil_chk(failure);
 }
 
@@ -516,61 +516,61 @@ __attribute__((unused)) static ComYahooSquidbDataSquidDatabase_$Lambda$1 *create
   @throw nil_chk(failure);
 }
 
-- (void)onConfigureWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
+- (void)onConfigureWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
 }
 
-- (void)onOpenWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
+- (void)onOpenWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
 }
 
-- (void)onCloseWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
+- (void)onCloseWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
 }
 
 - (void)onErrorWithNSString:(NSString *)message
       withJavaLangThrowable:(JavaLangThrowable *)error {
-  ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$", [[self java_getClass] getSimpleName], @" -- ", message), error);
+  SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBLogger_LOG_TAG, JreStrcat("$$$", [[self java_getClass] getSimpleName], @" -- ", message), error);
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_init(self);
+  SquiDBSquidDatabase_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)registerTableModelsWithComYahooSquidbSqlSqlTableArray:(IOSObjectArray *)tables {
-  ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSqlTableArray_(self, tables);
+- (void)registerTableModelsWithSquiDBSqlTableArray:(IOSObjectArray *)tables {
+  SquiDBSquidDatabase_registerTableModelsWithSquiDBSqlTableArray_(self, tables);
 }
 
-- (id<ComYahooSquidbDataISQLiteOpenHelper>)getOpenHelper {
-  return ComYahooSquidbDataSquidDatabase_getOpenHelper(self);
+- (id<SquiDBISQLiteOpenHelper>)getOpenHelper {
+  return SquiDBSquidDatabase_getOpenHelper(self);
 }
 
-- (id<ComYahooSquidbDataISQLiteOpenHelper>)createOpenHelperWithNSString:(NSString *)databaseName
-                 withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *)delegate
-                                                                withInt:(jint)version_ {
+- (id<SquiDBISQLiteOpenHelper>)createOpenHelperWithNSString:(NSString *)databaseName
+                 withSquiDBSquidDatabase_OpenHelperDelegate:(SquiDBSquidDatabase_OpenHelperDelegate *)delegate
+                                                    withInt:(jint)version_ {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
 - (NSString *)getDatabasePath {
-  return [((id<ComYahooSquidbDataISQLiteOpenHelper>) nil_chk(ComYahooSquidbDataSquidDatabase_getOpenHelper(self))) getDatabasePath];
+  return [((id<SquiDBISQLiteOpenHelper>) nil_chk(SquiDBSquidDatabase_getOpenHelper(self))) getDatabasePath];
 }
 
-- (ComYahooSquidbSqlSqlTable *)getSqlTableWithIOSClass:(IOSClass *)modelClass {
-  return ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSClass_(self, modelClass);
+- (SquiDBSqlTable *)getSqlTableWithIOSClass:(IOSClass *)modelClass {
+  return SquiDBSquidDatabase_getSqlTableWithIOSClass_(self, modelClass);
 }
 
-- (ComYahooSquidbSqlTable *)getTableWithIOSClass:(IOSClass *)modelClass {
-  return ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
+- (SquiDBTable *)getTableWithIOSClass:(IOSClass *)modelClass {
+  return SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
 }
 
-- (id<ComYahooSquidbDataISQLiteDatabase>)getDatabase {
-  return ComYahooSquidbDataSquidDatabase_getDatabase(self);
+- (id<SquiDBISQLiteDatabase>)getDatabase {
+  return SquiDBSquidDatabase_getDatabase(self);
 }
 
 - (void)openForWritingLocked {
-  ComYahooSquidbDataSquidDatabase_openForWritingLocked(self);
+  SquiDBSquidDatabase_openForWritingLocked(self);
 }
 
 - (void)setPreparedInsertCacheEnabledWithBoolean:(jboolean)enabled {
@@ -578,52 +578,52 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (JavaLangThreadLocal *)newPreparedInsertCacheWithJavaUtilSet:(id<JavaUtilSet>)openStatementTracking {
-  return ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, openStatementTracking);
+  return SquiDBSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, openStatementTracking);
 }
 
-- (NSString *)attachDatabaseWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)other {
+- (NSString *)attachDatabaseWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)other {
   if (attachedTo_ != nil) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Can't attach a database to a database that is itself attached");
   }
-  if (ComYahooSquidbDataSquidDatabase_inTransaction(self)) {
+  if (SquiDBSquidDatabase_inTransaction(self)) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Can't attach a database while in a transaction on the current thread");
   }
   [self acquireExclusiveLock];
   @try {
-    return ComYahooSquidbDataSquidDatabase_attachToWithComYahooSquidbDataSquidDatabase_(nil_chk(other), self);
+    return SquiDBSquidDatabase_attachToWithSquiDBSquidDatabase_(nil_chk(other), self);
   }
   @finally {
     [self releaseExclusiveLock];
   }
 }
 
-- (jboolean)detachDatabaseWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)other {
-  if (((ComYahooSquidbDataSquidDatabase *) nil_chk(other))->attachedTo_ != self) {
+- (jboolean)detachDatabaseWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)other {
+  if (((SquiDBSquidDatabase *) nil_chk(other))->attachedTo_ != self) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$$$", @"Database ", [other getName], @" is not attached to ", [self getName]));
   }
-  return ComYahooSquidbDataSquidDatabase_detachFromWithComYahooSquidbDataSquidDatabase_(other, self);
+  return SquiDBSquidDatabase_detachFromWithSquiDBSquidDatabase_(other, self);
 }
 
-- (NSString *)attachToWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)attachTo {
-  return ComYahooSquidbDataSquidDatabase_attachToWithComYahooSquidbDataSquidDatabase_(self, attachTo);
+- (NSString *)attachToWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)attachTo {
+  return SquiDBSquidDatabase_attachToWithSquiDBSquidDatabase_(self, attachTo);
 }
 
-- (jboolean)detachFromWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)detachFrom {
-  return ComYahooSquidbDataSquidDatabase_detachFromWithComYahooSquidbDataSquidDatabase_(self, detachFrom);
+- (jboolean)detachFromWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)detachFrom {
+  return SquiDBSquidDatabase_detachFromWithSquiDBSquidDatabase_(self, detachFrom);
 }
 
 - (NSString *)getAttachedName {
-  return ComYahooSquidbDataSquidDatabase_getAttachedName(self);
+  return SquiDBSquidDatabase_getAttachedName(self);
 }
 
 - (jboolean)isOpen {
-  return ComYahooSquidbDataSquidDatabase_isOpen(self);
+  return SquiDBSquidDatabase_isOpen(self);
 }
 
 - (void)close {
   [self acquireExclusiveLock];
   @try {
-    ComYahooSquidbDataSquidDatabase_closeLocked(self);
+    SquiDBSquidDatabase_closeLocked(self);
   }
   @finally {
     [self releaseExclusiveLock];
@@ -633,7 +633,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (void)clear {
   [self acquireExclusiveLock];
   @try {
-    ComYahooSquidbDataSquidDatabase_closeAndDeleteLocked(self);
+    SquiDBSquidDatabase_closeAndDeleteLocked(self);
   }
   @finally {
     [self releaseExclusiveLock];
@@ -642,15 +642,15 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)recreate {
   if (isInMigration_) {
-    @throw new_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init();
+    @throw new_SquiDBSquidDatabase_RecreateDuringMigrationException_init();
   }
   else if (isInMigrationFailedHook_ || databaseOpenFailedRetryCount_ > 0) {
-    ComYahooSquidbDataSquidDatabase_recreateLocked(self);
+    SquiDBSquidDatabase_recreateLocked(self);
   }
   else {
     [self acquireExclusiveLock];
     @try {
-      ComYahooSquidbDataSquidDatabase_recreateLocked(self);
+      SquiDBSquidDatabase_recreateLocked(self);
     }
     @finally {
       [self releaseExclusiveLock];
@@ -659,37 +659,37 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)recreateLocked {
-  ComYahooSquidbDataSquidDatabase_recreateLocked(self);
+  SquiDBSquidDatabase_recreateLocked(self);
 }
 
 - (void)closeLocked {
-  ComYahooSquidbDataSquidDatabase_closeLocked(self);
+  SquiDBSquidDatabase_closeLocked(self);
 }
 
 - (void)closeAndDeleteLocked {
-  ComYahooSquidbDataSquidDatabase_closeAndDeleteLocked(self);
+  SquiDBSquidDatabase_closeAndDeleteLocked(self);
 }
 
 - (void)closeAndDeleteInternalWithBoolean:(jboolean)deleteAfterClose {
-  ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(self, deleteAfterClose);
+  SquiDBSquidDatabase_closeAndDeleteInternalWithBoolean_(self, deleteAfterClose);
 }
 
 - (void)clearPreparedStatementCache {
-  ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(self);
+  SquiDBSquidDatabase_clearPreparedStatementCache(self);
 }
 
 - (NSString *)description {
   return JreStrcat("$$", @"DB:", [self getName]);
 }
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSObjectArray:(IOSObjectArray *)sqlArgs {
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSObjectArray:(IOSObjectArray *)sqlArgs {
   [self acquireNonExclusiveLock];
   @try {
     if (self->showSql_) {
-      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
+      SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
     }
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) rawQueryWithNSString:sql withNSObjectArray:sqlArgs];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) rawQueryWithNSString:sql withNSObjectArray:sqlArgs];
   }
   @finally {
     [self releaseNonExclusiveLock];
@@ -698,14 +698,14 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)onShowSqlWithNSString:(NSString *)sql
             withNSObjectArray:(IOSObjectArray *)sqlArgs {
-  ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
+  SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, sql, sqlArgs);
 }
 
 - (NSString *)simpleQueryForStringWithNSString:(NSString *)sql
                              withNSObjectArray:(IOSObjectArray *)sqlArgs {
   [self acquireNonExclusiveLock];
   @try {
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) simpleQueryForStringWithNSString:sql withNSObjectArray:sqlArgs];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) simpleQueryForStringWithNSString:sql withNSObjectArray:sqlArgs];
   }
   @finally {
     [self releaseNonExclusiveLock];
@@ -716,40 +716,40 @@ J2OBJC_IGNORE_DESIGNATED_END
                       withNSObjectArray:(IOSObjectArray *)sqlArgs {
   [self acquireNonExclusiveLock];
   @try {
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) simpleQueryForLongWithNSString:sql withNSObjectArray:sqlArgs];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) simpleQueryForLongWithNSString:sql withNSObjectArray:sqlArgs];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-- (NSString *)simpleQueryForStringWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlQuery *) nil_chk(query)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-  return [self simpleQueryForStringWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+- (NSString *)simpleQueryForStringWithSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBCompiledStatement *compiled = [((SquiDBQuery *) nil_chk(query)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+  return [self simpleQueryForStringWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
 }
 
-- (jlong)simpleQueryForLongWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlQuery *) nil_chk(query)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-  return [self simpleQueryForLongWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+- (jlong)simpleQueryForLongWithSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBCompiledStatement *compiled = [((SquiDBQuery *) nil_chk(query)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+  return [self simpleQueryForLongWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
 }
 
-- (jlong)insertInternalWithComYahooSquidbSqlInsert:(ComYahooSquidbSqlInsert *)insert {
-  return ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(self, insert);
+- (jlong)insertInternalWithSquiDBInsert:(SquiDBInsert *)insert {
+  return SquiDBSquidDatabase_insertInternalWithSquiDBInsert_(self, insert);
 }
 
-- (jint)deleteInternalWithComYahooSquidbSqlDelete:(ComYahooSquidbSqlDelete *)delete_ {
-  return ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(self, delete_);
+- (jint)deleteInternalWithSquiDBDelete:(SquiDBDelete *)delete_ {
+  return SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(self, delete_);
 }
 
-- (jint)updateInternalWithComYahooSquidbSqlUpdate:(ComYahooSquidbSqlUpdate *)update {
-  return ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(self, update);
+- (jint)updateInternalWithSquiDBUpdate:(SquiDBUpdate *)update {
+  return SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(self, update);
 }
 
 - (void)beginTransaction {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) beginTransaction];
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) beginTransaction];
+    SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
   }
   @catch (JavaLangRuntimeException *e) {
     [self releaseNonExclusiveLock];
@@ -760,8 +760,8 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (void)beginTransactionNonExclusive {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) beginTransactionNonExclusive];
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) beginTransactionNonExclusive];
+    SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
   }
   @catch (JavaLangRuntimeException *e) {
     [self releaseNonExclusiveLock];
@@ -769,11 +769,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (void)beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener {
+- (void)beginTransactionWithListenerWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:listener];
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) beginTransactionWithListenerWithSquiDBSquidTransactionListener:listener];
+    SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
   }
   @catch (JavaLangRuntimeException *e) {
     [self releaseNonExclusiveLock];
@@ -781,11 +781,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   }
 }
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener {
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:listener];
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:listener];
+    SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
   }
   @catch (JavaLangRuntimeException *e) {
     [self releaseNonExclusiveLock];
@@ -794,39 +794,39 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)setTransactionSuccessful {
-  [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) setTransactionSuccessful];
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_setTransactionSuccessful(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
+  [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) setTransactionSuccessful];
+  SquiDBSquidDatabase_TransactionSuccessState_setTransactionSuccessful(nil_chk([((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get]));
 }
 
 - (jboolean)inTransaction {
-  return ComYahooSquidbDataSquidDatabase_inTransaction(self);
+  return SquiDBSquidDatabase_inTransaction(self);
 }
 
 - (void)endTransaction {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState *successState = [((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get];
+  SquiDBSquidDatabase_TransactionSuccessState *successState = [((JavaLangThreadLocal *) nil_chk(transactionSuccessState_)) get];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) endTransaction];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) endTransaction];
   }
   @catch (JavaLangRuntimeException *e) {
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(nil_chk(successState));
+    SquiDBSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(nil_chk(successState));
     @throw e;
   }
   @finally {
     [self releaseNonExclusiveLock];
-    ComYahooSquidbDataSquidDatabase_TransactionSuccessState_endTransaction(nil_chk(successState));
-    if (!ComYahooSquidbDataSquidDatabase_TransactionSuccessState_inTransaction(successState)) {
-      ComYahooSquidbDataSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, successState->outerTransactionSuccess_);
-      ComYahooSquidbDataSquidDatabase_TransactionSuccessState_reset(successState);
+    SquiDBSquidDatabase_TransactionSuccessState_endTransaction(nil_chk(successState));
+    if (!SquiDBSquidDatabase_TransactionSuccessState_inTransaction(successState)) {
+      SquiDBSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, successState->outerTransactionSuccess_);
+      SquiDBSquidDatabase_TransactionSuccessState_reset(successState);
     }
   }
 }
 
 - (jboolean)yieldIfContendedSafely {
-  return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) yieldIfContendedSafely];
+  return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) yieldIfContendedSafely];
 }
 
 - (jboolean)yieldIfContendedSafelyWithLong:(jlong)sleepAfterYieldDelay {
-  return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) yieldIfContendedSafelyWithLong:sleepAfterYieldDelay];
+  return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) yieldIfContendedSafelyWithLong:sleepAfterYieldDelay];
 }
 
 - (void)acquireExclusiveLock {
@@ -848,75 +848,75 @@ J2OBJC_IGNORE_DESIGNATED_END
   [((JavaUtilConcurrentLocksReentrantReadWriteLock_ReadLock *) nil_chk([((JavaUtilConcurrentLocksReentrantReadWriteLock *) nil_chk(readWriteLock_)) readLock])) unlock];
 }
 
-- (void)setDatabaseWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(self, db);
+- (void)setDatabaseWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(self, db);
 }
 
-- (ComYahooSquidbUtilityVersionCode *)readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
-  return ComYahooSquidbDataSquidDatabase_readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase_(self, db);
+- (SquiDBVersionCode *)readSqliteVersionLockedWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
+  return SquiDBSquidDatabase_readSqliteVersionLockedWithSquiDBISQLiteDatabase_(self, db);
 }
 
-- (jboolean)tryAddColumnWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  if (!ComYahooSquidbDataSquidDatabase_propertyBelongsToTableWithComYahooSquidbSqlProperty_(self, property)) {
+- (jboolean)tryAddColumnWithSquiDBProperty:(SquiDBProperty *)property {
+  if (!SquiDBSquidDatabase_propertyBelongsToTableWithSquiDBProperty_(self, property)) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Can't alter table: property does not belong to a Table");
   }
-  ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *visitor = new_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init();
-  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"ALTER TABLE "])) appendWithNSString:((ComYahooSquidbSqlTableModelName *) nil_chk(((ComYahooSquidbSqlProperty *) nil_chk(property))->tableModelName_))->tableName_])) appendWithNSString:@" ADD "];
-  (void) [property acceptWithComYahooSquidbSqlProperty_PropertyVisitor:visitor withId:sql];
+  SquiDBSquidDatabase_SqlConstructorVisitor *visitor = new_SquiDBSquidDatabase_SqlConstructorVisitor_init();
+  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"ALTER TABLE "])) appendWithNSString:((SquiDBTableModelName *) nil_chk(((SquiDBProperty *) nil_chk(property))->tableModelName_))->tableName_])) appendWithNSString:@" ADD "];
+  (void) [property acceptWithSquiDBProperty_PropertyVisitor:visitor withId:sql];
   return [self tryExecSqlWithNSString:[sql description]];
 }
 
-- (jboolean)propertyBelongsToTableWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbDataSquidDatabase_propertyBelongsToTableWithComYahooSquidbSqlProperty_(self, property);
+- (jboolean)propertyBelongsToTableWithSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBSquidDatabase_propertyBelongsToTableWithSquiDBProperty_(self, property);
 }
 
-- (jboolean)tryCreateTableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *sqlVisitor = new_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init();
-  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
-  [((ComYahooSquidbSqlTable *) nil_chk(table)) appendCreateTableSqlWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self) withJavaLangStringBuilder:sql withComYahooSquidbSqlProperty_PropertyVisitor:sqlVisitor];
+- (jboolean)tryCreateTableWithSquiDBTable:(SquiDBTable *)table {
+  SquiDBSquidDatabase_SqlConstructorVisitor *sqlVisitor = new_SquiDBSquidDatabase_SqlConstructorVisitor_init();
+  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
+  [((SquiDBTable *) nil_chk(table)) appendCreateTableSqlWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self) withJavaLangStringBuilder:sql withSquiDBProperty_PropertyVisitor:sqlVisitor];
   return [self tryExecSqlWithNSString:[sql description]];
 }
 
-- (jboolean)tryDropTableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  return [self tryExecSqlWithNSString:JreStrcat("$$", @"DROP TABLE IF EXISTS ", [((ComYahooSquidbSqlTable *) nil_chk(table)) getExpression])];
+- (jboolean)tryDropTableWithSquiDBTable:(SquiDBTable *)table {
+  return [self tryExecSqlWithNSString:JreStrcat("$$", @"DROP TABLE IF EXISTS ", [((SquiDBTable *) nil_chk(table)) getExpression])];
 }
 
-- (jboolean)tryCreateViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
-  [((ComYahooSquidbSqlView *) nil_chk(view)) createViewSqlWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self) withJavaLangStringBuilder:sql];
+- (jboolean)tryCreateViewWithSquiDBView:(SquiDBView *)view {
+  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
+  [((SquiDBView *) nil_chk(view)) createViewSqlWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self) withJavaLangStringBuilder:sql];
   return [self tryExecSqlWithNSString:[sql description]];
 }
 
-- (jboolean)tryDropViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  return [self tryExecSqlWithNSString:JreStrcat("$$", @"DROP VIEW IF EXISTS ", [((ComYahooSquidbSqlView *) nil_chk(view)) getExpression])];
+- (jboolean)tryDropViewWithSquiDBView:(SquiDBView *)view {
+  return [self tryExecSqlWithNSString:JreStrcat("$$", @"DROP VIEW IF EXISTS ", [((SquiDBView *) nil_chk(view)) getExpression])];
 }
 
-- (jboolean)tryCreateIndexWithComYahooSquidbSqlIndex:(ComYahooSquidbSqlIndex *)index {
-  return [self tryCreateIndexWithNSString:[((ComYahooSquidbSqlIndex *) nil_chk(index)) getName] withComYahooSquidbSqlTable:[index getTable] withBoolean:[index isUnique] withComYahooSquidbSqlPropertyArray:[index getProperties]];
+- (jboolean)tryCreateIndexWithSquiDBIndex:(SquiDBIndex *)index {
+  return [self tryCreateIndexWithNSString:[((SquiDBIndex *) nil_chk(index)) getName] withSquiDBTable:[index getTable] withBoolean:[index isUnique] withSquiDBPropertyArray:[index getProperties]];
 }
 
 - (jboolean)tryCreateIndexWithNSString:(NSString *)indexName
-            withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
+                       withSquiDBTable:(SquiDBTable *)table
                            withBoolean:(jboolean)unique
-    withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
+               withSquiDBPropertyArray:(IOSObjectArray *)properties {
   if (properties == nil || properties->size_ == 0) {
     [self onErrorWithNSString:NSString_java_formatWithNSString_withNSObjectArray_(@"Cannot create index %s: no properties specified", [IOSObjectArray newArrayWithObjects:(id[]){ indexName } count:1 type:NSObject_class_()]) withJavaLangThrowable:nil];
     return false;
   }
-  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
+  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
   (void) [sql appendWithNSString:@"CREATE "];
   if (unique) {
     (void) [sql appendWithNSString:@"UNIQUE "];
   }
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"INDEX IF NOT EXISTS "])) appendWithNSString:indexName])) appendWithNSString:@" ON "])) appendWithNSString:[((ComYahooSquidbSqlTable *) nil_chk(table)) getExpression]])) appendWithNSString:@"("];
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"INDEX IF NOT EXISTS "])) appendWithNSString:indexName])) appendWithNSString:@" ON "])) appendWithNSString:[((SquiDBTable *) nil_chk(table)) getExpression]])) appendWithNSString:@"("];
   {
     IOSObjectArray *a__ = properties;
-    ComYahooSquidbSqlProperty * const *b__ = a__->buffer_;
-    ComYahooSquidbSqlProperty * const *e__ = b__ + a__->size_;
+    SquiDBProperty * const *b__ = a__->buffer_;
+    SquiDBProperty * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      ComYahooSquidbSqlProperty *p = *b__++;
-      (void) [((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(p)) getName]])) appendWithNSString:@","];
+      SquiDBProperty *p = *b__++;
+      (void) [((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:[((SquiDBProperty *) nil_chk(p)) getName]])) appendWithNSString:@","];
     }
   }
   (void) [sql deleteCharAtWithInt:[sql java_length] - 1];
@@ -924,23 +924,23 @@ J2OBJC_IGNORE_DESIGNATED_END
   return [self tryExecSqlWithNSString:[sql description]];
 }
 
-- (jboolean)tryDropIndexWithComYahooSquidbSqlIndex:(ComYahooSquidbSqlIndex *)index {
-  return [self tryDropIndexWithNSString:[((ComYahooSquidbSqlIndex *) nil_chk(index)) getName]];
+- (jboolean)tryDropIndexWithSquiDBIndex:(SquiDBIndex *)index {
+  return [self tryDropIndexWithNSString:[((SquiDBIndex *) nil_chk(index)) getName]];
 }
 
 - (jboolean)tryDropIndexWithNSString:(NSString *)indexName {
   return [self tryExecSqlWithNSString:JreStrcat("$$", @"DROP INDEX IF EXISTS ", indexName)];
 }
 
-- (jboolean)tryExecStatementWithComYahooSquidbSqlSqlStatement:(id<ComYahooSquidbSqlSqlStatement>)statement {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((id<ComYahooSquidbSqlSqlStatement>) nil_chk(statement)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-  return [self tryExecSqlWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+- (jboolean)tryExecStatementWithSquiDBSqlStatement:(id<SquiDBSqlStatement>)statement {
+  SquiDBCompiledStatement *compiled = [((id<SquiDBSqlStatement>) nil_chk(statement)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+  return [self tryExecSqlWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
 }
 
 - (jboolean)tryExecSqlWithNSString:(NSString *)sql {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) execSQLWithNSString:sql];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) execSQLWithNSString:sql];
     return true;
   }
   @catch (JavaLangRuntimeException *e) {
@@ -955,7 +955,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (void)execSqlOrThrowWithNSString:(NSString *)sql {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) execSQLWithNSString:sql];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) execSQLWithNSString:sql];
   }
   @finally {
     [self releaseNonExclusiveLock];
@@ -966,7 +966,7 @@ J2OBJC_IGNORE_DESIGNATED_END
                  withNSObjectArray:(IOSObjectArray *)bindArgs {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) execSQLWithNSString:sql withNSObjectArray:bindArgs];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) execSQLWithNSString:sql withNSObjectArray:bindArgs];
     return true;
   }
   @catch (JavaLangRuntimeException *e) {
@@ -982,20 +982,20 @@ J2OBJC_IGNORE_DESIGNATED_END
                  withNSObjectArray:(IOSObjectArray *)bindArgs {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) execSQLWithNSString:sql withNSObjectArray:bindArgs];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) execSQLWithNSString:sql withNSObjectArray:bindArgs];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-- (ComYahooSquidbUtilityVersionCode *)getSqliteVersion {
-  ComYahooSquidbUtilityVersionCode *toReturn = sqliteVersion_;
+- (SquiDBVersionCode *)getSqliteVersion {
+  SquiDBVersionCode *toReturn = sqliteVersion_;
   if (toReturn == nil) {
     [self acquireNonExclusiveLock];
     @try {
       @synchronized(databaseInstanceLock_) {
-        (void) ComYahooSquidbDataSquidDatabase_getDatabase(self);
+        (void) SquiDBSquidDatabase_getDatabase(self);
         return sqliteVersion_;
       }
     }
@@ -1006,72 +1006,72 @@ J2OBJC_IGNORE_DESIGNATED_END
   return toReturn;
 }
 
-- (ComYahooSquidbSqlCompileContext *)getCompileContext {
-  return ComYahooSquidbDataSquidDatabase_getCompileContext(self);
+- (SquiDBCompileContext *)getCompileContext {
+  return SquiDBSquidDatabase_getCompileContext(self);
 }
 
-- (void)buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:(ComYahooSquidbSqlCompileContext_Builder *)builder {
+- (void)buildCompileContextWithSquiDBCompileContext_Builder:(SquiDBCompileContext_Builder *)builder {
 }
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql {
+- (id<SquiDBISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql {
   [self acquireNonExclusiveLock];
   @try {
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) prepareStatementWithNSString:sql];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) prepareStatementWithNSString:sql];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-- (ComYahooSquidbDataSquidCursor *)queryWithIOSClass:(IOSClass *)modelClass
-                          withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  query = ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(self, modelClass, query);
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlQuery *) nil_chk(query)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-  if (((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->needsValidation_) {
-    NSString *validateSql = [query sqlForValidationWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-    ComYahooSquidbDataSquidDatabase_ensureSqlCompilesWithNSString_(self, validateSql);
+- (SquiDBSquidCursor *)queryWithIOSClass:(IOSClass *)modelClass
+                         withSquiDBQuery:(SquiDBQuery *)query {
+  query = SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(self, modelClass, query);
+  SquiDBCompiledStatement *compiled = [((SquiDBQuery *) nil_chk(query)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+  if (((SquiDBCompiledStatement *) nil_chk(compiled))->needsValidation_) {
+    NSString *validateSql = [query sqlForValidationWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+    SquiDBSquidDatabase_ensureSqlCompilesWithNSString_(self, validateSql);
   }
-  id<ComYahooSquidbDataICursor> cursor = [self rawQueryWithNSString:compiled->sql_ withNSObjectArray:compiled->sqlArgs_];
-  return new_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(cursor, modelClass, [query getFields]);
+  id<SquiDBICursor> cursor = [self rawQueryWithNSString:compiled->sql_ withNSObjectArray:compiled->sqlArgs_];
+  return new_SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(cursor, modelClass, [query getFields]);
 }
 
-- (ComYahooSquidbSqlQuery *)inferTableForQueryWithIOSClass:(IOSClass *)modelClass
-                                withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  return ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(self, modelClass, query);
+- (SquiDBQuery *)inferTableForQueryWithIOSClass:(IOSClass *)modelClass
+                                withSquiDBQuery:(SquiDBQuery *)query {
+  return SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(self, modelClass, query);
 }
 
 - (void)ensureSqlCompilesWithNSString:(NSString *)sql {
-  ComYahooSquidbDataSquidDatabase_ensureSqlCompilesWithNSString_(self, sql);
+  SquiDBSquidDatabase_ensureSqlCompilesWithNSString_(self, sql);
 }
 
-- (ComYahooSquidbDataTableModel *)fetchWithIOSClass:(IOSClass *)modelClass
-                                           withLong:(jlong)id_
-                 withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbDataSquidCursor *cursor = [self fetchItemByIdWithIOSClass:modelClass withLong:id_ withComYahooSquidbSqlPropertyArray:properties];
-  return ((ComYahooSquidbDataTableModel *) [self returnFetchResultWithIOSClass:modelClass withComYahooSquidbDataSquidCursor:cursor]);
+- (SquiDBTableModel *)fetchWithIOSClass:(IOSClass *)modelClass
+                               withLong:(jlong)id_
+                withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBSquidCursor *cursor = [self fetchItemByIdWithIOSClass:modelClass withLong:id_ withSquiDBPropertyArray:properties];
+  return ((SquiDBTableModel *) [self returnFetchResultWithIOSClass:modelClass withSquiDBSquidCursor:cursor]);
 }
 
-- (ComYahooSquidbDataAbstractModel *)fetchByCriterionWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbDataSquidCursor *cursor = [self fetchFirstItemWithIOSClass:modelClass withComYahooSquidbSqlCriterion:criterion withComYahooSquidbSqlPropertyArray:properties];
-  return [self returnFetchResultWithIOSClass:modelClass withComYahooSquidbDataSquidCursor:cursor];
+- (SquiDBAbstractModel *)fetchByCriterionWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBCriterion:(SquiDBCriterion *)criterion
+                              withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBSquidCursor *cursor = [self fetchFirstItemWithIOSClass:modelClass withSquiDBCriterion:criterion withSquiDBPropertyArray:properties];
+  return [self returnFetchResultWithIOSClass:modelClass withSquiDBSquidCursor:cursor];
 }
 
-- (ComYahooSquidbDataAbstractModel *)fetchByQueryWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  ComYahooSquidbDataSquidCursor *cursor = [self fetchFirstItemWithIOSClass:modelClass withComYahooSquidbSqlQuery:query];
-  return [self returnFetchResultWithIOSClass:modelClass withComYahooSquidbDataSquidCursor:cursor];
+- (SquiDBAbstractModel *)fetchByQueryWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBQuery:(SquiDBQuery *)query {
+  SquiDBSquidCursor *cursor = [self fetchFirstItemWithIOSClass:modelClass withSquiDBQuery:query];
+  return [self returnFetchResultWithIOSClass:modelClass withSquiDBSquidCursor:cursor];
 }
 
-- (ComYahooSquidbDataAbstractModel *)returnFetchResultWithIOSClass:(IOSClass *)modelClass
-                                 withComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor {
+- (SquiDBAbstractModel *)returnFetchResultWithIOSClass:(IOSClass *)modelClass
+                                 withSquiDBSquidCursor:(SquiDBSquidCursor *)cursor {
   @try {
-    if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) getCount] == 0) {
+    if ([((SquiDBSquidCursor *) nil_chk(cursor)) getCount] == 0) {
       return nil;
     }
-    ComYahooSquidbDataAbstractModel *toReturn = [((IOSClass *) nil_chk(modelClass)) newInstance];
-    [((ComYahooSquidbDataAbstractModel *) nil_chk(toReturn)) readPropertiesFromCursorWithComYahooSquidbDataSquidCursor:cursor];
+    SquiDBAbstractModel *toReturn = [((IOSClass *) nil_chk(modelClass)) newInstance];
+    [((SquiDBAbstractModel *) nil_chk(toReturn)) readPropertiesFromCursorWithSquiDBSquidCursor:cursor];
     return toReturn;
   }
   @catch (JavaLangException *e) {
@@ -1084,177 +1084,177 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (jboolean)delete__WithIOSClass:(IOSClass *)modelClass
                         withLong:(jlong)id_ {
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
-  jint rowsUpdated = ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(self, [((ComYahooSquidbSqlDelete *) nil_chk(ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlTable_(table))) whereWithComYahooSquidbSqlCriterion:[((ComYahooSquidbSqlProperty_LongProperty *) nil_chk([((ComYahooSquidbSqlTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_(id_)]]);
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
+  jint rowsUpdated = SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(self, [((SquiDBDelete *) nil_chk(SquiDBDelete_fromWithSquiDBTable_(table))) whereWithSquiDBCriterion:[((SquiDBProperty_LongProperty *) nil_chk([((SquiDBTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_(id_)]]);
   if (rowsUpdated > 0) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE), nil, table, id_);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, DELETE), nil, table, id_);
   }
   return rowsUpdated > 0;
 }
 
 - (jint)deleteWhereWithIOSClass:(IOSClass *)modelClass
- withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where {
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
-  ComYahooSquidbSqlDelete *delete_ = ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlTable_(table);
+            withSquiDBCriterion:(SquiDBCriterion *)where {
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
+  SquiDBDelete *delete_ = SquiDBDelete_fromWithSquiDBTable_(table);
   if (where != nil) {
-    (void) [((ComYahooSquidbSqlDelete *) nil_chk(delete_)) whereWithComYahooSquidbSqlCriterion:where];
+    (void) [((SquiDBDelete *) nil_chk(delete_)) whereWithSquiDBCriterion:where];
   }
-  jint rowsUpdated = ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(self, delete_);
+  jint rowsUpdated = SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(self, delete_);
   if (rowsUpdated > 0) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE), nil, table, ComYahooSquidbDataTableModel_NO_ID);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, DELETE), nil, table, SquiDBTableModel_NO_ID);
   }
   return rowsUpdated;
 }
 
 - (jint)deleteAllWithIOSClass:(IOSClass *)modelClass {
-  return [self deleteWhereWithIOSClass:modelClass withComYahooSquidbSqlCriterion:nil];
+  return [self deleteWhereWithIOSClass:modelClass withSquiDBCriterion:nil];
 }
 
-- (jint)delete__WithComYahooSquidbSqlDelete:(ComYahooSquidbSqlDelete *)delete_ {
-  jint result = ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(self, delete_);
+- (jint)delete__WithSquiDBDelete:(SquiDBDelete *)delete_ {
+  jint result = SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(self, delete_);
   if (result > 0) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE), nil, [((ComYahooSquidbSqlDelete *) nil_chk(delete_)) getTable], ComYahooSquidbDataTableModel_NO_ID);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, DELETE), nil, [((SquiDBDelete *) nil_chk(delete_)) getTable], SquiDBTableModel_NO_ID);
   }
   return result;
 }
 
-- (jint)updateWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where
-            withComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_ {
-  return [self updateWithOnConflictWithComYahooSquidbSqlCriterion:where withComYahooSquidbDataTableModel:template_ withComYahooSquidbSqlTableStatement_ConflictAlgorithm:nil];
+- (jint)updateWithSquiDBCriterion:(SquiDBCriterion *)where
+             withSquiDBTableModel:(SquiDBTableModel *)template_ {
+  return [self updateWithOnConflictWithSquiDBCriterion:where withSquiDBTableModel:template_ withSquiDBTableStatement_ConflictAlgorithm:nil];
 }
 
-- (jint)updateAllWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_ {
-  return [self updateWithComYahooSquidbSqlCriterion:nil withComYahooSquidbDataTableModel:template_];
+- (jint)updateAllWithSquiDBTableModel:(SquiDBTableModel *)template_ {
+  return [self updateWithSquiDBCriterion:nil withSquiDBTableModel:template_];
 }
 
-- (jint)updateWithOnConflictWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)where
-                          withComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_
-     withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  IOSClass *modelClass = [((ComYahooSquidbDataTableModel *) nil_chk(template_)) java_getClass];
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
-  ComYahooSquidbSqlUpdate *update = [((ComYahooSquidbSqlUpdate *) nil_chk(ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlTable_(table))) fromTemplateWithComYahooSquidbDataAbstractModel:template_];
+- (jint)updateWithOnConflictWithSquiDBCriterion:(SquiDBCriterion *)where
+                           withSquiDBTableModel:(SquiDBTableModel *)template_
+     withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  IOSClass *modelClass = [((SquiDBTableModel *) nil_chk(template_)) java_getClass];
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
+  SquiDBUpdate *update = [((SquiDBUpdate *) nil_chk(SquiDBUpdate_tableWithSquiDBTable_(table))) fromTemplateWithSquiDBAbstractModel:template_];
   if (where != nil) {
-    (void) [((ComYahooSquidbSqlUpdate *) nil_chk(update)) whereWithComYahooSquidbSqlCriterion:where];
+    (void) [((SquiDBUpdate *) nil_chk(update)) whereWithSquiDBCriterion:where];
   }
   if (conflictAlgorithm != nil) {
-    (void) [((ComYahooSquidbSqlUpdate *) nil_chk(update)) onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:conflictAlgorithm];
+    (void) [((SquiDBUpdate *) nil_chk(update)) onConflictWithSquiDBTableStatement_ConflictAlgorithm:conflictAlgorithm];
   }
-  jint rowsUpdated = ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(self, update);
+  jint rowsUpdated = SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(self, update);
   if (rowsUpdated > 0) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE), template_, table, ComYahooSquidbDataTableModel_NO_ID);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE), template_, table, SquiDBTableModel_NO_ID);
   }
   return rowsUpdated;
 }
 
-- (jint)updateAllWithOnConflictWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)template_
-          withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  return [self updateWithOnConflictWithComYahooSquidbSqlCriterion:nil withComYahooSquidbDataTableModel:template_ withComYahooSquidbSqlTableStatement_ConflictAlgorithm:conflictAlgorithm];
+- (jint)updateAllWithOnConflictWithSquiDBTableModel:(SquiDBTableModel *)template_
+         withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  return [self updateWithOnConflictWithSquiDBCriterion:nil withSquiDBTableModel:template_ withSquiDBTableStatement_ConflictAlgorithm:conflictAlgorithm];
 }
 
-- (jint)updateWithComYahooSquidbSqlUpdate:(ComYahooSquidbSqlUpdate *)update {
-  jint result = ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(self, update);
+- (jint)updateWithSquiDBUpdate:(SquiDBUpdate *)update {
+  jint result = SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(self, update);
   if (result > 0) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE), nil, [((ComYahooSquidbSqlUpdate *) nil_chk(update)) getTable], ComYahooSquidbDataTableModel_NO_ID);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE), nil, [((SquiDBUpdate *) nil_chk(update)) getTable], SquiDBTableModel_NO_ID);
   }
   return result;
 }
 
-- (jboolean)persistWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item {
-  return [self persistWithOnConflictWithComYahooSquidbDataTableModel:item withComYahooSquidbSqlTableStatement_ConflictAlgorithm:nil];
+- (jboolean)persistWithSquiDBTableModel:(SquiDBTableModel *)item {
+  return [self persistWithOnConflictWithSquiDBTableModel:item withSquiDBTableStatement_ConflictAlgorithm:nil];
 }
 
-- (jboolean)persistWithOnConflictWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-            withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  if (![((ComYahooSquidbDataTableModel *) nil_chk(item)) isSaved]) {
-    return ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
+- (jboolean)persistWithOnConflictWithSquiDBTableModel:(SquiDBTableModel *)item
+           withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  if (![((SquiDBTableModel *) nil_chk(item)) isSaved]) {
+    return SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
   }
   if (![item isModified]) {
     return true;
   }
-  return ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
+  return SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
 }
 
-- (jboolean)createNewWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item {
-  (void) [((ComYahooSquidbDataTableModel *) nil_chk(item)) setRowIdWithLong:ComYahooSquidbDataTableModel_NO_ID];
-  return ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, nil);
+- (jboolean)createNewWithSquiDBTableModel:(SquiDBTableModel *)item {
+  (void) [((SquiDBTableModel *) nil_chk(item)) setRowIdWithLong:SquiDBTableModel_NO_ID];
+  return SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, nil);
 }
 
-- (jboolean)saveExistingWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item {
-  return ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, nil);
+- (jboolean)saveExistingWithSquiDBTableModel:(SquiDBTableModel *)item {
+  return SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, nil);
 }
 
-- (jboolean)insertRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item {
-  return ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, nil);
+- (jboolean)insertRowWithSquiDBTableModel:(SquiDBTableModel *)item {
+  return SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, nil);
 }
 
-- (jboolean)insertRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  return ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
+- (jboolean)insertRowWithSquiDBTableModel:(SquiDBTableModel *)item
+withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  return SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
 }
 
-- (jlong)insertRowLegacyWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-                              withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-   withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  return ComYahooSquidbDataSquidDatabase_insertRowLegacyWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTable_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, table, conflictAlgorithm);
+- (jlong)insertRowLegacyWithSquiDBTableModel:(SquiDBTableModel *)item
+                             withSquiDBTable:(SquiDBTable *)table
+  withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  return SquiDBSquidDatabase_insertRowLegacyWithSquiDBTableModel_withSquiDBTable_withSquiDBTableStatement_ConflictAlgorithm_(self, item, table, conflictAlgorithm);
 }
 
-- (jboolean)updateRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item {
-  return ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, nil);
+- (jboolean)updateRowWithSquiDBTableModel:(SquiDBTableModel *)item {
+  return SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, nil);
 }
 
-- (jboolean)updateRowWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)item
-withComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm {
-  return ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
+- (jboolean)updateRowWithSquiDBTableModel:(SquiDBTableModel *)item
+withSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm {
+  return SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(self, item, conflictAlgorithm);
 }
 
-- (jlong)insertWithComYahooSquidbSqlInsert:(ComYahooSquidbSqlInsert *)insert {
-  jlong result = ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(self, insert);
-  if (result > ComYahooSquidbDataTableModel_NO_ID) {
-    jint numInserted = [((ComYahooSquidbSqlInsert *) nil_chk(insert)) getNumRows];
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT), nil, [insert getTable], numInserted == 1 ? result : ComYahooSquidbDataTableModel_NO_ID);
+- (jlong)insertWithSquiDBInsert:(SquiDBInsert *)insert {
+  jlong result = SquiDBSquidDatabase_insertInternalWithSquiDBInsert_(self, insert);
+  if (result > SquiDBTableModel_NO_ID) {
+    jint numInserted = [((SquiDBInsert *) nil_chk(insert)) getNumRows];
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, INSERT), nil, [insert getTable], numInserted == 1 ? result : SquiDBTableModel_NO_ID);
   }
   return result;
 }
 
-- (ComYahooSquidbDataSquidCursor *)fetchItemByIdWithIOSClass:(IOSClass *)modelClass
-                                                    withLong:(jlong)id_
-                          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
-  return [self fetchFirstItemWithIOSClass:modelClass withComYahooSquidbSqlCriterion:[((ComYahooSquidbSqlProperty_LongProperty *) nil_chk([((ComYahooSquidbSqlTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_(id_)] withComYahooSquidbSqlPropertyArray:properties];
+- (SquiDBSquidCursor *)fetchItemByIdWithIOSClass:(IOSClass *)modelClass
+                                        withLong:(jlong)id_
+                         withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
+  return [self fetchFirstItemWithIOSClass:modelClass withSquiDBCriterion:[((SquiDBProperty_LongProperty *) nil_chk([((SquiDBTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_(id_)] withSquiDBPropertyArray:properties];
 }
 
-- (ComYahooSquidbDataSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
-                               withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion
-                           withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  return [self fetchFirstItemWithIOSClass:modelClass withComYahooSquidbSqlQuery:[((ComYahooSquidbSqlQuery *) nil_chk(ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_(properties))) whereWithComYahooSquidbSqlCriterion:criterion]];
+- (SquiDBSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
+                              withSquiDBCriterion:(SquiDBCriterion *)criterion
+                          withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  return [self fetchFirstItemWithIOSClass:modelClass withSquiDBQuery:[((SquiDBQuery *) nil_chk(SquiDBQuery_selectWithSquiDBFieldArray_(properties))) whereWithSquiDBCriterion:criterion]];
 }
 
-- (ComYahooSquidbDataSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
-                                   withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  jboolean immutableQuery = [((ComYahooSquidbSqlQuery *) nil_chk(query)) isImmutable];
-  ComYahooSquidbSqlField *beforeLimit = [query getLimit];
-  ComYahooSquidbSqlSqlTable *beforeTable = [query getTable];
+- (SquiDBSquidCursor *)fetchFirstItemWithIOSClass:(IOSClass *)modelClass
+                                  withSquiDBQuery:(SquiDBQuery *)query {
+  jboolean immutableQuery = [((SquiDBQuery *) nil_chk(query)) isImmutable];
+  SquiDBField *beforeLimit = [query getLimit];
+  SquiDBSqlTable *beforeTable = [query getTable];
   query = [query limitWithInt:1];
-  ComYahooSquidbDataSquidCursor *cursor = [self queryWithIOSClass:modelClass withComYahooSquidbSqlQuery:query];
+  SquiDBSquidCursor *cursor = [self queryWithIOSClass:modelClass withSquiDBQuery:query];
   if (!immutableQuery) {
-    (void) [((ComYahooSquidbSqlQuery *) nil_chk([((ComYahooSquidbSqlQuery *) nil_chk(query)) fromWithComYahooSquidbSqlSqlTable:beforeTable])) limitWithComYahooSquidbSqlField:beforeLimit];
+    (void) [((SquiDBQuery *) nil_chk([((SquiDBQuery *) nil_chk(query)) fromWithSquiDBSqlTable:beforeTable])) limitWithSquiDBField:beforeLimit];
   }
-  [((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) moveToFirst];
+  [((SquiDBSquidCursor *) nil_chk(cursor)) moveToFirst];
   return cursor;
 }
 
 - (jint)countWithIOSClass:(IOSClass *)modelClass
-withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
-  ComYahooSquidbSqlProperty_IntegerProperty *countProperty = ComYahooSquidbSqlProperty_IntegerProperty_countProperty();
-  ComYahooSquidbSqlQuery *query = ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_([IOSObjectArray newArrayWithObjects:(id[]){ countProperty } count:1 type:ComYahooSquidbSqlField_class_()]);
+      withSquiDBCriterion:(SquiDBCriterion *)criterion {
+  SquiDBProperty_IntegerProperty *countProperty = SquiDBProperty_IntegerProperty_countProperty();
+  SquiDBQuery *query = SquiDBQuery_selectWithSquiDBFieldArray_([IOSObjectArray newArrayWithObjects:(id[]){ countProperty } count:1 type:SquiDBField_class_()]);
   if (criterion != nil) {
-    (void) [((ComYahooSquidbSqlQuery *) nil_chk(query)) whereWithComYahooSquidbSqlCriterion:criterion];
+    (void) [((SquiDBQuery *) nil_chk(query)) whereWithSquiDBCriterion:criterion];
   }
-  query = ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(self, modelClass, query);
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlQuery *) nil_chk(query)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
+  query = SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(self, modelClass, query);
+  SquiDBCompiledStatement *compiled = [((SquiDBQuery *) nil_chk(query)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
-    return (jint) [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) simpleQueryForLongWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+    return (jint) [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) simpleQueryForLongWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
     [self releaseNonExclusiveLock];
@@ -1262,10 +1262,10 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
 }
 
 - (jint)countAllWithIOSClass:(IOSClass *)modelClass {
-  return [self countWithIOSClass:modelClass withComYahooSquidbSqlCriterion:nil];
+  return [self countWithIOSClass:modelClass withSquiDBCriterion:nil];
 }
 
-- (void)registerDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:(ComYahooSquidbDataDataChangedNotifier *)notifier {
+- (void)registerDataChangedNotifierWithSquiDBDataChangedNotifier:(SquiDBDataChangedNotifier *)notifier {
   if (notifier == nil) {
     return;
   }
@@ -1275,7 +1275,7 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
       [((id<JavaUtilList>) nil_chk(globalNotifiers_)) addWithId:notifier];
     }
     else {
-      for (ComYahooSquidbSqlSqlTable * __strong table in tables) {
+      for (SquiDBSqlTable * __strong table in tables) {
         id<JavaUtilList> notifiersForTable = [((id<JavaUtilMap>) nil_chk(tableNotifiers_)) getWithId:table];
         if (notifiersForTable == nil) {
           notifiersForTable = new_JavaUtilArrayList_init();
@@ -1287,7 +1287,7 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
   }
 }
 
-- (void)unregisterDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:(ComYahooSquidbDataDataChangedNotifier *)notifier {
+- (void)unregisterDataChangedNotifierWithSquiDBDataChangedNotifier:(SquiDBDataChangedNotifier *)notifier {
   if (notifier == nil) {
     return;
   }
@@ -1297,7 +1297,7 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
       [((id<JavaUtilList>) nil_chk(globalNotifiers_)) removeWithId:notifier];
     }
     else {
-      for (ComYahooSquidbSqlSqlTable * __strong table in tables) {
+      for (SquiDBSqlTable * __strong table in tables) {
         id<JavaUtilList> notifiersForTable = [((id<JavaUtilMap>) nil_chk(tableNotifiers_)) getWithId:table];
         if (notifiersForTable != nil) {
           [notifiersForTable removeWithId:notifier];
@@ -1322,43 +1322,43 @@ withComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
   return dataChangedNotificationsEnabled_;
 }
 
-- (void)notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)op
-                                        withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-                                              withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                                                   withLong:(jlong)rowId {
-  ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, op, modelValues, table, rowId);
+- (void)notifyForTableWithSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)op
+                                        withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                                             withSquiDBSqlTable:(SquiDBSqlTable *)table
+                                                       withLong:(jlong)rowId {
+  SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, op, modelValues, table, rowId);
 }
 
 - (void)onDataChangedWithJavaUtilList:(id<JavaUtilList>)notifiers
-withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)op
-  withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-        withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
+withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)op
+              withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                   withSquiDBSqlTable:(SquiDBSqlTable *)table
                              withLong:(jlong)rowId {
-  ComYahooSquidbDataSquidDatabase_onDataChangedWithJavaUtilList_withComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, notifiers, op, modelValues, table, rowId);
+  SquiDBSquidDatabase_onDataChangedWithJavaUtilList_withSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, notifiers, op, modelValues, table, rowId);
 }
 
 - (void)flushAccumulatedNotificationsWithBoolean:(jboolean)transactionSuccess {
-  ComYahooSquidbDataSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, transactionSuccess);
+  SquiDBSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, transactionSuccess);
 }
 
 - (void)explainQueryPlanWithIOSClass:(IOSClass *)modelClass
-          withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
-  query = ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(self, modelClass, query);
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlQuery *) nil_chk(query)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
-  id<ComYahooSquidbDataICursor> cursor = [self rawQueryWithNSString:JreStrcat("$$", @"EXPLAIN QUERY PLAN ", ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_) withNSObjectArray:compiled->sqlArgs_];
+                     withSquiDBQuery:(SquiDBQuery *)query {
+  query = SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(self, modelClass, query);
+  SquiDBCompiledStatement *compiled = [((SquiDBQuery *) nil_chk(query)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
+  id<SquiDBICursor> cursor = [self rawQueryWithNSString:JreStrcat("$$", @"EXPLAIN QUERY PLAN ", ((SquiDBCompiledStatement *) nil_chk(compiled))->sql_) withNSObjectArray:compiled->sqlArgs_];
   @try {
-    ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$", @"Query plan for: ", compiled->sql_));
-    ComYahooSquidbUtilitySquidUtilities_dumpCursorWithComYahooSquidbDataICursor_withInt_(cursor, -1);
+    SquiDBLogger_dWithNSString_withNSString_(SquiDBLogger_LOG_TAG, JreStrcat("$$", @"Query plan for: ", compiled->sql_));
+    SquiDBSquidUtilities_dumpCursorWithSquiDBICursor_withInt_(cursor, -1);
   }
   @finally {
-    [((id<ComYahooSquidbDataICursor>) nil_chk(cursor)) close];
+    [((id<SquiDBICursor>) nil_chk(cursor)) close];
   }
 }
 
 - (jboolean)copyDatabaseWithJavaIoFile:(JavaIoFile *)toDir {
   [self acquireExclusiveLock];
   @try {
-    return ComYahooSquidbDataSquidDatabase_copyDatabaseLockedWithJavaIoFile_(self, toDir);
+    return SquiDBSquidDatabase_copyDatabaseLockedWithJavaIoFile_(self, toDir);
   }
   @finally {
     [self releaseExclusiveLock];
@@ -1366,12 +1366,12 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
 }
 
 - (jboolean)copyDatabaseLockedWithJavaIoFile:(JavaIoFile *)toDir {
-  return ComYahooSquidbDataSquidDatabase_copyDatabaseLockedWithJavaIoFile_(self, toDir);
+  return SquiDBSquidDatabase_copyDatabaseLockedWithJavaIoFile_(self, toDir);
 }
 
 - (jboolean)copyFileIfExistsWithJavaIoFile:(JavaIoFile *)inArg
                             withJavaIoFile:(JavaIoFile *)toDir {
-  return ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, inArg, toDir);
+  return SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, inArg, toDir);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -1379,9 +1379,9 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x404, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlTable;", 0x404, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlView;", 0x4, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlIndex;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBTable;", 0x404, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBView;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBIndex;", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 2, 3, -1, -1, -1, -1 },
     { NULL, "Z", 0x404, 4, 5, -1, -1, -1, -1 },
     { NULL, "Z", 0x4, 6, 5, -1, -1, -1, -1 },
@@ -1393,12 +1393,12 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x4, 14, 15, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 16, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLiteOpenHelper;", 0x22, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLiteOpenHelper;", 0x404, 19, 20, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLiteOpenHelper;", 0x22, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLiteOpenHelper;", 0x404, 19, 20, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSqlTable;", 0x14, 21, 22, -1, 23, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTable;", 0x14, 24, 22, -1, 25, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLiteDatabase;", 0x14, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSqlTable;", 0x14, 21, 22, -1, 23, -1, -1 },
+    { NULL, "LSquiDBTable;", 0x14, 24, 22, -1, 25, -1, -1 },
+    { NULL, "LSquiDBISQLiteDatabase;", 0x14, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 26, 1, -1, -1, -1, -1 },
     { NULL, "LJavaLangThreadLocal;", 0x2, 27, 28, -1, 29, -1, -1 },
@@ -1417,7 +1417,7 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x2, 35, 1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 36, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 37, 38, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 37, 38, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 39, 38, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 40, 38, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 41, 38, -1, -1, -1, -1 },
@@ -1440,7 +1440,7 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 54, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x2, 55, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBVersionCode;", 0x2, 55, 3, -1, -1, -1, -1 },
     { NULL, "Z", 0x4, 56, 57, -1, 58, -1, -1 },
     { NULL, "Z", 0x2, 59, 57, -1, 58, -1, -1 },
     { NULL, "Z", 0x4, 60, 61, -1, -1, -1, -1 },
@@ -1456,17 +1456,17 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "V", 0x1, 75, 71, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 74, 38, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 75, 38, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext;", 0x11, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBVersionCode;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext;", 0x11, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 76, 77, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLitePreparedStatement;", 0x1, 78, 71, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x1, 79, 80, -1, 81, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x2, 82, 80, -1, 83, -1, -1 },
+    { NULL, "LSquiDBISQLitePreparedStatement;", 0x1, 78, 71, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSquidCursor;", 0x1, 79, 80, -1, 81, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x2, 82, 80, -1, 83, -1, -1 },
     { NULL, "V", 0x2, 84, 71, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataTableModel;", 0x81, 85, 86, -1, 87, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x81, 88, 89, -1, 90, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x1, 91, 80, -1, 92, -1, -1 },
-    { NULL, "LComYahooSquidbDataAbstractModel;", 0x4, 93, 94, -1, 95, -1, -1 },
+    { NULL, "LSquiDBTableModel;", 0x81, 85, 86, -1, 87, -1, -1 },
+    { NULL, "LSquiDBAbstractModel;", 0x81, 88, 89, -1, 90, -1, -1 },
+    { NULL, "LSquiDBAbstractModel;", 0x1, 91, 80, -1, 92, -1, -1 },
+    { NULL, "LSquiDBAbstractModel;", 0x4, 93, 94, -1, 95, -1, -1 },
     { NULL, "Z", 0x1, 96, 97, -1, 98, -1, -1 },
     { NULL, "I", 0x1, 99, 100, -1, 101, -1, -1 },
     { NULL, "I", 0x1, 102, 22, -1, 103, -1, -1 },
@@ -1486,9 +1486,9 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { NULL, "Z", 0x14, 119, 107, -1, -1, -1, -1 },
     { NULL, "Z", 0x14, 119, 111, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 120, 44, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 121, 86, -1, 122, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x84, 123, 89, -1, 124, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidCursor;", 0x4, 123, 80, -1, 81, -1, -1 },
+    { NULL, "LSquiDBSquidCursor;", 0x84, 121, 86, -1, 122, -1, -1 },
+    { NULL, "LSquiDBSquidCursor;", 0x84, 123, 89, -1, 124, -1, -1 },
+    { NULL, "LSquiDBSquidCursor;", 0x4, 123, 80, -1, 81, -1, -1 },
     { NULL, "I", 0x1, 125, 100, -1, 126, -1, -1 },
     { NULL, "I", 0x1, 127, 22, -1, 128, -1, -1 },
     { NULL, "V", 0x1, 129, 130, -1, 131, -1, -1 },
@@ -1513,19 +1513,19 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
   methods[3].selector = @selector(getTables);
   methods[4].selector = @selector(getViews);
   methods[5].selector = @selector(getIndexes);
-  methods[6].selector = @selector(onTablesCreatedWithComYahooSquidbDataISQLiteDatabase:);
-  methods[7].selector = @selector(onUpgradeWithComYahooSquidbDataISQLiteDatabase:withInt:withInt:);
-  methods[8].selector = @selector(onDowngradeWithComYahooSquidbDataISQLiteDatabase:withInt:withInt:);
-  methods[9].selector = @selector(onMigrationFailedWithComYahooSquidbDataSquidDatabase_MigrationFailedException:);
+  methods[6].selector = @selector(onTablesCreatedWithSquiDBISQLiteDatabase:);
+  methods[7].selector = @selector(onUpgradeWithSquiDBISQLiteDatabase:withInt:withInt:);
+  methods[8].selector = @selector(onDowngradeWithSquiDBISQLiteDatabase:withInt:withInt:);
+  methods[9].selector = @selector(onMigrationFailedWithSquiDBSquidDatabase_MigrationFailedException:);
   methods[10].selector = @selector(onDatabaseOpenFailedWithJavaLangRuntimeException:withInt:);
-  methods[11].selector = @selector(onConfigureWithComYahooSquidbDataISQLiteDatabase:);
-  methods[12].selector = @selector(onOpenWithComYahooSquidbDataISQLiteDatabase:);
-  methods[13].selector = @selector(onCloseWithComYahooSquidbDataISQLiteDatabase:);
+  methods[11].selector = @selector(onConfigureWithSquiDBISQLiteDatabase:);
+  methods[12].selector = @selector(onOpenWithSquiDBISQLiteDatabase:);
+  methods[13].selector = @selector(onCloseWithSquiDBISQLiteDatabase:);
   methods[14].selector = @selector(onErrorWithNSString:withJavaLangThrowable:);
   methods[15].selector = @selector(init);
-  methods[16].selector = @selector(registerTableModelsWithComYahooSquidbSqlSqlTableArray:);
+  methods[16].selector = @selector(registerTableModelsWithSquiDBSqlTableArray:);
   methods[17].selector = @selector(getOpenHelper);
-  methods[18].selector = @selector(createOpenHelperWithNSString:withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:withInt:);
+  methods[18].selector = @selector(createOpenHelperWithNSString:withSquiDBSquidDatabase_OpenHelperDelegate:withInt:);
   methods[19].selector = @selector(getDatabasePath);
   methods[20].selector = @selector(getSqlTableWithIOSClass:);
   methods[21].selector = @selector(getTableWithIOSClass:);
@@ -1533,10 +1533,10 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
   methods[23].selector = @selector(openForWritingLocked);
   methods[24].selector = @selector(setPreparedInsertCacheEnabledWithBoolean:);
   methods[25].selector = @selector(newPreparedInsertCacheWithJavaUtilSet:);
-  methods[26].selector = @selector(attachDatabaseWithComYahooSquidbDataSquidDatabase:);
-  methods[27].selector = @selector(detachDatabaseWithComYahooSquidbDataSquidDatabase:);
-  methods[28].selector = @selector(attachToWithComYahooSquidbDataSquidDatabase:);
-  methods[29].selector = @selector(detachFromWithComYahooSquidbDataSquidDatabase:);
+  methods[26].selector = @selector(attachDatabaseWithSquiDBSquidDatabase:);
+  methods[27].selector = @selector(detachDatabaseWithSquiDBSquidDatabase:);
+  methods[28].selector = @selector(attachToWithSquiDBSquidDatabase:);
+  methods[29].selector = @selector(detachFromWithSquiDBSquidDatabase:);
   methods[30].selector = @selector(getAttachedName);
   methods[31].selector = @selector(isOpen);
   methods[32].selector = @selector(close);
@@ -1552,15 +1552,15 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
   methods[42].selector = @selector(onShowSqlWithNSString:withNSObjectArray:);
   methods[43].selector = @selector(simpleQueryForStringWithNSString:withNSObjectArray:);
   methods[44].selector = @selector(simpleQueryForLongWithNSString:withNSObjectArray:);
-  methods[45].selector = @selector(simpleQueryForStringWithComYahooSquidbSqlQuery:);
-  methods[46].selector = @selector(simpleQueryForLongWithComYahooSquidbSqlQuery:);
-  methods[47].selector = @selector(insertInternalWithComYahooSquidbSqlInsert:);
-  methods[48].selector = @selector(deleteInternalWithComYahooSquidbSqlDelete:);
-  methods[49].selector = @selector(updateInternalWithComYahooSquidbSqlUpdate:);
+  methods[45].selector = @selector(simpleQueryForStringWithSquiDBQuery:);
+  methods[46].selector = @selector(simpleQueryForLongWithSquiDBQuery:);
+  methods[47].selector = @selector(insertInternalWithSquiDBInsert:);
+  methods[48].selector = @selector(deleteInternalWithSquiDBDelete:);
+  methods[49].selector = @selector(updateInternalWithSquiDBUpdate:);
   methods[50].selector = @selector(beginTransaction);
   methods[51].selector = @selector(beginTransactionNonExclusive);
-  methods[52].selector = @selector(beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:);
-  methods[53].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:);
+  methods[52].selector = @selector(beginTransactionWithListenerWithSquiDBSquidTransactionListener:);
+  methods[53].selector = @selector(beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:);
   methods[54].selector = @selector(setTransactionSuccessful);
   methods[55].selector = @selector(inTransaction);
   methods[56].selector = @selector(endTransaction);
@@ -1570,83 +1570,83 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
   methods[60].selector = @selector(releaseExclusiveLock);
   methods[61].selector = @selector(acquireNonExclusiveLock);
   methods[62].selector = @selector(releaseNonExclusiveLock);
-  methods[63].selector = @selector(setDatabaseWithComYahooSquidbDataISQLiteDatabase:);
-  methods[64].selector = @selector(readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase:);
-  methods[65].selector = @selector(tryAddColumnWithComYahooSquidbSqlProperty:);
-  methods[66].selector = @selector(propertyBelongsToTableWithComYahooSquidbSqlProperty:);
-  methods[67].selector = @selector(tryCreateTableWithComYahooSquidbSqlTable:);
-  methods[68].selector = @selector(tryDropTableWithComYahooSquidbSqlTable:);
-  methods[69].selector = @selector(tryCreateViewWithComYahooSquidbSqlView:);
-  methods[70].selector = @selector(tryDropViewWithComYahooSquidbSqlView:);
-  methods[71].selector = @selector(tryCreateIndexWithComYahooSquidbSqlIndex:);
-  methods[72].selector = @selector(tryCreateIndexWithNSString:withComYahooSquidbSqlTable:withBoolean:withComYahooSquidbSqlPropertyArray:);
-  methods[73].selector = @selector(tryDropIndexWithComYahooSquidbSqlIndex:);
+  methods[63].selector = @selector(setDatabaseWithSquiDBISQLiteDatabase:);
+  methods[64].selector = @selector(readSqliteVersionLockedWithSquiDBISQLiteDatabase:);
+  methods[65].selector = @selector(tryAddColumnWithSquiDBProperty:);
+  methods[66].selector = @selector(propertyBelongsToTableWithSquiDBProperty:);
+  methods[67].selector = @selector(tryCreateTableWithSquiDBTable:);
+  methods[68].selector = @selector(tryDropTableWithSquiDBTable:);
+  methods[69].selector = @selector(tryCreateViewWithSquiDBView:);
+  methods[70].selector = @selector(tryDropViewWithSquiDBView:);
+  methods[71].selector = @selector(tryCreateIndexWithSquiDBIndex:);
+  methods[72].selector = @selector(tryCreateIndexWithNSString:withSquiDBTable:withBoolean:withSquiDBPropertyArray:);
+  methods[73].selector = @selector(tryDropIndexWithSquiDBIndex:);
   methods[74].selector = @selector(tryDropIndexWithNSString:);
-  methods[75].selector = @selector(tryExecStatementWithComYahooSquidbSqlSqlStatement:);
+  methods[75].selector = @selector(tryExecStatementWithSquiDBSqlStatement:);
   methods[76].selector = @selector(tryExecSqlWithNSString:);
   methods[77].selector = @selector(execSqlOrThrowWithNSString:);
   methods[78].selector = @selector(tryExecSqlWithNSString:withNSObjectArray:);
   methods[79].selector = @selector(execSqlOrThrowWithNSString:withNSObjectArray:);
   methods[80].selector = @selector(getSqliteVersion);
   methods[81].selector = @selector(getCompileContext);
-  methods[82].selector = @selector(buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:);
+  methods[82].selector = @selector(buildCompileContextWithSquiDBCompileContext_Builder:);
   methods[83].selector = @selector(prepareStatementWithNSString:);
-  methods[84].selector = @selector(queryWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[85].selector = @selector(inferTableForQueryWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[84].selector = @selector(queryWithIOSClass:withSquiDBQuery:);
+  methods[85].selector = @selector(inferTableForQueryWithIOSClass:withSquiDBQuery:);
   methods[86].selector = @selector(ensureSqlCompilesWithNSString:);
-  methods[87].selector = @selector(fetchWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
-  methods[88].selector = @selector(fetchByCriterionWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
-  methods[89].selector = @selector(fetchByQueryWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[90].selector = @selector(returnFetchResultWithIOSClass:withComYahooSquidbDataSquidCursor:);
+  methods[87].selector = @selector(fetchWithIOSClass:withLong:withSquiDBPropertyArray:);
+  methods[88].selector = @selector(fetchByCriterionWithIOSClass:withSquiDBCriterion:withSquiDBPropertyArray:);
+  methods[89].selector = @selector(fetchByQueryWithIOSClass:withSquiDBQuery:);
+  methods[90].selector = @selector(returnFetchResultWithIOSClass:withSquiDBSquidCursor:);
   methods[91].selector = @selector(delete__WithIOSClass:withLong:);
-  methods[92].selector = @selector(deleteWhereWithIOSClass:withComYahooSquidbSqlCriterion:);
+  methods[92].selector = @selector(deleteWhereWithIOSClass:withSquiDBCriterion:);
   methods[93].selector = @selector(deleteAllWithIOSClass:);
-  methods[94].selector = @selector(delete__WithComYahooSquidbSqlDelete:);
-  methods[95].selector = @selector(updateWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:);
-  methods[96].selector = @selector(updateAllWithComYahooSquidbDataTableModel:);
-  methods[97].selector = @selector(updateWithOnConflictWithComYahooSquidbSqlCriterion:withComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[98].selector = @selector(updateAllWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[99].selector = @selector(updateWithComYahooSquidbSqlUpdate:);
-  methods[100].selector = @selector(persistWithComYahooSquidbDataTableModel:);
-  methods[101].selector = @selector(persistWithOnConflictWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[102].selector = @selector(createNewWithComYahooSquidbDataTableModel:);
-  methods[103].selector = @selector(saveExistingWithComYahooSquidbDataTableModel:);
-  methods[104].selector = @selector(insertRowWithComYahooSquidbDataTableModel:);
-  methods[105].selector = @selector(insertRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[106].selector = @selector(insertRowLegacyWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTable:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[107].selector = @selector(updateRowWithComYahooSquidbDataTableModel:);
-  methods[108].selector = @selector(updateRowWithComYahooSquidbDataTableModel:withComYahooSquidbSqlTableStatement_ConflictAlgorithm:);
-  methods[109].selector = @selector(insertWithComYahooSquidbSqlInsert:);
-  methods[110].selector = @selector(fetchItemByIdWithIOSClass:withLong:withComYahooSquidbSqlPropertyArray:);
-  methods[111].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlCriterion:withComYahooSquidbSqlPropertyArray:);
-  methods[112].selector = @selector(fetchFirstItemWithIOSClass:withComYahooSquidbSqlQuery:);
-  methods[113].selector = @selector(countWithIOSClass:withComYahooSquidbSqlCriterion:);
+  methods[94].selector = @selector(delete__WithSquiDBDelete:);
+  methods[95].selector = @selector(updateWithSquiDBCriterion:withSquiDBTableModel:);
+  methods[96].selector = @selector(updateAllWithSquiDBTableModel:);
+  methods[97].selector = @selector(updateWithOnConflictWithSquiDBCriterion:withSquiDBTableModel:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[98].selector = @selector(updateAllWithOnConflictWithSquiDBTableModel:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[99].selector = @selector(updateWithSquiDBUpdate:);
+  methods[100].selector = @selector(persistWithSquiDBTableModel:);
+  methods[101].selector = @selector(persistWithOnConflictWithSquiDBTableModel:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[102].selector = @selector(createNewWithSquiDBTableModel:);
+  methods[103].selector = @selector(saveExistingWithSquiDBTableModel:);
+  methods[104].selector = @selector(insertRowWithSquiDBTableModel:);
+  methods[105].selector = @selector(insertRowWithSquiDBTableModel:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[106].selector = @selector(insertRowLegacyWithSquiDBTableModel:withSquiDBTable:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[107].selector = @selector(updateRowWithSquiDBTableModel:);
+  methods[108].selector = @selector(updateRowWithSquiDBTableModel:withSquiDBTableStatement_ConflictAlgorithm:);
+  methods[109].selector = @selector(insertWithSquiDBInsert:);
+  methods[110].selector = @selector(fetchItemByIdWithIOSClass:withLong:withSquiDBPropertyArray:);
+  methods[111].selector = @selector(fetchFirstItemWithIOSClass:withSquiDBCriterion:withSquiDBPropertyArray:);
+  methods[112].selector = @selector(fetchFirstItemWithIOSClass:withSquiDBQuery:);
+  methods[113].selector = @selector(countWithIOSClass:withSquiDBCriterion:);
   methods[114].selector = @selector(countAllWithIOSClass:);
-  methods[115].selector = @selector(registerDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
-  methods[116].selector = @selector(unregisterDataChangedNotifierWithComYahooSquidbDataDataChangedNotifier:);
+  methods[115].selector = @selector(registerDataChangedNotifierWithSquiDBDataChangedNotifier:);
+  methods[116].selector = @selector(unregisterDataChangedNotifierWithSquiDBDataChangedNotifier:);
   methods[117].selector = @selector(unregisterAllDataChangedNotifiers);
   methods[118].selector = @selector(setDataChangedNotificationsEnabledWithBoolean:);
   methods[119].selector = @selector(areDataChangedNotificationsEnabled);
-  methods[120].selector = @selector(notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
-  methods[121].selector = @selector(onDataChangedWithJavaUtilList:withComYahooSquidbDataDataChangedNotifier_DBOperation:withComYahooSquidbDataAbstractModel:withComYahooSquidbSqlSqlTable:withLong:);
+  methods[120].selector = @selector(notifyForTableWithSquiDBDataChangedNotifier_DBOperation:withSquiDBAbstractModel:withSquiDBSqlTable:withLong:);
+  methods[121].selector = @selector(onDataChangedWithJavaUtilList:withSquiDBDataChangedNotifier_DBOperation:withSquiDBAbstractModel:withSquiDBSqlTable:withLong:);
   methods[122].selector = @selector(flushAccumulatedNotificationsWithBoolean:);
-  methods[123].selector = @selector(explainQueryPlanWithIOSClass:withComYahooSquidbSqlQuery:);
+  methods[123].selector = @selector(explainQueryPlanWithIOSClass:withSquiDBQuery:);
   methods[124].selector = @selector(copyDatabaseWithJavaIoFile:);
   methods[125].selector = @selector(copyDatabaseLockedWithJavaIoFile:);
   methods[126].selector = @selector(copyFileIfExistsWithJavaIoFile:withJavaIoFile:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "showSql_", "Z", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
-    { "STRING_BUILDER_INITIAL_CAPACITY", "I", .constantValue.asInt = ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY, 0x1a, -1, -1, -1, -1 },
+    { "STRING_BUILDER_INITIAL_CAPACITY", "I", .constantValue.asInt = SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY, 0x1a, -1, -1, -1, -1 },
     { "trackedPreparedInserts_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x2, -1, -1, 149, -1 },
     { "preparedInsertCache_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 150, -1 },
     { "preparedInsertCacheEnabled_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "attachedTo_", "LComYahooSquidbDataSquidDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "attachedTo_", "LSquiDBSquidDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "readWriteLock_", "LJavaUtilConcurrentLocksReentrantReadWriteLock;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "databaseInstanceLock_", "LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "helper_", "LComYahooSquidbDataISQLiteOpenHelper;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "database_", "LComYahooSquidbDataISQLiteDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "sqliteVersion_", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "helper_", "LSquiDBISQLiteOpenHelper;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "database_", "LSquiDBISQLiteDatabase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "sqliteVersion_", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "tableMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 151, -1 },
     { "isInMigration_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "isInMigrationFailedHook_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
@@ -1658,18 +1658,18 @@ withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataCha
     { "tableNotifiers_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 154, -1 },
     { "notifierAccumulator_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x2, -1, -1, 155, -1 },
   };
-  static const void *ptrTable[] = { "setShowSql", "Z", "onTablesCreated", "LComYahooSquidbDataISQLiteDatabase;", "onUpgrade", "LComYahooSquidbDataISQLiteDatabase;II", "onDowngrade", "onMigrationFailed", "LComYahooSquidbDataSquidDatabase_MigrationFailedException;", "onDatabaseOpenFailed", "LJavaLangRuntimeException;I", "onConfigure", "onOpen", "onClose", "onError", "LNSString;LJavaLangThrowable;", "registerTableModels", "[LComYahooSquidbSqlSqlTable;", "<T:Lcom/yahoo/squidb/sql/SqlTable<*>;>([TT;)V", "createOpenHelper", "LNSString;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;I", "getSqlTable", "LIOSClass;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)Lcom/yahoo/squidb/sql/SqlTable<*>;", "getTable", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)Lcom/yahoo/squidb/sql/Table;", "setPreparedInsertCacheEnabled", "newPreparedInsertCache", "LJavaUtilSet;", "(Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;)Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "attachDatabase", "LComYahooSquidbDataSquidDatabase;", "detachDatabase", "attachTo", "detachFrom", "closeAndDeleteInternal", "toString", "rawQuery", "LNSString;[LNSObject;", "onShowSql", "simpleQueryForString", "simpleQueryForLong", "LComYahooSquidbSqlQuery;", "insertInternal", "LComYahooSquidbSqlInsert;", "deleteInternal", "LComYahooSquidbSqlDelete;", "updateInternal", "LComYahooSquidbSqlUpdate;", "beginTransactionWithListener", "LComYahooSquidbDataSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setDatabase", "readSqliteVersionLocked", "tryAddColumn", "LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "propertyBelongsToTable", "tryCreateTable", "LComYahooSquidbSqlTable;", "tryDropTable", "tryCreateView", "LComYahooSquidbSqlView;", "tryDropView", "tryCreateIndex", "LComYahooSquidbSqlIndex;", "LNSString;LComYahooSquidbSqlTable;Z[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)Z", "tryDropIndex", "LNSString;", "tryExecStatement", "LComYahooSquidbSqlSqlStatement;", "tryExecSql", "execSqlOrThrow", "buildCompileContext", "LComYahooSquidbSqlCompileContext_Builder;", "prepareStatement", "query", "LIOSClass;LComYahooSquidbSqlQuery;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "inferTableForQuery", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/sql/Query;", "ensureSqlCompiles", "fetch", "LIOSClass;J[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByCriterion", "LIOSClass;LComYahooSquidbSqlCriterion;[LComYahooSquidbSqlProperty;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByQuery", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)TTYPE;", "returnFetchResult", "LIOSClass;LComYahooSquidbDataSquidCursor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;)TTYPE;", "delete", "LIOSClass;J", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;J)Z", "deleteWhere", "LIOSClass;LComYahooSquidbSqlCriterion;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "deleteAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)I", "update", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;", "updateAll", "LComYahooSquidbDataTableModel;", "updateWithOnConflict", "LComYahooSquidbSqlCriterion;LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateAllWithOnConflict", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "persist", "persistWithOnConflict", "createNew", "saveExisting", "insertRow", "insertRowLegacy", "LComYahooSquidbDataTableModel;LComYahooSquidbSqlTable;LComYahooSquidbSqlTableStatement_ConflictAlgorithm;", "updateRow", "insert", "fetchItemById", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "fetchFirstItem", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "count", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "countAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)I", "registerDataChangedNotifier", "LComYahooSquidbDataDataChangedNotifier;", "(Lcom/yahoo/squidb/data/DataChangedNotifier<*>;)V", "unregisterDataChangedNotifier", "setDataChangedNotificationsEnabled", "notifyForTable", "LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "onDataChanged", "LJavaUtilList;LComYahooSquidbDataDataChangedNotifier_DBOperation;LComYahooSquidbDataAbstractModel;LComYahooSquidbSqlSqlTable;J", "(Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "flushAccumulatedNotifications", "explainQueryPlan", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)V", "copyDatabase", "LJavaIoFile;", "copyDatabaseLocked", "copyFileIfExists", "LJavaIoFile;LJavaIoFile;", "LJavaIoIOException;", "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "Ljava/util/Map<Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;", "Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "Ljava/util/Map<Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "LComYahooSquidbDataSquidDatabase_TransactionSuccessState;LComYahooSquidbDataSquidDatabase_OpenHelperDelegate;LComYahooSquidbDataSquidDatabase_SqlConstructorVisitor;LComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException;LComYahooSquidbDataSquidDatabase_MigrationFailedException;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase = { "SquidDatabase", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 127, 21, -1, 156, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase;
+  static const void *ptrTable[] = { "setShowSql", "Z", "onTablesCreated", "LSquiDBISQLiteDatabase;", "onUpgrade", "LSquiDBISQLiteDatabase;II", "onDowngrade", "onMigrationFailed", "LSquiDBSquidDatabase_MigrationFailedException;", "onDatabaseOpenFailed", "LJavaLangRuntimeException;I", "onConfigure", "onOpen", "onClose", "onError", "LNSString;LJavaLangThrowable;", "registerTableModels", "[LSquiDBSqlTable;", "<T:Lcom/yahoo/squidb/sql/SqlTable<*>;>([TT;)V", "createOpenHelper", "LNSString;LSquiDBSquidDatabase_OpenHelperDelegate;I", "getSqlTable", "LIOSClass;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)Lcom/yahoo/squidb/sql/SqlTable<*>;", "getTable", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)Lcom/yahoo/squidb/sql/Table;", "setPreparedInsertCacheEnabled", "newPreparedInsertCache", "LJavaUtilSet;", "(Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;)Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "attachDatabase", "LSquiDBSquidDatabase;", "detachDatabase", "attachTo", "detachFrom", "closeAndDeleteInternal", "toString", "rawQuery", "LNSString;[LNSObject;", "onShowSql", "simpleQueryForString", "simpleQueryForLong", "LSquiDBQuery;", "insertInternal", "LSquiDBInsert;", "deleteInternal", "LSquiDBDelete;", "updateInternal", "LSquiDBUpdate;", "beginTransactionWithListener", "LSquiDBSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "yieldIfContendedSafely", "J", "setDatabase", "readSqliteVersionLocked", "tryAddColumn", "LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/Property<*>;)Z", "propertyBelongsToTable", "tryCreateTable", "LSquiDBTable;", "tryDropTable", "tryCreateView", "LSquiDBView;", "tryDropView", "tryCreateIndex", "LSquiDBIndex;", "LNSString;LSquiDBTable;Z[LSquiDBProperty;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Table;Z[Lcom/yahoo/squidb/sql/Property<*>;)Z", "tryDropIndex", "LNSString;", "tryExecStatement", "LSquiDBSqlStatement;", "tryExecSql", "execSqlOrThrow", "buildCompileContext", "LSquiDBCompileContext_Builder;", "prepareStatement", "query", "LIOSClass;LSquiDBQuery;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "inferTableForQuery", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)Lcom/yahoo/squidb/sql/Query;", "ensureSqlCompiles", "fetch", "LIOSClass;J[LSquiDBProperty;", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByCriterion", "LIOSClass;LSquiDBCriterion;[LSquiDBProperty;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)TTYPE;", "fetchByQuery", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Query;)TTYPE;", "returnFetchResult", "LIOSClass;LSquiDBSquidCursor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;)TTYPE;", "delete", "LIOSClass;J", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;J)Z", "deleteWhere", "LIOSClass;LSquiDBCriterion;", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "deleteAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/TableModel;>;)I", "update", "LSquiDBCriterion;LSquiDBTableModel;", "updateAll", "LSquiDBTableModel;", "updateWithOnConflict", "LSquiDBCriterion;LSquiDBTableModel;LSquiDBTableStatement_ConflictAlgorithm;", "updateAllWithOnConflict", "LSquiDBTableModel;LSquiDBTableStatement_ConflictAlgorithm;", "persist", "persistWithOnConflict", "createNew", "saveExisting", "insertRow", "insertRowLegacy", "LSquiDBTableModel;LSquiDBTable;LSquiDBTableStatement_ConflictAlgorithm;", "updateRow", "insert", "fetchItemById", "<TYPE:Lcom/yahoo/squidb/data/TableModel;>(Ljava/lang/Class<TTYPE;>;J[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "fetchFirstItem", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>(Ljava/lang/Class<TTYPE;>;Lcom/yahoo/squidb/sql/Criterion;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/data/SquidCursor<TTYPE;>;", "count", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Criterion;)I", "countAll", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;)I", "registerDataChangedNotifier", "LSquiDBDataChangedNotifier;", "(Lcom/yahoo/squidb/data/DataChangedNotifier<*>;)V", "unregisterDataChangedNotifier", "setDataChangedNotificationsEnabled", "notifyForTable", "LSquiDBDataChangedNotifier_DBOperation;LSquiDBAbstractModel;LSquiDBSqlTable;J", "(Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "onDataChanged", "LJavaUtilList;LSquiDBDataChangedNotifier_DBOperation;LSquiDBAbstractModel;LSquiDBSqlTable;J", "(Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;Lcom/yahoo/squidb/data/DataChangedNotifier$DBOperation;Lcom/yahoo/squidb/data/AbstractModel;Lcom/yahoo/squidb/sql/SqlTable<*>;J)V", "flushAccumulatedNotifications", "explainQueryPlan", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/Query;)V", "copyDatabase", "LJavaIoFile;", "copyDatabaseLocked", "copyFileIfExists", "LJavaIoFile;LJavaIoFile;", "LJavaIoIOException;", "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;", "Ljava/util/Map<Ljava/lang/Class<+Lcom/yahoo/squidb/data/AbstractModel;>;Lcom/yahoo/squidb/sql/SqlTable<*>;>;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;", "Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "Ljava/util/Map<Lcom/yahoo/squidb/sql/SqlTable<*>;Ljava/util/List<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;", "LSquiDBSquidDatabase_TransactionSuccessState;LSquiDBSquidDatabase_OpenHelperDelegate;LSquiDBSquidDatabase_SqlConstructorVisitor;LSquiDBSquidDatabase_RecreateDuringMigrationException;LSquiDBSquidDatabase_MigrationFailedException;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase = { "SquidDatabase", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 127, 21, -1, 156, -1, -1, -1 };
+  return &_SquiDBSquidDatabase;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_init(ComYahooSquidbDataSquidDatabase *self) {
+void SquiDBSquidDatabase_init(SquiDBSquidDatabase *self) {
   NSObject_init(self);
   self->showSql_ = false;
   self->trackedPreparedInserts_ = JavaUtilCollections_newSetFromMapWithJavaUtilMap_(new_JavaUtilConcurrentConcurrentHashMap_init());
-  self->preparedInsertCache_ = ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, self->trackedPreparedInserts_);
+  self->preparedInsertCache_ = SquiDBSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, self->trackedPreparedInserts_);
   self->preparedInsertCacheEnabled_ = false;
   self->attachedTo_ = nil;
   self->readWriteLock_ = new_JavaUtilConcurrentLocksReentrantReadWriteLock_init();
@@ -1681,25 +1681,25 @@ void ComYahooSquidbDataSquidDatabase_init(ComYahooSquidbDataSquidDatabase *self)
   self->isInMigration_ = false;
   self->isInMigrationFailedHook_ = false;
   self->databaseOpenFailedRetryCount_ = 0;
-  self->transactionSuccessState_ = new_ComYahooSquidbDataSquidDatabase_2_init();
+  self->transactionSuccessState_ = new_SquiDBSquidDatabase_2_init();
   self->notifiersLock_ = new_NSObject_init();
   self->dataChangedNotificationsEnabled_ = true;
   self->globalNotifiers_ = new_JavaUtilArrayList_init();
   self->tableNotifiers_ = new_JavaUtilHashMap_init();
-  self->notifierAccumulator_ = new_ComYahooSquidbDataSquidDatabase_3_init();
-  ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSqlTableArray_(self, [self getTables]);
-  ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSqlTableArray_(self, [self getViews]);
+  self->notifierAccumulator_ = new_SquiDBSquidDatabase_3_init();
+  SquiDBSquidDatabase_registerTableModelsWithSquiDBSqlTableArray_(self, [self getTables]);
+  SquiDBSquidDatabase_registerTableModelsWithSquiDBSqlTableArray_(self, [self getViews]);
 }
 
-void ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSqlTableArray_(ComYahooSquidbDataSquidDatabase *self, IOSObjectArray *tables) {
+void SquiDBSquidDatabase_registerTableModelsWithSquiDBSqlTableArray_(SquiDBSquidDatabase *self, IOSObjectArray *tables) {
   if (tables != nil) {
     {
       IOSObjectArray *a__ = tables;
-      ComYahooSquidbSqlSqlTable * const *b__ = a__->buffer_;
-      ComYahooSquidbSqlSqlTable * const *e__ = b__ + a__->size_;
+      SquiDBSqlTable * const *b__ = a__->buffer_;
+      SquiDBSqlTable * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlSqlTable *table = *b__++;
-        if ([((ComYahooSquidbSqlSqlTable *) nil_chk(table)) getModelClass] != nil && ![((id<JavaUtilMap>) nil_chk(self->tableMap_)) containsKeyWithId:[table getModelClass]]) {
+        SquiDBSqlTable *table = *b__++;
+        if ([((SquiDBSqlTable *) nil_chk(table)) getModelClass] != nil && ![((id<JavaUtilMap>) nil_chk(self->tableMap_)) containsKeyWithId:[table getModelClass]]) {
           (void) [((id<JavaUtilMap>) nil_chk(self->tableMap_)) putWithId:[table getModelClass] withId:table];
         }
       }
@@ -1707,19 +1707,19 @@ void ComYahooSquidbDataSquidDatabase_registerTableModelsWithComYahooSquidbSqlSql
   }
 }
 
-id<ComYahooSquidbDataISQLiteOpenHelper> ComYahooSquidbDataSquidDatabase_getOpenHelper(ComYahooSquidbDataSquidDatabase *self) {
+id<SquiDBISQLiteOpenHelper> SquiDBSquidDatabase_getOpenHelper(SquiDBSquidDatabase *self) {
   @synchronized(self) {
     if (self->helper_ == nil) {
-      self->helper_ = [self createOpenHelperWithNSString:[self getName] withComYahooSquidbDataSquidDatabase_OpenHelperDelegate:new_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(self) withInt:[self getVersion]];
+      self->helper_ = [self createOpenHelperWithNSString:[self getName] withSquiDBSquidDatabase_OpenHelperDelegate:new_SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(self) withInt:[self getVersion]];
     }
     return self->helper_;
   }
 }
 
-ComYahooSquidbSqlSqlTable *ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSClass_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass) {
+SquiDBSqlTable *SquiDBSquidDatabase_getSqlTableWithIOSClass_(SquiDBSquidDatabase *self, IOSClass *modelClass) {
   IOSClass *type = modelClass;
-  ComYahooSquidbSqlSqlTable *table;
-  while ((table = [((id<JavaUtilMap>) nil_chk(self->tableMap_)) getWithId:type]) == nil && type != ComYahooSquidbDataAbstractModel_class_() && type != NSObject_class_()) {
+  SquiDBSqlTable *table;
+  while ((table = [((id<JavaUtilMap>) nil_chk(self->tableMap_)) getWithId:type]) == nil && type != SquiDBAbstractModel_class_() && type != NSObject_class_()) {
     type = [((IOSClass *) nil_chk(type)) getSuperclass];
   }
   if (table != nil) {
@@ -1728,56 +1728,56 @@ ComYahooSquidbSqlSqlTable *ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSCla
   @throw new_JavaLangUnsupportedOperationException_initWithNSString_(JreStrcat("$@", @"Unknown model class ", modelClass));
 }
 
-ComYahooSquidbSqlTable *ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass) {
-  return (ComYahooSquidbSqlTable *) cast_chk(ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSClass_(self, modelClass), [ComYahooSquidbSqlTable class]);
+SquiDBTable *SquiDBSquidDatabase_getTableWithIOSClass_(SquiDBSquidDatabase *self, IOSClass *modelClass) {
+  return (SquiDBTable *) cast_chk(SquiDBSquidDatabase_getSqlTableWithIOSClass_(self, modelClass), [SquiDBTable class]);
 }
 
-id<ComYahooSquidbDataISQLiteDatabase> ComYahooSquidbDataSquidDatabase_getDatabase(ComYahooSquidbDataSquidDatabase *self) {
+id<SquiDBISQLiteDatabase> SquiDBSquidDatabase_getDatabase(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
     if (self->database_ == nil) {
-      ComYahooSquidbDataSquidDatabase_openForWritingLocked(self);
+      SquiDBSquidDatabase_openForWritingLocked(self);
     }
     return self->database_;
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_openForWritingLocked(ComYahooSquidbDataSquidDatabase *self) {
+void SquiDBSquidDatabase_openForWritingLocked(SquiDBSquidDatabase *self) {
   jboolean areDataChangedNotificationsEnabled = [self areDataChangedNotificationsEnabled];
   [self setDataChangedNotificationsEnabledWithBoolean:false];
   @try {
     @try {
-      id<ComYahooSquidbDataISQLiteDatabase> db = [((id<ComYahooSquidbDataISQLiteOpenHelper>) nil_chk(ComYahooSquidbDataSquidDatabase_getOpenHelper(self))) openForWriting];
-      ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(self, db);
+      id<SquiDBISQLiteDatabase> db = [((id<SquiDBISQLiteOpenHelper>) nil_chk(SquiDBSquidDatabase_getOpenHelper(self))) openForWriting];
+      SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(self, db);
     }
-    @catch (ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *recreate) {
-      ComYahooSquidbDataSquidDatabase_recreateLocked(self);
+    @catch (SquiDBSquidDatabase_RecreateDuringMigrationException *recreate) {
+      SquiDBSquidDatabase_recreateLocked(self);
     }
-    @catch (ComYahooSquidbDataSquidDatabase_MigrationFailedException *fail) {
+    @catch (SquiDBSquidDatabase_MigrationFailedException *fail) {
       [self onErrorWithNSString:[fail getMessage] withJavaLangThrowable:fail];
       self->isInMigrationFailedHook_ = true;
       @try {
-        if (!ComYahooSquidbDataSquidDatabase_isOpen(self)) {
-          ComYahooSquidbDataSquidDatabase_closeLocked(self);
+        if (!SquiDBSquidDatabase_isOpen(self)) {
+          SquiDBSquidDatabase_closeLocked(self);
         }
-        [self onMigrationFailedWithComYahooSquidbDataSquidDatabase_MigrationFailedException:fail];
+        [self onMigrationFailedWithSquiDBSquidDatabase_MigrationFailedException:fail];
       }
       @finally {
         self->isInMigrationFailedHook_ = false;
       }
     }
-    if (!ComYahooSquidbDataSquidDatabase_isOpen(self)) {
-      ComYahooSquidbDataSquidDatabase_closeLocked(self);
+    if (!SquiDBSquidDatabase_isOpen(self)) {
+      SquiDBSquidDatabase_closeLocked(self);
       @throw new_JavaLangRuntimeException_initWithNSString_(@"Failed to open database");
     }
   }
   @catch (JavaLangRuntimeException *e) {
     [self onErrorWithNSString:JreStrcat("$$", @"Failed to open database: ", [self getName]) withJavaLangThrowable:e];
-    ComYahooSquidbDataSquidDatabase_closeLocked(self);
+    SquiDBSquidDatabase_closeLocked(self);
     jint retryCount = ++self->databaseOpenFailedRetryCount_;
     @try {
       [self onDatabaseOpenFailedWithJavaLangRuntimeException:e withInt:retryCount];
-      if (!ComYahooSquidbDataSquidDatabase_isOpen(self)) {
-        ComYahooSquidbDataSquidDatabase_closeLocked(self);
+      if (!SquiDBSquidDatabase_isOpen(self)) {
+        SquiDBSquidDatabase_closeLocked(self);
         @throw e;
       }
     }
@@ -1790,20 +1790,20 @@ void ComYahooSquidbDataSquidDatabase_openForWritingLocked(ComYahooSquidbDataSqui
   }
 }
 
-JavaLangThreadLocal *ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(ComYahooSquidbDataSquidDatabase *self, id<JavaUtilSet> openStatementTracking) {
-  return new_ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(openStatementTracking);
+JavaLangThreadLocal *SquiDBSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(SquiDBSquidDatabase *self, id<JavaUtilSet> openStatementTracking) {
+  return new_SquiDBSquidDatabase_1_initWithJavaUtilSet_(openStatementTracking);
 }
 
-NSString *ComYahooSquidbDataSquidDatabase_attachToWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataSquidDatabase *attachTo) {
+NSString *SquiDBSquidDatabase_attachToWithSquiDBSquidDatabase_(SquiDBSquidDatabase *self, SquiDBSquidDatabase *attachTo) {
   if (self->attachedTo_ != nil) {
-    @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$$$", @"Database ", [self getName], @" is already attached to ", [((ComYahooSquidbDataSquidDatabase *) nil_chk(self->attachedTo_)) getName]));
+    @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$$$", @"Database ", [self getName], @" is already attached to ", [((SquiDBSquidDatabase *) nil_chk(self->attachedTo_)) getName]));
   }
-  if (ComYahooSquidbDataSquidDatabase_inTransaction(self)) {
-    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$$$$$", @"Cannot attach database ", [self getName], @" to ", [((ComYahooSquidbDataSquidDatabase *) nil_chk(attachTo)) getName], @" -- ", [self getName], @" is in a transaction on the calling thread"));
+  if (SquiDBSquidDatabase_inTransaction(self)) {
+    @throw new_JavaLangIllegalStateException_initWithNSString_(JreStrcat("$$$$$$$", @"Cannot attach database ", [self getName], @" to ", [((SquiDBSquidDatabase *) nil_chk(attachTo)) getName], @" -- ", [self getName], @" is in a transaction on the calling thread"));
   }
   [self acquireExclusiveLock];
-  NSString *attachedAs = ComYahooSquidbDataSquidDatabase_getAttachedName(self);
-  if (![((ComYahooSquidbDataSquidDatabase *) nil_chk(attachTo)) tryExecSqlWithNSString:JreStrcat("$$$$C", @"ATTACH '", [self getDatabasePath], @"' AS '", attachedAs, '\'')]) {
+  NSString *attachedAs = SquiDBSquidDatabase_getAttachedName(self);
+  if (![((SquiDBSquidDatabase *) nil_chk(attachTo)) tryExecSqlWithNSString:JreStrcat("$$$$C", @"ATTACH '", [self getDatabasePath], @"' AS '", attachedAs, '\'')]) {
     [self releaseExclusiveLock];
     return nil;
   }
@@ -1813,8 +1813,8 @@ NSString *ComYahooSquidbDataSquidDatabase_attachToWithComYahooSquidbDataSquidDat
   }
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_detachFromWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataSquidDatabase *detachFrom) {
-  if ([((ComYahooSquidbDataSquidDatabase *) nil_chk(detachFrom)) tryExecSqlWithNSString:JreStrcat("$$C", @"DETACH '", ComYahooSquidbDataSquidDatabase_getAttachedName(self), '\'')]) {
+jboolean SquiDBSquidDatabase_detachFromWithSquiDBSquidDatabase_(SquiDBSquidDatabase *self, SquiDBSquidDatabase *detachFrom) {
+  if ([((SquiDBSquidDatabase *) nil_chk(detachFrom)) tryExecSqlWithNSString:JreStrcat("$$C", @"DETACH '", SquiDBSquidDatabase_getAttachedName(self), '\'')]) {
     self->attachedTo_ = nil;
     [self releaseExclusiveLock];
     return true;
@@ -1822,123 +1822,123 @@ jboolean ComYahooSquidbDataSquidDatabase_detachFromWithComYahooSquidbDataSquidDa
   return false;
 }
 
-NSString *ComYahooSquidbDataSquidDatabase_getAttachedName(ComYahooSquidbDataSquidDatabase *self) {
+NSString *SquiDBSquidDatabase_getAttachedName(SquiDBSquidDatabase *self) {
   return [((NSString *) nil_chk([self getName])) java_replace:'.' withChar:'_'];
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_isOpen(ComYahooSquidbDataSquidDatabase *self) {
+jboolean SquiDBSquidDatabase_isOpen(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
     return self->database_ != nil && [self->database_ isOpen];
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_recreateLocked(ComYahooSquidbDataSquidDatabase *self) {
+void SquiDBSquidDatabase_recreateLocked(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
-    ComYahooSquidbDataSquidDatabase_closeAndDeleteLocked(self);
-    (void) ComYahooSquidbDataSquidDatabase_getDatabase(self);
+    SquiDBSquidDatabase_closeAndDeleteLocked(self);
+    (void) SquiDBSquidDatabase_getDatabase(self);
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_closeLocked(ComYahooSquidbDataSquidDatabase *self) {
+void SquiDBSquidDatabase_closeLocked(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
-    ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(self, false);
+    SquiDBSquidDatabase_closeAndDeleteInternalWithBoolean_(self, false);
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_closeAndDeleteLocked(ComYahooSquidbDataSquidDatabase *self) {
+void SquiDBSquidDatabase_closeAndDeleteLocked(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
-    ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(self, true);
+    SquiDBSquidDatabase_closeAndDeleteInternalWithBoolean_(self, true);
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_closeAndDeleteInternalWithBoolean_(ComYahooSquidbDataSquidDatabase *self, jboolean deleteAfterClose) {
-  ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(self);
-  if (ComYahooSquidbDataSquidDatabase_isOpen(self)) {
-    [self onCloseWithComYahooSquidbDataISQLiteDatabase:self->database_];
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(self->database_)) close];
+void SquiDBSquidDatabase_closeAndDeleteInternalWithBoolean_(SquiDBSquidDatabase *self, jboolean deleteAfterClose) {
+  SquiDBSquidDatabase_clearPreparedStatementCache(self);
+  if (SquiDBSquidDatabase_isOpen(self)) {
+    [self onCloseWithSquiDBISQLiteDatabase:self->database_];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(self->database_)) close];
   }
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(self, nil);
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(self, nil);
   if (deleteAfterClose) {
-    [((id<ComYahooSquidbDataISQLiteOpenHelper>) nil_chk(ComYahooSquidbDataSquidDatabase_getOpenHelper(self))) deleteDatabase];
+    [((id<SquiDBISQLiteOpenHelper>) nil_chk(SquiDBSquidDatabase_getOpenHelper(self))) deleteDatabase];
   }
   self->helper_ = nil;
 }
 
-void ComYahooSquidbDataSquidDatabase_clearPreparedStatementCache(ComYahooSquidbDataSquidDatabase *self) {
-  for (id<ComYahooSquidbDataISQLitePreparedStatement> __strong statement in nil_chk(self->trackedPreparedInserts_)) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(statement)) close];
+void SquiDBSquidDatabase_clearPreparedStatementCache(SquiDBSquidDatabase *self) {
+  for (id<SquiDBISQLitePreparedStatement> __strong statement in nil_chk(self->trackedPreparedInserts_)) {
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(statement)) close];
   }
   [self->trackedPreparedInserts_ clear];
-  self->preparedInsertCache_ = ComYahooSquidbDataSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, self->trackedPreparedInserts_);
+  self->preparedInsertCache_ = SquiDBSquidDatabase_newPreparedInsertCacheWithJavaUtilSet_(self, self->trackedPreparedInserts_);
 }
 
-void ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(ComYahooSquidbDataSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs) {
-  NSString *argsAsList = [((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilList>) nil_chk(JavaUtilArrays_asListWithNSObjectArray_(sqlArgs))) stream])) mapWithJavaUtilFunctionFunction:JreLoadStatic(ComYahooSquidbDataSquidDatabase_$Lambda$1, instance)])) collectWithJavaUtilStreamCollector:JavaUtilStreamCollectors_joiningWithJavaLangCharSequence_(@",")];
-  ComYahooSquidbUtilityLogger_dWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$$C", @"SQL: ", sql, @" [", argsAsList, ']'));
+void SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(SquiDBSquidDatabase *self, NSString *sql, IOSObjectArray *sqlArgs) {
+  NSString *argsAsList = [((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilStreamStream>) nil_chk([((id<JavaUtilList>) nil_chk(JavaUtilArrays_asListWithNSObjectArray_(sqlArgs))) stream])) mapWithJavaUtilFunctionFunction:JreLoadStatic(SquiDBSquidDatabase_$Lambda$1, instance)])) collectWithJavaUtilStreamCollector:JavaUtilStreamCollectors_joiningWithJavaLangCharSequence_(@",")];
+  SquiDBLogger_dWithNSString_withNSString_(SquiDBLogger_LOG_TAG, JreStrcat("$$$$C", @"SQL: ", sql, @" [", argsAsList, ']'));
 }
 
-jlong ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlInsert *insert) {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlInsert *) nil_chk(insert)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
+jlong SquiDBSquidDatabase_insertInternalWithSquiDBInsert_(SquiDBSquidDatabase *self, SquiDBInsert *insert) {
+  SquiDBCompiledStatement *compiled = [((SquiDBInsert *) nil_chk(insert)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
     if (self->showSql_) {
-      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+      SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((SquiDBCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
     }
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeInsertWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) executeInsertWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-jint ComYahooSquidbDataSquidDatabase_deleteInternalWithComYahooSquidbSqlDelete_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlDelete *delete_) {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlDelete *) nil_chk(delete_)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
+jint SquiDBSquidDatabase_deleteInternalWithSquiDBDelete_(SquiDBSquidDatabase *self, SquiDBDelete *delete_) {
+  SquiDBCompiledStatement *compiled = [((SquiDBDelete *) nil_chk(delete_)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
     if (self->showSql_) {
-      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+      SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((SquiDBCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
     }
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-jint ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlUpdate *update) {
-  ComYahooSquidbSqlCompiledStatement *compiled = [((ComYahooSquidbSqlUpdate *) nil_chk(update)) compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(self)];
+jint SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(SquiDBSquidDatabase *self, SquiDBUpdate *update) {
+  SquiDBCompiledStatement *compiled = [((SquiDBUpdate *) nil_chk(update)) compileWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(self)];
   [self acquireNonExclusiveLock];
   @try {
     if (self->showSql_) {
-      ComYahooSquidbDataSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
+      SquiDBSquidDatabase_onShowSqlWithNSString_withNSObjectArray_(self, ((SquiDBCompiledStatement *) nil_chk(compiled))->sql_, compiled->sqlArgs_);
     }
-    return [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((ComYahooSquidbSqlCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
+    return [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) executeUpdateDeleteWithNSString:((SquiDBCompiledStatement *) nil_chk(compiled))->sql_ withNSObjectArray:compiled->sqlArgs_];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_inTransaction(ComYahooSquidbDataSquidDatabase *self) {
+jboolean SquiDBSquidDatabase_inTransaction(SquiDBSquidDatabase *self) {
   @synchronized(self->databaseInstanceLock_) {
     return self->database_ != nil && [self->database_ inTransaction];
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(ComYahooSquidbDataSquidDatabase *self, id<ComYahooSquidbDataISQLiteDatabase> db) {
+void SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(SquiDBSquidDatabase *self, id<SquiDBISQLiteDatabase> db) {
   @synchronized(self->databaseInstanceLock_) {
-    if (self->database_ != nil && db != nil && [db getWrappedObject] == [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(self->database_)) getWrappedObject]) {
+    if (self->database_ != nil && db != nil && [db getWrappedObject] == [((id<SquiDBISQLiteDatabase>) nil_chk(self->database_)) getWrappedObject]) {
       return;
     }
-    self->sqliteVersion_ = db != nil ? ComYahooSquidbDataSquidDatabase_readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase_(self, db) : nil;
+    self->sqliteVersion_ = db != nil ? SquiDBSquidDatabase_readSqliteVersionLockedWithSquiDBISQLiteDatabase_(self, db) : nil;
     self->database_ = db;
   }
 }
 
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbDataSquidDatabase_readSqliteVersionLockedWithComYahooSquidbDataISQLiteDatabase_(ComYahooSquidbDataSquidDatabase *self, id<ComYahooSquidbDataISQLiteDatabase> db) {
+SquiDBVersionCode *SquiDBSquidDatabase_readSqliteVersionLockedWithSquiDBISQLiteDatabase_(SquiDBSquidDatabase *self, id<SquiDBISQLiteDatabase> db) {
   @try {
-    NSString *versionString = [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(db)) simpleQueryForStringWithNSString:@"select sqlite_version()" withNSObjectArray:nil];
-    return ComYahooSquidbUtilityVersionCode_parseWithNSString_(versionString);
+    NSString *versionString = [((id<SquiDBISQLiteDatabase>) nil_chk(db)) simpleQueryForStringWithNSString:@"select sqlite_version()" withNSObjectArray:nil];
+    return SquiDBVersionCode_parseWithNSString_(versionString);
   }
   @catch (JavaLangRuntimeException *e) {
     [self onErrorWithNSString:@"Failed to read sqlite version" withJavaLangThrowable:e];
@@ -1946,180 +1946,182 @@ ComYahooSquidbUtilityVersionCode *ComYahooSquidbDataSquidDatabase_readSqliteVers
   }
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_propertyBelongsToTableWithComYahooSquidbSqlProperty_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbSqlProperty *property) {
-  return ((ComYahooSquidbSqlTableModelName *) nil_chk(((ComYahooSquidbSqlProperty *) nil_chk(property))->tableModelName_))->modelClass_ != nil && [ComYahooSquidbDataTableModel_class_() isAssignableFrom:property->tableModelName_->modelClass_] && !ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(property->tableModelName_->tableName_);
+jboolean SquiDBSquidDatabase_propertyBelongsToTableWithSquiDBProperty_(SquiDBSquidDatabase *self, SquiDBProperty *property) {
+  return ((SquiDBTableModelName *) nil_chk(((SquiDBProperty *) nil_chk(property))->tableModelName_))->modelClass_ != nil && [SquiDBTableModel_class_() isAssignableFrom:property->tableModelName_->modelClass_] && !SquiDBSqlUtils_isEmptyWithNSString_(property->tableModelName_->tableName_);
 }
 
-ComYahooSquidbSqlCompileContext *ComYahooSquidbDataSquidDatabase_getCompileContext(ComYahooSquidbDataSquidDatabase *self) {
-  ComYahooSquidbSqlCompileContext_Builder *builder = new_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_([self getSqliteVersion]);
-  [self buildCompileContextWithComYahooSquidbSqlCompileContext_Builder:builder];
+SquiDBCompileContext *SquiDBSquidDatabase_getCompileContext(SquiDBSquidDatabase *self) {
+  SquiDBCompileContext_Builder *builder = new_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_([self getSqliteVersion]);
+  [self buildCompileContextWithSquiDBCompileContext_Builder:builder];
   return [builder build];
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbDataSquidDatabase_inferTableForQueryWithIOSClass_withComYahooSquidbSqlQuery_(ComYahooSquidbDataSquidDatabase *self, IOSClass *modelClass, ComYahooSquidbSqlQuery *query) {
-  if (![((ComYahooSquidbSqlQuery *) nil_chk(query)) hasTable] && modelClass != nil) {
-    ComYahooSquidbSqlSqlTable *table = ComYahooSquidbDataSquidDatabase_getSqlTableWithIOSClass_(self, modelClass);
+SquiDBQuery *SquiDBSquidDatabase_inferTableForQueryWithIOSClass_withSquiDBQuery_(SquiDBSquidDatabase *self, IOSClass *modelClass, SquiDBQuery *query) {
+  if (![((SquiDBQuery *) nil_chk(query)) hasTable] && modelClass != nil) {
+    SquiDBSqlTable *table = SquiDBSquidDatabase_getSqlTableWithIOSClass_(self, modelClass);
     if (table == nil) {
       @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$$", @"Query has no FROM clause and model class ", [modelClass getSimpleName], @" has no associated table"));
     }
-    query = [query fromWithComYahooSquidbSqlSqlTable:table];
+    query = [query fromWithSquiDBSqlTable:table];
   }
   return query;
 }
 
-void ComYahooSquidbDataSquidDatabase_ensureSqlCompilesWithNSString_(ComYahooSquidbDataSquidDatabase *self, NSString *sql) {
+void SquiDBSquidDatabase_ensureSqlCompilesWithNSString_(SquiDBSquidDatabase *self, NSString *sql) {
   [self acquireNonExclusiveLock];
   @try {
-    [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(ComYahooSquidbDataSquidDatabase_getDatabase(self))) ensureSqlCompilesWithNSString:sql];
+    [((id<SquiDBISQLiteDatabase>) nil_chk(SquiDBSquidDatabase_getDatabase(self))) ensureSqlCompilesWithNSString:sql];
   }
   @finally {
     [self releaseNonExclusiveLock];
   }
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_insertRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm) {
-  IOSClass *modelClass = [((ComYahooSquidbDataTableModel *) nil_chk(item)) java_getClass];
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
+jboolean SquiDBSquidDatabase_insertRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm) {
+  IOSClass *modelClass = [((SquiDBTableModel *) nil_chk(item)) java_getClass];
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
   jlong newRow;
   if (self->preparedInsertCacheEnabled_) {
     [self acquireNonExclusiveLock];
     @try {
-      ComYahooSquidbDataPreparedInsertCache *insertCache = [((JavaLangThreadLocal *) nil_chk(self->preparedInsertCache_)) get];
-      id<ComYahooSquidbDataISQLitePreparedStatement> preparedStatement = [((ComYahooSquidbDataPreparedInsertCache *) nil_chk(insertCache)) getPreparedInsertWithComYahooSquidbDataSquidDatabase:self withComYahooSquidbSqlTable:table withComYahooSquidbSqlTableStatement_ConflictAlgorithm:conflictAlgorithm];
-      [item bindValuesForInsertWithComYahooSquidbSqlTable:table withComYahooSquidbDataISQLitePreparedStatement:preparedStatement];
-      newRow = [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) executeInsert];
+      SquiDBPreparedInsertCache *insertCache = [((JavaLangThreadLocal *) nil_chk(self->preparedInsertCache_)) get];
+      id<SquiDBISQLitePreparedStatement> preparedStatement = [((SquiDBPreparedInsertCache *) nil_chk(insertCache)) getPreparedInsertWithSquiDBSquidDatabase:self withSquiDBTable:table withSquiDBTableStatement_ConflictAlgorithm:conflictAlgorithm];
+      [item bindValuesForInsertWithSquiDBTable:table withSquiDBISQLitePreparedStatement:preparedStatement];
+      newRow = [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) executeInsert];
     }
     @finally {
       [self releaseNonExclusiveLock];
     }
   }
   else {
-    newRow = ComYahooSquidbDataSquidDatabase_insertRowLegacyWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTable_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(self, item, table, conflictAlgorithm);
+    newRow = SquiDBSquidDatabase_insertRowLegacyWithSquiDBTableModel_withSquiDBTable_withSquiDBTableStatement_ConflictAlgorithm_(self, item, table, conflictAlgorithm);
   }
   jboolean result = newRow > 0;
   if (result) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT), item, table, newRow);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, INSERT), item, table, newRow);
     (void) [item setRowIdWithLong:newRow];
     [item markSaved];
   }
   return result;
 }
 
-jlong ComYahooSquidbDataSquidDatabase_insertRowLegacyWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTable_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTable *table, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm) {
-  ComYahooSquidbDataValuesStorage *mergedValues = [((ComYahooSquidbDataTableModel *) nil_chk(item)) getMergedValues];
-  if ([((ComYahooSquidbDataValuesStorage *) nil_chk(mergedValues)) size] == 0) {
+jlong SquiDBSquidDatabase_insertRowLegacyWithSquiDBTableModel_withSquiDBTable_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTable *table, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm) {
+  SquiDBValuesStorage *mergedValues = [((SquiDBTableModel *) nil_chk(item)) getMergedValues];
+  if ([((SquiDBValuesStorage *) nil_chk(mergedValues)) size] == 0) {
     return -1;
   }
-  ComYahooSquidbSqlInsert *insert = [((ComYahooSquidbSqlInsert *) nil_chk(ComYahooSquidbSqlInsert_intoWithComYahooSquidbSqlTable_(table))) fromValuesWithComYahooSquidbDataValuesStorage:mergedValues];
+  SquiDBInsert *insert = [((SquiDBInsert *) nil_chk(SquiDBInsert_intoWithSquiDBTable_(table))) fromValuesWithSquiDBValuesStorage:mergedValues];
   if (conflictAlgorithm != nil) {
-    (void) [((ComYahooSquidbSqlInsert *) nil_chk(insert)) onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:conflictAlgorithm];
+    (void) [((SquiDBInsert *) nil_chk(insert)) onConflictWithSquiDBTableStatement_ConflictAlgorithm:conflictAlgorithm];
   }
-  return ComYahooSquidbDataSquidDatabase_insertInternalWithComYahooSquidbSqlInsert_(self, insert);
+  return SquiDBSquidDatabase_insertInternalWithSquiDBInsert_(self, insert);
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_updateRowWithComYahooSquidbDataTableModel_withComYahooSquidbSqlTableStatement_ConflictAlgorithm_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataTableModel *item, ComYahooSquidbSqlTableStatement_ConflictAlgorithm *conflictAlgorithm) {
-  if (![((ComYahooSquidbDataTableModel *) nil_chk(item)) isModified]) {
+jboolean SquiDBSquidDatabase_updateRowWithSquiDBTableModel_withSquiDBTableStatement_ConflictAlgorithm_(SquiDBSquidDatabase *self, SquiDBTableModel *item, SquiDBTableStatement_ConflictAlgorithm *conflictAlgorithm) {
+  if (![((SquiDBTableModel *) nil_chk(item)) isModified]) {
     return true;
   }
   if (![item isSaved]) {
     return false;
   }
   IOSClass *modelClass = [item java_getClass];
-  ComYahooSquidbSqlTable *table = ComYahooSquidbDataSquidDatabase_getTableWithIOSClass_(self, modelClass);
-  ComYahooSquidbSqlUpdate *update = [((ComYahooSquidbSqlUpdate *) nil_chk([((ComYahooSquidbSqlUpdate *) nil_chk(ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlTable_(table))) fromTemplateWithComYahooSquidbDataAbstractModel:item])) whereWithComYahooSquidbSqlCriterion:[((ComYahooSquidbSqlProperty_LongProperty *) nil_chk([((ComYahooSquidbSqlTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_([item getRowId])]];
+  SquiDBTable *table = SquiDBSquidDatabase_getTableWithIOSClass_(self, modelClass);
+  SquiDBUpdate *update = [((SquiDBUpdate *) nil_chk([((SquiDBUpdate *) nil_chk(SquiDBUpdate_tableWithSquiDBTable_(table))) fromTemplateWithSquiDBAbstractModel:item])) whereWithSquiDBCriterion:[((SquiDBProperty_LongProperty *) nil_chk([((SquiDBTable *) nil_chk(table)) getRowIdProperty])) eqWithId:JavaLangLong_valueOfWithLong_([item getRowId])]];
   if (conflictAlgorithm != nil) {
-    (void) [((ComYahooSquidbSqlUpdate *) nil_chk(update)) onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:conflictAlgorithm];
+    (void) [((SquiDBUpdate *) nil_chk(update)) onConflictWithSquiDBTableStatement_ConflictAlgorithm:conflictAlgorithm];
   }
-  jboolean result = ComYahooSquidbDataSquidDatabase_updateInternalWithComYahooSquidbSqlUpdate_(self, update) > 0;
+  jboolean result = SquiDBSquidDatabase_updateInternalWithSquiDBUpdate_(self, update) > 0;
   if (result) {
-    ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, JreLoadEnum(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE), item, table, [item getRowId]);
+    SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, JreLoadEnum(SquiDBDataChangedNotifier_DBOperation, UPDATE), item, table, [item getRowId]);
     [item markSaved];
   }
   return result;
 }
 
-void ComYahooSquidbDataSquidDatabase_notifyForTableWithComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(ComYahooSquidbDataSquidDatabase *self, ComYahooSquidbDataDataChangedNotifier_DBOperation *op, ComYahooSquidbDataAbstractModel *modelValues, ComYahooSquidbSqlSqlTable *table, jlong rowId) {
+void SquiDBSquidDatabase_notifyForTableWithSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(SquiDBSquidDatabase *self, SquiDBDataChangedNotifier_DBOperation *op, SquiDBAbstractModel *modelValues, SquiDBSqlTable *table, jlong rowId) {
   if (!self->dataChangedNotificationsEnabled_) {
     return;
   }
   @synchronized(self->notifiersLock_) {
-    ComYahooSquidbDataSquidDatabase_onDataChangedWithJavaUtilList_withComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, self->globalNotifiers_, op, modelValues, table, rowId);
-    ComYahooSquidbDataSquidDatabase_onDataChangedWithJavaUtilList_withComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(self, [((id<JavaUtilMap>) nil_chk(self->tableNotifiers_)) getWithId:table], op, modelValues, table, rowId);
+    SquiDBSquidDatabase_onDataChangedWithJavaUtilList_withSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, self->globalNotifiers_, op, modelValues, table, rowId);
+    SquiDBSquidDatabase_onDataChangedWithJavaUtilList_withSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(self, [((id<JavaUtilMap>) nil_chk(self->tableNotifiers_)) getWithId:table], op, modelValues, table, rowId);
   }
-  if (!ComYahooSquidbDataSquidDatabase_inTransaction(self)) {
-    ComYahooSquidbDataSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, true);
+  if (!SquiDBSquidDatabase_inTransaction(self)) {
+    SquiDBSquidDatabase_flushAccumulatedNotificationsWithBoolean_(self, true);
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_onDataChangedWithJavaUtilList_withComYahooSquidbDataDataChangedNotifier_DBOperation_withComYahooSquidbDataAbstractModel_withComYahooSquidbSqlSqlTable_withLong_(ComYahooSquidbDataSquidDatabase *self, id<JavaUtilList> notifiers, ComYahooSquidbDataDataChangedNotifier_DBOperation *op, ComYahooSquidbDataAbstractModel *modelValues, ComYahooSquidbSqlSqlTable *table, jlong rowId) {
+void SquiDBSquidDatabase_onDataChangedWithJavaUtilList_withSquiDBDataChangedNotifier_DBOperation_withSquiDBAbstractModel_withSquiDBSqlTable_withLong_(SquiDBSquidDatabase *self, id<JavaUtilList> notifiers, SquiDBDataChangedNotifier_DBOperation *op, SquiDBAbstractModel *modelValues, SquiDBSqlTable *table, jlong rowId) {
   if (notifiers != nil) {
-    for (ComYahooSquidbDataDataChangedNotifier * __strong notifier in notifiers) {
-      if ([((ComYahooSquidbDataDataChangedNotifier *) nil_chk(notifier)) onDataChangedWithComYahooSquidbSqlSqlTable:table withComYahooSquidbDataSquidDatabase:self withComYahooSquidbDataDataChangedNotifier_DBOperation:op withComYahooSquidbDataAbstractModel:modelValues withLong:rowId]) {
+    for (SquiDBDataChangedNotifier * __strong notifier in notifiers) {
+      if ([((SquiDBDataChangedNotifier *) nil_chk(notifier)) onDataChangedWithSquiDBSqlTable:table withSquiDBSquidDatabase:self withSquiDBDataChangedNotifier_DBOperation:op withSquiDBAbstractModel:modelValues withLong:rowId]) {
         [((id<JavaUtilSet>) nil_chk([((JavaLangThreadLocal *) nil_chk(self->notifierAccumulator_)) get])) addWithId:notifier];
       }
     }
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_flushAccumulatedNotificationsWithBoolean_(ComYahooSquidbDataSquidDatabase *self, jboolean transactionSuccess) {
+void SquiDBSquidDatabase_flushAccumulatedNotificationsWithBoolean_(SquiDBSquidDatabase *self, jboolean transactionSuccess) {
   id<JavaUtilSet> accumulatedNotifiers = [((JavaLangThreadLocal *) nil_chk(self->notifierAccumulator_)) get];
   if (![((id<JavaUtilSet>) nil_chk(accumulatedNotifiers)) isEmpty]) {
-    for (ComYahooSquidbDataDataChangedNotifier * __strong notifier in accumulatedNotifiers) {
-      [((ComYahooSquidbDataDataChangedNotifier *) nil_chk(notifier)) flushAccumulatedNotificationsWithComYahooSquidbDataSquidDatabase:self withBoolean:transactionSuccess && self->dataChangedNotificationsEnabled_];
+    for (SquiDBDataChangedNotifier * __strong notifier in accumulatedNotifiers) {
+      [((SquiDBDataChangedNotifier *) nil_chk(notifier)) flushAccumulatedNotificationsWithSquiDBSquidDatabase:self withBoolean:transactionSuccess && self->dataChangedNotificationsEnabled_];
     }
     [accumulatedNotifiers clear];
   }
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_copyDatabaseLockedWithJavaIoFile_(ComYahooSquidbDataSquidDatabase *self, JavaIoFile *toDir) {
+jboolean SquiDBSquidDatabase_copyDatabaseLockedWithJavaIoFile_(SquiDBSquidDatabase *self, JavaIoFile *toDir) {
   if (!([((JavaIoFile *) nil_chk(toDir)) mkdirs] || [toDir isDirectory])) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, @"Error creating directories for database copy");
+    SquiDBLogger_eWithNSString_withNSString_(SquiDBLogger_LOG_TAG, @"Error creating directories for database copy");
     return false;
   }
   JavaIoFile *dbFile = new_JavaIoFile_initWithNSString_([self getDatabasePath]);
   @try {
-    if (ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, dbFile, toDir)) {
-      ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-journal")), toDir);
-      ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-shm")), toDir);
-      ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-wal")), toDir);
+    if (SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, dbFile, toDir)) {
+      SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-journal")), toDir);
+      SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-shm")), toDir);
+      SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(self, new_JavaIoFile_initWithNSString_(JreStrcat("$$", [dbFile getPath], @"-wal")), toDir);
     }
     else {
-      ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$", @"Attempted to copy database ", [self getName], @" but it doesn't exist yet"));
+      SquiDBLogger_eWithNSString_withNSString_(SquiDBLogger_LOG_TAG, JreStrcat("$$$", @"Attempted to copy database ", [self getName], @" but it doesn't exist yet"));
       return false;
     }
   }
   @catch (JavaIoIOException *e) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$", @"Error copying database ", [self getName]), e);
+    SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBLogger_LOG_TAG, JreStrcat("$$", @"Error copying database ", [self getName]), e);
     return false;
   }
   return true;
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(ComYahooSquidbDataSquidDatabase *self, JavaIoFile *inArg, JavaIoFile *toDir) {
+jboolean SquiDBSquidDatabase_copyFileIfExistsWithJavaIoFile_withJavaIoFile_(SquiDBSquidDatabase *self, JavaIoFile *inArg, JavaIoFile *toDir) {
   if ([((JavaIoFile *) nil_chk(inArg)) exists]) {
-    ComYahooSquidbUtilitySquidUtilities_copyFileWithJavaIoFile_withJavaIoFile_(inArg, new_JavaIoFile_initWithNSString_(JreStrcat("$$$", [((JavaIoFile *) nil_chk(toDir)) getAbsolutePath], JreLoadStatic(JavaIoFile, separator), [inArg getName])));
+    SquiDBSquidUtilities_copyFileWithJavaIoFile_withJavaIoFile_(inArg, new_JavaIoFile_initWithNSString_(JreStrcat("$$$", [((JavaIoFile *) nil_chk(toDir)) getAbsolutePath], JreLoadStatic(JavaIoFile, separator), [inArg getName])));
     return true;
   }
   return false;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase)
 
-@implementation ComYahooSquidbDataSquidDatabase_1
+J2OBJC_NAME_MAPPING(SquiDBSquidDatabase, "com.yahoo.squidb.data", "SquiDB")
+
+@implementation SquiDBSquidDatabase_1
 
 - (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)capture$0 {
-  ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(self, capture$0);
+  SquiDBSquidDatabase_1_initWithJavaUtilSet_(self, capture$0);
   return self;
 }
 
-- (ComYahooSquidbDataPreparedInsertCache *)initialValue {
-  return new_ComYahooSquidbDataPreparedInsertCache_initWithJavaUtilSet_(val$openStatementTracking_);
+- (SquiDBPreparedInsertCache *)initialValue {
+  return new_SquiDBPreparedInsertCache_initPackagePrivateWithJavaUtilSet_(val$openStatementTracking_);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataPreparedInsertCache;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
+    { NULL, "LSquiDBPreparedInsertCache;", 0x4, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -2128,59 +2130,59 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase)
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "val$openStatementTracking_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x1012, -1, -1, 0, -1 },
+    { "val$openStatementTracking_", "LJavaUtilSet;", .constantValue.asLong = 0, 0x1012, -1, -1, 1, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "LComYahooSquidbDataSquidDatabase;", "newPreparedInsertCacheWithJavaUtilSet:", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_1 = { "", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x8018, 2, 1, 1, -1, 2, 3, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_1;
+  static const void *ptrTable[] = { "LJavaUtilSet;", "Ljava/util/Set<Lcom/yahoo/squidb/data/ISQLitePreparedStatement;>;", "LSquiDBSquidDatabase;", "newPreparedInsertCacheWithJavaUtilSet:", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/PreparedInsertCache;>;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_1 = { "", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x8010, 2, 1, 2, -1, 3, 4, -1 };
+  return &_SquiDBSquidDatabase_1;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(ComYahooSquidbDataSquidDatabase_1 *self, id<JavaUtilSet> capture$0) {
+void SquiDBSquidDatabase_1_initWithJavaUtilSet_(SquiDBSquidDatabase_1 *self, id<JavaUtilSet> capture$0) {
   self->val$openStatementTracking_ = capture$0;
   JavaLangThreadLocal_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_1 *new_ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_1, initWithJavaUtilSet_, capture$0)
+SquiDBSquidDatabase_1 *new_SquiDBSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_1, initWithJavaUtilSet_, capture$0)
 }
 
-ComYahooSquidbDataSquidDatabase_1 *create_ComYahooSquidbDataSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_1, initWithJavaUtilSet_, capture$0)
+SquiDBSquidDatabase_1 *create_SquiDBSquidDatabase_1_initWithJavaUtilSet_(id<JavaUtilSet> capture$0) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_1, initWithJavaUtilSet_, capture$0)
 }
 
-@implementation ComYahooSquidbDataSquidDatabase_TransactionSuccessState
+@implementation SquiDBSquidDatabase_TransactionSuccessState
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init(self);
+  SquiDBSquidDatabase_TransactionSuccessState_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)beginTransaction {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(self);
+  SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(self);
 }
 
 - (jboolean)inTransaction {
-  return ComYahooSquidbDataSquidDatabase_TransactionSuccessState_inTransaction(self);
+  return SquiDBSquidDatabase_TransactionSuccessState_inTransaction(self);
 }
 
 - (void)setTransactionSuccessful {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_setTransactionSuccessful(self);
+  SquiDBSquidDatabase_TransactionSuccessState_setTransactionSuccessful(self);
 }
 
 - (void)unsetTransactionSuccessful {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(self);
+  SquiDBSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(self);
 }
 
 - (void)endTransaction {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_endTransaction(self);
+  SquiDBSquidDatabase_TransactionSuccessState_endTransaction(self);
 }
 
 - (void)reset {
-  ComYahooSquidbDataSquidDatabase_TransactionSuccessState_reset(self);
+  SquiDBSquidDatabase_TransactionSuccessState_reset(self);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -2208,76 +2210,76 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "nestedSuccessStack_", "LJavaUtilDeque;", .constantValue.asLong = 0, 0x0, -1, -1, 0, -1 },
     { "outerTransactionSuccess_", "Z", .constantValue.asLong = 0, 0x0, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/util/Deque<Ljava/lang/Boolean;>;", "LComYahooSquidbDataSquidDatabase;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_TransactionSuccessState = { "TransactionSuccessState", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0xa, 7, 2, 1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_TransactionSuccessState;
+  static const void *ptrTable[] = { "Ljava/util/Deque<Ljava/lang/Boolean;>;", "LSquiDBSquidDatabase;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_TransactionSuccessState = { "TransactionSuccessState", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0xa, 7, 2, 1, -1, -1, -1, -1 };
+  return &_SquiDBSquidDatabase_TransactionSuccessState;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_init(SquiDBSquidDatabase_TransactionSuccessState *self) {
   NSObject_init(self);
   self->nestedSuccessStack_ = new_JavaUtilLinkedList_init();
   self->outerTransactionSuccess_ = true;
 }
 
-ComYahooSquidbDataSquidDatabase_TransactionSuccessState *new_ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_TransactionSuccessState, init)
+SquiDBSquidDatabase_TransactionSuccessState *new_SquiDBSquidDatabase_TransactionSuccessState_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_TransactionSuccessState, init)
 }
 
-ComYahooSquidbDataSquidDatabase_TransactionSuccessState *create_ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_TransactionSuccessState, init)
+SquiDBSquidDatabase_TransactionSuccessState *create_SquiDBSquidDatabase_TransactionSuccessState_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_TransactionSuccessState, init)
 }
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_beginTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_beginTransaction(SquiDBSquidDatabase_TransactionSuccessState *self) {
   [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pushWithId:JavaLangBoolean_valueOfWithBoolean_(false)];
 }
 
-jboolean ComYahooSquidbDataSquidDatabase_TransactionSuccessState_inTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+jboolean SquiDBSquidDatabase_TransactionSuccessState_inTransaction(SquiDBSquidDatabase_TransactionSuccessState *self) {
   return [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) size] > 0;
 }
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_setTransactionSuccessful(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_setTransactionSuccessful(SquiDBSquidDatabase_TransactionSuccessState *self) {
   (void) [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pop];
   [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pushWithId:JavaLangBoolean_valueOfWithBoolean_(true)];
 }
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_unsetTransactionSuccessful(SquiDBSquidDatabase_TransactionSuccessState *self) {
   (void) [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pop];
   [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pushWithId:JavaLangBoolean_valueOfWithBoolean_(false)];
 }
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_endTransaction(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_endTransaction(SquiDBSquidDatabase_TransactionSuccessState *self) {
   JavaLangBoolean *mostRecentTransactionSuccess = [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) pop];
   if (![((JavaLangBoolean *) nil_chk(mostRecentTransactionSuccess)) booleanValue]) {
     self->outerTransactionSuccess_ = false;
   }
 }
 
-void ComYahooSquidbDataSquidDatabase_TransactionSuccessState_reset(ComYahooSquidbDataSquidDatabase_TransactionSuccessState *self) {
+void SquiDBSquidDatabase_TransactionSuccessState_reset(SquiDBSquidDatabase_TransactionSuccessState *self) {
   [((id<JavaUtilDeque>) nil_chk(self->nestedSuccessStack_)) clear];
   self->outerTransactionSuccess_ = true;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_TransactionSuccessState)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase_TransactionSuccessState)
 
-@implementation ComYahooSquidbDataSquidDatabase_2
+@implementation SquiDBSquidDatabase_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_2_init(self);
+  SquiDBSquidDatabase_2_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (ComYahooSquidbDataSquidDatabase_TransactionSuccessState *)initialValue {
-  return new_ComYahooSquidbDataSquidDatabase_TransactionSuccessState_init();
+- (SquiDBSquidDatabase_TransactionSuccessState *)initialValue {
+  return new_SquiDBSquidDatabase_TransactionSuccessState_init();
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataSquidDatabase_TransactionSuccessState;", 0x4, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSquidDatabase_TransactionSuccessState;", 0x4, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -2285,46 +2287,46 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LComYahooSquidbDataSquidDatabase;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_2 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 0, -1, -1, 1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_2;
+  static const void *ptrTable[] = { "LSquiDBSquidDatabase;", "Ljava/lang/ThreadLocal<Lcom/yahoo/squidb/data/SquidDatabase$TransactionSuccessState;>;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_2 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8010, 2, 0, 0, -1, -1, 1, -1 };
+  return &_SquiDBSquidDatabase_2;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_2_init(ComYahooSquidbDataSquidDatabase_2 *self) {
+void SquiDBSquidDatabase_2_init(SquiDBSquidDatabase_2 *self) {
   JavaLangThreadLocal_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_2 *new_ComYahooSquidbDataSquidDatabase_2_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_2, init)
+SquiDBSquidDatabase_2 *new_SquiDBSquidDatabase_2_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_2, init)
 }
 
-ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_2, init)
+SquiDBSquidDatabase_2 *create_SquiDBSquidDatabase_2_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_2, init)
 }
 
-@implementation ComYahooSquidbDataSquidDatabase_OpenHelperDelegate
+@implementation SquiDBSquidDatabase_OpenHelperDelegate
 
-- (instancetype)initWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)outer$ {
-  ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(self, outer$);
+- (instancetype)initWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)outer$ {
+  SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(self, outer$);
   return self;
 }
 
-- (void)onCreateWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(this$0_, db);
-  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(ComYahooSquidbDataSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
-  ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *sqlVisitor = new_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init();
+- (void)onCreateWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(this$0_, db);
+  JavaLangStringBuilder *sql = new_JavaLangStringBuilder_initWithInt_(SquiDBSquidDatabase_STRING_BUILDER_INITIAL_CAPACITY);
+  SquiDBSquidDatabase_SqlConstructorVisitor *sqlVisitor = new_SquiDBSquidDatabase_SqlConstructorVisitor_init();
   IOSObjectArray *tables = [this$0_ getTables];
   if (tables != nil) {
     {
       IOSObjectArray *a__ = tables;
-      ComYahooSquidbSqlTable * const *b__ = a__->buffer_;
-      ComYahooSquidbSqlTable * const *e__ = b__ + a__->size_;
+      SquiDBTable * const *b__ = a__->buffer_;
+      SquiDBTable * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlTable *table = *b__++;
-        [((ComYahooSquidbSqlTable *) nil_chk(table)) appendCreateTableSqlWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(this$0_) withJavaLangStringBuilder:sql withComYahooSquidbSqlProperty_PropertyVisitor:sqlVisitor];
-        [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(db)) execSQLWithNSString:[sql description]];
+        SquiDBTable *table = *b__++;
+        [((SquiDBTable *) nil_chk(table)) appendCreateTableSqlWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(this$0_) withJavaLangStringBuilder:sql withSquiDBProperty_PropertyVisitor:sqlVisitor];
+        [((id<SquiDBISQLiteDatabase>) nil_chk(db)) execSQLWithNSString:[sql description]];
         [sql setLengthWithInt:0];
       }
     }
@@ -2333,12 +2335,12 @@ ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init
   if (views != nil) {
     {
       IOSObjectArray *a__ = views;
-      ComYahooSquidbSqlView * const *b__ = a__->buffer_;
-      ComYahooSquidbSqlView * const *e__ = b__ + a__->size_;
+      SquiDBView * const *b__ = a__->buffer_;
+      SquiDBView * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlView *view = *b__++;
-        [((ComYahooSquidbSqlView *) nil_chk(view)) createViewSqlWithComYahooSquidbSqlCompileContext:ComYahooSquidbDataSquidDatabase_getCompileContext(this$0_) withJavaLangStringBuilder:sql];
-        [((id<ComYahooSquidbDataISQLiteDatabase>) nil_chk(db)) execSQLWithNSString:[sql description]];
+        SquiDBView *view = *b__++;
+        [((SquiDBView *) nil_chk(view)) createViewSqlWithSquiDBCompileContext:SquiDBSquidDatabase_getCompileContext(this$0_) withJavaLangStringBuilder:sql];
+        [((id<SquiDBISQLiteDatabase>) nil_chk(db)) execSQLWithNSString:[sql description]];
         [sql setLengthWithInt:0];
       }
     }
@@ -2347,26 +2349,26 @@ ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init
   if (indexes != nil) {
     {
       IOSObjectArray *a__ = indexes;
-      ComYahooSquidbSqlIndex * const *b__ = a__->buffer_;
-      ComYahooSquidbSqlIndex * const *e__ = b__ + a__->size_;
+      SquiDBIndex * const *b__ = a__->buffer_;
+      SquiDBIndex * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlIndex *idx = *b__++;
-        [this$0_ tryCreateIndexWithComYahooSquidbSqlIndex:idx];
+        SquiDBIndex *idx = *b__++;
+        [this$0_ tryCreateIndexWithSquiDBIndex:idx];
       }
     }
   }
-  [this$0_ onTablesCreatedWithComYahooSquidbDataISQLiteDatabase:db];
+  [this$0_ onTablesCreatedWithSquiDBISQLiteDatabase:db];
 }
 
-- (void)onUpgradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                               withInt:(jint)oldVersion
-                                               withInt:(jint)newVersion {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(this$0_, db);
+- (void)onUpgradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                   withInt:(jint)oldVersion
+                                   withInt:(jint)newVersion {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(this$0_, db);
   jboolean success = false;
   JavaLangException *thrown = nil;
   this$0_->isInMigration_ = true;
   @try {
-    success = [this$0_ onUpgradeWithComYahooSquidbDataISQLiteDatabase:db withInt:oldVersion withInt:newVersion];
+    success = [this$0_ onUpgradeWithSquiDBISQLiteDatabase:db withInt:oldVersion withInt:newVersion];
   }
   @catch (JavaLangException *e) {
     thrown = e;
@@ -2375,26 +2377,26 @@ ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init
   @finally {
     this$0_->isInMigration_ = false;
   }
-  if ([thrown isKindOfClass:[ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException class]]) {
-    @throw nil_chk((ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *) cast_chk(thrown, [ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException class]));
+  if ([thrown isKindOfClass:[SquiDBSquidDatabase_RecreateDuringMigrationException class]]) {
+    @throw nil_chk((SquiDBSquidDatabase_RecreateDuringMigrationException *) thrown);
   }
-  else if ([thrown isKindOfClass:[ComYahooSquidbDataSquidDatabase_MigrationFailedException class]]) {
-    @throw nil_chk((ComYahooSquidbDataSquidDatabase_MigrationFailedException *) cast_chk(thrown, [ComYahooSquidbDataSquidDatabase_MigrationFailedException class]));
+  else if ([thrown isKindOfClass:[SquiDBSquidDatabase_MigrationFailedException class]]) {
+    @throw nil_chk((SquiDBSquidDatabase_MigrationFailedException *) thrown);
   }
   else if (!success) {
-    @throw new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_([this$0_ getName], oldVersion, newVersion, thrown);
+    @throw new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_([this$0_ getName], oldVersion, newVersion, thrown);
   }
 }
 
-- (void)onDowngradeWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db
-                                                 withInt:(jint)oldVersion
-                                                 withInt:(jint)newVersion {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(this$0_, db);
+- (void)onDowngradeWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db
+                                     withInt:(jint)oldVersion
+                                     withInt:(jint)newVersion {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(this$0_, db);
   jboolean success = false;
   JavaLangException *thrown = nil;
   this$0_->isInMigration_ = true;
   @try {
-    success = [this$0_ onDowngradeWithComYahooSquidbDataISQLiteDatabase:db withInt:oldVersion withInt:newVersion];
+    success = [this$0_ onDowngradeWithSquiDBISQLiteDatabase:db withInt:oldVersion withInt:newVersion];
   }
   @catch (JavaLangException *e) {
     thrown = e;
@@ -2403,114 +2405,114 @@ ComYahooSquidbDataSquidDatabase_2 *create_ComYahooSquidbDataSquidDatabase_2_init
   @finally {
     this$0_->isInMigration_ = false;
   }
-  if ([thrown isKindOfClass:[ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException class]]) {
-    @throw nil_chk((ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *) cast_chk(thrown, [ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException class]));
+  if ([thrown isKindOfClass:[SquiDBSquidDatabase_RecreateDuringMigrationException class]]) {
+    @throw nil_chk((SquiDBSquidDatabase_RecreateDuringMigrationException *) thrown);
   }
-  else if ([thrown isKindOfClass:[ComYahooSquidbDataSquidDatabase_MigrationFailedException class]]) {
-    @throw nil_chk((ComYahooSquidbDataSquidDatabase_MigrationFailedException *) cast_chk(thrown, [ComYahooSquidbDataSquidDatabase_MigrationFailedException class]));
+  else if ([thrown isKindOfClass:[SquiDBSquidDatabase_MigrationFailedException class]]) {
+    @throw nil_chk((SquiDBSquidDatabase_MigrationFailedException *) thrown);
   }
   else if (!success) {
-    @throw new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_([this$0_ getName], oldVersion, newVersion, thrown);
+    @throw new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_([this$0_ getName], oldVersion, newVersion, thrown);
   }
 }
 
-- (void)onConfigureWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(this$0_, db);
-  [this$0_ onConfigureWithComYahooSquidbDataISQLiteDatabase:db];
+- (void)onConfigureWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(this$0_, db);
+  [this$0_ onConfigureWithSquiDBISQLiteDatabase:db];
 }
 
-- (void)onOpenWithComYahooSquidbDataISQLiteDatabase:(id<ComYahooSquidbDataISQLiteDatabase>)db {
-  ComYahooSquidbDataSquidDatabase_setDatabaseWithComYahooSquidbDataISQLiteDatabase_(this$0_, db);
-  [this$0_ onOpenWithComYahooSquidbDataISQLiteDatabase:db];
+- (void)onOpenWithSquiDBISQLiteDatabase:(id<SquiDBISQLiteDatabase>)db {
+  SquiDBSquidDatabase_setDatabaseWithSquiDBISQLiteDatabase_(this$0_, db);
+  [this$0_ onOpenWithSquiDBISQLiteDatabase:db];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 4, 3, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 5, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 6, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x2, -1, 0, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 5, 4, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 6, 2, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 7, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbDataSquidDatabase:);
-  methods[1].selector = @selector(onCreateWithComYahooSquidbDataISQLiteDatabase:);
-  methods[2].selector = @selector(onUpgradeWithComYahooSquidbDataISQLiteDatabase:withInt:withInt:);
-  methods[3].selector = @selector(onDowngradeWithComYahooSquidbDataISQLiteDatabase:withInt:withInt:);
-  methods[4].selector = @selector(onConfigureWithComYahooSquidbDataISQLiteDatabase:);
-  methods[5].selector = @selector(onOpenWithComYahooSquidbDataISQLiteDatabase:);
+  methods[0].selector = @selector(initWithSquiDBSquidDatabase:);
+  methods[1].selector = @selector(onCreateWithSquiDBISQLiteDatabase:);
+  methods[2].selector = @selector(onUpgradeWithSquiDBISQLiteDatabase:withInt:withInt:);
+  methods[3].selector = @selector(onDowngradeWithSquiDBISQLiteDatabase:withInt:withInt:);
+  methods[4].selector = @selector(onConfigureWithSquiDBISQLiteDatabase:);
+  methods[5].selector = @selector(onOpenWithSquiDBISQLiteDatabase:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LComYahooSquidbDataSquidDatabase;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LSquiDBSquidDatabase;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "onCreate", "LComYahooSquidbDataISQLiteDatabase;", "onUpgrade", "LComYahooSquidbDataISQLiteDatabase;II", "onDowngrade", "onConfigure", "onOpen", "LComYahooSquidbDataSquidDatabase;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_OpenHelperDelegate = { "OpenHelperDelegate", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x11, 6, 1, 7, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate;
+  static const void *ptrTable[] = { "LSquiDBSquidDatabase;", "onCreate", "LSquiDBISQLiteDatabase;", "onUpgrade", "LSquiDBISQLiteDatabase;II", "onDowngrade", "onConfigure", "onOpen" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_OpenHelperDelegate = { "OpenHelperDelegate", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x11, 6, 1, 0, -1, -1, -1, -1 };
+  return &_SquiDBSquidDatabase_OpenHelperDelegate;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *self, ComYahooSquidbDataSquidDatabase *outer$) {
+void SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase_OpenHelperDelegate *self, SquiDBSquidDatabase *outer$) {
   self->this$0_ = outer$;
   NSObject_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *new_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *outer$) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate, initWithComYahooSquidbDataSquidDatabase_, outer$)
+SquiDBSquidDatabase_OpenHelperDelegate *new_SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase *outer$) {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_OpenHelperDelegate, initWithSquiDBSquidDatabase_, outer$)
 }
 
-ComYahooSquidbDataSquidDatabase_OpenHelperDelegate *create_ComYahooSquidbDataSquidDatabase_OpenHelperDelegate_initWithComYahooSquidbDataSquidDatabase_(ComYahooSquidbDataSquidDatabase *outer$) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate, initWithComYahooSquidbDataSquidDatabase_, outer$)
+SquiDBSquidDatabase_OpenHelperDelegate *create_SquiDBSquidDatabase_OpenHelperDelegate_initWithSquiDBSquidDatabase_(SquiDBSquidDatabase *outer$) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_OpenHelperDelegate, initWithSquiDBSquidDatabase_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_OpenHelperDelegate)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase_OpenHelperDelegate)
 
-@implementation ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor
+@implementation SquiDBSquidDatabase_SqlConstructorVisitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init(self);
+  SquiDBSquidDatabase_SqlConstructorVisitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (JavaLangVoid *)appendColumnDefinitionWithNSString:(NSString *)type
-                       withComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
+                                  withSquiDBProperty:(SquiDBProperty *)property
                            withJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, type, property, sql);
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, type, property, sql);
 }
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"REAL", property, sql);
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"REAL", property, sql);
 }
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
 }
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
 }
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"TEXT", property, sql);
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"TEXT", property, sql);
 }
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"INTEGER", property, sql);
 }
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(JavaLangStringBuilder *)sql {
-  return ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(self, @"BLOB", property, sql);
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(JavaLangStringBuilder *)sql {
+  return SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(self, @"BLOB", property, sql);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -2528,48 +2530,48 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(appendColumnDefinitionWithNSString:withComYahooSquidbSqlProperty:withJavaLangStringBuilder:);
-  methods[2].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:);
-  methods[3].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:);
-  methods[4].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:);
-  methods[5].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:);
-  methods[6].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:);
-  methods[7].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:);
+  methods[1].selector = @selector(appendColumnDefinitionWithNSString:withSquiDBProperty:withJavaLangStringBuilder:);
+  methods[2].selector = @selector(visitDoubleWithSquiDBProperty:withId:);
+  methods[3].selector = @selector(visitIntegerWithSquiDBProperty:withId:);
+  methods[4].selector = @selector(visitLongWithSquiDBProperty:withId:);
+  methods[5].selector = @selector(visitStringWithSquiDBProperty:withId:);
+  methods[6].selector = @selector(visitBooleanWithSquiDBProperty:withId:);
+  methods[7].selector = @selector(visitBlobWithSquiDBProperty:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "appendColumnDefinition", "LNSString;LComYahooSquidbSqlProperty;LJavaLangStringBuilder;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitDouble", "LComYahooSquidbSqlProperty;LJavaLangStringBuilder;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "LComYahooSquidbDataSquidDatabase;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Void;Ljava/lang/StringBuilder;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor = { "SqlConstructorVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 16, -1, -1, 17, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor;
+  static const void *ptrTable[] = { "appendColumnDefinition", "LNSString;LSquiDBProperty;LJavaLangStringBuilder;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitDouble", "LSquiDBProperty;LJavaLangStringBuilder;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Ljava/lang/StringBuilder;)Ljava/lang/Void;", "LSquiDBSquidDatabase;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Void;Ljava/lang/StringBuilder;>;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_SqlConstructorVisitor = { "SqlConstructorVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 16, -1, -1, 17, -1 };
+  return &_SquiDBSquidDatabase_SqlConstructorVisitor;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *self) {
+void SquiDBSquidDatabase_SqlConstructorVisitor_init(SquiDBSquidDatabase_SqlConstructorVisitor *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *new_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor, init)
+SquiDBSquidDatabase_SqlConstructorVisitor *new_SquiDBSquidDatabase_SqlConstructorVisitor_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_SqlConstructorVisitor, init)
 }
 
-ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *create_ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor, init)
+SquiDBSquidDatabase_SqlConstructorVisitor *create_SquiDBSquidDatabase_SqlConstructorVisitor_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_SqlConstructorVisitor, init)
 }
 
-JavaLangVoid *ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withComYahooSquidbSqlProperty_withJavaLangStringBuilder_(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor *self, NSString *type, ComYahooSquidbSqlProperty *property, JavaLangStringBuilder *sql) {
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]])) appendWithNSString:@" "])) appendWithNSString:type];
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_([property getColumnDefinition])) {
+JavaLangVoid *SquiDBSquidDatabase_SqlConstructorVisitor_appendColumnDefinitionWithNSString_withSquiDBProperty_withJavaLangStringBuilder_(SquiDBSquidDatabase_SqlConstructorVisitor *self, NSString *type, SquiDBProperty *property, JavaLangStringBuilder *sql) {
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]])) appendWithNSString:@" "])) appendWithNSString:type];
+  if (!SquiDBSqlUtils_isEmptyWithNSString_([property getColumnDefinition])) {
     (void) [((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@" "])) appendWithNSString:[property getColumnDefinition]];
   }
   return nil;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_SqlConstructorVisitor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase_SqlConstructorVisitor)
 
-@implementation ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException
+@implementation SquiDBSquidDatabase_RecreateDuringMigrationException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init(self);
+  SquiDBSquidDatabase_RecreateDuringMigrationException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -2584,35 +2586,35 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID", "J", .constantValue.asLong = ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "serialVersionUID", "J", .constantValue.asLong = SquiDBSquidDatabase_RecreateDuringMigrationException_serialVersionUID, 0x1a, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbDataSquidDatabase;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException = { "RecreateDuringMigrationException", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0xa, 1, 1, 0, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException;
+  static const void *ptrTable[] = { "LSquiDBSquidDatabase;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_RecreateDuringMigrationException = { "RecreateDuringMigrationException", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0xa, 1, 1, 0, -1, -1, -1, -1 };
+  return &_SquiDBSquidDatabase_RecreateDuringMigrationException;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *self) {
+void SquiDBSquidDatabase_RecreateDuringMigrationException_init(SquiDBSquidDatabase_RecreateDuringMigrationException *self) {
   JavaLangRuntimeException_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *new_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException, init)
+SquiDBSquidDatabase_RecreateDuringMigrationException *new_SquiDBSquidDatabase_RecreateDuringMigrationException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_RecreateDuringMigrationException, init)
 }
 
-ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException *create_ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException, init)
+SquiDBSquidDatabase_RecreateDuringMigrationException *create_SquiDBSquidDatabase_RecreateDuringMigrationException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_RecreateDuringMigrationException, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_RecreateDuringMigrationException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase_RecreateDuringMigrationException)
 
-@implementation ComYahooSquidbDataSquidDatabase_MigrationFailedException
+@implementation SquiDBSquidDatabase_MigrationFailedException
 
 - (instancetype)initWithNSString:(NSString *)dbName
                          withInt:(jint)oldVersion
                          withInt:(jint)newVersion {
-  ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(self, dbName, oldVersion, newVersion);
+  SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(self, dbName, oldVersion, newVersion);
   return self;
 }
 
@@ -2620,7 +2622,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_RecreateDuringM
                          withInt:(jint)oldVersion
                          withInt:(jint)newVersion
            withJavaLangThrowable:(JavaLangThrowable *)throwable {
-  ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(self, dbName, oldVersion, newVersion, throwable);
+  SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(self, dbName, oldVersion, newVersion, throwable);
   return self;
 }
 
@@ -2636,52 +2638,52 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_RecreateDuringM
   methods[1].selector = @selector(initWithNSString:withInt:withInt:withJavaLangThrowable:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID", "J", .constantValue.asLong = ComYahooSquidbDataSquidDatabase_MigrationFailedException_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "serialVersionUID", "J", .constantValue.asLong = SquiDBSquidDatabase_MigrationFailedException_serialVersionUID, 0x1a, -1, -1, -1, -1 },
     { "dbName_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
     { "oldVersion_", "I", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
     { "newVersion_", "I", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;II", "LNSString;IILJavaLangThrowable;", "LComYahooSquidbDataSquidDatabase;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_MigrationFailedException = { "MigrationFailedException", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x9, 2, 4, 2, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_MigrationFailedException;
+  static const void *ptrTable[] = { "LNSString;II", "LNSString;IILJavaLangThrowable;", "LSquiDBSquidDatabase;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_MigrationFailedException = { "MigrationFailedException", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x9, 2, 4, 2, -1, -1, -1, -1 };
+  return &_SquiDBSquidDatabase_MigrationFailedException;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(ComYahooSquidbDataSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion) {
-  ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(self, dbName, oldVersion, newVersion, nil);
+void SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(SquiDBSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion) {
+  SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(self, dbName, oldVersion, newVersion, nil);
 }
 
-ComYahooSquidbDataSquidDatabase_MigrationFailedException *new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_, dbName, oldVersion, newVersion)
+SquiDBSquidDatabase_MigrationFailedException *new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_, dbName, oldVersion, newVersion)
 }
 
-ComYahooSquidbDataSquidDatabase_MigrationFailedException *create_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_, dbName, oldVersion, newVersion)
+SquiDBSquidDatabase_MigrationFailedException *create_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_(NSString *dbName, jint oldVersion, jint newVersion) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_, dbName, oldVersion, newVersion)
 }
 
-void ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(ComYahooSquidbDataSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
+void SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(SquiDBSquidDatabase_MigrationFailedException *self, NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
   JavaLangRuntimeException_initWithNSString_withJavaLangThrowable_(self, JreStrcat("$$$I$I", @"Failed to migrate db ", dbName, @" from version ", oldVersion, @" to ", newVersion), throwable);
   self->dbName_ = dbName;
   self->oldVersion_ = oldVersion;
   self->newVersion_ = newVersion;
 }
 
-ComYahooSquidbDataSquidDatabase_MigrationFailedException *new_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_withJavaLangThrowable_, dbName, oldVersion, newVersion, throwable)
+SquiDBSquidDatabase_MigrationFailedException *new_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_withJavaLangThrowable_, dbName, oldVersion, newVersion, throwable)
 }
 
-ComYahooSquidbDataSquidDatabase_MigrationFailedException *create_ComYahooSquidbDataSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_withJavaLangThrowable_, dbName, oldVersion, newVersion, throwable)
+SquiDBSquidDatabase_MigrationFailedException *create_SquiDBSquidDatabase_MigrationFailedException_initWithNSString_withInt_withInt_withJavaLangThrowable_(NSString *dbName, jint oldVersion, jint newVersion, JavaLangThrowable *throwable) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_MigrationFailedException, initWithNSString_withInt_withInt_withJavaLangThrowable_, dbName, oldVersion, newVersion, throwable)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidDatabase_MigrationFailedException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidDatabase_MigrationFailedException)
 
-@implementation ComYahooSquidbDataSquidDatabase_3
+@implementation SquiDBSquidDatabase_3
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidDatabase_3_init(self);
+  SquiDBSquidDatabase_3_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -2701,28 +2703,28 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "()Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "LComYahooSquidbDataSquidDatabase;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidDatabase_3 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, 2, -1 };
-  return &_ComYahooSquidbDataSquidDatabase_3;
+  static const void *ptrTable[] = { "()Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;", "LSquiDBSquidDatabase;", "Ljava/lang/ThreadLocal<Ljava/util/Set<Lcom/yahoo/squidb/data/DataChangedNotifier<*>;>;>;" };
+  static const J2ObjcClassInfo _SquiDBSquidDatabase_3 = { "", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x8010, 2, 0, 1, -1, -1, 2, -1 };
+  return &_SquiDBSquidDatabase_3;
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_3_init(ComYahooSquidbDataSquidDatabase_3 *self) {
+void SquiDBSquidDatabase_3_init(SquiDBSquidDatabase_3 *self) {
   JavaLangThreadLocal_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_3 *new_ComYahooSquidbDataSquidDatabase_3_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_3, init)
+SquiDBSquidDatabase_3 *new_SquiDBSquidDatabase_3_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_3, init)
 }
 
-ComYahooSquidbDataSquidDatabase_3 *create_ComYahooSquidbDataSquidDatabase_3_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_3, init)
+SquiDBSquidDatabase_3 *create_SquiDBSquidDatabase_3_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_3, init)
 }
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidDatabase_$Lambda$1)
+J2OBJC_INITIALIZED_DEFN(SquiDBSquidDatabase_$Lambda$1)
 
-@implementation ComYahooSquidbDataSquidDatabase_$Lambda$1
+@implementation SquiDBSquidDatabase_$Lambda$1
 
 - (id)applyWithId:(id)x {
   return x != nil ? [x description] : @"";
@@ -2737,22 +2739,22 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidDatabase_$Lambda$1)
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbDataSquidDatabase_$Lambda$1 class]) {
-    ComYahooSquidbDataSquidDatabase_$Lambda$1_instance = new_ComYahooSquidbDataSquidDatabase_$Lambda$1_init();
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbDataSquidDatabase_$Lambda$1)
+  if (self == [SquiDBSquidDatabase_$Lambda$1 class]) {
+    SquiDBSquidDatabase_$Lambda$1_instance = new_SquiDBSquidDatabase_$Lambda$1_init();
+    J2OBJC_SET_INITIALIZED(SquiDBSquidDatabase_$Lambda$1)
   }
 }
 
 @end
 
-void ComYahooSquidbDataSquidDatabase_$Lambda$1_init(ComYahooSquidbDataSquidDatabase_$Lambda$1 *self) {
+void SquiDBSquidDatabase_$Lambda$1_init(SquiDBSquidDatabase_$Lambda$1 *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataSquidDatabase_$Lambda$1 *new_ComYahooSquidbDataSquidDatabase_$Lambda$1_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidDatabase_$Lambda$1, init)
+SquiDBSquidDatabase_$Lambda$1 *new_SquiDBSquidDatabase_$Lambda$1_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidDatabase_$Lambda$1, init)
 }
 
-ComYahooSquidbDataSquidDatabase_$Lambda$1 *create_ComYahooSquidbDataSquidDatabase_$Lambda$1_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidDatabase_$Lambda$1, init)
+SquiDBSquidDatabase_$Lambda$1 *create_SquiDBSquidDatabase_$Lambda$1_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidDatabase_$Lambda$1, init)
 }

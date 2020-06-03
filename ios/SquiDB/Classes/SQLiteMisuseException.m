@@ -7,17 +7,17 @@
 #include "SQLiteException.h"
 #include "SQLiteMisuseException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteMisuseException
+@implementation SquiDBSQLiteMisuseException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteMisuseException_init(self);
+  SquiDBSQLiteMisuseException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(self, error);
+  SquiDBSQLiteMisuseException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteMisuseException = { "SQLiteMisuseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteMisuseException;
+  static const J2ObjcClassInfo _SquiDBSQLiteMisuseException = { "SQLiteMisuseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteMisuseException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteMisuseException_init(ComYahooAndroidSqliteSQLiteMisuseException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteMisuseException_init(SquiDBSQLiteMisuseException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteMisuseException *new_ComYahooAndroidSqliteSQLiteMisuseException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteMisuseException, init)
+SquiDBSQLiteMisuseException *new_SquiDBSQLiteMisuseException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteMisuseException, init)
 }
 
-ComYahooAndroidSqliteSQLiteMisuseException *create_ComYahooAndroidSqliteSQLiteMisuseException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteMisuseException, init)
+SquiDBSQLiteMisuseException *create_SquiDBSQLiteMisuseException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteMisuseException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(ComYahooAndroidSqliteSQLiteMisuseException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteMisuseException_initWithNSString_(SquiDBSQLiteMisuseException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteMisuseException *new_ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteMisuseException, initWithNSString_, error)
+SquiDBSQLiteMisuseException *new_SquiDBSQLiteMisuseException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteMisuseException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteMisuseException *create_ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteMisuseException, initWithNSString_, error)
+SquiDBSQLiteMisuseException *create_SquiDBSQLiteMisuseException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteMisuseException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteMisuseException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteMisuseException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteMisuseException, "com.yahoo.android.sqlite", "SquiDB")

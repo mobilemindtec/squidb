@@ -7,10 +7,10 @@
 #include "J2ObjC_source.h"
 #include "java/lang/RuntimeException.h"
 
-@implementation ComYahooAndroidSqliteCursorWindowAllocationException
+@implementation SquiDBCursorWindowAllocationException
 
 - (instancetype)initWithNSString:(NSString *)description_ {
-  ComYahooAndroidSqliteCursorWindowAllocationException_initWithNSString_(self, description_);
+  SquiDBCursorWindowAllocationException_initWithNSString_(self, description_);
   return self;
 }
 
@@ -24,22 +24,24 @@
   methods[0].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCursorWindowAllocationException = { "CursorWindowAllocationException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCursorWindowAllocationException;
+  static const J2ObjcClassInfo _SquiDBCursorWindowAllocationException = { "CursorWindowAllocationException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBCursorWindowAllocationException;
 }
 
 @end
 
-void ComYahooAndroidSqliteCursorWindowAllocationException_initWithNSString_(ComYahooAndroidSqliteCursorWindowAllocationException *self, NSString *description_) {
+void SquiDBCursorWindowAllocationException_initWithNSString_(SquiDBCursorWindowAllocationException *self, NSString *description_) {
   JavaLangRuntimeException_initWithNSString_(self, description_);
 }
 
-ComYahooAndroidSqliteCursorWindowAllocationException *new_ComYahooAndroidSqliteCursorWindowAllocationException_initWithNSString_(NSString *description_) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCursorWindowAllocationException, initWithNSString_, description_)
+SquiDBCursorWindowAllocationException *new_SquiDBCursorWindowAllocationException_initWithNSString_(NSString *description_) {
+  J2OBJC_NEW_IMPL(SquiDBCursorWindowAllocationException, initWithNSString_, description_)
 }
 
-ComYahooAndroidSqliteCursorWindowAllocationException *create_ComYahooAndroidSqliteCursorWindowAllocationException_initWithNSString_(NSString *description_) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCursorWindowAllocationException, initWithNSString_, description_)
+SquiDBCursorWindowAllocationException *create_SquiDBCursorWindowAllocationException_initWithNSString_(NSString *description_) {
+  J2OBJC_CREATE_IMPL(SquiDBCursorWindowAllocationException, initWithNSString_, description_)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCursorWindowAllocationException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCursorWindowAllocationException)
+
+J2OBJC_NAME_MAPPING(SquiDBCursorWindowAllocationException, "com.yahoo.android.sqlite", "SquiDB")

@@ -11,7 +11,7 @@
 
 #define SOFT_HEAP_LIMIT 8 * 1024 * 1024
 
-@interface ComYahooAndroidSqliteSQLiteGlobal ()
+@interface SquiDBSQLiteGlobal ()
 
 + (jint)nativeReleaseMemory;
 
@@ -19,65 +19,65 @@
 
 @end
 
-inline NSString *ComYahooAndroidSqliteSQLiteGlobal_get_TAG(void);
-static NSString *ComYahooAndroidSqliteSQLiteGlobal_TAG = @"SQLiteGlobal";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteGlobal, TAG, NSString *)
+inline NSString *SquiDBSQLiteGlobal_get_TAG(void);
+static NSString *SquiDBSQLiteGlobal_TAG = @"SQLiteGlobal";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteGlobal, TAG, NSString *)
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteSQLiteGlobal_nativeReleaseMemory(void);
+__attribute__((unused)) static jint SquiDBSQLiteGlobal_nativeReleaseMemory(void);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteGlobal_init(ComYahooAndroidSqliteSQLiteGlobal *self);
+__attribute__((unused)) static void SquiDBSQLiteGlobal_init(SquiDBSQLiteGlobal *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteGlobal *new_ComYahooAndroidSqliteSQLiteGlobal_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteGlobal *new_SquiDBSQLiteGlobal_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteGlobal *create_ComYahooAndroidSqliteSQLiteGlobal_init(void);
+__attribute__((unused)) static SquiDBSQLiteGlobal *create_SquiDBSQLiteGlobal_init(void);
 
-@implementation ComYahooAndroidSqliteSQLiteGlobal
+@implementation SquiDBSQLiteGlobal
 
 + (void)sqlite3_initialize {
-  ComYahooAndroidSqliteSQLiteGlobal_sqlite3_initialize();
+  SquiDBSQLiteGlobal_sqlite3_initialize();
 }
 
 + (jint)nativeReleaseMemory {
-  return ComYahooAndroidSqliteSQLiteGlobal_nativeReleaseMemory();
+  return SquiDBSQLiteGlobal_nativeReleaseMemory();
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteGlobal_init(self);
+  SquiDBSQLiteGlobal_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (jint)releaseMemory {
-  return ComYahooAndroidSqliteSQLiteGlobal_releaseMemory();
+  return SquiDBSQLiteGlobal_releaseMemory();
 }
 
 + (jint)getDefaultPageSize {
-  return ComYahooAndroidSqliteSQLiteGlobal_getDefaultPageSize();
+  return SquiDBSQLiteGlobal_getDefaultPageSize();
 }
 
 + (NSString *)getDefaultJournalMode {
-  return ComYahooAndroidSqliteSQLiteGlobal_getDefaultJournalMode();
+  return SquiDBSQLiteGlobal_getDefaultJournalMode();
 }
 
 + (jint)getJournalSizeLimit {
-  return ComYahooAndroidSqliteSQLiteGlobal_getJournalSizeLimit();
+  return SquiDBSQLiteGlobal_getJournalSizeLimit();
 }
 
 + (NSString *)getDefaultSyncMode {
-  return ComYahooAndroidSqliteSQLiteGlobal_getDefaultSyncMode();
+  return SquiDBSQLiteGlobal_getDefaultSyncMode();
 }
 
 + (NSString *)getWALSyncMode {
-  return ComYahooAndroidSqliteSQLiteGlobal_getWALSyncMode();
+  return SquiDBSQLiteGlobal_getWALSyncMode();
 }
 
 + (jint)getWALAutoCheckpoint {
-  return ComYahooAndroidSqliteSQLiteGlobal_getWALAutoCheckpoint();
+  return SquiDBSQLiteGlobal_getWALAutoCheckpoint();
 }
 
 + (jint)getWALConnectionPoolSize {
-  return ComYahooAndroidSqliteSQLiteGlobal_getWALConnectionPoolSize();
+  return SquiDBSQLiteGlobal_getWALConnectionPoolSize();
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -112,15 +112,15 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 0, -1, -1 },
   };
-  static const void *ptrTable[] = { &ComYahooAndroidSqliteSQLiteGlobal_TAG };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteGlobal = { "SQLiteGlobal", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 11, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteGlobal;
+  static const void *ptrTable[] = { &SquiDBSQLiteGlobal_TAG };
+  static const J2ObjcClassInfo _SquiDBSQLiteGlobal = { "SQLiteGlobal", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 11, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteGlobal;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteGlobal_sqlite3_initialize() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+void SquiDBSQLiteGlobal_sqlite3_initialize() {
+  SquiDBSQLiteGlobal_initialize();
   // Enable multi-threaded mode.  In this mode, SQLite is safe to use by multiple
   // threads as long as no two threads use the same database connection at the same
   // time (which we guarantee in the SQLite database wrappers).
@@ -135,63 +135,65 @@ void ComYahooAndroidSqliteSQLiteGlobal_sqlite3_initialize() {
   sqlite3_initialize();
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_nativeReleaseMemory() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+jint SquiDBSQLiteGlobal_nativeReleaseMemory() {
+  SquiDBSQLiteGlobal_initialize();
   return sqlite3_release_memory(SOFT_HEAP_LIMIT);
 }
 
-void ComYahooAndroidSqliteSQLiteGlobal_init(ComYahooAndroidSqliteSQLiteGlobal *self) {
+void SquiDBSQLiteGlobal_init(SquiDBSQLiteGlobal *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteGlobal *new_ComYahooAndroidSqliteSQLiteGlobal_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteGlobal, init)
+SquiDBSQLiteGlobal *new_SquiDBSQLiteGlobal_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteGlobal, init)
 }
 
-ComYahooAndroidSqliteSQLiteGlobal *create_ComYahooAndroidSqliteSQLiteGlobal_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteGlobal, init)
+SquiDBSQLiteGlobal *create_SquiDBSQLiteGlobal_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteGlobal, init)
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_releaseMemory() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
-  return ComYahooAndroidSqliteSQLiteGlobal_nativeReleaseMemory();
+jint SquiDBSQLiteGlobal_releaseMemory() {
+  SquiDBSQLiteGlobal_initialize();
+  return SquiDBSQLiteGlobal_nativeReleaseMemory();
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_getDefaultPageSize() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+jint SquiDBSQLiteGlobal_getDefaultPageSize() {
+  SquiDBSQLiteGlobal_initialize();
   return 1024;
 }
 
-NSString *ComYahooAndroidSqliteSQLiteGlobal_getDefaultJournalMode() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+NSString *SquiDBSQLiteGlobal_getDefaultJournalMode() {
+  SquiDBSQLiteGlobal_initialize();
   return @"delete";
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_getJournalSizeLimit() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+jint SquiDBSQLiteGlobal_getJournalSizeLimit() {
+  SquiDBSQLiteGlobal_initialize();
   return 10000;
 }
 
-NSString *ComYahooAndroidSqliteSQLiteGlobal_getDefaultSyncMode() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+NSString *SquiDBSQLiteGlobal_getDefaultSyncMode() {
+  SquiDBSQLiteGlobal_initialize();
   return @"normal";
 }
 
-NSString *ComYahooAndroidSqliteSQLiteGlobal_getWALSyncMode() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+NSString *SquiDBSQLiteGlobal_getWALSyncMode() {
+  SquiDBSQLiteGlobal_initialize();
   return @"normal";
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_getWALAutoCheckpoint() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+jint SquiDBSQLiteGlobal_getWALAutoCheckpoint() {
+  SquiDBSQLiteGlobal_initialize();
   jint value = 1000;
   return JavaLangMath_maxWithInt_withInt_(1, value);
 }
 
-jint ComYahooAndroidSqliteSQLiteGlobal_getWALConnectionPoolSize() {
-  ComYahooAndroidSqliteSQLiteGlobal_initialize();
+jint SquiDBSQLiteGlobal_getWALConnectionPoolSize() {
+  SquiDBSQLiteGlobal_initialize();
   jint value = 10;
   return JavaLangMath_maxWithInt_withInt_(2, value);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteGlobal)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteGlobal)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteGlobal, "com.yahoo.android.sqlite", "SquiDB")

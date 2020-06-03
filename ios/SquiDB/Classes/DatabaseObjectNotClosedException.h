@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteDatabaseObjectNotClosedException : JavaLangRuntimeException
+@interface SquiDBDatabaseObjectNotClosedException : JavaLangRuntimeException
 
 #pragma mark Public
 
@@ -39,15 +39,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteDatabaseObjectNotClosedException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDatabaseObjectNotClosedException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDatabaseObjectNotClosedException_init(ComYahooAndroidSqliteDatabaseObjectNotClosedException *self);
+FOUNDATION_EXPORT void SquiDBDatabaseObjectNotClosedException_init(SquiDBDatabaseObjectNotClosedException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDatabaseObjectNotClosedException *new_ComYahooAndroidSqliteDatabaseObjectNotClosedException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBDatabaseObjectNotClosedException *new_SquiDBDatabaseObjectNotClosedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDatabaseObjectNotClosedException *create_ComYahooAndroidSqliteDatabaseObjectNotClosedException_init(void);
+FOUNDATION_EXPORT SquiDBDatabaseObjectNotClosedException *create_SquiDBDatabaseObjectNotClosedException_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteDatabaseObjectNotClosedException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDatabaseObjectNotClosedException)
+
+@compatibility_alias ComYahooAndroidSqliteDatabaseObjectNotClosedException SquiDBDatabaseObjectNotClosedException;
 
 
 #if __has_feature(nullability)

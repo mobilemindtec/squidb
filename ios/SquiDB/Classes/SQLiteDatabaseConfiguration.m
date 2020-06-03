@@ -11,40 +11,40 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface ComYahooAndroidSqliteSQLiteDatabaseConfiguration ()
+@interface SquiDBSQLiteDatabaseConfiguration ()
 
 + (NSString *)stripPathForLogsWithNSString:(NSString *)path;
 
 @end
 
-inline JavaUtilRegexPattern *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_get_EMAIL_IN_DB_PATTERN(void);
-static JavaUtilRegexPattern *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, EMAIL_IN_DB_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *SquiDBSQLiteDatabaseConfiguration_get_EMAIL_IN_DB_PATTERN(void);
+static JavaUtilRegexPattern *SquiDBSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteDatabaseConfiguration, EMAIL_IN_DB_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(NSString *path);
+__attribute__((unused)) static NSString *SquiDBSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(NSString *path);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteDatabaseConfiguration)
+J2OBJC_INITIALIZED_DEFN(SquiDBSQLiteDatabaseConfiguration)
 
-NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH = @":memory:";
+NSString *SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH = @":memory:";
 
-@implementation ComYahooAndroidSqliteSQLiteDatabaseConfiguration
+@implementation SquiDBSQLiteDatabaseConfiguration
 
 + (NSString *)MEMORY_DB_PATH {
-  return ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH;
+  return SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH;
 }
 
 - (instancetype)initWithNSString:(NSString *)path
                          withInt:(jint)openFlags {
-  ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(self, path, openFlags);
+  SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(self, path, openFlags);
   return self;
 }
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)other {
-  ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(self, other);
+- (instancetype)initWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)other {
+  SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(self, other);
   return self;
 }
 
-- (void)updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)other {
+- (void)updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)other {
   if (other == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"other must not be null.");
   }
@@ -60,11 +60,11 @@ NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH = @":m
 }
 
 - (jboolean)isInMemoryDb {
-  return [((NSString *) nil_chk(path_)) java_equalsIgnoreCase:ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH];
+  return [((NSString *) nil_chk(path_)) java_equalsIgnoreCase:SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH];
 }
 
 + (NSString *)stripPathForLogsWithNSString:(NSString *)path {
-  return ComYahooAndroidSqliteSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(path);
+  return SquiDBSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(path);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -79,8 +79,8 @@ NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH = @":m
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withInt:);
-  methods[1].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:);
-  methods[2].selector = @selector(updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:);
+  methods[1].selector = @selector(initWithSquiDBSQLiteDatabaseConfiguration:);
+  methods[2].selector = @selector(updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:);
   methods[3].selector = @selector(isInMemoryDb);
   methods[4].selector = @selector(stripPathForLogsWithNSString:);
   #pragma clang diagnostic pop
@@ -95,42 +95,42 @@ NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH = @":m
     { "foreignKeyConstraintsEnabled_", "Z", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "customFunctions_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x11, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;I", "LComYahooAndroidSqliteSQLiteDatabaseConfiguration;", "updateParametersFrom", "stripPathForLogs", "LNSString;", &ComYahooAndroidSqliteSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN, &ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH, "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteCustomFunction;>;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabaseConfiguration = { "SQLiteDatabaseConfiguration", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 5, 9, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabaseConfiguration;
+  static const void *ptrTable[] = { "LNSString;I", "LSquiDBSQLiteDatabaseConfiguration;", "updateParametersFrom", "stripPathForLogs", "LNSString;", &SquiDBSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN, &SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH, "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteCustomFunction;>;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabaseConfiguration = { "SQLiteDatabaseConfiguration", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 5, 9, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabaseConfiguration;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteSQLiteDatabaseConfiguration class]) {
-    ComYahooAndroidSqliteSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN = JavaUtilRegexPattern_compileWithNSString_(@"[\\w\\.\\-]+@[\\w\\.\\-]+");
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteSQLiteDatabaseConfiguration)
+  if (self == [SquiDBSQLiteDatabaseConfiguration class]) {
+    SquiDBSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN = JavaUtilRegexPattern_compileWithNSString_(@"[\\w\\.\\-]+@[\\w\\.\\-]+");
+    J2OBJC_SET_INITIALIZED(SquiDBSQLiteDatabaseConfiguration)
   }
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *self, NSString *path, jint openFlags) {
+void SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(SquiDBSQLiteDatabaseConfiguration *self, NSString *path, jint openFlags) {
   NSObject_init(self);
   self->customFunctions_ = new_JavaUtilArrayList_init();
   if (path == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"path must not be null.");
   }
   self->path_ = path;
-  self->label_ = ComYahooAndroidSqliteSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(path);
+  self->label_ = SquiDBSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(path);
   self->openFlags_ = openFlags;
   self->maxSqlCacheSize_ = 25;
   self->locale_ = JavaUtilLocale_getDefault();
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseConfiguration *new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, initWithNSString_withInt_, path, openFlags)
+SquiDBSQLiteDatabaseConfiguration *new_SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseConfiguration, initWithNSString_withInt_, path, openFlags)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseConfiguration *create_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, initWithNSString_withInt_, path, openFlags)
+SquiDBSQLiteDatabaseConfiguration *create_SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseConfiguration, initWithNSString_withInt_, path, openFlags)
 }
 
-void ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other) {
+void SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *self, SquiDBSQLiteDatabaseConfiguration *other) {
   NSObject_init(self);
   self->customFunctions_ = new_JavaUtilArrayList_init();
   if (other == nil) {
@@ -138,23 +138,25 @@ void ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSql
   }
   self->path_ = other->path_;
   self->label_ = other->label_;
-  [self updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:other];
+  [self updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:other];
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseConfiguration *new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_, other)
+SquiDBSQLiteDatabaseConfiguration *new_SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *other) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseConfiguration, initWithSquiDBSQLiteDatabaseConfiguration_, other)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseConfiguration *create_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_, other)
+SquiDBSQLiteDatabaseConfiguration *create_SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *other) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseConfiguration, initWithSquiDBSQLiteDatabaseConfiguration_, other)
 }
 
-NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(NSString *path) {
-  ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initialize();
+NSString *SquiDBSQLiteDatabaseConfiguration_stripPathForLogsWithNSString_(NSString *path) {
+  SquiDBSQLiteDatabaseConfiguration_initialize();
   if ([((NSString *) nil_chk(path)) java_indexOf:'@'] == -1) {
     return path;
   }
-  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(ComYahooAndroidSqliteSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN)) matcherWithJavaLangCharSequence:path])) replaceAllWithNSString:@"XX@YY"];
+  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(SquiDBSQLiteDatabaseConfiguration_EMAIL_IN_DB_PATTERN)) matcherWithJavaLangCharSequence:path])) replaceAllWithNSString:@"XX@YY"];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabaseConfiguration)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabaseConfiguration)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDatabaseConfiguration, "com.yahoo.android.sqlite", "SquiDB")

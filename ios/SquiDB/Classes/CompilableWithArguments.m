@@ -13,57 +13,55 @@
 #include "java/lang/Deprecated.h"
 #include "java/lang/annotation/Annotation.h"
 
-__attribute__((unused)) static NSString *ComYahooSquidbSqlCompilableWithArguments_toRawSqlWithComYahooSquidbSqlCompileContext_(ComYahooSquidbSqlCompilableWithArguments *self, ComYahooSquidbSqlCompileContext *compileContext);
+__attribute__((unused)) static NSString *SquiDBCompilableWithArguments_toRawSqlWithSquiDBCompileContext_(SquiDBCompilableWithArguments *self, SquiDBCompileContext *compileContext);
 
-__attribute__((unused)) static ComYahooSquidbSqlSqlBuilder *ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(ComYahooSquidbSqlCompilableWithArguments *self, ComYahooSquidbSqlCompileContext *compileContext, jboolean withBoundArguments, jboolean forSqlValidation);
+__attribute__((unused)) static SquiDBSqlBuilder *SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(SquiDBCompilableWithArguments *self, SquiDBCompileContext *compileContext, jboolean withBoundArguments, jboolean forSqlValidation);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlCompilableWithArguments__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCompilableWithArguments__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlCompilableWithArguments__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCompilableWithArguments__Annotations$1(void);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompilableWithArguments)
+J2OBJC_INITIALIZED_DEFN(SquiDBCompilableWithArguments)
 
-ComYahooSquidbUtilityVersionCode *ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING;
+SquiDBVersionCode *SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING;
 
-@implementation ComYahooSquidbSqlCompilableWithArguments
+@implementation SquiDBCompilableWithArguments
 
-+ (ComYahooSquidbUtilityVersionCode *)VERSION_FOR_TO_STRING {
-  return ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING;
++ (SquiDBVersionCode *)VERSION_FOR_TO_STRING {
+  return SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING;
 }
 
-J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
-  ComYahooSquidbSqlCompilableWithArguments_init(self);
+- (instancetype)initPackagePrivate {
+  SquiDBCompilableWithArguments_initPackagePrivate(self);
   return self;
 }
-J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)description {
-  return ComYahooSquidbSqlCompilableWithArguments_toRawSqlWithComYahooSquidbSqlCompileContext_(self, ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING));
+  return SquiDBCompilableWithArguments_toRawSqlWithSquiDBCompileContext_(self, SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING));
 }
 
-- (NSString *)toRawSqlWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion {
-  return [((ComYahooSquidbSqlSqlBuilder *) nil_chk(ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(self, ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(sqliteVersion), false, false))) getSqlString];
+- (NSString *)toRawSqlWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion {
+  return [((SquiDBSqlBuilder *) nil_chk(SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(self, SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(sqliteVersion), false, false))) getSqlString];
 }
 
-- (NSString *)toRawSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext {
-  return ComYahooSquidbSqlCompilableWithArguments_toRawSqlWithComYahooSquidbSqlCompileContext_(self, compileContext);
+- (NSString *)toRawSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext {
+  return SquiDBCompilableWithArguments_toRawSqlWithSquiDBCompileContext_(self, compileContext);
 }
 
-- (ComYahooSquidbSqlSqlBuilder *)buildSqlWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion
-                                                                  withBoolean:(jboolean)withBoundArguments
-                                                                  withBoolean:(jboolean)forSqlValidation {
-  return ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(self, ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(sqliteVersion), withBoundArguments, forSqlValidation);
+- (SquiDBSqlBuilder *)buildSqlWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion
+                                        withBoolean:(jboolean)withBoundArguments
+                                        withBoolean:(jboolean)forSqlValidation {
+  return SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(self, SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(sqliteVersion), withBoundArguments, forSqlValidation);
 }
 
-- (ComYahooSquidbSqlSqlBuilder *)buildSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                                                                 withBoolean:(jboolean)withBoundArguments
-                                                                 withBoolean:(jboolean)forSqlValidation {
-  return ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(self, compileContext, withBoundArguments, forSqlValidation);
+- (SquiDBSqlBuilder *)buildSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                                           withBoolean:(jboolean)withBoundArguments
+                                           withBoolean:(jboolean)forSqlValidation {
+  return SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(self, compileContext, withBoundArguments, forSqlValidation);
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
 }
@@ -74,58 +72,58 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x11, 1, 2, -1, -1, 3, -1 },
     { NULL, "LNSString;", 0x11, 1, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSqlBuilder;", 0x14, 5, 6, -1, -1, 7, -1 },
-    { NULL, "LComYahooSquidbSqlSqlBuilder;", 0x14, 5, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSqlBuilder;", 0x14, 5, 6, -1, -1, 7, -1 },
+    { NULL, "LSquiDBSqlBuilder;", 0x14, 5, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x400, 9, 10, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(init);
+  methods[0].selector = @selector(initPackagePrivate);
   methods[1].selector = @selector(description);
-  methods[2].selector = @selector(toRawSqlWithComYahooSquidbUtilityVersionCode:);
-  methods[3].selector = @selector(toRawSqlWithComYahooSquidbSqlCompileContext:);
-  methods[4].selector = @selector(buildSqlWithComYahooSquidbUtilityVersionCode:withBoolean:withBoolean:);
-  methods[5].selector = @selector(buildSqlWithComYahooSquidbSqlCompileContext:withBoolean:withBoolean:);
-  methods[6].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[2].selector = @selector(toRawSqlWithSquiDBVersionCode:);
+  methods[3].selector = @selector(toRawSqlWithSquiDBCompileContext:);
+  methods[4].selector = @selector(buildSqlWithSquiDBVersionCode:withBoolean:withBoolean:);
+  methods[5].selector = @selector(buildSqlWithSquiDBCompileContext:withBoolean:withBoolean:);
+  methods[6].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "VERSION_FOR_TO_STRING", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x18, -1, 11, -1, -1 },
+    { "VERSION_FOR_TO_STRING", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x18, -1, 11, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "toRawSql", "LComYahooSquidbUtilityVersionCode;", (void *)&ComYahooSquidbSqlCompilableWithArguments__Annotations$0, "LComYahooSquidbSqlCompileContext;", "buildSql", "LComYahooSquidbUtilityVersionCode;ZZ", (void *)&ComYahooSquidbSqlCompilableWithArguments__Annotations$1, "LComYahooSquidbSqlCompileContext;ZZ", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", &ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompilableWithArguments = { "CompilableWithArguments", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x400, 7, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompilableWithArguments;
+  static const void *ptrTable[] = { "toString", "toRawSql", "LSquiDBVersionCode;", (void *)&SquiDBCompilableWithArguments__Annotations$0, "LSquiDBCompileContext;", "buildSql", "LSquiDBVersionCode;ZZ", (void *)&SquiDBCompilableWithArguments__Annotations$1, "LSquiDBCompileContext;ZZ", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", &SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING };
+  static const J2ObjcClassInfo _SquiDBCompilableWithArguments = { "CompilableWithArguments", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x400, 7, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBCompilableWithArguments;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlCompilableWithArguments class]) {
-    ComYahooSquidbSqlCompilableWithArguments_VERSION_FOR_TO_STRING = new_ComYahooSquidbUtilityVersionCode_initWithInt_withInt_withInt_withInt_(3, 15, 0, 0);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlCompilableWithArguments)
+  if (self == [SquiDBCompilableWithArguments class]) {
+    SquiDBCompilableWithArguments_VERSION_FOR_TO_STRING = new_SquiDBVersionCode_initWithInt_withInt_withInt_withInt_(3, 15, 0, 0);
+    J2OBJC_SET_INITIALIZED(SquiDBCompilableWithArguments)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlCompilableWithArguments_init(ComYahooSquidbSqlCompilableWithArguments *self) {
+void SquiDBCompilableWithArguments_initPackagePrivate(SquiDBCompilableWithArguments *self) {
   NSObject_init(self);
 }
 
-NSString *ComYahooSquidbSqlCompilableWithArguments_toRawSqlWithComYahooSquidbSqlCompileContext_(ComYahooSquidbSqlCompilableWithArguments *self, ComYahooSquidbSqlCompileContext *compileContext) {
-  return [((ComYahooSquidbSqlSqlBuilder *) nil_chk(ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(self, compileContext, false, false))) getSqlString];
+NSString *SquiDBCompilableWithArguments_toRawSqlWithSquiDBCompileContext_(SquiDBCompilableWithArguments *self, SquiDBCompileContext *compileContext) {
+  return [((SquiDBSqlBuilder *) nil_chk(SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(self, compileContext, false, false))) getSqlString];
 }
 
-ComYahooSquidbSqlSqlBuilder *ComYahooSquidbSqlCompilableWithArguments_buildSqlWithComYahooSquidbSqlCompileContext_withBoolean_withBoolean_(ComYahooSquidbSqlCompilableWithArguments *self, ComYahooSquidbSqlCompileContext *compileContext, jboolean withBoundArguments, jboolean forSqlValidation) {
-  ComYahooSquidbSqlSqlBuilder *builder = new_ComYahooSquidbSqlSqlBuilder_initWithComYahooSquidbSqlCompileContext_withBoolean_(compileContext, withBoundArguments);
-  [self appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+SquiDBSqlBuilder *SquiDBCompilableWithArguments_buildSqlWithSquiDBCompileContext_withBoolean_withBoolean_(SquiDBCompilableWithArguments *self, SquiDBCompileContext *compileContext, jboolean withBoundArguments, jboolean forSqlValidation) {
+  SquiDBSqlBuilder *builder = new_SquiDBSqlBuilder_initWithSquiDBCompileContext_withBoolean_(compileContext, withBoundArguments);
+  [self appendToSqlBuilderWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
   return builder;
 }
 
-IOSObjectArray *ComYahooSquidbSqlCompilableWithArguments__Annotations$0() {
+IOSObjectArray *SquiDBCompilableWithArguments__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbSqlCompilableWithArguments__Annotations$1() {
+IOSObjectArray *SquiDBCompilableWithArguments__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompilableWithArguments)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompilableWithArguments)

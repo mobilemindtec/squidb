@@ -15,65 +15,67 @@
 #include "J2ObjC_header.h"
 #include "QueryTable.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlQuery;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
+@class SquiDBCompileContext;
+@class SquiDBQuery;
 
-@interface ComYahooSquidbSqlView : ComYahooSquidbSqlQueryTable
+@interface SquiDBView : SquiDBQueryTable
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlView *)asWithNSString:(NSString *)newAlias;
+- (SquiDBView *)asWithNSString:(NSString *)newAlias;
 
-- (void)createViewSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                               withJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
+- (void)createViewSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                    withJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
 
-+ (ComYahooSquidbSqlView *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                  withNSString:(NSString *)name;
++ (SquiDBView *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                            withNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlView *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                  withNSString:(NSString *)name
-                                                  withIOSClass:(IOSClass *)modelClass
-                            withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
++ (SquiDBView *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                            withNSString:(NSString *)name
+                            withIOSClass:(IOSClass *)modelClass
+                 withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (ComYahooSquidbSqlView *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName;
+- (SquiDBView *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName;
 
-+ (ComYahooSquidbSqlView *)temporaryFromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name;
++ (SquiDBView *)temporaryFromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlView *)temporaryFromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name
-                                                           withIOSClass:(IOSClass *)modelClass
-                                     withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
++ (SquiDBView *)temporaryFromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name
+                                     withIOSClass:(IOSClass *)modelClass
+                          withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
 #pragma mark Protected
 
-- (ComYahooSquidbSqlView *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
-                                  withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)newProperties;
+- (SquiDBView *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
+                                  withSquiDBPropertyArray:(IOSObjectArray *)newProperties;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)arg1
-                              withNSString:(NSString *)arg2
-                              withNSString:(NSString *)arg3
-                withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)arg4 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithIOSClass:(IOSClass *)arg0
+                                 withSquiDBPropertyArray:(IOSObjectArray *)arg1
+                                            withNSString:(NSString *)arg2
+                                            withNSString:(NSString *)arg3
+                                         withSquiDBQuery:(SquiDBQuery *)arg4 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlView)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBView)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlView *ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *query, NSString *name);
+FOUNDATION_EXPORT SquiDBView *SquiDBView_fromQueryWithSquiDBQuery_withNSString_(SquiDBQuery *query, NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlView *ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
+FOUNDATION_EXPORT SquiDBView *SquiDBView_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(SquiDBQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlView *ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *query, NSString *name);
+FOUNDATION_EXPORT SquiDBView *SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_(SquiDBQuery *query, NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlView *ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
+FOUNDATION_EXPORT SquiDBView *SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(SquiDBQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlView)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBView)
+
+@compatibility_alias ComYahooSquidbSqlView SquiDBView;
 
 
 #if __has_feature(nullability)

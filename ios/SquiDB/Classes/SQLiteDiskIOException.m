@@ -7,17 +7,17 @@
 #include "SQLiteDiskIOException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteDiskIOException
+@implementation SquiDBSQLiteDiskIOException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDiskIOException_init(self);
+  SquiDBSQLiteDiskIOException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(self, error);
+  SquiDBSQLiteDiskIOException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDiskIOException = { "SQLiteDiskIOException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDiskIOException;
+  static const J2ObjcClassInfo _SquiDBSQLiteDiskIOException = { "SQLiteDiskIOException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDiskIOException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDiskIOException_init(ComYahooAndroidSqliteSQLiteDiskIOException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteDiskIOException_init(SquiDBSQLiteDiskIOException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDiskIOException *new_ComYahooAndroidSqliteSQLiteDiskIOException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDiskIOException, init)
+SquiDBSQLiteDiskIOException *new_SquiDBSQLiteDiskIOException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDiskIOException, init)
 }
 
-ComYahooAndroidSqliteSQLiteDiskIOException *create_ComYahooAndroidSqliteSQLiteDiskIOException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDiskIOException, init)
+SquiDBSQLiteDiskIOException *create_SquiDBSQLiteDiskIOException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDiskIOException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(ComYahooAndroidSqliteSQLiteDiskIOException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteDiskIOException_initWithNSString_(SquiDBSQLiteDiskIOException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteDiskIOException *new_ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDiskIOException, initWithNSString_, error)
+SquiDBSQLiteDiskIOException *new_SquiDBSQLiteDiskIOException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDiskIOException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteDiskIOException *create_ComYahooAndroidSqliteSQLiteDiskIOException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDiskIOException, initWithNSString_, error)
+SquiDBSQLiteDiskIOException *create_SquiDBSQLiteDiskIOException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDiskIOException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDiskIOException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDiskIOException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDiskIOException, "com.yahoo.android.sqlite", "SquiDB")

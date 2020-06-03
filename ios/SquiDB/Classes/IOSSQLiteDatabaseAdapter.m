@@ -16,21 +16,21 @@
 #include "SquidTransactionListener.h"
 #include "java/lang/NullPointerException.h"
 
-@interface ComYahooSquidbIosIOSSQLiteDatabaseAdapter () {
+@interface SquiDBIOSSQLiteDatabaseAdapter () {
  @public
-  ComYahooAndroidSqliteSQLiteDatabase *db_;
+  SquiDBSQLiteDatabase *db_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter, db_, ComYahooAndroidSqliteSQLiteDatabase *)
+J2OBJC_FIELD_SETTER(SquiDBIOSSQLiteDatabaseAdapter, db_, SquiDBSQLiteDatabase *)
 
-@interface ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter : NSObject < ComYahooAndroidSqliteSQLiteTransactionListener > {
+@interface SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter : NSObject < SquiDBSQLiteTransactionListener > {
  @public
-  id<ComYahooSquidbDataSquidTransactionListener> listener_;
+  id<SquiDBSquidTransactionListener> listener_;
 }
 
-- (instancetype)initWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener;
+- (instancetype)initWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener;
 
 - (void)onBegin;
 
@@ -40,142 +40,142 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter, db_, ComYahooAndr
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, listener_, id<ComYahooSquidbDataSquidTransactionListener>)
+J2OBJC_FIELD_SETTER(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, listener_, id<SquiDBSquidTransactionListener>)
 
-__attribute__((unused)) static void ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *self, id<ComYahooSquidbDataSquidTransactionListener> listener);
+__attribute__((unused)) static void SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *self, id<SquiDBSquidTransactionListener> listener);
 
-__attribute__((unused)) static ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(id<ComYahooSquidbDataSquidTransactionListener> listener) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *new_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(id<SquiDBSquidTransactionListener> listener) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *create_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(id<ComYahooSquidbDataSquidTransactionListener> listener);
+__attribute__((unused)) static SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *create_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(id<SquiDBSquidTransactionListener> listener);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)
 
-@implementation ComYahooSquidbIosIOSSQLiteDatabaseAdapter
+@implementation SquiDBIOSSQLiteDatabaseAdapter
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db {
-  ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(self, db);
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db {
+  SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(self, db);
   return self;
 }
 
 - (void)beginTransaction {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) beginTransaction];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) beginTransaction];
 }
 
 - (void)beginTransactionNonExclusive {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) beginTransactionNonExclusive];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) beginTransactionNonExclusive];
 }
 
-- (void)beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) beginTransactionWithListenerWithComYahooAndroidSqliteSQLiteTransactionListener:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(listener)];
+- (void)beginTransactionWithListenerWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener {
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) beginTransactionWithListenerWithSquiDBSQLiteTransactionListener:new_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(listener)];
 }
 
-- (void)beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) beginTransactionWithListenerNonExclusiveWithComYahooAndroidSqliteSQLiteTransactionListener:new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(listener)];
+- (void)beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener {
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) beginTransactionWithListenerNonExclusiveWithSquiDBSQLiteTransactionListener:new_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(listener)];
 }
 
 - (void)endTransaction {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) endTransaction];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) endTransaction];
 }
 
 - (void)execSQLWithNSString:(NSString *)sql {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) execSQLWithNSString:sql];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) execSQLWithNSString:sql];
 }
 
 - (void)execSQLWithNSString:(NSString *)sql
           withNSObjectArray:(IOSObjectArray *)bindArgs {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) execSQLWithNSString:sql withNSObjectArray:bindArgs];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) execSQLWithNSString:sql withNSObjectArray:bindArgs];
 }
 
 - (jboolean)inTransaction {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) inTransaction];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) inTransaction];
 }
 
 - (jboolean)isOpen {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) isOpen];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) isOpen];
 }
 
 - (void)close {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) close];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) close];
 }
 
 - (void)disableWriteAheadLogging {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) disableWriteAheadLogging];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) disableWriteAheadLogging];
 }
 
 - (jboolean)enableWriteAheadLogging {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) enableWriteAheadLogging];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) enableWriteAheadLogging];
 }
 
 - (jboolean)isWriteAheadLoggingEnabled {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) isWriteAheadLoggingEnabled];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) isWriteAheadLoggingEnabled];
 }
 
 - (jlong)getMaximumSize {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) getMaximumSize];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) getMaximumSize];
 }
 
 - (jlong)getPageSize {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) getPageSize];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) getPageSize];
 }
 
 - (NSString *)getPath {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) getPath];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) getPath];
 }
 
 - (jboolean)isDatabaseIntegrityOk {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) isDatabaseIntegrityOk];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) isDatabaseIntegrityOk];
 }
 
 - (jboolean)isDbLockedByCurrentThread {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) isDbLockedByCurrentThread];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) isDbLockedByCurrentThread];
 }
 
 - (jboolean)isReadOnly {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) isReadOnly];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) isReadOnly];
 }
 
 - (jboolean)needUpgradeWithInt:(jint)newVersion {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) needUpgradeWithInt:newVersion];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) needUpgradeWithInt:newVersion];
 }
 
 - (void)setForeignKeyConstraintsEnabledWithBoolean:(jboolean)enable {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setForeignKeyConstraintsEnabledWithBoolean:enable];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setForeignKeyConstraintsEnabledWithBoolean:enable];
 }
 
 - (void)setMaxSqlCacheSizeWithInt:(jint)cacheSize {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setMaxSqlCacheSizeWithInt:cacheSize];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setMaxSqlCacheSizeWithInt:cacheSize];
 }
 
 - (void)setMaximumSizeWithLong:(jlong)numBytes {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setMaximumSizeWithLong:numBytes];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setMaximumSizeWithLong:numBytes];
 }
 
 - (void)setPageSizeWithLong:(jlong)numBytes {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setPageSizeWithLong:numBytes];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setPageSizeWithLong:numBytes];
 }
 
 - (jint)getVersion {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) getVersion];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) getVersion];
 }
 
 - (void)setVersionWithInt:(jint)version_ {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setVersionWithInt:version_];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setVersionWithInt:version_];
 }
 
-- (id<ComYahooSquidbDataICursor>)rawQueryWithNSString:(NSString *)sql
-                                    withNSObjectArray:(IOSObjectArray *)bindArgs {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) rawQueryWithFactoryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:new_ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(bindArgs) withNSString:sql withNSStringArray:nil withNSString:nil];
+- (id<SquiDBICursor>)rawQueryWithNSString:(NSString *)sql
+                        withNSObjectArray:(IOSObjectArray *)bindArgs {
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) rawQueryWithFactoryWithSquiDBSQLiteDatabase_CursorFactory:new_SquiDBSquidCursorFactory_initWithNSObjectArray_(bindArgs) withNSString:sql withNSStringArray:nil withNSString:nil];
 }
 
 - (NSString *)simpleQueryForStringWithNSString:(NSString *)sql
                              withNSObjectArray:(IOSObjectArray *)bindArgs {
-  ComYahooAndroidSqliteSQLiteStatement *statement = nil;
+  SquiDBSQLiteStatement *statement = nil;
   @try {
-    statement = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
-    ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(statement, bindArgs);
-    return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement)) simpleQueryForString];
+    statement = [((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
+    SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(statement, bindArgs);
+    return [((SquiDBSQLiteStatement *) nil_chk(statement)) simpleQueryForString];
   }
   @finally {
     if (statement != nil) {
@@ -186,11 +186,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
 
 - (jlong)simpleQueryForLongWithNSString:(NSString *)sql
                       withNSObjectArray:(IOSObjectArray *)bindArgs {
-  ComYahooAndroidSqliteSQLiteStatement *statement = nil;
+  SquiDBSQLiteStatement *statement = nil;
   @try {
-    statement = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
-    ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(statement, bindArgs);
-    return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement)) simpleQueryForLong];
+    statement = [((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
+    SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(statement, bindArgs);
+    return [((SquiDBSQLiteStatement *) nil_chk(statement)) simpleQueryForLong];
   }
   @finally {
     if (statement != nil) {
@@ -200,28 +200,28 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
 }
 
 - (void)setTransactionSuccessful {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) setTransactionSuccessful];
+  [((SquiDBSQLiteDatabase *) nil_chk(db_)) setTransactionSuccessful];
 }
 
 - (NSString *)description {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) description];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) description];
 }
 
 - (jboolean)yieldIfContendedSafely {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) yieldIfContendedSafely];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) yieldIfContendedSafely];
 }
 
 - (jboolean)yieldIfContendedSafelyWithLong:(jlong)sleepAfterYieldDelay {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) yieldIfContendedSafelyWithLong:sleepAfterYieldDelay];
+  return [((SquiDBSQLiteDatabase *) nil_chk(db_)) yieldIfContendedSafelyWithLong:sleepAfterYieldDelay];
 }
 
 - (jint)executeUpdateDeleteWithNSString:(NSString *)sql
                       withNSObjectArray:(IOSObjectArray *)bindArgs {
-  ComYahooAndroidSqliteSQLiteStatement *statement = nil;
+  SquiDBSQLiteStatement *statement = nil;
   @try {
-    statement = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
-    ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(statement, bindArgs);
-    return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement)) executeUpdateDelete];
+    statement = [((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
+    SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(statement, bindArgs);
+    return [((SquiDBSQLiteStatement *) nil_chk(statement)) executeUpdateDelete];
   }
   @finally {
     if (statement != nil) {
@@ -232,11 +232,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
 
 - (jlong)executeInsertWithNSString:(NSString *)sql
                  withNSObjectArray:(IOSObjectArray *)bindArgs {
-  ComYahooAndroidSqliteSQLiteStatement *statement = nil;
+  SquiDBSQLiteStatement *statement = nil;
   @try {
-    statement = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
-    ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(statement, bindArgs);
-    return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement)) executeInsert];
+    statement = [((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
+    SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(statement, bindArgs);
+    return [((SquiDBSQLiteStatement *) nil_chk(statement)) executeInsert];
   }
   @finally {
     if (statement != nil) {
@@ -246,9 +246,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
 }
 
 - (void)ensureSqlCompilesWithNSString:(NSString *)sql {
-  ComYahooAndroidSqliteSQLiteStatement *statement = nil;
+  SquiDBSQLiteStatement *statement = nil;
   @try {
-    statement = [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
+    statement = [((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql];
   }
   @finally {
     if (statement != nil) {
@@ -257,11 +257,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
   }
 }
 
-- (id<ComYahooSquidbDataISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql {
-  return new_ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_([((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql]);
+- (id<SquiDBISQLitePreparedStatement>)prepareStatementWithNSString:(NSString *)sql {
+  return new_SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_([((SquiDBSQLiteDatabase *) nil_chk(db_)) compileStatementWithNSString:sql]);
 }
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getWrappedObject {
+- (SquiDBSQLiteDatabase *)getWrappedObject {
   return db_;
 }
 
@@ -294,7 +294,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
     { NULL, "V", 0x1, 14, 13, -1, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 15, 8, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 16, 6, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 16, 6, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 17, 6, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 18, 6, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -304,17 +304,17 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
     { NULL, "I", 0x1, 21, 6, -1, -1, -1, -1 },
     { NULL, "J", 0x1, 22, 6, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 23, 5, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataISQLitePreparedStatement;", 0x1, 24, 5, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBISQLitePreparedStatement;", 0x1, 24, 5, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabase:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabase:);
   methods[1].selector = @selector(beginTransaction);
   methods[2].selector = @selector(beginTransactionNonExclusive);
-  methods[3].selector = @selector(beginTransactionWithListenerWithComYahooSquidbDataSquidTransactionListener:);
-  methods[4].selector = @selector(beginTransactionWithListenerNonExclusiveWithComYahooSquidbDataSquidTransactionListener:);
+  methods[3].selector = @selector(beginTransactionWithListenerWithSquiDBSquidTransactionListener:);
+  methods[4].selector = @selector(beginTransactionWithListenerNonExclusiveWithSquiDBSquidTransactionListener:);
   methods[5].selector = @selector(endTransaction);
   methods[6].selector = @selector(execSQLWithNSString:);
   methods[7].selector = @selector(execSQLWithNSString:withNSObjectArray:);
@@ -351,16 +351,16 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTrans
   methods[38].selector = @selector(getWrappedObject);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "db_", "LComYahooAndroidSqliteSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "db_", "LSquiDBSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabase;", "beginTransactionWithListener", "LComYahooSquidbDataSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "execSQL", "LNSString;", "LNSString;[LNSObject;", "needUpgrade", "I", "setForeignKeyConstraintsEnabled", "Z", "setMaxSqlCacheSize", "setMaximumSize", "J", "setPageSize", "setVersion", "rawQuery", "simpleQueryForString", "simpleQueryForLong", "toString", "yieldIfContendedSafely", "executeUpdateDelete", "executeInsert", "ensureSqlCompiles", "prepareStatement", "LComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter;" };
-  static const J2ObjcClassInfo _ComYahooSquidbIosIOSSQLiteDatabaseAdapter = { "IOSSQLiteDatabaseAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 39, 1, -1, 25, -1, -1, -1 };
-  return &_ComYahooSquidbIosIOSSQLiteDatabaseAdapter;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabase;", "beginTransactionWithListener", "LSquiDBSquidTransactionListener;", "beginTransactionWithListenerNonExclusive", "execSQL", "LNSString;", "LNSString;[LNSObject;", "needUpgrade", "I", "setForeignKeyConstraintsEnabled", "Z", "setMaxSqlCacheSize", "setMaximumSize", "J", "setPageSize", "setVersion", "rawQuery", "simpleQueryForString", "simpleQueryForLong", "toString", "yieldIfContendedSafely", "executeUpdateDelete", "executeInsert", "ensureSqlCompiles", "prepareStatement", "LSquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter;" };
+  static const J2ObjcClassInfo _SquiDBIOSSQLiteDatabaseAdapter = { "IOSSQLiteDatabaseAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 39, 1, -1, 25, -1, -1, -1 };
+  return &_SquiDBIOSSQLiteDatabaseAdapter;
 }
 
 @end
 
-void ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooSquidbIosIOSSQLiteDatabaseAdapter *self, ComYahooAndroidSqliteSQLiteDatabase *db) {
+void SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBIOSSQLiteDatabaseAdapter *self, SquiDBSQLiteDatabase *db) {
   NSObject_init(self);
   if (db == nil) {
     @throw new_JavaLangNullPointerException_initWithNSString_(@"Can't create SQLiteDatabaseAdapter with a null SQLiteDatabase");
@@ -368,33 +368,35 @@ void ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLi
   self->db_ = db;
 }
 
-ComYahooSquidbIosIOSSQLiteDatabaseAdapter *new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *db) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbIosIOSSQLiteDatabaseAdapter, initWithComYahooAndroidSqliteSQLiteDatabase_, db)
+SquiDBIOSSQLiteDatabaseAdapter *new_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *db) {
+  J2OBJC_NEW_IMPL(SquiDBIOSSQLiteDatabaseAdapter, initWithSquiDBSQLiteDatabase_, db)
 }
 
-ComYahooSquidbIosIOSSQLiteDatabaseAdapter *create_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_initWithComYahooAndroidSqliteSQLiteDatabase_(ComYahooAndroidSqliteSQLiteDatabase *db) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbIosIOSSQLiteDatabaseAdapter, initWithComYahooAndroidSqliteSQLiteDatabase_, db)
+SquiDBIOSSQLiteDatabaseAdapter *create_SquiDBIOSSQLiteDatabaseAdapter_initWithSquiDBSQLiteDatabase_(SquiDBSQLiteDatabase *db) {
+  J2OBJC_CREATE_IMPL(SquiDBIOSSQLiteDatabaseAdapter, initWithSquiDBSQLiteDatabase_, db)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosIOSSQLiteDatabaseAdapter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBIOSSQLiteDatabaseAdapter)
 
-@implementation ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter
+J2OBJC_NAME_MAPPING(SquiDBIOSSQLiteDatabaseAdapter, "com.yahoo.squidb.ios", "SquiDB")
 
-- (instancetype)initWithComYahooSquidbDataSquidTransactionListener:(id<ComYahooSquidbDataSquidTransactionListener>)listener {
-  ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(self, listener);
+@implementation SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter
+
+- (instancetype)initWithSquiDBSquidTransactionListener:(id<SquiDBSquidTransactionListener>)listener {
+  SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(self, listener);
   return self;
 }
 
 - (void)onBegin {
-  [((id<ComYahooSquidbDataSquidTransactionListener>) nil_chk(listener_)) onBegin];
+  [((id<SquiDBSquidTransactionListener>) nil_chk(listener_)) onBegin];
 }
 
 - (void)onCommit {
-  [((id<ComYahooSquidbDataSquidTransactionListener>) nil_chk(listener_)) onCommit];
+  [((id<SquiDBSquidTransactionListener>) nil_chk(listener_)) onCommit];
 }
 
 - (void)onRollback {
-  [((id<ComYahooSquidbDataSquidTransactionListener>) nil_chk(listener_)) onRollback];
+  [((id<SquiDBSquidTransactionListener>) nil_chk(listener_)) onRollback];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -407,32 +409,32 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosIOSSQLiteDatabaseAdapter)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbDataSquidTransactionListener:);
+  methods[0].selector = @selector(initWithSquiDBSquidTransactionListener:);
   methods[1].selector = @selector(onBegin);
   methods[2].selector = @selector(onCommit);
   methods[3].selector = @selector(onRollback);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "listener_", "LComYahooSquidbDataSquidTransactionListener;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "listener_", "LSquiDBSquidTransactionListener;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbDataSquidTransactionListener;", "LComYahooSquidbIosIOSSQLiteDatabaseAdapter;" };
-  static const J2ObjcClassInfo _ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter = { "SQLiteTransactionListenerAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0xa, 4, 1, 1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter;
+  static const void *ptrTable[] = { "LSquiDBSquidTransactionListener;", "LSquiDBIOSSQLiteDatabaseAdapter;" };
+  static const J2ObjcClassInfo _SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter = { "SQLiteTransactionListenerAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0xa, 4, 1, 1, -1, -1, -1, -1 };
+  return &_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter;
 }
 
 @end
 
-void ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *self, id<ComYahooSquidbDataSquidTransactionListener> listener) {
+void SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *self, id<SquiDBSquidTransactionListener> listener) {
   NSObject_init(self);
   self->listener_ = listener;
 }
 
-ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *new_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(id<ComYahooSquidbDataSquidTransactionListener> listener) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, initWithComYahooSquidbDataSquidTransactionListener_, listener)
+SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *new_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(id<SquiDBSquidTransactionListener> listener) {
+  J2OBJC_NEW_IMPL(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, initWithSquiDBSquidTransactionListener_, listener)
 }
 
-ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *create_ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithComYahooSquidbDataSquidTransactionListener_(id<ComYahooSquidbDataSquidTransactionListener> listener) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, initWithComYahooSquidbDataSquidTransactionListener_, listener)
+SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter *create_SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter_initWithSquiDBSquidTransactionListener_(id<SquiDBSquidTransactionListener> listener) {
+  J2OBJC_CREATE_IMPL(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter, initWithSquiDBSquidTransactionListener_, listener)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBIOSSQLiteDatabaseAdapter_SQLiteTransactionListenerAdapter)

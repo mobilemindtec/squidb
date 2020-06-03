@@ -11,12 +11,12 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsConstants__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBConstants__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsConstants
+@implementation SquiDBConstants
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsConstants_class_();
+  return SquiDBConstants_class_();
 }
 
 - (NSString *)description {
@@ -32,20 +32,22 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsConstant
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsConstants__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsConstants = { "Constants", "com.yahoo.squidb.annotations", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsConstants;
+  static const void *ptrTable[] = { (void *)&SquiDBConstants__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBConstants = { "Constants", "com.yahoo.squidb.annotations", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
+  return &_SquiDBConstants;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsConstants> create_ComYahooSquidbAnnotationsConstants() {
-  ComYahooSquidbAnnotationsConstants *self = AUTORELEASE([[ComYahooSquidbAnnotationsConstants alloc] init]);
+id<SquiDBConstants> create_SquiDBConstants() {
+  SquiDBConstants *self = AUTORELEASE([[SquiDBConstants alloc] init]);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsConstants__Annotations$0() {
+IOSObjectArray *SquiDBConstants__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsConstants)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBConstants)
+
+J2OBJC_NAME_MAPPING(SquiDBConstants, "com.yahoo.squidb.annotations", "SquiDB")

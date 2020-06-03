@@ -21,9 +21,9 @@
 #include "java/lang/annotation/Annotation.h"
 #include "java/util/Arrays.h"
 
-@interface ComYahooAndroidSqliteSQLiteProgram () {
+@interface SquiDBSQLiteProgram () {
  @public
-  ComYahooAndroidSqliteSQLiteDatabase *mDatabase_;
+  SquiDBSQLiteDatabase *mDatabase_;
   NSString *mSql_;
   jboolean mReadOnly_;
   IOSObjectArray *mColumnNames_;
@@ -36,31 +36,31 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteProgram, mDatabase_, ComYahooAndroidSqliteSQLiteDatabase *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteProgram, mSql_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteProgram, mColumnNames_, IOSObjectArray *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteProgram, mBindArgs_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteProgram, mDatabase_, SquiDBSQLiteDatabase *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteProgram, mSql_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteProgram, mColumnNames_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteProgram, mBindArgs_, IOSObjectArray *)
 
-inline IOSObjectArray *ComYahooAndroidSqliteSQLiteProgram_get_EMPTY_STRING_ARRAY(void);
-static IOSObjectArray *ComYahooAndroidSqliteSQLiteProgram_EMPTY_STRING_ARRAY;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteProgram, EMPTY_STRING_ARRAY, IOSObjectArray *)
+inline IOSObjectArray *SquiDBSQLiteProgram_get_EMPTY_STRING_ARRAY(void);
+static IOSObjectArray *SquiDBSQLiteProgram_EMPTY_STRING_ARRAY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteProgram, EMPTY_STRING_ARRAY, IOSObjectArray *)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(ComYahooAndroidSqliteSQLiteProgram *self, jint index, id value);
+__attribute__((unused)) static void SquiDBSQLiteProgram_bindWithInt_withId_(SquiDBSQLiteProgram *self, jint index, id value);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteProgram__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteProgram__Annotations$0(void);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
+J2OBJC_INITIALIZED_DEFN(SquiDBSQLiteProgram)
 
-@implementation ComYahooAndroidSqliteSQLiteProgram
+@implementation SquiDBSQLiteProgram
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                               withNSString:(NSString *)sql
-                                          withNSObjectArray:(IOSObjectArray *)bindArgs {
-  ComYahooAndroidSqliteSQLiteProgram_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(self, db, sql, bindArgs);
+- (instancetype)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                withNSString:(NSString *)sql
+                           withNSObjectArray:(IOSObjectArray *)bindArgs {
+  SquiDBSQLiteProgram_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(self, db, sql, bindArgs);
   return self;
 }
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getDatabase {
+- (SquiDBSQLiteDatabase *)getDatabase {
   return mDatabase_;
 }
 
@@ -76,16 +76,16 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
   return mColumnNames_;
 }
 
-- (ComYahooAndroidSqliteSQLiteSession *)getSession {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(mDatabase_)) getThreadSession];
+- (SquiDBSQLiteSession *)getSession {
+  return [((SquiDBSQLiteDatabase *) nil_chk(mDatabase_)) getThreadSession];
 }
 
 - (jint)getConnectionFlags {
-  return [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(mDatabase_)) getThreadDefaultConnectionFlagsWithBoolean:mReadOnly_];
+  return [((SquiDBSQLiteDatabase *) nil_chk(mDatabase_)) getThreadDefaultConnectionFlagsWithBoolean:mReadOnly_];
 }
 
 - (void)onCorruption {
-  [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(mDatabase_)) onCorruption];
+  [((SquiDBSQLiteDatabase *) nil_chk(mDatabase_)) onCorruption];
 }
 
 - (jint)getUniqueId {
@@ -93,17 +93,17 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
 }
 
 - (void)bindNullWithInt:(jint)index {
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, nil);
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, nil);
 }
 
 - (void)bindLongWithInt:(jint)index
                withLong:(jlong)value {
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, JavaLangLong_valueOfWithLong_(value));
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, JavaLangLong_valueOfWithLong_(value));
 }
 
 - (void)bindDoubleWithInt:(jint)index
                withDouble:(jdouble)value {
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, JavaLangDouble_valueOfWithDouble_(value));
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, JavaLangDouble_valueOfWithDouble_(value));
 }
 
 - (void)bindStringWithInt:(jint)index
@@ -111,7 +111,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
   if (value == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I$", @"the bind value at index ", index, @" is null"));
   }
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, value);
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, value);
 }
 
 - (void)bindBlobWithInt:(jint)index
@@ -119,7 +119,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
   if (value == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I$", @"the bind value at index ", index, @" is null"));
   }
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, value);
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, value);
 }
 
 - (void)clearBindings {
@@ -142,17 +142,17 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
 
 - (void)bindWithInt:(jint)index
              withId:(id)value {
-  ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(self, index, value);
+  SquiDBSQLiteProgram_bindWithInt_withId_(self, index, value);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteDatabase;", 0x10, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteDatabase;", 0x10, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x10, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSObject;", 0x10, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x10, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteSession;", 0x14, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteSession;", 0x14, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x14, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x14, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x11, -1, -1, -1, -1, 1, -1 },
@@ -169,7 +169,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabase:withNSString:withNSObjectArray:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabase:withNSString:withNSObjectArray:);
   methods[1].selector = @selector(getDatabase);
   methods[2].selector = @selector(getSql);
   methods[3].selector = @selector(getBindArgs);
@@ -190,47 +190,47 @@ J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteProgram)
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "EMPTY_STRING_ARRAY", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 16, -1, -1 },
-    { "mDatabase_", "LComYahooAndroidSqliteSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mDatabase_", "LSquiDBSQLiteDatabase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mSql_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mReadOnly_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mColumnNames_", "[LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mNumParameters_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mBindArgs_", "[LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabase;LNSString;[LNSObject;", (void *)&ComYahooAndroidSqliteSQLiteProgram__Annotations$0, "bindNull", "I", "bindLong", "IJ", "bindDouble", "ID", "bindString", "ILNSString;", "bindBlob", "I[B", "bindAllArgsAsStrings", "[LNSString;", "bind", "ILNSObject;", &ComYahooAndroidSqliteSQLiteProgram_EMPTY_STRING_ARRAY };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteProgram = { "SQLiteProgram", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 18, 7, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteProgram;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabase;LNSString;[LNSObject;", (void *)&SquiDBSQLiteProgram__Annotations$0, "bindNull", "I", "bindLong", "IJ", "bindDouble", "ID", "bindString", "ILNSString;", "bindBlob", "I[B", "bindAllArgsAsStrings", "[LNSString;", "bind", "ILNSObject;", &SquiDBSQLiteProgram_EMPTY_STRING_ARRAY };
+  static const J2ObjcClassInfo _SquiDBSQLiteProgram = { "SQLiteProgram", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 18, 7, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteProgram;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteSQLiteProgram class]) {
-    ComYahooAndroidSqliteSQLiteProgram_EMPTY_STRING_ARRAY = [IOSObjectArray newArrayWithLength:0 type:NSString_class_()];
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteSQLiteProgram)
+  if (self == [SquiDBSQLiteProgram class]) {
+    SquiDBSQLiteProgram_EMPTY_STRING_ARRAY = [IOSObjectArray newArrayWithLength:0 type:NSString_class_()];
+    J2OBJC_SET_INITIALIZED(SquiDBSQLiteProgram)
   }
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteProgram_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteProgram *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs) {
-  ComYahooAndroidSqliteSQLiteClosable_init(self);
+void SquiDBSQLiteProgram_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(SquiDBSQLiteProgram *self, SquiDBSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs) {
+  SquiDBSQLiteClosable_init(self);
   self->mDatabase_ = db;
   self->mSql_ = [((NSString *) nil_chk(sql)) java_trim];
-  jint n = ComYahooAndroidSqliteDatabaseUtils_getSqlStatementTypeWithNSString_(self->mSql_);
+  jint n = SquiDBDatabaseUtils_getSqlStatementTypeWithNSString_(self->mSql_);
   {
     jboolean assumeReadOnly;
-    ComYahooAndroidSqliteSQLiteStatementInfo *info;
+    SquiDBSQLiteStatementInfo *info;
     switch (n) {
-      case ComYahooAndroidSqliteDatabaseUtils_STATEMENT_BEGIN:
-      case ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT:
-      case ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ABORT:
+      case SquiDBDatabaseUtils_STATEMENT_BEGIN:
+      case SquiDBDatabaseUtils_STATEMENT_COMMIT:
+      case SquiDBDatabaseUtils_STATEMENT_ABORT:
       self->mReadOnly_ = false;
-      self->mColumnNames_ = ComYahooAndroidSqliteSQLiteProgram_EMPTY_STRING_ARRAY;
+      self->mColumnNames_ = SquiDBSQLiteProgram_EMPTY_STRING_ARRAY;
       self->mNumParameters_ = 0;
       break;
       default:
-      assumeReadOnly = (n == ComYahooAndroidSqliteDatabaseUtils_STATEMENT_SELECT);
-      info = new_ComYahooAndroidSqliteSQLiteStatementInfo_init();
-      [((ComYahooAndroidSqliteSQLiteSession *) nil_chk([((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(db)) getThreadSession])) prepareWithNSString:self->mSql_ withInt:[db getThreadDefaultConnectionFlagsWithBoolean:assumeReadOnly] withComYahooAndroidSqliteSQLiteStatementInfo:info];
+      assumeReadOnly = (n == SquiDBDatabaseUtils_STATEMENT_SELECT);
+      info = new_SquiDBSQLiteStatementInfo_init();
+      [((SquiDBSQLiteSession *) nil_chk([((SquiDBSQLiteDatabase *) nil_chk(db)) getThreadSession])) prepareWithNSString:self->mSql_ withInt:[db getThreadDefaultConnectionFlagsWithBoolean:assumeReadOnly] withSquiDBSQLiteStatementInfo:info];
       self->mReadOnly_ = info->readOnly_;
       self->mColumnNames_ = info->columnNames_;
       self->mNumParameters_ = info->numParameters_;
@@ -251,15 +251,17 @@ void ComYahooAndroidSqliteSQLiteProgram_initWithComYahooAndroidSqliteSQLiteDatab
   }
 }
 
-void ComYahooAndroidSqliteSQLiteProgram_bindWithInt_withId_(ComYahooAndroidSqliteSQLiteProgram *self, jint index, id value) {
+void SquiDBSQLiteProgram_bindWithInt_withId_(SquiDBSQLiteProgram *self, jint index, id value) {
   if (index < 1 || index > self->mNumParameters_) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I$I$", @"Cannot bind argument at index ", index, @" because the index is out of range.  The statement has ", self->mNumParameters_, @" parameters."));
   }
   (void) IOSObjectArray_Set(nil_chk(self->mBindArgs_), index - 1, value);
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteProgram__Annotations$0() {
+IOSObjectArray *SquiDBSQLiteProgram__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteProgram)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteProgram)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteProgram, "com.yahoo.android.sqlite", "SquiDB")

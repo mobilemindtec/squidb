@@ -23,9 +23,9 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@interface ComYahooSquidbSqlQuery () {
+@interface SquiDBQuery () {
  @public
-  ComYahooSquidbSqlSqlTable *table_;
+  SquiDBSqlTable *table_;
   JavaUtilArrayList *fields_;
   JavaUtilArrayList *criterions_;
   JavaUtilArrayList *joins_;
@@ -33,8 +33,8 @@
   JavaUtilArrayList *havings_;
   JavaUtilArrayList *compoundSelects_;
   JavaUtilArrayList *orders_;
-  ComYahooSquidbSqlField *limit_;
-  ComYahooSquidbSqlField *offset_;
+  SquiDBField *limit_;
+  SquiDBField *offset_;
   jboolean distinct_;
   jboolean immutable_;
   jboolean needsValidation_;
@@ -43,33 +43,33 @@
 
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)fields;
 
-- (instancetype)initWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
+- (instancetype)initWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
-- (void)addCompoundSelectWithComYahooSquidbSqlCompoundSelect:(ComYahooSquidbSqlCompoundSelect *)compoundSelect;
+- (void)addCompoundSelectWithSquiDBCompoundSelect:(SquiDBCompoundSelect *)compoundSelect;
 
-- (void)visitSelectClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                             withBoolean:(jboolean)forSqlValidation;
+- (void)visitSelectClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                  withBoolean:(jboolean)forSqlValidation;
 
-- (void)visitFromClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
+- (void)visitFromClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                withBoolean:(jboolean)forSqlValidation;
+
+- (void)visitJoinClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                withBoolean:(jboolean)forSqlValidation;
+
+- (void)visitWhereClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                 withBoolean:(jboolean)forSqlValidation;
+
+- (void)visitGroupByClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
+
+- (void)visitCompoundSelectClausesWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
                                            withBoolean:(jboolean)forSqlValidation;
 
-- (void)visitJoinClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                           withBoolean:(jboolean)forSqlValidation;
+- (void)visitOrderByClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
-- (void)visitWhereClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                            withBoolean:(jboolean)forSqlValidation;
-
-- (void)visitGroupByClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
-
-- (void)visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                      withBoolean:(jboolean)forSqlValidation;
-
-- (void)visitOrderByClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
-
-- (void)visitLimitClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                            withBoolean:(jboolean)forSqlValidation;
+- (void)visitLimitClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                 withBoolean:(jboolean)forSqlValidation;
 
 - (jboolean)isEmptyWithJavaUtilList:(id<JavaUtilList>)list;
 
@@ -79,113 +79,113 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, table_, ComYahooSquidbSqlSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, fields_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, criterions_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, joins_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, groupByFields_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, havings_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, compoundSelects_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, orders_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, limit_, ComYahooSquidbSqlField *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, offset_, ComYahooSquidbSqlField *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlQuery, selectAllCache_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, table_, SquiDBSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, fields_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, criterions_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, joins_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, groupByFields_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, havings_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, compoundSelects_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, orders_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, limit_, SquiDBField *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, offset_, SquiDBField *)
+J2OBJC_FIELD_SETTER(SquiDBQuery, selectAllCache_, JavaUtilArrayList *)
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_initWithJavaUtilList_(ComYahooSquidbSqlQuery *self, id<JavaUtilList> fields);
+__attribute__((unused)) static void SquiDBQuery_initWithJavaUtilList_(SquiDBQuery *self, id<JavaUtilList> fields);
 
-__attribute__((unused)) static ComYahooSquidbSqlQuery *new_ComYahooSquidbSqlQuery_initWithJavaUtilList_(id<JavaUtilList> fields) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBQuery *new_SquiDBQuery_initWithJavaUtilList_(id<JavaUtilList> fields) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlQuery *create_ComYahooSquidbSqlQuery_initWithJavaUtilList_(id<JavaUtilList> fields);
+__attribute__((unused)) static SquiDBQuery *create_SquiDBQuery_initWithJavaUtilList_(id<JavaUtilList> fields);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(ComYahooSquidbSqlQuery *self, IOSObjectArray *fields);
+__attribute__((unused)) static void SquiDBQuery_initWithSquiDBFieldArray_(SquiDBQuery *self, IOSObjectArray *fields);
 
-__attribute__((unused)) static ComYahooSquidbSqlQuery *new_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBQuery *new_SquiDBQuery_initWithSquiDBFieldArray_(IOSObjectArray *fields) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlQuery *create_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields);
+__attribute__((unused)) static SquiDBQuery *create_SquiDBQuery_initWithSquiDBFieldArray_(IOSObjectArray *fields);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlCompoundSelect *compoundSelect);
+__attribute__((unused)) static void SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(SquiDBQuery *self, SquiDBCompoundSelect *compoundSelect);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitSelectClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitSelectClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitFromClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitFromClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitJoinClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitJoinClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitWhereClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitWhereClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitGroupByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitGroupByClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitCompoundSelectClausesWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitOrderByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitOrderByClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlQuery_visitLimitClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBQuery_visitLimitClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static jboolean ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(ComYahooSquidbSqlQuery *self, id<JavaUtilList> list);
+__attribute__((unused)) static jboolean SquiDBQuery_isEmptyWithJavaUtilList_(SquiDBQuery *self, id<JavaUtilList> list);
 
-__attribute__((unused)) static jboolean ComYahooSquidbSqlQuery_isEmptyWithNSObjectArray_(ComYahooSquidbSqlQuery *self, IOSObjectArray *array);
+__attribute__((unused)) static jboolean SquiDBQuery_isEmptyWithNSObjectArray_(SquiDBQuery *self, IOSObjectArray *array);
 
-__attribute__((unused)) static JavaUtilArrayList *ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(ComYahooSquidbSqlQuery *self, JavaUtilArrayList *list);
+__attribute__((unused)) static JavaUtilArrayList *SquiDBQuery_forkListWithJavaUtilArrayList_(SquiDBQuery *self, JavaUtilArrayList *list);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlQuery)
+J2OBJC_INITIALIZED_DEFN(SquiDBQuery)
 
-ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_LIMIT;
-ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
+SquiDBField *SquiDBQuery_NO_LIMIT;
+SquiDBField *SquiDBQuery_NO_OFFSET;
 
-@implementation ComYahooSquidbSqlQuery
+@implementation SquiDBQuery
 
-+ (ComYahooSquidbSqlField *)NO_LIMIT {
-  return ComYahooSquidbSqlQuery_NO_LIMIT;
++ (SquiDBField *)NO_LIMIT {
+  return SquiDBQuery_NO_LIMIT;
 }
 
-+ (ComYahooSquidbSqlField *)NO_OFFSET {
-  return ComYahooSquidbSqlQuery_NO_OFFSET;
++ (SquiDBField *)NO_OFFSET {
+  return SquiDBQuery_NO_OFFSET;
 }
 
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)fields {
-  ComYahooSquidbSqlQuery_initWithJavaUtilList_(self, fields);
+  SquiDBQuery_initWithJavaUtilList_(self, fields);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields {
-  ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(self, fields);
+- (instancetype)initWithSquiDBFieldArray:(IOSObjectArray *)fields {
+  SquiDBQuery_initWithSquiDBFieldArray_(self, fields);
   return self;
 }
 
-+ (ComYahooSquidbSqlQuery *)selectWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields {
-  return ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_(fields);
++ (SquiDBQuery *)selectWithSquiDBFieldArray:(IOSObjectArray *)fields {
+  return SquiDBQuery_selectWithSquiDBFieldArray_(fields);
 }
 
-+ (ComYahooSquidbSqlQuery *)selectWithJavaUtilList:(id<JavaUtilList>)fields {
-  return ComYahooSquidbSqlQuery_selectWithJavaUtilList_(fields);
++ (SquiDBQuery *)selectWithJavaUtilList:(id<JavaUtilList>)fields {
+  return SquiDBQuery_selectWithJavaUtilList_(fields);
 }
 
-+ (ComYahooSquidbSqlQuery *)selectDistinctWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields {
-  return ComYahooSquidbSqlQuery_selectDistinctWithComYahooSquidbSqlFieldArray_(fields);
++ (SquiDBQuery *)selectDistinctWithSquiDBFieldArray:(IOSObjectArray *)fields {
+  return SquiDBQuery_selectDistinctWithSquiDBFieldArray_(fields);
 }
 
-+ (ComYahooSquidbSqlQuery *)selectDistinctWithJavaUtilList:(id<JavaUtilList>)fields {
-  return ComYahooSquidbSqlQuery_selectDistinctWithJavaUtilList_(fields);
++ (SquiDBQuery *)selectDistinctWithJavaUtilList:(id<JavaUtilList>)fields {
+  return SquiDBQuery_selectDistinctWithJavaUtilList_(fields);
 }
 
-+ (ComYahooSquidbSqlQuery *)fromSubqueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)subquery
-                                                      withNSString:(NSString *)subqueryAlias {
-  return ComYahooSquidbSqlQuery_fromSubqueryWithComYahooSquidbSqlQuery_withNSString_(subquery, subqueryAlias);
++ (SquiDBQuery *)fromSubqueryWithSquiDBQuery:(SquiDBQuery *)subquery
+                                withNSString:(NSString *)subqueryAlias {
+  return SquiDBQuery_fromSubqueryWithSquiDBQuery_withNSString_(subquery, subqueryAlias);
 }
 
-+ (ComYahooSquidbSqlQuery *)fromViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  return ComYahooSquidbSqlQuery_fromViewWithComYahooSquidbSqlView_(view);
++ (SquiDBQuery *)fromViewWithSquiDBView:(SquiDBView *)view {
+  return SquiDBQuery_fromViewWithSquiDBView_(view);
 }
 
-- (ComYahooSquidbSqlQuery *)selectMoreWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields {
+- (SquiDBQuery *)selectMoreWithSquiDBFieldArray:(IOSObjectArray *)fields {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) selectMoreWithComYahooSquidbSqlFieldArray:fields];
+    return [((SquiDBQuery *) nil_chk([self fork])) selectMoreWithSquiDBFieldArray:fields];
   }
-  if (!ComYahooSquidbSqlQuery_isEmptyWithNSObjectArray_(self, fields)) {
+  if (!SquiDBQuery_isEmptyWithNSObjectArray_(self, fields)) {
     if (self->fields_ == nil) {
       self->fields_ = new_JavaUtilArrayList_init();
     }
-    ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->fields_, fields);
+    SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->fields_, fields);
     if (selectAllCache_ != nil) {
       [selectAllCache_ clear];
     }
@@ -194,11 +194,11 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)selectMoreWithJavaUtilList:(id<JavaUtilList>)fields {
+- (SquiDBQuery *)selectMoreWithJavaUtilList:(id<JavaUtilList>)fields {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) selectMoreWithJavaUtilList:fields];
+    return [((SquiDBQuery *) nil_chk([self fork])) selectMoreWithJavaUtilList:fields];
   }
-  if (!ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, fields)) {
+  if (!SquiDBQuery_isEmptyWithJavaUtilList_(self, fields)) {
     if (self->fields_ == nil) {
       self->fields_ = new_JavaUtilArrayList_initWithJavaUtilCollection_(fields);
     }
@@ -213,9 +213,9 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)fromWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table {
+- (SquiDBQuery *)fromWithSquiDBSqlTable:(SquiDBSqlTable *)table {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) fromWithComYahooSquidbSqlSqlTable:table];
+    return [((SquiDBQuery *) nil_chk([self fork])) fromWithSquiDBSqlTable:table];
   }
   if (self->table_ != table) {
     self->table_ = table;
@@ -227,14 +227,14 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)joinWithComYahooSquidbSqlJoinArray:(IOSObjectArray *)joins {
+- (SquiDBQuery *)joinWithSquiDBJoinArray:(IOSObjectArray *)joins {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) joinWithComYahooSquidbSqlJoinArray:joins];
+    return [((SquiDBQuery *) nil_chk([self fork])) joinWithSquiDBJoinArray:joins];
   }
   if (self->joins_ == nil) {
     self->joins_ = new_JavaUtilArrayList_init();
   }
-  ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->joins_, joins);
+  SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->joins_, joins);
   if (selectAllCache_ != nil) {
     [selectAllCache_ clear];
   }
@@ -242,32 +242,32 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)leftJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                              withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)onCriterions {
-  return [self joinWithComYahooSquidbSqlJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlJoin_leftWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlCriterionArray_(table, onCriterions) } count:1 type:ComYahooSquidbSqlJoin_class_()]];
+- (SquiDBQuery *)leftJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                   withSquiDBCriterionArray:(IOSObjectArray *)onCriterions {
+  return [self joinWithSquiDBJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBJoin_leftWithSquiDBSqlTable_withSquiDBCriterionArray_(table, onCriterions) } count:1 type:SquiDBJoin_class_()]];
 }
 
-- (ComYahooSquidbSqlQuery *)leftJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns {
-  return [self joinWithComYahooSquidbSqlJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlJoin_leftWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(table, usingColumns) } count:1 type:ComYahooSquidbSqlJoin_class_()]];
+- (SquiDBQuery *)leftJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBPropertyArray:(IOSObjectArray *)usingColumns {
+  return [self joinWithSquiDBJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBJoin_leftWithSquiDBSqlTable_withSquiDBPropertyArray_(table, usingColumns) } count:1 type:SquiDBJoin_class_()]];
 }
 
-- (ComYahooSquidbSqlQuery *)innerJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                               withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)onCriterions {
-  return [self joinWithComYahooSquidbSqlJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlJoin_innerWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlCriterionArray_(table, onCriterions) } count:1 type:ComYahooSquidbSqlJoin_class_()]];
+- (SquiDBQuery *)innerJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBCriterionArray:(IOSObjectArray *)onCriterions {
+  return [self joinWithSquiDBJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBJoin_innerWithSquiDBSqlTable_withSquiDBCriterionArray_(table, onCriterions) } count:1 type:SquiDBJoin_class_()]];
 }
 
-- (ComYahooSquidbSqlQuery *)innerJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns {
-  return [self joinWithComYahooSquidbSqlJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlJoin_innerWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(table, usingColumns) } count:1 type:ComYahooSquidbSqlJoin_class_()]];
+- (SquiDBQuery *)innerJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                     withSquiDBPropertyArray:(IOSObjectArray *)usingColumns {
+  return [self joinWithSquiDBJoinArray:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBJoin_innerWithSquiDBSqlTable_withSquiDBPropertyArray_(table, usingColumns) } count:1 type:SquiDBJoin_class_()]];
 }
 
-- (ComYahooSquidbSqlQuery *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
+- (SquiDBQuery *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion {
   if (criterion == nil) {
     return self;
   }
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) whereWithComYahooSquidbSqlCriterion:criterion];
+    return [((SquiDBQuery *) nil_chk([self fork])) whereWithSquiDBCriterion:criterion];
   }
   if (criterions_ == nil) {
     criterions_ = new_JavaUtilArrayList_init();
@@ -277,24 +277,24 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)groupByWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields {
+- (SquiDBQuery *)groupByWithSquiDBFieldArray:(IOSObjectArray *)fields {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) groupByWithComYahooSquidbSqlFieldArray:fields];
+    return [((SquiDBQuery *) nil_chk([self fork])) groupByWithSquiDBFieldArray:fields];
   }
   if (self->groupByFields_ == nil) {
     self->groupByFields_ = new_JavaUtilArrayList_init();
   }
-  ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->groupByFields_, fields);
+  SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->groupByFields_, fields);
   [self invalidateCompileCache];
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)havingWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
+- (SquiDBQuery *)havingWithSquiDBCriterion:(SquiDBCriterion *)criterion {
   if (criterion == nil) {
     return self;
   }
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) havingWithComYahooSquidbSqlCriterion:criterion];
+    return [((SquiDBQuery *) nil_chk([self fork])) havingWithSquiDBCriterion:criterion];
   }
   if (self->havings_ == nil) {
     self->havings_ = new_JavaUtilArrayList_init();
@@ -304,89 +304,89 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)union__WithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
+- (SquiDBQuery *)union__WithSquiDBQuery:(SquiDBQuery *)query {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) union__WithComYahooSquidbSqlQuery:query];
+    return [((SquiDBQuery *) nil_chk([self fork])) union__WithSquiDBQuery:query];
   }
-  ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(self, ComYahooSquidbSqlCompoundSelect_union__WithComYahooSquidbSqlQuery_(query));
+  SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(self, SquiDBCompoundSelect_union__WithSquiDBQuery_(query));
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)unionAllWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
+- (SquiDBQuery *)unionAllWithSquiDBQuery:(SquiDBQuery *)query {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) unionAllWithComYahooSquidbSqlQuery:query];
+    return [((SquiDBQuery *) nil_chk([self fork])) unionAllWithSquiDBQuery:query];
   }
-  ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(self, ComYahooSquidbSqlCompoundSelect_unionAllWithComYahooSquidbSqlQuery_(query));
+  SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(self, SquiDBCompoundSelect_unionAllWithSquiDBQuery_(query));
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)intersectWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
+- (SquiDBQuery *)intersectWithSquiDBQuery:(SquiDBQuery *)query {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) intersectWithComYahooSquidbSqlQuery:query];
+    return [((SquiDBQuery *) nil_chk([self fork])) intersectWithSquiDBQuery:query];
   }
-  ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(self, ComYahooSquidbSqlCompoundSelect_intersectWithComYahooSquidbSqlQuery_(query));
+  SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(self, SquiDBCompoundSelect_intersectWithSquiDBQuery_(query));
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)exceptWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query {
+- (SquiDBQuery *)exceptWithSquiDBQuery:(SquiDBQuery *)query {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) exceptWithComYahooSquidbSqlQuery:query];
+    return [((SquiDBQuery *) nil_chk([self fork])) exceptWithSquiDBQuery:query];
   }
-  ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(self, ComYahooSquidbSqlCompoundSelect_exceptWithComYahooSquidbSqlQuery_(query));
+  SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(self, SquiDBCompoundSelect_exceptWithSquiDBQuery_(query));
   return self;
 }
 
-- (void)addCompoundSelectWithComYahooSquidbSqlCompoundSelect:(ComYahooSquidbSqlCompoundSelect *)compoundSelect {
-  ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(self, compoundSelect);
+- (void)addCompoundSelectWithSquiDBCompoundSelect:(SquiDBCompoundSelect *)compoundSelect {
+  SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(self, compoundSelect);
 }
 
-- (ComYahooSquidbSqlQuery *)orderByWithComYahooSquidbSqlOrderArray:(IOSObjectArray *)orders {
+- (SquiDBQuery *)orderByWithSquiDBOrderArray:(IOSObjectArray *)orders {
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) orderByWithComYahooSquidbSqlOrderArray:orders];
+    return [((SquiDBQuery *) nil_chk([self fork])) orderByWithSquiDBOrderArray:orders];
   }
   if (self->orders_ == nil) {
     self->orders_ = new_JavaUtilArrayList_init();
   }
-  ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->orders_, orders);
+  SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->orders_, orders);
   [self invalidateCompileCache];
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)limitWithInt:(jint)limit {
-  return [self limitWithComYahooSquidbSqlField:limit < 0 ? ComYahooSquidbSqlQuery_NO_LIMIT : ComYahooSquidbSqlField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(limit))];
+- (SquiDBQuery *)limitWithInt:(jint)limit {
+  return [self limitWithSquiDBField:limit < 0 ? SquiDBQuery_NO_LIMIT : SquiDBField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(limit))];
 }
 
-- (ComYahooSquidbSqlQuery *)limitWithInt:(jint)limit
-                                 withInt:(jint)offset {
-  return [self limitWithComYahooSquidbSqlField:limit < 0 ? ComYahooSquidbSqlQuery_NO_LIMIT : ComYahooSquidbSqlField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(limit)) withComYahooSquidbSqlField:offset < 1 ? ComYahooSquidbSqlQuery_NO_OFFSET : ComYahooSquidbSqlField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(offset))];
+- (SquiDBQuery *)limitWithInt:(jint)limit
+                      withInt:(jint)offset {
+  return [self limitWithSquiDBField:limit < 0 ? SquiDBQuery_NO_LIMIT : SquiDBField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(limit)) withSquiDBField:offset < 1 ? SquiDBQuery_NO_OFFSET : SquiDBField_fieldWithNSString_(JavaLangInteger_toStringWithInt_(offset))];
 }
 
-- (ComYahooSquidbSqlQuery *)limitWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)limit {
+- (SquiDBQuery *)limitWithSquiDBField:(SquiDBField *)limit {
   if (limit == nil) {
-    limit = ComYahooSquidbSqlQuery_NO_LIMIT;
+    limit = SquiDBQuery_NO_LIMIT;
   }
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) limitWithComYahooSquidbSqlField:limit];
+    return [((SquiDBQuery *) nil_chk([self fork])) limitWithSquiDBField:limit];
   }
-  if (![((ComYahooSquidbSqlField *) nil_chk(self->limit_)) isEqual:limit]) {
+  if (![((SquiDBField *) nil_chk(self->limit_)) isEqual:limit]) {
     self->limit_ = limit;
     [self invalidateCompileCache];
   }
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)limitWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)limit
-                                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)offset {
+- (SquiDBQuery *)limitWithSquiDBField:(SquiDBField *)limit
+                      withSquiDBField:(SquiDBField *)offset {
   if (limit == nil) {
-    limit = ComYahooSquidbSqlQuery_NO_LIMIT;
+    limit = SquiDBQuery_NO_LIMIT;
   }
   if (offset == nil) {
-    offset = ComYahooSquidbSqlQuery_NO_OFFSET;
+    offset = SquiDBQuery_NO_OFFSET;
   }
   if (immutable_) {
-    return [((ComYahooSquidbSqlQuery *) nil_chk([self fork])) limitWithComYahooSquidbSqlField:limit withComYahooSquidbSqlField:offset];
+    return [((SquiDBQuery *) nil_chk([self fork])) limitWithSquiDBField:limit withSquiDBField:offset];
   }
-  if (![((ComYahooSquidbSqlField *) nil_chk(self->limit_)) isEqual:limit] || ![((ComYahooSquidbSqlField *) nil_chk(self->offset_)) isEqual:offset]) {
+  if (![((SquiDBField *) nil_chk(self->limit_)) isEqual:limit] || ![((SquiDBField *) nil_chk(self->offset_)) isEqual:offset]) {
     self->limit_ = limit;
     self->offset_ = offset;
     [self invalidateCompileCache];
@@ -394,11 +394,11 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self;
 }
 
-- (ComYahooSquidbSqlField *)getLimit {
+- (SquiDBField *)getLimit {
   return limit_;
 }
 
-- (ComYahooSquidbSqlField *)getOffset {
+- (SquiDBField *)getOffset {
   return offset_;
 }
 
@@ -418,62 +418,62 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return ((jint) [((NSString *) nil_chk([self description])) hash]);
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitSelectClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitFromClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitJoinClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitWhereClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitGroupByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitOrderByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlQuery_visitLimitClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitSelectClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitFromClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitJoinClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitWhereClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitGroupByClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitCompoundSelectClausesWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitOrderByClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitLimitClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
   if (needsValidation_) {
-    [((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder)) setNeedsValidation];
+    [((SquiDBSqlBuilder *) nil_chk(builder)) setNeedsValidation];
   }
 }
 
-- (void)visitSelectClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                             withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitSelectClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitSelectClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                  withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitSelectClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitFromClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
+- (void)visitFromClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitFromClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+}
+
+- (void)visitJoinClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitJoinClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+}
+
+- (void)visitWhereClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                 withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitWhereClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+}
+
+- (void)visitGroupByClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitGroupByClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+}
+
+- (void)visitCompoundSelectClausesWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
                                            withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitFromClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBQuery_visitCompoundSelectClausesWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitJoinClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                           withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitJoinClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitOrderByClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitOrderByClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitWhereClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                            withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitWhereClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitLimitClauseWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                 withBoolean:(jboolean)forSqlValidation {
+  SquiDBQuery_visitLimitClauseWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitGroupByClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitGroupByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-}
-
-- (void)visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                      withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-}
-
-- (void)visitOrderByClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitOrderByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-}
-
-- (void)visitLimitClauseWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                            withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlQuery_visitLimitClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-}
-
-- (ComYahooSquidbSqlSqlTable *)getTable {
+- (SquiDBSqlTable *)getTable {
   return self->table_;
 }
 
@@ -481,29 +481,29 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   return self->table_ != nil;
 }
 
-- (ComYahooSquidbSqlSubqueryTable *)asWithNSString:(NSString *)alias {
-  return ComYahooSquidbSqlSubqueryTable_fromQueryWithComYahooSquidbSqlQuery_withNSString_(self, alias);
+- (SquiDBSubqueryTable *)asWithNSString:(NSString *)alias {
+  return SquiDBSubqueryTable_fromQueryWithSquiDBQuery_withNSString_(self, alias);
 }
 
-- (ComYahooSquidbSqlSubqueryTable *)asWithNSString:(NSString *)alias
-                                      withIOSClass:(IOSClass *)modelClass
-                withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  return ComYahooSquidbSqlSubqueryTable_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(self, alias, modelClass, properties);
+- (SquiDBSubqueryTable *)asWithNSString:(NSString *)alias
+                           withIOSClass:(IOSClass *)modelClass
+                withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  return SquiDBSubqueryTable_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(self, alias, modelClass, properties);
 }
 
-- (ComYahooSquidbSqlFunction *)asFunction {
-  return ComYahooSquidbSqlFunction_fromQueryWithComYahooSquidbSqlQuery_(self);
+- (SquiDBFunction *)asFunction {
+  return SquiDBFunction_fromQueryWithSquiDBQuery_(self);
 }
 
-- (ComYahooSquidbSqlQuery *)fork {
-  ComYahooSquidbSqlQuery *newQuery = new_ComYahooSquidbSqlQuery_initWithJavaUtilList_(fields_);
+- (SquiDBQuery *)fork {
+  SquiDBQuery *newQuery = new_SquiDBQuery_initWithJavaUtilList_(fields_);
   newQuery->table_ = table_;
-  newQuery->criterions_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, criterions_);
-  newQuery->joins_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, joins_);
-  newQuery->groupByFields_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, groupByFields_);
-  newQuery->compoundSelects_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, compoundSelects_);
-  newQuery->orders_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, orders_);
-  newQuery->havings_ = ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, havings_);
+  newQuery->criterions_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, criterions_);
+  newQuery->joins_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, joins_);
+  newQuery->groupByFields_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, groupByFields_);
+  newQuery->compoundSelects_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, compoundSelects_);
+  newQuery->orders_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, orders_);
+  newQuery->havings_ = SquiDBQuery_forkListWithJavaUtilArrayList_(self, havings_);
   newQuery->limit_ = limit_;
   newQuery->offset_ = offset_;
   newQuery->distinct_ = distinct_;
@@ -512,18 +512,18 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
 }
 
 - (jboolean)isEmptyWithJavaUtilList:(id<JavaUtilList>)list {
-  return ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, list);
+  return SquiDBQuery_isEmptyWithJavaUtilList_(self, list);
 }
 
 - (jboolean)isEmptyWithNSObjectArray:(IOSObjectArray *)array {
-  return ComYahooSquidbSqlQuery_isEmptyWithNSObjectArray_(self, array);
+  return SquiDBQuery_isEmptyWithNSObjectArray_(self, array);
 }
 
 - (JavaUtilArrayList *)forkListWithJavaUtilArrayList:(JavaUtilArrayList *)list {
-  return ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(self, list);
+  return SquiDBQuery_forkListWithJavaUtilArrayList_(self, list);
 }
 
-- (ComYahooSquidbSqlQuery *)freeze {
+- (SquiDBQuery *)freeze {
   self->immutable_ = true;
   return self;
 }
@@ -533,18 +533,18 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
 }
 
 - (id<JavaUtilList>)getFields {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, selectAllCache_)) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, selectAllCache_)) {
     if (selectAllCache_ == nil) {
       selectAllCache_ = new_JavaUtilArrayList_init();
     }
-    if (!ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, fields_)) {
+    if (!SquiDBQuery_isEmptyWithJavaUtilList_(self, fields_)) {
       [((JavaUtilArrayList *) nil_chk(selectAllCache_)) addAllWithJavaUtilCollection:fields_];
     }
     else {
-      ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(selectAllCache_, [((ComYahooSquidbSqlSqlTable *) nil_chk(table_)) allFields]);
+      SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(selectAllCache_, [((SquiDBSqlTable *) nil_chk(table_)) allFields]);
       if (joins_ != nil) {
-        for (ComYahooSquidbSqlJoin * __strong join in joins_) {
-          ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(selectAllCache_, [((ComYahooSquidbSqlSqlTable *) nil_chk(((ComYahooSquidbSqlJoin *) nil_chk(join))->joinTable_)) allFields]);
+        for (SquiDBJoin * __strong join in joins_) {
+          SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(selectAllCache_, [((SquiDBSqlTable *) nil_chk(((SquiDBJoin *) nil_chk(join))->joinTable_)) allFields]);
         }
       }
     }
@@ -556,35 +556,35 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, 0, -1, 1, -1, -1 },
     { NULL, NULL, 0x82, -1, 2, -1, 3, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x89, 4, 2, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x9, 4, 0, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x89, 7, 2, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x9, 7, 0, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x9, 8, 9, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x9, 10, 11, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 12, 2, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 12, 0, -1, 6, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 13, 14, -1, 15, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 16, 17, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 18, 19, -1, 20, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 18, 21, -1, 22, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 23, 19, -1, 20, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 23, 21, -1, 22, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 24, 25, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 26, 2, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 27, 25, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 28, 29, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 30, 29, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 31, 29, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 32, 29, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x89, 4, 2, -1, 5, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x9, 4, 0, -1, 6, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x89, 7, 2, -1, 5, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x9, 7, 0, -1, 6, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x9, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x9, 10, 11, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 12, 2, -1, 5, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 12, 0, -1, 6, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 13, 14, -1, 15, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 16, 17, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 18, 19, -1, 20, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 18, 21, -1, 22, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 23, 19, -1, 20, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 23, 21, -1, 22, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 24, 25, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 26, 2, -1, 5, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 27, 25, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 28, 29, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 30, 29, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 31, 29, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 32, 29, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 33, 34, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x81, 35, 36, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 37, 38, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 37, 39, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 37, 40, -1, 41, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 37, 42, -1, 43, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, -1, -1, -1, 44, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, -1, -1, -1, 44, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x81, 35, 36, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 37, 38, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 37, 39, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 37, 40, -1, 41, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 37, 42, -1, 43, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, -1, -1, -1, 44, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, -1, -1, -1, 44, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 45, 46, -1, -1, -1, -1 },
@@ -598,16 +598,16 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
     { NULL, "V", 0x2, 55, 49, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 56, 49, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 57, 49, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSqlTable;", 0x1, -1, -1, -1, 58, -1, -1 },
+    { NULL, "LSquiDBSqlTable;", 0x1, -1, -1, -1, 58, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSubqueryTable;", 0x1, 59, 60, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSubqueryTable;", 0x1, 59, 61, -1, 62, -1, -1 },
-    { NULL, "LComYahooSquidbSqlFunction;", 0x1, -1, -1, -1, 63, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSubqueryTable;", 0x1, 59, 60, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSubqueryTable;", 0x1, 59, 61, -1, 62, -1, -1 },
+    { NULL, "LSquiDBFunction;", 0x1, -1, -1, -1, 63, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 64, 0, -1, 65, -1, -1 },
     { NULL, "Z", 0x2, 64, 66, -1, 67, -1, -1 },
     { NULL, "LJavaUtilArrayList;", 0x2, 68, 69, -1, 70, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 71, -1, -1 },
   };
@@ -615,53 +615,53 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlFieldArray:);
-  methods[2].selector = @selector(selectWithComYahooSquidbSqlFieldArray:);
+  methods[1].selector = @selector(initWithSquiDBFieldArray:);
+  methods[2].selector = @selector(selectWithSquiDBFieldArray:);
   methods[3].selector = @selector(selectWithJavaUtilList:);
-  methods[4].selector = @selector(selectDistinctWithComYahooSquidbSqlFieldArray:);
+  methods[4].selector = @selector(selectDistinctWithSquiDBFieldArray:);
   methods[5].selector = @selector(selectDistinctWithJavaUtilList:);
-  methods[6].selector = @selector(fromSubqueryWithComYahooSquidbSqlQuery:withNSString:);
-  methods[7].selector = @selector(fromViewWithComYahooSquidbSqlView:);
-  methods[8].selector = @selector(selectMoreWithComYahooSquidbSqlFieldArray:);
+  methods[6].selector = @selector(fromSubqueryWithSquiDBQuery:withNSString:);
+  methods[7].selector = @selector(fromViewWithSquiDBView:);
+  methods[8].selector = @selector(selectMoreWithSquiDBFieldArray:);
   methods[9].selector = @selector(selectMoreWithJavaUtilList:);
-  methods[10].selector = @selector(fromWithComYahooSquidbSqlSqlTable:);
-  methods[11].selector = @selector(joinWithComYahooSquidbSqlJoinArray:);
-  methods[12].selector = @selector(leftJoinWithComYahooSquidbSqlSqlTable:withComYahooSquidbSqlCriterionArray:);
-  methods[13].selector = @selector(leftJoinWithComYahooSquidbSqlSqlTable:withComYahooSquidbSqlPropertyArray:);
-  methods[14].selector = @selector(innerJoinWithComYahooSquidbSqlSqlTable:withComYahooSquidbSqlCriterionArray:);
-  methods[15].selector = @selector(innerJoinWithComYahooSquidbSqlSqlTable:withComYahooSquidbSqlPropertyArray:);
-  methods[16].selector = @selector(whereWithComYahooSquidbSqlCriterion:);
-  methods[17].selector = @selector(groupByWithComYahooSquidbSqlFieldArray:);
-  methods[18].selector = @selector(havingWithComYahooSquidbSqlCriterion:);
-  methods[19].selector = @selector(union__WithComYahooSquidbSqlQuery:);
-  methods[20].selector = @selector(unionAllWithComYahooSquidbSqlQuery:);
-  methods[21].selector = @selector(intersectWithComYahooSquidbSqlQuery:);
-  methods[22].selector = @selector(exceptWithComYahooSquidbSqlQuery:);
-  methods[23].selector = @selector(addCompoundSelectWithComYahooSquidbSqlCompoundSelect:);
-  methods[24].selector = @selector(orderByWithComYahooSquidbSqlOrderArray:);
+  methods[10].selector = @selector(fromWithSquiDBSqlTable:);
+  methods[11].selector = @selector(joinWithSquiDBJoinArray:);
+  methods[12].selector = @selector(leftJoinWithSquiDBSqlTable:withSquiDBCriterionArray:);
+  methods[13].selector = @selector(leftJoinWithSquiDBSqlTable:withSquiDBPropertyArray:);
+  methods[14].selector = @selector(innerJoinWithSquiDBSqlTable:withSquiDBCriterionArray:);
+  methods[15].selector = @selector(innerJoinWithSquiDBSqlTable:withSquiDBPropertyArray:);
+  methods[16].selector = @selector(whereWithSquiDBCriterion:);
+  methods[17].selector = @selector(groupByWithSquiDBFieldArray:);
+  methods[18].selector = @selector(havingWithSquiDBCriterion:);
+  methods[19].selector = @selector(union__WithSquiDBQuery:);
+  methods[20].selector = @selector(unionAllWithSquiDBQuery:);
+  methods[21].selector = @selector(intersectWithSquiDBQuery:);
+  methods[22].selector = @selector(exceptWithSquiDBQuery:);
+  methods[23].selector = @selector(addCompoundSelectWithSquiDBCompoundSelect:);
+  methods[24].selector = @selector(orderByWithSquiDBOrderArray:);
   methods[25].selector = @selector(limitWithInt:);
   methods[26].selector = @selector(limitWithInt:withInt:);
-  methods[27].selector = @selector(limitWithComYahooSquidbSqlField:);
-  methods[28].selector = @selector(limitWithComYahooSquidbSqlField:withComYahooSquidbSqlField:);
+  methods[27].selector = @selector(limitWithSquiDBField:);
+  methods[28].selector = @selector(limitWithSquiDBField:withSquiDBField:);
   methods[29].selector = @selector(getLimit);
   methods[30].selector = @selector(getOffset);
   methods[31].selector = @selector(requestValidation);
   methods[32].selector = @selector(needsValidation);
   methods[33].selector = @selector(isEqual:);
   methods[34].selector = @selector(hash);
-  methods[35].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[36].selector = @selector(visitSelectClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[37].selector = @selector(visitFromClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[38].selector = @selector(visitJoinClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[39].selector = @selector(visitWhereClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[40].selector = @selector(visitGroupByClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[41].selector = @selector(visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[42].selector = @selector(visitOrderByClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[43].selector = @selector(visitLimitClauseWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[35].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
+  methods[36].selector = @selector(visitSelectClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[37].selector = @selector(visitFromClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[38].selector = @selector(visitJoinClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[39].selector = @selector(visitWhereClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[40].selector = @selector(visitGroupByClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[41].selector = @selector(visitCompoundSelectClausesWithSquiDBSqlBuilder:withBoolean:);
+  methods[42].selector = @selector(visitOrderByClauseWithSquiDBSqlBuilder:withBoolean:);
+  methods[43].selector = @selector(visitLimitClauseWithSquiDBSqlBuilder:withBoolean:);
   methods[44].selector = @selector(getTable);
   methods[45].selector = @selector(hasTable);
   methods[46].selector = @selector(asWithNSString:);
-  methods[47].selector = @selector(asWithNSString:withIOSClass:withComYahooSquidbSqlPropertyArray:);
+  methods[47].selector = @selector(asWithNSString:withIOSClass:withSquiDBPropertyArray:);
   methods[48].selector = @selector(asFunction);
   methods[49].selector = @selector(fork);
   methods[50].selector = @selector(isEmptyWithJavaUtilList:);
@@ -672,9 +672,9 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
   methods[55].selector = @selector(getFields);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "NO_LIMIT", "LComYahooSquidbSqlField;", .constantValue.asLong = 0, 0x19, -1, 72, 73, -1 },
-    { "NO_OFFSET", "LComYahooSquidbSqlField;", .constantValue.asLong = 0, 0x19, -1, 74, 73, -1 },
-    { "table_", "LComYahooSquidbSqlSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 75, -1 },
+    { "NO_LIMIT", "LSquiDBField;", .constantValue.asLong = 0, 0x19, -1, 72, 73, -1 },
+    { "NO_OFFSET", "LSquiDBField;", .constantValue.asLong = 0, 0x19, -1, 74, 73, -1 },
+    { "table_", "LSquiDBSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 75, -1 },
     { "fields_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 76, -1 },
     { "criterions_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 77, -1 },
     { "joins_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 78, -1 },
@@ -682,30 +682,30 @@ ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
     { "havings_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 77, -1 },
     { "compoundSelects_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 79, -1 },
     { "orders_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
-    { "limit_", "LComYahooSquidbSqlField;", .constantValue.asLong = 0, 0x2, -1, -1, 73, -1 },
-    { "offset_", "LComYahooSquidbSqlField;", .constantValue.asLong = 0, 0x2, -1, -1, 73, -1 },
+    { "limit_", "LSquiDBField;", .constantValue.asLong = 0, 0x2, -1, -1, 73, -1 },
+    { "offset_", "LSquiDBField;", .constantValue.asLong = 0, 0x2, -1, -1, 73, -1 },
     { "distinct_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "immutable_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "needsValidation_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "selectAllCache_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x2, -1, -1, 76, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;)V", "[LComYahooSquidbSqlField;", "([Lcom/yahoo/squidb/sql/Field<*>;)V", "select", "([Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Query;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;)Lcom/yahoo/squidb/sql/Query;", "selectDistinct", "fromSubquery", "LComYahooSquidbSqlQuery;LNSString;", "fromView", "LComYahooSquidbSqlView;", "selectMore", "from", "LComYahooSquidbSqlSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/sql/Query;", "join", "[LComYahooSquidbSqlJoin;", "leftJoin", "LComYahooSquidbSqlSqlTable;[LComYahooSquidbSqlCriterion;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Criterion;)Lcom/yahoo/squidb/sql/Query;", "LComYahooSquidbSqlSqlTable;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Query;", "innerJoin", "where", "LComYahooSquidbSqlCriterion;", "groupBy", "having", "union", "LComYahooSquidbSqlQuery;", "unionAll", "intersect", "except", "addCompoundSelect", "LComYahooSquidbSqlCompoundSelect;", "orderBy", "[LComYahooSquidbSqlOrder;", "limit", "I", "II", "LComYahooSquidbSqlField;", "(Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;)Lcom/yahoo/squidb/sql/Query;", "LComYahooSquidbSqlField;LComYahooSquidbSqlField;", "(Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;)Lcom/yahoo/squidb/sql/Query;", "()Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;", "equals", "LNSObject;", "hashCode", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", "visitSelectClause", "visitFromClause", "visitJoinClause", "visitWhereClause", "visitGroupByClause", "visitCompoundSelectClauses", "visitOrderByClause", "visitLimitClause", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "as", "LNSString;", "LNSString;LIOSClass;[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/SubqueryTable;", "<T:Ljava/lang/Object;>()Lcom/yahoo/squidb/sql/Function<TT;>;", "isEmpty", "(Ljava/util/List<*>;)Z", "[LNSObject;", "<T:Ljava/lang/Object;>([TT;)Z", "forkList", "LJavaUtilArrayList;", "<T:Ljava/lang/Object;>(Ljava/util/ArrayList<TT;>;)Ljava/util/ArrayList<TT;>;", "()Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", &ComYahooSquidbSqlQuery_NO_LIMIT, "Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;", &ComYahooSquidbSqlQuery_NO_OFFSET, "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Field<*>;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Criterion;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Join;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/CompoundSelect;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Order;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlQuery = { "Query", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 56, 16, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlQuery;
+  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;)V", "[LSquiDBField;", "([Lcom/yahoo/squidb/sql/Field<*>;)V", "select", "([Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Query;", "(Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;)Lcom/yahoo/squidb/sql/Query;", "selectDistinct", "fromSubquery", "LSquiDBQuery;LNSString;", "fromView", "LSquiDBView;", "selectMore", "from", "LSquiDBSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/sql/Query;", "join", "[LSquiDBJoin;", "leftJoin", "LSquiDBSqlTable;[LSquiDBCriterion;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Criterion;)Lcom/yahoo/squidb/sql/Query;", "LSquiDBSqlTable;[LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Query;", "innerJoin", "where", "LSquiDBCriterion;", "groupBy", "having", "union", "LSquiDBQuery;", "unionAll", "intersect", "except", "addCompoundSelect", "LSquiDBCompoundSelect;", "orderBy", "[LSquiDBOrder;", "limit", "I", "II", "LSquiDBField;", "(Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;)Lcom/yahoo/squidb/sql/Query;", "LSquiDBField;LSquiDBField;", "(Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;)Lcom/yahoo/squidb/sql/Query;", "()Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;", "equals", "LNSObject;", "hashCode", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", "visitSelectClause", "visitFromClause", "visitJoinClause", "visitWhereClause", "visitGroupByClause", "visitCompoundSelectClauses", "visitOrderByClause", "visitLimitClause", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "as", "LNSString;", "LNSString;LIOSClass;[LSquiDBProperty;", "(Ljava/lang/String;Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/SubqueryTable;", "<T:Ljava/lang/Object;>()Lcom/yahoo/squidb/sql/Function<TT;>;", "isEmpty", "(Ljava/util/List<*>;)Z", "[LNSObject;", "<T:Ljava/lang/Object;>([TT;)Z", "forkList", "LJavaUtilArrayList;", "<T:Ljava/lang/Object;>(Ljava/util/ArrayList<TT;>;)Ljava/util/ArrayList<TT;>;", "()Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", &SquiDBQuery_NO_LIMIT, "Lcom/yahoo/squidb/sql/Field<Ljava/lang/Integer;>;", &SquiDBQuery_NO_OFFSET, "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Field<*>;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Criterion;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Join;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/CompoundSelect;>;", "Ljava/util/ArrayList<Lcom/yahoo/squidb/sql/Order;>;" };
+  static const J2ObjcClassInfo _SquiDBQuery = { "Query", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x11, 56, 16, -1, -1, -1, -1, -1 };
+  return &_SquiDBQuery;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlQuery class]) {
-    ComYahooSquidbSqlQuery_NO_LIMIT = ComYahooSquidbSqlField_fieldWithNSString_(@"-1");
-    ComYahooSquidbSqlQuery_NO_OFFSET = ComYahooSquidbSqlField_fieldWithNSString_(@"0");
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlQuery)
+  if (self == [SquiDBQuery class]) {
+    SquiDBQuery_NO_LIMIT = SquiDBField_fieldWithNSString_(@"-1");
+    SquiDBQuery_NO_OFFSET = SquiDBField_fieldWithNSString_(@"0");
+    J2OBJC_SET_INITIALIZED(SquiDBQuery)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlQuery_initWithJavaUtilList_(ComYahooSquidbSqlQuery *self, id<JavaUtilList> fields) {
-  ComYahooSquidbSqlTableStatement_init(self);
+void SquiDBQuery_initWithJavaUtilList_(SquiDBQuery *self, id<JavaUtilList> fields) {
+  SquiDBTableStatement_init(self);
   self->table_ = nil;
   self->fields_ = nil;
   self->criterions_ = nil;
@@ -714,27 +714,27 @@ void ComYahooSquidbSqlQuery_initWithJavaUtilList_(ComYahooSquidbSqlQuery *self, 
   self->havings_ = nil;
   self->compoundSelects_ = nil;
   self->orders_ = nil;
-  self->limit_ = ComYahooSquidbSqlQuery_NO_LIMIT;
-  self->offset_ = ComYahooSquidbSqlQuery_NO_OFFSET;
+  self->limit_ = SquiDBQuery_NO_LIMIT;
+  self->offset_ = SquiDBQuery_NO_OFFSET;
   self->distinct_ = false;
   self->immutable_ = false;
   self->needsValidation_ = false;
   self->selectAllCache_ = nil;
-  if (!ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, fields)) {
+  if (!SquiDBQuery_isEmptyWithJavaUtilList_(self, fields)) {
     self->fields_ = new_JavaUtilArrayList_initWithJavaUtilCollection_(fields);
   }
 }
 
-ComYahooSquidbSqlQuery *new_ComYahooSquidbSqlQuery_initWithJavaUtilList_(id<JavaUtilList> fields) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlQuery, initWithJavaUtilList_, fields)
+SquiDBQuery *new_SquiDBQuery_initWithJavaUtilList_(id<JavaUtilList> fields) {
+  J2OBJC_NEW_IMPL(SquiDBQuery, initWithJavaUtilList_, fields)
 }
 
-ComYahooSquidbSqlQuery *create_ComYahooSquidbSqlQuery_initWithJavaUtilList_(id<JavaUtilList> fields) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlQuery, initWithJavaUtilList_, fields)
+SquiDBQuery *create_SquiDBQuery_initWithJavaUtilList_(id<JavaUtilList> fields) {
+  J2OBJC_CREATE_IMPL(SquiDBQuery, initWithJavaUtilList_, fields)
 }
 
-void ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(ComYahooSquidbSqlQuery *self, IOSObjectArray *fields) {
-  ComYahooSquidbSqlTableStatement_init(self);
+void SquiDBQuery_initWithSquiDBFieldArray_(SquiDBQuery *self, IOSObjectArray *fields) {
+  SquiDBTableStatement_init(self);
   self->table_ = nil;
   self->fields_ = nil;
   self->criterions_ = nil;
@@ -743,62 +743,62 @@ void ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(ComYahooSquidbS
   self->havings_ = nil;
   self->compoundSelects_ = nil;
   self->orders_ = nil;
-  self->limit_ = ComYahooSquidbSqlQuery_NO_LIMIT;
-  self->offset_ = ComYahooSquidbSqlQuery_NO_OFFSET;
+  self->limit_ = SquiDBQuery_NO_LIMIT;
+  self->offset_ = SquiDBQuery_NO_OFFSET;
   self->distinct_ = false;
   self->immutable_ = false;
   self->needsValidation_ = false;
   self->selectAllCache_ = nil;
-  if (!ComYahooSquidbSqlQuery_isEmptyWithNSObjectArray_(self, fields)) {
+  if (!SquiDBQuery_isEmptyWithNSObjectArray_(self, fields)) {
     self->fields_ = new_JavaUtilArrayList_init();
-    ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->fields_, fields);
+    SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->fields_, fields);
   }
 }
 
-ComYahooSquidbSqlQuery *new_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlQuery, initWithComYahooSquidbSqlFieldArray_, fields)
+SquiDBQuery *new_SquiDBQuery_initWithSquiDBFieldArray_(IOSObjectArray *fields) {
+  J2OBJC_NEW_IMPL(SquiDBQuery, initWithSquiDBFieldArray_, fields)
 }
 
-ComYahooSquidbSqlQuery *create_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlQuery, initWithComYahooSquidbSqlFieldArray_, fields)
+SquiDBQuery *create_SquiDBQuery_initWithSquiDBFieldArray_(IOSObjectArray *fields) {
+  J2OBJC_CREATE_IMPL(SquiDBQuery, initWithSquiDBFieldArray_, fields)
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields) {
-  ComYahooSquidbSqlQuery_initialize();
-  return new_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(fields);
+SquiDBQuery *SquiDBQuery_selectWithSquiDBFieldArray_(IOSObjectArray *fields) {
+  SquiDBQuery_initialize();
+  return new_SquiDBQuery_initWithSquiDBFieldArray_(fields);
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectWithJavaUtilList_(id<JavaUtilList> fields) {
-  ComYahooSquidbSqlQuery_initialize();
-  return new_ComYahooSquidbSqlQuery_initWithJavaUtilList_(fields);
+SquiDBQuery *SquiDBQuery_selectWithJavaUtilList_(id<JavaUtilList> fields) {
+  SquiDBQuery_initialize();
+  return new_SquiDBQuery_initWithJavaUtilList_(fields);
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectDistinctWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields) {
-  ComYahooSquidbSqlQuery_initialize();
-  ComYahooSquidbSqlQuery *query = new_ComYahooSquidbSqlQuery_initWithComYahooSquidbSqlFieldArray_(fields);
+SquiDBQuery *SquiDBQuery_selectDistinctWithSquiDBFieldArray_(IOSObjectArray *fields) {
+  SquiDBQuery_initialize();
+  SquiDBQuery *query = new_SquiDBQuery_initWithSquiDBFieldArray_(fields);
   query->distinct_ = true;
   return query;
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectDistinctWithJavaUtilList_(id<JavaUtilList> fields) {
-  ComYahooSquidbSqlQuery_initialize();
-  ComYahooSquidbSqlQuery *query = new_ComYahooSquidbSqlQuery_initWithJavaUtilList_(fields);
+SquiDBQuery *SquiDBQuery_selectDistinctWithJavaUtilList_(id<JavaUtilList> fields) {
+  SquiDBQuery_initialize();
+  SquiDBQuery *query = new_SquiDBQuery_initWithJavaUtilList_(fields);
   query->distinct_ = true;
   return query;
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_fromSubqueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *subquery, NSString *subqueryAlias) {
-  ComYahooSquidbSqlQuery_initialize();
-  ComYahooSquidbSqlSubqueryTable *table = [((ComYahooSquidbSqlQuery *) nil_chk(subquery)) asWithNSString:subqueryAlias];
-  return [((ComYahooSquidbSqlQuery *) nil_chk(ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_([((ComYahooSquidbSqlSubqueryTable *) nil_chk(table)) qualifiedFields]))) fromWithComYahooSquidbSqlSqlTable:table];
+SquiDBQuery *SquiDBQuery_fromSubqueryWithSquiDBQuery_withNSString_(SquiDBQuery *subquery, NSString *subqueryAlias) {
+  SquiDBQuery_initialize();
+  SquiDBSubqueryTable *table = [((SquiDBQuery *) nil_chk(subquery)) asWithNSString:subqueryAlias];
+  return [((SquiDBQuery *) nil_chk(SquiDBQuery_selectWithSquiDBFieldArray_([((SquiDBSubqueryTable *) nil_chk(table)) qualifiedFields]))) fromWithSquiDBSqlTable:table];
 }
 
-ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_fromViewWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view) {
-  ComYahooSquidbSqlQuery_initialize();
-  return [((ComYahooSquidbSqlQuery *) nil_chk(ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_([((ComYahooSquidbSqlView *) nil_chk(view)) qualifiedFields]))) fromWithComYahooSquidbSqlSqlTable:view];
+SquiDBQuery *SquiDBQuery_fromViewWithSquiDBView_(SquiDBView *view) {
+  SquiDBQuery_initialize();
+  return [((SquiDBQuery *) nil_chk(SquiDBQuery_selectWithSquiDBFieldArray_([((SquiDBView *) nil_chk(view)) qualifiedFields]))) fromWithSquiDBSqlTable:view];
 }
 
-void ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlCompoundSelect *compoundSelect) {
+void SquiDBQuery_addCompoundSelectWithSquiDBCompoundSelect_(SquiDBQuery *self, SquiDBCompoundSelect *compoundSelect) {
   if (self->compoundSelects_ == nil) {
     self->compoundSelects_ = new_JavaUtilArrayList_init();
   }
@@ -806,13 +806,13 @@ void ComYahooSquidbSqlQuery_addCompoundSelectWithComYahooSquidbSqlCompoundSelect
   [self invalidateCompileCache];
 }
 
-void ComYahooSquidbSqlQuery_visitSelectClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"SELECT "];
+void SquiDBQuery_visitSelectClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"SELECT "];
   if (self->distinct_) {
     (void) [builder->sql_ appendWithNSString:@"DISTINCT "];
   }
   id<JavaUtilList> toSelect;
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->fields_)) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->fields_)) {
     toSelect = [self getFields];
   }
   else {
@@ -821,27 +821,27 @@ void ComYahooSquidbSqlQuery_visitSelectClauseWithComYahooSquidbSqlSqlBuilder_wit
   [builder appendConcatenatedCompilablesWithJavaUtilList:toSelect withNSString:@", " withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitFromClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
+void SquiDBQuery_visitFromClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
   if (self->table_ == nil) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" FROM "];
-  [((ComYahooSquidbSqlSqlTable *) nil_chk(self->table_)) appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" FROM "];
+  [((SquiDBSqlTable *) nil_chk(self->table_)) appendToSqlBuilderWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitJoinClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->joins_)) {
+void SquiDBQuery_visitJoinClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->joins_)) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->joins_ withNSString:@" " withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitWhereClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->criterions_)) {
+void SquiDBQuery_visitWhereClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->criterions_)) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
   if (forSqlValidation) {
     (void) [builder->sql_ appendWithNSString:@"("];
   }
@@ -851,64 +851,66 @@ void ComYahooSquidbSqlQuery_visitWhereClauseWithComYahooSquidbSqlSqlBuilder_with
   }
 }
 
-void ComYahooSquidbSqlQuery_visitGroupByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->groupByFields_)) {
+void SquiDBQuery_visitGroupByClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->groupByFields_)) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" GROUP BY"];
-  for (ComYahooSquidbSqlField * __strong groupBy in nil_chk(self->groupByFields_)) {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" GROUP BY"];
+  for (SquiDBField * __strong groupBy in nil_chk(self->groupByFields_)) {
     (void) [builder->sql_ appendWithNSString:@" "];
-    [((ComYahooSquidbSqlField *) nil_chk(groupBy)) appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+    [((SquiDBField *) nil_chk(groupBy)) appendQualifiedExpressionWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
     (void) [builder->sql_ appendWithNSString:@","];
   }
   (void) [builder->sql_ deleteCharAtWithInt:[builder->sql_ java_length] - 1];
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->havings_)) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->havings_)) {
     return;
   }
   (void) [builder->sql_ appendWithNSString:@" HAVING "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->havings_ withNSString:@" AND " withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitCompoundSelectClausesWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->compoundSelects_)) {
+void SquiDBQuery_visitCompoundSelectClausesWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->compoundSelects_)) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->compoundSelects_ withNSString:@" " withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitOrderByClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, self->orders_)) {
+void SquiDBQuery_visitOrderByClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, self->orders_)) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" ORDER BY "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" ORDER BY "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->orders_ withNSString:@", " withBoolean:forSqlValidation];
 }
 
-void ComYahooSquidbSqlQuery_visitLimitClauseWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlQuery *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
-  if (![((ComYahooSquidbSqlField *) nil_chk(ComYahooSquidbSqlQuery_NO_LIMIT)) isEqual:self->limit_] || ![((ComYahooSquidbSqlField *) nil_chk(ComYahooSquidbSqlQuery_NO_OFFSET)) isEqual:self->offset_]) {
-    (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" LIMIT "];
-    [((ComYahooSquidbSqlField *) nil_chk(self->limit_)) appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
-    if (![((ComYahooSquidbSqlField *) nil_chk(ComYahooSquidbSqlQuery_NO_OFFSET)) isEqual:self->offset_]) {
+void SquiDBQuery_visitLimitClauseWithSquiDBSqlBuilder_withBoolean_(SquiDBQuery *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
+  if (![((SquiDBField *) nil_chk(SquiDBQuery_NO_LIMIT)) isEqual:self->limit_] || ![((SquiDBField *) nil_chk(SquiDBQuery_NO_OFFSET)) isEqual:self->offset_]) {
+    (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" LIMIT "];
+    [((SquiDBField *) nil_chk(self->limit_)) appendQualifiedExpressionWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
+    if (![((SquiDBField *) nil_chk(SquiDBQuery_NO_OFFSET)) isEqual:self->offset_]) {
       (void) [builder->sql_ appendWithNSString:@" OFFSET "];
-      [((ComYahooSquidbSqlField *) nil_chk(self->offset_)) appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:builder withBoolean:forSqlValidation];
+      [((SquiDBField *) nil_chk(self->offset_)) appendQualifiedExpressionWithSquiDBSqlBuilder:builder withBoolean:forSqlValidation];
     }
   }
 }
 
-jboolean ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(ComYahooSquidbSqlQuery *self, id<JavaUtilList> list) {
+jboolean SquiDBQuery_isEmptyWithJavaUtilList_(SquiDBQuery *self, id<JavaUtilList> list) {
   return list == nil || [list isEmpty];
 }
 
-jboolean ComYahooSquidbSqlQuery_isEmptyWithNSObjectArray_(ComYahooSquidbSqlQuery *self, IOSObjectArray *array) {
+jboolean SquiDBQuery_isEmptyWithNSObjectArray_(SquiDBQuery *self, IOSObjectArray *array) {
   return array == nil || array->size_ == 0;
 }
 
-JavaUtilArrayList *ComYahooSquidbSqlQuery_forkListWithJavaUtilArrayList_(ComYahooSquidbSqlQuery *self, JavaUtilArrayList *list) {
-  if (ComYahooSquidbSqlQuery_isEmptyWithJavaUtilList_(self, list)) {
+JavaUtilArrayList *SquiDBQuery_forkListWithJavaUtilArrayList_(SquiDBQuery *self, JavaUtilArrayList *list) {
+  if (SquiDBQuery_isEmptyWithJavaUtilList_(self, list)) {
     return nil;
   }
   return new_JavaUtilArrayList_initWithJavaUtilCollection_(list);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlQuery)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBQuery)
+
+J2OBJC_NAME_MAPPING(SquiDBQuery, "com.yahoo.squidb.sql", "SquiDB")

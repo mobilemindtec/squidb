@@ -15,39 +15,41 @@
 #include "Criterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlNegationCriterion : ComYahooSquidbSqlCriterion
+@interface SquiDBNegationCriterion : SquiDBCriterion
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlCriterion *)negate;
+- (SquiDBCriterion *)negate;
 
 #pragma mark Protected
 
-- (void)populateWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                    withBoolean:(jboolean)forSqlValidation;
+- (void)populateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                         withBoolean:(jboolean)forSqlValidation;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)toNegate;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBCriterion:(SquiDBCriterion *)toNegate;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithSquiDBOperator:(SquiDBOperator *)arg0 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlNegationCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBNegationCriterion)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlNegationCriterion_initWithComYahooSquidbSqlCriterion_(ComYahooSquidbSqlNegationCriterion *self, ComYahooSquidbSqlCriterion *toNegate);
+FOUNDATION_EXPORT void SquiDBNegationCriterion_initPackagePrivateWithSquiDBCriterion_(SquiDBNegationCriterion *self, SquiDBCriterion *toNegate);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlNegationCriterion *new_ComYahooSquidbSqlNegationCriterion_initWithComYahooSquidbSqlCriterion_(ComYahooSquidbSqlCriterion *toNegate) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBNegationCriterion *new_SquiDBNegationCriterion_initPackagePrivateWithSquiDBCriterion_(SquiDBCriterion *toNegate) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlNegationCriterion *create_ComYahooSquidbSqlNegationCriterion_initWithComYahooSquidbSqlCriterion_(ComYahooSquidbSqlCriterion *toNegate);
+FOUNDATION_EXPORT SquiDBNegationCriterion *create_SquiDBNegationCriterion_initPackagePrivateWithSquiDBCriterion_(SquiDBCriterion *toNegate);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlNegationCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBNegationCriterion)
+
+@compatibility_alias ComYahooSquidbSqlNegationCriterion SquiDBNegationCriterion;
 
 
 #if __has_feature(nullability)

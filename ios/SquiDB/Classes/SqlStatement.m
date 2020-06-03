@@ -10,81 +10,83 @@
 #include "java/lang/Deprecated.h"
 #include "java/lang/annotation/Annotation.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlSqlStatement__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSqlStatement__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlSqlStatement__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSqlStatement__Annotations$1(void);
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlSqlStatement)
+J2OBJC_INITIALIZED_DEFN(SquiDBSqlStatement)
 
-IOSObjectArray *ComYahooSquidbSqlSqlStatement_EMPTY_ARGS;
-NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_PARAMETER = @"?";
-NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER = @"[?]";
-NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX = @"\\[\\?\\]";
+IOSObjectArray *SquiDBSqlStatement_EMPTY_ARGS;
+NSString *SquiDBSqlStatement_REPLACEABLE_PARAMETER = @"?";
+NSString *SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER = @"[?]";
+NSString *SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX = @"\\[\\?\\]";
 
-@implementation ComYahooSquidbSqlSqlStatement
+@implementation SquiDBSqlStatement
 
 + (IOSObjectArray *)EMPTY_ARGS {
-  return ComYahooSquidbSqlSqlStatement_EMPTY_ARGS;
+  return SquiDBSqlStatement_EMPTY_ARGS;
 }
 
 + (NSString *)REPLACEABLE_PARAMETER {
-  return ComYahooSquidbSqlSqlStatement_REPLACEABLE_PARAMETER;
+  return SquiDBSqlStatement_REPLACEABLE_PARAMETER;
 }
 
 + (NSString *)REPLACEABLE_ARRAY_PARAMETER {
-  return ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER;
+  return SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER;
 }
 
 + (NSString *)REPLACEABLE_ARRAY_PARAMETER_REGEX {
-  return ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX;
+  return SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX;
 }
 
 + (jint)MAX_VARIABLE_NUMBER {
-  return ComYahooSquidbSqlSqlStatement_MAX_VARIABLE_NUMBER;
+  return SquiDBSqlStatement_MAX_VARIABLE_NUMBER;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooSquidbSqlCompiledStatement;", 0x401, 0, 1, -1, -1, 2, -1 },
-    { NULL, "LComYahooSquidbSqlCompiledStatement;", 0x401, 0, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompiledStatement;", 0x401, 0, 1, -1, -1, 2, -1 },
+    { NULL, "LSquiDBCompiledStatement;", 0x401, 0, 3, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, 4, 1, -1, -1, 5, -1 },
     { NULL, "LNSString;", 0x401, 4, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(compileWithComYahooSquidbUtilityVersionCode:);
-  methods[1].selector = @selector(compileWithComYahooSquidbSqlCompileContext:);
-  methods[2].selector = @selector(toRawSqlWithComYahooSquidbUtilityVersionCode:);
-  methods[3].selector = @selector(toRawSqlWithComYahooSquidbSqlCompileContext:);
+  methods[0].selector = @selector(compileWithSquiDBVersionCode:);
+  methods[1].selector = @selector(compileWithSquiDBCompileContext:);
+  methods[2].selector = @selector(toRawSqlWithSquiDBVersionCode:);
+  methods[3].selector = @selector(toRawSqlWithSquiDBCompileContext:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "EMPTY_ARGS", "[LNSObject;", .constantValue.asLong = 0, 0x19, -1, 6, -1, -1 },
     { "REPLACEABLE_PARAMETER", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
     { "REPLACEABLE_ARRAY_PARAMETER", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
     { "REPLACEABLE_ARRAY_PARAMETER_REGEX", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 9, -1, -1 },
-    { "MAX_VARIABLE_NUMBER", "I", .constantValue.asInt = ComYahooSquidbSqlSqlStatement_MAX_VARIABLE_NUMBER, 0x19, -1, -1, -1, -1 },
+    { "MAX_VARIABLE_NUMBER", "I", .constantValue.asInt = SquiDBSqlStatement_MAX_VARIABLE_NUMBER, 0x19, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "compile", "LComYahooSquidbUtilityVersionCode;", (void *)&ComYahooSquidbSqlSqlStatement__Annotations$0, "LComYahooSquidbSqlCompileContext;", "toRawSql", (void *)&ComYahooSquidbSqlSqlStatement__Annotations$1, &ComYahooSquidbSqlSqlStatement_EMPTY_ARGS, &ComYahooSquidbSqlSqlStatement_REPLACEABLE_PARAMETER, &ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER, &ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlSqlStatement = { "SqlStatement", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x609, 4, 5, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlSqlStatement;
+  static const void *ptrTable[] = { "compile", "LSquiDBVersionCode;", (void *)&SquiDBSqlStatement__Annotations$0, "LSquiDBCompileContext;", "toRawSql", (void *)&SquiDBSqlStatement__Annotations$1, &SquiDBSqlStatement_EMPTY_ARGS, &SquiDBSqlStatement_REPLACEABLE_PARAMETER, &SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER, &SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX };
+  static const J2ObjcClassInfo _SquiDBSqlStatement = { "SqlStatement", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x609, 4, 5, -1, -1, -1, -1, -1 };
+  return &_SquiDBSqlStatement;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlSqlStatement class]) {
-    ComYahooSquidbSqlSqlStatement_EMPTY_ARGS = [IOSObjectArray newArrayWithLength:0 type:NSObject_class_()];
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlSqlStatement)
+  if (self == [SquiDBSqlStatement class]) {
+    SquiDBSqlStatement_EMPTY_ARGS = [IOSObjectArray newArrayWithLength:0 type:NSObject_class_()];
+    J2OBJC_SET_INITIALIZED(SquiDBSqlStatement)
   }
 }
 
 @end
 
-IOSObjectArray *ComYahooSquidbSqlSqlStatement__Annotations$0() {
+IOSObjectArray *SquiDBSqlStatement__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbSqlSqlStatement__Annotations$1() {
+IOSObjectArray *SquiDBSqlStatement__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlSqlStatement)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBSqlStatement)
+
+J2OBJC_NAME_MAPPING(SquiDBSqlStatement, "com.yahoo.squidb.sql", "SquiDB")

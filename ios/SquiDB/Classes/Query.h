@@ -15,122 +15,122 @@
 #include "J2ObjC_header.h"
 #include "TableStatement.h"
 
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlFunction;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbSqlSubqueryTable;
-@class ComYahooSquidbSqlView;
 @class IOSClass;
 @class IOSObjectArray;
+@class SquiDBCriterion;
+@class SquiDBField;
+@class SquiDBFunction;
+@class SquiDBSqlBuilder;
+@class SquiDBSqlTable;
+@class SquiDBSubqueryTable;
+@class SquiDBView;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbSqlQuery : ComYahooSquidbSqlTableStatement
-@property (readonly, class) ComYahooSquidbSqlField *NO_LIMIT NS_SWIFT_NAME(NO_LIMIT);
-@property (readonly, class) ComYahooSquidbSqlField *NO_OFFSET NS_SWIFT_NAME(NO_OFFSET);
+@interface SquiDBQuery : SquiDBTableStatement
+@property (readonly, class) SquiDBField *NO_LIMIT NS_SWIFT_NAME(NO_LIMIT);
+@property (readonly, class) SquiDBField *NO_OFFSET NS_SWIFT_NAME(NO_OFFSET);
 
-+ (ComYahooSquidbSqlField *)NO_LIMIT;
++ (SquiDBField *)NO_LIMIT;
 
-+ (ComYahooSquidbSqlField *)NO_OFFSET;
++ (SquiDBField *)NO_OFFSET;
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlSubqueryTable *)asWithNSString:(NSString *)alias;
+- (SquiDBSubqueryTable *)asWithNSString:(NSString *)alias;
 
-- (ComYahooSquidbSqlSubqueryTable *)asWithNSString:(NSString *)alias
-                                      withIOSClass:(IOSClass *)modelClass
-                withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+- (SquiDBSubqueryTable *)asWithNSString:(NSString *)alias
+                           withIOSClass:(IOSClass *)modelClass
+                withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
-- (ComYahooSquidbSqlFunction *)asFunction;
+- (SquiDBFunction *)asFunction;
 
 - (jboolean)isEqual:(id)o;
 
-- (ComYahooSquidbSqlQuery *)exceptWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBQuery *)exceptWithSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbSqlQuery *)fork;
+- (SquiDBQuery *)fork;
 
-- (ComYahooSquidbSqlQuery *)freeze;
+- (SquiDBQuery *)freeze;
 
-- (ComYahooSquidbSqlQuery *)fromWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table;
+- (SquiDBQuery *)fromWithSquiDBSqlTable:(SquiDBSqlTable *)table;
 
-+ (ComYahooSquidbSqlQuery *)fromSubqueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)subquery
-                                                      withNSString:(NSString *)subqueryAlias;
++ (SquiDBQuery *)fromSubqueryWithSquiDBQuery:(SquiDBQuery *)subquery
+                                withNSString:(NSString *)subqueryAlias;
 
-+ (ComYahooSquidbSqlQuery *)fromViewWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
++ (SquiDBQuery *)fromViewWithSquiDBView:(SquiDBView *)view;
 
 - (id<JavaUtilList>)getFields;
 
-- (ComYahooSquidbSqlField *)getLimit;
+- (SquiDBField *)getLimit;
 
-- (ComYahooSquidbSqlField *)getOffset;
+- (SquiDBField *)getOffset;
 
-- (ComYahooSquidbSqlSqlTable *)getTable;
+- (SquiDBSqlTable *)getTable;
 
-- (ComYahooSquidbSqlQuery *)groupByWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
+- (SquiDBQuery *)groupByWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
 - (NSUInteger)hash;
 
 - (jboolean)hasTable;
 
-- (ComYahooSquidbSqlQuery *)havingWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBQuery *)havingWithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
-- (ComYahooSquidbSqlQuery *)innerJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                               withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)onCriterions;
+- (SquiDBQuery *)innerJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBCriterionArray:(IOSObjectArray *)onCriterions;
 
-- (ComYahooSquidbSqlQuery *)innerJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns;
+- (SquiDBQuery *)innerJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                     withSquiDBPropertyArray:(IOSObjectArray *)usingColumns;
 
-- (ComYahooSquidbSqlQuery *)intersectWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBQuery *)intersectWithSquiDBQuery:(SquiDBQuery *)query;
 
 - (jboolean)isImmutable;
 
-- (ComYahooSquidbSqlQuery *)joinWithComYahooSquidbSqlJoinArray:(IOSObjectArray *)joins;
+- (SquiDBQuery *)joinWithSquiDBJoinArray:(IOSObjectArray *)joins;
 
-- (ComYahooSquidbSqlQuery *)leftJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                              withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)onCriterions;
+- (SquiDBQuery *)leftJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                   withSquiDBCriterionArray:(IOSObjectArray *)onCriterions;
 
-- (ComYahooSquidbSqlQuery *)leftJoinWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                               withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns;
+- (SquiDBQuery *)leftJoinWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBPropertyArray:(IOSObjectArray *)usingColumns;
 
-- (ComYahooSquidbSqlQuery *)limitWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)limit;
+- (SquiDBQuery *)limitWithSquiDBField:(SquiDBField *)limit;
 
-- (ComYahooSquidbSqlQuery *)limitWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)limit
-                                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)offset;
+- (SquiDBQuery *)limitWithSquiDBField:(SquiDBField *)limit
+                      withSquiDBField:(SquiDBField *)offset;
 
-- (ComYahooSquidbSqlQuery *)limitWithInt:(jint)limit;
+- (SquiDBQuery *)limitWithInt:(jint)limit;
 
-- (ComYahooSquidbSqlQuery *)limitWithInt:(jint)limit
-                                 withInt:(jint)offset;
+- (SquiDBQuery *)limitWithInt:(jint)limit
+                      withInt:(jint)offset;
 
 - (jboolean)needsValidation;
 
-- (ComYahooSquidbSqlQuery *)orderByWithComYahooSquidbSqlOrderArray:(IOSObjectArray *)orders;
+- (SquiDBQuery *)orderByWithSquiDBOrderArray:(IOSObjectArray *)orders;
 
 - (void)requestValidation;
 
-+ (ComYahooSquidbSqlQuery *)selectWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
++ (SquiDBQuery *)selectWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
-+ (ComYahooSquidbSqlQuery *)selectWithJavaUtilList:(id<JavaUtilList>)fields;
++ (SquiDBQuery *)selectWithJavaUtilList:(id<JavaUtilList>)fields;
 
-+ (ComYahooSquidbSqlQuery *)selectDistinctWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
++ (SquiDBQuery *)selectDistinctWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
-+ (ComYahooSquidbSqlQuery *)selectDistinctWithJavaUtilList:(id<JavaUtilList>)fields;
++ (SquiDBQuery *)selectDistinctWithJavaUtilList:(id<JavaUtilList>)fields;
 
-- (ComYahooSquidbSqlQuery *)selectMoreWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)fields;
+- (SquiDBQuery *)selectMoreWithSquiDBFieldArray:(IOSObjectArray *)fields;
 
-- (ComYahooSquidbSqlQuery *)selectMoreWithJavaUtilList:(id<JavaUtilList>)fields;
+- (SquiDBQuery *)selectMoreWithJavaUtilList:(id<JavaUtilList>)fields;
 
-- (ComYahooSquidbSqlQuery *)union__WithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBQuery *)union__WithSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbSqlQuery *)unionAllWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
+- (SquiDBQuery *)unionAllWithSquiDBQuery:(SquiDBQuery *)query;
 
-- (ComYahooSquidbSqlQuery *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBQuery *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
@@ -138,31 +138,33 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlQuery)
+J2OBJC_STATIC_INIT(SquiDBQuery)
 
-inline ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_get_NO_LIMIT(void);
+inline SquiDBField *SquiDBQuery_get_NO_LIMIT(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_LIMIT;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlQuery, NO_LIMIT, ComYahooSquidbSqlField *)
+FOUNDATION_EXPORT SquiDBField *SquiDBQuery_NO_LIMIT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBQuery, NO_LIMIT, SquiDBField *)
 
-inline ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_get_NO_OFFSET(void);
+inline SquiDBField *SquiDBQuery_get_NO_OFFSET(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbSqlField *ComYahooSquidbSqlQuery_NO_OFFSET;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlQuery, NO_OFFSET, ComYahooSquidbSqlField *)
+FOUNDATION_EXPORT SquiDBField *SquiDBQuery_NO_OFFSET;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBQuery, NO_OFFSET, SquiDBField *)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_selectWithSquiDBFieldArray_(IOSObjectArray *fields);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectWithJavaUtilList_(id<JavaUtilList> fields);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_selectWithJavaUtilList_(id<JavaUtilList> fields);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectDistinctWithComYahooSquidbSqlFieldArray_(IOSObjectArray *fields);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_selectDistinctWithSquiDBFieldArray_(IOSObjectArray *fields);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_selectDistinctWithJavaUtilList_(id<JavaUtilList> fields);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_selectDistinctWithJavaUtilList_(id<JavaUtilList> fields);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_fromSubqueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *subquery, NSString *subqueryAlias);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_fromSubqueryWithSquiDBQuery_withNSString_(SquiDBQuery *subquery, NSString *subqueryAlias);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlQuery *ComYahooSquidbSqlQuery_fromViewWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view);
+FOUNDATION_EXPORT SquiDBQuery *SquiDBQuery_fromViewWithSquiDBView_(SquiDBView *view);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlQuery)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBQuery)
+
+@compatibility_alias ComYahooSquidbSqlQuery SquiDBQuery;
 
 
 #if __has_feature(nullability)

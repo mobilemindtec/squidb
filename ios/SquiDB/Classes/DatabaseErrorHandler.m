@@ -6,11 +6,11 @@
 #include "DatabaseErrorHandler.h"
 #include "J2ObjC_source.h"
 
-@interface ComYahooAndroidSqliteDatabaseErrorHandler : NSObject
+@interface SquiDBDatabaseErrorHandler : NSObject
 
 @end
 
-@implementation ComYahooAndroidSqliteDatabaseErrorHandler
+@implementation SquiDBDatabaseErrorHandler
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,13 +19,15 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:);
+  methods[0].selector = @selector(onCorruptionWithSquiDBSQLiteDatabase:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "onCorruption", "LComYahooAndroidSqliteSQLiteDatabase;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteDatabaseErrorHandler = { "DatabaseErrorHandler", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteDatabaseErrorHandler;
+  static const void *ptrTable[] = { "onCorruption", "LSquiDBSQLiteDatabase;" };
+  static const J2ObjcClassInfo _SquiDBDatabaseErrorHandler = { "DatabaseErrorHandler", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBDatabaseErrorHandler;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteDatabaseErrorHandler)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBDatabaseErrorHandler)
+
+J2OBJC_NAME_MAPPING(SquiDBDatabaseErrorHandler, "com.yahoo.android.sqlite", "SquiDB")

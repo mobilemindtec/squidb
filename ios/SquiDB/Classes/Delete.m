@@ -15,42 +15,42 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@interface ComYahooSquidbSqlDelete () {
+@interface SquiDBDelete () {
  @public
-  ComYahooSquidbSqlSqlTable *table_;
+  SquiDBSqlTable *table_;
   id<JavaUtilList> criterions_;
 }
 
-- (void)visitWhereWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                      withBoolean:(jboolean)forSqlValidation;
+- (void)visitWhereWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                           withBoolean:(jboolean)forSqlValidation;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlDelete, table_, ComYahooSquidbSqlSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlDelete, criterions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBDelete, table_, SquiDBSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBDelete, criterions_, id<JavaUtilList>)
 
-__attribute__((unused)) static void ComYahooSquidbSqlDelete_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlDelete *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBDelete_visitWhereWithSquiDBSqlBuilder_withBoolean_(SquiDBDelete *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-@implementation ComYahooSquidbSqlDelete
+@implementation SquiDBDelete
 
-- (instancetype)initWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table {
-  ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(self, table);
+- (instancetype)initWithSquiDBSqlTable:(SquiDBSqlTable *)table {
+  SquiDBDelete_initWithSquiDBSqlTable_(self, table);
   return self;
 }
 
-- (ComYahooSquidbSqlSqlTable *)getTable {
+- (SquiDBSqlTable *)getTable {
   return table_;
 }
 
-+ (ComYahooSquidbSqlDelete *)fromWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  return ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlTable_(table);
++ (SquiDBDelete *)fromWithSquiDBTable:(SquiDBTable *)table {
+  return SquiDBDelete_fromWithSquiDBTable_(table);
 }
 
-+ (ComYahooSquidbSqlDelete *)fromWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  return ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlView_(view);
++ (SquiDBDelete *)fromWithSquiDBView:(SquiDBView *)view {
+  return SquiDBDelete_fromWithSquiDBView_(view);
 }
 
-- (ComYahooSquidbSqlDelete *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
+- (SquiDBDelete *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion {
   if (criterion != nil) {
     [((id<JavaUtilList>) nil_chk(self->criterions_)) addWithId:criterion];
     [self invalidateCompileCache];
@@ -58,79 +58,81 @@ __attribute__((unused)) static void ComYahooSquidbSqlDelete_visitWhereWithComYah
   return self;
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"DELETE FROM "])) appendWithNSString:[((ComYahooSquidbSqlSqlTable *) nil_chk(table_)) getExpression]];
-  ComYahooSquidbSqlDelete_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"DELETE FROM "])) appendWithNSString:[((SquiDBSqlTable *) nil_chk(table_)) getExpression]];
+  SquiDBDelete_visitWhereWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitWhereWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                      withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlDelete_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitWhereWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                           withBoolean:(jboolean)forSqlValidation {
+  SquiDBDelete_visitWhereWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x4, -1, 0, -1, 1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlSqlTable;", 0x1, -1, -1, -1, 2, -1, -1 },
-    { NULL, "LComYahooSquidbSqlDelete;", 0x9, 3, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlDelete;", 0x9, 3, 5, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlDelete;", 0x1, 6, 7, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSqlTable;", 0x1, -1, -1, -1, 2, -1, -1 },
+    { NULL, "LSquiDBDelete;", 0x9, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LSquiDBDelete;", 0x9, 3, 5, -1, -1, -1, -1 },
+    { NULL, "LSquiDBDelete;", 0x1, 6, 7, -1, -1, -1, -1 },
     { NULL, "V", 0x0, 8, 9, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 10, 9, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlSqlTable:);
+  methods[0].selector = @selector(initWithSquiDBSqlTable:);
   methods[1].selector = @selector(getTable);
-  methods[2].selector = @selector(fromWithComYahooSquidbSqlTable:);
-  methods[3].selector = @selector(fromWithComYahooSquidbSqlView:);
-  methods[4].selector = @selector(whereWithComYahooSquidbSqlCriterion:);
-  methods[5].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[6].selector = @selector(visitWhereWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[2].selector = @selector(fromWithSquiDBTable:);
+  methods[3].selector = @selector(fromWithSquiDBView:);
+  methods[4].selector = @selector(whereWithSquiDBCriterion:);
+  methods[5].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
+  methods[6].selector = @selector(visitWhereWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "table_", "LComYahooSquidbSqlSqlTable;", .constantValue.asLong = 0, 0x12, -1, -1, 11, -1 },
+    { "table_", "LSquiDBSqlTable;", .constantValue.asLong = 0, 0x12, -1, -1, 11, -1 },
     { "criterions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 12, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "from", "LComYahooSquidbSqlTable;", "LComYahooSquidbSqlView;", "where", "LComYahooSquidbSqlCriterion;", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", "visitWhere", "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlDelete = { "Delete", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 7, 2, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlDelete;
+  static const void *ptrTable[] = { "LSquiDBSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "()Lcom/yahoo/squidb/sql/SqlTable<*>;", "from", "LSquiDBTable;", "LSquiDBView;", "where", "LSquiDBCriterion;", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", "visitWhere", "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;" };
+  static const J2ObjcClassInfo _SquiDBDelete = { "Delete", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 7, 2, -1, -1, -1, -1, -1 };
+  return &_SquiDBDelete;
 }
 
 @end
 
-void ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlDelete *self, ComYahooSquidbSqlSqlTable *table) {
-  ComYahooSquidbSqlTableStatement_init(self);
+void SquiDBDelete_initWithSquiDBSqlTable_(SquiDBDelete *self, SquiDBSqlTable *table) {
+  SquiDBTableStatement_init(self);
   self->criterions_ = new_JavaUtilArrayList_init();
   self->table_ = table;
 }
 
-ComYahooSquidbSqlDelete *new_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlDelete, initWithComYahooSquidbSqlSqlTable_, table)
+SquiDBDelete *new_SquiDBDelete_initWithSquiDBSqlTable_(SquiDBSqlTable *table) {
+  J2OBJC_NEW_IMPL(SquiDBDelete, initWithSquiDBSqlTable_, table)
 }
 
-ComYahooSquidbSqlDelete *create_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlDelete, initWithComYahooSquidbSqlSqlTable_, table)
+SquiDBDelete *create_SquiDBDelete_initWithSquiDBSqlTable_(SquiDBSqlTable *table) {
+  J2OBJC_CREATE_IMPL(SquiDBDelete, initWithSquiDBSqlTable_, table)
 }
 
-ComYahooSquidbSqlDelete *ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlTable_(ComYahooSquidbSqlTable *table) {
-  ComYahooSquidbSqlDelete_initialize();
-  return new_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(table);
+SquiDBDelete *SquiDBDelete_fromWithSquiDBTable_(SquiDBTable *table) {
+  SquiDBDelete_initialize();
+  return new_SquiDBDelete_initWithSquiDBSqlTable_(table);
 }
 
-ComYahooSquidbSqlDelete *ComYahooSquidbSqlDelete_fromWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view) {
-  ComYahooSquidbSqlDelete_initialize();
-  return new_ComYahooSquidbSqlDelete_initWithComYahooSquidbSqlSqlTable_(view);
+SquiDBDelete *SquiDBDelete_fromWithSquiDBView_(SquiDBView *view) {
+  SquiDBDelete_initialize();
+  return new_SquiDBDelete_initWithSquiDBSqlTable_(view);
 }
 
-void ComYahooSquidbSqlDelete_visitWhereWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlDelete *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
+void SquiDBDelete_visitWhereWithSquiDBSqlBuilder_withBoolean_(SquiDBDelete *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
   if ([((id<JavaUtilList>) nil_chk(self->criterions_)) isEmpty]) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@" WHERE "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->criterions_ withNSString:@" AND " withBoolean:forSqlValidation];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlDelete)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDelete)
+
+J2OBJC_NAME_MAPPING(SquiDBDelete, "com.yahoo.squidb.sql", "SquiDB")

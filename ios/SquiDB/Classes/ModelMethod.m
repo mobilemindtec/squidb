@@ -11,9 +11,9 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsModelMethod__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBModelMethod__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsModelMethod
+@implementation SquiDBModelMethod
 
 @synthesize name = name_;
 
@@ -22,7 +22,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsModelMet
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsModelMethod_class_();
+  return SquiDBModelMethod_class_();
 }
 
 - (NSString *)description {
@@ -49,21 +49,23 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsModelMet
   static const J2ObjcFieldInfo fields[] = {
     { "name_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsModelMethod__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsModelMethod = { "ModelMethod", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsModelMethod;
+  static const void *ptrTable[] = { (void *)&SquiDBModelMethod__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBModelMethod = { "ModelMethod", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_SquiDBModelMethod;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsModelMethod> create_ComYahooSquidbAnnotationsModelMethod(NSString *name) {
-  ComYahooSquidbAnnotationsModelMethod *self = AUTORELEASE([[ComYahooSquidbAnnotationsModelMethod alloc] init]);
+id<SquiDBModelMethod> create_SquiDBModelMethod(NSString *name) {
+  SquiDBModelMethod *self = AUTORELEASE([[SquiDBModelMethod alloc] init]);
   self->name_ = RETAIN_(name);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsModelMethod__Annotations$0() {
+IOSObjectArray *SquiDBModelMethod__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsModelMethod)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBModelMethod)
+
+J2OBJC_NAME_MAPPING(SquiDBModelMethod, "com.yahoo.squidb.annotations", "SquiDB")

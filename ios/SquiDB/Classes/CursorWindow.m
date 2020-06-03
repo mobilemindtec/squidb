@@ -19,11 +19,11 @@
 
 #import "CursorWindowNative.h"
 
-@interface ComYahooAndroidSqliteCursorWindow () {
+@interface SquiDBCursorWindow () {
  @public
   jint mStartPos_;
   NSString *mName_;
-  ComYahooAndroidSqliteCloseGuard *mCloseGuard_;
+  SquiDBCloseGuard *mCloseGuard_;
 }
 
 + (id)nativeCreateWithNSString:(NSString *)name
@@ -90,168 +90,168 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteCursorWindow, mName_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteCursorWindow, mCloseGuard_, ComYahooAndroidSqliteCloseGuard *)
+J2OBJC_FIELD_SETTER(SquiDBCursorWindow, mName_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBCursorWindow, mCloseGuard_, SquiDBCloseGuard *)
 
-inline NSString *ComYahooAndroidSqliteCursorWindow_get_STATS_TAG(void);
-static NSString *ComYahooAndroidSqliteCursorWindow_STATS_TAG = @"CursorWindowStats";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteCursorWindow, STATS_TAG, NSString *)
+inline NSString *SquiDBCursorWindow_get_STATS_TAG(void);
+static NSString *SquiDBCursorWindow_STATS_TAG = @"CursorWindowStats";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBCursorWindow, STATS_TAG, NSString *)
 
-inline jint ComYahooAndroidSqliteCursorWindow_get_sCursorWindowSize(void);
-#define ComYahooAndroidSqliteCursorWindow_sCursorWindowSize 2097152
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteCursorWindow, sCursorWindowSize, jint)
+inline jint SquiDBCursorWindow_get_sCursorWindowSize(void);
+#define SquiDBCursorWindow_sCursorWindowSize 2097152
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBCursorWindow, sCursorWindowSize, jint)
 
-__attribute__((unused)) static id ComYahooAndroidSqliteCursorWindow_nativeCreateWithNSString_withInt_(NSString *name, jint cursorWindowSize);
+__attribute__((unused)) static id SquiDBCursorWindow_nativeCreateWithNSString_withInt_(NSString *name, jint cursorWindowSize);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCursorWindow_nativeDisposeWithId_(id windowPtr);
+__attribute__((unused)) static void SquiDBCursorWindow_nativeDisposeWithId_(id windowPtr);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCursorWindow_nativeClearWithId_(id windowPtr);
+__attribute__((unused)) static void SquiDBCursorWindow_nativeClearWithId_(id windowPtr);
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteCursorWindow_nativeGetNumRowsWithId_(id windowPtr);
+__attribute__((unused)) static jint SquiDBCursorWindow_nativeGetNumRowsWithId_(id windowPtr);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativeSetNumColumnsWithId_withInt_(id windowPtr, jint columnNum);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativeSetNumColumnsWithId_withInt_(id windowPtr, jint columnNum);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativeAllocRowWithId_(id windowPtr);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativeAllocRowWithId_(id windowPtr);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCursorWindow_nativeFreeLastRowWithId_(id windowPtr);
+__attribute__((unused)) static void SquiDBCursorWindow_nativeFreeLastRowWithId_(id windowPtr);
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteCursorWindow_nativeGetTypeWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static jint SquiDBCursorWindow_nativeGetTypeWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static IOSByteArray *ComYahooAndroidSqliteCursorWindow_nativeGetBlobWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static IOSByteArray *SquiDBCursorWindow_nativeGetBlobWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static NSString *ComYahooAndroidSqliteCursorWindow_nativeGetStringWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static NSString *SquiDBCursorWindow_nativeGetStringWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static jlong ComYahooAndroidSqliteCursorWindow_nativeGetLongWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static jlong SquiDBCursorWindow_nativeGetLongWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static jdouble ComYahooAndroidSqliteCursorWindow_nativeGetDoubleWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static jdouble SquiDBCursorWindow_nativeGetDoubleWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(id windowPtr, IOSByteArray *value, jint row, jint column);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(id windowPtr, IOSByteArray *value, jint row, jint column);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(id windowPtr, NSString *value, jint row, jint column);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(id windowPtr, NSString *value, jint row, jint column);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(id windowPtr, jlong value, jint row, jint column);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(id windowPtr, jlong value, jint row, jint column);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(id windowPtr, jdouble value, jint row, jint column);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(id windowPtr, jdouble value, jint row, jint column);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteCursorWindow_nativePutNullWithId_withInt_withInt_(id windowPtr, jint row, jint column);
+__attribute__((unused)) static jboolean SquiDBCursorWindow_nativePutNullWithId_withInt_withInt_(id windowPtr, jint row, jint column);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteCursorWindow_dispose(ComYahooAndroidSqliteCursorWindow *self);
+__attribute__((unused)) static void SquiDBCursorWindow_dispose(SquiDBCursorWindow *self);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$3(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$4(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$4(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$5(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBCursorWindow__Annotations$5(void);
 
-@implementation ComYahooAndroidSqliteCursorWindow
+@implementation SquiDBCursorWindow
 
 + (id)nativeCreateWithNSString:(NSString *)name
                        withInt:(jint)cursorWindowSize {
-  return ComYahooAndroidSqliteCursorWindow_nativeCreateWithNSString_withInt_(name, cursorWindowSize);
+  return SquiDBCursorWindow_nativeCreateWithNSString_withInt_(name, cursorWindowSize);
 }
 
 + (void)nativeDisposeWithId:(id)windowPtr {
-  ComYahooAndroidSqliteCursorWindow_nativeDisposeWithId_(windowPtr);
+  SquiDBCursorWindow_nativeDisposeWithId_(windowPtr);
 }
 
 + (void)nativeClearWithId:(id)windowPtr {
-  ComYahooAndroidSqliteCursorWindow_nativeClearWithId_(windowPtr);
+  SquiDBCursorWindow_nativeClearWithId_(windowPtr);
 }
 
 + (jint)nativeGetNumRowsWithId:(id)windowPtr {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetNumRowsWithId_(windowPtr);
+  return SquiDBCursorWindow_nativeGetNumRowsWithId_(windowPtr);
 }
 
 + (jboolean)nativeSetNumColumnsWithId:(id)windowPtr
                               withInt:(jint)columnNum {
-  return ComYahooAndroidSqliteCursorWindow_nativeSetNumColumnsWithId_withInt_(windowPtr, columnNum);
+  return SquiDBCursorWindow_nativeSetNumColumnsWithId_withInt_(windowPtr, columnNum);
 }
 
 + (jboolean)nativeAllocRowWithId:(id)windowPtr {
-  return ComYahooAndroidSqliteCursorWindow_nativeAllocRowWithId_(windowPtr);
+  return SquiDBCursorWindow_nativeAllocRowWithId_(windowPtr);
 }
 
 + (void)nativeFreeLastRowWithId:(id)windowPtr {
-  ComYahooAndroidSqliteCursorWindow_nativeFreeLastRowWithId_(windowPtr);
+  SquiDBCursorWindow_nativeFreeLastRowWithId_(windowPtr);
 }
 
 + (jint)nativeGetTypeWithId:(id)windowPtr
                     withInt:(jint)row
                     withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetTypeWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativeGetTypeWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 + (IOSByteArray *)nativeGetBlobWithId:(id)windowPtr
                               withInt:(jint)row
                               withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetBlobWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativeGetBlobWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 + (NSString *)nativeGetStringWithId:(id)windowPtr
                             withInt:(jint)row
                             withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetStringWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativeGetStringWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 + (jlong)nativeGetLongWithId:(id)windowPtr
                      withInt:(jint)row
                      withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetLongWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativeGetLongWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 + (jdouble)nativeGetDoubleWithId:(id)windowPtr
                          withInt:(jint)row
                          withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativeGetDoubleWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativeGetDoubleWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 + (jboolean)nativePutBlobWithId:(id)windowPtr
                   withByteArray:(IOSByteArray *)value
                         withInt:(jint)row
                         withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(windowPtr, value, row, column);
+  return SquiDBCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(windowPtr, value, row, column);
 }
 
 + (jboolean)nativePutStringWithId:(id)windowPtr
                      withNSString:(NSString *)value
                           withInt:(jint)row
                           withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(windowPtr, value, row, column);
+  return SquiDBCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(windowPtr, value, row, column);
 }
 
 + (jboolean)nativePutLongWithId:(id)windowPtr
                        withLong:(jlong)value
                         withInt:(jint)row
                         withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(windowPtr, value, row, column);
+  return SquiDBCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(windowPtr, value, row, column);
 }
 
 + (jboolean)nativePutDoubleWithId:(id)windowPtr
                        withDouble:(jdouble)value
                           withInt:(jint)row
                           withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(windowPtr, value, row, column);
+  return SquiDBCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(windowPtr, value, row, column);
 }
 
 + (jboolean)nativePutNullWithId:(id)windowPtr
                         withInt:(jint)row
                         withInt:(jint)column {
-  return ComYahooAndroidSqliteCursorWindow_nativePutNullWithId_withInt_withInt_(windowPtr, row, column);
+  return SquiDBCursorWindow_nativePutNullWithId_withInt_withInt_(windowPtr, row, column);
 }
 
 - (instancetype)initWithNSString:(NSString *)name {
-  ComYahooAndroidSqliteCursorWindow_initWithNSString_(self, name);
+  SquiDBCursorWindow_initWithNSString_(self, name);
   return self;
 }
 
 - (instancetype)initWithBoolean:(jboolean)localWindow {
-  ComYahooAndroidSqliteCursorWindow_initWithBoolean_(self, localWindow);
+  SquiDBCursorWindow_initWithBoolean_(self, localWindow);
   return self;
 }
 
@@ -260,7 +260,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
     if (mCloseGuard_ != nil) {
       [mCloseGuard_ warnIfOpen];
     }
-    ComYahooAndroidSqliteCursorWindow_dispose(self);
+    SquiDBCursorWindow_dispose(self);
   }
   @finally {
     [super java_finalize];
@@ -268,7 +268,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 }
 
 - (void)dispose {
-  ComYahooAndroidSqliteCursorWindow_dispose(self);
+  SquiDBCursorWindow_dispose(self);
 }
 
 - (NSString *)getName {
@@ -279,7 +279,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
   [self acquireReference];
   @try {
     mStartPos_ = 0;
-    ComYahooAndroidSqliteCursorWindow_nativeClearWithId_(mWindowPtr_);
+    SquiDBCursorWindow_nativeClearWithId_(mWindowPtr_);
   }
   @finally {
     [self releaseReference];
@@ -297,7 +297,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 - (jint)getNumRows {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetNumRowsWithId_(mWindowPtr_);
+    return SquiDBCursorWindow_nativeGetNumRowsWithId_(mWindowPtr_);
   }
   @finally {
     [self releaseReference];
@@ -307,7 +307,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 - (jboolean)setNumColumnsWithInt:(jint)columnNum {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeSetNumColumnsWithId_withInt_(mWindowPtr_, columnNum);
+    return SquiDBCursorWindow_nativeSetNumColumnsWithId_withInt_(mWindowPtr_, columnNum);
   }
   @finally {
     [self releaseReference];
@@ -317,7 +317,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 - (jboolean)allocRow {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeAllocRowWithId_(mWindowPtr_);
+    return SquiDBCursorWindow_nativeAllocRowWithId_(mWindowPtr_);
   }
   @finally {
     [self releaseReference];
@@ -327,7 +327,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 - (void)freeLastRow {
   [self acquireReference];
   @try {
-    ComYahooAndroidSqliteCursorWindow_nativeFreeLastRowWithId_(mWindowPtr_);
+    SquiDBCursorWindow_nativeFreeLastRowWithId_(mWindowPtr_);
   }
   @finally {
     [self releaseReference];
@@ -336,36 +336,36 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 
 - (jboolean)isNullWithInt:(jint)row
                   withInt:(jint)column {
-  return [self getTypeWithInt:row withInt:column] == ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+  return [self getTypeWithInt:row withInt:column] == SquiDBICursor_FIELD_TYPE_NULL;
 }
 
 - (jboolean)isBlobWithInt:(jint)row
                   withInt:(jint)column {
   jint type = [self getTypeWithInt:row withInt:column];
-  return type == ComYahooSquidbDataICursor_FIELD_TYPE_BLOB || type == ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+  return type == SquiDBICursor_FIELD_TYPE_BLOB || type == SquiDBICursor_FIELD_TYPE_NULL;
 }
 
 - (jboolean)isLongWithInt:(jint)row
                   withInt:(jint)column {
-  return [self getTypeWithInt:row withInt:column] == ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER;
+  return [self getTypeWithInt:row withInt:column] == SquiDBICursor_FIELD_TYPE_INTEGER;
 }
 
 - (jboolean)isFloatWithInt:(jint)row
                    withInt:(jint)column {
-  return [self getTypeWithInt:row withInt:column] == ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT;
+  return [self getTypeWithInt:row withInt:column] == SquiDBICursor_FIELD_TYPE_FLOAT;
 }
 
 - (jboolean)isStringWithInt:(jint)row
                     withInt:(jint)column {
   jint type = [self getTypeWithInt:row withInt:column];
-  return type == ComYahooSquidbDataICursor_FIELD_TYPE_STRING || type == ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+  return type == SquiDBICursor_FIELD_TYPE_STRING || type == SquiDBICursor_FIELD_TYPE_NULL;
 }
 
 - (jint)getTypeWithInt:(jint)row
                withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetTypeWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativeGetTypeWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -376,7 +376,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                          withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetBlobWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativeGetBlobWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -387,7 +387,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                        withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetStringWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativeGetStringWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -398,7 +398,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                 withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetLongWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativeGetLongWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -409,7 +409,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                     withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativeGetDoubleWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativeGetDoubleWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -436,7 +436,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                          withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -448,7 +448,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                           withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -460,7 +460,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                     withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -472,7 +472,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                         withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(mWindowPtr_, value, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -483,7 +483,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
                    withInt:(jint)column {
   [self acquireReference];
   @try {
-    return ComYahooAndroidSqliteCursorWindow_nativePutNullWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
+    return SquiDBCursorWindow_nativePutNullWithId_withInt_withInt_(mWindowPtr_, row - mStartPos_, column);
   }
   @finally {
     [self releaseReference];
@@ -491,7 +491,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 }
 
 - (void)onAllReferencesReleased {
-  ComYahooAndroidSqliteCursorWindow_dispose(self);
+  SquiDBCursorWindow_dispose(self);
 }
 
 - (NSString *)description {
@@ -499,7 +499,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
 }
 
 - (void)dealloc {
-  JreCheckFinalize(self, [ComYahooAndroidSqliteCursorWindow class]);
+  JreCheckFinalize(self, [SquiDBCursorWindow class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -609,168 +609,170 @@ __attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteCursorWindow
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "STATS_TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 62, -1, -1 },
-    { "sCursorWindowSize", "I", .constantValue.asInt = ComYahooAndroidSqliteCursorWindow_sCursorWindowSize, 0x1a, -1, -1, -1, -1 },
+    { "sCursorWindowSize", "I", .constantValue.asInt = SquiDBCursorWindow_sCursorWindowSize, 0x1a, -1, -1, -1, -1 },
     { "mWindowPtr_", "LNSObject;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mStartPos_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mName_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mCloseGuard_", "LComYahooAndroidSqliteCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mCloseGuard_", "LSquiDBCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "nativeCreate", "LNSString;I", "nativeDispose", "LNSObject;", "nativeClear", "nativeGetNumRows", "nativeSetNumColumns", "LNSObject;I", "nativeAllocRow", "nativeFreeLastRow", "nativeGetType", "LNSObject;II", "nativeGetBlob", "nativeGetString", "nativeGetLong", "nativeGetDouble", "nativePutBlob", "LNSObject;[BII", "nativePutString", "LNSObject;LNSString;II", "nativePutLong", "LNSObject;JII", "nativePutDouble", "LNSObject;DII", "nativePutNull", "LNSString;", "Z", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$0, "finalize", "LJavaLangThrowable;", "setStartPosition", "I", "setNumColumns", "isNull", "II", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$1, "isBlob", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$2, "isLong", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$3, "isFloat", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$4, "isString", (void *)&ComYahooAndroidSqliteCursorWindow__Annotations$5, "getType", "getBlob", "getString", "getLong", "getDouble", "getShort", "getInt", "getFloat", "putBlob", "[BII", "putString", "LNSString;II", "putLong", "JII", "putDouble", "DII", "putNull", "toString", &ComYahooAndroidSqliteCursorWindow_STATS_TAG };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteCursorWindow = { "CursorWindow", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 49, 6, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteCursorWindow;
+  static const void *ptrTable[] = { "nativeCreate", "LNSString;I", "nativeDispose", "LNSObject;", "nativeClear", "nativeGetNumRows", "nativeSetNumColumns", "LNSObject;I", "nativeAllocRow", "nativeFreeLastRow", "nativeGetType", "LNSObject;II", "nativeGetBlob", "nativeGetString", "nativeGetLong", "nativeGetDouble", "nativePutBlob", "LNSObject;[BII", "nativePutString", "LNSObject;LNSString;II", "nativePutLong", "LNSObject;JII", "nativePutDouble", "LNSObject;DII", "nativePutNull", "LNSString;", "Z", (void *)&SquiDBCursorWindow__Annotations$0, "finalize", "LJavaLangThrowable;", "setStartPosition", "I", "setNumColumns", "isNull", "II", (void *)&SquiDBCursorWindow__Annotations$1, "isBlob", (void *)&SquiDBCursorWindow__Annotations$2, "isLong", (void *)&SquiDBCursorWindow__Annotations$3, "isFloat", (void *)&SquiDBCursorWindow__Annotations$4, "isString", (void *)&SquiDBCursorWindow__Annotations$5, "getType", "getBlob", "getString", "getLong", "getDouble", "getShort", "getInt", "getFloat", "putBlob", "[BII", "putString", "LNSString;II", "putLong", "JII", "putDouble", "DII", "putNull", "toString", &SquiDBCursorWindow_STATS_TAG };
+  static const J2ObjcClassInfo _SquiDBCursorWindow = { "CursorWindow", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 49, 6, -1, -1, -1, -1, -1 };
+  return &_SquiDBCursorWindow;
 }
 
 @end
 
-id ComYahooAndroidSqliteCursorWindow_nativeCreateWithNSString_withInt_(NSString *name, jint cursorWindowSize) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+id SquiDBCursorWindow_nativeCreateWithNSString_withInt_(NSString *name, jint cursorWindowSize) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeCreate:name cursorWindowSize:cursorWindowSize];
 }
 
-void ComYahooAndroidSqliteCursorWindow_nativeDisposeWithId_(id windowPtr) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+void SquiDBCursorWindow_nativeDisposeWithId_(id windowPtr) {
+  SquiDBCursorWindow_initialize();
   [CursorWindowNative nativeDispose:windowPtr];
 }
 
-void ComYahooAndroidSqliteCursorWindow_nativeClearWithId_(id windowPtr) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+void SquiDBCursorWindow_nativeClearWithId_(id windowPtr) {
+  SquiDBCursorWindow_initialize();
   [CursorWindowNative nativeClear:windowPtr];
 }
 
-jint ComYahooAndroidSqliteCursorWindow_nativeGetNumRowsWithId_(id windowPtr) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jint SquiDBCursorWindow_nativeGetNumRowsWithId_(id windowPtr) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetNumRows:windowPtr];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativeSetNumColumnsWithId_withInt_(id windowPtr, jint columnNum) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativeSetNumColumnsWithId_withInt_(id windowPtr, jint columnNum) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeSetNumColumns:windowPtr columnNum:columnNum];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativeAllocRowWithId_(id windowPtr) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativeAllocRowWithId_(id windowPtr) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeAllocRow:windowPtr];
 }
 
-void ComYahooAndroidSqliteCursorWindow_nativeFreeLastRowWithId_(id windowPtr) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+void SquiDBCursorWindow_nativeFreeLastRowWithId_(id windowPtr) {
+  SquiDBCursorWindow_initialize();
   [CursorWindowNative nativeFreeLastRow:windowPtr];
 }
 
-jint ComYahooAndroidSqliteCursorWindow_nativeGetTypeWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jint SquiDBCursorWindow_nativeGetTypeWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetType:windowPtr row:row column:column];
 }
 
-IOSByteArray *ComYahooAndroidSqliteCursorWindow_nativeGetBlobWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+IOSByteArray *SquiDBCursorWindow_nativeGetBlobWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetBlob:windowPtr row:row column:column];
 }
 
-NSString *ComYahooAndroidSqliteCursorWindow_nativeGetStringWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+NSString *SquiDBCursorWindow_nativeGetStringWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetString:windowPtr row:row column:column];
 }
 
-jlong ComYahooAndroidSqliteCursorWindow_nativeGetLongWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jlong SquiDBCursorWindow_nativeGetLongWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetLong:windowPtr row:row column:column];
 }
 
-jdouble ComYahooAndroidSqliteCursorWindow_nativeGetDoubleWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jdouble SquiDBCursorWindow_nativeGetDoubleWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativeGetDouble:windowPtr row:row column:column];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(id windowPtr, IOSByteArray *value, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativePutBlobWithId_withByteArray_withInt_withInt_(id windowPtr, IOSByteArray *value, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativePutBlob:windowPtr value:value row:row column:column];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(id windowPtr, NSString *value, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativePutStringWithId_withNSString_withInt_withInt_(id windowPtr, NSString *value, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativePutString:windowPtr value:value row:row column:column];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(id windowPtr, jlong value, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativePutLongWithId_withLong_withInt_withInt_(id windowPtr, jlong value, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativePutLong:windowPtr value:value row:row column:column];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(id windowPtr, jdouble value, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativePutDoubleWithId_withDouble_withInt_withInt_(id windowPtr, jdouble value, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativePutDouble:windowPtr value:value row:row column:column];
 }
 
-jboolean ComYahooAndroidSqliteCursorWindow_nativePutNullWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
-  ComYahooAndroidSqliteCursorWindow_initialize();
+jboolean SquiDBCursorWindow_nativePutNullWithId_withInt_withInt_(id windowPtr, jint row, jint column) {
+  SquiDBCursorWindow_initialize();
   return [CursorWindowNative nativePutNull:windowPtr row:row column:column];
 }
 
-void ComYahooAndroidSqliteCursorWindow_initWithNSString_(ComYahooAndroidSqliteCursorWindow *self, NSString *name) {
-  ComYahooAndroidSqliteSQLiteClosable_init(self);
-  self->mCloseGuard_ = ComYahooAndroidSqliteCloseGuard_get();
+void SquiDBCursorWindow_initWithNSString_(SquiDBCursorWindow *self, NSString *name) {
+  SquiDBSQLiteClosable_init(self);
+  self->mCloseGuard_ = SquiDBCloseGuard_get();
   self->mStartPos_ = 0;
   self->mName_ = name != nil && [name java_length] != 0 ? name : @"<unnamed>";
-  self->mWindowPtr_ = ComYahooAndroidSqliteCursorWindow_nativeCreateWithNSString_withInt_(self->mName_, ComYahooAndroidSqliteCursorWindow_sCursorWindowSize);
+  self->mWindowPtr_ = SquiDBCursorWindow_nativeCreateWithNSString_withInt_(self->mName_, SquiDBCursorWindow_sCursorWindowSize);
   if (self->mWindowPtr_ == nil) {
-    @throw new_ComYahooAndroidSqliteCursorWindowAllocationException_initWithNSString_(JreStrcat("$I$", @"Cursor window allocation of ", (ComYahooAndroidSqliteCursorWindow_sCursorWindowSize / 1024), @" kb failed. "));
+    @throw new_SquiDBCursorWindowAllocationException_initWithNSString_(JreStrcat("$I$", @"Cursor window allocation of ", (JreIntDiv(SquiDBCursorWindow_sCursorWindowSize, 1024)), @" kb failed. "));
   }
-  [((ComYahooAndroidSqliteCloseGuard *) nil_chk(self->mCloseGuard_)) openWithNSString:@"close"];
+  [((SquiDBCloseGuard *) nil_chk(self->mCloseGuard_)) openWithNSString:@"close"];
 }
 
-ComYahooAndroidSqliteCursorWindow *new_ComYahooAndroidSqliteCursorWindow_initWithNSString_(NSString *name) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCursorWindow, initWithNSString_, name)
+SquiDBCursorWindow *new_SquiDBCursorWindow_initWithNSString_(NSString *name) {
+  J2OBJC_NEW_IMPL(SquiDBCursorWindow, initWithNSString_, name)
 }
 
-ComYahooAndroidSqliteCursorWindow *create_ComYahooAndroidSqliteCursorWindow_initWithNSString_(NSString *name) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCursorWindow, initWithNSString_, name)
+SquiDBCursorWindow *create_SquiDBCursorWindow_initWithNSString_(NSString *name) {
+  J2OBJC_CREATE_IMPL(SquiDBCursorWindow, initWithNSString_, name)
 }
 
-void ComYahooAndroidSqliteCursorWindow_initWithBoolean_(ComYahooAndroidSqliteCursorWindow *self, jboolean localWindow) {
-  ComYahooAndroidSqliteCursorWindow_initWithNSString_(self, nil);
+void SquiDBCursorWindow_initWithBoolean_(SquiDBCursorWindow *self, jboolean localWindow) {
+  SquiDBCursorWindow_initWithNSString_(self, nil);
 }
 
-ComYahooAndroidSqliteCursorWindow *new_ComYahooAndroidSqliteCursorWindow_initWithBoolean_(jboolean localWindow) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteCursorWindow, initWithBoolean_, localWindow)
+SquiDBCursorWindow *new_SquiDBCursorWindow_initWithBoolean_(jboolean localWindow) {
+  J2OBJC_NEW_IMPL(SquiDBCursorWindow, initWithBoolean_, localWindow)
 }
 
-ComYahooAndroidSqliteCursorWindow *create_ComYahooAndroidSqliteCursorWindow_initWithBoolean_(jboolean localWindow) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteCursorWindow, initWithBoolean_, localWindow)
+SquiDBCursorWindow *create_SquiDBCursorWindow_initWithBoolean_(jboolean localWindow) {
+  J2OBJC_CREATE_IMPL(SquiDBCursorWindow, initWithBoolean_, localWindow)
 }
 
-void ComYahooAndroidSqliteCursorWindow_dispose(ComYahooAndroidSqliteCursorWindow *self) {
+void SquiDBCursorWindow_dispose(SquiDBCursorWindow *self) {
   if (self->mCloseGuard_ != nil) {
     [self->mCloseGuard_ close];
   }
   if (self->mWindowPtr_ != nil) {
-    ComYahooAndroidSqliteCursorWindow_nativeDisposeWithId_(self->mWindowPtr_);
+    SquiDBCursorWindow_nativeDisposeWithId_(self->mWindowPtr_);
     self->mWindowPtr_ = nil;
   }
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$0() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$1() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$2() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$2() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$3() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$3() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$4() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$4() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteCursorWindow__Annotations$5() {
+IOSObjectArray *SquiDBCursorWindow__Annotations$5() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteCursorWindow)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCursorWindow)
+
+J2OBJC_NAME_MAPPING(SquiDBCursorWindow, "com.yahoo.android.sqlite", "SquiDB")

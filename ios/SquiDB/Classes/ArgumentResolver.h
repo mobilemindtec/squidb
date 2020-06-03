@@ -14,15 +14,17 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooSquidbSqlArgumentResolver < JavaObject >
+@protocol SquiDBArgumentResolver < JavaObject >
 
 - (id)resolveArgumentWithId:(id)arg;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlArgumentResolver)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBArgumentResolver)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlArgumentResolver)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBArgumentResolver)
+
+#define ComYahooSquidbSqlArgumentResolver SquiDBArgumentResolver
 
 
 #if __has_feature(nullability)

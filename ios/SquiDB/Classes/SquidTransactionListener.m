@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "SquidTransactionListener.h"
 
-@interface ComYahooSquidbDataSquidTransactionListener : NSObject
+@interface SquiDBSquidTransactionListener : NSObject
 
 @end
 
-@implementation ComYahooSquidbDataSquidTransactionListener
+@implementation SquiDBSquidTransactionListener
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -25,10 +25,12 @@
   methods[1].selector = @selector(onCommit);
   methods[2].selector = @selector(onRollback);
   #pragma clang diagnostic pop
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidTransactionListener = { "SquidTransactionListener", "com.yahoo.squidb.data", NULL, methods, NULL, 7, 0x609, 3, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataSquidTransactionListener;
+  static const J2ObjcClassInfo _SquiDBSquidTransactionListener = { "SquidTransactionListener", "com.yahoo.squidb.data", NULL, methods, NULL, 7, 0x609, 3, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSquidTransactionListener;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidTransactionListener)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBSquidTransactionListener)
+
+J2OBJC_NAME_MAPPING(SquiDBSquidTransactionListener, "com.yahoo.squidb.data", "SquiDB")

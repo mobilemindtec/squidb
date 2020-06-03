@@ -11,15 +11,15 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsInheritedModelSpec__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBInheritedModelSpec__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsInheritedModelSpec
+@implementation SquiDBInheritedModelSpec
 
 @synthesize className__ = className___;
 @synthesize inheritsFrom = inheritsFrom_;
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsInheritedModelSpec_class_();
+  return SquiDBInheritedModelSpec_class_();
 }
 
 - (NSString *)description {
@@ -49,22 +49,24 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsInherite
     { "className___", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "inheritsFrom_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsInheritedModelSpec__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsInheritedModelSpec = { "InheritedModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsInheritedModelSpec;
+  static const void *ptrTable[] = { (void *)&SquiDBInheritedModelSpec__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBInheritedModelSpec = { "InheritedModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_SquiDBInheritedModelSpec;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsInheritedModelSpec> create_ComYahooSquidbAnnotationsInheritedModelSpec(NSString *className__, NSString *inheritsFrom) {
-  ComYahooSquidbAnnotationsInheritedModelSpec *self = AUTORELEASE([[ComYahooSquidbAnnotationsInheritedModelSpec alloc] init]);
+id<SquiDBInheritedModelSpec> create_SquiDBInheritedModelSpec(NSString *className__, NSString *inheritsFrom) {
+  SquiDBInheritedModelSpec *self = AUTORELEASE([[SquiDBInheritedModelSpec alloc] init]);
   self->className___ = RETAIN_(className__);
   self->inheritsFrom_ = RETAIN_(inheritsFrom);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsInheritedModelSpec__Annotations$0() {
+IOSObjectArray *SquiDBInheritedModelSpec__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsInheritedModelSpec)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBInheritedModelSpec)
+
+J2OBJC_NAME_MAPPING(SquiDBInheritedModelSpec, "com.yahoo.squidb.annotations", "SquiDB")

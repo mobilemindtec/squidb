@@ -24,15 +24,15 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface ComYahooSquidbSqlCompiledArgumentResolver () {
+@interface SquiDBCompiledArgumentResolver () {
  @public
   NSString *compiledSql_;
   id<JavaUtilList> sqlArgs_;
-  ComYahooSquidbSqlCompileContext *compileContext_;
+  SquiDBCompileContext *compileContext_;
   jboolean needsValidation_;
   id<JavaUtilList> collectionArgs_;
-  ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *compiledSqlCache_;
-  ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *argArrayCache_;
+  SquiDBCompiledArgumentResolver_SimpleLruCache *compiledSqlCache_;
+  SquiDBCompiledArgumentResolver_SimpleLruCache *argArrayCache_;
   IOSObjectArray *compiledArgs_;
 }
 
@@ -62,107 +62,107 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, compiledSql_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, sqlArgs_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, compileContext_, ComYahooSquidbSqlCompileContext *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, collectionArgs_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, compiledSqlCache_, ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, argArrayCache_, ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledArgumentResolver, compiledArgs_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, compiledSql_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, sqlArgs_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, compileContext_, SquiDBCompileContext *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, collectionArgs_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, compiledSqlCache_, SquiDBCompiledArgumentResolver_SimpleLruCache *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, argArrayCache_, SquiDBCompiledArgumentResolver_SimpleLruCache *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledArgumentResolver, compiledArgs_, IOSObjectArray *)
 
-inline JavaUtilRegexPattern *ComYahooSquidbSqlCompiledArgumentResolver_get_REPLACEABLE_ARRAY_PARAM_PATTERN(void);
-static JavaUtilRegexPattern *ComYahooSquidbSqlCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlCompiledArgumentResolver, REPLACEABLE_ARRAY_PARAM_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *SquiDBCompiledArgumentResolver_get_REPLACEABLE_ARRAY_PARAM_PATTERN(void);
+static JavaUtilRegexPattern *SquiDBCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBCompiledArgumentResolver, REPLACEABLE_ARRAY_PARAM_PATTERN, JavaUtilRegexPattern *)
 
-inline jint ComYahooSquidbSqlCompiledArgumentResolver_get_CACHE_SIZE(void);
-#define ComYahooSquidbSqlCompiledArgumentResolver_CACHE_SIZE 5
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbSqlCompiledArgumentResolver, CACHE_SIZE, jint)
+inline jint SquiDBCompiledArgumentResolver_get_CACHE_SIZE(void);
+#define SquiDBCompiledArgumentResolver_CACHE_SIZE 5
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBCompiledArgumentResolver, CACHE_SIZE, jint)
 
-__attribute__((unused)) static jboolean ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self);
+__attribute__((unused)) static jboolean SquiDBCompiledArgumentResolver_hasCollectionArgs(SquiDBCompiledArgumentResolver *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompiledArgumentResolver_findCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self);
+__attribute__((unused)) static void SquiDBCompiledArgumentResolver_findCollectionArgs(SquiDBCompiledArgumentResolver *self);
 
-__attribute__((unused)) static NSString *ComYahooSquidbSqlCompiledArgumentResolver_getCacheKey(ComYahooSquidbSqlCompiledArgumentResolver *self);
+__attribute__((unused)) static NSString *SquiDBCompiledArgumentResolver_getCacheKey(SquiDBCompiledArgumentResolver *self);
 
-__attribute__((unused)) static NSString *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, NSString *cacheKey, jboolean largeArgMode);
+__attribute__((unused)) static NSString *SquiDBCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(SquiDBCompiledArgumentResolver *self, NSString *cacheKey, jboolean largeArgMode);
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(ComYahooSquidbSqlCompiledArgumentResolver *self, JavaLangStringBuilder *builder, jint size);
+__attribute__((unused)) static void SquiDBCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(SquiDBCompiledArgumentResolver *self, JavaLangStringBuilder *builder, jint size);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, NSString *cacheKey, jint totalArgSize, jboolean largeArgMode);
+__attribute__((unused)) static IOSObjectArray *SquiDBCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(SquiDBCompiledArgumentResolver *self, NSString *cacheKey, jint totalArgSize, jboolean largeArgMode);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(ComYahooSquidbSqlCompiledArgumentResolver *self, IOSObjectArray *args);
+__attribute__((unused)) static IOSObjectArray *SquiDBCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(SquiDBCompiledArgumentResolver *self, IOSObjectArray *args);
 
-__attribute__((unused)) static jint ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self);
+__attribute__((unused)) static jint SquiDBCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(SquiDBCompiledArgumentResolver *self);
 
-__attribute__((unused)) static jint ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self);
+__attribute__((unused)) static jint SquiDBCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(SquiDBCompiledArgumentResolver *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompiledArgumentResolver_populateCompiledArgsWithBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, jboolean largeArgMode);
+__attribute__((unused)) static void SquiDBCompiledArgumentResolver_populateCompiledArgsWithBoolean_(SquiDBCompiledArgumentResolver *self, jboolean largeArgMode);
 
-@interface ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache () {
+@interface SquiDBCompiledArgumentResolver_SimpleLruCache () {
  @public
   jint maxCapacity_;
 }
 
 @end
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompiledArgumentResolver)
+J2OBJC_INITIALIZED_DEFN(SquiDBCompiledArgumentResolver)
 
-@implementation ComYahooSquidbSqlCompiledArgumentResolver
+@implementation SquiDBCompiledArgumentResolver
 
-- (instancetype)initWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder {
-  ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(self, builder);
+- (instancetype)initPackagePrivateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder {
+  SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(self, builder);
   return self;
 }
 
 - (jboolean)hasCollectionArgs {
-  return ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self);
+  return SquiDBCompiledArgumentResolver_hasCollectionArgs(self);
 }
 
 - (void)findCollectionArgs {
-  ComYahooSquidbSqlCompiledArgumentResolver_findCollectionArgs(self);
+  SquiDBCompiledArgumentResolver_findCollectionArgs(self);
 }
 
-- (ComYahooSquidbSqlCompiledStatement *)resolveToCompiledStatement {
-  NSString *cacheKey = ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self) ? ComYahooSquidbSqlCompiledArgumentResolver_getCacheKey(self) : nil;
-  jint totalArgSize = ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(self);
-  jboolean largeArgMode = totalArgSize > ComYahooSquidbSqlSqlStatement_MAX_VARIABLE_NUMBER;
-  return new_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(self, cacheKey, largeArgMode), ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(self, cacheKey, totalArgSize, largeArgMode), needsValidation_);
+- (SquiDBCompiledStatement *)resolveToCompiledStatement {
+  NSString *cacheKey = SquiDBCompiledArgumentResolver_hasCollectionArgs(self) ? SquiDBCompiledArgumentResolver_getCacheKey(self) : nil;
+  jint totalArgSize = SquiDBCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(self);
+  jboolean largeArgMode = totalArgSize > SquiDBSqlStatement_MAX_VARIABLE_NUMBER;
+  return new_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(SquiDBCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(self, cacheKey, largeArgMode), SquiDBCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(self, cacheKey, totalArgSize, largeArgMode), needsValidation_);
 }
 
 - (NSString *)getCacheKey {
-  return ComYahooSquidbSqlCompiledArgumentResolver_getCacheKey(self);
+  return SquiDBCompiledArgumentResolver_getCacheKey(self);
 }
 
 - (NSString *)resolveSqlStringWithNSString:(NSString *)cacheKey
                                withBoolean:(jboolean)largeArgMode {
-  return ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(self, cacheKey, largeArgMode);
+  return SquiDBCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(self, cacheKey, largeArgMode);
 }
 
 - (void)appendCollectionVariableStringForSizeWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder
                                                                withInt:(jint)size {
-  ComYahooSquidbSqlCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(self, builder, size);
+  SquiDBCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(self, builder, size);
 }
 
 - (IOSObjectArray *)resolveSqlArgumentsWithNSString:(NSString *)cacheKey
                                             withInt:(jint)totalArgSize
                                         withBoolean:(jboolean)largeArgMode {
-  return ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(self, cacheKey, totalArgSize, largeArgMode);
+  return SquiDBCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(self, cacheKey, totalArgSize, largeArgMode);
 }
 
 - (IOSObjectArray *)applyArgumentResolverWithNSObjectArray:(IOSObjectArray *)args {
-  return ComYahooSquidbSqlCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(self, args);
+  return SquiDBCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(self, args);
 }
 
 - (jint)calculateArgsSizeWithCollectionArgs {
-  return ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(self);
+  return SquiDBCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(self);
 }
 
 - (jint)calculateArgsSizeWithoutCollectionArgs {
-  return ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(self);
+  return SquiDBCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(self);
 }
 
 - (void)populateCompiledArgsWithBoolean:(jboolean)largeArgMode {
-  ComYahooSquidbSqlCompiledArgumentResolver_populateCompiledArgsWithBoolean_(self, largeArgMode);
+  SquiDBCompiledArgumentResolver_populateCompiledArgsWithBoolean_(self, largeArgMode);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -170,7 +170,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompiledArgumentResolver)
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompiledStatement;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompiledStatement;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x2, 1, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 3, 4, -1, -1, -1, -1 },
@@ -183,7 +183,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompiledArgumentResolver)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlSqlBuilder:);
+  methods[0].selector = @selector(initPackagePrivateWithSquiDBSqlBuilder:);
   methods[1].selector = @selector(hasCollectionArgs);
   methods[2].selector = @selector(findCollectionArgs);
   methods[3].selector = @selector(resolveToCompiledStatement);
@@ -200,56 +200,56 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlCompiledArgumentResolver)
     { "REPLACEABLE_ARRAY_PARAM_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 11, -1, -1 },
     { "compiledSql_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "sqlArgs_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 12, -1 },
-    { "compileContext_", "LComYahooSquidbSqlCompileContext;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "compileContext_", "LSquiDBCompileContext;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "needsValidation_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "collectionArgs_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 13, -1 },
-    { "CACHE_SIZE", "I", .constantValue.asInt = ComYahooSquidbSqlCompiledArgumentResolver_CACHE_SIZE, 0x1a, -1, -1, -1, -1 },
-    { "compiledSqlCache_", "LComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache;", .constantValue.asLong = 0, 0x2, -1, -1, 14, -1 },
-    { "argArrayCache_", "LComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache;", .constantValue.asLong = 0, 0x2, -1, -1, 15, -1 },
+    { "CACHE_SIZE", "I", .constantValue.asInt = SquiDBCompiledArgumentResolver_CACHE_SIZE, 0x1a, -1, -1, -1, -1 },
+    { "compiledSqlCache_", "LSquiDBCompiledArgumentResolver_SimpleLruCache;", .constantValue.asLong = 0, 0x2, -1, -1, 14, -1 },
+    { "argArrayCache_", "LSquiDBCompiledArgumentResolver_SimpleLruCache;", .constantValue.asLong = 0, 0x2, -1, -1, 15, -1 },
     { "compiledArgs_", "[LNSObject;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlSqlBuilder;", "resolveSqlString", "LNSString;Z", "appendCollectionVariableStringForSize", "LJavaLangStringBuilder;I", "resolveSqlArguments", "LNSString;IZ", "applyArgumentResolver", "[LNSObject;", "populateCompiledArgs", "Z", &ComYahooSquidbSqlCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN, "Ljava/util/List<Ljava/lang/Object;>;", "Ljava/util/List<Ljava/util/Collection<*>;>;", "Lcom/yahoo/squidb/sql/CompiledArgumentResolver$SimpleLruCache<Ljava/lang/String;Ljava/lang/String;>;", "Lcom/yahoo/squidb/sql/CompiledArgumentResolver$SimpleLruCache<Ljava/lang/String;[Ljava/lang/Object;>;", "LComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompiledArgumentResolver = { "CompiledArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 12, 10, -1, 16, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompiledArgumentResolver;
+  static const void *ptrTable[] = { "LSquiDBSqlBuilder;", "resolveSqlString", "LNSString;Z", "appendCollectionVariableStringForSize", "LJavaLangStringBuilder;I", "resolveSqlArguments", "LNSString;IZ", "applyArgumentResolver", "[LNSObject;", "populateCompiledArgs", "Z", &SquiDBCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN, "Ljava/util/List<Ljava/lang/Object;>;", "Ljava/util/List<Ljava/util/Collection<*>;>;", "Lcom/yahoo/squidb/sql/CompiledArgumentResolver$SimpleLruCache<Ljava/lang/String;Ljava/lang/String;>;", "Lcom/yahoo/squidb/sql/CompiledArgumentResolver$SimpleLruCache<Ljava/lang/String;[Ljava/lang/Object;>;", "LSquiDBCompiledArgumentResolver_SimpleLruCache;" };
+  static const J2ObjcClassInfo _SquiDBCompiledArgumentResolver = { "CompiledArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 12, 10, -1, 16, -1, -1, -1 };
+  return &_SquiDBCompiledArgumentResolver;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlCompiledArgumentResolver class]) {
-    ComYahooSquidbSqlCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN = JavaUtilRegexPattern_compileWithNSString_(ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlCompiledArgumentResolver)
+  if (self == [SquiDBCompiledArgumentResolver class]) {
+    SquiDBCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN = JavaUtilRegexPattern_compileWithNSString_(SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX);
+    J2OBJC_SET_INITIALIZED(SquiDBCompiledArgumentResolver)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlCompiledArgumentResolver *self, ComYahooSquidbSqlSqlBuilder *builder) {
+void SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBCompiledArgumentResolver *self, SquiDBSqlBuilder *builder) {
   NSObject_init(self);
   self->compiledArgs_ = nil;
-  self->compiledSql_ = [((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder)) getSqlString];
+  self->compiledSql_ = [((SquiDBSqlBuilder *) nil_chk(builder)) getSqlString];
   self->sqlArgs_ = [builder getBoundArguments];
   self->compileContext_ = builder->compileContext_;
   self->needsValidation_ = [builder needsValidation];
-  if ([((NSString *) nil_chk(self->compiledSql_)) java_contains:ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER]) {
+  if ([((NSString *) nil_chk(self->compiledSql_)) java_contains:SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER]) {
     self->collectionArgs_ = new_JavaUtilArrayList_init();
-    ComYahooSquidbSqlCompiledArgumentResolver_findCollectionArgs(self);
-    self->compiledSqlCache_ = new_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(ComYahooSquidbSqlCompiledArgumentResolver_CACHE_SIZE);
-    self->argArrayCache_ = new_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(ComYahooSquidbSqlCompiledArgumentResolver_CACHE_SIZE);
+    SquiDBCompiledArgumentResolver_findCollectionArgs(self);
+    self->compiledSqlCache_ = new_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(SquiDBCompiledArgumentResolver_CACHE_SIZE);
+    self->argArrayCache_ = new_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(SquiDBCompiledArgumentResolver_CACHE_SIZE);
   }
 }
 
-ComYahooSquidbSqlCompiledArgumentResolver *new_ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlSqlBuilder *builder) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompiledArgumentResolver, initWithComYahooSquidbSqlSqlBuilder_, builder)
+SquiDBCompiledArgumentResolver *new_SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBSqlBuilder *builder) {
+  J2OBJC_NEW_IMPL(SquiDBCompiledArgumentResolver, initPackagePrivateWithSquiDBSqlBuilder_, builder)
 }
 
-ComYahooSquidbSqlCompiledArgumentResolver *create_ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlSqlBuilder *builder) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompiledArgumentResolver, initWithComYahooSquidbSqlSqlBuilder_, builder)
+SquiDBCompiledArgumentResolver *create_SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBSqlBuilder *builder) {
+  J2OBJC_CREATE_IMPL(SquiDBCompiledArgumentResolver, initPackagePrivateWithSquiDBSqlBuilder_, builder)
 }
 
-jboolean ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self) {
+jboolean SquiDBCompiledArgumentResolver_hasCollectionArgs(SquiDBCompiledArgumentResolver *self) {
   return self->collectionArgs_ != nil;
 }
 
-void ComYahooSquidbSqlCompiledArgumentResolver_findCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self) {
+void SquiDBCompiledArgumentResolver_findCollectionArgs(SquiDBCompiledArgumentResolver *self) {
   for (id __strong arg in nil_chk(self->sqlArgs_)) {
     if ([JavaUtilCollection_class_() isInstance:arg]) {
       [((id<JavaUtilList>) nil_chk(self->collectionArgs_)) addWithId:(id<JavaUtilCollection>) cast_check(arg, JavaUtilCollection_class_())];
@@ -257,9 +257,9 @@ void ComYahooSquidbSqlCompiledArgumentResolver_findCollectionArgs(ComYahooSquidb
   }
 }
 
-NSString *ComYahooSquidbSqlCompiledArgumentResolver_getCacheKey(ComYahooSquidbSqlCompiledArgumentResolver *self) {
+NSString *SquiDBCompiledArgumentResolver_getCacheKey(SquiDBCompiledArgumentResolver *self) {
   JavaLangStringBuilder *cacheKey = new_JavaLangStringBuilder_init();
-  if (ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self)) {
+  if (SquiDBCompiledArgumentResolver_hasCollectionArgs(self)) {
     for (id<JavaUtilCollection> __strong collection in nil_chk(self->collectionArgs_)) {
       (void) [((JavaLangStringBuilder *) nil_chk([cacheKey appendWithInt:[((id<JavaUtilCollection>) nil_chk(collection)) size]])) appendWithNSString:@":"];
     }
@@ -267,26 +267,26 @@ NSString *ComYahooSquidbSqlCompiledArgumentResolver_getCacheKey(ComYahooSquidbSq
   return [cacheKey description];
 }
 
-NSString *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, NSString *cacheKey, jboolean largeArgMode) {
-  if (ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self)) {
+NSString *SquiDBCompiledArgumentResolver_resolveSqlStringWithNSString_withBoolean_(SquiDBCompiledArgumentResolver *self, NSString *cacheKey, jboolean largeArgMode) {
+  if (SquiDBCompiledArgumentResolver_hasCollectionArgs(self)) {
     if (!largeArgMode) {
-      NSString *cachedResult = [((ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->compiledSqlCache_)) getWithId:cacheKey];
+      NSString *cachedResult = [((SquiDBCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->compiledSqlCache_)) getWithId:cacheKey];
       if (cachedResult != nil) {
         return cachedResult;
       }
     }
     JavaLangStringBuilder *result = new_JavaLangStringBuilder_initWithInt_([((NSString *) nil_chk(self->compiledSql_)) java_length]);
-    JavaUtilRegexMatcher *m = [((JavaUtilRegexPattern *) nil_chk(ComYahooSquidbSqlCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN)) matcherWithJavaLangCharSequence:self->compiledSql_];
+    JavaUtilRegexMatcher *m = [((JavaUtilRegexPattern *) nil_chk(SquiDBCompiledArgumentResolver_REPLACEABLE_ARRAY_PARAM_PATTERN)) matcherWithJavaLangCharSequence:self->compiledSql_];
     jint index = 0;
     jint lastStringIndex = 0;
     while ([((JavaUtilRegexMatcher *) nil_chk(m)) find]) {
       (void) [result appendWithNSString:[self->compiledSql_ java_substring:lastStringIndex endIndex:[m start]]];
       id<JavaUtilCollection> values = [((id<JavaUtilList>) nil_chk(self->collectionArgs_)) getWithInt:index];
       if (largeArgMode) {
-        ComYahooSquidbSqlSqlUtils_addInlineCollectionToSqlStringWithJavaLangStringBuilder_withComYahooSquidbSqlArgumentResolver_withJavaUtilCollection_(result, [((ComYahooSquidbSqlCompileContext *) nil_chk(self->compileContext_)) getArgumentResolver], values);
+        SquiDBSqlUtils_addInlineCollectionToSqlStringWithJavaLangStringBuilder_withSquiDBArgumentResolver_withJavaUtilCollection_(result, [((SquiDBCompileContext *) nil_chk(self->compileContext_)) getArgumentResolver], values);
       }
       else {
-        ComYahooSquidbSqlCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(self, result, [((id<JavaUtilCollection>) nil_chk(values)) size]);
+        SquiDBCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(self, result, [((id<JavaUtilCollection>) nil_chk(values)) size]);
       }
       lastStringIndex = [m end];
       index++;
@@ -294,10 +294,10 @@ NSString *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString
     (void) [result appendWithNSString:[self->compiledSql_ java_substring:lastStringIndex endIndex:[self->compiledSql_ java_length]]];
     NSString *resultSql = [result description];
     if (!largeArgMode) {
-      (void) [((ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->compiledSqlCache_)) putWithId:cacheKey withId:resultSql];
+      (void) [((SquiDBCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->compiledSqlCache_)) putWithId:cacheKey withId:resultSql];
     }
     else {
-      ComYahooSquidbUtilityLogger_wWithNSString_withNSString_(ComYahooSquidbUtilityLogger_LOG_TAG, JreStrcat("$$$", @"The SQL statement \"", [((NSString *) nil_chk(resultSql)) java_substring:0 endIndex:JavaLangMath_minWithInt_withInt_(200, [resultSql java_length])], @" ...\" had too many arguments to bind, so arguments were inlined into the SQL instead. Consider revising your statement to have fewer arguments."));
+      SquiDBLogger_wWithNSString_withNSString_(SquiDBLogger_LOG_TAG, JreStrcat("$$$", @"The SQL statement \"", [((NSString *) nil_chk(resultSql)) java_substring:0 endIndex:JavaLangMath_minWithInt_withInt_(200, [resultSql java_length])], @" ...\" had too many arguments to bind, so arguments were inlined into the SQL instead. Consider revising your statement to have fewer arguments."));
     }
     return resultSql;
   }
@@ -306,51 +306,51 @@ NSString *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlStringWithNSString
   }
 }
 
-void ComYahooSquidbSqlCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(ComYahooSquidbSqlCompiledArgumentResolver *self, JavaLangStringBuilder *builder, jint size) {
+void SquiDBCompiledArgumentResolver_appendCollectionVariableStringForSizeWithJavaLangStringBuilder_withInt_(SquiDBCompiledArgumentResolver *self, JavaLangStringBuilder *builder, jint size) {
   for (jint i = 0; i < size; i++) {
     if (i > 0) {
       (void) [((JavaLangStringBuilder *) nil_chk(builder)) appendWithNSString:@", "];
     }
-    (void) [((JavaLangStringBuilder *) nil_chk(builder)) appendWithNSString:ComYahooSquidbSqlSqlStatement_REPLACEABLE_PARAMETER];
+    (void) [((JavaLangStringBuilder *) nil_chk(builder)) appendWithNSString:SquiDBSqlStatement_REPLACEABLE_PARAMETER];
   }
 }
 
-IOSObjectArray *ComYahooSquidbSqlCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, NSString *cacheKey, jint totalArgSize, jboolean largeArgMode) {
-  if (ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self)) {
-    IOSObjectArray *cachedResult = [((ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->argArrayCache_)) getWithId:cacheKey];
+IOSObjectArray *SquiDBCompiledArgumentResolver_resolveSqlArgumentsWithNSString_withInt_withBoolean_(SquiDBCompiledArgumentResolver *self, NSString *cacheKey, jint totalArgSize, jboolean largeArgMode) {
+  if (SquiDBCompiledArgumentResolver_hasCollectionArgs(self)) {
+    IOSObjectArray *cachedResult = [((SquiDBCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->argArrayCache_)) getWithId:cacheKey];
     if (cachedResult == nil) {
-      jint size = largeArgMode ? ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(self) : totalArgSize;
+      jint size = largeArgMode ? SquiDBCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(self) : totalArgSize;
       if (self->compiledArgs_ == nil || self->compiledArgs_->size_ != size) {
         cachedResult = [IOSObjectArray newArrayWithLength:size type:NSObject_class_()];
       }
       else {
         cachedResult = self->compiledArgs_;
       }
-      (void) [((ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->argArrayCache_)) putWithId:cacheKey withId:cachedResult];
+      (void) [((SquiDBCompiledArgumentResolver_SimpleLruCache *) nil_chk(self->argArrayCache_)) putWithId:cacheKey withId:cachedResult];
     }
     self->compiledArgs_ = cachedResult;
-    ComYahooSquidbSqlCompiledArgumentResolver_populateCompiledArgsWithBoolean_(self, largeArgMode);
+    SquiDBCompiledArgumentResolver_populateCompiledArgsWithBoolean_(self, largeArgMode);
   }
   else {
     if (self->compiledArgs_ == nil) {
       self->compiledArgs_ = [((id<JavaUtilList>) nil_chk(self->sqlArgs_)) toArrayWithNSObjectArray:[IOSObjectArray newArrayWithLength:[self->sqlArgs_ size] type:NSObject_class_()]];
     }
   }
-  return ComYahooSquidbSqlCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(self, self->compiledArgs_);
+  return SquiDBCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(self, self->compiledArgs_);
 }
 
-IOSObjectArray *ComYahooSquidbSqlCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(ComYahooSquidbSqlCompiledArgumentResolver *self, IOSObjectArray *args) {
-  id<ComYahooSquidbSqlArgumentResolver> resolver = [((ComYahooSquidbSqlCompileContext *) nil_chk(self->compileContext_)) getArgumentResolver];
+IOSObjectArray *SquiDBCompiledArgumentResolver_applyArgumentResolverWithNSObjectArray_(SquiDBCompiledArgumentResolver *self, IOSObjectArray *args) {
+  id<SquiDBArgumentResolver> resolver = [((SquiDBCompileContext *) nil_chk(self->compileContext_)) getArgumentResolver];
   IOSObjectArray *result = [IOSObjectArray newArrayWithLength:((IOSObjectArray *) nil_chk(args))->size_ type:NSObject_class_()];
   for (jint i = 0; i < args->size_; i++) {
-    (void) IOSObjectArray_Set(result, i, [((id<ComYahooSquidbSqlArgumentResolver>) nil_chk(resolver)) resolveArgumentWithId:IOSObjectArray_Get(args, i)]);
+    (void) IOSObjectArray_Set(result, i, [((id<SquiDBArgumentResolver>) nil_chk(resolver)) resolveArgumentWithId:IOSObjectArray_Get(args, i)]);
   }
   return result;
 }
 
-jint ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self) {
+jint SquiDBCompiledArgumentResolver_calculateArgsSizeWithCollectionArgs(SquiDBCompiledArgumentResolver *self) {
   jint startSize = [((id<JavaUtilList>) nil_chk(self->sqlArgs_)) size];
-  if (ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self)) {
+  if (SquiDBCompiledArgumentResolver_hasCollectionArgs(self)) {
     for (id<JavaUtilCollection> __strong collection in nil_chk(self->collectionArgs_)) {
       startSize += ([((id<JavaUtilCollection>) nil_chk(collection)) size] - 1);
     }
@@ -358,11 +358,11 @@ jint ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithCollectionAr
   return startSize;
 }
 
-jint ComYahooSquidbSqlCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(ComYahooSquidbSqlCompiledArgumentResolver *self) {
-  return [((id<JavaUtilList>) nil_chk(self->sqlArgs_)) size] - (ComYahooSquidbSqlCompiledArgumentResolver_hasCollectionArgs(self) ? [((id<JavaUtilList>) nil_chk(self->collectionArgs_)) size] : 0);
+jint SquiDBCompiledArgumentResolver_calculateArgsSizeWithoutCollectionArgs(SquiDBCompiledArgumentResolver *self) {
+  return [((id<JavaUtilList>) nil_chk(self->sqlArgs_)) size] - (SquiDBCompiledArgumentResolver_hasCollectionArgs(self) ? [((id<JavaUtilList>) nil_chk(self->collectionArgs_)) size] : 0);
 }
 
-void ComYahooSquidbSqlCompiledArgumentResolver_populateCompiledArgsWithBoolean_(ComYahooSquidbSqlCompiledArgumentResolver *self, jboolean largeArgMode) {
+void SquiDBCompiledArgumentResolver_populateCompiledArgsWithBoolean_(SquiDBCompiledArgumentResolver *self, jboolean largeArgMode) {
   jint i = 0;
   for (id __strong arg in nil_chk(self->sqlArgs_)) {
     if ([JavaUtilCollection_class_() isInstance:arg]) {
@@ -379,12 +379,12 @@ void ComYahooSquidbSqlCompiledArgumentResolver_populateCompiledArgsWithBoolean_(
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompiledArgumentResolver)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompiledArgumentResolver)
 
-@implementation ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache
+@implementation SquiDBCompiledArgumentResolver_SimpleLruCache
 
 - (instancetype)initWithInt:(jint)maxCapacity {
-  ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(self, maxCapacity);
+  SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(self, maxCapacity);
   return self;
 }
 
@@ -406,24 +406,24 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompiledArgumentResolver)
   static const J2ObjcFieldInfo fields[] = {
     { "maxCapacity_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "I", "removeEldestEntry", "LJavaUtilMap_Entry;", "(Ljava/util/Map$Entry<TK;TV;>;)Z", "LComYahooSquidbSqlCompiledArgumentResolver;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>Ljava/util/LinkedHashMap<TK;TV;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache = { "SimpleLruCache", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x8, 2, 1, 4, -1, -1, 5, -1 };
-  return &_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache;
+  static const void *ptrTable[] = { "I", "removeEldestEntry", "LJavaUtilMap_Entry;", "(Ljava/util/Map$Entry<TK;TV;>;)Z", "LSquiDBCompiledArgumentResolver;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>Ljava/util/LinkedHashMap<TK;TV;>;" };
+  static const J2ObjcClassInfo _SquiDBCompiledArgumentResolver_SimpleLruCache = { "SimpleLruCache", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x8, 2, 1, 4, -1, -1, 5, -1 };
+  return &_SquiDBCompiledArgumentResolver_SimpleLruCache;
 }
 
 @end
 
-void ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *self, jint maxCapacity) {
+void SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(SquiDBCompiledArgumentResolver_SimpleLruCache *self, jint maxCapacity) {
   JavaUtilLinkedHashMap_initWithInt_withFloat_withBoolean_(self, 0, 0.75f, true);
   self->maxCapacity_ = maxCapacity;
 }
 
-ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *new_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache, initWithInt_, maxCapacity)
+SquiDBCompiledArgumentResolver_SimpleLruCache *new_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) {
+  J2OBJC_NEW_IMPL(SquiDBCompiledArgumentResolver_SimpleLruCache, initWithInt_, maxCapacity)
 }
 
-ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *create_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache, initWithInt_, maxCapacity)
+SquiDBCompiledArgumentResolver_SimpleLruCache *create_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) {
+  J2OBJC_CREATE_IMPL(SquiDBCompiledArgumentResolver_SimpleLruCache, initWithInt_, maxCapacity)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompiledArgumentResolver_SimpleLruCache)

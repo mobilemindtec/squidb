@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsConstants < JavaLangAnnotationAnnotation >
+@protocol SquiDBConstants < JavaLangAnnotationAnnotation >
 
 - (jboolean)isEqual:(id)obj;
 
@@ -25,15 +25,17 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsConstants : NSObject < ComYahooSquidbAnnotationsConstants >
+@interface SquiDBConstants : NSObject < SquiDBConstants >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsConstants)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBConstants)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsConstants> create_ComYahooSquidbAnnotationsConstants(void);
+FOUNDATION_EXPORT id<SquiDBConstants> create_SquiDBConstants(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsConstants)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBConstants)
+
+#define ComYahooSquidbAnnotationsConstants SquiDBConstants
 
 
 #if __has_feature(nullability)

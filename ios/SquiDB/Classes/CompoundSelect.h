@@ -15,48 +15,50 @@
 #include "CompilableWithArguments.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlCompoundSelect : ComYahooSquidbSqlCompilableWithArguments {
+@interface SquiDBCompoundSelect : SquiDBCompilableWithArguments {
  @public
-  ComYahooSquidbSqlQuery *query_;
+  SquiDBQuery *query_;
 }
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlCompoundSelect *)exceptWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBCompoundSelect *)exceptWithSquiDBQuery:(SquiDBQuery *)query;
 
-+ (ComYahooSquidbSqlCompoundSelect *)intersectWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBCompoundSelect *)intersectWithSquiDBQuery:(SquiDBQuery *)query;
 
-+ (ComYahooSquidbSqlCompoundSelect *)union__WithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBCompoundSelect *)union__WithSquiDBQuery:(SquiDBQuery *)query;
 
-+ (ComYahooSquidbSqlCompoundSelect *)unionAllWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query;
++ (SquiDBCompoundSelect *)unionAllWithSquiDBQuery:(SquiDBQuery *)query;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)init NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCompoundSelect)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCompoundSelect)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompoundSelect, query_, ComYahooSquidbSqlQuery *)
+J2OBJC_FIELD_SETTER(SquiDBCompoundSelect, query_, SquiDBQuery *)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_union__WithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBCompoundSelect *SquiDBCompoundSelect_union__WithSquiDBQuery_(SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_unionAllWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBCompoundSelect *SquiDBCompoundSelect_unionAllWithSquiDBQuery_(SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_intersectWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBCompoundSelect *SquiDBCompoundSelect_intersectWithSquiDBQuery_(SquiDBQuery *query);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompoundSelect *ComYahooSquidbSqlCompoundSelect_exceptWithComYahooSquidbSqlQuery_(ComYahooSquidbSqlQuery *query);
+FOUNDATION_EXPORT SquiDBCompoundSelect *SquiDBCompoundSelect_exceptWithSquiDBQuery_(SquiDBQuery *query);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompoundSelect)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompoundSelect)
+
+@compatibility_alias ComYahooSquidbSqlCompoundSelect SquiDBCompoundSelect;
 
 
 #if __has_feature(nullability)

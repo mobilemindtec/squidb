@@ -15,96 +15,96 @@
 #include "java/lang/Deprecated.h"
 #include "java/lang/annotation/Annotation.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$3(void);
 
-@implementation ComYahooAndroidSqliteAbstractWindowedCursor
+@implementation SquiDBAbstractWindowedCursor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteAbstractWindowedCursor_init(self);
+  SquiDBAbstractWindowedCursor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (IOSByteArray *)getBlobWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getBlobWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getBlobWithInt:mPos_ withInt:columnIndex];
 }
 
 - (NSString *)getStringWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getStringWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getStringWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jshort)getShortWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getShortWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getShortWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jint)getIntWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getIntWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getIntWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jlong)getLongWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getLongWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getLongWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jfloat)getFloatWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getFloatWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getFloatWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jdouble)getDoubleWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getDoubleWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getDoubleWithInt:mPos_ withInt:columnIndex];
 }
 
 - (jboolean)isNullWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getTypeWithInt:mPos_ withInt:columnIndex] == ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getTypeWithInt:mPos_ withInt:columnIndex] == SquiDBICursor_FIELD_TYPE_NULL;
 }
 
 - (jboolean)isBlobWithInt:(jint)columnIndex {
-  return [self getTypeWithInt:columnIndex] == ComYahooSquidbDataICursor_FIELD_TYPE_BLOB;
+  return [self getTypeWithInt:columnIndex] == SquiDBICursor_FIELD_TYPE_BLOB;
 }
 
 - (jboolean)isStringWithInt:(jint)columnIndex {
-  return [self getTypeWithInt:columnIndex] == ComYahooSquidbDataICursor_FIELD_TYPE_STRING;
+  return [self getTypeWithInt:columnIndex] == SquiDBICursor_FIELD_TYPE_STRING;
 }
 
 - (jboolean)isLongWithInt:(jint)columnIndex {
-  return [self getTypeWithInt:columnIndex] == ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER;
+  return [self getTypeWithInt:columnIndex] == SquiDBICursor_FIELD_TYPE_INTEGER;
 }
 
 - (jboolean)isFloatWithInt:(jint)columnIndex {
-  return [self getTypeWithInt:columnIndex] == ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT;
+  return [self getTypeWithInt:columnIndex] == SquiDBICursor_FIELD_TYPE_FLOAT;
 }
 
 - (jint)getTypeWithInt:(jint)columnIndex {
   [self checkPosition];
-  return [((ComYahooAndroidSqliteCursorWindow *) nil_chk(mWindow_)) getTypeWithInt:mPos_ withInt:columnIndex];
+  return [((SquiDBCursorWindow *) nil_chk(mWindow_)) getTypeWithInt:mPos_ withInt:columnIndex];
 }
 
 - (void)checkPosition {
   [super checkPosition];
   if (mWindow_ == nil) {
-    @throw new_ComYahooAndroidSqliteStaleDataException_initWithNSString_(@"Attempting to access a closed CursorWindow.Most probable cause: cursor is deactivated prior to calling this method.");
+    @throw new_SquiDBStaleDataException_initWithNSString_(@"Attempting to access a closed CursorWindow.Most probable cause: cursor is deactivated prior to calling this method.");
   }
 }
 
-- (ComYahooAndroidSqliteCursorWindow *)getWindow {
+- (SquiDBCursorWindow *)getWindow {
   return mWindow_;
 }
 
-- (void)setWindowWithComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window {
+- (void)setWindowWithSquiDBCursorWindow:(SquiDBCursorWindow *)window {
   if (window != mWindow_) {
     [self closeWindow];
     mWindow_ = window;
@@ -124,7 +124,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)clearOrCreateWindowWithNSString:(NSString *)name {
   if (mWindow_ == nil) {
-    mWindow_ = new_ComYahooAndroidSqliteCursorWindow_initWithNSString_(name);
+    mWindow_ = new_SquiDBCursorWindow_initWithNSString_(name);
   }
   else {
     [mWindow_ clear];
@@ -137,7 +137,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)dealloc {
-  JreCheckFinalize(self, [ComYahooAndroidSqliteAbstractWindowedCursor class]);
+  JreCheckFinalize(self, [SquiDBAbstractWindowedCursor class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -157,7 +157,7 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "Z", 0x1, 15, 1, -1, -1, 16, -1 },
     { NULL, "I", 0x1, 17, 1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteCursorWindow;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCursorWindow;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 18, 19, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
@@ -183,40 +183,42 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[13].selector = @selector(getTypeWithInt:);
   methods[14].selector = @selector(checkPosition);
   methods[15].selector = @selector(getWindow);
-  methods[16].selector = @selector(setWindowWithComYahooAndroidSqliteCursorWindow:);
+  methods[16].selector = @selector(setWindowWithSquiDBCursorWindow:);
   methods[17].selector = @selector(hasWindow);
   methods[18].selector = @selector(closeWindow);
   methods[19].selector = @selector(clearOrCreateWindowWithNSString:);
   methods[20].selector = @selector(onDeactivateOrClose);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "mWindow_", "LComYahooAndroidSqliteCursorWindow;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
+    { "mWindow_", "LSquiDBCursorWindow;", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "getBlob", "I", "getString", "getShort", "getInt", "getLong", "getFloat", "getDouble", "isNull", "isBlob", (void *)&ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$0, "isString", (void *)&ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$1, "isLong", (void *)&ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$2, "isFloat", (void *)&ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$3, "getType", "setWindow", "LComYahooAndroidSqliteCursorWindow;", "clearOrCreateWindow", "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteAbstractWindowedCursor = { "AbstractWindowedCursor", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 21, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteAbstractWindowedCursor;
+  static const void *ptrTable[] = { "getBlob", "I", "getString", "getShort", "getInt", "getLong", "getFloat", "getDouble", "isNull", "isBlob", (void *)&SquiDBAbstractWindowedCursor__Annotations$0, "isString", (void *)&SquiDBAbstractWindowedCursor__Annotations$1, "isLong", (void *)&SquiDBAbstractWindowedCursor__Annotations$2, "isFloat", (void *)&SquiDBAbstractWindowedCursor__Annotations$3, "getType", "setWindow", "LSquiDBCursorWindow;", "clearOrCreateWindow", "LNSString;" };
+  static const J2ObjcClassInfo _SquiDBAbstractWindowedCursor = { "AbstractWindowedCursor", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 21, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBAbstractWindowedCursor;
 }
 
 @end
 
-void ComYahooAndroidSqliteAbstractWindowedCursor_init(ComYahooAndroidSqliteAbstractWindowedCursor *self) {
-  ComYahooAndroidSqliteAbstractCursor_init(self);
+void SquiDBAbstractWindowedCursor_init(SquiDBAbstractWindowedCursor *self) {
+  SquiDBAbstractCursor_init(self);
 }
 
-IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$0() {
+IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$1() {
+IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$2() {
+IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$2() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteAbstractWindowedCursor__Annotations$3() {
+IOSObjectArray *SquiDBAbstractWindowedCursor__Annotations$3() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteAbstractWindowedCursor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBAbstractWindowedCursor)
+
+J2OBJC_NAME_MAPPING(SquiDBAbstractWindowedCursor, "com.yahoo.android.sqlite", "SquiDB")

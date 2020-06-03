@@ -16,7 +16,7 @@
 
 @class IOSClass;
 
-@interface ComYahooSquidbSqlTableModelName : NSObject {
+@interface SquiDBTableModelName : NSObject {
  @public
   IOSClass *modelClass_;
   NSString *tableName_;
@@ -37,18 +37,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlTableModelName)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBTableModelName)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTableModelName, modelClass_, IOSClass *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTableModelName, tableName_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBTableModelName, modelClass_, IOSClass *)
+J2OBJC_FIELD_SETTER(SquiDBTableModelName, tableName_, NSString *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(ComYahooSquidbSqlTableModelName *self, IOSClass *modelClass, NSString *tableName);
+FOUNDATION_EXPORT void SquiDBTableModelName_initWithIOSClass_withNSString_(SquiDBTableModelName *self, IOSClass *modelClass, NSString *tableName);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTableModelName *new_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBTableModelName *new_SquiDBTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTableModelName *create_ComYahooSquidbSqlTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName);
+FOUNDATION_EXPORT SquiDBTableModelName *create_SquiDBTableModelName_initWithIOSClass_withNSString_(IOSClass *modelClass, NSString *tableName);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTableModelName)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableModelName)
+
+@compatibility_alias ComYahooSquidbSqlTableModelName SquiDBTableModelName;
 
 
 #if __has_feature(nullability)

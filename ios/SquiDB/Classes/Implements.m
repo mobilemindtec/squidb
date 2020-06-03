@@ -11,9 +11,9 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsImplements__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBImplements__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsImplements
+@implementation SquiDBImplements
 
 @synthesize interfaceClasses = interfaceClasses_;
 @synthesize interfaceDefinitions = interfaceDefinitions_;
@@ -23,11 +23,11 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsImplemen
 }
 
 + (IOSObjectArray *)interfaceDefinitionsDefault {
-  return [IOSObjectArray newArrayWithLength:0 type:ComYahooSquidbAnnotationsImplements_InterfaceSpec_class_()];
+  return [IOSObjectArray newArrayWithLength:0 type:SquiDBImplements_InterfaceSpec_class_()];
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsImplements_class_();
+  return SquiDBImplements_class_();
 }
 
 - (NSString *)description {
@@ -45,7 +45,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsImplemen
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "[LIOSClass;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbAnnotationsImplements_InterfaceSpec;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBImplements_InterfaceSpec;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -55,29 +55,31 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsImplemen
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "interfaceClasses_", "[LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 0, -1 },
-    { "interfaceDefinitions_", "[LComYahooSquidbAnnotationsImplements_InterfaceSpec;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "interfaceDefinitions_", "[LSquiDBImplements_InterfaceSpec;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "[Ljava/lang/Class<*>;", "LComYahooSquidbAnnotationsImplements_InterfaceSpec;", (void *)&ComYahooSquidbAnnotationsImplements__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsImplements = { "Implements", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, 1, -1, -1, 2 };
-  return &_ComYahooSquidbAnnotationsImplements;
+  static const void *ptrTable[] = { "[Ljava/lang/Class<*>;", "LSquiDBImplements_InterfaceSpec;", (void *)&SquiDBImplements__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBImplements = { "Implements", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, 1, -1, -1, 2 };
+  return &_SquiDBImplements;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsImplements> create_ComYahooSquidbAnnotationsImplements(IOSObjectArray *interfaceClasses, IOSObjectArray *interfaceDefinitions) {
-  ComYahooSquidbAnnotationsImplements *self = AUTORELEASE([[ComYahooSquidbAnnotationsImplements alloc] init]);
+id<SquiDBImplements> create_SquiDBImplements(IOSObjectArray *interfaceClasses, IOSObjectArray *interfaceDefinitions) {
+  SquiDBImplements *self = AUTORELEASE([[SquiDBImplements alloc] init]);
   self->interfaceClasses_ = RETAIN_(interfaceClasses);
   self->interfaceDefinitions_ = RETAIN_(interfaceDefinitions);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsImplements__Annotations$0() {
+IOSObjectArray *SquiDBImplements__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsImplements)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBImplements)
 
-@implementation ComYahooSquidbAnnotationsImplements_InterfaceSpec
+J2OBJC_NAME_MAPPING(SquiDBImplements, "com.yahoo.squidb.annotations", "SquiDB")
+
+@implementation SquiDBImplements_InterfaceSpec
 
 @synthesize interfaceClass = interfaceClass_;
 @synthesize interfaceTypeArgs = interfaceTypeArgs_;
@@ -92,7 +94,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsImplements)
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsImplements_InterfaceSpec_class_();
+  return SquiDBImplements_InterfaceSpec_class_();
 }
 
 - (NSString *)description {
@@ -125,19 +127,19 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsImplements)
     { "interfaceTypeArgs_", "[LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 1, -1 },
     { "interfaceTypeArgNames_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/lang/Class<*>;", "[Ljava/lang/Class<*>;", "LComYahooSquidbAnnotationsImplements;" };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsImplements_InterfaceSpec = { "InterfaceSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, 2, -1, -1, -1, -1 };
-  return &_ComYahooSquidbAnnotationsImplements_InterfaceSpec;
+  static const void *ptrTable[] = { "Ljava/lang/Class<*>;", "[Ljava/lang/Class<*>;", "LSquiDBImplements;" };
+  static const J2ObjcClassInfo _SquiDBImplements_InterfaceSpec = { "InterfaceSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, 2, -1, -1, -1, -1 };
+  return &_SquiDBImplements_InterfaceSpec;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsImplements_InterfaceSpec> create_ComYahooSquidbAnnotationsImplements_InterfaceSpec(IOSClass *interfaceClass, IOSObjectArray *interfaceTypeArgNames, IOSObjectArray *interfaceTypeArgs) {
-  ComYahooSquidbAnnotationsImplements_InterfaceSpec *self = AUTORELEASE([[ComYahooSquidbAnnotationsImplements_InterfaceSpec alloc] init]);
+id<SquiDBImplements_InterfaceSpec> create_SquiDBImplements_InterfaceSpec(IOSClass *interfaceClass, IOSObjectArray *interfaceTypeArgNames, IOSObjectArray *interfaceTypeArgs) {
+  SquiDBImplements_InterfaceSpec *self = AUTORELEASE([[SquiDBImplements_InterfaceSpec alloc] init]);
   self->interfaceClass_ = RETAIN_(interfaceClass);
   self->interfaceTypeArgNames_ = RETAIN_(interfaceTypeArgNames);
   self->interfaceTypeArgs_ = RETAIN_(interfaceTypeArgs);
   return self;
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsImplements_InterfaceSpec)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBImplements_InterfaceSpec)

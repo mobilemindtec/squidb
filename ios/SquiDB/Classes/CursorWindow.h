@@ -17,7 +17,7 @@
 
 @class IOSByteArray;
 
-@interface ComYahooAndroidSqliteCursorWindow : ComYahooAndroidSqliteSQLiteClosable {
+@interface SquiDBCursorWindow : SquiDBSQLiteClosable {
  @public
   id mWindowPtr_;
 }
@@ -116,23 +116,25 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteCursorWindow)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCursorWindow)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteCursorWindow, mWindowPtr_, id)
+J2OBJC_FIELD_SETTER(SquiDBCursorWindow, mWindowPtr_, id)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteCursorWindow_initWithNSString_(ComYahooAndroidSqliteCursorWindow *self, NSString *name);
+FOUNDATION_EXPORT void SquiDBCursorWindow_initWithNSString_(SquiDBCursorWindow *self, NSString *name);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteCursorWindow *new_ComYahooAndroidSqliteCursorWindow_initWithNSString_(NSString *name) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCursorWindow *new_SquiDBCursorWindow_initWithNSString_(NSString *name) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteCursorWindow *create_ComYahooAndroidSqliteCursorWindow_initWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBCursorWindow *create_SquiDBCursorWindow_initWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteCursorWindow_initWithBoolean_(ComYahooAndroidSqliteCursorWindow *self, jboolean localWindow);
+FOUNDATION_EXPORT void SquiDBCursorWindow_initWithBoolean_(SquiDBCursorWindow *self, jboolean localWindow);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteCursorWindow *new_ComYahooAndroidSqliteCursorWindow_initWithBoolean_(jboolean localWindow) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCursorWindow *new_SquiDBCursorWindow_initWithBoolean_(jboolean localWindow) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteCursorWindow *create_ComYahooAndroidSqliteCursorWindow_initWithBoolean_(jboolean localWindow);
+FOUNDATION_EXPORT SquiDBCursorWindow *create_SquiDBCursorWindow_initWithBoolean_(jboolean localWindow);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteCursorWindow)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCursorWindow)
+
+@compatibility_alias ComYahooAndroidSqliteCursorWindow SquiDBCursorWindow;
 
 
 #if __has_feature(nullability)

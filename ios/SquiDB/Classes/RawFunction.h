@@ -15,39 +15,43 @@
 #include "Function.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlRawFunction : ComYahooSquidbSqlFunction
+@interface SquiDBRawFunction : SquiDBFunction
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithNSString:(NSString *)expression;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)expression;
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
 - (NSString *)getExpression;
 
 #pragma mark Protected
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation;
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)init NS_UNAVAILABLE;
 
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlRawFunction)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBRawFunction)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlRawFunction_initWithNSString_(ComYahooSquidbSqlRawFunction *self, NSString *expression);
+FOUNDATION_EXPORT void SquiDBRawFunction_initPackagePrivateWithNSString_(SquiDBRawFunction *self, NSString *expression);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlRawFunction *new_ComYahooSquidbSqlRawFunction_initWithNSString_(NSString *expression) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBRawFunction *new_SquiDBRawFunction_initPackagePrivateWithNSString_(NSString *expression) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlRawFunction *create_ComYahooSquidbSqlRawFunction_initWithNSString_(NSString *expression);
+FOUNDATION_EXPORT SquiDBRawFunction *create_SquiDBRawFunction_initPackagePrivateWithNSString_(NSString *expression);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlRawFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBRawFunction)
+
+@compatibility_alias ComYahooSquidbSqlRawFunction SquiDBRawFunction;
 
 
 #if __has_feature(nullability)

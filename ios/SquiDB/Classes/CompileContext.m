@@ -12,56 +12,56 @@
 #include "java/util/HashMap.h"
 #include "java/util/Map.h"
 
-@interface ComYahooSquidbSqlCompileContext () {
+@interface SquiDBCompileContext () {
  @public
-  ComYahooSquidbUtilityVersionCode *versionCode_;
-  id<ComYahooSquidbSqlArgumentResolver> argumentResolver_;
+  SquiDBVersionCode *versionCode_;
+  id<SquiDBArgumentResolver> argumentResolver_;
   id<JavaUtilMap> extras_;
 }
 
-- (instancetype)initWithComYahooSquidbSqlCompileContext_Builder:(ComYahooSquidbSqlCompileContext_Builder *)builder;
+- (instancetype)initWithSquiDBCompileContext_Builder:(SquiDBCompileContext_Builder *)builder;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext, versionCode_, ComYahooSquidbUtilityVersionCode *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext, argumentResolver_, id<ComYahooSquidbSqlArgumentResolver>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext, extras_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext, versionCode_, SquiDBVersionCode *)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext, argumentResolver_, id<SquiDBArgumentResolver>)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext, extras_, id<JavaUtilMap>)
 
-__attribute__((unused)) static void ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext *self, ComYahooSquidbSqlCompileContext_Builder *builder);
+__attribute__((unused)) static void SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext *self, SquiDBCompileContext_Builder *builder);
 
-__attribute__((unused)) static ComYahooSquidbSqlCompileContext *new_ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext_Builder *builder) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCompileContext *new_SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext_Builder *builder) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlCompileContext *create_ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext_Builder *builder);
+__attribute__((unused)) static SquiDBCompileContext *create_SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext_Builder *builder);
 
-@interface ComYahooSquidbSqlCompileContext_Builder () {
+@interface SquiDBCompileContext_Builder () {
  @public
-  ComYahooSquidbUtilityVersionCode *versionCode_;
-  id<ComYahooSquidbSqlArgumentResolver> argumentResolver_;
+  SquiDBVersionCode *versionCode_;
+  id<SquiDBArgumentResolver> argumentResolver_;
   id<JavaUtilMap> extras_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, versionCode_, ComYahooSquidbUtilityVersionCode *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, argumentResolver_, id<ComYahooSquidbSqlArgumentResolver>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, extras_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext_Builder, versionCode_, SquiDBVersionCode *)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext_Builder, argumentResolver_, id<SquiDBArgumentResolver>)
+J2OBJC_FIELD_SETTER(SquiDBCompileContext_Builder, extras_, id<JavaUtilMap>)
 
-@implementation ComYahooSquidbSqlCompileContext
+@implementation SquiDBCompileContext
 
-- (instancetype)initWithComYahooSquidbSqlCompileContext_Builder:(ComYahooSquidbSqlCompileContext_Builder *)builder {
-  ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(self, builder);
+- (instancetype)initWithSquiDBCompileContext_Builder:(SquiDBCompileContext_Builder *)builder {
+  SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(self, builder);
   return self;
 }
 
-+ (ComYahooSquidbSqlCompileContext *)defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion {
-  return ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(sqliteVersion);
++ (SquiDBCompileContext *)defaultContextForVersionCodeWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion {
+  return SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(sqliteVersion);
 }
 
-- (ComYahooSquidbUtilityVersionCode *)getVersionCode {
+- (SquiDBVersionCode *)getVersionCode {
   return versionCode_;
 }
 
-- (id<ComYahooSquidbSqlArgumentResolver>)getArgumentResolver {
+- (id<SquiDBArgumentResolver>)getArgumentResolver {
   return argumentResolver_;
 }
 
@@ -69,13 +69,13 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, extras_, id<JavaUti
   return [((id<JavaUtilMap>) nil_chk(extras_)) getWithId:key];
 }
 
-- (ComYahooSquidbSqlCompileContext *)setExtraWithNSString:(NSString *)key
-                                                   withId:(id)value {
+- (SquiDBCompileContext *)setExtraWithNSString:(NSString *)key
+                                        withId:(id)value {
   (void) [((id<JavaUtilMap>) nil_chk(extras_)) putWithId:key withId:value];
   return self;
 }
 
-- (ComYahooSquidbSqlCompileContext *)clearExtraWithNSString:(NSString *)key {
+- (SquiDBCompileContext *)clearExtraWithNSString:(NSString *)key {
   (void) [((id<JavaUtilMap>) nil_chk(extras_)) removeWithId:key];
   return self;
 }
@@ -87,19 +87,19 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, extras_, id<JavaUti
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext;", 0x9, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityVersionCode;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlArgumentResolver;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBVersionCode;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBArgumentResolver;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, 3, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext;", 0x1, 5, 6, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext;", 0x1, 7, 4, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext;", 0x1, 5, 6, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext;", 0x1, 7, 4, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 8, 4, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlCompileContext_Builder:);
-  methods[1].selector = @selector(defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode:);
+  methods[0].selector = @selector(initWithSquiDBCompileContext_Builder:);
+  methods[1].selector = @selector(defaultContextForVersionCodeWithSquiDBVersionCode:);
   methods[2].selector = @selector(getVersionCode);
   methods[3].selector = @selector(getArgumentResolver);
   methods[4].selector = @selector(getExtraWithNSString:);
@@ -108,62 +108,64 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompileContext_Builder, extras_, id<JavaUti
   methods[7].selector = @selector(hasExtraWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "versionCode_", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "argumentResolver_", "LComYahooSquidbSqlArgumentResolver;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "versionCode_", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "argumentResolver_", "LSquiDBArgumentResolver;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "extras_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 9, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlCompileContext_Builder;", "defaultContextForVersionCode", "LComYahooSquidbUtilityVersionCode;", "getExtra", "LNSString;", "setExtra", "LNSString;LNSObject;", "clearExtra", "hasExtra", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompileContext = { "CompileContext", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 8, 3, -1, 0, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompileContext;
+  static const void *ptrTable[] = { "LSquiDBCompileContext_Builder;", "defaultContextForVersionCode", "LSquiDBVersionCode;", "getExtra", "LNSString;", "setExtra", "LNSString;LNSObject;", "clearExtra", "hasExtra", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _SquiDBCompileContext = { "CompileContext", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 8, 3, -1, 0, -1, -1, -1 };
+  return &_SquiDBCompileContext;
 }
 
 @end
 
-void ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext *self, ComYahooSquidbSqlCompileContext_Builder *builder) {
+void SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext *self, SquiDBCompileContext_Builder *builder) {
   NSObject_init(self);
-  self->versionCode_ = ((ComYahooSquidbSqlCompileContext_Builder *) nil_chk(builder))->versionCode_;
+  self->versionCode_ = ((SquiDBCompileContext_Builder *) nil_chk(builder))->versionCode_;
   self->argumentResolver_ = builder->argumentResolver_;
   self->extras_ = new_JavaUtilHashMap_initWithJavaUtilMap_(builder->extras_);
 }
 
-ComYahooSquidbSqlCompileContext *new_ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext_Builder *builder) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompileContext, initWithComYahooSquidbSqlCompileContext_Builder_, builder)
+SquiDBCompileContext *new_SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext_Builder *builder) {
+  J2OBJC_NEW_IMPL(SquiDBCompileContext, initWithSquiDBCompileContext_Builder_, builder)
 }
 
-ComYahooSquidbSqlCompileContext *create_ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(ComYahooSquidbSqlCompileContext_Builder *builder) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompileContext, initWithComYahooSquidbSqlCompileContext_Builder_, builder)
+SquiDBCompileContext *create_SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(SquiDBCompileContext_Builder *builder) {
+  J2OBJC_CREATE_IMPL(SquiDBCompileContext, initWithSquiDBCompileContext_Builder_, builder)
 }
 
-ComYahooSquidbSqlCompileContext *ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *sqliteVersion) {
-  ComYahooSquidbSqlCompileContext_initialize();
-  return [new_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(sqliteVersion) build];
+SquiDBCompileContext *SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(SquiDBVersionCode *sqliteVersion) {
+  SquiDBCompileContext_initialize();
+  return [new_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(sqliteVersion) build];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompileContext)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompileContext)
 
-@implementation ComYahooSquidbSqlCompileContext_Builder
+J2OBJC_NAME_MAPPING(SquiDBCompileContext, "com.yahoo.squidb.sql", "SquiDB")
 
-- (instancetype)initWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)versionCode {
-  ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(self, versionCode);
+@implementation SquiDBCompileContext_Builder
+
+- (instancetype)initWithSquiDBVersionCode:(SquiDBVersionCode *)versionCode {
+  SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(self, versionCode);
   return self;
 }
 
-- (ComYahooSquidbSqlCompileContext *)build {
-  return new_ComYahooSquidbSqlCompileContext_initWithComYahooSquidbSqlCompileContext_Builder_(self);
+- (SquiDBCompileContext *)build {
+  return new_SquiDBCompileContext_initWithSquiDBCompileContext_Builder_(self);
 }
 
-- (ComYahooSquidbSqlCompileContext_Builder *)setArgumentResolverWithComYahooSquidbSqlArgumentResolver:(id<ComYahooSquidbSqlArgumentResolver>)argumentResolver {
+- (SquiDBCompileContext_Builder *)setArgumentResolverWithSquiDBArgumentResolver:(id<SquiDBArgumentResolver>)argumentResolver {
   self->argumentResolver_ = argumentResolver;
   return self;
 }
 
-- (ComYahooSquidbSqlCompileContext_Builder *)setExtraWithNSString:(NSString *)key
-                                                           withId:(id)value {
+- (SquiDBCompileContext_Builder *)setExtraWithNSString:(NSString *)key
+                                                withId:(id)value {
   (void) [((id<JavaUtilMap>) nil_chk(self->extras_)) putWithId:key withId:value];
   return self;
 }
 
-- (ComYahooSquidbSqlCompileContext_Builder *)clearExtraWithNSString:(NSString *)key {
+- (SquiDBCompileContext_Builder *)clearExtraWithNSString:(NSString *)key {
   (void) [((id<JavaUtilMap>) nil_chk(self->extras_)) removeWithId:key];
   return self;
 }
@@ -171,35 +173,35 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompileContext)
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext_Builder;", 0x1, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext_Builder;", 0x1, 3, 4, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompileContext_Builder;", 0x1, 5, 6, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext_Builder;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext_Builder;", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCompileContext_Builder;", 0x1, 5, 6, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbUtilityVersionCode:);
+  methods[0].selector = @selector(initWithSquiDBVersionCode:);
   methods[1].selector = @selector(build);
-  methods[2].selector = @selector(setArgumentResolverWithComYahooSquidbSqlArgumentResolver:);
+  methods[2].selector = @selector(setArgumentResolverWithSquiDBArgumentResolver:);
   methods[3].selector = @selector(setExtraWithNSString:withId:);
   methods[4].selector = @selector(clearExtraWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "versionCode_", "LComYahooSquidbUtilityVersionCode;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "argumentResolver_", "LComYahooSquidbSqlArgumentResolver;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "versionCode_", "LSquiDBVersionCode;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "argumentResolver_", "LSquiDBArgumentResolver;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "extras_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbUtilityVersionCode;", "setArgumentResolver", "LComYahooSquidbSqlArgumentResolver;", "setExtra", "LNSString;LNSObject;", "clearExtra", "LNSString;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LComYahooSquidbSqlCompileContext;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompileContext_Builder = { "Builder", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x9, 5, 3, 8, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompileContext_Builder;
+  static const void *ptrTable[] = { "LSquiDBVersionCode;", "setArgumentResolver", "LSquiDBArgumentResolver;", "setExtra", "LNSString;LNSObject;", "clearExtra", "LNSString;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LSquiDBCompileContext;" };
+  static const J2ObjcClassInfo _SquiDBCompileContext_Builder = { "Builder", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x9, 5, 3, 8, -1, -1, -1, -1 };
+  return &_SquiDBCompileContext_Builder;
 }
 
 @end
 
-void ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbSqlCompileContext_Builder *self, ComYahooSquidbUtilityVersionCode *versionCode) {
+void SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBCompileContext_Builder *self, SquiDBVersionCode *versionCode) {
   NSObject_init(self);
-  self->argumentResolver_ = new_ComYahooSquidbSqlDefaultArgumentResolver_init();
+  self->argumentResolver_ = new_SquiDBDefaultArgumentResolver_init();
   self->extras_ = new_JavaUtilHashMap_init();
   if (versionCode == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Can't construct a CompileContext with a null VersionCode");
@@ -207,12 +209,12 @@ void ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersio
   self->versionCode_ = versionCode;
 }
 
-ComYahooSquidbSqlCompileContext_Builder *new_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *versionCode) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompileContext_Builder, initWithComYahooSquidbUtilityVersionCode_, versionCode)
+SquiDBCompileContext_Builder *new_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBVersionCode *versionCode) {
+  J2OBJC_NEW_IMPL(SquiDBCompileContext_Builder, initWithSquiDBVersionCode_, versionCode)
 }
 
-ComYahooSquidbSqlCompileContext_Builder *create_ComYahooSquidbSqlCompileContext_Builder_initWithComYahooSquidbUtilityVersionCode_(ComYahooSquidbUtilityVersionCode *versionCode) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompileContext_Builder, initWithComYahooSquidbUtilityVersionCode_, versionCode)
+SquiDBCompileContext_Builder *create_SquiDBCompileContext_Builder_initWithSquiDBVersionCode_(SquiDBVersionCode *versionCode) {
+  J2OBJC_CREATE_IMPL(SquiDBCompileContext_Builder, initWithSquiDBVersionCode_, versionCode)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompileContext_Builder)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompileContext_Builder)

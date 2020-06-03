@@ -11,22 +11,22 @@
 #include "java/lang/IllegalStateException.h"
 #include "java/lang/annotation/Annotation.h"
 
-@interface ComYahooAndroidSqliteSQLiteClosable () {
+@interface SquiDBSQLiteClosable () {
  @public
   jint mReferenceCount_;
 }
 
 @end
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteClosable__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteClosable__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooAndroidSqliteSQLiteClosable__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSQLiteClosable__Annotations$1(void);
 
-@implementation ComYahooAndroidSqliteSQLiteClosable
+@implementation SquiDBSQLiteClosable
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteClosable_init(self);
+  SquiDBSQLiteClosable_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -97,24 +97,26 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "mReferenceCount_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooAndroidSqliteSQLiteClosable__Annotations$0, (void *)&ComYahooAndroidSqliteSQLiteClosable__Annotations$1 };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteClosable = { "SQLiteClosable", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 7, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteClosable;
+  static const void *ptrTable[] = { (void *)&SquiDBSQLiteClosable__Annotations$0, (void *)&SquiDBSQLiteClosable__Annotations$1 };
+  static const J2ObjcClassInfo _SquiDBSQLiteClosable = { "SQLiteClosable", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x401, 7, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteClosable;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteClosable_init(ComYahooAndroidSqliteSQLiteClosable *self) {
+void SquiDBSQLiteClosable_init(SquiDBSQLiteClosable *self) {
   NSObject_init(self);
   self->mReferenceCount_ = 1;
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteClosable__Annotations$0() {
+IOSObjectArray *SquiDBSQLiteClosable__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteClosable__Annotations$1() {
+IOSObjectArray *SquiDBSQLiteClosable__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteClosable)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteClosable)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteClosable, "com.yahoo.android.sqlite", "SquiDB")

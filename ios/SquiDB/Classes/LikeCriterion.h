@@ -15,43 +15,45 @@
 #include "BinaryCriterion.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
-@class ComYahooSquidbSqlOperator;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBField;
+@class SquiDBOperator;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlLikeCriterion : ComYahooSquidbSqlBinaryCriterion
+@interface SquiDBLikeCriterion : SquiDBBinaryCriterion
 
 #pragma mark Protected
 
-- (void)afterPopulateOperatorWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                 withBoolean:(jboolean)forSqlValidation;
+- (void)afterPopulateOperatorWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                      withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlBinaryCriterion *)constructNegatedCriterionWithComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)negatedOperator;
+- (SquiDBBinaryCriterion *)constructNegatedCriterionWithSquiDBOperator:(SquiDBOperator *)negatedOperator;
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)expression
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)operator_
-                                                  withId:(id)value
-                                                withChar:(jchar)escape;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)expression
+                                         withSquiDBOperator:(SquiDBOperator *)operator_
+                                                     withId:(id)value
+                                                   withChar:(jchar)escape;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)arg0
-                           withComYahooSquidbSqlOperator:(ComYahooSquidbSqlOperator *)arg1
-                                                  withId:(id)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBField:(SquiDBField *)arg0
+                                         withSquiDBOperator:(SquiDBOperator *)arg1
+                                                     withId:(id)arg2 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlLikeCriterion)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBLikeCriterion)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlLikeCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withChar_(ComYahooSquidbSqlLikeCriterion *self, ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value, jchar escape);
+FOUNDATION_EXPORT void SquiDBLikeCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withChar_(SquiDBLikeCriterion *self, SquiDBField *expression, SquiDBOperator *operator_, id value, jchar escape);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlLikeCriterion *new_ComYahooSquidbSqlLikeCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withChar_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value, jchar escape) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBLikeCriterion *new_SquiDBLikeCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withChar_(SquiDBField *expression, SquiDBOperator *operator_, id value, jchar escape) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlLikeCriterion *create_ComYahooSquidbSqlLikeCriterion_initWithComYahooSquidbSqlField_withComYahooSquidbSqlOperator_withId_withChar_(ComYahooSquidbSqlField *expression, ComYahooSquidbSqlOperator *operator_, id value, jchar escape);
+FOUNDATION_EXPORT SquiDBLikeCriterion *create_SquiDBLikeCriterion_initPackagePrivateWithSquiDBField_withSquiDBOperator_withId_withChar_(SquiDBField *expression, SquiDBOperator *operator_, id value, jchar escape);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlLikeCriterion)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBLikeCriterion)
+
+@compatibility_alias ComYahooSquidbSqlLikeCriterion SquiDBLikeCriterion;
 
 
 #if __has_feature(nullability)

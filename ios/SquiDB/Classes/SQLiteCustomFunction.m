@@ -9,25 +9,25 @@
 #include "SQLiteDatabase.h"
 #include "java/lang/IllegalArgumentException.h"
 
-@interface ComYahooAndroidSqliteSQLiteCustomFunction ()
+@interface SquiDBSQLiteCustomFunction ()
 
 - (void)dispatchCallbackWithNSStringArray:(IOSObjectArray *)args;
 
 @end
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(ComYahooAndroidSqliteSQLiteCustomFunction *self, IOSObjectArray *args);
+__attribute__((unused)) static void SquiDBSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(SquiDBSQLiteCustomFunction *self, IOSObjectArray *args);
 
-@implementation ComYahooAndroidSqliteSQLiteCustomFunction
+@implementation SquiDBSQLiteCustomFunction
 
 - (instancetype)initWithNSString:(NSString *)name
                          withInt:(jint)numArgs
-withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction>)callback {
-  ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(self, name, numArgs, callback);
+withSquiDBSQLiteDatabase_CustomFunction:(id<SquiDBSQLiteDatabase_CustomFunction>)callback {
+  SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(self, name, numArgs, callback);
   return self;
 }
 
 - (void)dispatchCallbackWithNSStringArray:(IOSObjectArray *)args {
-  ComYahooAndroidSqliteSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(self, args);
+  SquiDBSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(self, args);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -38,22 +38,22 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withInt:withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:);
+  methods[0].selector = @selector(initWithNSString:withInt:withSquiDBSQLiteDatabase_CustomFunction:);
   methods[1].selector = @selector(dispatchCallbackWithNSStringArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "name_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
     { "numArgs_", "I", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
-    { "callback_", "LComYahooAndroidSqliteSQLiteDatabase_CustomFunction;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
+    { "callback_", "LSquiDBSQLiteDatabase_CustomFunction;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;ILComYahooAndroidSqliteSQLiteDatabase_CustomFunction;", "dispatchCallback", "[LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteCustomFunction = { "SQLiteCustomFunction", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 2, 3, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteCustomFunction;
+  static const void *ptrTable[] = { "LNSString;ILSquiDBSQLiteDatabase_CustomFunction;", "dispatchCallback", "[LNSString;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteCustomFunction = { "SQLiteCustomFunction", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 2, 3, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteCustomFunction;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(ComYahooAndroidSqliteSQLiteCustomFunction *self, NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback) {
+void SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(SquiDBSQLiteCustomFunction *self, NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback) {
   NSObject_init(self);
   if (name == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"name must not be null.");
@@ -63,16 +63,18 @@ void ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComY
   self->callback_ = callback;
 }
 
-ComYahooAndroidSqliteSQLiteCustomFunction *new_ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteCustomFunction, initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_, name, numArgs, callback)
+SquiDBSQLiteCustomFunction *new_SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteCustomFunction, initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_, name, numArgs, callback)
 }
 
-ComYahooAndroidSqliteSQLiteCustomFunction *create_ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteCustomFunction, initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_, name, numArgs, callback)
+SquiDBSQLiteCustomFunction *create_SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteCustomFunction, initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_, name, numArgs, callback)
 }
 
-void ComYahooAndroidSqliteSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(ComYahooAndroidSqliteSQLiteCustomFunction *self, IOSObjectArray *args) {
-  [((id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction>) nil_chk(self->callback_)) callbackWithNSStringArray:args];
+void SquiDBSQLiteCustomFunction_dispatchCallbackWithNSStringArray_(SquiDBSQLiteCustomFunction *self, IOSObjectArray *args) {
+  [((id<SquiDBSQLiteDatabase_CustomFunction>) nil_chk(self->callback_)) callbackWithNSStringArray:args];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteCustomFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteCustomFunction)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteCustomFunction, "com.yahoo.android.sqlite", "SquiDB")

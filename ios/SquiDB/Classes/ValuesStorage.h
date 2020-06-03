@@ -24,7 +24,7 @@
 @class JavaLangShort;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataValuesStorage : NSObject
+@interface SquiDBValuesStorage : NSObject
 
 #pragma mark Public
 
@@ -71,7 +71,7 @@
 - (void)putWithNSString:(NSString *)key
            withNSString:(NSString *)value;
 
-- (void)putAllWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)other;
+- (void)putAllWithSquiDBValuesStorage:(SquiDBValuesStorage *)other;
 
 - (void)putNullWithNSString:(NSString *)key;
 
@@ -83,11 +83,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataValuesStorage)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBValuesStorage)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataValuesStorage_init(ComYahooSquidbDataValuesStorage *self);
+FOUNDATION_EXPORT void SquiDBValuesStorage_init(SquiDBValuesStorage *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataValuesStorage)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBValuesStorage)
+
+@compatibility_alias ComYahooSquidbDataValuesStorage SquiDBValuesStorage;
 
 
 #if __has_feature(nullability)

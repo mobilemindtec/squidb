@@ -15,63 +15,65 @@
 #include "CompilableWithArguments.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlSqlTable;
 @class IOSObjectArray;
+@class SquiDBSqlBuilder;
+@class SquiDBSqlTable;
 
-@interface ComYahooSquidbSqlJoin : ComYahooSquidbSqlCompilableWithArguments {
+@interface SquiDBJoin : SquiDBCompilableWithArguments {
  @public
-  ComYahooSquidbSqlSqlTable *joinTable_;
+  SquiDBSqlTable *joinTable_;
 }
 
 #pragma mark Public
 
-+ (ComYahooSquidbSqlJoin *)crossWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                          withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)criterions;
++ (SquiDBJoin *)crossWithSquiDBSqlTable:(SquiDBSqlTable *)table
+               withSquiDBCriterionArray:(IOSObjectArray *)criterions;
 
-+ (ComYahooSquidbSqlJoin *)crossWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                           withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns;
++ (SquiDBJoin *)crossWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                withSquiDBPropertyArray:(IOSObjectArray *)usingColumns;
 
-+ (ComYahooSquidbSqlJoin *)innerWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                          withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)criterions;
++ (SquiDBJoin *)innerWithSquiDBSqlTable:(SquiDBSqlTable *)table
+               withSquiDBCriterionArray:(IOSObjectArray *)criterions;
 
-+ (ComYahooSquidbSqlJoin *)innerWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                           withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns;
++ (SquiDBJoin *)innerWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                withSquiDBPropertyArray:(IOSObjectArray *)usingColumns;
 
-+ (ComYahooSquidbSqlJoin *)leftWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                         withComYahooSquidbSqlCriterionArray:(IOSObjectArray *)criterions;
++ (SquiDBJoin *)leftWithSquiDBSqlTable:(SquiDBSqlTable *)table
+              withSquiDBCriterionArray:(IOSObjectArray *)criterions;
 
-+ (ComYahooSquidbSqlJoin *)leftWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                          withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)usingColumns;
++ (SquiDBJoin *)leftWithSquiDBSqlTable:(SquiDBSqlTable *)table
+               withSquiDBPropertyArray:(IOSObjectArray *)usingColumns;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)init NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlJoin)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBJoin)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlJoin, joinTable_, ComYahooSquidbSqlSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBJoin, joinTable_, SquiDBSqlTable *)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_innerWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlCriterionArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *criterions);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_innerWithSquiDBSqlTable_withSquiDBCriterionArray_(SquiDBSqlTable *table, IOSObjectArray *criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_innerWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *usingColumns);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_innerWithSquiDBSqlTable_withSquiDBPropertyArray_(SquiDBSqlTable *table, IOSObjectArray *usingColumns);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_leftWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlCriterionArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *criterions);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_leftWithSquiDBSqlTable_withSquiDBCriterionArray_(SquiDBSqlTable *table, IOSObjectArray *criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_leftWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *usingColumns);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_leftWithSquiDBSqlTable_withSquiDBPropertyArray_(SquiDBSqlTable *table, IOSObjectArray *usingColumns);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_crossWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlCriterionArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *criterions);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_crossWithSquiDBSqlTable_withSquiDBCriterionArray_(SquiDBSqlTable *table, IOSObjectArray *criterions);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlJoin *ComYahooSquidbSqlJoin_crossWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlSqlTable *table, IOSObjectArray *usingColumns);
+FOUNDATION_EXPORT SquiDBJoin *SquiDBJoin_crossWithSquiDBSqlTable_withSquiDBPropertyArray_(SquiDBSqlTable *table, IOSObjectArray *usingColumns);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlJoin)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBJoin)
+
+@compatibility_alias ComYahooSquidbSqlJoin SquiDBJoin;
 
 
 #if __has_feature(nullability)

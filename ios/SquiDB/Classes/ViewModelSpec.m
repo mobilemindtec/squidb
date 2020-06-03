@@ -11,9 +11,9 @@
 #include "java/lang/annotation/ElementType.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewModelSpec__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBViewModelSpec__Annotations$0(void);
 
-@implementation ComYahooSquidbAnnotationsViewModelSpec
+@implementation SquiDBViewModelSpec
 
 @synthesize className__ = className___;
 @synthesize viewName = viewName_;
@@ -24,7 +24,7 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewMode
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsViewModelSpec_class_();
+  return SquiDBViewModelSpec_class_();
 }
 
 - (NSString *)description {
@@ -57,23 +57,25 @@ __attribute__((unused)) static IOSObjectArray *ComYahooSquidbAnnotationsViewMode
     { "viewName_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "isSubquery_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbAnnotationsViewModelSpec__Annotations$0 };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsViewModelSpec = { "ViewModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, -1, -1, -1, -1, 0 };
-  return &_ComYahooSquidbAnnotationsViewModelSpec;
+  static const void *ptrTable[] = { (void *)&SquiDBViewModelSpec__Annotations$0 };
+  static const J2ObjcClassInfo _SquiDBViewModelSpec = { "ViewModelSpec", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, -1, -1, -1, -1, 0 };
+  return &_SquiDBViewModelSpec;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsViewModelSpec> create_ComYahooSquidbAnnotationsViewModelSpec(NSString *className__, jboolean isSubquery, NSString *viewName) {
-  ComYahooSquidbAnnotationsViewModelSpec *self = AUTORELEASE([[ComYahooSquidbAnnotationsViewModelSpec alloc] init]);
+id<SquiDBViewModelSpec> create_SquiDBViewModelSpec(NSString *className__, jboolean isSubquery, NSString *viewName) {
+  SquiDBViewModelSpec *self = AUTORELEASE([[SquiDBViewModelSpec alloc] init]);
   self->className___ = RETAIN_(className__);
   self->isSubquery_ = isSubquery;
   self->viewName_ = RETAIN_(viewName);
   return self;
 }
 
-IOSObjectArray *ComYahooSquidbAnnotationsViewModelSpec__Annotations$0() {
+IOSObjectArray *SquiDBViewModelSpec__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangAnnotationTarget([IOSObjectArray newArrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsViewModelSpec)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBViewModelSpec)
+
+J2OBJC_NAME_MAPPING(SquiDBViewModelSpec, "com.yahoo.squidb.annotations", "SquiDB")

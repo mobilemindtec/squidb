@@ -14,7 +14,7 @@
 
 #include "J2ObjC_header.h"
 
-@interface ComYahooAndroidSqliteSQLiteGlobal : NSObject
+@interface SquiDBSQLiteGlobal : NSObject
 
 #pragma mark Public
 
@@ -38,27 +38,29 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteGlobal)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteGlobal)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteGlobal_sqlite3_initialize(void);
+FOUNDATION_EXPORT void SquiDBSQLiteGlobal_sqlite3_initialize(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteSQLiteGlobal_releaseMemory(void);
+FOUNDATION_EXPORT jint SquiDBSQLiteGlobal_releaseMemory(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteSQLiteGlobal_getDefaultPageSize(void);
+FOUNDATION_EXPORT jint SquiDBSQLiteGlobal_getDefaultPageSize(void);
 
-FOUNDATION_EXPORT NSString *ComYahooAndroidSqliteSQLiteGlobal_getDefaultJournalMode(void);
+FOUNDATION_EXPORT NSString *SquiDBSQLiteGlobal_getDefaultJournalMode(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteSQLiteGlobal_getJournalSizeLimit(void);
+FOUNDATION_EXPORT jint SquiDBSQLiteGlobal_getJournalSizeLimit(void);
 
-FOUNDATION_EXPORT NSString *ComYahooAndroidSqliteSQLiteGlobal_getDefaultSyncMode(void);
+FOUNDATION_EXPORT NSString *SquiDBSQLiteGlobal_getDefaultSyncMode(void);
 
-FOUNDATION_EXPORT NSString *ComYahooAndroidSqliteSQLiteGlobal_getWALSyncMode(void);
+FOUNDATION_EXPORT NSString *SquiDBSQLiteGlobal_getWALSyncMode(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteSQLiteGlobal_getWALAutoCheckpoint(void);
+FOUNDATION_EXPORT jint SquiDBSQLiteGlobal_getWALAutoCheckpoint(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteSQLiteGlobal_getWALConnectionPoolSize(void);
+FOUNDATION_EXPORT jint SquiDBSQLiteGlobal_getWALConnectionPoolSize(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteGlobal)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteGlobal)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteGlobal SquiDBSQLiteGlobal;
 
 
 #if __has_feature(nullability)

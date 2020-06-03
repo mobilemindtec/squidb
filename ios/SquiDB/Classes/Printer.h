@@ -14,15 +14,17 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooAndroidSqlitePrinter < JavaObject >
+@protocol SquiDBPrinter < JavaObject >
 
 - (void)printlnWithNSString:(NSString *)x;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqlitePrinter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBPrinter)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqlitePrinter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBPrinter)
+
+#define ComYahooAndroidSqlitePrinter SquiDBPrinter
 
 
 #if __has_feature(nullability)

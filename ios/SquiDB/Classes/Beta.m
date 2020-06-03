@@ -7,10 +7,10 @@
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 
-@implementation ComYahooSquidbBeta
+@implementation SquiDBBeta
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbBeta_class_();
+  return SquiDBBeta_class_();
 }
 
 - (NSString *)description {
@@ -26,15 +26,17 @@
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _ComYahooSquidbBeta = { "Beta", "com.yahoo.squidb", NULL, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbBeta;
+  static const J2ObjcClassInfo _SquiDBBeta = { "Beta", "com.yahoo.squidb", NULL, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBBeta;
 }
 
 @end
 
-id<ComYahooSquidbBeta> create_ComYahooSquidbBeta() {
-  ComYahooSquidbBeta *self = AUTORELEASE([[ComYahooSquidbBeta alloc] init]);
+id<SquiDBBeta> create_SquiDBBeta() {
+  SquiDBBeta *self = AUTORELEASE([[SquiDBBeta alloc] init]);
   return self;
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbBeta)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBBeta)
+
+J2OBJC_NAME_MAPPING(SquiDBBeta, "com.yahoo.squidb", "SquiDB")

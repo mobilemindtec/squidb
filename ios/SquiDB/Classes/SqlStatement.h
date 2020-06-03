@@ -14,24 +14,24 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlCompileContext;
-@class ComYahooSquidbSqlCompiledStatement;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSObjectArray;
+@class SquiDBCompileContext;
+@class SquiDBCompiledStatement;
+@class SquiDBVersionCode;
 
-@protocol ComYahooSquidbSqlSqlStatement < JavaObject >
+@protocol SquiDBSqlStatement < JavaObject >
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (SquiDBCompiledStatement *)compileWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (SquiDBCompiledStatement *)compileWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
-- (NSString *)toRawSqlWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion;
+- (NSString *)toRawSqlWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion;
 
-- (NSString *)toRawSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext;
+- (NSString *)toRawSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext;
 
 @end
 
-@interface ComYahooSquidbSqlSqlStatement : NSObject
+@interface SquiDBSqlStatement : NSObject
 @property (readonly, class) IOSObjectArray *EMPTY_ARGS NS_SWIFT_NAME(EMPTY_ARGS);
 @property (readonly, copy, class) NSString *REPLACEABLE_PARAMETER NS_SWIFT_NAME(REPLACEABLE_PARAMETER);
 @property (readonly, copy, class) NSString *REPLACEABLE_ARRAY_PARAMETER NS_SWIFT_NAME(REPLACEABLE_ARRAY_PARAMETER);
@@ -50,33 +50,35 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlSqlStatement)
+J2OBJC_STATIC_INIT(SquiDBSqlStatement)
 
-inline IOSObjectArray *ComYahooSquidbSqlSqlStatement_get_EMPTY_ARGS(void);
+inline IOSObjectArray *SquiDBSqlStatement_get_EMPTY_ARGS(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbSqlSqlStatement_EMPTY_ARGS;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlSqlStatement, EMPTY_ARGS, IOSObjectArray *)
+FOUNDATION_EXPORT IOSObjectArray *SquiDBSqlStatement_EMPTY_ARGS;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSqlStatement, EMPTY_ARGS, IOSObjectArray *)
 
-inline NSString *ComYahooSquidbSqlSqlStatement_get_REPLACEABLE_PARAMETER(void);
+inline NSString *SquiDBSqlStatement_get_REPLACEABLE_PARAMETER(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_PARAMETER;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlSqlStatement, REPLACEABLE_PARAMETER, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBSqlStatement_REPLACEABLE_PARAMETER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSqlStatement, REPLACEABLE_PARAMETER, NSString *)
 
-inline NSString *ComYahooSquidbSqlSqlStatement_get_REPLACEABLE_ARRAY_PARAMETER(void);
+inline NSString *SquiDBSqlStatement_get_REPLACEABLE_ARRAY_PARAMETER(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlSqlStatement, REPLACEABLE_ARRAY_PARAMETER, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSqlStatement, REPLACEABLE_ARRAY_PARAMETER, NSString *)
 
-inline NSString *ComYahooSquidbSqlSqlStatement_get_REPLACEABLE_ARRAY_PARAMETER_REGEX(void);
+inline NSString *SquiDBSqlStatement_get_REPLACEABLE_ARRAY_PARAMETER_REGEX(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbSqlSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlSqlStatement, REPLACEABLE_ARRAY_PARAMETER_REGEX, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBSqlStatement_REPLACEABLE_ARRAY_PARAMETER_REGEX;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSqlStatement, REPLACEABLE_ARRAY_PARAMETER_REGEX, NSString *)
 
-inline jint ComYahooSquidbSqlSqlStatement_get_MAX_VARIABLE_NUMBER(void);
-#define ComYahooSquidbSqlSqlStatement_MAX_VARIABLE_NUMBER 999
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbSqlSqlStatement, MAX_VARIABLE_NUMBER, jint)
+inline jint SquiDBSqlStatement_get_MAX_VARIABLE_NUMBER(void);
+#define SquiDBSqlStatement_MAX_VARIABLE_NUMBER 999
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSqlStatement, MAX_VARIABLE_NUMBER, jint)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlSqlStatement)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSqlStatement)
+
+#define ComYahooSquidbSqlSqlStatement SquiDBSqlStatement
 
 
 #if __has_feature(nullability)

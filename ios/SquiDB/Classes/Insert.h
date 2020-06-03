@@ -15,48 +15,48 @@
 #include "J2ObjC_header.h"
 #include "TableStatement.h"
 
-@class ComYahooSquidbDataValuesStorage;
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlView;
-@class ComYahooSquidbUtilityVersionCode;
 @class IOSObjectArray;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
+@class SquiDBSqlTable;
+@class SquiDBTable;
+@class SquiDBValuesStorage;
+@class SquiDBVersionCode;
+@class SquiDBView;
 
-@interface ComYahooSquidbSqlInsert : ComYahooSquidbSqlTableStatement
-@property (readonly, class) ComYahooSquidbUtilityVersionCode *SQLITE_VERSION_MULTI_ROW_INSERT NS_SWIFT_NAME(SQLITE_VERSION_MULTI_ROW_INSERT);
+@interface SquiDBInsert : SquiDBTableStatement
+@property (readonly, class) SquiDBVersionCode *SQLITE_VERSION_MULTI_ROW_INSERT NS_SWIFT_NAME(SQLITE_VERSION_MULTI_ROW_INSERT);
 
-+ (ComYahooSquidbUtilityVersionCode *)SQLITE_VERSION_MULTI_ROW_INSERT;
++ (SquiDBVersionCode *)SQLITE_VERSION_MULTI_ROW_INSERT;
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlInsert *)columnsWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns;
+- (SquiDBInsert *)columnsWithSquiDBPropertyArray:(IOSObjectArray *)columns;
 
-- (ComYahooSquidbSqlInsert *)columnsWithNSStringArray:(IOSObjectArray *)columnNames;
+- (SquiDBInsert *)columnsWithNSStringArray:(IOSObjectArray *)columnNames;
 
-- (ComYahooSquidbSqlInsert *)defaultValues;
+- (SquiDBInsert *)defaultValues;
 
-- (ComYahooSquidbSqlInsert *)fromValuesWithComYahooSquidbDataValuesStorage:(ComYahooSquidbDataValuesStorage *)values;
+- (SquiDBInsert *)fromValuesWithSquiDBValuesStorage:(SquiDBValuesStorage *)values;
 
 - (jint)getNumRows;
 
-- (ComYahooSquidbSqlSqlTable *)getTable;
+- (SquiDBSqlTable *)getTable;
 
-+ (ComYahooSquidbSqlInsert *)intoWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
++ (SquiDBInsert *)intoWithSquiDBTable:(SquiDBTable *)table;
 
-+ (ComYahooSquidbSqlInsert *)intoWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
++ (SquiDBInsert *)intoWithSquiDBView:(SquiDBView *)view;
 
-- (ComYahooSquidbSqlInsert *)onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (SquiDBInsert *)onConflictWithSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (ComYahooSquidbSqlInsert *)selectWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)select;
+- (SquiDBInsert *)selectWithSquiDBQuery:(SquiDBQuery *)select;
 
-- (ComYahooSquidbSqlInsert *)valuesWithNSObjectArray:(IOSObjectArray *)values;
+- (SquiDBInsert *)valuesWithNSObjectArray:(IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
@@ -64,18 +64,20 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlInsert)
+J2OBJC_STATIC_INIT(SquiDBInsert)
 
-inline ComYahooSquidbUtilityVersionCode *ComYahooSquidbSqlInsert_get_SQLITE_VERSION_MULTI_ROW_INSERT(void);
+inline SquiDBVersionCode *SquiDBInsert_get_SQLITE_VERSION_MULTI_ROW_INSERT(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT ComYahooSquidbUtilityVersionCode *ComYahooSquidbSqlInsert_SQLITE_VERSION_MULTI_ROW_INSERT;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlInsert, SQLITE_VERSION_MULTI_ROW_INSERT, ComYahooSquidbUtilityVersionCode *)
+FOUNDATION_EXPORT SquiDBVersionCode *SquiDBInsert_SQLITE_VERSION_MULTI_ROW_INSERT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBInsert, SQLITE_VERSION_MULTI_ROW_INSERT, SquiDBVersionCode *)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlInsert *ComYahooSquidbSqlInsert_intoWithComYahooSquidbSqlTable_(ComYahooSquidbSqlTable *table);
+FOUNDATION_EXPORT SquiDBInsert *SquiDBInsert_intoWithSquiDBTable_(SquiDBTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlInsert *ComYahooSquidbSqlInsert_intoWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view);
+FOUNDATION_EXPORT SquiDBInsert *SquiDBInsert_intoWithSquiDBView_(SquiDBView *view);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlInsert)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBInsert)
+
+@compatibility_alias ComYahooSquidbSqlInsert SquiDBInsert;
 
 
 #if __has_feature(nullability)

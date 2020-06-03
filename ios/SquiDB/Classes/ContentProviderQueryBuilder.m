@@ -19,11 +19,11 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@interface ComYahooSquidbUtilityContentProviderQueryBuilder () {
+@interface SquiDBContentProviderQueryBuilder () {
  @public
   jboolean strictMode_;
-  ComYahooSquidbUtilityProjectionMap *projectionMap_;
-  ComYahooSquidbSqlSqlTable *dataSource_;
+  SquiDBProjectionMap *projectionMap_;
+  SquiDBSqlTable *dataSource_;
   IOSObjectArray *defaultOrder_;
 }
 
@@ -31,43 +31,43 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbUtilityContentProviderQueryBuilder, projectionMap_, ComYahooSquidbUtilityProjectionMap *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbUtilityContentProviderQueryBuilder, dataSource_, ComYahooSquidbSqlSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbUtilityContentProviderQueryBuilder, defaultOrder_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBContentProviderQueryBuilder, projectionMap_, SquiDBProjectionMap *)
+J2OBJC_FIELD_SETTER(SquiDBContentProviderQueryBuilder, dataSource_, SquiDBSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBContentProviderQueryBuilder, defaultOrder_, IOSObjectArray *)
 
-__attribute__((unused)) static id<JavaUtilList> ComYahooSquidbUtilityContentProviderQueryBuilder_computeProjectionWithNSStringArray_(ComYahooSquidbUtilityContentProviderQueryBuilder *self, IOSObjectArray *projectionIn);
+__attribute__((unused)) static id<JavaUtilList> SquiDBContentProviderQueryBuilder_computeProjectionWithNSStringArray_(SquiDBContentProviderQueryBuilder *self, IOSObjectArray *projectionIn);
 
-@implementation ComYahooSquidbUtilityContentProviderQueryBuilder
+@implementation SquiDBContentProviderQueryBuilder
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbUtilityContentProviderQueryBuilder_init(self);
+  SquiDBContentProviderQueryBuilder_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
-                         withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)dataSource {
-  ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(self, properties, dataSource);
+- (instancetype)initWithSquiDBPropertyArray:(IOSObjectArray *)properties
+                         withSquiDBSqlTable:(SquiDBSqlTable *)dataSource {
+  SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(self, properties, dataSource);
   return self;
 }
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setStrictWithBoolean:(jboolean)strict {
+- (SquiDBContentProviderQueryBuilder *)setStrictWithBoolean:(jboolean)strict {
   self->strictMode_ = strict;
   return self;
 }
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setProjectionMapWithComYahooSquidbUtilityProjectionMap:(ComYahooSquidbUtilityProjectionMap *)projectionMap {
+- (SquiDBContentProviderQueryBuilder *)setProjectionMapWithSquiDBProjectionMap:(SquiDBProjectionMap *)projectionMap {
   self->projectionMap_ = projectionMap;
   return self;
 }
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setDataSourceWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)dataSource {
+- (SquiDBContentProviderQueryBuilder *)setDataSourceWithSquiDBSqlTable:(SquiDBSqlTable *)dataSource {
   self->dataSource_ = dataSource;
   return self;
 }
 
-- (ComYahooSquidbUtilityContentProviderQueryBuilder *)setDefaultOrderWithComYahooSquidbSqlOrderArray:(IOSObjectArray *)orders {
+- (SquiDBContentProviderQueryBuilder *)setDefaultOrderWithSquiDBOrderArray:(IOSObjectArray *)orders {
   if (orders == nil || orders->size_ == 0) {
     defaultOrder_ = nil;
   }
@@ -77,68 +77,68 @@ J2OBJC_IGNORE_DESIGNATED_END
   return self;
 }
 
-- (ComYahooSquidbSqlQuery *)buildWithNSStringArray:(IOSObjectArray *)projection
-                                      withNSString:(NSString *)selection
-                                 withNSStringArray:(IOSObjectArray *)selectionArgs
-                                      withNSString:(NSString *)sortOrder {
-  ComYahooSquidbSqlQuery *query = [((ComYahooSquidbSqlQuery *) nil_chk(ComYahooSquidbSqlQuery_selectWithJavaUtilList_(ComYahooSquidbUtilityContentProviderQueryBuilder_computeProjectionWithNSStringArray_(self, projection)))) fromWithComYahooSquidbSqlSqlTable:dataSource_];
-  jboolean hasUserSelection = !ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(selection);
+- (SquiDBQuery *)buildWithNSStringArray:(IOSObjectArray *)projection
+                           withNSString:(NSString *)selection
+                      withNSStringArray:(IOSObjectArray *)selectionArgs
+                           withNSString:(NSString *)sortOrder {
+  SquiDBQuery *query = [((SquiDBQuery *) nil_chk(SquiDBQuery_selectWithJavaUtilList_(SquiDBContentProviderQueryBuilder_computeProjectionWithNSStringArray_(self, projection)))) fromWithSquiDBSqlTable:dataSource_];
+  jboolean hasUserSelection = !SquiDBSqlUtils_isEmptyWithNSString_(selection);
   if (hasUserSelection) {
-    (void) [((ComYahooSquidbSqlQuery *) nil_chk(query)) whereWithComYahooSquidbSqlCriterion:ComYahooSquidbSqlCriterion_fromRawSelectionWithNSString_withNSStringArray_(selection, selectionArgs)];
+    (void) [((SquiDBQuery *) nil_chk(query)) whereWithSquiDBCriterion:SquiDBCriterion_fromRawSelectionWithNSString_withNSStringArray_(selection, selectionArgs)];
   }
-  if (!ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(sortOrder)) {
-    (void) [((ComYahooSquidbSqlQuery *) nil_chk(query)) orderByWithComYahooSquidbSqlOrderArray:[IOSObjectArray newArrayWithObjects:(id[]){ ComYahooSquidbSqlOrder_fromExpressionWithNSString_(sortOrder) } count:1 type:ComYahooSquidbSqlOrder_class_()]];
+  if (!SquiDBSqlUtils_isEmptyWithNSString_(sortOrder)) {
+    (void) [((SquiDBQuery *) nil_chk(query)) orderByWithSquiDBOrderArray:[IOSObjectArray newArrayWithObjects:(id[]){ SquiDBOrder_fromExpressionWithNSString_(sortOrder) } count:1 type:SquiDBOrder_class_()]];
   }
   else if (defaultOrder_ != nil && defaultOrder_->size_ > 0) {
-    (void) [((ComYahooSquidbSqlQuery *) nil_chk(query)) orderByWithComYahooSquidbSqlOrderArray:defaultOrder_];
+    (void) [((SquiDBQuery *) nil_chk(query)) orderByWithSquiDBOrderArray:defaultOrder_];
   }
   if (strictMode_ && hasUserSelection) {
-    [((ComYahooSquidbSqlQuery *) nil_chk(query)) requestValidation];
+    [((SquiDBQuery *) nil_chk(query)) requestValidation];
   }
   return query;
 }
 
 - (id<JavaUtilList>)computeProjectionWithNSStringArray:(IOSObjectArray *)projectionIn {
-  return ComYahooSquidbUtilityContentProviderQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
+  return SquiDBContentProviderQueryBuilder_computeProjectionWithNSStringArray_(self, projectionIn);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityContentProviderQueryBuilder;", 0x1, 2, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityContentProviderQueryBuilder;", 0x1, 4, 5, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityContentProviderQueryBuilder;", 0x1, 6, 7, -1, 8, -1, -1 },
-    { NULL, "LComYahooSquidbUtilityContentProviderQueryBuilder;", 0x81, 9, 10, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlQuery;", 0x1, 11, 12, -1, -1, -1, -1 },
+    { NULL, "LSquiDBContentProviderQueryBuilder;", 0x1, 2, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBContentProviderQueryBuilder;", 0x1, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LSquiDBContentProviderQueryBuilder;", 0x1, 6, 7, -1, 8, -1, -1 },
+    { NULL, "LSquiDBContentProviderQueryBuilder;", 0x81, 9, 10, -1, -1, -1, -1 },
+    { NULL, "LSquiDBQuery;", 0x1, 11, 12, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 13, 14, -1, 15, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(initWithComYahooSquidbSqlPropertyArray:withComYahooSquidbSqlSqlTable:);
+  methods[1].selector = @selector(initWithSquiDBPropertyArray:withSquiDBSqlTable:);
   methods[2].selector = @selector(setStrictWithBoolean:);
-  methods[3].selector = @selector(setProjectionMapWithComYahooSquidbUtilityProjectionMap:);
-  methods[4].selector = @selector(setDataSourceWithComYahooSquidbSqlSqlTable:);
-  methods[5].selector = @selector(setDefaultOrderWithComYahooSquidbSqlOrderArray:);
+  methods[3].selector = @selector(setProjectionMapWithSquiDBProjectionMap:);
+  methods[4].selector = @selector(setDataSourceWithSquiDBSqlTable:);
+  methods[5].selector = @selector(setDefaultOrderWithSquiDBOrderArray:);
   methods[6].selector = @selector(buildWithNSStringArray:withNSString:withNSStringArray:withNSString:);
   methods[7].selector = @selector(computeProjectionWithNSStringArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "strictMode_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "projectionMap_", "LComYahooSquidbUtilityProjectionMap;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "dataSource_", "LComYahooSquidbSqlSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 16, -1 },
-    { "defaultOrder_", "[LComYahooSquidbSqlOrder;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "projectionMap_", "LSquiDBProjectionMap;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "dataSource_", "LSquiDBSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 16, -1 },
+    { "defaultOrder_", "[LSquiDBOrder;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "[LComYahooSquidbSqlProperty;LComYahooSquidbSqlSqlTable;", "([Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "setStrict", "Z", "setProjectionMap", "LComYahooSquidbUtilityProjectionMap;", "setDataSource", "LComYahooSquidbSqlSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/utility/ContentProviderQueryBuilder;", "setDefaultOrder", "[LComYahooSquidbSqlOrder;", "build", "[LNSString;LNSString;[LNSString;LNSString;", "computeProjection", "[LNSString;", "([Ljava/lang/String;)Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", "Lcom/yahoo/squidb/sql/SqlTable<*>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbUtilityContentProviderQueryBuilder = { "ContentProviderQueryBuilder", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 8, 4, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbUtilityContentProviderQueryBuilder;
+  static const void *ptrTable[] = { "[LSquiDBProperty;LSquiDBSqlTable;", "([Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/sql/SqlTable<*>;)V", "setStrict", "Z", "setProjectionMap", "LSquiDBProjectionMap;", "setDataSource", "LSquiDBSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/utility/ContentProviderQueryBuilder;", "setDefaultOrder", "[LSquiDBOrder;", "build", "[LNSString;LNSString;[LNSString;LNSString;", "computeProjection", "[LNSString;", "([Ljava/lang/String;)Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", "Lcom/yahoo/squidb/sql/SqlTable<*>;" };
+  static const J2ObjcClassInfo _SquiDBContentProviderQueryBuilder = { "ContentProviderQueryBuilder", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 8, 4, -1, -1, -1, -1, -1 };
+  return &_SquiDBContentProviderQueryBuilder;
 }
 
 @end
 
-void ComYahooSquidbUtilityContentProviderQueryBuilder_init(ComYahooSquidbUtilityContentProviderQueryBuilder *self) {
+void SquiDBContentProviderQueryBuilder_init(SquiDBContentProviderQueryBuilder *self) {
   NSObject_init(self);
   self->strictMode_ = false;
   self->projectionMap_ = nil;
@@ -146,35 +146,35 @@ void ComYahooSquidbUtilityContentProviderQueryBuilder_init(ComYahooSquidbUtility
   self->defaultOrder_ = nil;
 }
 
-ComYahooSquidbUtilityContentProviderQueryBuilder *new_ComYahooSquidbUtilityContentProviderQueryBuilder_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityContentProviderQueryBuilder, init)
+SquiDBContentProviderQueryBuilder *new_SquiDBContentProviderQueryBuilder_init() {
+  J2OBJC_NEW_IMPL(SquiDBContentProviderQueryBuilder, init)
 }
 
-ComYahooSquidbUtilityContentProviderQueryBuilder *create_ComYahooSquidbUtilityContentProviderQueryBuilder_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityContentProviderQueryBuilder, init)
+SquiDBContentProviderQueryBuilder *create_SquiDBContentProviderQueryBuilder_init() {
+  J2OBJC_CREATE_IMPL(SquiDBContentProviderQueryBuilder, init)
 }
 
-void ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(ComYahooSquidbUtilityContentProviderQueryBuilder *self, IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource) {
+void SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(SquiDBContentProviderQueryBuilder *self, IOSObjectArray *properties, SquiDBSqlTable *dataSource) {
   NSObject_init(self);
   self->strictMode_ = false;
   self->projectionMap_ = nil;
   self->dataSource_ = nil;
   self->defaultOrder_ = nil;
-  ComYahooSquidbUtilityProjectionMap *projectionMap = new_ComYahooSquidbUtilityProjectionMap_init();
-  [projectionMap putAllWithComYahooSquidbSqlFieldArray:properties];
-  (void) [self setProjectionMapWithComYahooSquidbUtilityProjectionMap:projectionMap];
-  (void) [self setDataSourceWithComYahooSquidbSqlSqlTable:dataSource];
+  SquiDBProjectionMap *projectionMap = new_SquiDBProjectionMap_init();
+  [projectionMap putAllWithSquiDBFieldArray:properties];
+  (void) [self setProjectionMapWithSquiDBProjectionMap:projectionMap];
+  (void) [self setDataSourceWithSquiDBSqlTable:dataSource];
 }
 
-ComYahooSquidbUtilityContentProviderQueryBuilder *new_ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityContentProviderQueryBuilder, initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_, properties, dataSource)
+SquiDBContentProviderQueryBuilder *new_SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(IOSObjectArray *properties, SquiDBSqlTable *dataSource) {
+  J2OBJC_NEW_IMPL(SquiDBContentProviderQueryBuilder, initWithSquiDBPropertyArray_withSquiDBSqlTable_, properties, dataSource)
 }
 
-ComYahooSquidbUtilityContentProviderQueryBuilder *create_ComYahooSquidbUtilityContentProviderQueryBuilder_initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_(IOSObjectArray *properties, ComYahooSquidbSqlSqlTable *dataSource) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityContentProviderQueryBuilder, initWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlSqlTable_, properties, dataSource)
+SquiDBContentProviderQueryBuilder *create_SquiDBContentProviderQueryBuilder_initWithSquiDBPropertyArray_withSquiDBSqlTable_(IOSObjectArray *properties, SquiDBSqlTable *dataSource) {
+  J2OBJC_CREATE_IMPL(SquiDBContentProviderQueryBuilder, initWithSquiDBPropertyArray_withSquiDBSqlTable_, properties, dataSource)
 }
 
-id<JavaUtilList> ComYahooSquidbUtilityContentProviderQueryBuilder_computeProjectionWithNSStringArray_(ComYahooSquidbUtilityContentProviderQueryBuilder *self, IOSObjectArray *projectionIn) {
+id<JavaUtilList> SquiDBContentProviderQueryBuilder_computeProjectionWithNSStringArray_(SquiDBContentProviderQueryBuilder *self, IOSObjectArray *projectionIn) {
   id<JavaUtilList> projection = nil;
   if (self->projectionMap_ == nil) {
     if (self->strictMode_) {
@@ -188,7 +188,7 @@ id<JavaUtilList> ComYahooSquidbUtilityContentProviderQueryBuilder_computeProject
         NSString * const *e__ = b__ + a__->size_;
         while (b__ < e__) {
           NSString *expression = *b__++;
-          [projection addWithId:ComYahooSquidbSqlField_fieldWithNSString_(expression)];
+          [projection addWithId:SquiDBField_fieldWithNSString_(expression)];
         }
       }
     }
@@ -205,7 +205,7 @@ id<JavaUtilList> ComYahooSquidbUtilityContentProviderQueryBuilder_computeProject
         NSString * const *e__ = b__ + a__->size_;
         while (b__ < e__) {
           NSString *expression = *b__++;
-          ComYahooSquidbSqlField *column = [((ComYahooSquidbUtilityProjectionMap *) nil_chk(self->projectionMap_)) getWithNSString:expression];
+          SquiDBField *column = [((SquiDBProjectionMap *) nil_chk(self->projectionMap_)) getWithNSString:expression];
           if (column != nil) {
             [projection addWithId:column];
           }
@@ -219,4 +219,6 @@ id<JavaUtilList> ComYahooSquidbUtilityContentProviderQueryBuilder_computeProject
   return projection;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbUtilityContentProviderQueryBuilder)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBContentProviderQueryBuilder)
+
+J2OBJC_NAME_MAPPING(SquiDBContentProviderQueryBuilder, "com.yahoo.squidb.utility", "SquiDB")

@@ -12,11 +12,11 @@
 #include "java/util/concurrent/atomic/AtomicBoolean.h"
 #include "java/util/concurrent/atomic/AtomicReference.h"
 
-@implementation ComYahooSquidbSqlDefaultArgumentResolver
+@implementation SquiDBDefaultArgumentResolver
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbSqlDefaultArgumentResolver_init(self);
+  SquiDBDefaultArgumentResolver_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -27,16 +27,16 @@ J2OBJC_IGNORE_DESIGNATED_END
       arg = [self resolveCustomTypeWithId:arg];
     }
     else if ([arg isKindOfClass:[JavaUtilConcurrentAtomicAtomicReference class]]) {
-      arg = [((JavaUtilConcurrentAtomicAtomicReference *) nil_chk(((JavaUtilConcurrentAtomicAtomicReference *) cast_chk(arg, [JavaUtilConcurrentAtomicAtomicReference class])))) get];
+      arg = [((JavaUtilConcurrentAtomicAtomicReference *) nil_chk(((JavaUtilConcurrentAtomicAtomicReference *) arg))) get];
     }
     else if ([arg isKindOfClass:[JavaUtilConcurrentAtomicAtomicBoolean class]]) {
-      return JavaLangInteger_valueOfWithInt_([((JavaUtilConcurrentAtomicAtomicBoolean *) nil_chk(((JavaUtilConcurrentAtomicAtomicBoolean *) cast_chk(arg, [JavaUtilConcurrentAtomicAtomicBoolean class])))) get] ? 1 : 0);
+      return JavaLangInteger_valueOfWithInt_([((JavaUtilConcurrentAtomicAtomicBoolean *) nil_chk(((JavaUtilConcurrentAtomicAtomicBoolean *) arg))) get] ? 1 : 0);
     }
     else if ([arg isKindOfClass:[JavaLangEnum class]]) {
-      return [((JavaLangEnum *) nil_chk(((JavaLangEnum *) cast_chk(arg, [JavaLangEnum class])))) name];
+      return [((JavaLangEnum *) nil_chk(((JavaLangEnum *) arg))) name];
     }
     else if ([arg isKindOfClass:[JavaLangThreadLocal class]]) {
-      arg = [((JavaLangThreadLocal *) nil_chk(((JavaLangThreadLocal *) cast_chk(arg, [JavaLangThreadLocal class])))) get];
+      arg = [((JavaLangThreadLocal *) nil_chk(((JavaLangThreadLocal *) arg))) get];
     }
     else {
       return arg;
@@ -68,22 +68,24 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[3].selector = @selector(resolveCustomTypeWithId:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "resolveArgument", "LNSObject;", "canResolveCustomType", "resolveCustomType" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlDefaultArgumentResolver = { "DefaultArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlDefaultArgumentResolver;
+  static const J2ObjcClassInfo _SquiDBDefaultArgumentResolver = { "DefaultArgumentResolver", "com.yahoo.squidb.sql", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBDefaultArgumentResolver;
 }
 
 @end
 
-void ComYahooSquidbSqlDefaultArgumentResolver_init(ComYahooSquidbSqlDefaultArgumentResolver *self) {
+void SquiDBDefaultArgumentResolver_init(SquiDBDefaultArgumentResolver *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbSqlDefaultArgumentResolver *new_ComYahooSquidbSqlDefaultArgumentResolver_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlDefaultArgumentResolver, init)
+SquiDBDefaultArgumentResolver *new_SquiDBDefaultArgumentResolver_init() {
+  J2OBJC_NEW_IMPL(SquiDBDefaultArgumentResolver, init)
 }
 
-ComYahooSquidbSqlDefaultArgumentResolver *create_ComYahooSquidbSqlDefaultArgumentResolver_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlDefaultArgumentResolver, init)
+SquiDBDefaultArgumentResolver *create_SquiDBDefaultArgumentResolver_init() {
+  J2OBJC_CREATE_IMPL(SquiDBDefaultArgumentResolver, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlDefaultArgumentResolver)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDefaultArgumentResolver)
+
+J2OBJC_NAME_MAPPING(SquiDBDefaultArgumentResolver, "com.yahoo.squidb.sql", "SquiDB")

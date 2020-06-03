@@ -6,15 +6,15 @@
 #include "J2ObjC_source.h"
 #include "SQLiteCursorDriver.h"
 
-@interface ComYahooAndroidSqliteSQLiteCursorDriver : NSObject
+@interface SquiDBSQLiteCursorDriver : NSObject
 
 @end
 
-@implementation ComYahooAndroidSqliteSQLiteCursorDriver
+@implementation SquiDBSQLiteCursorDriver
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooSquidbDataICursor;", 0x401, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x401, 0, 1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 2, 3, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -23,17 +23,19 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(queryWithComYahooAndroidSqliteSQLiteDatabase_CursorFactory:withNSStringArray:);
+  methods[0].selector = @selector(queryWithSquiDBSQLiteDatabase_CursorFactory:withNSStringArray:);
   methods[1].selector = @selector(cursorDeactivated);
-  methods[2].selector = @selector(cursorRequeriedWithComYahooSquidbDataICursor:);
+  methods[2].selector = @selector(cursorRequeriedWithSquiDBICursor:);
   methods[3].selector = @selector(cursorClosed);
   methods[4].selector = @selector(setBindArgumentsWithNSStringArray:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "query", "LComYahooAndroidSqliteSQLiteDatabase_CursorFactory;[LNSString;", "cursorRequeried", "LComYahooSquidbDataICursor;", "setBindArguments", "[LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteCursorDriver = { "SQLiteCursorDriver", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteCursorDriver;
+  static const void *ptrTable[] = { "query", "LSquiDBSQLiteDatabase_CursorFactory;[LNSString;", "cursorRequeried", "LSquiDBICursor;", "setBindArguments", "[LNSString;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteCursorDriver = { "SQLiteCursorDriver", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteCursorDriver;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteCursorDriver)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBSQLiteCursorDriver)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteCursorDriver, "com.yahoo.android.sqlite", "SquiDB")

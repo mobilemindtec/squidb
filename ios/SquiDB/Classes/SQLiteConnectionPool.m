@@ -28,35 +28,35 @@
 #include "java/util/concurrent/atomic/AtomicBoolean.h"
 #include "java/util/concurrent/locks/LockSupport.h"
 
-@class ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;
+@class SquiDBSQLiteConnectionPool_ConnectionWaiter;
 
-@interface ComYahooAndroidSqliteSQLiteConnectionPool () {
+@interface SquiDBSQLiteConnectionPool () {
  @public
-  ComYahooAndroidSqliteCloseGuard *mCloseGuard_;
+  SquiDBCloseGuard *mCloseGuard_;
   id mLock_;
   JavaUtilConcurrentAtomicAtomicBoolean *mConnectionLeaked_;
-  ComYahooAndroidSqliteSQLiteDatabaseConfiguration *mConfiguration_;
+  SquiDBSQLiteDatabaseConfiguration *mConfiguration_;
   jint mMaxConnectionPoolSize_;
   jboolean mIsOpen_;
   jint mNextConnectionId_;
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *mConnectionWaiterPool_;
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *mConnectionWaiterQueue_;
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *mConnectionWaiterPool_;
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *mConnectionWaiterQueue_;
   JavaUtilArrayList *mAvailableNonPrimaryConnections_;
-  ComYahooAndroidSqliteSQLiteConnection *mAvailablePrimaryConnection_;
+  SquiDBSQLiteConnection *mAvailablePrimaryConnection_;
   JavaUtilWeakHashMap *mAcquiredConnections_;
 }
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration;
+- (instancetype)initWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration;
 
 - (void)open;
 
 - (void)disposeWithBoolean:(jboolean)finalized;
 
-- (jboolean)recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection
-      withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)status;
+- (jboolean)recycleConnectionLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection
+      withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)status;
 
-- (ComYahooAndroidSqliteSQLiteConnection *)openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration
-                                                                                                        withBoolean:(jboolean)primaryConnection;
+- (SquiDBSQLiteConnection *)openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration
+                                                                          withBoolean:(jboolean)primaryConnection;
 
 - (void)closeAvailableConnectionsAndLogExceptionsLocked;
 
@@ -64,31 +64,31 @@
 
 - (void)closeExcessConnectionsAndLogExceptionsLocked;
 
-- (void)closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection;
+- (void)closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection;
 
 - (void)discardAcquiredConnectionsLocked;
 
 - (void)reconfigureAllConnectionsLocked;
 
-- (void)markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)status;
+- (void)markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)status;
 
 + (jlong)uptimeMillis;
 
-- (ComYahooAndroidSqliteSQLiteConnection *)waitForConnectionWithNSString:(NSString *)sql
-                                                                 withInt:(jint)connectionFlags;
+- (SquiDBSQLiteConnection *)waitForConnectionWithNSString:(NSString *)sql
+                                                  withInt:(jint)connectionFlags;
 
 - (void)logConnectionPoolBusyLockedWithLong:(jlong)waitMillis
                                     withInt:(jint)connectionFlags;
 
 - (void)wakeConnectionWaitersLocked;
 
-- (ComYahooAndroidSqliteSQLiteConnection *)tryAcquirePrimaryConnectionLockedWithInt:(jint)connectionFlags;
+- (SquiDBSQLiteConnection *)tryAcquirePrimaryConnectionLockedWithInt:(jint)connectionFlags;
 
-- (ComYahooAndroidSqliteSQLiteConnection *)tryAcquireNonPrimaryConnectionLockedWithNSString:(NSString *)sql
-                                                                                    withInt:(jint)connectionFlags;
+- (SquiDBSQLiteConnection *)tryAcquireNonPrimaryConnectionLockedWithNSString:(NSString *)sql
+                                                                     withInt:(jint)connectionFlags;
 
-- (void)finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection
-                                                                       withInt:(jint)connectionFlags;
+- (void)finishAcquireConnectionLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection
+                                                        withInt:(jint)connectionFlags;
 
 - (jboolean)isSessionBlockingImportantConnectionWaitersLockedWithBoolean:(jboolean)holdingPrimaryConnection
                                                                  withInt:(jint)connectionFlags;
@@ -99,103 +99,103 @@
 
 - (void)throwIfClosedLocked;
 
-- (ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)obtainConnectionWaiterLockedWithJavaLangThread:(JavaLangThread *)thread
-                                                                                                      withLong:(jlong)startTime
-                                                                                                       withInt:(jint)priority
-                                                                                                   withBoolean:(jboolean)wantPrimaryConnection
-                                                                                                  withNSString:(NSString *)sql
-                                                                                                       withInt:(jint)connectionFlags;
+- (SquiDBSQLiteConnectionPool_ConnectionWaiter *)obtainConnectionWaiterLockedWithJavaLangThread:(JavaLangThread *)thread
+                                                                                       withLong:(jlong)startTime
+                                                                                        withInt:(jint)priority
+                                                                                    withBoolean:(jboolean)wantPrimaryConnection
+                                                                                   withNSString:(NSString *)sql
+                                                                                        withInt:(jint)connectionFlags;
 
-- (void)recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter:(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)waiter;
+- (void)recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter:(SquiDBSQLiteConnectionPool_ConnectionWaiter *)waiter;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mCloseGuard_, ComYahooAndroidSqliteCloseGuard *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mLock_, id)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mConnectionLeaked_, JavaUtilConcurrentAtomicAtomicBoolean *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mConfiguration_, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mConnectionWaiterPool_, ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mConnectionWaiterQueue_, ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mAvailableNonPrimaryConnections_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mAvailablePrimaryConnection_, ComYahooAndroidSqliteSQLiteConnection *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool, mAcquiredConnections_, JavaUtilWeakHashMap *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mCloseGuard_, SquiDBCloseGuard *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mLock_, id)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mConnectionLeaked_, JavaUtilConcurrentAtomicAtomicBoolean *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mConfiguration_, SquiDBSQLiteDatabaseConfiguration *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mConnectionWaiterPool_, SquiDBSQLiteConnectionPool_ConnectionWaiter *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mConnectionWaiterQueue_, SquiDBSQLiteConnectionPool_ConnectionWaiter *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mAvailableNonPrimaryConnections_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mAvailablePrimaryConnection_, SquiDBSQLiteConnection *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool, mAcquiredConnections_, JavaUtilWeakHashMap *)
 
-inline NSString *ComYahooAndroidSqliteSQLiteConnectionPool_get_TAG(void);
-static NSString *ComYahooAndroidSqliteSQLiteConnectionPool_TAG = @"SQLiteConnectionPool";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteConnectionPool, TAG, NSString *)
+inline NSString *SquiDBSQLiteConnectionPool_get_TAG(void);
+static NSString *SquiDBSQLiteConnectionPool_TAG = @"SQLiteConnectionPool";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteConnectionPool, TAG, NSString *)
 
-inline jlong ComYahooAndroidSqliteSQLiteConnectionPool_get_CONNECTION_POOL_BUSY_MILLIS(void);
-#define ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS 30000LL
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteSQLiteConnectionPool, CONNECTION_POOL_BUSY_MILLIS, jlong)
+inline jlong SquiDBSQLiteConnectionPool_get_CONNECTION_POOL_BUSY_MILLIS(void);
+#define SquiDBSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS 30000LL
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBSQLiteConnectionPool, CONNECTION_POOL_BUSY_MILLIS, jlong)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteDatabaseConfiguration *configuration);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool *new_ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteConnectionPool *new_SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *configuration) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool *create_ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration);
+__attribute__((unused)) static SquiDBSQLiteConnectionPool *create_SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *configuration);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_open(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_open(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jboolean finalized);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_disposeWithBoolean_(SquiDBSQLiteConnectionPool *self, jboolean finalized);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection, ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *status);
+__attribute__((unused)) static jboolean SquiDBSQLiteConnectionPool_recycleConnectionLockedWithSquiDBSQLiteConnection_withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection, SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *status);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration, jboolean primaryConnection);
+__attribute__((unused)) static SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteDatabaseConfiguration *configuration, jboolean primaryConnection);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_discardAcquiredConnectionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_discardAcquiredConnectionsLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_reconfigureAllConnectionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_reconfigureAllConnectionsLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *status);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *status);
 
-__attribute__((unused)) static jlong ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis(void);
+__attribute__((unused)) static jlong SquiDBSQLiteConnectionPool_uptimeMillis(void);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, NSString *sql, jint connectionFlags);
+__attribute__((unused)) static SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(SquiDBSQLiteConnectionPool *self, NSString *sql, jint connectionFlags);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jlong waitMillis, jint connectionFlags);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(SquiDBSQLiteConnectionPool *self, jlong waitMillis, jint connectionFlags);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jint connectionFlags);
+__attribute__((unused)) static SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(SquiDBSQLiteConnectionPool *self, jint connectionFlags);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, NSString *sql, jint connectionFlags);
+__attribute__((unused)) static SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(SquiDBSQLiteConnectionPool *self, NSString *sql, jint connectionFlags);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection, jint connectionFlags);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection, jint connectionFlags);
 
-__attribute__((unused)) static jboolean ComYahooAndroidSqliteSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jboolean holdingPrimaryConnection, jint connectionFlags);
+__attribute__((unused)) static jboolean SquiDBSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(SquiDBSQLiteConnectionPool *self, jboolean holdingPrimaryConnection, jint connectionFlags);
 
-__attribute__((unused)) static jint ComYahooAndroidSqliteSQLiteConnectionPool_getPriorityWithInt_(jint connectionFlags);
+__attribute__((unused)) static jint SquiDBSQLiteConnectionPool_getPriorityWithInt_(jint connectionFlags);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_throwIfClosedLocked(SquiDBSQLiteConnectionPool *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *ComYahooAndroidSqliteSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, JavaLangThread *thread, jlong startTime, jint priority, jboolean wantPrimaryConnection, NSString *sql, jint connectionFlags);
+__attribute__((unused)) static SquiDBSQLiteConnectionPool_ConnectionWaiter *SquiDBSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(SquiDBSQLiteConnectionPool *self, JavaLangThread *thread, jlong startTime, jint priority, jboolean wantPrimaryConnection, NSString *sql, jint connectionFlags);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter);
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *new_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *new_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-@interface ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter : NSObject {
+@interface SquiDBSQLiteConnectionPool_ConnectionWaiter : NSObject {
  @public
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *mNext_;
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *mNext_;
   JavaLangThread *mThread_;
   jlong mStartTime_;
   jint mPriority_;
   jboolean mWantPrimaryConnection_;
   NSString *mSql_;
   jint mConnectionFlags_;
-  ComYahooAndroidSqliteSQLiteConnection *mAssignedConnection_;
+  SquiDBSQLiteConnection *mAssignedConnection_;
   JavaLangRuntimeException *mException_;
   jint mNonce_;
 }
@@ -204,78 +204,78 @@ __attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool_Acquire
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteConnectionPool_ConnectionWaiter)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, mNext_, ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, mThread_, JavaLangThread *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, mSql_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, mAssignedConnection_, ComYahooAndroidSqliteSQLiteConnection *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, mException_, JavaLangRuntimeException *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool_ConnectionWaiter, mNext_, SquiDBSQLiteConnectionPool_ConnectionWaiter *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool_ConnectionWaiter, mThread_, JavaLangThread *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool_ConnectionWaiter, mSql_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool_ConnectionWaiter, mAssignedConnection_, SquiDBSQLiteConnection *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteConnectionPool_ConnectionWaiter, mException_, JavaLangRuntimeException *)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *self);
+__attribute__((unused)) static void SquiDBSQLiteConnectionPool_ConnectionWaiter_init(SquiDBSQLiteConnectionPool_ConnectionWaiter *self);
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *new_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSQLiteConnectionPool_ConnectionWaiter *new_SquiDBSQLiteConnectionPool_ConnectionWaiter_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *create_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init(void);
+__attribute__((unused)) static SquiDBSQLiteConnectionPool_ConnectionWaiter *create_SquiDBSQLiteConnectionPool_ConnectionWaiter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteConnectionPool_ConnectionWaiter)
 
-@implementation ComYahooAndroidSqliteSQLiteConnectionPool
+@implementation SquiDBSQLiteConnectionPool
 
 + (jint)CONNECTION_FLAG_READ_ONLY {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY;
+  return SquiDBSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY;
 }
 
 + (jint)CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY;
+  return SquiDBSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY;
 }
 
 + (jint)CONNECTION_FLAG_INTERACTIVE {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE;
+  return SquiDBSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE;
 }
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration {
-  ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(self, configuration);
+- (instancetype)initWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration {
+  SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(self, configuration);
   return self;
 }
 
 - (void)java_finalize {
   @try {
-    ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(self, true);
+    SquiDBSQLiteConnectionPool_disposeWithBoolean_(self, true);
   }
   @finally {
     [super java_finalize];
   }
 }
 
-+ (ComYahooAndroidSqliteSQLiteConnectionPool *)openWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_openWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(configuration);
++ (SquiDBSQLiteConnectionPool *)openWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration {
+  return SquiDBSQLiteConnectionPool_openWithSquiDBSQLiteDatabaseConfiguration_(configuration);
 }
 
 - (void)open {
-  ComYahooAndroidSqliteSQLiteConnectionPool_open(self);
+  SquiDBSQLiteConnectionPool_open(self);
 }
 
 - (void)close {
-  ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(self, false);
+  SquiDBSQLiteConnectionPool_disposeWithBoolean_(self, false);
 }
 
 - (void)disposeWithBoolean:(jboolean)finalized {
-  ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(self, finalized);
+  SquiDBSQLiteConnectionPool_disposeWithBoolean_(self, finalized);
 }
 
-- (void)reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration {
+- (void)reconfigureWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration {
   if (configuration == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"configuration must not be null.");
   }
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(self);
-    jboolean walModeChanged = ((configuration->openFlags_ ^ ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->openFlags_) & ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0;
+    SquiDBSQLiteConnectionPool_throwIfClosedLocked(self);
+    jboolean walModeChanged = ((configuration->openFlags_ ^ ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->openFlags_) & SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0;
     if (walModeChanged) {
       if (![((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) isEmpty]) {
         @throw new_JavaLangIllegalStateException_initWithNSString_(@"Write Ahead Logging (WAL) mode cannot be enabled or disabled while there are transactions in progress.  Finish all transactions and release all active database connections first.");
       }
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
+      SquiDBSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
       JreAssert([((JavaUtilArrayList *) nil_chk(mAvailableNonPrimaryConnections_)) isEmpty], @"com/yahoo/android/sqlite/SQLiteConnectionPool.java:269 condition failed: assert mAvailableNonPrimaryConnections.isEmpty();");
     }
     jboolean foreignKeyModeChanged = configuration->foreignKeyConstraintsEnabled_ != mConfiguration_->foreignKeyConstraintsEnabled_;
@@ -286,65 +286,65 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionW
     }
     if (mConfiguration_->openFlags_ != configuration->openFlags_) {
       if (walModeChanged) {
-        ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
+        SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
       }
-      ComYahooAndroidSqliteSQLiteConnection *newPrimaryConnection = ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(self, configuration, true);
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
-      ComYahooAndroidSqliteSQLiteConnectionPool_discardAcquiredConnectionsLocked(self);
+      SquiDBSQLiteConnection *newPrimaryConnection = SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(self, configuration, true);
+      SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
+      SquiDBSQLiteConnectionPool_discardAcquiredConnectionsLocked(self);
       mAvailablePrimaryConnection_ = newPrimaryConnection;
-      [mConfiguration_ updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:configuration];
-      ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
+      [mConfiguration_ updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:configuration];
+      SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
     }
     else {
-      [mConfiguration_ updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:configuration];
-      ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(self);
-      ComYahooAndroidSqliteSQLiteConnectionPool_reconfigureAllConnectionsLocked(self);
+      [mConfiguration_ updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:configuration];
+      SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
+      SquiDBSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(self);
+      SquiDBSQLiteConnectionPool_reconfigureAllConnectionsLocked(self);
     }
-    ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+    SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
   }
 }
 
-- (ComYahooAndroidSqliteSQLiteConnection *)acquireConnectionWithNSString:(NSString *)sql
-                                                                 withInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(self, sql, connectionFlags);
+- (SquiDBSQLiteConnection *)acquireConnectionWithNSString:(NSString *)sql
+                                                  withInt:(jint)connectionFlags {
+  return SquiDBSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(self, sql, connectionFlags);
 }
 
-- (void)releaseConnectionWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection {
+- (void)releaseConnectionWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection {
   @synchronized(mLock_) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *status = [((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) removeWithId:connection];
+    SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *status = [((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) removeWithId:connection];
     if (status == nil) {
       @throw new_JavaLangIllegalStateException_initWithNSString_(@"Cannot perform this operation because the specified connection was not acquired from this pool or has already been released.");
     }
     if (!mIsOpen_) {
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+      SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
     }
-    else if ([((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) isPrimaryConnection]) {
-      if (ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status)) {
+    else if ([((SquiDBSQLiteConnection *) nil_chk(connection)) isPrimaryConnection]) {
+      if (SquiDBSQLiteConnectionPool_recycleConnectionLockedWithSquiDBSQLiteConnection_withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status)) {
         JreAssert(mAvailablePrimaryConnection_ == nil, @"com/yahoo/android/sqlite/SQLiteConnectionPool.java:366 condition failed: assert mAvailablePrimaryConnection == null;");
         mAvailablePrimaryConnection_ = connection;
       }
-      ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+      SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
     }
     else if ([((JavaUtilArrayList *) nil_chk(mAvailableNonPrimaryConnections_)) size] >= mMaxConnectionPoolSize_ - 1) {
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+      SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
     }
     else {
-      if (ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status)) {
+      if (SquiDBSQLiteConnectionPool_recycleConnectionLockedWithSquiDBSQLiteConnection_withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status)) {
         [mAvailableNonPrimaryConnections_ addWithId:connection];
       }
-      ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+      SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
     }
   }
 }
 
-- (jboolean)recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection
-      withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)status {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status);
+- (jboolean)recycleConnectionLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection
+      withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)status {
+  return SquiDBSQLiteConnectionPool_recycleConnectionLockedWithSquiDBSQLiteConnection_withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, connection, status);
 }
 
-- (jboolean)shouldYieldConnectionWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection
-                                                                   withInt:(jint)connectionFlags {
+- (jboolean)shouldYieldConnectionWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection
+                                                    withInt:(jint)connectionFlags {
   @synchronized(mLock_) {
     if (![((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) containsKeyWithId:connection]) {
       @throw new_JavaLangIllegalStateException_initWithNSString_(@"Cannot perform this operation because the specified connection was not acquired from this pool or has already been released.");
@@ -352,7 +352,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionW
     if (!mIsOpen_) {
       return false;
     }
-    return ComYahooAndroidSqliteSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(self, [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) isPrimaryConnection], connectionFlags);
+    return SquiDBSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(self, [((SquiDBSQLiteConnection *) nil_chk(connection)) isPrimaryConnection], connectionFlags);
   }
 }
 
@@ -361,187 +361,187 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionW
     if (mAvailablePrimaryConnection_ != nil) {
       [mAvailablePrimaryConnection_ collectDbStatsWithJavaUtilArrayList:dbStatsList];
     }
-    for (ComYahooAndroidSqliteSQLiteConnection * __strong connection in nil_chk(mAvailableNonPrimaryConnections_)) {
-      [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) collectDbStatsWithJavaUtilArrayList:dbStatsList];
+    for (SquiDBSQLiteConnection * __strong connection in nil_chk(mAvailableNonPrimaryConnections_)) {
+      [((SquiDBSQLiteConnection *) nil_chk(connection)) collectDbStatsWithJavaUtilArrayList:dbStatsList];
     }
-    for (ComYahooAndroidSqliteSQLiteConnection * __strong connection in nil_chk([((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) keySet])) {
-      [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) collectDbStatsUnsafeWithJavaUtilArrayList:dbStatsList];
+    for (SquiDBSQLiteConnection * __strong connection in nil_chk([((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) keySet])) {
+      [((SquiDBSQLiteConnection *) nil_chk(connection)) collectDbStatsUnsafeWithJavaUtilArrayList:dbStatsList];
     }
   }
 }
 
-- (ComYahooAndroidSqliteSQLiteConnection *)openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)configuration
-                                                                                                        withBoolean:(jboolean)primaryConnection {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(self, configuration, primaryConnection);
+- (SquiDBSQLiteConnection *)openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)configuration
+                                                                          withBoolean:(jboolean)primaryConnection {
+  return SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(self, configuration, primaryConnection);
 }
 
 - (void)onConnectionLeaked {
-  ComYahooSquidbUtilityLogger_wWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$$$", @"A SQLiteConnection object for database '", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->label_, @"' was leaked!  Please fix your application to end transactions in progress properly and to close the database when it is no longer needed."));
+  SquiDBLogger_wWithNSString_withNSString_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$$$", @"A SQLiteConnection object for database '", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->label_, @"' was leaked!  Please fix your application to end transactions in progress properly and to close the database when it is no longer needed."));
   [((JavaUtilConcurrentAtomicAtomicBoolean *) nil_chk(mConnectionLeaked_)) setWithBoolean:true];
 }
 
 - (void)closeAvailableConnectionsAndLogExceptionsLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
+  SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
 }
 
 - (void)closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
+  SquiDBSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
 }
 
 - (void)closeExcessConnectionsAndLogExceptionsLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(self);
+  SquiDBSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(self);
 }
 
-- (void)closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection {
-  ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+- (void)closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection {
+  SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
 }
 
 - (void)discardAcquiredConnectionsLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_discardAcquiredConnectionsLocked(self);
+  SquiDBSQLiteConnectionPool_discardAcquiredConnectionsLocked(self);
 }
 
 - (void)reconfigureAllConnectionsLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_reconfigureAllConnectionsLocked(self);
+  SquiDBSQLiteConnectionPool_reconfigureAllConnectionsLocked(self);
 }
 
-- (void)markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)status {
-  ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, status);
+- (void)markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)status {
+  SquiDBSQLiteConnectionPool_markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, status);
 }
 
 + (jlong)uptimeMillis {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis();
+  return SquiDBSQLiteConnectionPool_uptimeMillis();
 }
 
-- (ComYahooAndroidSqliteSQLiteConnection *)waitForConnectionWithNSString:(NSString *)sql
-                                                                 withInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(self, sql, connectionFlags);
+- (SquiDBSQLiteConnection *)waitForConnectionWithNSString:(NSString *)sql
+                                                  withInt:(jint)connectionFlags {
+  return SquiDBSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(self, sql, connectionFlags);
 }
 
 - (void)logConnectionPoolBusyLockedWithLong:(jlong)waitMillis
                                     withInt:(jint)connectionFlags {
-  ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(self, waitMillis, connectionFlags);
+  SquiDBSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(self, waitMillis, connectionFlags);
 }
 
 - (void)wakeConnectionWaitersLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+  SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
 }
 
-- (ComYahooAndroidSqliteSQLiteConnection *)tryAcquirePrimaryConnectionLockedWithInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, connectionFlags);
+- (SquiDBSQLiteConnection *)tryAcquirePrimaryConnectionLockedWithInt:(jint)connectionFlags {
+  return SquiDBSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, connectionFlags);
 }
 
-- (ComYahooAndroidSqliteSQLiteConnection *)tryAcquireNonPrimaryConnectionLockedWithNSString:(NSString *)sql
-                                                                                    withInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, sql, connectionFlags);
+- (SquiDBSQLiteConnection *)tryAcquireNonPrimaryConnectionLockedWithNSString:(NSString *)sql
+                                                                     withInt:(jint)connectionFlags {
+  return SquiDBSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, sql, connectionFlags);
 }
 
-- (void)finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:(ComYahooAndroidSqliteSQLiteConnection *)connection
-                                                                       withInt:(jint)connectionFlags {
-  ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+- (void)finishAcquireConnectionLockedWithSquiDBSQLiteConnection:(SquiDBSQLiteConnection *)connection
+                                                        withInt:(jint)connectionFlags {
+  SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
 }
 
 - (jboolean)isSessionBlockingImportantConnectionWaitersLockedWithBoolean:(jboolean)holdingPrimaryConnection
                                                                  withInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(self, holdingPrimaryConnection, connectionFlags);
+  return SquiDBSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(self, holdingPrimaryConnection, connectionFlags);
 }
 
 + (jint)getPriorityWithInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
+  return SquiDBSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
 }
 
 - (void)setMaxConnectionPoolSizeLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
+  SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
 }
 
 - (void)throwIfClosedLocked {
-  ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(self);
+  SquiDBSQLiteConnectionPool_throwIfClosedLocked(self);
 }
 
-- (ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)obtainConnectionWaiterLockedWithJavaLangThread:(JavaLangThread *)thread
-                                                                                                      withLong:(jlong)startTime
-                                                                                                       withInt:(jint)priority
-                                                                                                   withBoolean:(jboolean)wantPrimaryConnection
-                                                                                                  withNSString:(NSString *)sql
-                                                                                                       withInt:(jint)connectionFlags {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(self, thread, startTime, priority, wantPrimaryConnection, sql, connectionFlags);
+- (SquiDBSQLiteConnectionPool_ConnectionWaiter *)obtainConnectionWaiterLockedWithJavaLangThread:(JavaLangThread *)thread
+                                                                                       withLong:(jlong)startTime
+                                                                                        withInt:(jint)priority
+                                                                                    withBoolean:(jboolean)wantPrimaryConnection
+                                                                                   withNSString:(NSString *)sql
+                                                                                        withInt:(jint)connectionFlags {
+  return SquiDBSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(self, thread, startTime, priority, wantPrimaryConnection, sql, connectionFlags);
 }
 
-- (void)recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter:(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *)waiter {
-  ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_(self, waiter);
+- (void)recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter:(SquiDBSQLiteConnectionPool_ConnectionWaiter *)waiter {
+  SquiDBSQLiteConnectionPool_recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter_(self, waiter);
 }
 
-- (void)dumpWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                 withBoolean:(jboolean)verbose {
-  id<ComYahooAndroidSqlitePrinter> indentedPrinter = ComYahooAndroidSqlitePrefixPrinter_createWithComYahooAndroidSqlitePrinter_withNSString_(printer, @"    ");
+- (void)dumpWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                  withBoolean:(jboolean)verbose {
+  id<SquiDBPrinter> indentedPrinter = SquiDBPrefixPrinter_createWithSquiDBPrinter_withNSString_(printer, @"    ");
   @synchronized(mLock_) {
-    [((id<ComYahooAndroidSqlitePrinter>) nil_chk(printer)) printlnWithNSString:JreStrcat("$$C", @"Connection pool for ", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->path_, ':')];
+    [((id<SquiDBPrinter>) nil_chk(printer)) printlnWithNSString:JreStrcat("$$C", @"Connection pool for ", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->path_, ':')];
     [printer printlnWithNSString:JreStrcat("$Z", @"  Open: ", mIsOpen_)];
     [printer printlnWithNSString:JreStrcat("$I", @"  Max connections: ", mMaxConnectionPoolSize_)];
     [printer printlnWithNSString:@"  Available primary connection:"];
     if (mAvailablePrimaryConnection_ != nil) {
-      [mAvailablePrimaryConnection_ dumpWithComYahooAndroidSqlitePrinter:indentedPrinter withBoolean:verbose];
+      [mAvailablePrimaryConnection_ dumpWithSquiDBPrinter:indentedPrinter withBoolean:verbose];
     }
     else {
-      [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
+      [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
     }
     [printer printlnWithNSString:@"  Available non-primary connections:"];
     if (![((JavaUtilArrayList *) nil_chk(mAvailableNonPrimaryConnections_)) isEmpty]) {
       jint count = [mAvailableNonPrimaryConnections_ size];
       for (jint i = 0; i < count; i++) {
-        [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk([mAvailableNonPrimaryConnections_ getWithInt:i])) dumpWithComYahooAndroidSqlitePrinter:indentedPrinter withBoolean:verbose];
+        [((SquiDBSQLiteConnection *) nil_chk([mAvailableNonPrimaryConnections_ getWithInt:i])) dumpWithSquiDBPrinter:indentedPrinter withBoolean:verbose];
       }
     }
     else {
-      [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
+      [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
     }
     [printer printlnWithNSString:@"  Acquired connections:"];
     if (![((JavaUtilWeakHashMap *) nil_chk(mAcquiredConnections_)) isEmpty]) {
       for (id<JavaUtilMap_Entry> __strong entry_ in nil_chk([mAcquiredConnections_ entrySet])) {
-        ComYahooAndroidSqliteSQLiteConnection *connection = [((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey];
-        [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) dumpUnsafeWithComYahooAndroidSqlitePrinter:indentedPrinter withBoolean:verbose];
-        [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:JreStrcat("$@", @"  Status: ", [entry_ getValue])];
+        SquiDBSQLiteConnection *connection = [((id<JavaUtilMap_Entry>) nil_chk(entry_)) getKey];
+        [((SquiDBSQLiteConnection *) nil_chk(connection)) dumpUnsafeWithSquiDBPrinter:indentedPrinter withBoolean:verbose];
+        [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:JreStrcat("$@", @"  Status: ", [entry_ getValue])];
       }
     }
     else {
-      [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
+      [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
     }
     [printer printlnWithNSString:@"  Connection waiters:"];
     if (mConnectionWaiterQueue_ != nil) {
       jint i = 0;
-      jlong now = ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis();
-      for (ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter = mConnectionWaiterQueue_; waiter != nil; waiter = waiter->mNext_, i++) {
-        [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:JreStrcat("I$F$@$I$$C", i, @": waited for ", ((now - waiter->mStartTime_) * 0.001f), @" ms - thread=", waiter->mThread_, @", priority=", waiter->mPriority_, @", sql='", waiter->mSql_, '\'')];
+      jlong now = SquiDBSQLiteConnectionPool_uptimeMillis();
+      for (SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter = mConnectionWaiterQueue_; waiter != nil; waiter = waiter->mNext_, i++) {
+        [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:JreStrcat("I$F$@$I$$C", i, @": waited for ", ((now - waiter->mStartTime_) * 0.001f), @" ms - thread=", waiter->mThread_, @", priority=", waiter->mPriority_, @", sql='", waiter->mSql_, '\'')];
       }
     }
     else {
-      [((id<ComYahooAndroidSqlitePrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
+      [((id<SquiDBPrinter>) nil_chk(indentedPrinter)) printlnWithNSString:@"<none>"];
     }
   }
 }
 
 - (NSString *)description {
-  return JreStrcat("$$", @"SQLiteConnectionPool: ", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->path_);
+  return JreStrcat("$$", @"SQLiteConnectionPool: ", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(mConfiguration_))->path_);
 }
 
 - (void)dealloc {
-  JreCheckFinalize(self, [ComYahooAndroidSqliteSQLiteConnectionPool class]);
+  JreCheckFinalize(self, [SquiDBSQLiteConnectionPool class]);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x4, 1, -1, 2, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnectionPool;", 0x9, 3, 0, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnectionPool;", 0x9, 3, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 4, 5, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 6, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnection;", 0x1, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnection;", 0x1, 7, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 9, 10, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 11, 12, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, 13, 14, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 15, 16, -1, 17, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnection;", 0x2, 18, 19, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnection;", 0x2, 18, 19, -1, -1, -1, -1 },
     { NULL, "V", 0x0, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
@@ -551,17 +551,17 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionW
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 21, 22, -1, -1, -1, -1 },
     { NULL, "J", 0x10a, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnection;", 0x2, 23, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnection;", 0x2, 23, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 24, 25, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnection;", 0x2, 26, 27, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnection;", 0x2, 28, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnection;", 0x2, 26, 27, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnection;", 0x2, 28, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 29, 14, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 30, 31, -1, -1, -1, -1 },
     { NULL, "I", 0xa, 32, 27, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;", 0x2, 33, 34, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnectionPool_ConnectionWaiter;", 0x2, 33, 34, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 35, 36, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 37, 38, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 39, -1, -1, -1, -1, -1 },
@@ -569,105 +569,105 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionW
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteDatabaseConfiguration:);
   methods[1].selector = @selector(java_finalize);
-  methods[2].selector = @selector(openWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:);
+  methods[2].selector = @selector(openWithSquiDBSQLiteDatabaseConfiguration:);
   methods[3].selector = @selector(open);
   methods[4].selector = @selector(close);
   methods[5].selector = @selector(disposeWithBoolean:);
-  methods[6].selector = @selector(reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:);
+  methods[6].selector = @selector(reconfigureWithSquiDBSQLiteDatabaseConfiguration:);
   methods[7].selector = @selector(acquireConnectionWithNSString:withInt:);
-  methods[8].selector = @selector(releaseConnectionWithComYahooAndroidSqliteSQLiteConnection:);
-  methods[9].selector = @selector(recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:);
-  methods[10].selector = @selector(shouldYieldConnectionWithComYahooAndroidSqliteSQLiteConnection:withInt:);
+  methods[8].selector = @selector(releaseConnectionWithSquiDBSQLiteConnection:);
+  methods[9].selector = @selector(recycleConnectionLockedWithSquiDBSQLiteConnection:withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:);
+  methods[10].selector = @selector(shouldYieldConnectionWithSquiDBSQLiteConnection:withInt:);
   methods[11].selector = @selector(collectDbStatsWithJavaUtilArrayList:);
-  methods[12].selector = @selector(openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:withBoolean:);
+  methods[12].selector = @selector(openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration:withBoolean:);
   methods[13].selector = @selector(onConnectionLeaked);
   methods[14].selector = @selector(closeAvailableConnectionsAndLogExceptionsLocked);
   methods[15].selector = @selector(closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked);
   methods[16].selector = @selector(closeExcessConnectionsAndLogExceptionsLocked);
-  methods[17].selector = @selector(closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection:);
+  methods[17].selector = @selector(closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection:);
   methods[18].selector = @selector(discardAcquiredConnectionsLocked);
   methods[19].selector = @selector(reconfigureAllConnectionsLocked);
-  methods[20].selector = @selector(markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus:);
+  methods[20].selector = @selector(markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus:);
   methods[21].selector = @selector(uptimeMillis);
   methods[22].selector = @selector(waitForConnectionWithNSString:withInt:);
   methods[23].selector = @selector(logConnectionPoolBusyLockedWithLong:withInt:);
   methods[24].selector = @selector(wakeConnectionWaitersLocked);
   methods[25].selector = @selector(tryAcquirePrimaryConnectionLockedWithInt:);
   methods[26].selector = @selector(tryAcquireNonPrimaryConnectionLockedWithNSString:withInt:);
-  methods[27].selector = @selector(finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection:withInt:);
+  methods[27].selector = @selector(finishAcquireConnectionLockedWithSquiDBSQLiteConnection:withInt:);
   methods[28].selector = @selector(isSessionBlockingImportantConnectionWaitersLockedWithBoolean:withInt:);
   methods[29].selector = @selector(getPriorityWithInt:);
   methods[30].selector = @selector(setMaxConnectionPoolSizeLocked);
   methods[31].selector = @selector(throwIfClosedLocked);
   methods[32].selector = @selector(obtainConnectionWaiterLockedWithJavaLangThread:withLong:withInt:withBoolean:withNSString:withInt:);
-  methods[33].selector = @selector(recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter:);
-  methods[34].selector = @selector(dumpWithComYahooAndroidSqlitePrinter:withBoolean:);
+  methods[33].selector = @selector(recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter:);
+  methods[34].selector = @selector(dumpWithSquiDBPrinter:withBoolean:);
   methods[35].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 40, -1, -1 },
-    { "CONNECTION_POOL_BUSY_MILLIS", "J", .constantValue.asLong = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS, 0x1a, -1, -1, -1, -1 },
-    { "mCloseGuard_", "LComYahooAndroidSqliteCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "CONNECTION_POOL_BUSY_MILLIS", "J", .constantValue.asLong = SquiDBSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS, 0x1a, -1, -1, -1, -1 },
+    { "mCloseGuard_", "LSquiDBCloseGuard;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mLock_", "LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mConnectionLeaked_", "LJavaUtilConcurrentAtomicAtomicBoolean;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "mConfiguration_", "LComYahooAndroidSqliteSQLiteDatabaseConfiguration;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mConfiguration_", "LSquiDBSQLiteDatabaseConfiguration;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mMaxConnectionPoolSize_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mIsOpen_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mNextConnectionId_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "mConnectionWaiterPool_", "LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "mConnectionWaiterQueue_", "LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mConnectionWaiterPool_", "LSquiDBSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mConnectionWaiterQueue_", "LSquiDBSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mAvailableNonPrimaryConnections_", "LJavaUtilArrayList;", .constantValue.asLong = 0, 0x12, -1, -1, 41, -1 },
-    { "mAvailablePrimaryConnection_", "LComYahooAndroidSqliteSQLiteConnection;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "mAvailablePrimaryConnection_", "LSquiDBSQLiteConnection;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "mAcquiredConnections_", "LJavaUtilWeakHashMap;", .constantValue.asLong = 0, 0x12, -1, -1, 42, -1 },
-    { "CONNECTION_FLAG_READ_ONLY", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY, 0x19, -1, -1, -1, -1 },
-    { "CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY, 0x19, -1, -1, -1, -1 },
-    { "CONNECTION_FLAG_INTERACTIVE", "I", .constantValue.asInt = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE, 0x19, -1, -1, -1, -1 },
+    { "CONNECTION_FLAG_READ_ONLY", "I", .constantValue.asInt = SquiDBSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY, 0x19, -1, -1, -1, -1 },
+    { "CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY", "I", .constantValue.asInt = SquiDBSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY, 0x19, -1, -1, -1, -1 },
+    { "CONNECTION_FLAG_INTERACTIVE", "I", .constantValue.asInt = SquiDBSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE, 0x19, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteDatabaseConfiguration;", "finalize", "LJavaLangThrowable;", "open", "dispose", "Z", "reconfigure", "acquireConnection", "LNSString;I", "releaseConnection", "LComYahooAndroidSqliteSQLiteConnection;", "recycleConnectionLocked", "LComYahooAndroidSqliteSQLiteConnection;LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", "shouldYieldConnection", "LComYahooAndroidSqliteSQLiteConnection;I", "collectDbStats", "LJavaUtilArrayList;", "(Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;)V", "openConnectionLocked", "LComYahooAndroidSqliteSQLiteDatabaseConfiguration;Z", "closeConnectionAndLogExceptionsLocked", "markAcquiredConnectionsLocked", "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", "waitForConnection", "logConnectionPoolBusyLocked", "JI", "tryAcquirePrimaryConnectionLocked", "I", "tryAcquireNonPrimaryConnectionLocked", "finishAcquireConnectionLocked", "isSessionBlockingImportantConnectionWaitersLocked", "ZI", "getPriority", "obtainConnectionWaiterLocked", "LJavaLangThread;JIZLNSString;I", "recycleConnectionWaiterLocked", "LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;", "dump", "LComYahooAndroidSqlitePrinter;Z", "toString", &ComYahooAndroidSqliteSQLiteConnectionPool_TAG, "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteConnection;>;", "Ljava/util/WeakHashMap<Lcom/yahoo/android/sqlite/SQLiteConnection;Lcom/yahoo/android/sqlite/SQLiteConnectionPool$AcquiredConnectionStatus;>;", "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteConnectionPool = { "SQLiteConnectionPool", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 36, 17, -1, 43, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteConnectionPool;
+  static const void *ptrTable[] = { "LSquiDBSQLiteDatabaseConfiguration;", "finalize", "LJavaLangThrowable;", "open", "dispose", "Z", "reconfigure", "acquireConnection", "LNSString;I", "releaseConnection", "LSquiDBSQLiteConnection;", "recycleConnectionLocked", "LSquiDBSQLiteConnection;LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", "shouldYieldConnection", "LSquiDBSQLiteConnection;I", "collectDbStats", "LJavaUtilArrayList;", "(Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteDebug$DbStats;>;)V", "openConnectionLocked", "LSquiDBSQLiteDatabaseConfiguration;Z", "closeConnectionAndLogExceptionsLocked", "markAcquiredConnectionsLocked", "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", "waitForConnection", "logConnectionPoolBusyLocked", "JI", "tryAcquirePrimaryConnectionLocked", "I", "tryAcquireNonPrimaryConnectionLocked", "finishAcquireConnectionLocked", "isSessionBlockingImportantConnectionWaitersLocked", "ZI", "getPriority", "obtainConnectionWaiterLocked", "LJavaLangThread;JIZLNSString;I", "recycleConnectionWaiterLocked", "LSquiDBSQLiteConnectionPool_ConnectionWaiter;", "dump", "LSquiDBPrinter;Z", "toString", &SquiDBSQLiteConnectionPool_TAG, "Ljava/util/ArrayList<Lcom/yahoo/android/sqlite/SQLiteConnection;>;", "Ljava/util/WeakHashMap<Lcom/yahoo/android/sqlite/SQLiteConnection;Lcom/yahoo/android/sqlite/SQLiteConnectionPool$AcquiredConnectionStatus;>;", "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;LSquiDBSQLiteConnectionPool_ConnectionWaiter;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteConnectionPool = { "SQLiteConnectionPool", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 36, 17, -1, 43, -1, -1, -1 };
+  return &_SquiDBSQLiteConnectionPool;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration) {
+void SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteDatabaseConfiguration *configuration) {
   NSObject_init(self);
-  self->mCloseGuard_ = ComYahooAndroidSqliteCloseGuard_get();
+  self->mCloseGuard_ = SquiDBCloseGuard_get();
   self->mLock_ = new_NSObject_init();
   self->mConnectionLeaked_ = new_JavaUtilConcurrentAtomicAtomicBoolean_init();
   self->mAvailableNonPrimaryConnections_ = new_JavaUtilArrayList_init();
   self->mAcquiredConnections_ = new_JavaUtilWeakHashMap_init();
-  self->mConfiguration_ = new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(configuration);
-  ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
+  self->mConfiguration_ = new_SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(configuration);
+  SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(self);
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool *new_ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteConnectionPool, initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_, configuration)
+SquiDBSQLiteConnectionPool *new_SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *configuration) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteConnectionPool, initWithSquiDBSQLiteDatabaseConfiguration_, configuration)
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool *create_ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteConnectionPool, initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_, configuration)
+SquiDBSQLiteConnectionPool *create_SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *configuration) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteConnectionPool, initWithSquiDBSQLiteDatabaseConfiguration_, configuration)
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool *ComYahooAndroidSqliteSQLiteConnectionPool_openWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_initialize();
+SquiDBSQLiteConnectionPool *SquiDBSQLiteConnectionPool_openWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *configuration) {
+  SquiDBSQLiteConnectionPool_initialize();
   if (configuration == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"configuration must not be null.");
   }
-  ComYahooAndroidSqliteSQLiteConnectionPool *pool = new_ComYahooAndroidSqliteSQLiteConnectionPool_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(configuration);
-  ComYahooAndroidSqliteSQLiteConnectionPool_open(pool);
+  SquiDBSQLiteConnectionPool *pool = new_SquiDBSQLiteConnectionPool_initWithSquiDBSQLiteDatabaseConfiguration_(configuration);
+  SquiDBSQLiteConnectionPool_open(pool);
   return pool;
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_open(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
-  self->mAvailablePrimaryConnection_ = ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, true);
+void SquiDBSQLiteConnectionPool_open(SquiDBSQLiteConnectionPool *self) {
+  self->mAvailablePrimaryConnection_ = SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, true);
   self->mIsOpen_ = true;
-  [((ComYahooAndroidSqliteCloseGuard *) nil_chk(self->mCloseGuard_)) openWithNSString:@"close"];
+  [((SquiDBCloseGuard *) nil_chk(self->mCloseGuard_)) openWithNSString:@"close"];
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jboolean finalized) {
+void SquiDBSQLiteConnectionPool_disposeWithBoolean_(SquiDBSQLiteConnectionPool *self, jboolean finalized) {
   if (self->mCloseGuard_ != nil) {
     if (finalized) {
       [self->mCloseGuard_ warnIfOpen];
@@ -676,110 +676,110 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_disposeWithBoolean_(ComYahooAndro
   }
   if (!finalized) {
     @synchronized(self->mLock_) {
-      ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(self);
+      SquiDBSQLiteConnectionPool_throwIfClosedLocked(self);
       self->mIsOpen_ = false;
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
+      SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(self);
       jint pendingCount = [((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) size];
       if (pendingCount != 0) {
-        ComYahooSquidbUtilityLogger_iWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$$$I$", @"The connection pool for ", ((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->label_, @" has been closed but there are still ", pendingCount, @" connections in use.  They will be closed as they are released back to the pool."));
+        SquiDBLogger_iWithNSString_withNSString_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$$$I$", @"The connection pool for ", ((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->label_, @" has been closed but there are still ", pendingCount, @" connections in use.  They will be closed as they are released back to the pool."));
       }
-      ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+      SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
     }
   }
 }
 
-jboolean ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection, ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *status) {
-  if (status == JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE)) {
+jboolean SquiDBSQLiteConnectionPool_recycleConnectionLockedWithSquiDBSQLiteConnection_withSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection, SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *status) {
+  if (status == JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE)) {
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:self->mConfiguration_];
+      [((SquiDBSQLiteConnection *) nil_chk(connection)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:self->mConfiguration_];
     }
     @catch (JavaLangRuntimeException *ex) {
-      ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure released connection, closing it: ", connection), ex);
-      status = JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD);
+      SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure released connection, closing it: ", connection), ex);
+      status = JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD);
     }
   }
-  if (status == JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD)) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+  if (status == JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD)) {
+    SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
     return false;
   }
   return true;
 }
 
-ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *configuration, jboolean primaryConnection) {
+SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteDatabaseConfiguration *configuration, jboolean primaryConnection) {
   jint connectionId = self->mNextConnectionId_++;
-  return ComYahooAndroidSqliteSQLiteConnection_openWithComYahooAndroidSqliteSQLiteConnectionPool_withComYahooAndroidSqliteSQLiteDatabaseConfiguration_withInt_withBoolean_(self, configuration, connectionId, primaryConnection);
+  return SquiDBSQLiteConnection_openWithSquiDBSQLiteConnectionPool_withSquiDBSQLiteDatabaseConfiguration_withInt_withBoolean_(self, configuration, connectionId, primaryConnection);
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
+void SquiDBSQLiteConnectionPool_closeAvailableConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self) {
+  SquiDBSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(self);
   if (self->mAvailablePrimaryConnection_ != nil) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, self->mAvailablePrimaryConnection_);
+    SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, self->mAvailablePrimaryConnection_);
     self->mAvailablePrimaryConnection_ = nil;
   }
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
+void SquiDBSQLiteConnectionPool_closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self) {
   jint count = [((JavaUtilArrayList *) nil_chk(self->mAvailableNonPrimaryConnections_)) size];
   for (jint i = 0; i < count; i++) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, [self->mAvailableNonPrimaryConnections_ getWithInt:i]);
+    SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, [self->mAvailableNonPrimaryConnections_ getWithInt:i]);
   }
   [self->mAvailableNonPrimaryConnections_ clear];
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
+void SquiDBSQLiteConnectionPool_closeExcessConnectionsAndLogExceptionsLocked(SquiDBSQLiteConnectionPool *self) {
   jint availableCount = [((JavaUtilArrayList *) nil_chk(self->mAvailableNonPrimaryConnections_)) size];
   while (availableCount-- > self->mMaxConnectionPoolSize_ - 1) {
-    ComYahooAndroidSqliteSQLiteConnection *connection = [self->mAvailableNonPrimaryConnections_ removeWithInt:availableCount];
-    ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+    SquiDBSQLiteConnection *connection = [self->mAvailableNonPrimaryConnections_ removeWithInt:availableCount];
+    SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
   }
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection) {
+void SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection) {
   @try {
-    [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) close];
+    [((SquiDBSQLiteConnection *) nil_chk(connection)) close];
   }
   @catch (JavaLangRuntimeException *ex) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to close connection, its fate is now in the hands of the merciful GC: ", connection), ex);
+    SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to close connection, its fate is now in the hands of the merciful GC: ", connection), ex);
   }
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_discardAcquiredConnectionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD));
+void SquiDBSQLiteConnectionPool_discardAcquiredConnectionsLocked(SquiDBSQLiteConnectionPool *self) {
+  SquiDBSQLiteConnectionPool_markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD));
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_reconfigureAllConnectionsLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
+void SquiDBSQLiteConnectionPool_reconfigureAllConnectionsLocked(SquiDBSQLiteConnectionPool *self) {
   if (self->mAvailablePrimaryConnection_ != nil) {
     @try {
-      [self->mAvailablePrimaryConnection_ reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:self->mConfiguration_];
+      [self->mAvailablePrimaryConnection_ reconfigureWithSquiDBSQLiteDatabaseConfiguration:self->mConfiguration_];
     }
     @catch (JavaLangRuntimeException *ex) {
-      ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure available primary connection, closing it: ", self->mAvailablePrimaryConnection_), ex);
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, self->mAvailablePrimaryConnection_);
+      SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure available primary connection, closing it: ", self->mAvailablePrimaryConnection_), ex);
+      SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, self->mAvailablePrimaryConnection_);
       self->mAvailablePrimaryConnection_ = nil;
     }
   }
   jint count = [((JavaUtilArrayList *) nil_chk(self->mAvailableNonPrimaryConnections_)) size];
   for (jint i = 0; i < count; i++) {
-    ComYahooAndroidSqliteSQLiteConnection *connection = [self->mAvailableNonPrimaryConnections_ getWithInt:i];
+    SquiDBSQLiteConnection *connection = [self->mAvailableNonPrimaryConnections_ getWithInt:i];
     @try {
-      [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) reconfigureWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:self->mConfiguration_];
+      [((SquiDBSQLiteConnection *) nil_chk(connection)) reconfigureWithSquiDBSQLiteDatabaseConfiguration:self->mConfiguration_];
     }
     @catch (JavaLangRuntimeException *ex) {
-      ComYahooSquidbUtilityLogger_eWithNSString_withNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure available non-primary connection, closing it: ", connection), ex);
-      ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+      SquiDBLogger_eWithNSString_withNSString_withJavaLangThrowable_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$@", @"Failed to reconfigure available non-primary connection, closing it: ", connection), ex);
+      SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
       (void) [self->mAvailableNonPrimaryConnections_ removeWithInt:i--];
       count -= 1;
     }
   }
-  ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(self, JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE));
+  SquiDBSQLiteConnectionPool_markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(self, JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE));
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWithComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *status) {
+void SquiDBSQLiteConnectionPool_markAcquiredConnectionsLockedWithSquiDBSQLiteConnectionPool_AcquiredConnectionStatus_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *status) {
   if (![((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) isEmpty]) {
     JavaUtilArrayList *keysToUpdate = new_JavaUtilArrayList_initWithInt_([self->mAcquiredConnections_ size]);
     for (id<JavaUtilMap_Entry> __strong entry_ in nil_chk([self->mAcquiredConnections_ entrySet])) {
-      ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *oldStatus = [((id<JavaUtilMap_Entry>) nil_chk(entry_)) getValue];
-      if (status != oldStatus && oldStatus != JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD)) {
+      SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *oldStatus = [((id<JavaUtilMap_Entry>) nil_chk(entry_)) getValue];
+      if (status != oldStatus && oldStatus != JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD)) {
         [keysToUpdate addWithId:[entry_ getKey]];
       }
     }
@@ -790,35 +790,35 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_markAcquiredConnectionsLockedWith
   }
 }
 
-jlong ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis() {
-  ComYahooAndroidSqliteSQLiteConnectionPool_initialize();
+jlong SquiDBSQLiteConnectionPool_uptimeMillis() {
+  SquiDBSQLiteConnectionPool_initialize();
   return (long) [[NSProcessInfo processInfo] systemUptime] * 1000;
 }
 
-ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, NSString *sql, jint connectionFlags) {
-  jboolean wantPrimaryConnection = (connectionFlags & ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY) != 0;
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter;
+SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_waitForConnectionWithNSString_withInt_(SquiDBSQLiteConnectionPool *self, NSString *sql, jint connectionFlags) {
+  jboolean wantPrimaryConnection = (connectionFlags & SquiDBSQLiteConnectionPool_CONNECTION_FLAG_PRIMARY_CONNECTION_AFFINITY) != 0;
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter;
   jint nonce;
   @synchronized(self->mLock_) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(self);
-    ComYahooAndroidSqliteSQLiteConnection *connection = nil;
+    SquiDBSQLiteConnectionPool_throwIfClosedLocked(self);
+    SquiDBSQLiteConnection *connection = nil;
     if (!wantPrimaryConnection) {
-      connection = ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, sql, connectionFlags);
+      connection = SquiDBSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, sql, connectionFlags);
     }
     if (connection == nil) {
-      connection = ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, connectionFlags);
+      connection = SquiDBSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, connectionFlags);
     }
     if (connection != nil) {
       return connection;
     }
-    jint priority = ComYahooAndroidSqliteSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
-    jlong startTime = ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis();
-    waiter = ComYahooAndroidSqliteSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(self, JavaLangThread_currentThread(), startTime, priority, wantPrimaryConnection, sql, connectionFlags);
-    ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *predecessor = nil;
-    ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *successor = self->mConnectionWaiterQueue_;
+    jint priority = SquiDBSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
+    jlong startTime = SquiDBSQLiteConnectionPool_uptimeMillis();
+    waiter = SquiDBSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(self, JavaLangThread_currentThread(), startTime, priority, wantPrimaryConnection, sql, connectionFlags);
+    SquiDBSQLiteConnectionPool_ConnectionWaiter *predecessor = nil;
+    SquiDBSQLiteConnectionPool_ConnectionWaiter *successor = self->mConnectionWaiterQueue_;
     while (successor != nil) {
       if (priority > successor->mPriority_) {
-        ((ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNext_ = successor;
+        ((SquiDBSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNext_ = successor;
         break;
       }
       predecessor = successor;
@@ -830,37 +830,37 @@ ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool
     else {
       self->mConnectionWaiterQueue_ = waiter;
     }
-    nonce = ((ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNonce_;
+    nonce = ((SquiDBSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNonce_;
   }
   @try {
-    jlong busyTimeoutMillis = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS;
+    jlong busyTimeoutMillis = SquiDBSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS;
     jlong nextBusyTimeoutTime = waiter->mStartTime_ + busyTimeoutMillis;
     for (; ; ) {
       if ([((JavaUtilConcurrentAtomicAtomicBoolean *) nil_chk(self->mConnectionLeaked_)) compareAndSetWithBoolean:true withBoolean:false]) {
         @synchronized(self->mLock_) {
-          ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
+          SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(self);
         }
       }
       JavaUtilConcurrentLocksLockSupport_parkNanosWithId_withLong_(self, busyTimeoutMillis * 1000000LL);
       JavaLangThread_interrupted();
       @synchronized(self->mLock_) {
-        ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(self);
-        ComYahooAndroidSqliteSQLiteConnection *connection = waiter->mAssignedConnection_;
+        SquiDBSQLiteConnectionPool_throwIfClosedLocked(self);
+        SquiDBSQLiteConnection *connection = waiter->mAssignedConnection_;
         JavaLangRuntimeException *ex = waiter->mException_;
         if (connection != nil || ex != nil) {
-          ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_(self, waiter);
+          SquiDBSQLiteConnectionPool_recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter_(self, waiter);
           if (connection != nil) {
             return connection;
           }
           @throw nil_chk(ex);
         }
-        jlong now = ComYahooAndroidSqliteSQLiteConnectionPool_uptimeMillis();
+        jlong now = SquiDBSQLiteConnectionPool_uptimeMillis();
         if (now < nextBusyTimeoutTime) {
           busyTimeoutMillis = now - nextBusyTimeoutTime;
         }
         else {
-          ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(self, now - waiter->mStartTime_, connectionFlags);
-          busyTimeoutMillis = ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS;
+          SquiDBSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(self, now - waiter->mStartTime_, connectionFlags);
+          busyTimeoutMillis = SquiDBSQLiteConnectionPool_CONNECTION_POOL_BUSY_MILLIS;
           nextBusyTimeoutTime = now + busyTimeoutMillis;
         }
       }
@@ -870,10 +870,10 @@ ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool
   }
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jlong waitMillis, jint connectionFlags) {
+void SquiDBSQLiteConnectionPool_logConnectionPoolBusyLockedWithLong_withInt_(SquiDBSQLiteConnectionPool *self, jlong waitMillis, jint connectionFlags) {
   JavaLangThread *thread = JavaLangThread_currentThread();
   JavaLangStringBuilder *msg = new_JavaLangStringBuilder_init();
-  (void) [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"The connection pool for database '"])) appendWithNSString:((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->label_];
+  (void) [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"The connection pool for database '"])) appendWithNSString:((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->label_];
   (void) [msg appendWithNSString:@"' has been unable to grant a connection to thread "];
   (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([msg appendWithLong:[((JavaLangThread *) nil_chk(thread)) getId]])) appendWithNSString:@" ("])) appendWithNSString:[thread getName]])) appendWithNSString:@") "];
   (void) [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"with flags 0x"])) appendWithNSString:JavaLangInteger_toHexStringWithInt_(connectionFlags)];
@@ -882,8 +882,8 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLo
   jint activeConnections = 0;
   jint idleConnections = 0;
   if (![((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) isEmpty]) {
-    for (ComYahooAndroidSqliteSQLiteConnection * __strong connection in nil_chk([self->mAcquiredConnections_ keySet])) {
-      NSString *description_ = [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) describeCurrentOperationUnsafe];
+    for (SquiDBSQLiteConnection * __strong connection in nil_chk([self->mAcquiredConnections_ keySet])) {
+      NSString *description_ = [((SquiDBSQLiteConnection *) nil_chk(connection)) describeCurrentOperationUnsafe];
       if (description_ != nil) {
         [requests addWithId:description_];
         activeConnections += 1;
@@ -906,12 +906,12 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_logConnectionPoolBusyLockedWithLo
       (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"  "])) appendWithNSString:request])) appendWithNSString:@"\n"];
     }
   }
-  ComYahooSquidbUtilityLogger_wWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, [msg description]);
+  SquiDBLogger_wWithNSString_withNSString_(SquiDBSQLiteConnectionPool_TAG, [msg description]);
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *predecessor = nil;
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterQueue_;
+void SquiDBSQLiteConnectionPool_wakeConnectionWaitersLocked(SquiDBSQLiteConnectionPool *self) {
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *predecessor = nil;
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterQueue_;
   jboolean primaryConnectionNotAvailable = false;
   jboolean nonPrimaryConnectionNotAvailable = false;
   while (waiter != nil) {
@@ -921,15 +921,15 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(ComYa
     }
     else {
       @try {
-        ComYahooAndroidSqliteSQLiteConnection *connection = nil;
+        SquiDBSQLiteConnection *connection = nil;
         if (!waiter->mWantPrimaryConnection_ && !nonPrimaryConnectionNotAvailable) {
-          connection = ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, waiter->mSql_, waiter->mConnectionFlags_);
+          connection = SquiDBSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(self, waiter->mSql_, waiter->mConnectionFlags_);
           if (connection == nil) {
             nonPrimaryConnectionNotAvailable = true;
           }
         }
         if (connection == nil && !primaryConnectionNotAvailable) {
-          connection = ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, waiter->mConnectionFlags_);
+          connection = SquiDBSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(self, waiter->mConnectionFlags_);
           if (connection == nil) {
             primaryConnectionNotAvailable = true;
           }
@@ -947,7 +947,7 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(ComYa
         unpark = true;
       }
     }
-    ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *successor = waiter->mNext_;
+    SquiDBSQLiteConnectionPool_ConnectionWaiter *successor = waiter->mNext_;
     if (unpark) {
       if (predecessor != nil) {
         predecessor->mNext_ = successor;
@@ -965,39 +965,39 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_wakeConnectionWaitersLocked(ComYa
   }
 }
 
-ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jint connectionFlags) {
-  ComYahooAndroidSqliteSQLiteConnection *connection = self->mAvailablePrimaryConnection_;
+SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_tryAcquirePrimaryConnectionLockedWithInt_(SquiDBSQLiteConnectionPool *self, jint connectionFlags) {
+  SquiDBSQLiteConnection *connection = self->mAvailablePrimaryConnection_;
   if (connection != nil) {
     self->mAvailablePrimaryConnection_ = nil;
-    ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+    SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
     return connection;
   }
-  for (ComYahooAndroidSqliteSQLiteConnection * __strong acquiredConnection in nil_chk([((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) keySet])) {
-    if ([((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(acquiredConnection)) isPrimaryConnection]) {
+  for (SquiDBSQLiteConnection * __strong acquiredConnection in nil_chk([((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) keySet])) {
+    if ([((SquiDBSQLiteConnection *) nil_chk(acquiredConnection)) isPrimaryConnection]) {
       return nil;
     }
   }
-  connection = ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, true);
-  ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+  connection = SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, true);
+  SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
   return connection;
 }
 
-ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, NSString *sql, jint connectionFlags) {
-  ComYahooAndroidSqliteSQLiteConnection *connection;
+SquiDBSQLiteConnection *SquiDBSQLiteConnectionPool_tryAcquireNonPrimaryConnectionLockedWithNSString_withInt_(SquiDBSQLiteConnectionPool *self, NSString *sql, jint connectionFlags) {
+  SquiDBSQLiteConnection *connection;
   jint availableCount = [((JavaUtilArrayList *) nil_chk(self->mAvailableNonPrimaryConnections_)) size];
   if (availableCount > 1 && sql != nil) {
     for (jint i = 0; i < availableCount; i++) {
       connection = [self->mAvailableNonPrimaryConnections_ getWithInt:i];
-      if ([((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) isPreparedStatementInCacheWithNSString:sql]) {
+      if ([((SquiDBSQLiteConnection *) nil_chk(connection)) isPreparedStatementInCacheWithNSString:sql]) {
         (void) [self->mAvailableNonPrimaryConnections_ removeWithInt:i];
-        ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+        SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
         return connection;
       }
     }
   }
   if (availableCount > 0) {
     connection = [self->mAvailableNonPrimaryConnections_ removeWithInt:availableCount - 1];
-    ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+    SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
     return connection;
   }
   jint openConnections = [((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) size];
@@ -1007,28 +1007,28 @@ ComYahooAndroidSqliteSQLiteConnection *ComYahooAndroidSqliteSQLiteConnectionPool
   if (openConnections >= self->mMaxConnectionPoolSize_) {
     return nil;
   }
-  connection = ComYahooAndroidSqliteSQLiteConnectionPool_openConnectionLockedWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, false);
-  ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(self, connection, connectionFlags);
+  connection = SquiDBSQLiteConnectionPool_openConnectionLockedWithSquiDBSQLiteDatabaseConfiguration_withBoolean_(self, self->mConfiguration_, false);
+  SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(self, connection, connectionFlags);
   return connection;
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_finishAcquireConnectionLockedWithComYahooAndroidSqliteSQLiteConnection_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnection *connection, jint connectionFlags) {
+void SquiDBSQLiteConnectionPool_finishAcquireConnectionLockedWithSquiDBSQLiteConnection_withInt_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnection *connection, jint connectionFlags) {
   @try {
-    jboolean readOnly = (connectionFlags & ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY) != 0;
-    [((ComYahooAndroidSqliteSQLiteConnection *) nil_chk(connection)) setOnlyAllowReadOnlyOperationsWithBoolean:readOnly];
-    (void) [((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) putWithId:connection withId:JreLoadEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL)];
+    jboolean readOnly = (connectionFlags & SquiDBSQLiteConnectionPool_CONNECTION_FLAG_READ_ONLY) != 0;
+    [((SquiDBSQLiteConnection *) nil_chk(connection)) setOnlyAllowReadOnlyOperationsWithBoolean:readOnly];
+    (void) [((JavaUtilWeakHashMap *) nil_chk(self->mAcquiredConnections_)) putWithId:connection withId:JreLoadEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL)];
   }
   @catch (JavaLangRuntimeException *ex) {
-    ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooAndroidSqliteSQLiteConnectionPool_TAG, JreStrcat("$@$I", @"Failed to prepare acquired connection for session, closing it: ", connection, @", connectionFlags=", connectionFlags));
-    ComYahooAndroidSqliteSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithComYahooAndroidSqliteSQLiteConnection_(self, connection);
+    SquiDBLogger_eWithNSString_withNSString_(SquiDBSQLiteConnectionPool_TAG, JreStrcat("$@$I", @"Failed to prepare acquired connection for session, closing it: ", connection, @", connectionFlags=", connectionFlags));
+    SquiDBSQLiteConnectionPool_closeConnectionAndLogExceptionsLockedWithSquiDBSQLiteConnection_(self, connection);
     @throw ex;
   }
 }
 
-jboolean ComYahooAndroidSqliteSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, jboolean holdingPrimaryConnection, jint connectionFlags) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterQueue_;
+jboolean SquiDBSQLiteConnectionPool_isSessionBlockingImportantConnectionWaitersLockedWithBoolean_withInt_(SquiDBSQLiteConnectionPool *self, jboolean holdingPrimaryConnection, jint connectionFlags) {
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterQueue_;
   if (waiter != nil) {
-    jint priority = ComYahooAndroidSqliteSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
+    jint priority = SquiDBSQLiteConnectionPool_getPriorityWithInt_(connectionFlags);
     do {
       if (priority > waiter->mPriority_) {
         break;
@@ -1043,34 +1043,34 @@ jboolean ComYahooAndroidSqliteSQLiteConnectionPool_isSessionBlockingImportantCon
   return false;
 }
 
-jint ComYahooAndroidSqliteSQLiteConnectionPool_getPriorityWithInt_(jint connectionFlags) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_initialize();
-  return (connectionFlags & ComYahooAndroidSqliteSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE) != 0 ? 1 : 0;
+jint SquiDBSQLiteConnectionPool_getPriorityWithInt_(jint connectionFlags) {
+  SquiDBSQLiteConnectionPool_initialize();
+  return (connectionFlags & SquiDBSQLiteConnectionPool_CONNECTION_FLAG_INTERACTIVE) != 0 ? 1 : 0;
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
-  if ((((ComYahooAndroidSqliteSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->openFlags_ & ComYahooAndroidSqliteSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0) {
-    self->mMaxConnectionPoolSize_ = ComYahooAndroidSqliteSQLiteGlobal_getWALConnectionPoolSize();
+void SquiDBSQLiteConnectionPool_setMaxConnectionPoolSizeLocked(SquiDBSQLiteConnectionPool *self) {
+  if ((((SquiDBSQLiteDatabaseConfiguration *) nil_chk(self->mConfiguration_))->openFlags_ & SquiDBSQLiteDatabase_ENABLE_WRITE_AHEAD_LOGGING) != 0) {
+    self->mMaxConnectionPoolSize_ = SquiDBSQLiteGlobal_getWALConnectionPoolSize();
   }
   else {
     self->mMaxConnectionPoolSize_ = 1;
   }
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_throwIfClosedLocked(ComYahooAndroidSqliteSQLiteConnectionPool *self) {
+void SquiDBSQLiteConnectionPool_throwIfClosedLocked(SquiDBSQLiteConnectionPool *self) {
   if (!self->mIsOpen_) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Cannot perform this operation because the connection pool has been closed.");
   }
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *ComYahooAndroidSqliteSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool *self, JavaLangThread *thread, jlong startTime, jint priority, jboolean wantPrimaryConnection, NSString *sql, jint connectionFlags) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterPool_;
+SquiDBSQLiteConnectionPool_ConnectionWaiter *SquiDBSQLiteConnectionPool_obtainConnectionWaiterLockedWithJavaLangThread_withLong_withInt_withBoolean_withNSString_withInt_(SquiDBSQLiteConnectionPool *self, JavaLangThread *thread, jlong startTime, jint priority, jboolean wantPrimaryConnection, NSString *sql, jint connectionFlags) {
+  SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter = self->mConnectionWaiterPool_;
   if (waiter != nil) {
     self->mConnectionWaiterPool_ = waiter->mNext_;
     waiter->mNext_ = nil;
   }
   else {
-    waiter = new_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init();
+    waiter = new_SquiDBSQLiteConnectionPool_ConnectionWaiter_init();
   }
   waiter->mThread_ = thread;
   waiter->mStartTime_ = startTime;
@@ -1081,8 +1081,8 @@ ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *ComYahooAndroidSqlit
   return waiter;
 }
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionWaiterLockedWithComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_(ComYahooAndroidSqliteSQLiteConnectionPool *self, ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *waiter) {
-  ((ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNext_ = self->mConnectionWaiterPool_;
+void SquiDBSQLiteConnectionPool_recycleConnectionWaiterLockedWithSquiDBSQLiteConnectionPool_ConnectionWaiter_(SquiDBSQLiteConnectionPool *self, SquiDBSQLiteConnectionPool_ConnectionWaiter *waiter) {
+  ((SquiDBSQLiteConnectionPool_ConnectionWaiter *) nil_chk(waiter))->mNext_ = self->mConnectionWaiterPool_;
   waiter->mThread_ = nil;
   waiter->mSql_ = nil;
   waiter->mAssignedConnection_ = nil;
@@ -1091,42 +1091,44 @@ void ComYahooAndroidSqliteSQLiteConnectionPool_recycleConnectionWaiterLockedWith
   self->mConnectionWaiterPool_ = waiter;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteConnectionPool)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteConnectionPool)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus)
+J2OBJC_NAME_MAPPING(SquiDBSQLiteConnectionPool, "com.yahoo.android.sqlite", "SquiDB")
 
-ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values_[3];
+J2OBJC_INITIALIZED_DEFN(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus)
 
-@implementation ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus
+SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values_[3];
 
-+ (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)NORMAL {
-  return JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL);
+@implementation SquiDBSQLiteConnectionPool_AcquiredConnectionStatus
+
++ (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)NORMAL {
+  return JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL);
 }
 
-+ (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)RECONFIGURE {
-  return JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE);
++ (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)RECONFIGURE {
+  return JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE);
 }
 
-+ (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)DISCARD {
-  return JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD);
++ (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)DISCARD {
+  return JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD);
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values();
+  return SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values();
 }
 
-+ (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *)valueOfWithNSString:(NSString *)name {
-  return ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_valueOfWithNSString_(name);
++ (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *)valueOfWithNSString:(NSString *)name {
+  return SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_valueOfWithNSString_(name);
 }
 
-- (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_Enum)toNSEnum {
-  return (ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_Enum)[self ordinal];
+- (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_Enum)toNSEnum {
+  return (SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "[LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -1135,43 +1137,43 @@ ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *ComYahooAndr
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "NORMAL", "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
-    { "RECONFIGURE", "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "DISCARD", "LComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "NORMAL", "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "RECONFIGURE", "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "DISCARD", "LSquiDBSQLiteConnectionPool_AcquiredConnectionStatus;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL), &JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE), &JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD), "LComYahooAndroidSqliteSQLiteConnectionPool;", "Ljava/lang/Enum<Lcom/yahoo/android/sqlite/SQLiteConnectionPool$AcquiredConnectionStatus;>;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus = { "AcquiredConnectionStatus", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x4018, 2, 3, 5, -1, -1, 6, -1 };
-  return &_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus;
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL), &JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE), &JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD), "LSquiDBSQLiteConnectionPool;", "Ljava/lang/Enum<Lcom/yahoo/android/sqlite/SQLiteConnectionPool$AcquiredConnectionStatus;>;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteConnectionPool_AcquiredConnectionStatus = { "AcquiredConnectionStatus", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x4018, 2, 3, 5, -1, -1, 6, -1 };
+  return &_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus;
 }
 
 + (void)initialize {
-  if (self == [ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus class]) {
-    JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL) = new_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 0), 0);
-    JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE) = new_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 1), 1);
-    JreEnum(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD) = new_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 2), 2);
-    J2OBJC_SET_INITIALIZED(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus)
+  if (self == [SquiDBSQLiteConnectionPool_AcquiredConnectionStatus class]) {
+    JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, NORMAL) = new_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 0), 0);
+    JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, RECONFIGURE) = new_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 1), 1);
+    JreEnum(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, DISCARD) = new_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(JreEnumConstantName(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_class_(), 2), 2);
+    J2OBJC_SET_INITIALIZED(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus)
   }
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *self, NSString *__name, jint __ordinal) {
+void SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *new_ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus, initWithNSString_withInt_, __name, __ordinal)
+SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *new_SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus, initWithNSString_withInt_, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values() {
-  ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values_ count:3 type:ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_class_()];
+IOSObjectArray *SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values() {
+  SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values_ count:3 type:SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_class_()];
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_valueOfWithNSString_(NSString *name) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
+SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_valueOfWithNSString_(NSString *name) {
+  SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
   for (int i = 0; i < 3; i++) {
-    ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *e = ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values_[i];
+    SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *e = SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -1180,21 +1182,21 @@ ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *ComYahooAndr
   return nil;
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus *ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_fromOrdinal(NSUInteger ordinal) {
-  ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
+SquiDBSQLiteConnectionPool_AcquiredConnectionStatus *SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_fromOrdinal(NSUInteger ordinal) {
+  SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_initialize();
   if (ordinal >= 3) {
     return nil;
   }
-  return ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus_values_[ordinal];
+  return SquiDBSQLiteConnectionPool_AcquiredConnectionStatus_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteConnectionPool_AcquiredConnectionStatus)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteConnectionPool_AcquiredConnectionStatus)
 
-@implementation ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter
+@implementation SquiDBSQLiteConnectionPool_ConnectionWaiter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init(self);
+  SquiDBSQLiteConnectionPool_ConnectionWaiter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -1209,34 +1211,34 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "mNext_", "LComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
+    { "mNext_", "LSquiDBSQLiteConnectionPool_ConnectionWaiter;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mThread_", "LJavaLangThread;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mStartTime_", "J", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mPriority_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mWantPrimaryConnection_", "Z", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mSql_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mConnectionFlags_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
-    { "mAssignedConnection_", "LComYahooAndroidSqliteSQLiteConnection;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
+    { "mAssignedConnection_", "LSquiDBSQLiteConnection;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mException_", "LJavaLangRuntimeException;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "mNonce_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteConnectionPool;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter = { "ConnectionWaiter", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1a, 1, 10, 0, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter;
+  static const void *ptrTable[] = { "LSquiDBSQLiteConnectionPool;" };
+  static const J2ObjcClassInfo _SquiDBSQLiteConnectionPool_ConnectionWaiter = { "ConnectionWaiter", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1a, 1, 10, 0, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteConnectionPool_ConnectionWaiter;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *self) {
+void SquiDBSQLiteConnectionPool_ConnectionWaiter_init(SquiDBSQLiteConnectionPool_ConnectionWaiter *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *new_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, init)
+SquiDBSQLiteConnectionPool_ConnectionWaiter *new_SquiDBSQLiteConnectionPool_ConnectionWaiter_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteConnectionPool_ConnectionWaiter, init)
 }
 
-ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter *create_ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter, init)
+SquiDBSQLiteConnectionPool_ConnectionWaiter *create_SquiDBSQLiteConnectionPool_ConnectionWaiter_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteConnectionPool_ConnectionWaiter, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteConnectionPool_ConnectionWaiter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteConnectionPool_ConnectionWaiter)

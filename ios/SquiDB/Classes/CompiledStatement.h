@@ -16,7 +16,7 @@
 
 @class IOSObjectArray;
 
-@interface ComYahooSquidbSqlCompiledStatement : NSObject {
+@interface SquiDBCompiledStatement : NSObject {
  @public
   NSString *sql_;
   IOSObjectArray *sqlArgs_;
@@ -35,18 +35,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCompiledStatement)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCompiledStatement)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledStatement, sql_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCompiledStatement, sqlArgs_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledStatement, sql_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBCompiledStatement, sqlArgs_, IOSObjectArray *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(ComYahooSquidbSqlCompiledStatement *self, NSString *sql, IOSObjectArray *args, jboolean needsValidation);
+FOUNDATION_EXPORT void SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(SquiDBCompiledStatement *self, NSString *sql, IOSObjectArray *args, jboolean needsValidation);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledStatement *new_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCompiledStatement *new_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledStatement *create_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation);
+FOUNDATION_EXPORT SquiDBCompiledStatement *create_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompiledStatement)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompiledStatement)
+
+@compatibility_alias ComYahooSquidbSqlCompiledStatement SquiDBCompiledStatement;
 
 
 #if __has_feature(nullability)

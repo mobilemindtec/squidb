@@ -11,115 +11,115 @@
 #include "java/util/HashMap.h"
 #include "java/util/Map.h"
 
-@interface ComYahooSquidbSqlOperator () {
+@interface SquiDBOperator () {
  @public
   NSString *operator__;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlOperator, operator__, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBOperator, operator__, NSString *)
 
-inline id<JavaUtilMap> ComYahooSquidbSqlOperator_get_contraryRegistry(void);
-static id<JavaUtilMap> ComYahooSquidbSqlOperator_contraryRegistry;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlOperator, contraryRegistry, id<JavaUtilMap>)
+inline id<JavaUtilMap> SquiDBOperator_get_contraryRegistry(void);
+static id<JavaUtilMap> SquiDBOperator_contraryRegistry;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBOperator, contraryRegistry, id<JavaUtilMap>)
 
-__attribute__((unused)) static void ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlOperator *self, NSString *operator_, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBOperator_initWithNSString_withNSString_withInt_(SquiDBOperator *self, NSString *operator_, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbSqlOperator *new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(NSString *operator_, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBOperator *new_SquiDBOperator_initWithNSString_withNSString_withInt_(NSString *operator_, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlOperator)
+J2OBJC_INITIALIZED_DEFN(SquiDBOperator)
 
-ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_values_[21];
+SquiDBOperator *SquiDBOperator_values_[21];
 
-@implementation ComYahooSquidbSqlOperator
+@implementation SquiDBOperator
 
-+ (ComYahooSquidbSqlOperator *)eq {
-  return JreEnum(ComYahooSquidbSqlOperator, eq);
++ (SquiDBOperator *)eq {
+  return JreEnum(SquiDBOperator, eq);
 }
 
-+ (ComYahooSquidbSqlOperator *)neq {
-  return JreEnum(ComYahooSquidbSqlOperator, neq);
++ (SquiDBOperator *)neq {
+  return JreEnum(SquiDBOperator, neq);
 }
 
-+ (ComYahooSquidbSqlOperator *)is {
-  return JreEnum(ComYahooSquidbSqlOperator, is);
++ (SquiDBOperator *)is {
+  return JreEnum(SquiDBOperator, is);
 }
 
-+ (ComYahooSquidbSqlOperator *)isNot {
-  return JreEnum(ComYahooSquidbSqlOperator, isNot);
++ (SquiDBOperator *)isNot {
+  return JreEnum(SquiDBOperator, isNot);
 }
 
-+ (ComYahooSquidbSqlOperator *)gt {
-  return JreEnum(ComYahooSquidbSqlOperator, gt);
++ (SquiDBOperator *)gt {
+  return JreEnum(SquiDBOperator, gt);
 }
 
-+ (ComYahooSquidbSqlOperator *)lt {
-  return JreEnum(ComYahooSquidbSqlOperator, lt);
++ (SquiDBOperator *)lt {
+  return JreEnum(SquiDBOperator, lt);
 }
 
-+ (ComYahooSquidbSqlOperator *)gte {
-  return JreEnum(ComYahooSquidbSqlOperator, gte);
++ (SquiDBOperator *)gte {
+  return JreEnum(SquiDBOperator, gte);
 }
 
-+ (ComYahooSquidbSqlOperator *)lte {
-  return JreEnum(ComYahooSquidbSqlOperator, lte);
++ (SquiDBOperator *)lte {
+  return JreEnum(SquiDBOperator, lte);
 }
 
-+ (ComYahooSquidbSqlOperator *)and_ {
-  return JreEnum(ComYahooSquidbSqlOperator, and);
++ (SquiDBOperator *)and_ {
+  return JreEnum(SquiDBOperator, and);
 }
 
-+ (ComYahooSquidbSqlOperator *)or_ {
-  return JreEnum(ComYahooSquidbSqlOperator, or);
++ (SquiDBOperator *)or_ {
+  return JreEnum(SquiDBOperator, or);
 }
 
-+ (ComYahooSquidbSqlOperator *)not_ {
-  return JreEnum(ComYahooSquidbSqlOperator, not);
++ (SquiDBOperator *)not_ {
+  return JreEnum(SquiDBOperator, not);
 }
 
-+ (ComYahooSquidbSqlOperator *)exists {
-  return JreEnum(ComYahooSquidbSqlOperator, exists);
++ (SquiDBOperator *)exists {
+  return JreEnum(SquiDBOperator, exists);
 }
 
-+ (ComYahooSquidbSqlOperator *)like {
-  return JreEnum(ComYahooSquidbSqlOperator, like);
++ (SquiDBOperator *)like {
+  return JreEnum(SquiDBOperator, like);
 }
 
-+ (ComYahooSquidbSqlOperator *)notLike {
-  return JreEnum(ComYahooSquidbSqlOperator, notLike);
++ (SquiDBOperator *)notLike {
+  return JreEnum(SquiDBOperator, notLike);
 }
 
-+ (ComYahooSquidbSqlOperator *)in {
-  return JreEnum(ComYahooSquidbSqlOperator, in);
++ (SquiDBOperator *)in {
+  return JreEnum(SquiDBOperator, in);
 }
 
-+ (ComYahooSquidbSqlOperator *)notIn {
-  return JreEnum(ComYahooSquidbSqlOperator, notIn);
++ (SquiDBOperator *)notIn {
+  return JreEnum(SquiDBOperator, notIn);
 }
 
-+ (ComYahooSquidbSqlOperator *)between {
-  return JreEnum(ComYahooSquidbSqlOperator, between);
++ (SquiDBOperator *)between {
+  return JreEnum(SquiDBOperator, between);
 }
 
-+ (ComYahooSquidbSqlOperator *)notBetween {
-  return JreEnum(ComYahooSquidbSqlOperator, notBetween);
++ (SquiDBOperator *)notBetween {
+  return JreEnum(SquiDBOperator, notBetween);
 }
 
-+ (ComYahooSquidbSqlOperator *)glob {
-  return JreEnum(ComYahooSquidbSqlOperator, glob);
++ (SquiDBOperator *)glob {
+  return JreEnum(SquiDBOperator, glob);
 }
 
-+ (ComYahooSquidbSqlOperator *)notGlob {
-  return JreEnum(ComYahooSquidbSqlOperator, notGlob);
++ (SquiDBOperator *)notGlob {
+  return JreEnum(SquiDBOperator, notGlob);
 }
 
-+ (ComYahooSquidbSqlOperator *)match {
-  return JreEnum(ComYahooSquidbSqlOperator, match);
++ (SquiDBOperator *)match {
+  return JreEnum(SquiDBOperator, match);
 }
 
-- (ComYahooSquidbSqlOperator *)getContrary {
-  return [((id<JavaUtilMap>) nil_chk(ComYahooSquidbSqlOperator_contraryRegistry)) getWithId:self];
+- (SquiDBOperator *)getContrary {
+  return [((id<JavaUtilMap>) nil_chk(SquiDBOperator_contraryRegistry)) getWithId:self];
 }
 
 - (NSString *)description {
@@ -127,23 +127,23 @@ ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_values_[21];
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbSqlOperator_values();
+  return SquiDBOperator_values();
 }
 
-+ (ComYahooSquidbSqlOperator *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlOperator_valueOfWithNSString_(name);
++ (SquiDBOperator *)valueOfWithNSString:(NSString *)name {
+  return SquiDBOperator_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlOperator_Enum)toNSEnum {
-  return (ComYahooSquidbSqlOperator_Enum)[self ordinal];
+- (SquiDBOperator_Enum)toNSEnum {
+  return (SquiDBOperator_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooSquidbSqlOperator;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBOperator;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -154,101 +154,101 @@ ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_values_[21];
   methods[3].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "eq", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "neq", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
-    { "is", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
-    { "isNot", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
-    { "gt", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
-    { "lt", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
-    { "gte", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 9, -1, -1 },
-    { "lte", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 10, -1, -1 },
-    { "and", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 11, -1, -1 },
-    { "or", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 12, -1, -1 },
-    { "not", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 13, -1, -1 },
-    { "exists", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 14, -1, -1 },
-    { "like", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 15, -1, -1 },
-    { "notLike", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 16, -1, -1 },
-    { "in", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 17, -1, -1 },
-    { "notIn", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 18, -1, -1 },
-    { "between", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 19, -1, -1 },
-    { "notBetween", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 20, -1, -1 },
-    { "glob", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 21, -1, -1 },
-    { "notGlob", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 22, -1, -1 },
-    { "match", "LComYahooSquidbSqlOperator;", .constantValue.asLong = 0, 0x4019, -1, 23, -1, -1 },
+    { "eq", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "neq", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "is", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "isNot", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "gt", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
+    { "lt", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
+    { "gte", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 9, -1, -1 },
+    { "lte", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 10, -1, -1 },
+    { "and", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 11, -1, -1 },
+    { "or", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 12, -1, -1 },
+    { "not", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 13, -1, -1 },
+    { "exists", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 14, -1, -1 },
+    { "like", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 15, -1, -1 },
+    { "notLike", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 16, -1, -1 },
+    { "in", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 17, -1, -1 },
+    { "notIn", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 18, -1, -1 },
+    { "between", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 19, -1, -1 },
+    { "notBetween", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 20, -1, -1 },
+    { "glob", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 21, -1, -1 },
+    { "notGlob", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 22, -1, -1 },
+    { "match", "LSquiDBOperator;", .constantValue.asLong = 0, 0x4019, -1, 23, -1, -1 },
     { "contraryRegistry", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 24, 25, -1 },
     { "operator__", "LNSString;", .constantValue.asLong = 0, 0x12, 26, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(ComYahooSquidbSqlOperator, eq), &JreEnum(ComYahooSquidbSqlOperator, neq), &JreEnum(ComYahooSquidbSqlOperator, is), &JreEnum(ComYahooSquidbSqlOperator, isNot), &JreEnum(ComYahooSquidbSqlOperator, gt), &JreEnum(ComYahooSquidbSqlOperator, lt), &JreEnum(ComYahooSquidbSqlOperator, gte), &JreEnum(ComYahooSquidbSqlOperator, lte), &JreEnum(ComYahooSquidbSqlOperator, and), &JreEnum(ComYahooSquidbSqlOperator, or), &JreEnum(ComYahooSquidbSqlOperator, not), &JreEnum(ComYahooSquidbSqlOperator, exists), &JreEnum(ComYahooSquidbSqlOperator, like), &JreEnum(ComYahooSquidbSqlOperator, notLike), &JreEnum(ComYahooSquidbSqlOperator, in), &JreEnum(ComYahooSquidbSqlOperator, notIn), &JreEnum(ComYahooSquidbSqlOperator, between), &JreEnum(ComYahooSquidbSqlOperator, notBetween), &JreEnum(ComYahooSquidbSqlOperator, glob), &JreEnum(ComYahooSquidbSqlOperator, notGlob), &JreEnum(ComYahooSquidbSqlOperator, match), &ComYahooSquidbSqlOperator_contraryRegistry, "Ljava/util/Map<Lcom/yahoo/squidb/sql/Operator;Lcom/yahoo/squidb/sql/Operator;>;", "operator", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Operator;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlOperator = { "Operator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x4011, 4, 23, -1, -1, -1, 27, -1 };
-  return &_ComYahooSquidbSqlOperator;
+  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(SquiDBOperator, eq), &JreEnum(SquiDBOperator, neq), &JreEnum(SquiDBOperator, is), &JreEnum(SquiDBOperator, isNot), &JreEnum(SquiDBOperator, gt), &JreEnum(SquiDBOperator, lt), &JreEnum(SquiDBOperator, gte), &JreEnum(SquiDBOperator, lte), &JreEnum(SquiDBOperator, and), &JreEnum(SquiDBOperator, or), &JreEnum(SquiDBOperator, not), &JreEnum(SquiDBOperator, exists), &JreEnum(SquiDBOperator, like), &JreEnum(SquiDBOperator, notLike), &JreEnum(SquiDBOperator, in), &JreEnum(SquiDBOperator, notIn), &JreEnum(SquiDBOperator, between), &JreEnum(SquiDBOperator, notBetween), &JreEnum(SquiDBOperator, glob), &JreEnum(SquiDBOperator, notGlob), &JreEnum(SquiDBOperator, match), &SquiDBOperator_contraryRegistry, "Ljava/util/Map<Lcom/yahoo/squidb/sql/Operator;Lcom/yahoo/squidb/sql/Operator;>;", "operator", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Operator;>;" };
+  static const J2ObjcClassInfo _SquiDBOperator = { "Operator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x4011, 4, 23, -1, -1, -1, 27, -1 };
+  return &_SquiDBOperator;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlOperator class]) {
-    JreEnum(ComYahooSquidbSqlOperator, eq) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@"=", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 0), 0);
-    JreEnum(ComYahooSquidbSqlOperator, neq) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@"<>", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 1), 1);
-    JreEnum(ComYahooSquidbSqlOperator, is) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" IS ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 2), 2);
-    JreEnum(ComYahooSquidbSqlOperator, isNot) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" IS NOT ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 3), 3);
-    JreEnum(ComYahooSquidbSqlOperator, gt) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@">", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 4), 4);
-    JreEnum(ComYahooSquidbSqlOperator, lt) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@"<", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 5), 5);
-    JreEnum(ComYahooSquidbSqlOperator, gte) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@">=", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 6), 6);
-    JreEnum(ComYahooSquidbSqlOperator, lte) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@"<=", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 7), 7);
-    JreEnum(ComYahooSquidbSqlOperator, and) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" AND ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 8), 8);
-    JreEnum(ComYahooSquidbSqlOperator, or) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" OR ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 9), 9);
-    JreEnum(ComYahooSquidbSqlOperator, not) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" NOT ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 10), 10);
-    JreEnum(ComYahooSquidbSqlOperator, exists) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" EXISTS ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 11), 11);
-    JreEnum(ComYahooSquidbSqlOperator, like) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" LIKE ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 12), 12);
-    JreEnum(ComYahooSquidbSqlOperator, notLike) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" NOT LIKE ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 13), 13);
-    JreEnum(ComYahooSquidbSqlOperator, in) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" IN ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 14), 14);
-    JreEnum(ComYahooSquidbSqlOperator, notIn) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" NOT IN ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 15), 15);
-    JreEnum(ComYahooSquidbSqlOperator, between) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" BETWEEN ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 16), 16);
-    JreEnum(ComYahooSquidbSqlOperator, notBetween) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" NOT BETWEEN ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 17), 17);
-    JreEnum(ComYahooSquidbSqlOperator, glob) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" GLOB ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 18), 18);
-    JreEnum(ComYahooSquidbSqlOperator, notGlob) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" NOT GLOB ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 19), 19);
-    JreEnum(ComYahooSquidbSqlOperator, match) = new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(@" MATCH ", JreEnumConstantName(ComYahooSquidbSqlOperator_class_(), 20), 20);
-    ComYahooSquidbSqlOperator_contraryRegistry = new_JavaUtilHashMap_init();
+  if (self == [SquiDBOperator class]) {
+    JreEnum(SquiDBOperator, eq) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@"=", JreEnumConstantName(SquiDBOperator_class_(), 0), 0);
+    JreEnum(SquiDBOperator, neq) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@"<>", JreEnumConstantName(SquiDBOperator_class_(), 1), 1);
+    JreEnum(SquiDBOperator, is) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" IS ", JreEnumConstantName(SquiDBOperator_class_(), 2), 2);
+    JreEnum(SquiDBOperator, isNot) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" IS NOT ", JreEnumConstantName(SquiDBOperator_class_(), 3), 3);
+    JreEnum(SquiDBOperator, gt) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@">", JreEnumConstantName(SquiDBOperator_class_(), 4), 4);
+    JreEnum(SquiDBOperator, lt) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@"<", JreEnumConstantName(SquiDBOperator_class_(), 5), 5);
+    JreEnum(SquiDBOperator, gte) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@">=", JreEnumConstantName(SquiDBOperator_class_(), 6), 6);
+    JreEnum(SquiDBOperator, lte) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@"<=", JreEnumConstantName(SquiDBOperator_class_(), 7), 7);
+    JreEnum(SquiDBOperator, and) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" AND ", JreEnumConstantName(SquiDBOperator_class_(), 8), 8);
+    JreEnum(SquiDBOperator, or) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" OR ", JreEnumConstantName(SquiDBOperator_class_(), 9), 9);
+    JreEnum(SquiDBOperator, not) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" NOT ", JreEnumConstantName(SquiDBOperator_class_(), 10), 10);
+    JreEnum(SquiDBOperator, exists) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" EXISTS ", JreEnumConstantName(SquiDBOperator_class_(), 11), 11);
+    JreEnum(SquiDBOperator, like) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" LIKE ", JreEnumConstantName(SquiDBOperator_class_(), 12), 12);
+    JreEnum(SquiDBOperator, notLike) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" NOT LIKE ", JreEnumConstantName(SquiDBOperator_class_(), 13), 13);
+    JreEnum(SquiDBOperator, in) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" IN ", JreEnumConstantName(SquiDBOperator_class_(), 14), 14);
+    JreEnum(SquiDBOperator, notIn) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" NOT IN ", JreEnumConstantName(SquiDBOperator_class_(), 15), 15);
+    JreEnum(SquiDBOperator, between) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" BETWEEN ", JreEnumConstantName(SquiDBOperator_class_(), 16), 16);
+    JreEnum(SquiDBOperator, notBetween) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" NOT BETWEEN ", JreEnumConstantName(SquiDBOperator_class_(), 17), 17);
+    JreEnum(SquiDBOperator, glob) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" GLOB ", JreEnumConstantName(SquiDBOperator_class_(), 18), 18);
+    JreEnum(SquiDBOperator, notGlob) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" NOT GLOB ", JreEnumConstantName(SquiDBOperator_class_(), 19), 19);
+    JreEnum(SquiDBOperator, match) = new_SquiDBOperator_initWithNSString_withNSString_withInt_(@" MATCH ", JreEnumConstantName(SquiDBOperator_class_(), 20), 20);
+    SquiDBOperator_contraryRegistry = new_JavaUtilHashMap_init();
     {
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, eq) withId:JreEnum(ComYahooSquidbSqlOperator, neq)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, neq) withId:JreEnum(ComYahooSquidbSqlOperator, eq)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, is) withId:JreEnum(ComYahooSquidbSqlOperator, isNot)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, isNot) withId:JreEnum(ComYahooSquidbSqlOperator, is)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, gt) withId:JreEnum(ComYahooSquidbSqlOperator, lte)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, lte) withId:JreEnum(ComYahooSquidbSqlOperator, gt)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, lt) withId:JreEnum(ComYahooSquidbSqlOperator, gte)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, gte) withId:JreEnum(ComYahooSquidbSqlOperator, lt)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, like) withId:JreEnum(ComYahooSquidbSqlOperator, notLike)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, notLike) withId:JreEnum(ComYahooSquidbSqlOperator, like)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, in) withId:JreEnum(ComYahooSquidbSqlOperator, notIn)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, notIn) withId:JreEnum(ComYahooSquidbSqlOperator, in)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, between) withId:JreEnum(ComYahooSquidbSqlOperator, notBetween)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, notBetween) withId:JreEnum(ComYahooSquidbSqlOperator, between)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, glob) withId:JreEnum(ComYahooSquidbSqlOperator, notGlob)];
-      (void) [ComYahooSquidbSqlOperator_contraryRegistry putWithId:JreEnum(ComYahooSquidbSqlOperator, notGlob) withId:JreEnum(ComYahooSquidbSqlOperator, glob)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, eq) withId:JreEnum(SquiDBOperator, neq)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, neq) withId:JreEnum(SquiDBOperator, eq)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, is) withId:JreEnum(SquiDBOperator, isNot)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, isNot) withId:JreEnum(SquiDBOperator, is)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, gt) withId:JreEnum(SquiDBOperator, lte)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, lte) withId:JreEnum(SquiDBOperator, gt)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, lt) withId:JreEnum(SquiDBOperator, gte)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, gte) withId:JreEnum(SquiDBOperator, lt)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, like) withId:JreEnum(SquiDBOperator, notLike)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, notLike) withId:JreEnum(SquiDBOperator, like)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, in) withId:JreEnum(SquiDBOperator, notIn)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, notIn) withId:JreEnum(SquiDBOperator, in)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, between) withId:JreEnum(SquiDBOperator, notBetween)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, notBetween) withId:JreEnum(SquiDBOperator, between)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, glob) withId:JreEnum(SquiDBOperator, notGlob)];
+      (void) [SquiDBOperator_contraryRegistry putWithId:JreEnum(SquiDBOperator, notGlob) withId:JreEnum(SquiDBOperator, glob)];
     }
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlOperator)
+    J2OBJC_SET_INITIALIZED(SquiDBOperator)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlOperator *self, NSString *operator_, NSString *__name, jint __ordinal) {
+void SquiDBOperator_initWithNSString_withNSString_withInt_(SquiDBOperator *self, NSString *operator_, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
   self->operator__ = operator_;
 }
 
-ComYahooSquidbSqlOperator *new_ComYahooSquidbSqlOperator_initWithNSString_withNSString_withInt_(NSString *operator_, NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlOperator, initWithNSString_withNSString_withInt_, operator_, __name, __ordinal)
+SquiDBOperator *new_SquiDBOperator_initWithNSString_withNSString_withInt_(NSString *operator_, NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBOperator, initWithNSString_withNSString_withInt_, operator_, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbSqlOperator_values() {
-  ComYahooSquidbSqlOperator_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbSqlOperator_values_ count:21 type:ComYahooSquidbSqlOperator_class_()];
+IOSObjectArray *SquiDBOperator_values() {
+  SquiDBOperator_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBOperator_values_ count:21 type:SquiDBOperator_class_()];
 }
 
-ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlOperator_initialize();
+SquiDBOperator *SquiDBOperator_valueOfWithNSString_(NSString *name) {
+  SquiDBOperator_initialize();
   for (int i = 0; i < 21; i++) {
-    ComYahooSquidbSqlOperator *e = ComYahooSquidbSqlOperator_values_[i];
+    SquiDBOperator *e = SquiDBOperator_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -257,12 +257,14 @@ ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_valueOfWithNSString_(NSStri
   return nil;
 }
 
-ComYahooSquidbSqlOperator *ComYahooSquidbSqlOperator_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbSqlOperator_initialize();
+SquiDBOperator *SquiDBOperator_fromOrdinal(NSUInteger ordinal) {
+  SquiDBOperator_initialize();
   if (ordinal >= 21) {
     return nil;
   }
-  return ComYahooSquidbSqlOperator_values_[ordinal];
+  return SquiDBOperator_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlOperator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBOperator)
+
+J2OBJC_NAME_MAPPING(SquiDBOperator, "com.yahoo.squidb.sql", "SquiDB")

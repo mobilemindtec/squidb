@@ -14,15 +14,15 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
-@class ComYahooAndroidSqliteSQLiteDatabase;
-@class ComYahooAndroidSqliteSQLiteProgram;
-@class ComYahooAndroidSqliteSQLiteStatement;
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
-@protocol ComYahooSquidbDataICursor;
+@class SquiDBCursorWindow;
+@class SquiDBSQLiteDatabase;
+@class SquiDBSQLiteProgram;
+@class SquiDBSQLiteStatement;
+@protocol SquiDBICursor;
 
-@interface ComYahooAndroidSqliteDatabaseUtils : NSObject
+@interface SquiDBDatabaseUtils : NSObject
 @property (readonly, class) jint STATEMENT_SELECT NS_SWIFT_NAME(STATEMENT_SELECT);
 @property (readonly, class) jint STATEMENT_UPDATE NS_SWIFT_NAME(STATEMENT_UPDATE);
 @property (readonly, class) jint STATEMENT_ATTACH NS_SWIFT_NAME(STATEMENT_ATTACH);
@@ -61,13 +61,13 @@
 + (void)appendEscapedSQLStringWithJavaLangStringBuilder:(JavaLangStringBuilder *)sb
                                            withNSString:(NSString *)sqlString;
 
-+ (void)bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram:(ComYahooAndroidSqliteSQLiteProgram *)prog
-                                                          withInt:(jint)index
-                                                           withId:(id)value;
++ (void)bindObjectToProgramWithSquiDBSQLiteProgram:(SquiDBSQLiteProgram *)prog
+                                           withInt:(jint)index
+                                            withId:(id)value;
 
-+ (void)cursorFillWindowWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                              withInt:(jint)position
-                withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window;
++ (void)cursorFillWindowWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                                  withInt:(jint)position
+                   withSquiDBCursorWindow:(SquiDBCursorWindow *)window;
 
 + (jint)cursorPickFillWindowStartPositionWithInt:(jint)cursorPosition
                                          withInt:(jint)cursorWindowCapacity;
@@ -78,82 +78,84 @@
 
 + (jint)getTypeOfObjectWithId:(id)obj;
 
-+ (jlong)longForQueryWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                withNSString:(NSString *)query
-                                           withNSStringArray:(IOSObjectArray *)selectionArgs;
++ (jlong)longForQueryWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                 withNSString:(NSString *)query
+                            withNSStringArray:(IOSObjectArray *)selectionArgs;
 
-+ (jlong)longForQueryWithComYahooAndroidSqliteSQLiteStatement:(ComYahooAndroidSqliteSQLiteStatement *)prog
-                                            withNSStringArray:(IOSObjectArray *)selectionArgs;
++ (jlong)longForQueryWithSquiDBSQLiteStatement:(SquiDBSQLiteStatement *)prog
+                             withNSStringArray:(IOSObjectArray *)selectionArgs;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteDatabaseUtils)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDatabaseUtils)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_SELECT(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_SELECT 1
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_SELECT, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_SELECT(void);
+#define SquiDBDatabaseUtils_STATEMENT_SELECT 1
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_SELECT, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_UPDATE(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UPDATE 2
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_UPDATE, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_UPDATE(void);
+#define SquiDBDatabaseUtils_STATEMENT_UPDATE 2
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_UPDATE, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_ATTACH(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ATTACH 3
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_ATTACH, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_ATTACH(void);
+#define SquiDBDatabaseUtils_STATEMENT_ATTACH 3
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_ATTACH, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_BEGIN(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_BEGIN 4
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_BEGIN, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_BEGIN(void);
+#define SquiDBDatabaseUtils_STATEMENT_BEGIN 4
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_BEGIN, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_COMMIT(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_COMMIT 5
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_COMMIT, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_COMMIT(void);
+#define SquiDBDatabaseUtils_STATEMENT_COMMIT 5
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_COMMIT, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_ABORT(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_ABORT 6
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_ABORT, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_ABORT(void);
+#define SquiDBDatabaseUtils_STATEMENT_ABORT 6
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_ABORT, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_PRAGMA(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_PRAGMA 7
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_PRAGMA, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_PRAGMA(void);
+#define SquiDBDatabaseUtils_STATEMENT_PRAGMA 7
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_PRAGMA, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_DDL(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_DDL 8
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_DDL, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_DDL(void);
+#define SquiDBDatabaseUtils_STATEMENT_DDL 8
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_DDL, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_UNPREPARED(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_UNPREPARED 9
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_UNPREPARED, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_UNPREPARED(void);
+#define SquiDBDatabaseUtils_STATEMENT_UNPREPARED 9
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_UNPREPARED, jint)
 
-inline jint ComYahooAndroidSqliteDatabaseUtils_get_STATEMENT_OTHER(void);
-#define ComYahooAndroidSqliteDatabaseUtils_STATEMENT_OTHER 99
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooAndroidSqliteDatabaseUtils, STATEMENT_OTHER, jint)
+inline jint SquiDBDatabaseUtils_get_STATEMENT_OTHER(void);
+#define SquiDBDatabaseUtils_STATEMENT_OTHER 99
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBDatabaseUtils, STATEMENT_OTHER, jint)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDatabaseUtils_init(ComYahooAndroidSqliteDatabaseUtils *self);
+FOUNDATION_EXPORT void SquiDBDatabaseUtils_init(SquiDBDatabaseUtils *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDatabaseUtils *new_ComYahooAndroidSqliteDatabaseUtils_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBDatabaseUtils *new_SquiDBDatabaseUtils_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteDatabaseUtils *create_ComYahooAndroidSqliteDatabaseUtils_init(void);
+FOUNDATION_EXPORT SquiDBDatabaseUtils *create_SquiDBDatabaseUtils_init(void);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteDatabaseUtils_getSqlStatementTypeWithNSString_(NSString *sql);
+FOUNDATION_EXPORT jint SquiDBDatabaseUtils_getSqlStatementTypeWithNSString_(NSString *sql);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteDatabaseUtils_getTypeOfObjectWithId_(id obj);
+FOUNDATION_EXPORT jint SquiDBDatabaseUtils_getTypeOfObjectWithId_(id obj);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(IOSObjectArray *columnNames);
+FOUNDATION_EXPORT jint SquiDBDatabaseUtils_findRowIdColumnIndexWithNSStringArray_(IOSObjectArray *columnNames);
 
-FOUNDATION_EXPORT jint ComYahooAndroidSqliteDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(jint cursorPosition, jint cursorWindowCapacity);
+FOUNDATION_EXPORT jint SquiDBDatabaseUtils_cursorPickFillWindowStartPositionWithInt_withInt_(jint cursorPosition, jint cursorWindowCapacity);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *sb, NSString *sqlString);
+FOUNDATION_EXPORT void SquiDBDatabaseUtils_appendEscapedSQLStringWithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *sb, NSString *sqlString);
 
-FOUNDATION_EXPORT jlong ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSStringArray_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query, IOSObjectArray *selectionArgs);
+FOUNDATION_EXPORT jlong SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteDatabase_withNSString_withNSStringArray_(SquiDBSQLiteDatabase *db, NSString *query, IOSObjectArray *selectionArgs);
 
-FOUNDATION_EXPORT jlong ComYahooAndroidSqliteDatabaseUtils_longForQueryWithComYahooAndroidSqliteSQLiteStatement_withNSStringArray_(ComYahooAndroidSqliteSQLiteStatement *prog, IOSObjectArray *selectionArgs);
+FOUNDATION_EXPORT jlong SquiDBDatabaseUtils_longForQueryWithSquiDBSQLiteStatement_withNSStringArray_(SquiDBSQLiteStatement *prog, IOSObjectArray *selectionArgs);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDatabaseUtils_cursorFillWindowWithComYahooSquidbDataICursor_withInt_withComYahooAndroidSqliteCursorWindow_(id<ComYahooSquidbDataICursor> cursor, jint position, ComYahooAndroidSqliteCursorWindow *window);
+FOUNDATION_EXPORT void SquiDBDatabaseUtils_cursorFillWindowWithSquiDBICursor_withInt_withSquiDBCursorWindow_(id<SquiDBICursor> cursor, jint position, SquiDBCursorWindow *window);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteDatabaseUtils_bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram_withInt_withId_(ComYahooAndroidSqliteSQLiteProgram *prog, jint index, id value);
+FOUNDATION_EXPORT void SquiDBDatabaseUtils_bindObjectToProgramWithSquiDBSQLiteProgram_withInt_withId_(SquiDBSQLiteProgram *prog, jint index, id value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteDatabaseUtils)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDatabaseUtils)
+
+@compatibility_alias ComYahooAndroidSqliteDatabaseUtils SquiDBDatabaseUtils;
 
 
 #if __has_feature(nullability)

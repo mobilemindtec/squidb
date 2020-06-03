@@ -14,23 +14,23 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlTable;
 @class IOSObjectArray;
+@class SquiDBTable;
 
-@interface ComYahooSquidbSqlIndex : NSObject
+@interface SquiDBIndex : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)name
-                withComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
+                           withSquiDBTable:(SquiDBTable *)table
                                withBoolean:(jboolean)unique
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
+                   withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
 - (NSString *)getName;
 
 - (IOSObjectArray *)getProperties;
 
-- (ComYahooSquidbSqlTable *)getTable;
+- (SquiDBTable *)getTable;
 
 - (jboolean)isUnique;
 
@@ -40,15 +40,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlIndex)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBIndex)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlIndex *self, NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties);
+FOUNDATION_EXPORT void SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(SquiDBIndex *self, NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlIndex *new_ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBIndex *new_SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlIndex *create_ComYahooSquidbSqlIndex_initWithNSString_withComYahooSquidbSqlTable_withBoolean_withComYahooSquidbSqlPropertyArray_(NSString *name, ComYahooSquidbSqlTable *table, jboolean unique, IOSObjectArray *properties);
+FOUNDATION_EXPORT SquiDBIndex *create_SquiDBIndex_initWithNSString_withSquiDBTable_withBoolean_withSquiDBPropertyArray_(NSString *name, SquiDBTable *table, jboolean unique, IOSObjectArray *properties);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlIndex)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBIndex)
+
+@compatibility_alias ComYahooSquidbSqlIndex SquiDBIndex;
 
 
 #if __has_feature(nullability)

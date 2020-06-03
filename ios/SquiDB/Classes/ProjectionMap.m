@@ -17,72 +17,72 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface ComYahooSquidbUtilityProjectionMap () {
+@interface SquiDBProjectionMap () {
  @public
   id<JavaUtilMap> map_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbUtilityProjectionMap, map_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(SquiDBProjectionMap, map_, id<JavaUtilMap>)
 
-@implementation ComYahooSquidbUtilityProjectionMap
+@implementation SquiDBProjectionMap
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbUtilityProjectionMap_init(self);
+  SquiDBProjectionMap_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithComYahooSquidbUtilityProjectionMap:(ComYahooSquidbUtilityProjectionMap *)other {
-  ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(self, other);
+- (instancetype)initWithSquiDBProjectionMap:(SquiDBProjectionMap *)other {
+  SquiDBProjectionMap_initWithSquiDBProjectionMap_(self, other);
   return self;
 }
 
-- (ComYahooSquidbSqlField *)putWithNSString:(NSString *)name
-                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)column {
+- (SquiDBField *)putWithNSString:(NSString *)name
+                 withSquiDBField:(SquiDBField *)column {
   if (column == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Cannot use null column in ProjectionMap");
   }
-  if (ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(name)) {
+  if (SquiDBSqlUtils_isEmptyWithNSString_(name)) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Cannot use empty string as a key");
   }
-  if (!ComYahooSquidbSqlSqlUtils_equalsWithNSString_withNSString_(name, [column getName])) {
+  if (!SquiDBSqlUtils_equalsWithNSString_withNSString_(name, [column getName])) {
     column = [column asWithNSString:name];
   }
   return [((id<JavaUtilMap>) nil_chk(map_)) putWithId:name withId:column];
 }
 
-- (ComYahooSquidbSqlField *)putWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)column {
+- (SquiDBField *)putWithSquiDBField:(SquiDBField *)column {
   if (column == nil) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Cannot use null column in ProjectionMap");
   }
   return [((id<JavaUtilMap>) nil_chk(map_)) putWithId:[column getName] withId:column];
 }
 
-- (void)putAllWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)columns {
+- (void)putAllWithSquiDBFieldArray:(IOSObjectArray *)columns {
   if (columns != nil) {
     {
       IOSObjectArray *a__ = columns;
-      ComYahooSquidbSqlField * const *b__ = a__->buffer_;
-      ComYahooSquidbSqlField * const *e__ = b__ + a__->size_;
+      SquiDBField * const *b__ = a__->buffer_;
+      SquiDBField * const *e__ = b__ + a__->size_;
       while (b__ < e__) {
-        ComYahooSquidbSqlField *field = *b__++;
-        (void) [self putWithComYahooSquidbSqlField:field];
+        SquiDBField *field = *b__++;
+        (void) [self putWithSquiDBField:field];
       }
     }
   }
 }
 
-- (ComYahooSquidbSqlField *)putWithNSString:(NSString *)expression {
-  if (ComYahooSquidbSqlSqlUtils_isEmptyWithNSString_(expression)) {
+- (SquiDBField *)putWithNSString:(NSString *)expression {
+  if (SquiDBSqlUtils_isEmptyWithNSString_(expression)) {
     @throw new_JavaLangIllegalArgumentException_initWithNSString_(@"Expression cannot be empty");
   }
-  return [((id<JavaUtilMap>) nil_chk(map_)) putWithId:expression withId:ComYahooSquidbSqlField_fieldWithNSString_(expression)];
+  return [((id<JavaUtilMap>) nil_chk(map_)) putWithId:expression withId:SquiDBField_fieldWithNSString_(expression)];
 }
 
-- (ComYahooSquidbSqlField *)getWithNSString:(NSString *)key {
+- (SquiDBField *)getWithNSString:(NSString *)key {
   return [((id<JavaUtilMap>) nil_chk(map_)) getWithId:key];
 }
 
@@ -98,11 +98,11 @@ J2OBJC_IGNORE_DESIGNATED_END
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, 1, 2, -1, 3, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, 1, 4, -1, 5, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, 1, 2, -1, 3, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, 1, 4, -1, 5, -1, -1 },
     { NULL, "V", 0x81, 6, 7, -1, 8, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, 1, 9, -1, 10, -1, -1 },
-    { NULL, "LComYahooSquidbSqlField;", 0x1, 11, 9, -1, 10, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, 1, 9, -1, 10, -1, -1 },
+    { NULL, "LSquiDBField;", 0x1, 11, 9, -1, 10, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 12, -1, -1 },
     { NULL, "[LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
@@ -110,10 +110,10 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(initWithComYahooSquidbUtilityProjectionMap:);
-  methods[2].selector = @selector(putWithNSString:withComYahooSquidbSqlField:);
-  methods[3].selector = @selector(putWithComYahooSquidbSqlField:);
-  methods[4].selector = @selector(putAllWithComYahooSquidbSqlFieldArray:);
+  methods[1].selector = @selector(initWithSquiDBProjectionMap:);
+  methods[2].selector = @selector(putWithNSString:withSquiDBField:);
+  methods[3].selector = @selector(putWithSquiDBField:);
+  methods[4].selector = @selector(putAllWithSquiDBFieldArray:);
   methods[5].selector = @selector(putWithNSString:);
   methods[6].selector = @selector(getWithNSString:);
   methods[7].selector = @selector(getDefaultProjection);
@@ -122,37 +122,39 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "map_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 13, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbUtilityProjectionMap;", "put", "LNSString;LComYahooSquidbSqlField;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Field<*>;", "LComYahooSquidbSqlField;", "(Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Field<*>;", "putAll", "[LComYahooSquidbSqlField;", "([Lcom/yahoo/squidb/sql/Field<*>;)V", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Field<*>;", "get", "()Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", "Ljava/util/Map<Ljava/lang/String;Lcom/yahoo/squidb/sql/Field<*>;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbUtilityProjectionMap = { "ProjectionMap", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbUtilityProjectionMap;
+  static const void *ptrTable[] = { "LSquiDBProjectionMap;", "put", "LNSString;LSquiDBField;", "(Ljava/lang/String;Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Field<*>;", "LSquiDBField;", "(Lcom/yahoo/squidb/sql/Field<*>;)Lcom/yahoo/squidb/sql/Field<*>;", "putAll", "[LSquiDBField;", "([Lcom/yahoo/squidb/sql/Field<*>;)V", "LNSString;", "(Ljava/lang/String;)Lcom/yahoo/squidb/sql/Field<*>;", "get", "()Ljava/util/List<Lcom/yahoo/squidb/sql/Field<*>;>;", "Ljava/util/Map<Ljava/lang/String;Lcom/yahoo/squidb/sql/Field<*>;>;" };
+  static const J2ObjcClassInfo _SquiDBProjectionMap = { "ProjectionMap", "com.yahoo.squidb.utility", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBProjectionMap;
 }
 
 @end
 
-void ComYahooSquidbUtilityProjectionMap_init(ComYahooSquidbUtilityProjectionMap *self) {
+void SquiDBProjectionMap_init(SquiDBProjectionMap *self) {
   NSObject_init(self);
   self->map_ = new_JavaUtilLinkedHashMap_init();
 }
 
-ComYahooSquidbUtilityProjectionMap *new_ComYahooSquidbUtilityProjectionMap_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityProjectionMap, init)
+SquiDBProjectionMap *new_SquiDBProjectionMap_init() {
+  J2OBJC_NEW_IMPL(SquiDBProjectionMap, init)
 }
 
-ComYahooSquidbUtilityProjectionMap *create_ComYahooSquidbUtilityProjectionMap_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityProjectionMap, init)
+SquiDBProjectionMap *create_SquiDBProjectionMap_init() {
+  J2OBJC_CREATE_IMPL(SquiDBProjectionMap, init)
 }
 
-void ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *self, ComYahooSquidbUtilityProjectionMap *other) {
+void SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *self, SquiDBProjectionMap *other) {
   NSObject_init(self);
-  self->map_ = new_JavaUtilLinkedHashMap_initWithJavaUtilMap_(((ComYahooSquidbUtilityProjectionMap *) nil_chk(other))->map_);
+  self->map_ = new_JavaUtilLinkedHashMap_initWithJavaUtilMap_(((SquiDBProjectionMap *) nil_chk(other))->map_);
 }
 
-ComYahooSquidbUtilityProjectionMap *new_ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *other) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbUtilityProjectionMap, initWithComYahooSquidbUtilityProjectionMap_, other)
+SquiDBProjectionMap *new_SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *other) {
+  J2OBJC_NEW_IMPL(SquiDBProjectionMap, initWithSquiDBProjectionMap_, other)
 }
 
-ComYahooSquidbUtilityProjectionMap *create_ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *other) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbUtilityProjectionMap, initWithComYahooSquidbUtilityProjectionMap_, other)
+SquiDBProjectionMap *create_SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *other) {
+  J2OBJC_CREATE_IMPL(SquiDBProjectionMap, initWithSquiDBProjectionMap_, other)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbUtilityProjectionMap)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBProjectionMap)
+
+J2OBJC_NAME_MAPPING(SquiDBProjectionMap, "com.yahoo.squidb.utility", "SquiDB")

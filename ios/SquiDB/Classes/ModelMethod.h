@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsModelMethod < JavaLangAnnotationAnnotation >
+@protocol SquiDBModelMethod < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *name;
 
@@ -27,18 +27,20 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsModelMethod : NSObject < ComYahooSquidbAnnotationsModelMethod > {
+@interface SquiDBModelMethod : NSObject < SquiDBModelMethod > {
  @public
   NSString *name_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsModelMethod)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBModelMethod)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsModelMethod> create_ComYahooSquidbAnnotationsModelMethod(NSString *name);
+FOUNDATION_EXPORT id<SquiDBModelMethod> create_SquiDBModelMethod(NSString *name);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsModelMethod)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBModelMethod)
+
+#define ComYahooSquidbAnnotationsModelMethod SquiDBModelMethod
 
 
 #if __has_feature(nullability)

@@ -13,153 +13,155 @@
 #include "View.h"
 #include "java/lang/StringBuilder.h"
 
-@interface ComYahooSquidbSqlView () {
+@interface SquiDBView () {
  @public
   jboolean temporary_;
 }
 
 - (instancetype)initWithIOSClass:(IOSClass *)modelClass
-withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
+         withSquiDBPropertyArray:(IOSObjectArray *)properties
                     withNSString:(NSString *)expression
                     withNSString:(NSString *)databaseName
                     withNSString:(NSString *)alias
-      withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
+                 withSquiDBQuery:(SquiDBQuery *)query
                      withBoolean:(jboolean)temporary;
 
 @end
 
-__attribute__((unused)) static void ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(ComYahooSquidbSqlView *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary);
+__attribute__((unused)) static void SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(SquiDBView *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary);
 
-__attribute__((unused)) static ComYahooSquidbSqlView *new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBView *new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlView *create_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary);
+__attribute__((unused)) static SquiDBView *create_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary);
 
-@implementation ComYahooSquidbSqlView
+@implementation SquiDBView
 
 - (instancetype)initWithIOSClass:(IOSClass *)modelClass
-withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties
+         withSquiDBPropertyArray:(IOSObjectArray *)properties
                     withNSString:(NSString *)expression
                     withNSString:(NSString *)databaseName
                     withNSString:(NSString *)alias
-      withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
+                 withSquiDBQuery:(SquiDBQuery *)query
                      withBoolean:(jboolean)temporary {
-  ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(self, modelClass, properties, expression, databaseName, alias, query, temporary);
+  SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(self, modelClass, properties, expression, databaseName, alias, query, temporary);
   return self;
 }
 
-+ (ComYahooSquidbSqlView *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                  withNSString:(NSString *)name {
-  return ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_(query, name);
++ (SquiDBView *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                            withNSString:(NSString *)name {
+  return SquiDBView_fromQueryWithSquiDBQuery_withNSString_(query, name);
 }
 
-+ (ComYahooSquidbSqlView *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                  withNSString:(NSString *)name
-                                                  withIOSClass:(IOSClass *)modelClass
-                            withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  return ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(query, name, modelClass, properties);
++ (SquiDBView *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                            withNSString:(NSString *)name
+                            withIOSClass:(IOSClass *)modelClass
+                 withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  return SquiDBView_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(query, name, modelClass, properties);
 }
 
-+ (ComYahooSquidbSqlView *)temporaryFromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name {
-  return ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_(query, name);
++ (SquiDBView *)temporaryFromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name {
+  return SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_(query, name);
 }
 
-+ (ComYahooSquidbSqlView *)temporaryFromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name
-                                                           withIOSClass:(IOSClass *)modelClass
-                                     withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties {
-  return ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(query, name, modelClass, properties);
++ (SquiDBView *)temporaryFromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name
+                                     withIOSClass:(IOSClass *)modelClass
+                          withSquiDBPropertyArray:(IOSObjectArray *)properties {
+  return SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(query, name, modelClass, properties);
 }
 
-- (ComYahooSquidbSqlView *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName {
-  return new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(modelClass_, properties_, [self getExpression], databaseName, alias_, query_, temporary_);
+- (SquiDBView *)qualifiedFromDatabaseWithNSString:(NSString *)databaseName {
+  return new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(modelClass_, properties_, [self getExpression], databaseName, alias_, query_, temporary_);
 }
 
-- (ComYahooSquidbSqlView *)asWithNSString:(NSString *)newAlias {
-  return (ComYahooSquidbSqlView *) cast_chk([super asWithNSString:newAlias], [ComYahooSquidbSqlView class]);
+- (SquiDBView *)asWithNSString:(NSString *)newAlias {
+  return (SquiDBView *) cast_chk([super asWithNSString:newAlias], [SquiDBView class]);
 }
 
-- (ComYahooSquidbSqlView *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
-                                  withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)newProperties {
-  return new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(modelClass_, newProperties, [self getExpression], qualifier_, newAlias, query_, temporary_);
+- (SquiDBView *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
+                                  withSquiDBPropertyArray:(IOSObjectArray *)newProperties {
+  return new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(modelClass_, newProperties, [self getExpression], qualifier_, newAlias, query_, temporary_);
 }
 
-- (void)createViewSqlWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext
-                               withJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
+- (void)createViewSqlWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext
+                    withJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
   (void) [((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:@"CREATE "];
   if (temporary_) {
     (void) [sql appendWithNSString:@"TEMPORARY "];
   }
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"VIEW IF NOT EXISTS "])) appendWithNSString:[self getExpression]])) appendWithNSString:@" AS "])) appendWithNSString:[((ComYahooSquidbSqlQuery *) nil_chk(query_)) toRawSqlWithComYahooSquidbSqlCompileContext:compileContext]];
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"VIEW IF NOT EXISTS "])) appendWithNSString:[self getExpression]])) appendWithNSString:@" AS "])) appendWithNSString:[((SquiDBQuery *) nil_chk(query_)) toRawSqlWithSquiDBCompileContext:compileContext]];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, 0, -1, 1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x9, 2, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x9, 2, 4, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x9, 6, 3, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x9, 6, 4, -1, 5, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x1, 7, 8, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x1, 9, 8, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlView;", 0x4, 10, 11, -1, 12, -1, -1 },
+    { NULL, "LSquiDBView;", 0x9, 2, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBView;", 0x9, 2, 4, -1, 5, -1, -1 },
+    { NULL, "LSquiDBView;", 0x9, 6, 3, -1, -1, -1, -1 },
+    { NULL, "LSquiDBView;", 0x9, 6, 4, -1, 5, -1, -1 },
+    { NULL, "LSquiDBView;", 0x1, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBView;", 0x1, 9, 8, -1, -1, -1, -1 },
+    { NULL, "LSquiDBView;", 0x4, 10, 11, -1, 12, -1, -1 },
     { NULL, "V", 0x1, 13, 14, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithIOSClass:withComYahooSquidbSqlPropertyArray:withNSString:withNSString:withNSString:withComYahooSquidbSqlQuery:withBoolean:);
-  methods[1].selector = @selector(fromQueryWithComYahooSquidbSqlQuery:withNSString:);
-  methods[2].selector = @selector(fromQueryWithComYahooSquidbSqlQuery:withNSString:withIOSClass:withComYahooSquidbSqlPropertyArray:);
-  methods[3].selector = @selector(temporaryFromQueryWithComYahooSquidbSqlQuery:withNSString:);
-  methods[4].selector = @selector(temporaryFromQueryWithComYahooSquidbSqlQuery:withNSString:withIOSClass:withComYahooSquidbSqlPropertyArray:);
+  methods[0].selector = @selector(initWithIOSClass:withSquiDBPropertyArray:withNSString:withNSString:withNSString:withSquiDBQuery:withBoolean:);
+  methods[1].selector = @selector(fromQueryWithSquiDBQuery:withNSString:);
+  methods[2].selector = @selector(fromQueryWithSquiDBQuery:withNSString:withIOSClass:withSquiDBPropertyArray:);
+  methods[3].selector = @selector(temporaryFromQueryWithSquiDBQuery:withNSString:);
+  methods[4].selector = @selector(temporaryFromQueryWithSquiDBQuery:withNSString:withIOSClass:withSquiDBPropertyArray:);
   methods[5].selector = @selector(qualifiedFromDatabaseWithNSString:);
   methods[6].selector = @selector(asWithNSString:);
-  methods[7].selector = @selector(asNewAliasWithPropertiesArrayWithNSString:withComYahooSquidbSqlPropertyArray:);
-  methods[8].selector = @selector(createViewSqlWithComYahooSquidbSqlCompileContext:withJavaLangStringBuilder:);
+  methods[7].selector = @selector(asNewAliasWithPropertiesArrayWithNSString:withSquiDBPropertyArray:);
+  methods[8].selector = @selector(createViewSqlWithSquiDBCompileContext:withJavaLangStringBuilder:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "temporary_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LIOSClass;[LComYahooSquidbSqlProperty;LNSString;LNSString;LNSString;LComYahooSquidbSqlQuery;Z", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/yahoo/squidb/sql/Query;Z)V", "fromQuery", "LComYahooSquidbSqlQuery;LNSString;", "LComYahooSquidbSqlQuery;LNSString;LIOSClass;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/Query;Ljava/lang/String;Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/View;", "temporaryFromQuery", "qualifiedFromDatabase", "LNSString;", "as", "asNewAliasWithPropertiesArray", "LNSString;[LComYahooSquidbSqlProperty;", "(Ljava/lang/String;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/View;", "createViewSql", "LComYahooSquidbSqlCompileContext;LJavaLangStringBuilder;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlView = { "View", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlView;
+  static const void *ptrTable[] = { "LIOSClass;[LSquiDBProperty;LNSString;LNSString;LNSString;LSquiDBQuery;Z", "(Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/yahoo/squidb/sql/Query;Z)V", "fromQuery", "LSquiDBQuery;LNSString;", "LSquiDBQuery;LNSString;LIOSClass;[LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/Query;Ljava/lang/String;Ljava/lang/Class<+Lcom/yahoo/squidb/data/ViewModel;>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/View;", "temporaryFromQuery", "qualifiedFromDatabase", "LNSString;", "as", "asNewAliasWithPropertiesArray", "LNSString;[LSquiDBProperty;", "(Ljava/lang/String;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/View;", "createViewSql", "LSquiDBCompileContext;LJavaLangStringBuilder;" };
+  static const J2ObjcClassInfo _SquiDBView = { "View", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBView;
 }
 
 @end
 
-void ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(ComYahooSquidbSqlView *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary) {
-  ComYahooSquidbSqlQueryTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withComYahooSquidbSqlQuery_(self, modelClass, properties, expression, databaseName, query);
+void SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(SquiDBView *self, IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary) {
+  SquiDBQueryTable_initPackagePrivateWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withSquiDBQuery_(self, modelClass, properties, expression, databaseName, query);
   self->alias_ = alias;
   self->temporary_ = temporary;
 }
 
-ComYahooSquidbSqlView *new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlView, initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_, modelClass, properties, expression, databaseName, alias, query, temporary)
+SquiDBView *new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary) {
+  J2OBJC_NEW_IMPL(SquiDBView, initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_, modelClass, properties, expression, databaseName, alias, query, temporary)
 }
 
-ComYahooSquidbSqlView *create_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, ComYahooSquidbSqlQuery *query, jboolean temporary) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlView, initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_, modelClass, properties, expression, databaseName, alias, query, temporary)
+SquiDBView *create_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(IOSClass *modelClass, IOSObjectArray *properties, NSString *expression, NSString *databaseName, NSString *alias, SquiDBQuery *query, jboolean temporary) {
+  J2OBJC_CREATE_IMPL(SquiDBView, initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_, modelClass, properties, expression, databaseName, alias, query, temporary)
 }
 
-ComYahooSquidbSqlView *ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *query, NSString *name) {
-  ComYahooSquidbSqlView_initialize();
-  return ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(query, name, nil, nil);
+SquiDBView *SquiDBView_fromQueryWithSquiDBQuery_withNSString_(SquiDBQuery *query, NSString *name) {
+  SquiDBView_initialize();
+  return SquiDBView_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(query, name, nil, nil);
 }
 
-ComYahooSquidbSqlView *ComYahooSquidbSqlView_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties) {
-  ComYahooSquidbSqlView_initialize();
-  return new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(modelClass, properties, name, nil, nil, query, false);
+SquiDBView *SquiDBView_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(SquiDBQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties) {
+  SquiDBView_initialize();
+  return new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(modelClass, properties, name, nil, nil, query, false);
 }
 
-ComYahooSquidbSqlView *ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *query, NSString *name) {
-  ComYahooSquidbSqlView_initialize();
-  return ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(query, name, nil, nil);
+SquiDBView *SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_(SquiDBQuery *query, NSString *name) {
+  SquiDBView_initialize();
+  return SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(query, name, nil, nil);
 }
 
-ComYahooSquidbSqlView *ComYahooSquidbSqlView_temporaryFromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties) {
-  ComYahooSquidbSqlView_initialize();
-  return new_ComYahooSquidbSqlView_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_withNSString_withNSString_withComYahooSquidbSqlQuery_withBoolean_(modelClass, properties, name, nil, nil, query, true);
+SquiDBView *SquiDBView_temporaryFromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(SquiDBQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties) {
+  SquiDBView_initialize();
+  return new_SquiDBView_initWithIOSClass_withSquiDBPropertyArray_withNSString_withNSString_withNSString_withSquiDBQuery_withBoolean_(modelClass, properties, name, nil, nil, query, true);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlView)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBView)
+
+J2OBJC_NAME_MAPPING(SquiDBView, "com.yahoo.squidb.sql", "SquiDB")

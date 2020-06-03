@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsAlias < JavaLangAnnotationAnnotation >
+@protocol SquiDBAlias < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 
@@ -27,18 +27,20 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsAlias : NSObject < ComYahooSquidbAnnotationsAlias > {
+@interface SquiDBAlias : NSObject < SquiDBAlias > {
  @public
   NSString *value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsAlias)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBAlias)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsAlias> create_ComYahooSquidbAnnotationsAlias(NSString *value);
+FOUNDATION_EXPORT id<SquiDBAlias> create_SquiDBAlias(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsAlias)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAlias)
+
+#define ComYahooSquidbAnnotationsAlias SquiDBAlias
 
 
 #if __has_feature(nullability)

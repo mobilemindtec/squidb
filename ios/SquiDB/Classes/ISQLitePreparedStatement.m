@@ -6,11 +6,11 @@
 #include "ISQLitePreparedStatement.h"
 #include "J2ObjC_source.h"
 
-@interface ComYahooSquidbDataISQLitePreparedStatement : NSObject
+@interface SquiDBISQLitePreparedStatement : NSObject
 
 @end
 
-@implementation ComYahooSquidbDataISQLitePreparedStatement
+@implementation SquiDBISQLitePreparedStatement
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -44,10 +44,12 @@
   methods[11].selector = @selector(simpleQueryForString);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "bindNull", "I", "bindLong", "IJ", "bindDouble", "ID", "bindString", "ILNSString;", "bindBlob", "I[B" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataISQLitePreparedStatement = { "ISQLitePreparedStatement", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x609, 12, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataISQLitePreparedStatement;
+  static const J2ObjcClassInfo _SquiDBISQLitePreparedStatement = { "ISQLitePreparedStatement", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0x609, 12, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBISQLitePreparedStatement;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbDataISQLitePreparedStatement)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBISQLitePreparedStatement)
+
+J2OBJC_NAME_MAPPING(SquiDBISQLitePreparedStatement, "com.yahoo.squidb.data", "SquiDB")

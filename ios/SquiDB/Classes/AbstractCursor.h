@@ -15,13 +15,13 @@
 #include "ICursor.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
 @class IOSByteArray;
 @class IOSObjectArray;
 @class JavaLangLong;
 @class JavaUtilHashMap;
+@class SquiDBCursorWindow;
 
-@interface ComYahooAndroidSqliteAbstractCursor : NSObject < ComYahooSquidbDataICursor > {
+@interface SquiDBAbstractCursor : NSObject < SquiDBICursor > {
  @public
   JavaUtilHashMap *mUpdatedRows_;
   jint mPos_;
@@ -39,7 +39,7 @@
 - (void)deactivate;
 
 - (void)fillWindowWithInt:(jint)position
-withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window;
+   withSquiDBCursorWindow:(SquiDBCursorWindow *)window;
 
 - (IOSByteArray *)getBlobWithInt:(jint)column;
 
@@ -73,7 +73,7 @@ withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)windo
 
 - (jboolean)getWantsAllOnMoveCalls;
 
-- (ComYahooAndroidSqliteCursorWindow *)getWindow;
+- (SquiDBCursorWindow *)getWindow;
 
 - (jboolean)isAfterLast;
 
@@ -118,14 +118,16 @@ withComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)windo
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteAbstractCursor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBAbstractCursor)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteAbstractCursor, mUpdatedRows_, JavaUtilHashMap *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteAbstractCursor, mCurrentRowID_, JavaLangLong *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractCursor, mUpdatedRows_, JavaUtilHashMap *)
+J2OBJC_FIELD_SETTER(SquiDBAbstractCursor, mCurrentRowID_, JavaLangLong *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteAbstractCursor_init(ComYahooAndroidSqliteAbstractCursor *self);
+FOUNDATION_EXPORT void SquiDBAbstractCursor_init(SquiDBAbstractCursor *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteAbstractCursor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBAbstractCursor)
+
+@compatibility_alias ComYahooAndroidSqliteAbstractCursor SquiDBAbstractCursor;
 
 
 #if __has_feature(nullability)

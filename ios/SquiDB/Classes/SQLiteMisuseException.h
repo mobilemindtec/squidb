@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteSQLiteMisuseException : ComYahooAndroidSqliteSQLiteException
+@interface SquiDBSQLiteMisuseException : SquiDBSQLiteException
 
 #pragma mark Public
 
@@ -32,21 +32,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteMisuseException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteMisuseException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteMisuseException_init(ComYahooAndroidSqliteSQLiteMisuseException *self);
+FOUNDATION_EXPORT void SquiDBSQLiteMisuseException_init(SquiDBSQLiteMisuseException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteMisuseException *new_ComYahooAndroidSqliteSQLiteMisuseException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteMisuseException *new_SquiDBSQLiteMisuseException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteMisuseException *create_ComYahooAndroidSqliteSQLiteMisuseException_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteMisuseException *create_SquiDBSQLiteMisuseException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(ComYahooAndroidSqliteSQLiteMisuseException *self, NSString *error);
+FOUNDATION_EXPORT void SquiDBSQLiteMisuseException_initWithNSString_(SquiDBSQLiteMisuseException *self, NSString *error);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteMisuseException *new_ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteMisuseException *new_SquiDBSQLiteMisuseException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteMisuseException *create_ComYahooAndroidSqliteSQLiteMisuseException_initWithNSString_(NSString *error);
+FOUNDATION_EXPORT SquiDBSQLiteMisuseException *create_SquiDBSQLiteMisuseException_initWithNSString_(NSString *error);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteMisuseException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteMisuseException)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteMisuseException SquiDBSQLiteMisuseException;
 
 
 #if __has_feature(nullability)

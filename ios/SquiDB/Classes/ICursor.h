@@ -17,7 +17,7 @@
 @class IOSByteArray;
 @class IOSObjectArray;
 
-@protocol ComYahooSquidbDataICursor < JavaObject >
+@protocol SquiDBICursor < JavaObject >
 
 - (jint)getCount;
 
@@ -77,7 +77,7 @@
 
 @end
 
-@interface ComYahooSquidbDataICursor : NSObject
+@interface SquiDBICursor : NSObject
 @property (readonly, class) jint FIELD_TYPE_NULL NS_SWIFT_NAME(FIELD_TYPE_NULL);
 @property (readonly, class) jint FIELD_TYPE_INTEGER NS_SWIFT_NAME(FIELD_TYPE_INTEGER);
 @property (readonly, class) jint FIELD_TYPE_FLOAT NS_SWIFT_NAME(FIELD_TYPE_FLOAT);
@@ -96,29 +96,31 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataICursor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBICursor)
 
-inline jint ComYahooSquidbDataICursor_get_FIELD_TYPE_NULL(void);
-#define ComYahooSquidbDataICursor_FIELD_TYPE_NULL 0
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataICursor, FIELD_TYPE_NULL, jint)
+inline jint SquiDBICursor_get_FIELD_TYPE_NULL(void);
+#define SquiDBICursor_FIELD_TYPE_NULL 0
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBICursor, FIELD_TYPE_NULL, jint)
 
-inline jint ComYahooSquidbDataICursor_get_FIELD_TYPE_INTEGER(void);
-#define ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER 1
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataICursor, FIELD_TYPE_INTEGER, jint)
+inline jint SquiDBICursor_get_FIELD_TYPE_INTEGER(void);
+#define SquiDBICursor_FIELD_TYPE_INTEGER 1
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBICursor, FIELD_TYPE_INTEGER, jint)
 
-inline jint ComYahooSquidbDataICursor_get_FIELD_TYPE_FLOAT(void);
-#define ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT 2
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataICursor, FIELD_TYPE_FLOAT, jint)
+inline jint SquiDBICursor_get_FIELD_TYPE_FLOAT(void);
+#define SquiDBICursor_FIELD_TYPE_FLOAT 2
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBICursor, FIELD_TYPE_FLOAT, jint)
 
-inline jint ComYahooSquidbDataICursor_get_FIELD_TYPE_STRING(void);
-#define ComYahooSquidbDataICursor_FIELD_TYPE_STRING 3
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataICursor, FIELD_TYPE_STRING, jint)
+inline jint SquiDBICursor_get_FIELD_TYPE_STRING(void);
+#define SquiDBICursor_FIELD_TYPE_STRING 3
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBICursor, FIELD_TYPE_STRING, jint)
 
-inline jint ComYahooSquidbDataICursor_get_FIELD_TYPE_BLOB(void);
-#define ComYahooSquidbDataICursor_FIELD_TYPE_BLOB 4
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataICursor, FIELD_TYPE_BLOB, jint)
+inline jint SquiDBICursor_get_FIELD_TYPE_BLOB(void);
+#define SquiDBICursor_FIELD_TYPE_BLOB 4
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBICursor, FIELD_TYPE_BLOB, jint)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataICursor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBICursor)
+
+#define ComYahooSquidbDataICursor SquiDBICursor
 
 
 #if __has_feature(nullability)

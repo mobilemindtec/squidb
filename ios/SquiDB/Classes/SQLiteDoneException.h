@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteSQLiteDoneException : ComYahooAndroidSqliteSQLiteException
+@interface SquiDBSQLiteDoneException : SquiDBSQLiteException
 
 #pragma mark Public
 
@@ -32,21 +32,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteDoneException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteDoneException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDoneException_init(ComYahooAndroidSqliteSQLiteDoneException *self);
+FOUNDATION_EXPORT void SquiDBSQLiteDoneException_init(SquiDBSQLiteDoneException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDoneException *new_ComYahooAndroidSqliteSQLiteDoneException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDoneException *new_SquiDBSQLiteDoneException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDoneException *create_ComYahooAndroidSqliteSQLiteDoneException_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteDoneException *create_SquiDBSQLiteDoneException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(ComYahooAndroidSqliteSQLiteDoneException *self, NSString *error);
+FOUNDATION_EXPORT void SquiDBSQLiteDoneException_initWithNSString_(SquiDBSQLiteDoneException *self, NSString *error);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDoneException *new_ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDoneException *new_SquiDBSQLiteDoneException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDoneException *create_ComYahooAndroidSqliteSQLiteDoneException_initWithNSString_(NSString *error);
+FOUNDATION_EXPORT SquiDBSQLiteDoneException *create_SquiDBSQLiteDoneException_initWithNSString_(NSString *error);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDoneException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDoneException)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteDoneException SquiDBSQLiteDoneException;
 
 
 #if __has_feature(nullability)

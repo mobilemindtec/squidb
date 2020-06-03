@@ -7,17 +7,17 @@
 #include "SQLiteException.h"
 #include "SQLiteOutOfMemoryException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteOutOfMemoryException
+@implementation SquiDBSQLiteOutOfMemoryException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteOutOfMemoryException_init(self);
+  SquiDBSQLiteOutOfMemoryException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteOutOfMemoryException_initWithNSString_(self, error);
+  SquiDBSQLiteOutOfMemoryException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteOutOfMemoryException = { "SQLiteOutOfMemoryException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteOutOfMemoryException;
+  static const J2ObjcClassInfo _SquiDBSQLiteOutOfMemoryException = { "SQLiteOutOfMemoryException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteOutOfMemoryException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteOutOfMemoryException_init(ComYahooAndroidSqliteSQLiteOutOfMemoryException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteOutOfMemoryException_init(SquiDBSQLiteOutOfMemoryException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteOutOfMemoryException *new_ComYahooAndroidSqliteSQLiteOutOfMemoryException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteOutOfMemoryException, init)
+SquiDBSQLiteOutOfMemoryException *new_SquiDBSQLiteOutOfMemoryException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteOutOfMemoryException, init)
 }
 
-ComYahooAndroidSqliteSQLiteOutOfMemoryException *create_ComYahooAndroidSqliteSQLiteOutOfMemoryException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteOutOfMemoryException, init)
+SquiDBSQLiteOutOfMemoryException *create_SquiDBSQLiteOutOfMemoryException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteOutOfMemoryException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteOutOfMemoryException_initWithNSString_(ComYahooAndroidSqliteSQLiteOutOfMemoryException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteOutOfMemoryException_initWithNSString_(SquiDBSQLiteOutOfMemoryException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteOutOfMemoryException *new_ComYahooAndroidSqliteSQLiteOutOfMemoryException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteOutOfMemoryException, initWithNSString_, error)
+SquiDBSQLiteOutOfMemoryException *new_SquiDBSQLiteOutOfMemoryException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteOutOfMemoryException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteOutOfMemoryException *create_ComYahooAndroidSqliteSQLiteOutOfMemoryException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteOutOfMemoryException, initWithNSString_, error)
+SquiDBSQLiteOutOfMemoryException *create_SquiDBSQLiteOutOfMemoryException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteOutOfMemoryException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteOutOfMemoryException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteOutOfMemoryException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteOutOfMemoryException, "com.yahoo.android.sqlite", "SquiDB")

@@ -14,7 +14,7 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooAndroidSqliteSQLiteTransactionListener < JavaObject >
+@protocol SquiDBSQLiteTransactionListener < JavaObject >
 
 - (void)onBegin;
 
@@ -24,9 +24,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteTransactionListener)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteTransactionListener)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteTransactionListener)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteTransactionListener)
+
+#define ComYahooAndroidSqliteSQLiteTransactionListener SquiDBSQLiteTransactionListener
 
 
 #if __has_feature(nullability)

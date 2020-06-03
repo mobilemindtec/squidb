@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsViewQuery < JavaLangAnnotationAnnotation >
+@protocol SquiDBViewQuery < JavaLangAnnotationAnnotation >
 
 @property (readonly) jboolean freeze;
 
@@ -27,18 +27,20 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsViewQuery : NSObject < ComYahooSquidbAnnotationsViewQuery > {
+@interface SquiDBViewQuery : NSObject < SquiDBViewQuery > {
  @public
   jboolean freeze_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsViewQuery)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBViewQuery)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsViewQuery> create_ComYahooSquidbAnnotationsViewQuery(jboolean freeze);
+FOUNDATION_EXPORT id<SquiDBViewQuery> create_SquiDBViewQuery(jboolean freeze);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsViewQuery)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBViewQuery)
+
+#define ComYahooSquidbAnnotationsViewQuery SquiDBViewQuery
 
 
 #if __has_feature(nullability)

@@ -17,7 +17,7 @@
 @class JavaUtilArrayList;
 @class JavaUtilLocale;
 
-@interface ComYahooAndroidSqliteSQLiteDatabaseConfiguration : NSObject {
+@interface SquiDBSQLiteDatabaseConfiguration : NSObject {
  @public
   NSString *path_;
   NSString *label_;
@@ -33,14 +33,14 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)other;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)other;
 
 - (instancetype __nonnull)initWithNSString:(NSString *)path
                                    withInt:(jint)openFlags;
 
 - (jboolean)isInMemoryDb;
 
-- (void)updateParametersFromWithComYahooAndroidSqliteSQLiteDatabaseConfiguration:(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *)other;
+- (void)updateParametersFromWithSquiDBSQLiteDatabaseConfiguration:(SquiDBSQLiteDatabaseConfiguration *)other;
 
 // Disallowed inherited constructors, do not use.
 
@@ -48,31 +48,33 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteSQLiteDatabaseConfiguration)
+J2OBJC_STATIC_INIT(SquiDBSQLiteDatabaseConfiguration)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, path_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, label_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, locale_, JavaUtilLocale *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, customFunctions_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabaseConfiguration, path_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabaseConfiguration, label_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabaseConfiguration, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteDatabaseConfiguration, customFunctions_, JavaUtilArrayList *)
 
-inline NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_get_MEMORY_DB_PATH(void);
+inline NSString *SquiDBSQLiteDatabaseConfiguration_get_MEMORY_DB_PATH(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooAndroidSqliteSQLiteDatabaseConfiguration_MEMORY_DB_PATH;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteSQLiteDatabaseConfiguration, MEMORY_DB_PATH, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBSQLiteDatabaseConfiguration_MEMORY_DB_PATH;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSQLiteDatabaseConfiguration, MEMORY_DB_PATH, NSString *)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *self, NSString *path, jint openFlags);
+FOUNDATION_EXPORT void SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(SquiDBSQLiteDatabaseConfiguration *self, NSString *path, jint openFlags);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDatabaseConfiguration *new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDatabaseConfiguration *new_SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDatabaseConfiguration *create_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags);
+FOUNDATION_EXPORT SquiDBSQLiteDatabaseConfiguration *create_SquiDBSQLiteDatabaseConfiguration_initWithNSString_withInt_(NSString *path, jint openFlags);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *self, ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other);
+FOUNDATION_EXPORT void SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *self, SquiDBSQLiteDatabaseConfiguration *other);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDatabaseConfiguration *new_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteDatabaseConfiguration *new_SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *other) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteDatabaseConfiguration *create_ComYahooAndroidSqliteSQLiteDatabaseConfiguration_initWithComYahooAndroidSqliteSQLiteDatabaseConfiguration_(ComYahooAndroidSqliteSQLiteDatabaseConfiguration *other);
+FOUNDATION_EXPORT SquiDBSQLiteDatabaseConfiguration *create_SquiDBSQLiteDatabaseConfiguration_initWithSquiDBSQLiteDatabaseConfiguration_(SquiDBSQLiteDatabaseConfiguration *other);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteDatabaseConfiguration)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteDatabaseConfiguration)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteDatabaseConfiguration SquiDBSQLiteDatabaseConfiguration;
 
 
 #if __has_feature(nullability)

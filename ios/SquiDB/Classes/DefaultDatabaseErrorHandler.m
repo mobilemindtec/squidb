@@ -13,31 +13,31 @@
 #include "java/lang/Exception.h"
 #include "java/util/List.h"
 
-@interface ComYahooAndroidSqliteDefaultDatabaseErrorHandler ()
+@interface SquiDBDefaultDatabaseErrorHandler ()
 
 - (void)deleteDatabaseFileWithNSString:(NSString *)fileName;
 
 @end
 
-inline NSString *ComYahooAndroidSqliteDefaultDatabaseErrorHandler_get_TAG(void);
-static NSString *ComYahooAndroidSqliteDefaultDatabaseErrorHandler_TAG = @"DefaultDatabaseErrorHandler";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteDefaultDatabaseErrorHandler, TAG, NSString *)
+inline NSString *SquiDBDefaultDatabaseErrorHandler_get_TAG(void);
+static NSString *SquiDBDefaultDatabaseErrorHandler_TAG = @"DefaultDatabaseErrorHandler";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBDefaultDatabaseErrorHandler, TAG, NSString *)
 
-__attribute__((unused)) static void ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(ComYahooAndroidSqliteDefaultDatabaseErrorHandler *self, NSString *fileName);
+__attribute__((unused)) static void SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(SquiDBDefaultDatabaseErrorHandler *self, NSString *fileName);
 
-@implementation ComYahooAndroidSqliteDefaultDatabaseErrorHandler
+@implementation SquiDBDefaultDatabaseErrorHandler
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init(self);
+  SquiDBDefaultDatabaseErrorHandler_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)dbObj {
-  ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooAndroidSqliteDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"Corruption reported by sqlite on database: ", [((ComYahooAndroidSqliteSQLiteDatabase *) nil_chk(dbObj)) getPath]));
+- (void)onCorruptionWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)dbObj {
+  SquiDBLogger_eWithNSString_withNSString_(SquiDBDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"Corruption reported by sqlite on database: ", [((SquiDBSQLiteDatabase *) nil_chk(dbObj)) getPath]));
   if (![dbObj isOpen]) {
-    ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, [dbObj getPath]);
+    SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, [dbObj getPath]);
     return;
   }
   id<JavaUtilList> attachedDbs = nil;
@@ -45,28 +45,28 @@ J2OBJC_IGNORE_DESIGNATED_END
     @try {
       attachedDbs = [dbObj getAttachedDbs];
     }
-    @catch (ComYahooAndroidSqliteSQLiteException *e) {
+    @catch (SquiDBSQLiteException *e) {
     }
     @try {
       [dbObj close];
     }
-    @catch (ComYahooAndroidSqliteSQLiteException *e) {
+    @catch (SquiDBSQLiteException *e) {
     }
   }
   @finally {
     if (attachedDbs != nil) {
-      for (ComYahooAndroidSqlitePair * __strong p in attachedDbs) {
-        ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, ((ComYahooAndroidSqlitePair *) nil_chk(p))->second_);
+      for (SquiDBPair * __strong p in attachedDbs) {
+        SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, ((SquiDBPair *) nil_chk(p))->second_);
       }
     }
     else {
-      ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, [dbObj getPath]);
+      SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, [dbObj getPath]);
     }
   }
 }
 
 - (void)deleteDatabaseFileWithNSString:(NSString *)fileName {
-  ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, fileName);
+  SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(self, fileName);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -79,42 +79,44 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(onCorruptionWithComYahooAndroidSqliteSQLiteDatabase:);
+  methods[1].selector = @selector(onCorruptionWithSquiDBSQLiteDatabase:);
   methods[2].selector = @selector(deleteDatabaseFileWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "TAG", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "onCorruption", "LComYahooAndroidSqliteSQLiteDatabase;", "deleteDatabaseFile", "LNSString;", &ComYahooAndroidSqliteDefaultDatabaseErrorHandler_TAG };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteDefaultDatabaseErrorHandler = { "DefaultDatabaseErrorHandler", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteDefaultDatabaseErrorHandler;
+  static const void *ptrTable[] = { "onCorruption", "LSquiDBSQLiteDatabase;", "deleteDatabaseFile", "LNSString;", &SquiDBDefaultDatabaseErrorHandler_TAG };
+  static const J2ObjcClassInfo _SquiDBDefaultDatabaseErrorHandler = { "DefaultDatabaseErrorHandler", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBDefaultDatabaseErrorHandler;
 }
 
 @end
 
-void ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init(ComYahooAndroidSqliteDefaultDatabaseErrorHandler *self) {
+void SquiDBDefaultDatabaseErrorHandler_init(SquiDBDefaultDatabaseErrorHandler *self) {
   NSObject_init(self);
 }
 
-ComYahooAndroidSqliteDefaultDatabaseErrorHandler *new_ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteDefaultDatabaseErrorHandler, init)
+SquiDBDefaultDatabaseErrorHandler *new_SquiDBDefaultDatabaseErrorHandler_init() {
+  J2OBJC_NEW_IMPL(SquiDBDefaultDatabaseErrorHandler, init)
 }
 
-ComYahooAndroidSqliteDefaultDatabaseErrorHandler *create_ComYahooAndroidSqliteDefaultDatabaseErrorHandler_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteDefaultDatabaseErrorHandler, init)
+SquiDBDefaultDatabaseErrorHandler *create_SquiDBDefaultDatabaseErrorHandler_init() {
+  J2OBJC_CREATE_IMPL(SquiDBDefaultDatabaseErrorHandler, init)
 }
 
-void ComYahooAndroidSqliteDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(ComYahooAndroidSqliteDefaultDatabaseErrorHandler *self, NSString *fileName) {
+void SquiDBDefaultDatabaseErrorHandler_deleteDatabaseFileWithNSString_(SquiDBDefaultDatabaseErrorHandler *self, NSString *fileName) {
   if ([((NSString *) nil_chk(fileName)) java_equalsIgnoreCase:@":memory:"] || [((NSString *) nil_chk([fileName java_trim])) java_length] == 0) {
     return;
   }
-  ComYahooSquidbUtilityLogger_eWithNSString_withNSString_(ComYahooAndroidSqliteDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"deleting the database file: ", fileName));
+  SquiDBLogger_eWithNSString_withNSString_(SquiDBDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"deleting the database file: ", fileName));
   @try {
-    ComYahooAndroidSqliteSQLiteDatabase_deleteDatabaseWithJavaIoFile_(new_JavaIoFile_initWithNSString_(fileName));
+    SquiDBSQLiteDatabase_deleteDatabaseWithJavaIoFile_(new_JavaIoFile_initWithNSString_(fileName));
   }
   @catch (JavaLangException *e) {
-    ComYahooSquidbUtilityLogger_wWithNSString_withNSString_(ComYahooAndroidSqliteDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"delete failed: ", [e getMessage]));
+    SquiDBLogger_wWithNSString_withNSString_(SquiDBDefaultDatabaseErrorHandler_TAG, JreStrcat("$$", @"delete failed: ", [e getMessage]));
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteDefaultDatabaseErrorHandler)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDefaultDatabaseErrorHandler)
+
+J2OBJC_NAME_MAPPING(SquiDBDefaultDatabaseErrorHandler, "com.yahoo.android.sqlite", "SquiDB")

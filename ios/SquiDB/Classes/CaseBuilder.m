@@ -11,11 +11,11 @@
 #include "java/lang/StringBuilder.h"
 #include "java/util/ArrayList.h"
 
-@class ComYahooSquidbSqlField;
+@class SquiDBField;
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbSqlCaseBuilder () {
+@interface SquiDBCaseBuilder () {
  @public
   id baseExpression_;
   JavaUtilArrayList *whens_;
@@ -26,42 +26,42 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCaseBuilder, baseExpression_, id)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCaseBuilder, whens_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCaseBuilder, thens_, JavaUtilArrayList *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlCaseBuilder, elseValue_, id)
+J2OBJC_FIELD_SETTER(SquiDBCaseBuilder, baseExpression_, id)
+J2OBJC_FIELD_SETTER(SquiDBCaseBuilder, whens_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBCaseBuilder, thens_, JavaUtilArrayList *)
+J2OBJC_FIELD_SETTER(SquiDBCaseBuilder, elseValue_, id)
 
-@interface ComYahooSquidbSqlCaseBuilder_1 : ComYahooSquidbSqlFunction {
+@interface SquiDBCaseBuilder_1 : SquiDBFunction {
  @public
-  ComYahooSquidbSqlCaseBuilder *this$0_;
+  SquiDBCaseBuilder *this$0_;
 }
 
-- (instancetype)initWithComYahooSquidbSqlCaseBuilder:(ComYahooSquidbSqlCaseBuilder *)outer$;
+- (instancetype)initWithSquiDBCaseBuilder:(SquiDBCaseBuilder *)outer$;
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation;
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation;
 
-- (ComYahooSquidbSqlField *)asWithNSString:(NSString *)arg0;
+- (SquiDBField *)asWithNSString:(NSString *)arg0;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCaseBuilder_1)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCaseBuilder_1)
 
-__attribute__((unused)) static void ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder_1 *self, ComYahooSquidbSqlCaseBuilder *outer$);
+__attribute__((unused)) static void SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder_1 *self, SquiDBCaseBuilder *outer$);
 
-__attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *new_ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBCaseBuilder_1 *new_SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder *outer$);
+__attribute__((unused)) static SquiDBCaseBuilder_1 *create_SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder *outer$);
 
-@implementation ComYahooSquidbSqlCaseBuilder
+@implementation SquiDBCaseBuilder
 
 - (instancetype)initWithId:(id)baseExpression {
-  ComYahooSquidbSqlCaseBuilder_initWithId_(self, baseExpression);
+  SquiDBCaseBuilder_initWithId_(self, baseExpression);
   return self;
 }
 
-- (ComYahooSquidbSqlCaseBuilder *)whenWithId:(id)when
-                                      withId:(id)then {
+- (SquiDBCaseBuilder *)whenWithId:(id)when
+                           withId:(id)then {
   if (ended_) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Can't call when() after calling end()");
   }
@@ -74,7 +74,7 @@ __attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSq
   return self;
 }
 
-- (ComYahooSquidbSqlCaseBuilder *)elseExprWithId:(id)value {
+- (SquiDBCaseBuilder *)elseExprWithId:(id)value {
   if (ended_) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Can't call elseExpr() after calling end()");
   }
@@ -82,7 +82,7 @@ __attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSq
   return self;
 }
 
-- (ComYahooSquidbSqlFunction *)end {
+- (SquiDBFunction *)end {
   if (whens_ == nil || [whens_ size] == 0) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"CASE statement must have at least one WHEN branch");
   }
@@ -90,15 +90,15 @@ __attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSq
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"end() already called on this CASE statement");
   }
   ended_ = true;
-  return new_ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(self);
+  return new_SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(self);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCaseBuilder;", 0x1, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCaseBuilder;", 0x1, 3, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlFunction;", 0x1, -1, -1, -1, 4, -1, -1 },
+    { NULL, "LSquiDBCaseBuilder;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBCaseBuilder;", 0x1, 3, 0, -1, -1, -1, -1 },
+    { NULL, "LSquiDBFunction;", 0x1, -1, -1, -1, 4, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -116,37 +116,39 @@ __attribute__((unused)) static ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSq
     { "ended_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSObject;", "when", "LNSObject;LNSObject;", "elseExpr", "<T:Ljava/lang/Object;>()Lcom/yahoo/squidb/sql/Function<TT;>;", "Ljava/util/ArrayList<Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCaseBuilder = { "CaseBuilder", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 4, 5, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCaseBuilder;
+  static const J2ObjcClassInfo _SquiDBCaseBuilder = { "CaseBuilder", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 4, 5, -1, -1, -1, -1, -1 };
+  return &_SquiDBCaseBuilder;
 }
 
 @end
 
-void ComYahooSquidbSqlCaseBuilder_initWithId_(ComYahooSquidbSqlCaseBuilder *self, id baseExpression) {
+void SquiDBCaseBuilder_initWithId_(SquiDBCaseBuilder *self, id baseExpression) {
   NSObject_init(self);
   self->baseExpression_ = baseExpression;
 }
 
-ComYahooSquidbSqlCaseBuilder *new_ComYahooSquidbSqlCaseBuilder_initWithId_(id baseExpression) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCaseBuilder, initWithId_, baseExpression)
+SquiDBCaseBuilder *new_SquiDBCaseBuilder_initWithId_(id baseExpression) {
+  J2OBJC_NEW_IMPL(SquiDBCaseBuilder, initWithId_, baseExpression)
 }
 
-ComYahooSquidbSqlCaseBuilder *create_ComYahooSquidbSqlCaseBuilder_initWithId_(id baseExpression) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCaseBuilder, initWithId_, baseExpression)
+SquiDBCaseBuilder *create_SquiDBCaseBuilder_initWithId_(id baseExpression) {
+  J2OBJC_CREATE_IMPL(SquiDBCaseBuilder, initWithId_, baseExpression)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCaseBuilder)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCaseBuilder)
 
-@implementation ComYahooSquidbSqlCaseBuilder_1
+J2OBJC_NAME_MAPPING(SquiDBCaseBuilder, "com.yahoo.squidb.sql", "SquiDB")
 
-- (instancetype)initWithComYahooSquidbSqlCaseBuilder:(ComYahooSquidbSqlCaseBuilder *)outer$ {
-  ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(self, outer$);
+@implementation SquiDBCaseBuilder_1
+
+- (instancetype)initWithSquiDBCaseBuilder:(SquiDBCaseBuilder *)outer$ {
+  SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(self, outer$);
   return self;
 }
 
-- (void)appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                    withBoolean:(jboolean)forSqlValidation {
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"(CASE"];
+- (void)appendFunctionExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                         withBoolean:(jboolean)forSqlValidation {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"(CASE"];
   if (this$0_->baseExpression_ != nil) {
     (void) [builder->sql_ appendWithChar:' '];
     [builder addValueToSqlWithId:this$0_->baseExpression_ withBoolean:forSqlValidation];
@@ -167,34 +169,34 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCaseBuilder)
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x4, 0, 1, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
+    { NULL, "V", 0x4, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlCaseBuilder:);
-  methods[1].selector = @selector(appendFunctionExpressionWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[0].selector = @selector(initWithSquiDBCaseBuilder:);
+  methods[1].selector = @selector(appendFunctionExpressionWithSquiDBSqlBuilder:withBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LComYahooSquidbSqlCaseBuilder;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LSquiDBCaseBuilder;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "appendFunctionExpression", "LComYahooSquidbSqlSqlBuilder;Z", "LComYahooSquidbSqlCaseBuilder;", "end", "Lcom/yahoo/squidb/sql/Function<TT;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCaseBuilder_1 = { "", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, 3, 4, -1 };
-  return &_ComYahooSquidbSqlCaseBuilder_1;
+  static const void *ptrTable[] = { "LSquiDBCaseBuilder;", "appendFunctionExpression", "LSquiDBSqlBuilder;Z", "end", "Lcom/yahoo/squidb/sql/Function<TT;>;" };
+  static const J2ObjcClassInfo _SquiDBCaseBuilder_1 = { "", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x8010, 2, 1, 0, -1, 3, 4, -1 };
+  return &_SquiDBCaseBuilder_1;
 }
 
 @end
 
-void ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder_1 *self, ComYahooSquidbSqlCaseBuilder *outer$) {
+void SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder_1 *self, SquiDBCaseBuilder *outer$) {
   self->this$0_ = outer$;
-  ComYahooSquidbSqlFunction_init(self);
+  SquiDBFunction_init(self);
 }
 
-ComYahooSquidbSqlCaseBuilder_1 *new_ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder *outer$) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCaseBuilder_1, initWithComYahooSquidbSqlCaseBuilder_, outer$)
+SquiDBCaseBuilder_1 *new_SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder *outer$) {
+  J2OBJC_NEW_IMPL(SquiDBCaseBuilder_1, initWithSquiDBCaseBuilder_, outer$)
 }
 
-ComYahooSquidbSqlCaseBuilder_1 *create_ComYahooSquidbSqlCaseBuilder_1_initWithComYahooSquidbSqlCaseBuilder_(ComYahooSquidbSqlCaseBuilder *outer$) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCaseBuilder_1, initWithComYahooSquidbSqlCaseBuilder_, outer$)
+SquiDBCaseBuilder_1 *create_SquiDBCaseBuilder_1_initWithSquiDBCaseBuilder_(SquiDBCaseBuilder *outer$) {
+  J2OBJC_CREATE_IMPL(SquiDBCaseBuilder_1, initWithSquiDBCaseBuilder_, outer$)
 }

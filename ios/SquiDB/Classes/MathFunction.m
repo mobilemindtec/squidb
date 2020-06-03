@@ -11,25 +11,25 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbSqlMathFunction () {
+@interface SquiDBMathFunction () {
  @public
-  ComYahooSquidbSqlMathOperator *operator__;
+  SquiDBMathOperator *operator__;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlMathFunction, operator__, ComYahooSquidbSqlMathOperator *)
+J2OBJC_FIELD_SETTER(SquiDBMathFunction, operator__, SquiDBMathOperator *)
 
-@implementation ComYahooSquidbSqlMathFunction
+@implementation SquiDBMathFunction
 
-- (instancetype)initWithComYahooSquidbSqlMathOperator:(ComYahooSquidbSqlMathOperator *)operator_
-                                    withNSObjectArray:(IOSObjectArray *)args {
-  ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(self, operator_, args);
+- (instancetype)initPackagePrivateWithSquiDBMathOperator:(SquiDBMathOperator *)operator_
+                                       withNSObjectArray:(IOSObjectArray *)args {
+  SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(self, operator_, args);
   return self;
 }
 
 - (NSString *)separator {
-  return [((ComYahooSquidbSqlMathOperator *) nil_chk(operator__)) description];
+  return [((SquiDBMathOperator *) nil_chk(operator__)) description];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -40,30 +40,30 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbSqlMathFunction, operator__, ComYahooSquidbSql
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbSqlMathOperator:withNSObjectArray:);
+  methods[0].selector = @selector(initPackagePrivateWithSquiDBMathOperator:withNSObjectArray:);
   methods[1].selector = @selector(separator);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "operator__", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x12, 1, -1, -1, -1 },
+    { "operator__", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x12, 1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbSqlMathOperator;[LNSObject;", "operator", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/ArgumentFunction<TTYPE;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlMathFunction = { "MathFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 2, -1 };
-  return &_ComYahooSquidbSqlMathFunction;
+  static const void *ptrTable[] = { "LSquiDBMathOperator;[LNSObject;", "operator", "<TYPE:Ljava/lang/Object;>Lcom/yahoo/squidb/sql/ArgumentFunction<TTYPE;>;" };
+  static const J2ObjcClassInfo _SquiDBMathFunction = { "MathFunction", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 2, -1 };
+  return &_SquiDBMathFunction;
 }
 
 @end
 
-void ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathFunction *self, ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args) {
-  ComYahooSquidbSqlArgumentFunction_initWithNSString_withNSObjectArray_(self, @"", args);
+void SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathFunction *self, SquiDBMathOperator *operator_, IOSObjectArray *args) {
+  SquiDBArgumentFunction_initPackagePrivateWithNSString_withNSObjectArray_(self, @"", args);
   self->operator__ = operator_;
 }
 
-ComYahooSquidbSqlMathFunction *new_ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlMathFunction, initWithComYahooSquidbSqlMathOperator_withNSObjectArray_, operator_, args)
+SquiDBMathFunction *new_SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathOperator *operator_, IOSObjectArray *args) {
+  J2OBJC_NEW_IMPL(SquiDBMathFunction, initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_, operator_, args)
 }
 
-ComYahooSquidbSqlMathFunction *create_ComYahooSquidbSqlMathFunction_initWithComYahooSquidbSqlMathOperator_withNSObjectArray_(ComYahooSquidbSqlMathOperator *operator_, IOSObjectArray *args) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlMathFunction, initWithComYahooSquidbSqlMathOperator_withNSObjectArray_, operator_, args)
+SquiDBMathFunction *create_SquiDBMathFunction_initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_(SquiDBMathOperator *operator_, IOSObjectArray *args) {
+  J2OBJC_CREATE_IMPL(SquiDBMathFunction, initPackagePrivateWithSquiDBMathOperator_withNSObjectArray_, operator_, args)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlMathFunction)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBMathFunction)

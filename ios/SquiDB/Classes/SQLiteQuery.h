@@ -15,11 +15,11 @@
 #include "J2ObjC_header.h"
 #include "SQLiteProgram.h"
 
-@class ComYahooAndroidSqliteCursorWindow;
-@class ComYahooAndroidSqliteSQLiteDatabase;
 @class IOSObjectArray;
+@class SquiDBCursorWindow;
+@class SquiDBSQLiteDatabase;
 
-@interface ComYahooAndroidSqliteSQLiteQuery : ComYahooAndroidSqliteSQLiteProgram
+@interface SquiDBSQLiteQuery : SquiDBSQLiteProgram
 
 #pragma mark Public
 
@@ -27,31 +27,33 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                         withNSString:(NSString *)query;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                          withNSString:(NSString *)query;
 
-- (jint)fillWindowWithComYahooAndroidSqliteCursorWindow:(ComYahooAndroidSqliteCursorWindow *)window
-                                                withInt:(jint)startPos
-                                                withInt:(jint)requiredPos
-                                            withBoolean:(jboolean)countAllRows;
+- (jint)fillWindowWithSquiDBCursorWindow:(SquiDBCursorWindow *)window
+                                 withInt:(jint)startPos
+                                 withInt:(jint)requiredPos
+                             withBoolean:(jboolean)countAllRows;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)arg0
-                                                         withNSString:(NSString *)arg1
-                                                    withNSObjectArray:(IOSObjectArray *)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)arg0
+                                          withNSString:(NSString *)arg1
+                                     withNSObjectArray:(IOSObjectArray *)arg2 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteQuery)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteQuery)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteQuery *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query);
+FOUNDATION_EXPORT void SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteQuery *self, SquiDBSQLiteDatabase *db, NSString *query);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteQuery *new_ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteQuery *new_SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteDatabase *db, NSString *query) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteQuery *create_ComYahooAndroidSqliteSQLiteQuery_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_(ComYahooAndroidSqliteSQLiteDatabase *db, NSString *query);
+FOUNDATION_EXPORT SquiDBSQLiteQuery *create_SquiDBSQLiteQuery_initWithSquiDBSQLiteDatabase_withNSString_(SquiDBSQLiteDatabase *db, NSString *query);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteQuery)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteQuery)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteQuery SquiDBSQLiteQuery;
 
 
 #if __has_feature(nullability)

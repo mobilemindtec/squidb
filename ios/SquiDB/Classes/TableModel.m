@@ -21,111 +21,111 @@
 #include "java/lang/Void.h"
 #include "java/lang/annotation/Annotation.h"
 
-@class ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor;
+@class SquiDBTableModel_ValueBindingPropertyVisitor;
 
-inline ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *ComYahooSquidbDataTableModel_get_valueBindingVisitor(void);
-static ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *ComYahooSquidbDataTableModel_valueBindingVisitor;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataTableModel, valueBindingVisitor, ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *)
+inline SquiDBTableModel_ValueBindingPropertyVisitor *SquiDBTableModel_get_valueBindingVisitor(void);
+static SquiDBTableModel_ValueBindingPropertyVisitor *SquiDBTableModel_valueBindingVisitor;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBTableModel, valueBindingVisitor, SquiDBTableModel_ValueBindingPropertyVisitor *)
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTableModel__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTableModel__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTableModel__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTableModel__Annotations$3(void);
 
-@interface ComYahooSquidbDataTableModel_ModelAndIndex : NSObject {
+@interface SquiDBTableModel_ModelAndIndex : NSObject {
  @public
-  ComYahooSquidbDataTableModel *model_;
+  SquiDBTableModel *model_;
   jint index_;
 }
 
-- (instancetype)initWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)model;
+- (instancetype)initWithSquiDBTableModel:(SquiDBTableModel *)model;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataTableModel_ModelAndIndex)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBTableModel_ModelAndIndex)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataTableModel_ModelAndIndex, model_, ComYahooSquidbDataTableModel *)
+J2OBJC_FIELD_SETTER(SquiDBTableModel_ModelAndIndex, model_, SquiDBTableModel *)
 
-__attribute__((unused)) static void ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel_ModelAndIndex *self, ComYahooSquidbDataTableModel *model);
+__attribute__((unused)) static void SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel_ModelAndIndex *self, SquiDBTableModel *model);
 
-__attribute__((unused)) static ComYahooSquidbDataTableModel_ModelAndIndex *new_ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel *model) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBTableModel_ModelAndIndex *new_SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel *model) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataTableModel_ModelAndIndex *create_ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel *model);
+__attribute__((unused)) static SquiDBTableModel_ModelAndIndex *create_SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel *model);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataTableModel_ModelAndIndex)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableModel_ModelAndIndex)
 
-@interface ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyWritingVisitor >
+@interface SquiDBTableModel_ValueBindingPropertyVisitor : NSObject < SquiDBProperty_PropertyWritingVisitor >
 
 - (instancetype)init;
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                     withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                          withId:(SquiDBTableModel_ModelAndIndex *)data;
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                  withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                       withId:(SquiDBTableModel_ModelAndIndex *)data;
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                    withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                         withId:(SquiDBTableModel_ModelAndIndex *)data;
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                    withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                         withId:(SquiDBTableModel_ModelAndIndex *)data;
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                     withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                          withId:(SquiDBTableModel_ModelAndIndex *)data;
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                  withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data;
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                       withId:(SquiDBTableModel_ModelAndIndex *)data;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBTableModel_ValueBindingPropertyVisitor)
 
-__attribute__((unused)) static void ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *self);
+__attribute__((unused)) static void SquiDBTableModel_ValueBindingPropertyVisitor_init(SquiDBTableModel_ValueBindingPropertyVisitor *self);
 
-__attribute__((unused)) static ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *new_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBTableModel_ValueBindingPropertyVisitor *new_SquiDBTableModel_ValueBindingPropertyVisitor_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *create_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init(void);
+__attribute__((unused)) static SquiDBTableModel_ValueBindingPropertyVisitor *create_SquiDBTableModel_ValueBindingPropertyVisitor_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableModel_ValueBindingPropertyVisitor)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataTableModel)
+J2OBJC_INITIALIZED_DEFN(SquiDBTableModel)
 
-NSString *ComYahooSquidbDataTableModel_DEFAULT_ID_COLUMN = @"_id";
-NSString *ComYahooSquidbDataTableModel_ROWID = @"rowid";
+NSString *SquiDBTableModel_DEFAULT_ID_COLUMN = @"_id";
+NSString *SquiDBTableModel_ROWID = @"rowid";
 
-@implementation ComYahooSquidbDataTableModel
+@implementation SquiDBTableModel
 
 + (NSString *)DEFAULT_ID_COLUMN {
-  return ComYahooSquidbDataTableModel_DEFAULT_ID_COLUMN;
+  return SquiDBTableModel_DEFAULT_ID_COLUMN;
 }
 
 + (NSString *)ROWID {
-  return ComYahooSquidbDataTableModel_ROWID;
+  return SquiDBTableModel_ROWID;
 }
 
 + (jlong)NO_ID {
-  return ComYahooSquidbDataTableModel_NO_ID;
+  return SquiDBTableModel_NO_ID;
 }
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataTableModel_init(self);
+  SquiDBTableModel_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (jlong)getRowId {
   JavaLangLong *id_ = nil;
-  NSString *idPropertyName = [((ComYahooSquidbSqlProperty_LongProperty *) nil_chk([self getRowIdProperty])) getName];
+  NSString *idPropertyName = [((SquiDBProperty_LongProperty *) nil_chk([self getRowIdProperty])) getName];
   if (setValues_ != nil && [setValues_ containsKeyWithNSString:idPropertyName]) {
     id_ = (JavaLangLong *) cast_chk([setValues_ getWithNSString:idPropertyName], [JavaLangLong class]);
   }
@@ -135,66 +135,66 @@ J2OBJC_IGNORE_DESIGNATED_END
   if (id_ != nil) {
     return [id_ longLongValue];
   }
-  return ComYahooSquidbDataTableModel_NO_ID;
+  return SquiDBTableModel_NO_ID;
 }
 
 - (jlong)getId {
   return [self getRowId];
 }
 
-- (ComYahooSquidbDataTableModel *)setRowIdWithLong:(jlong)rowid {
-  if (rowid == ComYahooSquidbDataTableModel_NO_ID) {
-    [self clearValueWithComYahooSquidbSqlProperty:[self getRowIdProperty]];
+- (SquiDBTableModel *)setRowIdWithLong:(jlong)rowid {
+  if (rowid == SquiDBTableModel_NO_ID) {
+    [self clearValueWithSquiDBProperty:[self getRowIdProperty]];
   }
   else {
     if (setValues_ == nil) {
       setValues_ = [self newValuesStorage];
     }
-    [((ComYahooSquidbDataValuesStorage *) nil_chk(setValues_)) putWithNSString:[((ComYahooSquidbSqlProperty_LongProperty *) nil_chk([self getRowIdProperty])) getName] withJavaLangLong:JavaLangLong_valueOfWithLong_(rowid)];
+    [((SquiDBValuesStorage *) nil_chk(setValues_)) putWithNSString:[((SquiDBProperty_LongProperty *) nil_chk([self getRowIdProperty])) getName] withJavaLangLong:JavaLangLong_valueOfWithLong_(rowid)];
   }
   return self;
 }
 
-- (ComYahooSquidbDataTableModel *)setIdWithLong:(jlong)id_ {
+- (SquiDBTableModel *)setIdWithLong:(jlong)id_ {
   return [self setRowIdWithLong:id_];
 }
 
 - (jboolean)isSaved {
-  return [self getRowId] != ComYahooSquidbDataTableModel_NO_ID;
+  return [self getRowId] != SquiDBTableModel_NO_ID;
 }
 
-- (ComYahooSquidbSqlProperty_LongProperty *)getRowIdProperty {
+- (SquiDBProperty_LongProperty *)getRowIdProperty {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (ComYahooSquidbSqlProperty_LongProperty *)getIdProperty {
+- (SquiDBProperty_LongProperty *)getIdProperty {
   return [self getRowIdProperty];
 }
 
-- (void)bindValuesForInsertWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-       withComYahooSquidbDataISQLitePreparedStatement:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedInsert {
-  ComYahooSquidbSqlProperty_LongProperty *rowidProperty = [self getRowIdProperty];
-  IOSObjectArray *allProperties = [((ComYahooSquidbSqlTable *) nil_chk(table)) getProperties];
-  ComYahooSquidbDataTableModel_ModelAndIndex *modelAndIndex = new_ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(self);
+- (void)bindValuesForInsertWithSquiDBTable:(SquiDBTable *)table
+        withSquiDBISQLitePreparedStatement:(id<SquiDBISQLitePreparedStatement>)preparedInsert {
+  SquiDBProperty_LongProperty *rowidProperty = [self getRowIdProperty];
+  IOSObjectArray *allProperties = [((SquiDBTable *) nil_chk(table)) getProperties];
+  SquiDBTableModel_ModelAndIndex *modelAndIndex = new_SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(self);
   {
     IOSObjectArray *a__ = allProperties;
-    ComYahooSquidbSqlProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    ComYahooSquidbSqlProperty * const *e__ = b__ + a__->size_;
+    SquiDBProperty * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+    SquiDBProperty * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      ComYahooSquidbSqlProperty *property = *b__++;
+      SquiDBProperty *property = *b__++;
       if (property == rowidProperty) {
         jlong rowid = [self getRowId];
-        if (rowid == ComYahooSquidbDataTableModel_NO_ID) {
-          [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedInsert)) bindNullWithInt:modelAndIndex->index_];
+        if (rowid == SquiDBTableModel_NO_ID) {
+          [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedInsert)) bindNullWithInt:modelAndIndex->index_];
         }
         else {
-          [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedInsert)) bindLongWithInt:modelAndIndex->index_ withLong:rowid];
+          [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedInsert)) bindLongWithInt:modelAndIndex->index_ withLong:rowid];
         }
       }
       else {
-        (void) [((ComYahooSquidbSqlProperty *) nil_chk(property)) acceptWithComYahooSquidbSqlProperty_PropertyWritingVisitor:ComYahooSquidbDataTableModel_valueBindingVisitor withId:preparedInsert withId:modelAndIndex];
+        (void) [((SquiDBProperty *) nil_chk(property)) acceptWithSquiDBProperty_PropertyWritingVisitor:SquiDBTableModel_valueBindingVisitor withId:preparedInsert withId:modelAndIndex];
       }
       modelAndIndex->index_++;
     }
@@ -206,11 +206,11 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "J", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "J", 0x1, -1, -1, -1, -1, 0, -1 },
-    { NULL, "LComYahooSquidbDataTableModel;", 0x1, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataTableModel;", 0x1, 3, 2, -1, -1, 4, -1 },
+    { NULL, "LSquiDBTableModel;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTableModel;", 0x1, 3, 2, -1, -1, 4, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty_LongProperty;", 0x1, -1, -1, -1, -1, 5, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty_LongProperty;", 0x1, -1, -1, -1, -1, 5, -1 },
     { NULL, "V", 0x0, 6, 7, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -224,54 +224,56 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[5].selector = @selector(isSaved);
   methods[6].selector = @selector(getRowIdProperty);
   methods[7].selector = @selector(getIdProperty);
-  methods[8].selector = @selector(bindValuesForInsertWithComYahooSquidbSqlTable:withComYahooSquidbDataISQLitePreparedStatement:);
+  methods[8].selector = @selector(bindValuesForInsertWithSquiDBTable:withSquiDBISQLitePreparedStatement:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "DEFAULT_ID_COLUMN", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 8, -1, 9 },
     { "ROWID", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 10, -1, -1 },
-    { "NO_ID", "J", .constantValue.asLong = ComYahooSquidbDataTableModel_NO_ID, 0x19, -1, -1, -1, -1 },
-    { "valueBindingVisitor", "LComYahooSquidbDataTableModel_ValueBindingPropertyVisitor;", .constantValue.asLong = 0, 0x1a, -1, 11, -1, -1 },
+    { "NO_ID", "J", .constantValue.asLong = SquiDBTableModel_NO_ID, 0x19, -1, -1, -1, -1 },
+    { "valueBindingVisitor", "LSquiDBTableModel_ValueBindingPropertyVisitor;", .constantValue.asLong = 0, 0x1a, -1, 11, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&ComYahooSquidbDataTableModel__Annotations$0, "setRowId", "J", "setId", (void *)&ComYahooSquidbDataTableModel__Annotations$1, (void *)&ComYahooSquidbDataTableModel__Annotations$2, "bindValuesForInsert", "LComYahooSquidbSqlTable;LComYahooSquidbDataISQLitePreparedStatement;", &ComYahooSquidbDataTableModel_DEFAULT_ID_COLUMN, (void *)&ComYahooSquidbDataTableModel__Annotations$3, &ComYahooSquidbDataTableModel_ROWID, &ComYahooSquidbDataTableModel_valueBindingVisitor, "LComYahooSquidbDataTableModel_ModelAndIndex;LComYahooSquidbDataTableModel_ValueBindingPropertyVisitor;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataTableModel = { "TableModel", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 9, 4, -1, 12, -1, -1, -1 };
-  return &_ComYahooSquidbDataTableModel;
+  static const void *ptrTable[] = { (void *)&SquiDBTableModel__Annotations$0, "setRowId", "J", "setId", (void *)&SquiDBTableModel__Annotations$1, (void *)&SquiDBTableModel__Annotations$2, "bindValuesForInsert", "LSquiDBTable;LSquiDBISQLitePreparedStatement;", &SquiDBTableModel_DEFAULT_ID_COLUMN, (void *)&SquiDBTableModel__Annotations$3, &SquiDBTableModel_ROWID, &SquiDBTableModel_valueBindingVisitor, "LSquiDBTableModel_ModelAndIndex;LSquiDBTableModel_ValueBindingPropertyVisitor;" };
+  static const J2ObjcClassInfo _SquiDBTableModel = { "TableModel", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x401, 9, 4, -1, 12, -1, -1, -1 };
+  return &_SquiDBTableModel;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbDataTableModel class]) {
-    ComYahooSquidbDataTableModel_valueBindingVisitor = new_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init();
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbDataTableModel)
+  if (self == [SquiDBTableModel class]) {
+    SquiDBTableModel_valueBindingVisitor = new_SquiDBTableModel_ValueBindingPropertyVisitor_init();
+    J2OBJC_SET_INITIALIZED(SquiDBTableModel)
   }
 }
 
 @end
 
-void ComYahooSquidbDataTableModel_init(ComYahooSquidbDataTableModel *self) {
-  ComYahooSquidbDataAbstractModel_init(self);
+void SquiDBTableModel_init(SquiDBTableModel *self) {
+  SquiDBAbstractModel_init(self);
 }
 
-IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$0() {
+IOSObjectArray *SquiDBTableModel__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$1() {
+IOSObjectArray *SquiDBTableModel__Annotations$1() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$2() {
+IOSObjectArray *SquiDBTableModel__Annotations$2() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *ComYahooSquidbDataTableModel__Annotations$3() {
+IOSObjectArray *SquiDBTableModel__Annotations$3() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataTableModel)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTableModel)
 
-@implementation ComYahooSquidbDataTableModel_ModelAndIndex
+J2OBJC_NAME_MAPPING(SquiDBTableModel, "com.yahoo.squidb.data", "SquiDB")
 
-- (instancetype)initWithComYahooSquidbDataTableModel:(ComYahooSquidbDataTableModel *)model {
-  ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(self, model);
+@implementation SquiDBTableModel_ModelAndIndex
+
+- (instancetype)initWithSquiDBTableModel:(SquiDBTableModel *)model {
+  SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(self, model);
   return self;
 }
 
@@ -282,118 +284,118 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataTableModel)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbDataTableModel:);
+  methods[0].selector = @selector(initWithSquiDBTableModel:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "model_", "LComYahooSquidbDataTableModel;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "model_", "LSquiDBTableModel;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
     { "index_", "I", .constantValue.asLong = 0, 0x0, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbDataTableModel;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataTableModel_ModelAndIndex = { "ModelAndIndex", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1a, 1, 2, 0, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataTableModel_ModelAndIndex;
+  static const void *ptrTable[] = { "LSquiDBTableModel;" };
+  static const J2ObjcClassInfo _SquiDBTableModel_ModelAndIndex = { "ModelAndIndex", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1a, 1, 2, 0, -1, -1, -1, -1 };
+  return &_SquiDBTableModel_ModelAndIndex;
 }
 
 @end
 
-void ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel_ModelAndIndex *self, ComYahooSquidbDataTableModel *model) {
+void SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel_ModelAndIndex *self, SquiDBTableModel *model) {
   NSObject_init(self);
   self->index_ = 1;
   self->model_ = model;
 }
 
-ComYahooSquidbDataTableModel_ModelAndIndex *new_ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel *model) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataTableModel_ModelAndIndex, initWithComYahooSquidbDataTableModel_, model)
+SquiDBTableModel_ModelAndIndex *new_SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel *model) {
+  J2OBJC_NEW_IMPL(SquiDBTableModel_ModelAndIndex, initWithSquiDBTableModel_, model)
 }
 
-ComYahooSquidbDataTableModel_ModelAndIndex *create_ComYahooSquidbDataTableModel_ModelAndIndex_initWithComYahooSquidbDataTableModel_(ComYahooSquidbDataTableModel *model) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataTableModel_ModelAndIndex, initWithComYahooSquidbDataTableModel_, model)
+SquiDBTableModel_ModelAndIndex *create_SquiDBTableModel_ModelAndIndex_initWithSquiDBTableModel_(SquiDBTableModel *model) {
+  J2OBJC_CREATE_IMPL(SquiDBTableModel_ModelAndIndex, initWithSquiDBTableModel_, model)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataTableModel_ModelAndIndex)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTableModel_ModelAndIndex)
 
-@implementation ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor
+@implementation SquiDBTableModel_ValueBindingPropertyVisitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init(self);
+  SquiDBTableModel_ValueBindingPropertyVisitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                     withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  JavaLangInteger *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                          withId:(SquiDBTableModel_ModelAndIndex *)data {
+  JavaLangInteger *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val intValue]];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val intValue]];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                  withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  JavaLangLong *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                       withId:(SquiDBTableModel_ModelAndIndex *)data {
+  JavaLangLong *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val longLongValue]];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val longLongValue]];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                    withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  JavaLangDouble *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                         withId:(SquiDBTableModel_ModelAndIndex *)data {
+  JavaLangDouble *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindDoubleWithInt:data->index_ withDouble:[val doubleValue]];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindDoubleWithInt:data->index_ withDouble:[val doubleValue]];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                    withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  NSString *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                         withId:(SquiDBTableModel_ModelAndIndex *)data {
+  NSString *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindStringWithInt:data->index_ withNSString:val];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindStringWithInt:data->index_ withNSString:val];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                     withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  JavaLangBoolean *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                          withId:(SquiDBTableModel_ModelAndIndex *)data {
+  JavaLangBoolean *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val booleanValue] ? 1 : 0];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindLongWithInt:data->index_ withLong:[val booleanValue] ? 1 : 0];
   }
   return nil;
 }
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedStatement
-                                                  withId:(ComYahooSquidbDataTableModel_ModelAndIndex *)data {
-  IOSByteArray *val = [((ComYahooSquidbDataTableModel *) nil_chk(((ComYahooSquidbDataTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithComYahooSquidbSqlProperty:property withBoolean:false];
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(id<SquiDBISQLitePreparedStatement>)preparedStatement
+                                       withId:(SquiDBTableModel_ModelAndIndex *)data {
+  IOSByteArray *val = [((SquiDBTableModel *) nil_chk(((SquiDBTableModel_ModelAndIndex *) nil_chk(data))->model_)) getWithSquiDBProperty:property withBoolean:false];
   if (val == nil) {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindNullWithInt:data->index_];
   }
   else {
-    [((id<ComYahooSquidbDataISQLitePreparedStatement>) nil_chk(preparedStatement)) bindBlobWithInt:data->index_ withByteArray:val];
+    [((id<SquiDBISQLitePreparedStatement>) nil_chk(preparedStatement)) bindBlobWithInt:data->index_ withByteArray:val];
   }
   return nil;
 }
@@ -412,30 +414,30 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[2].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[3].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[4].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[5].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:withId:);
-  methods[6].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:withId:);
+  methods[1].selector = @selector(visitIntegerWithSquiDBProperty:withId:withId:);
+  methods[2].selector = @selector(visitLongWithSquiDBProperty:withId:withId:);
+  methods[3].selector = @selector(visitDoubleWithSquiDBProperty:withId:withId:);
+  methods[4].selector = @selector(visitStringWithSquiDBProperty:withId:withId:);
+  methods[5].selector = @selector(visitBooleanWithSquiDBProperty:withId:withId:);
+  methods[6].selector = @selector(visitBlobWithSquiDBProperty:withId:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "visitInteger", "LComYahooSquidbSqlProperty;LComYahooSquidbDataISQLitePreparedStatement;LComYahooSquidbDataTableModel_ModelAndIndex;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "LComYahooSquidbDataTableModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<Ljava/lang/Void;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor = { "ValueBindingPropertyVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 7, 0, 13, -1, -1, 14, -1 };
-  return &_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor;
+  static const void *ptrTable[] = { "visitInteger", "LSquiDBProperty;LSquiDBISQLitePreparedStatement;LSquiDBTableModel_ModelAndIndex;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitDouble", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;)Ljava/lang/Void;", "LSquiDBTableModel;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyWritingVisitor<Ljava/lang/Void;Lcom/yahoo/squidb/data/ISQLitePreparedStatement;Lcom/yahoo/squidb/data/TableModel$ModelAndIndex;>;" };
+  static const J2ObjcClassInfo _SquiDBTableModel_ValueBindingPropertyVisitor = { "ValueBindingPropertyVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 7, 0, 13, -1, -1, 14, -1 };
+  return &_SquiDBTableModel_ValueBindingPropertyVisitor;
 }
 
 @end
 
-void ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *self) {
+void SquiDBTableModel_ValueBindingPropertyVisitor_init(SquiDBTableModel_ValueBindingPropertyVisitor *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *new_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor, init)
+SquiDBTableModel_ValueBindingPropertyVisitor *new_SquiDBTableModel_ValueBindingPropertyVisitor_init() {
+  J2OBJC_NEW_IMPL(SquiDBTableModel_ValueBindingPropertyVisitor, init)
 }
 
-ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor *create_ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor, init)
+SquiDBTableModel_ValueBindingPropertyVisitor *create_SquiDBTableModel_ValueBindingPropertyVisitor_init() {
+  J2OBJC_CREATE_IMPL(SquiDBTableModel_ValueBindingPropertyVisitor, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataTableModel_ValueBindingPropertyVisitor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTableModel_ValueBindingPropertyVisitor)

@@ -7,87 +7,89 @@
 #include "PrefixPrinter.h"
 #include "Printer.h"
 
-@interface ComYahooAndroidSqlitePrefixPrinter () {
+@interface SquiDBPrefixPrinter () {
  @public
-  id<ComYahooAndroidSqlitePrinter> mPrinter_;
+  id<SquiDBPrinter> mPrinter_;
   NSString *mPrefix_;
 }
 
-- (instancetype)initWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                        withNSString:(NSString *)prefix;
+- (instancetype)initWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                         withNSString:(NSString *)prefix;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqlitePrefixPrinter, mPrinter_, id<ComYahooAndroidSqlitePrinter>)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqlitePrefixPrinter, mPrefix_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBPrefixPrinter, mPrinter_, id<SquiDBPrinter>)
+J2OBJC_FIELD_SETTER(SquiDBPrefixPrinter, mPrefix_, NSString *)
 
-__attribute__((unused)) static void ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(ComYahooAndroidSqlitePrefixPrinter *self, id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix);
+__attribute__((unused)) static void SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(SquiDBPrefixPrinter *self, id<SquiDBPrinter> printer, NSString *prefix);
 
-__attribute__((unused)) static ComYahooAndroidSqlitePrefixPrinter *new_ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBPrefixPrinter *new_SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooAndroidSqlitePrefixPrinter *create_ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix);
+__attribute__((unused)) static SquiDBPrefixPrinter *create_SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix);
 
-@implementation ComYahooAndroidSqlitePrefixPrinter
+@implementation SquiDBPrefixPrinter
 
-+ (id<ComYahooAndroidSqlitePrinter>)createWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                                              withNSString:(NSString *)prefix {
-  return ComYahooAndroidSqlitePrefixPrinter_createWithComYahooAndroidSqlitePrinter_withNSString_(printer, prefix);
++ (id<SquiDBPrinter>)createWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                                withNSString:(NSString *)prefix {
+  return SquiDBPrefixPrinter_createWithSquiDBPrinter_withNSString_(printer, prefix);
 }
 
-- (instancetype)initWithComYahooAndroidSqlitePrinter:(id<ComYahooAndroidSqlitePrinter>)printer
-                                        withNSString:(NSString *)prefix {
-  ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(self, printer, prefix);
+- (instancetype)initWithSquiDBPrinter:(id<SquiDBPrinter>)printer
+                         withNSString:(NSString *)prefix {
+  SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(self, printer, prefix);
   return self;
 }
 
 - (void)printlnWithNSString:(NSString *)str {
-  [((id<ComYahooAndroidSqlitePrinter>) nil_chk(mPrinter_)) printlnWithNSString:JreStrcat("$$", mPrefix_, str)];
+  [((id<SquiDBPrinter>) nil_chk(mPrinter_)) printlnWithNSString:JreStrcat("$$", mPrefix_, str)];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComYahooAndroidSqlitePrinter;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBPrinter;", 0x9, 0, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x2, -1, 1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(createWithComYahooAndroidSqlitePrinter:withNSString:);
-  methods[1].selector = @selector(initWithComYahooAndroidSqlitePrinter:withNSString:);
+  methods[0].selector = @selector(createWithSquiDBPrinter:withNSString:);
+  methods[1].selector = @selector(initWithSquiDBPrinter:withNSString:);
   methods[2].selector = @selector(printlnWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "mPrinter_", "LComYahooAndroidSqlitePrinter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "mPrinter_", "LSquiDBPrinter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "mPrefix_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "create", "LComYahooAndroidSqlitePrinter;LNSString;", "println", "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqlitePrefixPrinter = { "PrefixPrinter", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqlitePrefixPrinter;
+  static const void *ptrTable[] = { "create", "LSquiDBPrinter;LNSString;", "println", "LNSString;" };
+  static const J2ObjcClassInfo _SquiDBPrefixPrinter = { "PrefixPrinter", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_SquiDBPrefixPrinter;
 }
 
 @end
 
-id<ComYahooAndroidSqlitePrinter> ComYahooAndroidSqlitePrefixPrinter_createWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix) {
-  ComYahooAndroidSqlitePrefixPrinter_initialize();
+id<SquiDBPrinter> SquiDBPrefixPrinter_createWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix) {
+  SquiDBPrefixPrinter_initialize();
   if (prefix == nil || [prefix isEqual:@""]) {
     return printer;
   }
-  return new_ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(printer, prefix);
+  return new_SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(printer, prefix);
 }
 
-void ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(ComYahooAndroidSqlitePrefixPrinter *self, id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix) {
+void SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(SquiDBPrefixPrinter *self, id<SquiDBPrinter> printer, NSString *prefix) {
   NSObject_init(self);
   self->mPrinter_ = printer;
   self->mPrefix_ = prefix;
 }
 
-ComYahooAndroidSqlitePrefixPrinter *new_ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqlitePrefixPrinter, initWithComYahooAndroidSqlitePrinter_withNSString_, printer, prefix)
+SquiDBPrefixPrinter *new_SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix) {
+  J2OBJC_NEW_IMPL(SquiDBPrefixPrinter, initWithSquiDBPrinter_withNSString_, printer, prefix)
 }
 
-ComYahooAndroidSqlitePrefixPrinter *create_ComYahooAndroidSqlitePrefixPrinter_initWithComYahooAndroidSqlitePrinter_withNSString_(id<ComYahooAndroidSqlitePrinter> printer, NSString *prefix) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqlitePrefixPrinter, initWithComYahooAndroidSqlitePrinter_withNSString_, printer, prefix)
+SquiDBPrefixPrinter *create_SquiDBPrefixPrinter_initWithSquiDBPrinter_withNSString_(id<SquiDBPrinter> printer, NSString *prefix) {
+  J2OBJC_CREATE_IMPL(SquiDBPrefixPrinter, initWithSquiDBPrinter_withNSString_, printer, prefix)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqlitePrefixPrinter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBPrefixPrinter)
+
+J2OBJC_NAME_MAPPING(SquiDBPrefixPrinter, "com.yahoo.android.sqlite", "SquiDB")

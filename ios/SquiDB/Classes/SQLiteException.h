@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteSQLiteException : ComYahooAndroidSqliteSQLException
+@interface SquiDBSQLiteException : SquiDBSQLException
 
 #pragma mark Public
 
@@ -30,27 +30,29 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteException_init(ComYahooAndroidSqliteSQLiteException *self);
+FOUNDATION_EXPORT void SquiDBSQLiteException_init(SquiDBSQLiteException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteException *new_SquiDBSQLiteException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_init(void);
+FOUNDATION_EXPORT SquiDBSQLiteException *create_SquiDBSQLiteException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteException_initWithNSString_(ComYahooAndroidSqliteSQLiteException *self, NSString *error);
+FOUNDATION_EXPORT void SquiDBSQLiteException_initWithNSString_(SquiDBSQLiteException *self, NSString *error);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteException *new_SquiDBSQLiteException_initWithNSString_(NSString *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_initWithNSString_(NSString *error);
+FOUNDATION_EXPORT SquiDBSQLiteException *create_SquiDBSQLiteException_initWithNSString_(NSString *error);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(ComYahooAndroidSqliteSQLiteException *self, NSString *error, JavaLangThrowable *cause);
+FOUNDATION_EXPORT void SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(SquiDBSQLiteException *self, NSString *error, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *new_ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteException *new_SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteException *create_ComYahooAndroidSqliteSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause);
+FOUNDATION_EXPORT SquiDBSQLiteException *create_SquiDBSQLiteException_initWithNSString_withJavaLangThrowable_(NSString *error, JavaLangThrowable *cause);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteException)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteException SquiDBSQLiteException;
 
 
 #if __has_feature(nullability)

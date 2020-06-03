@@ -7,17 +7,17 @@
 #include "SQLiteCantOpenDatabaseException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteCantOpenDatabaseException
+@implementation SquiDBSQLiteCantOpenDatabaseException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_init(self);
+  SquiDBSQLiteCantOpenDatabaseException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_initWithNSString_(self, error);
+  SquiDBSQLiteCantOpenDatabaseException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteCantOpenDatabaseException = { "SQLiteCantOpenDatabaseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteCantOpenDatabaseException;
+  static const J2ObjcClassInfo _SquiDBSQLiteCantOpenDatabaseException = { "SQLiteCantOpenDatabaseException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteCantOpenDatabaseException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_init(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteCantOpenDatabaseException_init(SquiDBSQLiteCantOpenDatabaseException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *new_ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException, init)
+SquiDBSQLiteCantOpenDatabaseException *new_SquiDBSQLiteCantOpenDatabaseException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteCantOpenDatabaseException, init)
 }
 
-ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *create_ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException, init)
+SquiDBSQLiteCantOpenDatabaseException *create_SquiDBSQLiteCantOpenDatabaseException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteCantOpenDatabaseException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_initWithNSString_(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteCantOpenDatabaseException_initWithNSString_(SquiDBSQLiteCantOpenDatabaseException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *new_ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException, initWithNSString_, error)
+SquiDBSQLiteCantOpenDatabaseException *new_SquiDBSQLiteCantOpenDatabaseException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteCantOpenDatabaseException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteCantOpenDatabaseException *create_ComYahooAndroidSqliteSQLiteCantOpenDatabaseException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException, initWithNSString_, error)
+SquiDBSQLiteCantOpenDatabaseException *create_SquiDBSQLiteCantOpenDatabaseException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteCantOpenDatabaseException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteCantOpenDatabaseException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteCantOpenDatabaseException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteCantOpenDatabaseException, "com.yahoo.android.sqlite", "SquiDB")

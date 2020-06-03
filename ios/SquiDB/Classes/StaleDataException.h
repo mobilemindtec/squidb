@@ -17,7 +17,7 @@
 
 @class JavaLangThrowable;
 
-@interface ComYahooAndroidSqliteStaleDataException : JavaLangRuntimeException
+@interface SquiDBStaleDataException : JavaLangRuntimeException
 
 #pragma mark Public
 
@@ -39,21 +39,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteStaleDataException)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBStaleDataException)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteStaleDataException_init(ComYahooAndroidSqliteStaleDataException *self);
+FOUNDATION_EXPORT void SquiDBStaleDataException_init(SquiDBStaleDataException *self);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteStaleDataException *new_ComYahooAndroidSqliteStaleDataException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBStaleDataException *new_SquiDBStaleDataException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteStaleDataException *create_ComYahooAndroidSqliteStaleDataException_init(void);
+FOUNDATION_EXPORT SquiDBStaleDataException *create_SquiDBStaleDataException_init(void);
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteStaleDataException_initWithNSString_(ComYahooAndroidSqliteStaleDataException *self, NSString *description_);
+FOUNDATION_EXPORT void SquiDBStaleDataException_initWithNSString_(SquiDBStaleDataException *self, NSString *description_);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteStaleDataException *new_ComYahooAndroidSqliteStaleDataException_initWithNSString_(NSString *description_) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBStaleDataException *new_SquiDBStaleDataException_initWithNSString_(NSString *description_) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteStaleDataException *create_ComYahooAndroidSqliteStaleDataException_initWithNSString_(NSString *description_);
+FOUNDATION_EXPORT SquiDBStaleDataException *create_SquiDBStaleDataException_initWithNSString_(NSString *description_);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteStaleDataException)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBStaleDataException)
+
+@compatibility_alias ComYahooAndroidSqliteStaleDataException SquiDBStaleDataException;
 
 
 #if __has_feature(nullability)

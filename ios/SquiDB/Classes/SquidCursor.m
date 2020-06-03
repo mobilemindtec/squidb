@@ -18,88 +18,88 @@
 #include "java/lang/annotation/Annotation.h"
 #include "java/util/List.h"
 
-@class ComYahooSquidbDataSquidCursor_CursorReadingVisitor;
+@class SquiDBSquidCursor_CursorReadingVisitor;
 
-@interface ComYahooSquidbDataSquidCursor () {
+@interface SquiDBSquidCursor () {
  @public
   IOSClass *modelHint_;
   id<JavaUtilList> fields_;
-  id<ComYahooSquidbDataICursor> cursor_;
+  id<SquiDBICursor> cursor_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidCursor, modelHint_, IOSClass *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidCursor, fields_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbDataSquidCursor, cursor_, id<ComYahooSquidbDataICursor>)
+J2OBJC_FIELD_SETTER(SquiDBSquidCursor, modelHint_, IOSClass *)
+J2OBJC_FIELD_SETTER(SquiDBSquidCursor, fields_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBSquidCursor, cursor_, id<SquiDBICursor>)
 
-inline ComYahooSquidbDataSquidCursor_CursorReadingVisitor *ComYahooSquidbDataSquidCursor_get_reader(void);
-static ComYahooSquidbDataSquidCursor_CursorReadingVisitor *ComYahooSquidbDataSquidCursor_reader;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataSquidCursor, reader, ComYahooSquidbDataSquidCursor_CursorReadingVisitor *)
+inline SquiDBSquidCursor_CursorReadingVisitor *SquiDBSquidCursor_get_reader(void);
+static SquiDBSquidCursor_CursorReadingVisitor *SquiDBSquidCursor_reader;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBSquidCursor, reader, SquiDBSquidCursor_CursorReadingVisitor *)
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbDataSquidCursor__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBSquidCursor__Annotations$0(void);
 
-@interface ComYahooSquidbDataSquidCursor_CursorReadingVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyVisitor >
+@interface SquiDBSquidCursor_CursorReadingVisitor : NSObject < SquiDBProperty_PropertyVisitor >
 
 - (instancetype)init;
 
-- (id)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(SquiDBSquidCursor *)cursor;
 
-- (id)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(SquiDBSquidCursor *)cursor;
 
-- (id)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(SquiDBSquidCursor *)cursor;
 
-- (id)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(SquiDBSquidCursor *)cursor;
 
-- (id)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(SquiDBSquidCursor *)cursor;
 
-- (id)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(ComYahooSquidbDataSquidCursor *)cursor;
+- (id)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(SquiDBSquidCursor *)cursor;
 
-- (jint)columnIndexWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-               withComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor;
+- (jint)columnIndexWithSquiDBProperty:(SquiDBProperty *)property
+                withSquiDBSquidCursor:(SquiDBSquidCursor *)cursor;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataSquidCursor_CursorReadingVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSquidCursor_CursorReadingVisitor)
 
-__attribute__((unused)) static void ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init(ComYahooSquidbDataSquidCursor_CursorReadingVisitor *self);
+__attribute__((unused)) static void SquiDBSquidCursor_CursorReadingVisitor_init(SquiDBSquidCursor_CursorReadingVisitor *self);
 
-__attribute__((unused)) static ComYahooSquidbDataSquidCursor_CursorReadingVisitor *new_ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBSquidCursor_CursorReadingVisitor *new_SquiDBSquidCursor_CursorReadingVisitor_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComYahooSquidbDataSquidCursor_CursorReadingVisitor *create_ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init(void);
+__attribute__((unused)) static SquiDBSquidCursor_CursorReadingVisitor *create_SquiDBSquidCursor_CursorReadingVisitor_init(void);
 
-__attribute__((unused)) static jint ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(ComYahooSquidbDataSquidCursor_CursorReadingVisitor *self, ComYahooSquidbSqlProperty *property, ComYahooSquidbDataSquidCursor *cursor);
+__attribute__((unused)) static jint SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(SquiDBSquidCursor_CursorReadingVisitor *self, SquiDBProperty *property, SquiDBSquidCursor *cursor);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataSquidCursor_CursorReadingVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSquidCursor_CursorReadingVisitor)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidCursor)
+J2OBJC_INITIALIZED_DEFN(SquiDBSquidCursor)
 
-@implementation ComYahooSquidbDataSquidCursor
+@implementation SquiDBSquidCursor
 
-- (instancetype)initWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                     withIOSClass:(IOSClass *)modelHint
-                                 withJavaUtilList:(id<JavaUtilList>)fields {
-  ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(self, cursor, modelHint, fields);
+- (instancetype)initWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                         withIOSClass:(IOSClass *)modelHint
+                     withJavaUtilList:(id<JavaUtilList>)fields {
+  SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(self, cursor, modelHint, fields);
   return self;
 }
 
-- (instancetype)initWithComYahooSquidbDataICursor:(id<ComYahooSquidbDataICursor>)cursor
-                                 withJavaUtilList:(id<JavaUtilList>)fields {
-  ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(self, cursor, fields);
+- (instancetype)initWithSquiDBICursor:(id<SquiDBICursor>)cursor
+                     withJavaUtilList:(id<JavaUtilList>)fields {
+  SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(self, cursor, fields);
   return self;
 }
 
-- (id)getWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return [((ComYahooSquidbSqlProperty *) nil_chk(property)) acceptWithComYahooSquidbSqlProperty_PropertyVisitor:ComYahooSquidbDataSquidCursor_reader withId:self];
+- (id)getWithSquiDBProperty:(SquiDBProperty *)property {
+  return [((SquiDBProperty *) nil_chk(property)) acceptWithSquiDBProperty_PropertyVisitor:SquiDBSquidCursor_reader withId:self];
 }
 
-- (id<ComYahooSquidbDataICursor>)getCursor {
+- (id<SquiDBICursor>)getCursor {
   return cursor_;
 }
 
@@ -112,115 +112,115 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidCursor)
 }
 
 - (jint)getCount {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getCount];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getCount];
 }
 
 - (jint)getPosition {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getPosition];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getPosition];
 }
 
 - (jboolean)moveWithInt:(jint)offset {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveWithInt:offset];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveWithInt:offset];
 }
 
 - (jboolean)moveToPositionWithInt:(jint)position {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveToPositionWithInt:position];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveToPositionWithInt:position];
 }
 
 - (jboolean)moveToFirst {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveToFirst];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveToFirst];
 }
 
 - (jboolean)moveToLast {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveToLast];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveToLast];
 }
 
 - (jboolean)moveToNext {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveToNext];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveToNext];
 }
 
 - (jboolean)moveToPrevious {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) moveToPrevious];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) moveToPrevious];
 }
 
 - (jboolean)isFirst {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isFirst];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isFirst];
 }
 
 - (jboolean)isLast {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isLast];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isLast];
 }
 
 - (jboolean)isBeforeFirst {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isBeforeFirst];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isBeforeFirst];
 }
 
 - (jboolean)isAfterLast {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isAfterLast];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isAfterLast];
 }
 
 - (jint)getColumnIndexWithNSString:(NSString *)columnName {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getColumnIndexWithNSString:columnName];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getColumnIndexWithNSString:columnName];
 }
 
 - (jint)getColumnIndexOrThrowWithNSString:(NSString *)columnName {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getColumnIndexOrThrowWithNSString:columnName];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getColumnIndexOrThrowWithNSString:columnName];
 }
 
 - (NSString *)getColumnNameWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getColumnNameWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getColumnNameWithInt:columnIndex];
 }
 
 - (IOSObjectArray *)getColumnNames {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getColumnNames];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getColumnNames];
 }
 
 - (jint)getColumnCount {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getColumnCount];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getColumnCount];
 }
 
 - (IOSByteArray *)getBlobWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getBlobWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getBlobWithInt:columnIndex];
 }
 
 - (NSString *)getStringWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getStringWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getStringWithInt:columnIndex];
 }
 
 - (jshort)getShortWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getShortWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getShortWithInt:columnIndex];
 }
 
 - (jint)getIntWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getIntWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getIntWithInt:columnIndex];
 }
 
 - (jlong)getLongWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getLongWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getLongWithInt:columnIndex];
 }
 
 - (jfloat)getFloatWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getFloatWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getFloatWithInt:columnIndex];
 }
 
 - (jdouble)getDoubleWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getDoubleWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getDoubleWithInt:columnIndex];
 }
 
 - (jint)getTypeWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) getTypeWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) getTypeWithInt:columnIndex];
 }
 
 - (jboolean)isNullWithInt:(jint)columnIndex {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isNullWithInt:columnIndex];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isNullWithInt:columnIndex];
 }
 
 - (void)close {
-  [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) close];
+  [((id<SquiDBICursor>) nil_chk(cursor_)) close];
 }
 
 - (jboolean)isClosed {
-  return [((id<ComYahooSquidbDataICursor>) nil_chk(cursor_)) isClosed];
+  return [((id<SquiDBICursor>) nil_chk(cursor_)) isClosed];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -228,7 +228,7 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidCursor)
     { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, 3, 4, -1 },
     { NULL, "LNSObject;", 0x1, 5, 6, -1, 7, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LIOSClass;", 0x1, -1, -1, -1, 8, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 9, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -263,9 +263,9 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidCursor)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooSquidbDataICursor:withIOSClass:withJavaUtilList:);
-  methods[1].selector = @selector(initWithComYahooSquidbDataICursor:withJavaUtilList:);
-  methods[2].selector = @selector(getWithComYahooSquidbSqlProperty:);
+  methods[0].selector = @selector(initWithSquiDBICursor:withIOSClass:withJavaUtilList:);
+  methods[1].selector = @selector(initWithSquiDBICursor:withJavaUtilList:);
+  methods[2].selector = @selector(getWithSquiDBProperty:);
   methods[3].selector = @selector(getCursor);
   methods[4].selector = @selector(getModelHintClass);
   methods[5].selector = @selector(getFields);
@@ -301,123 +301,125 @@ J2OBJC_INITIALIZED_DEFN(ComYahooSquidbDataSquidCursor)
   static const J2ObjcFieldInfo fields[] = {
     { "modelHint_", "LIOSClass;", .constantValue.asLong = 0, 0x12, -1, -1, 27, -1 },
     { "fields_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 28, -1 },
-    { "reader", "LComYahooSquidbDataSquidCursor_CursorReadingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 29, -1, -1 },
-    { "cursor_", "LComYahooSquidbDataICursor;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "reader", "LSquiDBSquidCursor_CursorReadingVisitor;", .constantValue.asLong = 0, 0x1a, -1, 29, -1, -1 },
+    { "cursor_", "LSquiDBICursor;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbDataICursor;LIOSClass;LJavaUtilList;", "(Lcom/yahoo/squidb/data/ICursor;Ljava/lang/Class<TTYPE;>;Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;)V", "LComYahooSquidbDataICursor;LJavaUtilList;", "(Lcom/yahoo/squidb/data/ICursor;Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;)V", (void *)&ComYahooSquidbDataSquidCursor__Annotations$0, "get", "LComYahooSquidbSqlProperty;", "<PROPERTY_TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TPROPERTY_TYPE;>;)TPROPERTY_TYPE;", "()Ljava/lang/Class<TTYPE;>;", "()Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;", "move", "I", "moveToPosition", "getColumnIndex", "LNSString;", "getColumnIndexOrThrow", "LJavaLangIllegalArgumentException;", "getColumnName", "getBlob", "getString", "getShort", "getInt", "getLong", "getFloat", "getDouble", "getType", "isNull", "Ljava/lang/Class<TTYPE;>;", "Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;", &ComYahooSquidbDataSquidCursor_reader, "LComYahooSquidbDataSquidCursor_CursorReadingVisitor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>Ljava/lang/Object;Lcom/yahoo/squidb/data/ICursor;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidCursor = { "SquidCursor", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1, 34, 4, -1, 30, -1, 31, -1 };
-  return &_ComYahooSquidbDataSquidCursor;
+  static const void *ptrTable[] = { "LSquiDBICursor;LIOSClass;LJavaUtilList;", "(Lcom/yahoo/squidb/data/ICursor;Ljava/lang/Class<TTYPE;>;Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;)V", "LSquiDBICursor;LJavaUtilList;", "(Lcom/yahoo/squidb/data/ICursor;Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;)V", (void *)&SquiDBSquidCursor__Annotations$0, "get", "LSquiDBProperty;", "<PROPERTY_TYPE:Ljava/lang/Object;>(Lcom/yahoo/squidb/sql/Property<TPROPERTY_TYPE;>;)TPROPERTY_TYPE;", "()Ljava/lang/Class<TTYPE;>;", "()Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;", "move", "I", "moveToPosition", "getColumnIndex", "LNSString;", "getColumnIndexOrThrow", "LJavaLangIllegalArgumentException;", "getColumnName", "getBlob", "getString", "getShort", "getInt", "getLong", "getFloat", "getDouble", "getType", "isNull", "Ljava/lang/Class<TTYPE;>;", "Ljava/util/List<+Lcom/yahoo/squidb/sql/Field<*>;>;", &SquiDBSquidCursor_reader, "LSquiDBSquidCursor_CursorReadingVisitor;", "<TYPE:Lcom/yahoo/squidb/data/AbstractModel;>Ljava/lang/Object;Lcom/yahoo/squidb/data/ICursor;" };
+  static const J2ObjcClassInfo _SquiDBSquidCursor = { "SquidCursor", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x1, 34, 4, -1, 30, -1, 31, -1 };
+  return &_SquiDBSquidCursor;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbDataSquidCursor class]) {
-    ComYahooSquidbDataSquidCursor_reader = new_ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init();
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbDataSquidCursor)
+  if (self == [SquiDBSquidCursor class]) {
+    SquiDBSquidCursor_reader = new_SquiDBSquidCursor_CursorReadingVisitor_init();
+    J2OBJC_SET_INITIALIZED(SquiDBSquidCursor)
   }
 }
 
 @end
 
-void ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(ComYahooSquidbDataSquidCursor *self, id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
+void SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(SquiDBSquidCursor *self, id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
   NSObject_init(self);
   self->cursor_ = cursor;
   self->modelHint_ = modelHint;
   self->fields_ = fields;
 }
 
-ComYahooSquidbDataSquidCursor *new_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidCursor, initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_, cursor, modelHint, fields)
+SquiDBSquidCursor *new_SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
+  J2OBJC_NEW_IMPL(SquiDBSquidCursor, initWithSquiDBICursor_withIOSClass_withJavaUtilList_, cursor, modelHint, fields)
 }
 
-ComYahooSquidbDataSquidCursor *create_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidCursor, initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_, cursor, modelHint, fields)
+SquiDBSquidCursor *create_SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(id<SquiDBICursor> cursor, IOSClass *modelHint, id<JavaUtilList> fields) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidCursor, initWithSquiDBICursor_withIOSClass_withJavaUtilList_, cursor, modelHint, fields)
 }
 
-void ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(ComYahooSquidbDataSquidCursor *self, id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields) {
-  ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withIOSClass_withJavaUtilList_(self, cursor, nil, fields);
+void SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(SquiDBSquidCursor *self, id<SquiDBICursor> cursor, id<JavaUtilList> fields) {
+  SquiDBSquidCursor_initWithSquiDBICursor_withIOSClass_withJavaUtilList_(self, cursor, nil, fields);
 }
 
-ComYahooSquidbDataSquidCursor *new_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidCursor, initWithComYahooSquidbDataICursor_withJavaUtilList_, cursor, fields)
+SquiDBSquidCursor *new_SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(id<SquiDBICursor> cursor, id<JavaUtilList> fields) {
+  J2OBJC_NEW_IMPL(SquiDBSquidCursor, initWithSquiDBICursor_withJavaUtilList_, cursor, fields)
 }
 
-ComYahooSquidbDataSquidCursor *create_ComYahooSquidbDataSquidCursor_initWithComYahooSquidbDataICursor_withJavaUtilList_(id<ComYahooSquidbDataICursor> cursor, id<JavaUtilList> fields) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidCursor, initWithComYahooSquidbDataICursor_withJavaUtilList_, cursor, fields)
+SquiDBSquidCursor *create_SquiDBSquidCursor_initWithSquiDBICursor_withJavaUtilList_(id<SquiDBICursor> cursor, id<JavaUtilList> fields) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidCursor, initWithSquiDBICursor_withJavaUtilList_, cursor, fields)
 }
 
-IOSObjectArray *ComYahooSquidbDataSquidCursor__Annotations$0() {
+IOSObjectArray *SquiDBSquidCursor__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidCursor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidCursor)
 
-@implementation ComYahooSquidbDataSquidCursor_CursorReadingVisitor
+J2OBJC_NAME_MAPPING(SquiDBSquidCursor, "com.yahoo.squidb.data", "SquiDB")
+
+@implementation SquiDBSquidCursor_CursorReadingVisitor
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init(self);
+  SquiDBSquidCursor_CursorReadingVisitor_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   return JavaLangDouble_valueOfWithDouble_([cursor getDoubleWithInt:column]);
 }
 
-- (id)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   return JavaLangInteger_valueOfWithInt_([cursor getIntWithInt:column]);
 }
 
-- (id)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   return JavaLangLong_valueOfWithLong_([cursor getLongWithInt:column]);
 }
 
-- (id)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                        withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                             withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   return [cursor getStringWithInt:column];
 }
 
-- (id)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                         withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                              withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   jint value = [cursor getIntWithInt:column];
   return JavaLangBoolean_valueOfWithBoolean_(value != 0);
 }
 
-- (id)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                      withId:(ComYahooSquidbDataSquidCursor *)cursor {
-  jint column = ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
-  if ([((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
+- (id)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                           withId:(SquiDBSquidCursor *)cursor {
+  jint column = SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
+  if ([((SquiDBSquidCursor *) nil_chk(cursor)) isNullWithInt:column]) {
     return nil;
   }
   return [cursor getBlobWithInt:column];
 }
 
-- (jint)columnIndexWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-               withComYahooSquidbDataSquidCursor:(ComYahooSquidbDataSquidCursor *)cursor {
-  return ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(self, property, cursor);
+- (jint)columnIndexWithSquiDBProperty:(SquiDBProperty *)property
+                withSquiDBSquidCursor:(SquiDBSquidCursor *)cursor {
+  return SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(self, property, cursor);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -435,35 +437,35 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(visitDoubleWithComYahooSquidbSqlProperty:withId:);
-  methods[2].selector = @selector(visitIntegerWithComYahooSquidbSqlProperty:withId:);
-  methods[3].selector = @selector(visitLongWithComYahooSquidbSqlProperty:withId:);
-  methods[4].selector = @selector(visitStringWithComYahooSquidbSqlProperty:withId:);
-  methods[5].selector = @selector(visitBooleanWithComYahooSquidbSqlProperty:withId:);
-  methods[6].selector = @selector(visitBlobWithComYahooSquidbSqlProperty:withId:);
-  methods[7].selector = @selector(columnIndexWithComYahooSquidbSqlProperty:withComYahooSquidbDataSquidCursor:);
+  methods[1].selector = @selector(visitDoubleWithSquiDBProperty:withId:);
+  methods[2].selector = @selector(visitIntegerWithSquiDBProperty:withId:);
+  methods[3].selector = @selector(visitLongWithSquiDBProperty:withId:);
+  methods[4].selector = @selector(visitStringWithSquiDBProperty:withId:);
+  methods[5].selector = @selector(visitBooleanWithSquiDBProperty:withId:);
+  methods[6].selector = @selector(visitBlobWithSquiDBProperty:withId:);
+  methods[7].selector = @selector(columnIndexWithSquiDBProperty:withSquiDBSquidCursor:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "visitDouble", "LComYahooSquidbSqlProperty;LComYahooSquidbDataSquidCursor;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "columnIndex", "(Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/data/SquidCursor<*>;)I", "LComYahooSquidbDataSquidCursor;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Object;Lcom/yahoo/squidb/data/SquidCursor<*>;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataSquidCursor_CursorReadingVisitor = { "CursorReadingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 15, -1, -1, 16, -1 };
-  return &_ComYahooSquidbDataSquidCursor_CursorReadingVisitor;
+  static const void *ptrTable[] = { "visitDouble", "LSquiDBProperty;LSquiDBSquidCursor;", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Double;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitInteger", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Integer;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitLong", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Long;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitString", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/String;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitBoolean", "(Lcom/yahoo/squidb/sql/Property<Ljava/lang/Boolean;>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "visitBlob", "(Lcom/yahoo/squidb/sql/Property<[B>;Lcom/yahoo/squidb/data/SquidCursor<*>;)Ljava/lang/Object;", "columnIndex", "(Lcom/yahoo/squidb/sql/Property<*>;Lcom/yahoo/squidb/data/SquidCursor<*>;)I", "LSquiDBSquidCursor;", "Ljava/lang/Object;Lcom/yahoo/squidb/sql/Property$PropertyVisitor<Ljava/lang/Object;Lcom/yahoo/squidb/data/SquidCursor<*>;>;" };
+  static const J2ObjcClassInfo _SquiDBSquidCursor_CursorReadingVisitor = { "CursorReadingVisitor", "com.yahoo.squidb.data", ptrTable, methods, NULL, 7, 0xa, 8, 0, 15, -1, -1, 16, -1 };
+  return &_SquiDBSquidCursor_CursorReadingVisitor;
 }
 
 @end
 
-void ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init(ComYahooSquidbDataSquidCursor_CursorReadingVisitor *self) {
+void SquiDBSquidCursor_CursorReadingVisitor_init(SquiDBSquidCursor_CursorReadingVisitor *self) {
   NSObject_init(self);
 }
 
-ComYahooSquidbDataSquidCursor_CursorReadingVisitor *new_ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init() {
-  J2OBJC_NEW_IMPL(ComYahooSquidbDataSquidCursor_CursorReadingVisitor, init)
+SquiDBSquidCursor_CursorReadingVisitor *new_SquiDBSquidCursor_CursorReadingVisitor_init() {
+  J2OBJC_NEW_IMPL(SquiDBSquidCursor_CursorReadingVisitor, init)
 }
 
-ComYahooSquidbDataSquidCursor_CursorReadingVisitor *create_ComYahooSquidbDataSquidCursor_CursorReadingVisitor_init() {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbDataSquidCursor_CursorReadingVisitor, init)
+SquiDBSquidCursor_CursorReadingVisitor *create_SquiDBSquidCursor_CursorReadingVisitor_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSquidCursor_CursorReadingVisitor, init)
 }
 
-jint ComYahooSquidbDataSquidCursor_CursorReadingVisitor_columnIndexWithComYahooSquidbSqlProperty_withComYahooSquidbDataSquidCursor_(ComYahooSquidbDataSquidCursor_CursorReadingVisitor *self, ComYahooSquidbSqlProperty *property, ComYahooSquidbDataSquidCursor *cursor) {
-  return [((ComYahooSquidbDataSquidCursor *) nil_chk(cursor)) getColumnIndexOrThrowWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(property)) getName]];
+jint SquiDBSquidCursor_CursorReadingVisitor_columnIndexWithSquiDBProperty_withSquiDBSquidCursor_(SquiDBSquidCursor_CursorReadingVisitor *self, SquiDBProperty *property, SquiDBSquidCursor *cursor) {
+  return [((SquiDBSquidCursor *) nil_chk(cursor)) getColumnIndexOrThrowWithNSString:[((SquiDBProperty *) nil_chk(property)) getName]];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbDataSquidCursor_CursorReadingVisitor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidCursor_CursorReadingVisitor)

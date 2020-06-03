@@ -7,17 +7,17 @@
 #include "SQLiteDatabaseCorruptException.h"
 #include "SQLiteException.h"
 
-@implementation ComYahooAndroidSqliteSQLiteDatabaseCorruptException
+@implementation SquiDBSQLiteDatabaseCorruptException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteSQLiteDatabaseCorruptException_init(self);
+  SquiDBSQLiteDatabaseCorruptException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)error {
-  ComYahooAndroidSqliteSQLiteDatabaseCorruptException_initWithNSString_(self, error);
+  SquiDBSQLiteDatabaseCorruptException_initWithNSString_(self, error);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteSQLiteDatabaseCorruptException = { "SQLiteDatabaseCorruptException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteSQLiteDatabaseCorruptException;
+  static const J2ObjcClassInfo _SquiDBSQLiteDatabaseCorruptException = { "SQLiteDatabaseCorruptException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBSQLiteDatabaseCorruptException;
 }
 
 @end
 
-void ComYahooAndroidSqliteSQLiteDatabaseCorruptException_init(ComYahooAndroidSqliteSQLiteDatabaseCorruptException *self) {
-  ComYahooAndroidSqliteSQLiteException_init(self);
+void SquiDBSQLiteDatabaseCorruptException_init(SquiDBSQLiteDatabaseCorruptException *self) {
+  SquiDBSQLiteException_init(self);
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseCorruptException *new_ComYahooAndroidSqliteSQLiteDatabaseCorruptException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseCorruptException, init)
+SquiDBSQLiteDatabaseCorruptException *new_SquiDBSQLiteDatabaseCorruptException_init() {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseCorruptException, init)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseCorruptException *create_ComYahooAndroidSqliteSQLiteDatabaseCorruptException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseCorruptException, init)
+SquiDBSQLiteDatabaseCorruptException *create_SquiDBSQLiteDatabaseCorruptException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseCorruptException, init)
 }
 
-void ComYahooAndroidSqliteSQLiteDatabaseCorruptException_initWithNSString_(ComYahooAndroidSqliteSQLiteDatabaseCorruptException *self, NSString *error) {
-  ComYahooAndroidSqliteSQLiteException_initWithNSString_(self, error);
+void SquiDBSQLiteDatabaseCorruptException_initWithNSString_(SquiDBSQLiteDatabaseCorruptException *self, NSString *error) {
+  SquiDBSQLiteException_initWithNSString_(self, error);
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseCorruptException *new_ComYahooAndroidSqliteSQLiteDatabaseCorruptException_initWithNSString_(NSString *error) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteSQLiteDatabaseCorruptException, initWithNSString_, error)
+SquiDBSQLiteDatabaseCorruptException *new_SquiDBSQLiteDatabaseCorruptException_initWithNSString_(NSString *error) {
+  J2OBJC_NEW_IMPL(SquiDBSQLiteDatabaseCorruptException, initWithNSString_, error)
 }
 
-ComYahooAndroidSqliteSQLiteDatabaseCorruptException *create_ComYahooAndroidSqliteSQLiteDatabaseCorruptException_initWithNSString_(NSString *error) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteSQLiteDatabaseCorruptException, initWithNSString_, error)
+SquiDBSQLiteDatabaseCorruptException *create_SquiDBSQLiteDatabaseCorruptException_initWithNSString_(NSString *error) {
+  J2OBJC_CREATE_IMPL(SquiDBSQLiteDatabaseCorruptException, initWithNSString_, error)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteSQLiteDatabaseCorruptException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSQLiteDatabaseCorruptException)
+
+J2OBJC_NAME_MAPPING(SquiDBSQLiteDatabaseCorruptException, "com.yahoo.android.sqlite", "SquiDB")

@@ -16,86 +16,88 @@
 #include "J2ObjC_header.h"
 #include "Property.h"
 
-@class ComYahooSquidbDataViewModel_TableMappingVisitors;
-@class ComYahooSquidbSqlSqlTable;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaLangVoid;
+@class SquiDBSqlTable;
+@class SquiDBViewModel_TableMappingVisitors;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataViewModel : ComYahooSquidbDataAbstractModel
+@interface SquiDBViewModel : SquiDBAbstractModel
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (ComYahooSquidbDataAbstractModel *)mapToModelWithComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)dst;
+- (SquiDBAbstractModel *)mapToModelWithSquiDBAbstractModel:(SquiDBAbstractModel *)dst;
 
-- (ComYahooSquidbDataAbstractModel *)mapToModelWithComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)dst
-                                                     withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)tableAlias;
+- (SquiDBAbstractModel *)mapToModelWithSquiDBAbstractModel:(SquiDBAbstractModel *)dst
+                                        withSquiDBSqlTable:(SquiDBSqlTable *)tableAlias;
 
-- (ComYahooSquidbDataAbstractModel *)mapToModelWithComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)dst
-                                                                      withNSString:(NSString *)tableAlias;
+- (SquiDBAbstractModel *)mapToModelWithSquiDBAbstractModel:(SquiDBAbstractModel *)dst
+                                              withNSString:(NSString *)tableAlias;
 
 - (id<JavaUtilList>)mapToSourceModels;
 
 #pragma mark Protected
 
-+ (ComYahooSquidbDataViewModel_TableMappingVisitors *)generateTableMappingVisitorsWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)viewModelProperties
-                                                                                  withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)aliasedProperties
-                                                                                  withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)baseProperties;
++ (SquiDBViewModel_TableMappingVisitors *)generateTableMappingVisitorsWithSquiDBPropertyArray:(IOSObjectArray *)viewModelProperties
+                                                                      withSquiDBPropertyArray:(IOSObjectArray *)aliasedProperties
+                                                                      withSquiDBPropertyArray:(IOSObjectArray *)baseProperties;
 
-- (ComYahooSquidbDataViewModel_TableMappingVisitors *)getTableMappingVisitors;
+- (SquiDBViewModel_TableMappingVisitors *)getTableMappingVisitors;
 
-+ (void)validateAliasedPropertiesWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)aliasedPropertyArray;
++ (void)validateAliasedPropertiesWithSquiDBPropertyArray:(IOSObjectArray *)aliasedPropertyArray;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataViewModel)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBViewModel)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataViewModel_init(ComYahooSquidbDataViewModel *self);
+FOUNDATION_EXPORT void SquiDBViewModel_init(SquiDBViewModel *self);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataViewModel_validateAliasedPropertiesWithComYahooSquidbSqlPropertyArray_(IOSObjectArray *aliasedPropertyArray);
+FOUNDATION_EXPORT void SquiDBViewModel_validateAliasedPropertiesWithSquiDBPropertyArray_(IOSObjectArray *aliasedPropertyArray);
 
-FOUNDATION_EXPORT ComYahooSquidbDataViewModel_TableMappingVisitors *ComYahooSquidbDataViewModel_generateTableMappingVisitorsWithComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlPropertyArray_withComYahooSquidbSqlPropertyArray_(IOSObjectArray *viewModelProperties, IOSObjectArray *aliasedProperties, IOSObjectArray *baseProperties);
+FOUNDATION_EXPORT SquiDBViewModel_TableMappingVisitors *SquiDBViewModel_generateTableMappingVisitorsWithSquiDBPropertyArray_withSquiDBPropertyArray_withSquiDBPropertyArray_(IOSObjectArray *viewModelProperties, IOSObjectArray *aliasedProperties, IOSObjectArray *baseProperties);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataViewModel)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBViewModel)
 
-@interface ComYahooSquidbDataViewModel_TableModelMappingVisitor : NSObject < ComYahooSquidbSqlProperty_PropertyWritingVisitor >
+@compatibility_alias ComYahooSquidbDataViewModel SquiDBViewModel;
+
+@interface SquiDBViewModel_TableModelMappingVisitor : NSObject < SquiDBProperty_PropertyWritingVisitor >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)relevantProperties
-                                                 withJavaUtilMap:(id<JavaUtilMap>)aliasedPropertyMap;
+- (instancetype __nonnull)initWithSquiDBPropertyArray:(IOSObjectArray *)relevantProperties
+                                      withJavaUtilMap:(id<JavaUtilMap>)aliasedPropertyMap;
 
-- (ComYahooSquidbDataAbstractModel *)mapWithComYahooSquidbDataViewModel:(ComYahooSquidbDataViewModel *)src
-                                    withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)dst;
+- (SquiDBAbstractModel *)mapWithSquiDBViewModel:(SquiDBViewModel *)src
+                        withSquiDBAbstractModel:(SquiDBAbstractModel *)dst;
 
-- (JavaLangVoid *)visitBlobWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                  withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitBlobWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBAbstractModel *)dst
+                                       withId:(SquiDBViewModel *)src;
 
-- (JavaLangVoid *)visitBooleanWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                     withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitBooleanWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBAbstractModel *)dst
+                                          withId:(SquiDBViewModel *)src;
 
-- (JavaLangVoid *)visitDoubleWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                    withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitDoubleWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBAbstractModel *)dst
+                                         withId:(SquiDBViewModel *)src;
 
-- (JavaLangVoid *)visitIntegerWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                     withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                     withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitIntegerWithSquiDBProperty:(SquiDBProperty *)property
+                                          withId:(SquiDBAbstractModel *)dst
+                                          withId:(SquiDBViewModel *)src;
 
-- (JavaLangVoid *)visitLongWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                  withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                  withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitLongWithSquiDBProperty:(SquiDBProperty *)property
+                                       withId:(SquiDBAbstractModel *)dst
+                                       withId:(SquiDBViewModel *)src;
 
-- (JavaLangVoid *)visitStringWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property
-                                                    withId:(ComYahooSquidbDataAbstractModel *)dst
-                                                    withId:(ComYahooSquidbDataViewModel *)src;
+- (JavaLangVoid *)visitStringWithSquiDBProperty:(SquiDBProperty *)property
+                                         withId:(SquiDBAbstractModel *)dst
+                                         withId:(SquiDBViewModel *)src;
 
 // Disallowed inherited constructors, do not use.
 
@@ -103,24 +105,24 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataViewModel)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataViewModel_TableModelMappingVisitor)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBViewModel_TableModelMappingVisitor)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataViewModel_TableModelMappingVisitor_initWithComYahooSquidbSqlPropertyArray_withJavaUtilMap_(ComYahooSquidbDataViewModel_TableModelMappingVisitor *self, IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap);
+FOUNDATION_EXPORT void SquiDBViewModel_TableModelMappingVisitor_initWithSquiDBPropertyArray_withJavaUtilMap_(SquiDBViewModel_TableModelMappingVisitor *self, IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap);
 
-FOUNDATION_EXPORT ComYahooSquidbDataViewModel_TableModelMappingVisitor *new_ComYahooSquidbDataViewModel_TableModelMappingVisitor_initWithComYahooSquidbSqlPropertyArray_withJavaUtilMap_(IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBViewModel_TableModelMappingVisitor *new_SquiDBViewModel_TableModelMappingVisitor_initWithSquiDBPropertyArray_withJavaUtilMap_(IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataViewModel_TableModelMappingVisitor *create_ComYahooSquidbDataViewModel_TableModelMappingVisitor_initWithComYahooSquidbSqlPropertyArray_withJavaUtilMap_(IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap);
+FOUNDATION_EXPORT SquiDBViewModel_TableModelMappingVisitor *create_SquiDBViewModel_TableModelMappingVisitor_initWithSquiDBPropertyArray_withJavaUtilMap_(IOSObjectArray *relevantProperties, id<JavaUtilMap> aliasedPropertyMap);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataViewModel_TableModelMappingVisitor)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBViewModel_TableModelMappingVisitor)
 
-@interface ComYahooSquidbDataViewModel_TableMappingVisitors : NSObject
+@interface SquiDBViewModel_TableMappingVisitors : NSObject
 
 #pragma mark Public
 
 - (id<JavaUtilSet>)allMappings;
 
-- (ComYahooSquidbDataViewModel_TableModelMappingVisitor *)getWithIOSClass:(IOSClass *)cls
-                                                             withNSString:(NSString *)tableName;
+- (SquiDBViewModel_TableModelMappingVisitor *)getWithIOSClass:(IOSClass *)cls
+                                                 withNSString:(NSString *)tableName;
 
 #pragma mark Protected
 
@@ -128,15 +130,15 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataViewModel_TableModelMappingVisitor)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataViewModel_TableMappingVisitors)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBViewModel_TableMappingVisitors)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataViewModel_TableMappingVisitors_init(ComYahooSquidbDataViewModel_TableMappingVisitors *self);
+FOUNDATION_EXPORT void SquiDBViewModel_TableMappingVisitors_init(SquiDBViewModel_TableMappingVisitors *self);
 
-FOUNDATION_EXPORT ComYahooSquidbDataViewModel_TableMappingVisitors *new_ComYahooSquidbDataViewModel_TableMappingVisitors_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBViewModel_TableMappingVisitors *new_SquiDBViewModel_TableMappingVisitors_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbDataViewModel_TableMappingVisitors *create_ComYahooSquidbDataViewModel_TableMappingVisitors_init(void);
+FOUNDATION_EXPORT SquiDBViewModel_TableMappingVisitors *create_SquiDBViewModel_TableMappingVisitors_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataViewModel_TableMappingVisitors)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBViewModel_TableMappingVisitors)
 
 
 #if __has_feature(nullability)

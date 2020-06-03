@@ -8,12 +8,12 @@
 #include "J2ObjC_source.h"
 #include "ModelGenErrors.h"
 
-@implementation ComYahooSquidbAnnotationsModelGenErrors
+@implementation SquiDBModelGenErrors
 
 @synthesize value = value_;
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsModelGenErrors_class_();
+  return SquiDBModelGenErrors_class_();
 }
 
 - (NSString *)description {
@@ -30,7 +30,7 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "[LComYahooSquidbAnnotationsModelGenErrors_ModelGenError;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBModelGenErrors_ModelGenError;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -38,24 +38,26 @@
   methods[0].selector = @selector(value);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "value_", "[LComYahooSquidbAnnotationsModelGenErrors_ModelGenError;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "value_", "[LSquiDBModelGenErrors_ModelGenError;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooSquidbAnnotationsModelGenErrors_ModelGenError;" };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsModelGenErrors = { "ModelGenErrors", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, 0, -1, -1, -1 };
-  return &_ComYahooSquidbAnnotationsModelGenErrors;
+  static const void *ptrTable[] = { "LSquiDBModelGenErrors_ModelGenError;" };
+  static const J2ObjcClassInfo _SquiDBModelGenErrors = { "ModelGenErrors", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, 0, -1, -1, -1 };
+  return &_SquiDBModelGenErrors;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsModelGenErrors> create_ComYahooSquidbAnnotationsModelGenErrors(IOSObjectArray *value) {
-  ComYahooSquidbAnnotationsModelGenErrors *self = AUTORELEASE([[ComYahooSquidbAnnotationsModelGenErrors alloc] init]);
+id<SquiDBModelGenErrors> create_SquiDBModelGenErrors(IOSObjectArray *value) {
+  SquiDBModelGenErrors *self = AUTORELEASE([[SquiDBModelGenErrors alloc] init]);
   self->value_ = RETAIN_(value);
   return self;
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsModelGenErrors)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBModelGenErrors)
 
-@implementation ComYahooSquidbAnnotationsModelGenErrors_ModelGenError
+J2OBJC_NAME_MAPPING(SquiDBModelGenErrors, "com.yahoo.squidb.annotations", "SquiDB")
+
+@implementation SquiDBModelGenErrors_ModelGenError
 
 @synthesize specClass = specClass_;
 @synthesize element = element_;
@@ -66,7 +68,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsModelGenErrors)
 }
 
 - (IOSClass *)annotationType {
-  return ComYahooSquidbAnnotationsModelGenErrors_ModelGenError_class_();
+  return SquiDBModelGenErrors_ModelGenError_class_();
 }
 
 - (NSString *)description {
@@ -99,19 +101,19 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsModelGenErrors)
     { "element_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "message_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/lang/Class<*>;", "LComYahooSquidbAnnotationsModelGenErrors;" };
-  static const J2ObjcClassInfo _ComYahooSquidbAnnotationsModelGenErrors_ModelGenError = { "ModelGenError", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, 1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbAnnotationsModelGenErrors_ModelGenError;
+  static const void *ptrTable[] = { "Ljava/lang/Class<*>;", "LSquiDBModelGenErrors;" };
+  static const J2ObjcClassInfo _SquiDBModelGenErrors_ModelGenError = { "ModelGenError", "com.yahoo.squidb.annotations", ptrTable, methods, fields, 7, 0x2609, 3, 3, 1, -1, -1, -1, -1 };
+  return &_SquiDBModelGenErrors_ModelGenError;
 }
 
 @end
 
-id<ComYahooSquidbAnnotationsModelGenErrors_ModelGenError> create_ComYahooSquidbAnnotationsModelGenErrors_ModelGenError(NSString *element, NSString *message, IOSClass *specClass) {
-  ComYahooSquidbAnnotationsModelGenErrors_ModelGenError *self = AUTORELEASE([[ComYahooSquidbAnnotationsModelGenErrors_ModelGenError alloc] init]);
+id<SquiDBModelGenErrors_ModelGenError> create_SquiDBModelGenErrors_ModelGenError(NSString *element, NSString *message, IOSClass *specClass) {
+  SquiDBModelGenErrors_ModelGenError *self = AUTORELEASE([[SquiDBModelGenErrors_ModelGenError alloc] init]);
   self->element_ = RETAIN_(element);
   self->message_ = RETAIN_(message);
   self->specClass_ = RETAIN_(specClass);
   return self;
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbAnnotationsModelGenErrors_ModelGenError)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBModelGenErrors_ModelGenError)

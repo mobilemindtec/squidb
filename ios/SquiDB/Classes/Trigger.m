@@ -31,28 +31,28 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@class ComYahooSquidbSqlTrigger_TriggerEvent;
-@class ComYahooSquidbSqlTrigger_TriggerType;
+@class SquiDBTrigger_TriggerEvent;
+@class SquiDBTrigger_TriggerType;
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface ComYahooSquidbSqlTrigger () {
+@interface SquiDBTrigger () {
  @public
-  ComYahooSquidbSqlSqlTable *table_;
-  ComYahooSquidbSqlTrigger_TriggerType *triggerType_;
-  ComYahooSquidbSqlTrigger_TriggerEvent *triggerEvent_;
+  SquiDBSqlTable *table_;
+  SquiDBTrigger_TriggerType *triggerType_;
+  SquiDBTrigger_TriggerEvent *triggerEvent_;
   jboolean isTemp_;
   id<JavaUtilList> columns_;
   id<JavaUtilList> criterions_;
   id<JavaUtilList> statements_;
 }
 
-- (ComYahooSquidbSqlTrigger *)deleteOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table;
+- (SquiDBTrigger *)deleteOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table;
 
-- (ComYahooSquidbSqlTrigger *)insertOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table;
+- (SquiDBTrigger *)insertOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table;
 
-- (ComYahooSquidbSqlTrigger *)updateOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                      withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns;
+- (SquiDBTrigger *)updateOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                           withSquiDBPropertyArray:(IOSObjectArray *)columns;
 
 - (void)assertNoTriggerEvent;
 
@@ -66,323 +66,323 @@
 
 - (void)visitTriggerEventWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql;
 
-- (void)visitWhenWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                     withBoolean:(jboolean)forSqlValidation;
+- (void)visitWhenWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                          withBoolean:(jboolean)forSqlValidation;
 
-- (void)visitStatementsWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder;
+- (void)visitStatementsWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder;
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, table_, ComYahooSquidbSqlSqlTable *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, triggerType_, ComYahooSquidbSqlTrigger_TriggerType *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, triggerEvent_, ComYahooSquidbSqlTrigger_TriggerEvent *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, columns_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, criterions_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger, statements_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, table_, SquiDBSqlTable *)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, triggerType_, SquiDBTrigger_TriggerType *)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, triggerEvent_, SquiDBTrigger_TriggerEvent *)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, columns_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, criterions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(SquiDBTrigger, statements_, id<JavaUtilList>)
 
-inline ComYahooSquidbSqlTable *ComYahooSquidbSqlTrigger_get_OLD(void);
-static ComYahooSquidbSqlTable *ComYahooSquidbSqlTrigger_OLD;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlTrigger, OLD, ComYahooSquidbSqlTable *)
+inline SquiDBTable *SquiDBTrigger_get_OLD(void);
+static SquiDBTable *SquiDBTrigger_OLD;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBTrigger, OLD, SquiDBTable *)
 
-inline ComYahooSquidbSqlTable *ComYahooSquidbSqlTrigger_get_NEW(void);
-static ComYahooSquidbSqlTable *ComYahooSquidbSqlTrigger_NEW;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbSqlTrigger, NEW, ComYahooSquidbSqlTable *)
+inline SquiDBTable *SquiDBTrigger_get_NEW(void);
+static SquiDBTable *SquiDBTrigger_NEW;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBTrigger, NEW, SquiDBTable *)
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_deleteOnTableWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table);
+__attribute__((unused)) static SquiDBTrigger *SquiDBTrigger_deleteOnTableWithSquiDBSqlTable_(SquiDBTrigger *self, SquiDBSqlTable *table);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_insertOnTableWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table);
+__attribute__((unused)) static SquiDBTrigger *SquiDBTrigger_insertOnTableWithSquiDBSqlTable_(SquiDBTrigger *self, SquiDBSqlTable *table);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_updateOnTableWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table, IOSObjectArray *columns);
+__attribute__((unused)) static SquiDBTrigger *SquiDBTrigger_updateOnTableWithSquiDBSqlTable_withSquiDBPropertyArray_(SquiDBTrigger *self, SquiDBSqlTable *table, IOSObjectArray *columns);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_assertNoTriggerEvent(ComYahooSquidbSqlTrigger *self);
+__attribute__((unused)) static void SquiDBTrigger_assertNoTriggerEvent(SquiDBTrigger *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_assertTriggerEvent(ComYahooSquidbSqlTrigger *self);
+__attribute__((unused)) static void SquiDBTrigger_assertTriggerEvent(SquiDBTrigger *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_assertStatements(ComYahooSquidbSqlTrigger *self);
+__attribute__((unused)) static void SquiDBTrigger_assertStatements(SquiDBTrigger *self);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_visitCreateTriggerWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql);
+__attribute__((unused)) static void SquiDBTrigger_visitCreateTriggerWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_visitTriggerTypeWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql);
+__attribute__((unused)) static void SquiDBTrigger_visitTriggerTypeWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_visitTriggerEventWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql);
+__attribute__((unused)) static void SquiDBTrigger_visitTriggerEventWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_visitWhenWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation);
+__attribute__((unused)) static void SquiDBTrigger_visitWhenWithSquiDBSqlBuilder_withBoolean_(SquiDBTrigger *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation);
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_visitStatementsWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlBuilder *builder);
+__attribute__((unused)) static void SquiDBTrigger_visitStatementsWithSquiDBSqlBuilder_(SquiDBTrigger *self, SquiDBSqlBuilder *builder);
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlTrigger__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTrigger__Annotations$0(void);
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlTrigger_TriggerType_Enum) {
-  ComYahooSquidbSqlTrigger_TriggerType_Enum_BEFORE = 0,
-  ComYahooSquidbSqlTrigger_TriggerType_Enum_AFTER = 1,
-  ComYahooSquidbSqlTrigger_TriggerType_Enum_INSTEAD = 2,
+typedef NS_ENUM(NSUInteger, SquiDBTrigger_TriggerType_Enum) {
+  SquiDBTrigger_TriggerType_Enum_BEFORE = 0,
+  SquiDBTrigger_TriggerType_Enum_AFTER = 1,
+  SquiDBTrigger_TriggerType_Enum_INSTEAD = 2,
 };
 
-@interface ComYahooSquidbSqlTrigger_TriggerType : JavaLangEnum {
+@interface SquiDBTrigger_TriggerType : JavaLangEnum {
  @public
   NSString *name_TriggerType_;
 }
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerType *BEFORE NS_SWIFT_NAME(BEFORE);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerType *AFTER NS_SWIFT_NAME(AFTER);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerType *INSTEAD NS_SWIFT_NAME(INSTEAD);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerType *BEFORE NS_SWIFT_NAME(BEFORE);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerType *AFTER NS_SWIFT_NAME(AFTER);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerType *INSTEAD NS_SWIFT_NAME(INSTEAD);
 + (IOSObjectArray *)values;
 
-+ (ComYahooSquidbSqlTrigger_TriggerType *)valueOfWithNSString:(NSString *)name;
++ (SquiDBTrigger_TriggerType *)valueOfWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlTrigger_TriggerType_Enum)toNSEnum;
+- (SquiDBTrigger_TriggerType_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlTrigger_TriggerType)
+J2OBJC_STATIC_INIT(SquiDBTrigger_TriggerType)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_values_[];
+FOUNDATION_EXPORT SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_values_[];
 
-inline ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_get_BEFORE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerType, BEFORE)
+inline SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_get_BEFORE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerType, BEFORE)
 
-inline ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_get_AFTER(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerType, AFTER)
+inline SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_get_AFTER(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerType, AFTER)
 
-inline ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_get_INSTEAD(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD)
+inline SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_get_INSTEAD(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerType, INSTEAD)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlTrigger_TriggerType, name_TriggerType_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBTrigger_TriggerType, name_TriggerType_, NSString *)
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlTrigger_TriggerType *self, NSString *name, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(SquiDBTrigger_TriggerType *self, NSString *name, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger_TriggerType *new_ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(NSString *name, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBTrigger_TriggerType *new_SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(NSString *name, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlTrigger_TriggerType_values(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTrigger_TriggerType_values(void);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_valueOfWithNSString_(NSString *name);
+__attribute__((unused)) static SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTrigger_TriggerType)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTrigger_TriggerType)
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbSqlTrigger_TriggerEvent_Enum) {
-  ComYahooSquidbSqlTrigger_TriggerEvent_Enum_DELETE = 0,
-  ComYahooSquidbSqlTrigger_TriggerEvent_Enum_INSERT = 1,
-  ComYahooSquidbSqlTrigger_TriggerEvent_Enum_UPDATE = 2,
+typedef NS_ENUM(NSUInteger, SquiDBTrigger_TriggerEvent_Enum) {
+  SquiDBTrigger_TriggerEvent_Enum_DELETE = 0,
+  SquiDBTrigger_TriggerEvent_Enum_INSERT = 1,
+  SquiDBTrigger_TriggerEvent_Enum_UPDATE = 2,
 };
 
-@interface ComYahooSquidbSqlTrigger_TriggerEvent : JavaLangEnum
+@interface SquiDBTrigger_TriggerEvent : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerEvent *DELETE NS_SWIFT_NAME(DELETE);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerEvent *INSERT NS_SWIFT_NAME(INSERT);
-@property (readonly, class, nonnull) ComYahooSquidbSqlTrigger_TriggerEvent *UPDATE NS_SWIFT_NAME(UPDATE);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerEvent *DELETE NS_SWIFT_NAME(DELETE);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerEvent *INSERT NS_SWIFT_NAME(INSERT);
+@property (readonly, class, nonnull) SquiDBTrigger_TriggerEvent *UPDATE NS_SWIFT_NAME(UPDATE);
 + (IOSObjectArray *)values;
 
-+ (ComYahooSquidbSqlTrigger_TriggerEvent *)valueOfWithNSString:(NSString *)name;
++ (SquiDBTrigger_TriggerEvent *)valueOfWithNSString:(NSString *)name;
 
-- (ComYahooSquidbSqlTrigger_TriggerEvent_Enum)toNSEnum;
+- (SquiDBTrigger_TriggerEvent_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlTrigger_TriggerEvent)
+J2OBJC_STATIC_INIT(SquiDBTrigger_TriggerEvent)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_values_[];
+FOUNDATION_EXPORT SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_values_[];
 
-inline ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_get_DELETE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerEvent, DELETE)
+inline SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_get_DELETE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerEvent, DELETE)
 
-inline ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_get_INSERT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerEvent, INSERT)
+inline SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_get_INSERT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerEvent, INSERT)
 
-inline ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_get_UPDATE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE)
+inline SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_get_UPDATE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBTrigger_TriggerEvent, UPDATE)
 
-__attribute__((unused)) static void ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(ComYahooSquidbSqlTrigger_TriggerEvent *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(SquiDBTrigger_TriggerEvent *self, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger_TriggerEvent *new_ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBTrigger_TriggerEvent *new_SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static IOSObjectArray *ComYahooSquidbSqlTrigger_TriggerEvent_values(void);
+__attribute__((unused)) static IOSObjectArray *SquiDBTrigger_TriggerEvent_values(void);
 
-__attribute__((unused)) static ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_valueOfWithNSString_(NSString *name);
+__attribute__((unused)) static SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlTrigger_TriggerEvent)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTrigger_TriggerEvent)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlTrigger)
+J2OBJC_INITIALIZED_DEFN(SquiDBTrigger)
 
-@implementation ComYahooSquidbSqlTrigger
+@implementation SquiDBTrigger
 
 - (instancetype)initWithNSString:(NSString *)name
-withComYahooSquidbSqlTrigger_TriggerType:(ComYahooSquidbSqlTrigger_TriggerType *)triggerType {
-  ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(self, name, triggerType);
+   withSquiDBTrigger_TriggerType:(SquiDBTrigger_TriggerType *)triggerType {
+  SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(self, name, triggerType);
   return self;
 }
 
-+ (ComYahooSquidbSqlTrigger *)beforeWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_beforeWithNSString_(name);
++ (SquiDBTrigger *)beforeWithNSString:(NSString *)name {
+  return SquiDBTrigger_beforeWithNSString_(name);
 }
 
-+ (ComYahooSquidbSqlTrigger *)afterWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_afterWithNSString_(name);
++ (SquiDBTrigger *)afterWithNSString:(NSString *)name {
+  return SquiDBTrigger_afterWithNSString_(name);
 }
 
-+ (ComYahooSquidbSqlTrigger *)insteadOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_insteadOfWithNSString_(name);
++ (SquiDBTrigger *)insteadOfWithNSString:(NSString *)name {
+  return SquiDBTrigger_insteadOfWithNSString_(name);
 }
 
-+ (ComYahooSquidbSqlTrigger *)tempBeforeWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_tempBeforeWithNSString_(name);
++ (SquiDBTrigger *)tempBeforeWithNSString:(NSString *)name {
+  return SquiDBTrigger_tempBeforeWithNSString_(name);
 }
 
-+ (ComYahooSquidbSqlTrigger *)tempAfterWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_tempAfterWithNSString_(name);
++ (SquiDBTrigger *)tempAfterWithNSString:(NSString *)name {
+  return SquiDBTrigger_tempAfterWithNSString_(name);
 }
 
-+ (ComYahooSquidbSqlTrigger *)tempInsteadOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_tempInsteadOfWithNSString_(name);
++ (SquiDBTrigger *)tempInsteadOfWithNSString:(NSString *)name {
+  return SquiDBTrigger_tempInsteadOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlTrigger *)deleteOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  return ComYahooSquidbSqlTrigger_deleteOnTableWithComYahooSquidbSqlSqlTable_(self, table);
+- (SquiDBTrigger *)deleteOnWithSquiDBTable:(SquiDBTable *)table {
+  return SquiDBTrigger_deleteOnTableWithSquiDBSqlTable_(self, table);
 }
 
-- (ComYahooSquidbSqlTrigger *)deleteOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  ComYahooSquidbSqlTrigger *result = ComYahooSquidbSqlTrigger_deleteOnTableWithComYahooSquidbSqlSqlTable_(self, view);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD);
+- (SquiDBTrigger *)deleteOnWithSquiDBView:(SquiDBView *)view {
+  SquiDBTrigger *result = SquiDBTrigger_deleteOnTableWithSquiDBSqlTable_(self, view);
+  ((SquiDBTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(SquiDBTrigger_TriggerType, INSTEAD);
   return result;
 }
 
-- (ComYahooSquidbSqlTrigger *)deleteOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table {
-  return ComYahooSquidbSqlTrigger_deleteOnTableWithComYahooSquidbSqlSqlTable_(self, table);
+- (SquiDBTrigger *)deleteOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table {
+  return SquiDBTrigger_deleteOnTableWithSquiDBSqlTable_(self, table);
 }
 
-- (ComYahooSquidbSqlTrigger *)insertOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table {
-  return ComYahooSquidbSqlTrigger_insertOnTableWithComYahooSquidbSqlSqlTable_(self, table);
+- (SquiDBTrigger *)insertOnWithSquiDBTable:(SquiDBTable *)table {
+  return SquiDBTrigger_insertOnTableWithSquiDBSqlTable_(self, table);
 }
 
-- (ComYahooSquidbSqlTrigger *)insertOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view {
-  ComYahooSquidbSqlTrigger *result = ComYahooSquidbSqlTrigger_insertOnTableWithComYahooSquidbSqlSqlTable_(self, view);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD);
+- (SquiDBTrigger *)insertOnWithSquiDBView:(SquiDBView *)view {
+  SquiDBTrigger *result = SquiDBTrigger_insertOnTableWithSquiDBSqlTable_(self, view);
+  ((SquiDBTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(SquiDBTrigger_TriggerType, INSTEAD);
   return result;
 }
 
-- (ComYahooSquidbSqlTrigger *)insertOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table {
-  return ComYahooSquidbSqlTrigger_insertOnTableWithComYahooSquidbSqlSqlTable_(self, table);
+- (SquiDBTrigger *)insertOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table {
+  return SquiDBTrigger_insertOnTableWithSquiDBSqlTable_(self, table);
 }
 
-- (ComYahooSquidbSqlTrigger *)updateOnWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-                              withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns {
-  return ComYahooSquidbSqlTrigger_updateOnTableWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(self, table, columns);
+- (SquiDBTrigger *)updateOnWithSquiDBTable:(SquiDBTable *)table
+                   withSquiDBPropertyArray:(IOSObjectArray *)columns {
+  return SquiDBTrigger_updateOnTableWithSquiDBSqlTable_withSquiDBPropertyArray_(self, table, columns);
 }
 
-- (ComYahooSquidbSqlTrigger *)updateOnWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view
-                             withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns {
-  ComYahooSquidbSqlTrigger *result = ComYahooSquidbSqlTrigger_updateOnTableWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(self, view, columns);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD);
+- (SquiDBTrigger *)updateOnWithSquiDBView:(SquiDBView *)view
+                  withSquiDBPropertyArray:(IOSObjectArray *)columns {
+  SquiDBTrigger *result = SquiDBTrigger_updateOnTableWithSquiDBSqlTable_withSquiDBPropertyArray_(self, view, columns);
+  ((SquiDBTrigger *) nil_chk(result))->triggerType_ = JreLoadEnum(SquiDBTrigger_TriggerType, INSTEAD);
   return result;
 }
 
-- (ComYahooSquidbSqlTrigger *)updateOnTableWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                                      withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns {
-  return ComYahooSquidbSqlTrigger_updateOnTableWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(self, table, columns);
+- (SquiDBTrigger *)updateOnTableWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                           withSquiDBPropertyArray:(IOSObjectArray *)columns {
+  return SquiDBTrigger_updateOnTableWithSquiDBSqlTable_withSquiDBPropertyArray_(self, table, columns);
 }
 
 - (void)assertNoTriggerEvent {
-  ComYahooSquidbSqlTrigger_assertNoTriggerEvent(self);
+  SquiDBTrigger_assertNoTriggerEvent(self);
 }
 
-- (ComYahooSquidbSqlTrigger *)whenWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion {
+- (SquiDBTrigger *)whenWithSquiDBCriterion:(SquiDBCriterion *)criterion {
   if (criterion != nil) {
     [((id<JavaUtilList>) nil_chk(criterions_)) addWithId:criterion];
   }
   return self;
 }
 
-- (ComYahooSquidbSqlTrigger *)performWithComYahooSquidbSqlTableStatementArray:(IOSObjectArray *)statements {
+- (SquiDBTrigger *)performWithSquiDBTableStatementArray:(IOSObjectArray *)statements {
   JavaUtilCollections_addAllWithJavaUtilCollection_withNSObjectArray_(self->statements_, statements);
   return self;
 }
 
-+ (ComYahooSquidbSqlProperty *)oldValueOfWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbSqlTrigger_oldValueOfWithComYahooSquidbSqlProperty_(property);
++ (SquiDBProperty *)oldValueOfWithSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBTrigger_oldValueOfWithSquiDBProperty_(property);
 }
 
-+ (ComYahooSquidbSqlProperty *)newValueOfWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)property {
-  return ComYahooSquidbSqlTrigger_newValueOfWithComYahooSquidbSqlProperty_(property);
++ (SquiDBProperty *)newValueOfWithSquiDBProperty:(SquiDBProperty *)property {
+  return SquiDBTrigger_newValueOfWithSquiDBProperty_(property);
 }
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbUtilityVersionCode:(ComYahooSquidbUtilityVersionCode *)sqliteVersion {
-  return [self compileWithComYahooSquidbSqlCompileContext:ComYahooSquidbSqlCompileContext_defaultContextForVersionCodeWithComYahooSquidbUtilityVersionCode_(sqliteVersion)];
+- (SquiDBCompiledStatement *)compileWithSquiDBVersionCode:(SquiDBVersionCode *)sqliteVersion {
+  return [self compileWithSquiDBCompileContext:SquiDBCompileContext_defaultContextForVersionCodeWithSquiDBVersionCode_(sqliteVersion)];
 }
 
-- (ComYahooSquidbSqlCompiledStatement *)compileWithComYahooSquidbSqlCompileContext:(ComYahooSquidbSqlCompileContext *)compileContext {
-  return new_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_([self toRawSqlWithComYahooSquidbSqlCompileContext:compileContext], JreLoadStatic(ComYahooSquidbSqlSqlStatement, EMPTY_ARGS), false);
+- (SquiDBCompiledStatement *)compileWithSquiDBCompileContext:(SquiDBCompileContext *)compileContext {
+  return new_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_([self toRawSqlWithSquiDBCompileContext:compileContext], JreLoadStatic(SquiDBSqlStatement, EMPTY_ARGS), false);
 }
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlTrigger_assertTriggerEvent(self);
-  ComYahooSquidbSqlTrigger_assertStatements(self);
-  ComYahooSquidbSqlTrigger_visitCreateTriggerWithJavaLangStringBuilder_(self, ((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_);
-  ComYahooSquidbSqlTrigger_visitTriggerTypeWithJavaLangStringBuilder_(self, builder->sql_);
-  ComYahooSquidbSqlTrigger_visitTriggerEventWithJavaLangStringBuilder_(self, builder->sql_);
-  ComYahooSquidbSqlTrigger_visitWhenWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
-  ComYahooSquidbSqlTrigger_visitStatementsWithComYahooSquidbSqlSqlBuilder_(self, builder);
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation {
+  SquiDBTrigger_assertTriggerEvent(self);
+  SquiDBTrigger_assertStatements(self);
+  SquiDBTrigger_visitCreateTriggerWithJavaLangStringBuilder_(self, ((SquiDBSqlBuilder *) nil_chk(builder))->sql_);
+  SquiDBTrigger_visitTriggerTypeWithJavaLangStringBuilder_(self, builder->sql_);
+  SquiDBTrigger_visitTriggerEventWithJavaLangStringBuilder_(self, builder->sql_);
+  SquiDBTrigger_visitWhenWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+  SquiDBTrigger_visitStatementsWithSquiDBSqlBuilder_(self, builder);
 }
 
 - (void)assertTriggerEvent {
-  ComYahooSquidbSqlTrigger_assertTriggerEvent(self);
+  SquiDBTrigger_assertTriggerEvent(self);
 }
 
 - (void)assertStatements {
-  ComYahooSquidbSqlTrigger_assertStatements(self);
+  SquiDBTrigger_assertStatements(self);
 }
 
 - (void)visitCreateTriggerWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
-  ComYahooSquidbSqlTrigger_visitCreateTriggerWithJavaLangStringBuilder_(self, sql);
+  SquiDBTrigger_visitCreateTriggerWithJavaLangStringBuilder_(self, sql);
 }
 
 - (void)visitTriggerTypeWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
-  ComYahooSquidbSqlTrigger_visitTriggerTypeWithJavaLangStringBuilder_(self, sql);
+  SquiDBTrigger_visitTriggerTypeWithJavaLangStringBuilder_(self, sql);
 }
 
 - (void)visitTriggerEventWithJavaLangStringBuilder:(JavaLangStringBuilder *)sql {
-  ComYahooSquidbSqlTrigger_visitTriggerEventWithJavaLangStringBuilder_(self, sql);
+  SquiDBTrigger_visitTriggerEventWithJavaLangStringBuilder_(self, sql);
 }
 
-- (void)visitWhenWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                     withBoolean:(jboolean)forSqlValidation {
-  ComYahooSquidbSqlTrigger_visitWhenWithComYahooSquidbSqlSqlBuilder_withBoolean_(self, builder, forSqlValidation);
+- (void)visitWhenWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                          withBoolean:(jboolean)forSqlValidation {
+  SquiDBTrigger_visitWhenWithSquiDBSqlBuilder_withBoolean_(self, builder, forSqlValidation);
 }
 
-- (void)visitStatementsWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder {
-  ComYahooSquidbSqlTrigger_visitStatementsWithComYahooSquidbSqlSqlBuilder_(self, builder);
+- (void)visitStatementsWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder {
+  SquiDBTrigger_visitStatementsWithSquiDBSqlBuilder_(self, builder);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x4, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 3, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 4, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 5, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 6, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x9, 7, 2, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x1, 8, 9, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x1, 8, 10, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x2, 11, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x1, 14, 9, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x1, 14, 10, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x2, 15, 12, -1, 13, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x81, 16, 17, -1, 18, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x81, 16, 19, -1, 20, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x82, 21, 22, -1, 23, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 3, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 4, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 5, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 6, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x9, 7, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x1, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x1, 8, 10, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x2, 11, 12, -1, 13, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x1, 14, 9, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x1, 14, 10, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x2, 15, 12, -1, 13, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x81, 16, 17, -1, 18, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x81, 16, 19, -1, 20, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x82, 21, 22, -1, 23, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x1, 24, 25, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger;", 0x81, 26, 27, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x9, 28, 29, -1, 30, -1, -1 },
-    { NULL, "LComYahooSquidbSqlProperty;", 0x9, 31, 29, -1, 30, -1, -1 },
-    { NULL, "LComYahooSquidbSqlCompiledStatement;", 0x1, 32, 33, -1, -1, 34, -1 },
-    { NULL, "LComYahooSquidbSqlCompiledStatement;", 0x1, 32, 35, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x1, 24, 25, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger;", 0x81, 26, 27, -1, -1, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x9, 28, 29, -1, 30, -1, -1 },
+    { NULL, "LSquiDBProperty;", 0x9, 31, 29, -1, 30, -1, -1 },
+    { NULL, "LSquiDBCompiledStatement;", 0x1, 32, 33, -1, -1, 34, -1 },
+    { NULL, "LSquiDBCompiledStatement;", 0x1, 32, 35, -1, -1, -1, -1 },
     { NULL, "V", 0x0, 36, 37, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
@@ -395,167 +395,167 @@ withComYahooSquidbSqlTrigger_TriggerType:(ComYahooSquidbSqlTrigger_TriggerType *
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithNSString:withComYahooSquidbSqlTrigger_TriggerType:);
+  methods[0].selector = @selector(initWithNSString:withSquiDBTrigger_TriggerType:);
   methods[1].selector = @selector(beforeWithNSString:);
   methods[2].selector = @selector(afterWithNSString:);
   methods[3].selector = @selector(insteadOfWithNSString:);
   methods[4].selector = @selector(tempBeforeWithNSString:);
   methods[5].selector = @selector(tempAfterWithNSString:);
   methods[6].selector = @selector(tempInsteadOfWithNSString:);
-  methods[7].selector = @selector(deleteOnWithComYahooSquidbSqlTable:);
-  methods[8].selector = @selector(deleteOnWithComYahooSquidbSqlView:);
-  methods[9].selector = @selector(deleteOnTableWithComYahooSquidbSqlSqlTable:);
-  methods[10].selector = @selector(insertOnWithComYahooSquidbSqlTable:);
-  methods[11].selector = @selector(insertOnWithComYahooSquidbSqlView:);
-  methods[12].selector = @selector(insertOnTableWithComYahooSquidbSqlSqlTable:);
-  methods[13].selector = @selector(updateOnWithComYahooSquidbSqlTable:withComYahooSquidbSqlPropertyArray:);
-  methods[14].selector = @selector(updateOnWithComYahooSquidbSqlView:withComYahooSquidbSqlPropertyArray:);
-  methods[15].selector = @selector(updateOnTableWithComYahooSquidbSqlSqlTable:withComYahooSquidbSqlPropertyArray:);
+  methods[7].selector = @selector(deleteOnWithSquiDBTable:);
+  methods[8].selector = @selector(deleteOnWithSquiDBView:);
+  methods[9].selector = @selector(deleteOnTableWithSquiDBSqlTable:);
+  methods[10].selector = @selector(insertOnWithSquiDBTable:);
+  methods[11].selector = @selector(insertOnWithSquiDBView:);
+  methods[12].selector = @selector(insertOnTableWithSquiDBSqlTable:);
+  methods[13].selector = @selector(updateOnWithSquiDBTable:withSquiDBPropertyArray:);
+  methods[14].selector = @selector(updateOnWithSquiDBView:withSquiDBPropertyArray:);
+  methods[15].selector = @selector(updateOnTableWithSquiDBSqlTable:withSquiDBPropertyArray:);
   methods[16].selector = @selector(assertNoTriggerEvent);
-  methods[17].selector = @selector(whenWithComYahooSquidbSqlCriterion:);
-  methods[18].selector = @selector(performWithComYahooSquidbSqlTableStatementArray:);
-  methods[19].selector = @selector(oldValueOfWithComYahooSquidbSqlProperty:);
-  methods[20].selector = @selector(newValueOfWithComYahooSquidbSqlProperty:);
-  methods[21].selector = @selector(compileWithComYahooSquidbUtilityVersionCode:);
-  methods[22].selector = @selector(compileWithComYahooSquidbSqlCompileContext:);
-  methods[23].selector = @selector(appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:withBoolean:);
+  methods[17].selector = @selector(whenWithSquiDBCriterion:);
+  methods[18].selector = @selector(performWithSquiDBTableStatementArray:);
+  methods[19].selector = @selector(oldValueOfWithSquiDBProperty:);
+  methods[20].selector = @selector(newValueOfWithSquiDBProperty:);
+  methods[21].selector = @selector(compileWithSquiDBVersionCode:);
+  methods[22].selector = @selector(compileWithSquiDBCompileContext:);
+  methods[23].selector = @selector(appendToSqlBuilderWithSquiDBSqlBuilder:withBoolean:);
   methods[24].selector = @selector(assertTriggerEvent);
   methods[25].selector = @selector(assertStatements);
   methods[26].selector = @selector(visitCreateTriggerWithJavaLangStringBuilder:);
   methods[27].selector = @selector(visitTriggerTypeWithJavaLangStringBuilder:);
   methods[28].selector = @selector(visitTriggerEventWithJavaLangStringBuilder:);
-  methods[29].selector = @selector(visitWhenWithComYahooSquidbSqlSqlBuilder:withBoolean:);
-  methods[30].selector = @selector(visitStatementsWithComYahooSquidbSqlSqlBuilder:);
+  methods[29].selector = @selector(visitWhenWithSquiDBSqlBuilder:withBoolean:);
+  methods[30].selector = @selector(visitStatementsWithSquiDBSqlBuilder:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "OLD", "LComYahooSquidbSqlTable;", .constantValue.asLong = 0, 0x1a, -1, 45, -1, -1 },
-    { "NEW", "LComYahooSquidbSqlTable;", .constantValue.asLong = 0, 0x1a, -1, 46, -1, -1 },
-    { "table_", "LComYahooSquidbSqlSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 47, -1 },
-    { "triggerType_", "LComYahooSquidbSqlTrigger_TriggerType;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "triggerEvent_", "LComYahooSquidbSqlTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "OLD", "LSquiDBTable;", .constantValue.asLong = 0, 0x1a, -1, 45, -1, -1 },
+    { "NEW", "LSquiDBTable;", .constantValue.asLong = 0, 0x1a, -1, 46, -1, -1 },
+    { "table_", "LSquiDBSqlTable;", .constantValue.asLong = 0, 0x2, -1, -1, 47, -1 },
+    { "triggerType_", "LSquiDBTrigger_TriggerType;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "triggerEvent_", "LSquiDBTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "isTemp_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "columns_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 48, -1 },
     { "criterions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 49, -1 },
     { "statements_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 50, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LComYahooSquidbSqlTrigger_TriggerType;", "before", "LNSString;", "after", "insteadOf", "tempBefore", "tempAfter", "tempInsteadOf", "deleteOn", "LComYahooSquidbSqlTable;", "LComYahooSquidbSqlView;", "deleteOnTable", "LComYahooSquidbSqlSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/sql/Trigger;", "insertOn", "insertOnTable", "updateOn", "LComYahooSquidbSqlTable;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/Table;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "LComYahooSquidbSqlView;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/View;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "updateOnTable", "LComYahooSquidbSqlSqlTable;[LComYahooSquidbSqlProperty;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "when", "LComYahooSquidbSqlCriterion;", "perform", "[LComYahooSquidbSqlTableStatement;", "oldValueOf", "LComYahooSquidbSqlProperty;", "<T:Lcom/yahoo/squidb/sql/Property<*>;>(TT;)TT;", "newValueOf", "compile", "LComYahooSquidbUtilityVersionCode;", (void *)&ComYahooSquidbSqlTrigger__Annotations$0, "LComYahooSquidbSqlCompileContext;", "appendToSqlBuilder", "LComYahooSquidbSqlSqlBuilder;Z", "visitCreateTrigger", "LJavaLangStringBuilder;", "visitTriggerType", "visitTriggerEvent", "visitWhen", "visitStatements", "LComYahooSquidbSqlSqlBuilder;", &ComYahooSquidbSqlTrigger_OLD, &ComYahooSquidbSqlTrigger_NEW, "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Property<*>;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/TableStatement;>;", "LComYahooSquidbSqlTrigger_TriggerType;LComYahooSquidbSqlTrigger_TriggerEvent;", "Lcom/yahoo/squidb/sql/DBObject<Lcom/yahoo/squidb/sql/Trigger;>;Lcom/yahoo/squidb/sql/SqlStatement;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlTrigger = { "Trigger", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 31, 9, -1, 51, -1, 52, -1 };
-  return &_ComYahooSquidbSqlTrigger;
+  static const void *ptrTable[] = { "LNSString;LSquiDBTrigger_TriggerType;", "before", "LNSString;", "after", "insteadOf", "tempBefore", "tempAfter", "tempInsteadOf", "deleteOn", "LSquiDBTable;", "LSquiDBView;", "deleteOnTable", "LSquiDBSqlTable;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;)Lcom/yahoo/squidb/sql/Trigger;", "insertOn", "insertOnTable", "updateOn", "LSquiDBTable;[LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/Table;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "LSquiDBView;[LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/View;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "updateOnTable", "LSquiDBSqlTable;[LSquiDBProperty;", "(Lcom/yahoo/squidb/sql/SqlTable<*>;[Lcom/yahoo/squidb/sql/Property<*>;)Lcom/yahoo/squidb/sql/Trigger;", "when", "LSquiDBCriterion;", "perform", "[LSquiDBTableStatement;", "oldValueOf", "LSquiDBProperty;", "<T:Lcom/yahoo/squidb/sql/Property<*>;>(TT;)TT;", "newValueOf", "compile", "LSquiDBVersionCode;", (void *)&SquiDBTrigger__Annotations$0, "LSquiDBCompileContext;", "appendToSqlBuilder", "LSquiDBSqlBuilder;Z", "visitCreateTrigger", "LJavaLangStringBuilder;", "visitTriggerType", "visitTriggerEvent", "visitWhen", "visitStatements", "LSquiDBSqlBuilder;", &SquiDBTrigger_OLD, &SquiDBTrigger_NEW, "Lcom/yahoo/squidb/sql/SqlTable<*>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Property<*>;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/Criterion;>;", "Ljava/util/List<Lcom/yahoo/squidb/sql/TableStatement;>;", "LSquiDBTrigger_TriggerType;LSquiDBTrigger_TriggerEvent;", "Lcom/yahoo/squidb/sql/DBObject<Lcom/yahoo/squidb/sql/Trigger;>;Lcom/yahoo/squidb/sql/SqlStatement;" };
+  static const J2ObjcClassInfo _SquiDBTrigger = { "Trigger", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 31, 9, -1, 51, -1, 52, -1 };
+  return &_SquiDBTrigger;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlTrigger class]) {
-    ComYahooSquidbSqlTrigger_OLD = new_ComYahooSquidbSqlTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_(ComYahooSquidbDataTableModel_class_(), nil, @"OLD");
-    ComYahooSquidbSqlTrigger_NEW = new_ComYahooSquidbSqlTable_initWithIOSClass_withComYahooSquidbSqlPropertyArray_withNSString_(ComYahooSquidbDataTableModel_class_(), nil, @"NEW");
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlTrigger)
+  if (self == [SquiDBTrigger class]) {
+    SquiDBTrigger_OLD = new_SquiDBTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_(SquiDBTableModel_class_(), nil, @"OLD");
+    SquiDBTrigger_NEW = new_SquiDBTable_initWithIOSClass_withSquiDBPropertyArray_withNSString_(SquiDBTableModel_class_(), nil, @"NEW");
+    J2OBJC_SET_INITIALIZED(SquiDBTrigger)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(ComYahooSquidbSqlTrigger *self, NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType) {
-  ComYahooSquidbSqlDBObject_initWithNSString_(self, name);
+void SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(SquiDBTrigger *self, NSString *name, SquiDBTrigger_TriggerType *triggerType) {
+  SquiDBDBObject_initPackagePrivateWithNSString_(self, name);
   self->columns_ = new_JavaUtilArrayList_init();
   self->criterions_ = new_JavaUtilArrayList_init();
   self->statements_ = new_JavaUtilArrayList_init();
   self->triggerType_ = triggerType;
 }
 
-ComYahooSquidbSqlTrigger *new_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlTrigger, initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_, name, triggerType)
+SquiDBTrigger *new_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(NSString *name, SquiDBTrigger_TriggerType *triggerType) {
+  J2OBJC_NEW_IMPL(SquiDBTrigger, initWithNSString_withSquiDBTrigger_TriggerType_, name, triggerType)
 }
 
-ComYahooSquidbSqlTrigger *create_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(NSString *name, ComYahooSquidbSqlTrigger_TriggerType *triggerType) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlTrigger, initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_, name, triggerType)
+SquiDBTrigger *create_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(NSString *name, SquiDBTrigger_TriggerType *triggerType) {
+  J2OBJC_CREATE_IMPL(SquiDBTrigger, initWithNSString_withSquiDBTrigger_TriggerType_, name, triggerType)
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_beforeWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  return new_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(name, JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, BEFORE));
+SquiDBTrigger *SquiDBTrigger_beforeWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  return new_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(name, JreLoadEnum(SquiDBTrigger_TriggerType, BEFORE));
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_afterWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  return new_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(name, JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, AFTER));
+SquiDBTrigger *SquiDBTrigger_afterWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  return new_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(name, JreLoadEnum(SquiDBTrigger_TriggerType, AFTER));
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_insteadOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  return new_ComYahooSquidbSqlTrigger_initWithNSString_withComYahooSquidbSqlTrigger_TriggerType_(name, JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD));
+SquiDBTrigger *SquiDBTrigger_insteadOfWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  return new_SquiDBTrigger_initWithNSString_withSquiDBTrigger_TriggerType_(name, JreLoadEnum(SquiDBTrigger_TriggerType, INSTEAD));
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempBeforeWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  ComYahooSquidbSqlTrigger *trigger = ComYahooSquidbSqlTrigger_beforeWithNSString_(name);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(trigger))->isTemp_ = true;
+SquiDBTrigger *SquiDBTrigger_tempBeforeWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  SquiDBTrigger *trigger = SquiDBTrigger_beforeWithNSString_(name);
+  ((SquiDBTrigger *) nil_chk(trigger))->isTemp_ = true;
   return trigger;
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempAfterWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  ComYahooSquidbSqlTrigger *trigger = ComYahooSquidbSqlTrigger_afterWithNSString_(name);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(trigger))->isTemp_ = true;
+SquiDBTrigger *SquiDBTrigger_tempAfterWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  SquiDBTrigger *trigger = SquiDBTrigger_afterWithNSString_(name);
+  ((SquiDBTrigger *) nil_chk(trigger))->isTemp_ = true;
   return trigger;
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_tempInsteadOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_initialize();
-  ComYahooSquidbSqlTrigger *trigger = ComYahooSquidbSqlTrigger_insteadOfWithNSString_(name);
-  ((ComYahooSquidbSqlTrigger *) nil_chk(trigger))->isTemp_ = true;
+SquiDBTrigger *SquiDBTrigger_tempInsteadOfWithNSString_(NSString *name) {
+  SquiDBTrigger_initialize();
+  SquiDBTrigger *trigger = SquiDBTrigger_insteadOfWithNSString_(name);
+  ((SquiDBTrigger *) nil_chk(trigger))->isTemp_ = true;
   return trigger;
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_deleteOnTableWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table) {
-  ComYahooSquidbSqlTrigger_assertNoTriggerEvent(self);
+SquiDBTrigger *SquiDBTrigger_deleteOnTableWithSquiDBSqlTable_(SquiDBTrigger *self, SquiDBSqlTable *table) {
+  SquiDBTrigger_assertNoTriggerEvent(self);
   self->table_ = table;
-  self->triggerEvent_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerEvent, DELETE);
+  self->triggerEvent_ = JreLoadEnum(SquiDBTrigger_TriggerEvent, DELETE);
   return self;
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_insertOnTableWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table) {
-  ComYahooSquidbSqlTrigger_assertNoTriggerEvent(self);
+SquiDBTrigger *SquiDBTrigger_insertOnTableWithSquiDBSqlTable_(SquiDBTrigger *self, SquiDBSqlTable *table) {
+  SquiDBTrigger_assertNoTriggerEvent(self);
   self->table_ = table;
-  self->triggerEvent_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerEvent, INSERT);
+  self->triggerEvent_ = JreLoadEnum(SquiDBTrigger_TriggerEvent, INSERT);
   return self;
 }
 
-ComYahooSquidbSqlTrigger *ComYahooSquidbSqlTrigger_updateOnTableWithComYahooSquidbSqlSqlTable_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlTable *table, IOSObjectArray *columns) {
-  ComYahooSquidbSqlTrigger_assertNoTriggerEvent(self);
+SquiDBTrigger *SquiDBTrigger_updateOnTableWithSquiDBSqlTable_withSquiDBPropertyArray_(SquiDBTrigger *self, SquiDBSqlTable *table, IOSObjectArray *columns) {
+  SquiDBTrigger_assertNoTriggerEvent(self);
   self->table_ = table;
-  self->triggerEvent_ = JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE);
-  ComYahooSquidbUtilitySquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->columns_, columns);
+  self->triggerEvent_ = JreLoadEnum(SquiDBTrigger_TriggerEvent, UPDATE);
+  SquiDBSquidUtilities_addAllWithJavaUtilCollection_withNSObjectArray_(self->columns_, columns);
   return self;
 }
 
-void ComYahooSquidbSqlTrigger_assertNoTriggerEvent(ComYahooSquidbSqlTrigger *self) {
+void SquiDBTrigger_assertNoTriggerEvent(SquiDBTrigger *self) {
   if (self->triggerEvent_ != nil) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"Trigger event already specified for this trigger.");
   }
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlTrigger_oldValueOfWithComYahooSquidbSqlProperty_(ComYahooSquidbSqlProperty *property) {
-  ComYahooSquidbSqlTrigger_initialize();
-  return [((ComYahooSquidbSqlProperty *) nil_chk(property)) asWithComYahooSquidbSqlSqlTable:ComYahooSquidbSqlTrigger_OLD withNSString:[property getExpression]];
+SquiDBProperty *SquiDBTrigger_oldValueOfWithSquiDBProperty_(SquiDBProperty *property) {
+  SquiDBTrigger_initialize();
+  return [((SquiDBProperty *) nil_chk(property)) asWithSquiDBSqlTable:SquiDBTrigger_OLD withNSString:[property getExpression]];
 }
 
-ComYahooSquidbSqlProperty *ComYahooSquidbSqlTrigger_newValueOfWithComYahooSquidbSqlProperty_(ComYahooSquidbSqlProperty *property) {
-  ComYahooSquidbSqlTrigger_initialize();
-  return [((ComYahooSquidbSqlProperty *) nil_chk(property)) asWithComYahooSquidbSqlSqlTable:ComYahooSquidbSqlTrigger_NEW withNSString:[property getExpression]];
+SquiDBProperty *SquiDBTrigger_newValueOfWithSquiDBProperty_(SquiDBProperty *property) {
+  SquiDBTrigger_initialize();
+  return [((SquiDBProperty *) nil_chk(property)) asWithSquiDBSqlTable:SquiDBTrigger_NEW withNSString:[property getExpression]];
 }
 
-void ComYahooSquidbSqlTrigger_assertTriggerEvent(ComYahooSquidbSqlTrigger *self) {
+void SquiDBTrigger_assertTriggerEvent(SquiDBTrigger *self) {
   if (self->triggerEvent_ == nil) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"No trigger event (ON DELETE, ON INSERT, or ON UPDATE) specified for this trigger.");
   }
 }
 
-void ComYahooSquidbSqlTrigger_assertStatements(ComYahooSquidbSqlTrigger *self) {
+void SquiDBTrigger_assertStatements(SquiDBTrigger *self) {
   if ([((id<JavaUtilList>) nil_chk(self->statements_)) isEmpty]) {
     @throw new_JavaLangIllegalStateException_initWithNSString_(@"No statements specified for this trigger.");
   }
 }
 
-void ComYahooSquidbSqlTrigger_visitCreateTriggerWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql) {
+void SquiDBTrigger_visitCreateTriggerWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql) {
   (void) [((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:@"CREATE "];
   if (self->isTemp_) {
     (void) [sql appendWithNSString:@"TEMP "];
@@ -563,81 +563,83 @@ void ComYahooSquidbSqlTrigger_visitCreateTriggerWithJavaLangStringBuilder_(ComYa
   (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@"TRIGGER IF NOT EXISTS "])) appendWithNSString:[self getExpression]])) appendWithNSString:@" "];
 }
 
-void ComYahooSquidbSqlTrigger_visitTriggerTypeWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql) {
+void SquiDBTrigger_visitTriggerTypeWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql) {
   if (self->triggerType_ != nil) {
     (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:self->triggerType_->name_TriggerType_])) appendWithNSString:@" "];
   }
 }
 
-void ComYahooSquidbSqlTrigger_visitTriggerEventWithJavaLangStringBuilder_(ComYahooSquidbSqlTrigger *self, JavaLangStringBuilder *sql) {
-  (void) [((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:[((ComYahooSquidbSqlTrigger_TriggerEvent *) nil_chk(self->triggerEvent_)) name]];
-  if (JreLoadEnum(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE) == self->triggerEvent_ && ![((id<JavaUtilList>) nil_chk(self->columns_)) isEmpty]) {
+void SquiDBTrigger_visitTriggerEventWithJavaLangStringBuilder_(SquiDBTrigger *self, JavaLangStringBuilder *sql) {
+  (void) [((JavaLangStringBuilder *) nil_chk(sql)) appendWithNSString:[((SquiDBTrigger_TriggerEvent *) nil_chk(self->triggerEvent_)) name]];
+  if (JreLoadEnum(SquiDBTrigger_TriggerEvent, UPDATE) == self->triggerEvent_ && ![((id<JavaUtilList>) nil_chk(self->columns_)) isEmpty]) {
     (void) [sql appendWithNSString:@" OF "];
-    for (ComYahooSquidbSqlProperty * __strong column in nil_chk(self->columns_)) {
-      (void) [((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:[((ComYahooSquidbSqlProperty *) nil_chk(column)) getExpression]])) appendWithNSString:@","];
+    for (SquiDBProperty * __strong column in nil_chk(self->columns_)) {
+      (void) [((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:[((SquiDBProperty *) nil_chk(column)) getExpression]])) appendWithNSString:@","];
     }
     (void) [sql deleteCharAtWithInt:[sql java_length] - 1];
   }
-  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@" ON "])) appendWithNSString:[((ComYahooSquidbSqlSqlTable *) nil_chk(self->table_)) getExpression]])) appendWithNSString:@" "];
+  (void) [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sql appendWithNSString:@" ON "])) appendWithNSString:[((SquiDBSqlTable *) nil_chk(self->table_)) getExpression]])) appendWithNSString:@" "];
 }
 
-void ComYahooSquidbSqlTrigger_visitWhenWithComYahooSquidbSqlSqlBuilder_withBoolean_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlBuilder *builder, jboolean forSqlValidation) {
+void SquiDBTrigger_visitWhenWithSquiDBSqlBuilder_withBoolean_(SquiDBTrigger *self, SquiDBSqlBuilder *builder, jboolean forSqlValidation) {
   if ([((id<JavaUtilList>) nil_chk(self->criterions_)) isEmpty]) {
     return;
   }
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"WHEN "];
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"WHEN "];
   [builder appendConcatenatedCompilablesWithJavaUtilList:self->criterions_ withNSString:@" AND " withBoolean:forSqlValidation];
   (void) [builder->sql_ appendWithNSString:@" "];
 }
 
-void ComYahooSquidbSqlTrigger_visitStatementsWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlTrigger *self, ComYahooSquidbSqlSqlBuilder *builder) {
-  (void) [((JavaLangStringBuilder *) nil_chk(((ComYahooSquidbSqlSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"BEGIN "];
+void SquiDBTrigger_visitStatementsWithSquiDBSqlBuilder_(SquiDBTrigger *self, SquiDBSqlBuilder *builder) {
+  (void) [((JavaLangStringBuilder *) nil_chk(((SquiDBSqlBuilder *) nil_chk(builder))->sql_)) appendWithNSString:@"BEGIN "];
   for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(self->statements_)) size]; i++) {
-    (void) [((JavaLangStringBuilder *) nil_chk([builder->sql_ appendWithNSString:[((ComYahooSquidbSqlTableStatement *) nil_chk([self->statements_ getWithInt:i])) toRawSqlWithComYahooSquidbSqlCompileContext:builder->compileContext_]])) appendWithNSString:@"; "];
+    (void) [((JavaLangStringBuilder *) nil_chk([builder->sql_ appendWithNSString:[((SquiDBTableStatement *) nil_chk([self->statements_ getWithInt:i])) toRawSqlWithSquiDBCompileContext:builder->compileContext_]])) appendWithNSString:@"; "];
   }
   (void) [builder->sql_ appendWithNSString:@"END"];
 }
 
-IOSObjectArray *ComYahooSquidbSqlTrigger__Annotations$0() {
+IOSObjectArray *SquiDBTrigger__Annotations$0() {
   return [IOSObjectArray newArrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlTrigger)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTrigger)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlTrigger_TriggerType)
+J2OBJC_NAME_MAPPING(SquiDBTrigger, "com.yahoo.squidb.sql", "SquiDB")
 
-ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_values_[3];
+J2OBJC_INITIALIZED_DEFN(SquiDBTrigger_TriggerType)
 
-@implementation ComYahooSquidbSqlTrigger_TriggerType
+SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_values_[3];
 
-+ (ComYahooSquidbSqlTrigger_TriggerType *)BEFORE {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerType, BEFORE);
+@implementation SquiDBTrigger_TriggerType
+
++ (SquiDBTrigger_TriggerType *)BEFORE {
+  return JreEnum(SquiDBTrigger_TriggerType, BEFORE);
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerType *)AFTER {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerType, AFTER);
++ (SquiDBTrigger_TriggerType *)AFTER {
+  return JreEnum(SquiDBTrigger_TriggerType, AFTER);
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerType *)INSTEAD {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD);
++ (SquiDBTrigger_TriggerType *)INSTEAD {
+  return JreEnum(SquiDBTrigger_TriggerType, INSTEAD);
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbSqlTrigger_TriggerType_values();
+  return SquiDBTrigger_TriggerType_values();
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerType *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_TriggerType_valueOfWithNSString_(name);
++ (SquiDBTrigger_TriggerType *)valueOfWithNSString:(NSString *)name {
+  return SquiDBTrigger_TriggerType_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlTrigger_TriggerType_Enum)toNSEnum {
-  return (ComYahooSquidbSqlTrigger_TriggerType_Enum)[self ordinal];
+- (SquiDBTrigger_TriggerType_Enum)toNSEnum {
+  return (SquiDBTrigger_TriggerType_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "[LComYahooSquidbSqlTrigger_TriggerType;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger_TriggerType;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBTrigger_TriggerType;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger_TriggerType;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -646,45 +648,45 @@ ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_value
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "BEFORE", "LComYahooSquidbSqlTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
-    { "AFTER", "LComYahooSquidbSqlTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "INSTEAD", "LComYahooSquidbSqlTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "BEFORE", "LSquiDBTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "AFTER", "LSquiDBTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "INSTEAD", "LSquiDBTrigger_TriggerType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
     { "name_TriggerType_", "LNSString;", .constantValue.asLong = 0, 0x10, 5, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComYahooSquidbSqlTrigger_TriggerType, BEFORE), &JreEnum(ComYahooSquidbSqlTrigger_TriggerType, AFTER), &JreEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD), "name", "LComYahooSquidbSqlTrigger;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Trigger$TriggerType;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlTrigger_TriggerType = { "TriggerType", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 2, 4, 6, -1, -1, 7, -1 };
-  return &_ComYahooSquidbSqlTrigger_TriggerType;
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(SquiDBTrigger_TriggerType, BEFORE), &JreEnum(SquiDBTrigger_TriggerType, AFTER), &JreEnum(SquiDBTrigger_TriggerType, INSTEAD), "name", "LSquiDBTrigger;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Trigger$TriggerType;>;" };
+  static const J2ObjcClassInfo _SquiDBTrigger_TriggerType = { "TriggerType", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 2, 4, 6, -1, -1, 7, -1 };
+  return &_SquiDBTrigger_TriggerType;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlTrigger_TriggerType class]) {
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerType, BEFORE) = new_ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"BEFORE", JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerType_class_(), 0), 0);
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerType, AFTER) = new_ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"AFTER", JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerType_class_(), 1), 1);
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerType, INSTEAD) = new_ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"INSTEAD OF", JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerType_class_(), 2), 2);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlTrigger_TriggerType)
+  if (self == [SquiDBTrigger_TriggerType class]) {
+    JreEnum(SquiDBTrigger_TriggerType, BEFORE) = new_SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"BEFORE", JreEnumConstantName(SquiDBTrigger_TriggerType_class_(), 0), 0);
+    JreEnum(SquiDBTrigger_TriggerType, AFTER) = new_SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"AFTER", JreEnumConstantName(SquiDBTrigger_TriggerType_class_(), 1), 1);
+    JreEnum(SquiDBTrigger_TriggerType, INSTEAD) = new_SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(@"INSTEAD OF", JreEnumConstantName(SquiDBTrigger_TriggerType_class_(), 2), 2);
+    J2OBJC_SET_INITIALIZED(SquiDBTrigger_TriggerType)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlTrigger_TriggerType *self, NSString *name, NSString *__name, jint __ordinal) {
+void SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(SquiDBTrigger_TriggerType *self, NSString *name, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
   self->name_TriggerType_ = name;
 }
 
-ComYahooSquidbSqlTrigger_TriggerType *new_ComYahooSquidbSqlTrigger_TriggerType_initWithNSString_withNSString_withInt_(NSString *name, NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlTrigger_TriggerType, initWithNSString_withNSString_withInt_, name, __name, __ordinal)
+SquiDBTrigger_TriggerType *new_SquiDBTrigger_TriggerType_initWithNSString_withNSString_withInt_(NSString *name, NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBTrigger_TriggerType, initWithNSString_withNSString_withInt_, name, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbSqlTrigger_TriggerType_values() {
-  ComYahooSquidbSqlTrigger_TriggerType_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbSqlTrigger_TriggerType_values_ count:3 type:ComYahooSquidbSqlTrigger_TriggerType_class_()];
+IOSObjectArray *SquiDBTrigger_TriggerType_values() {
+  SquiDBTrigger_TriggerType_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBTrigger_TriggerType_values_ count:3 type:SquiDBTrigger_TriggerType_class_()];
 }
 
-ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_TriggerType_initialize();
+SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_valueOfWithNSString_(NSString *name) {
+  SquiDBTrigger_TriggerType_initialize();
   for (int i = 0; i < 3; i++) {
-    ComYahooSquidbSqlTrigger_TriggerType *e = ComYahooSquidbSqlTrigger_TriggerType_values_[i];
+    SquiDBTrigger_TriggerType *e = SquiDBTrigger_TriggerType_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -693,50 +695,50 @@ ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_value
   return nil;
 }
 
-ComYahooSquidbSqlTrigger_TriggerType *ComYahooSquidbSqlTrigger_TriggerType_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbSqlTrigger_TriggerType_initialize();
+SquiDBTrigger_TriggerType *SquiDBTrigger_TriggerType_fromOrdinal(NSUInteger ordinal) {
+  SquiDBTrigger_TriggerType_initialize();
   if (ordinal >= 3) {
     return nil;
   }
-  return ComYahooSquidbSqlTrigger_TriggerType_values_[ordinal];
+  return SquiDBTrigger_TriggerType_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlTrigger_TriggerType)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTrigger_TriggerType)
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlTrigger_TriggerEvent)
+J2OBJC_INITIALIZED_DEFN(SquiDBTrigger_TriggerEvent)
 
-ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_values_[3];
+SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_values_[3];
 
-@implementation ComYahooSquidbSqlTrigger_TriggerEvent
+@implementation SquiDBTrigger_TriggerEvent
 
-+ (ComYahooSquidbSqlTrigger_TriggerEvent *)DELETE {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, DELETE);
++ (SquiDBTrigger_TriggerEvent *)DELETE {
+  return JreEnum(SquiDBTrigger_TriggerEvent, DELETE);
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerEvent *)INSERT {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, INSERT);
++ (SquiDBTrigger_TriggerEvent *)INSERT {
+  return JreEnum(SquiDBTrigger_TriggerEvent, INSERT);
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerEvent *)UPDATE {
-  return JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE);
++ (SquiDBTrigger_TriggerEvent *)UPDATE {
+  return JreEnum(SquiDBTrigger_TriggerEvent, UPDATE);
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbSqlTrigger_TriggerEvent_values();
+  return SquiDBTrigger_TriggerEvent_values();
 }
 
-+ (ComYahooSquidbSqlTrigger_TriggerEvent *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlTrigger_TriggerEvent_valueOfWithNSString_(name);
++ (SquiDBTrigger_TriggerEvent *)valueOfWithNSString:(NSString *)name {
+  return SquiDBTrigger_TriggerEvent_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlTrigger_TriggerEvent_Enum)toNSEnum {
-  return (ComYahooSquidbSqlTrigger_TriggerEvent_Enum)[self ordinal];
+- (SquiDBTrigger_TriggerEvent_Enum)toNSEnum {
+  return (SquiDBTrigger_TriggerEvent_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "[LComYahooSquidbSqlTrigger_TriggerEvent;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlTrigger_TriggerEvent;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBTrigger_TriggerEvent;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBTrigger_TriggerEvent;", 0x9, 0, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -745,43 +747,43 @@ ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_val
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "DELETE", "LComYahooSquidbSqlTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
-    { "INSERT", "LComYahooSquidbSqlTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "UPDATE", "LComYahooSquidbSqlTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "DELETE", "LSquiDBTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 2, -1, -1 },
+    { "INSERT", "LSquiDBTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "UPDATE", "LSquiDBTrigger_TriggerEvent;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, DELETE), &JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, INSERT), &JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE), "LComYahooSquidbSqlTrigger;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Trigger$TriggerEvent;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlTrigger_TriggerEvent = { "TriggerEvent", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 2, 3, 5, -1, -1, 6, -1 };
-  return &_ComYahooSquidbSqlTrigger_TriggerEvent;
+  static const void *ptrTable[] = { "valueOf", "LNSString;", &JreEnum(SquiDBTrigger_TriggerEvent, DELETE), &JreEnum(SquiDBTrigger_TriggerEvent, INSERT), &JreEnum(SquiDBTrigger_TriggerEvent, UPDATE), "LSquiDBTrigger;", "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/Trigger$TriggerEvent;>;" };
+  static const J2ObjcClassInfo _SquiDBTrigger_TriggerEvent = { "TriggerEvent", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x401a, 2, 3, 5, -1, -1, 6, -1 };
+  return &_SquiDBTrigger_TriggerEvent;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlTrigger_TriggerEvent class]) {
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, DELETE) = new_ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerEvent_class_(), 0), 0);
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, INSERT) = new_ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerEvent_class_(), 1), 1);
-    JreEnum(ComYahooSquidbSqlTrigger_TriggerEvent, UPDATE) = new_ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(ComYahooSquidbSqlTrigger_TriggerEvent_class_(), 2), 2);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlTrigger_TriggerEvent)
+  if (self == [SquiDBTrigger_TriggerEvent class]) {
+    JreEnum(SquiDBTrigger_TriggerEvent, DELETE) = new_SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(SquiDBTrigger_TriggerEvent_class_(), 0), 0);
+    JreEnum(SquiDBTrigger_TriggerEvent, INSERT) = new_SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(SquiDBTrigger_TriggerEvent_class_(), 1), 1);
+    JreEnum(SquiDBTrigger_TriggerEvent, UPDATE) = new_SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(JreEnumConstantName(SquiDBTrigger_TriggerEvent_class_(), 2), 2);
+    J2OBJC_SET_INITIALIZED(SquiDBTrigger_TriggerEvent)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(ComYahooSquidbSqlTrigger_TriggerEvent *self, NSString *__name, jint __ordinal) {
+void SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(SquiDBTrigger_TriggerEvent *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-ComYahooSquidbSqlTrigger_TriggerEvent *new_ComYahooSquidbSqlTrigger_TriggerEvent_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlTrigger_TriggerEvent, initWithNSString_withInt_, __name, __ordinal)
+SquiDBTrigger_TriggerEvent *new_SquiDBTrigger_TriggerEvent_initWithNSString_withInt_(NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBTrigger_TriggerEvent, initWithNSString_withInt_, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbSqlTrigger_TriggerEvent_values() {
-  ComYahooSquidbSqlTrigger_TriggerEvent_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbSqlTrigger_TriggerEvent_values_ count:3 type:ComYahooSquidbSqlTrigger_TriggerEvent_class_()];
+IOSObjectArray *SquiDBTrigger_TriggerEvent_values() {
+  SquiDBTrigger_TriggerEvent_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBTrigger_TriggerEvent_values_ count:3 type:SquiDBTrigger_TriggerEvent_class_()];
 }
 
-ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlTrigger_TriggerEvent_initialize();
+SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_valueOfWithNSString_(NSString *name) {
+  SquiDBTrigger_TriggerEvent_initialize();
   for (int i = 0; i < 3; i++) {
-    ComYahooSquidbSqlTrigger_TriggerEvent *e = ComYahooSquidbSqlTrigger_TriggerEvent_values_[i];
+    SquiDBTrigger_TriggerEvent *e = SquiDBTrigger_TriggerEvent_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -790,12 +792,12 @@ ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_val
   return nil;
 }
 
-ComYahooSquidbSqlTrigger_TriggerEvent *ComYahooSquidbSqlTrigger_TriggerEvent_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbSqlTrigger_TriggerEvent_initialize();
+SquiDBTrigger_TriggerEvent *SquiDBTrigger_TriggerEvent_fromOrdinal(NSUInteger ordinal) {
+  SquiDBTrigger_TriggerEvent_initialize();
   if (ordinal >= 3) {
     return nil;
   }
-  return ComYahooSquidbSqlTrigger_TriggerEvent_values_[ordinal];
+  return SquiDBTrigger_TriggerEvent_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlTrigger_TriggerEvent)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBTrigger_TriggerEvent)

@@ -14,50 +14,52 @@
 
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlField;
 @class IOSObjectArray;
+@class SquiDBField;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbUtilityProjectionMap : NSObject
+@interface SquiDBProjectionMap : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (instancetype __nonnull)initWithComYahooSquidbUtilityProjectionMap:(ComYahooSquidbUtilityProjectionMap *)other;
+- (instancetype __nonnull)initWithSquiDBProjectionMap:(SquiDBProjectionMap *)other;
 
-- (ComYahooSquidbSqlField *)getWithNSString:(NSString *)key;
+- (SquiDBField *)getWithNSString:(NSString *)key;
 
 - (id<JavaUtilList>)getDefaultProjection;
 
 - (IOSObjectArray *)getDefaultProjectionNames;
 
-- (ComYahooSquidbSqlField *)putWithComYahooSquidbSqlField:(ComYahooSquidbSqlField *)column;
+- (SquiDBField *)putWithSquiDBField:(SquiDBField *)column;
 
-- (ComYahooSquidbSqlField *)putWithNSString:(NSString *)expression;
+- (SquiDBField *)putWithNSString:(NSString *)expression;
 
-- (ComYahooSquidbSqlField *)putWithNSString:(NSString *)name
-                 withComYahooSquidbSqlField:(ComYahooSquidbSqlField *)column;
+- (SquiDBField *)putWithNSString:(NSString *)name
+                 withSquiDBField:(SquiDBField *)column;
 
-- (void)putAllWithComYahooSquidbSqlFieldArray:(IOSObjectArray *)columns;
+- (void)putAllWithSquiDBFieldArray:(IOSObjectArray *)columns;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbUtilityProjectionMap)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBProjectionMap)
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityProjectionMap_init(ComYahooSquidbUtilityProjectionMap *self);
+FOUNDATION_EXPORT void SquiDBProjectionMap_init(SquiDBProjectionMap *self);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityProjectionMap *new_ComYahooSquidbUtilityProjectionMap_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBProjectionMap *new_SquiDBProjectionMap_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityProjectionMap *create_ComYahooSquidbUtilityProjectionMap_init(void);
+FOUNDATION_EXPORT SquiDBProjectionMap *create_SquiDBProjectionMap_init(void);
 
-FOUNDATION_EXPORT void ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *self, ComYahooSquidbUtilityProjectionMap *other);
+FOUNDATION_EXPORT void SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *self, SquiDBProjectionMap *other);
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityProjectionMap *new_ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *other) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBProjectionMap *new_SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *other) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbUtilityProjectionMap *create_ComYahooSquidbUtilityProjectionMap_initWithComYahooSquidbUtilityProjectionMap_(ComYahooSquidbUtilityProjectionMap *other);
+FOUNDATION_EXPORT SquiDBProjectionMap *create_SquiDBProjectionMap_initWithSquiDBProjectionMap_(SquiDBProjectionMap *other);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbUtilityProjectionMap)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBProjectionMap)
+
+@compatibility_alias ComYahooSquidbUtilityProjectionMap SquiDBProjectionMap;
 
 
 #if __has_feature(nullability)

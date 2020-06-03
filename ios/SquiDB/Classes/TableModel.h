@@ -15,11 +15,11 @@
 #include "AbstractModel.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlProperty_LongProperty;
-@class ComYahooSquidbSqlTable;
-@protocol ComYahooSquidbDataISQLitePreparedStatement;
+@class SquiDBProperty_LongProperty;
+@class SquiDBTable;
+@protocol SquiDBISQLitePreparedStatement;
 
-@interface ComYahooSquidbDataTableModel : ComYahooSquidbDataAbstractModel
+@interface SquiDBTableModel : SquiDBAbstractModel
 @property (readonly, copy, class) NSString *DEFAULT_ID_COLUMN NS_SWIFT_NAME(DEFAULT_ID_COLUMN);
 @property (readonly, copy, class) NSString *ROWID NS_SWIFT_NAME(ROWID);
 @property (readonly, class) jlong NO_ID NS_SWIFT_NAME(NO_ID);
@@ -36,44 +36,46 @@
 
 - (jlong)getId;
 
-- (ComYahooSquidbSqlProperty_LongProperty *)getIdProperty;
+- (SquiDBProperty_LongProperty *)getIdProperty;
 
 - (jlong)getRowId;
 
-- (ComYahooSquidbSqlProperty_LongProperty *)getRowIdProperty;
+- (SquiDBProperty_LongProperty *)getRowIdProperty;
 
 - (jboolean)isSaved;
 
-- (ComYahooSquidbDataTableModel *)setIdWithLong:(jlong)id_;
+- (SquiDBTableModel *)setIdWithLong:(jlong)id_;
 
-- (ComYahooSquidbDataTableModel *)setRowIdWithLong:(jlong)rowid;
+- (SquiDBTableModel *)setRowIdWithLong:(jlong)rowid;
 
 #pragma mark Package-Private
 
-- (void)bindValuesForInsertWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table
-       withComYahooSquidbDataISQLitePreparedStatement:(id<ComYahooSquidbDataISQLitePreparedStatement>)preparedInsert;
+- (void)bindValuesForInsertWithSquiDBTable:(SquiDBTable *)table
+        withSquiDBISQLitePreparedStatement:(id<SquiDBISQLitePreparedStatement>)preparedInsert;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbDataTableModel)
+J2OBJC_STATIC_INIT(SquiDBTableModel)
 
-inline NSString *ComYahooSquidbDataTableModel_get_DEFAULT_ID_COLUMN(void);
+inline NSString *SquiDBTableModel_get_DEFAULT_ID_COLUMN(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbDataTableModel_DEFAULT_ID_COLUMN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataTableModel, DEFAULT_ID_COLUMN, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBTableModel_DEFAULT_ID_COLUMN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBTableModel, DEFAULT_ID_COLUMN, NSString *)
 
-inline NSString *ComYahooSquidbDataTableModel_get_ROWID(void);
+inline NSString *SquiDBTableModel_get_ROWID(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *ComYahooSquidbDataTableModel_ROWID;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooSquidbDataTableModel, ROWID, NSString *)
+FOUNDATION_EXPORT NSString *SquiDBTableModel_ROWID;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBTableModel, ROWID, NSString *)
 
-inline jlong ComYahooSquidbDataTableModel_get_NO_ID(void);
-#define ComYahooSquidbDataTableModel_NO_ID 0LL
-J2OBJC_STATIC_FIELD_CONSTANT(ComYahooSquidbDataTableModel, NO_ID, jlong)
+inline jlong SquiDBTableModel_get_NO_ID(void);
+#define SquiDBTableModel_NO_ID 0LL
+J2OBJC_STATIC_FIELD_CONSTANT(SquiDBTableModel, NO_ID, jlong)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataTableModel_init(ComYahooSquidbDataTableModel *self);
+FOUNDATION_EXPORT void SquiDBTableModel_init(SquiDBTableModel *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataTableModel)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableModel)
+
+@compatibility_alias ComYahooSquidbDataTableModel SquiDBTableModel;
 
 
 #if __has_feature(nullability)

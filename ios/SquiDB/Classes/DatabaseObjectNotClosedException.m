@@ -7,15 +7,15 @@
 #include "J2ObjC_source.h"
 #include "java/lang/RuntimeException.h"
 
-inline NSString *ComYahooAndroidSqliteDatabaseObjectNotClosedException_get_s(void);
-static NSString *ComYahooAndroidSqliteDatabaseObjectNotClosedException_s = @"Application did not close the cursor or database object that was opened here";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComYahooAndroidSqliteDatabaseObjectNotClosedException, s, NSString *)
+inline NSString *SquiDBDatabaseObjectNotClosedException_get_s(void);
+static NSString *SquiDBDatabaseObjectNotClosedException_s = @"Application did not close the cursor or database object that was opened here";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(SquiDBDatabaseObjectNotClosedException, s, NSString *)
 
-@implementation ComYahooAndroidSqliteDatabaseObjectNotClosedException
+@implementation SquiDBDatabaseObjectNotClosedException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteDatabaseObjectNotClosedException_init(self);
+  SquiDBDatabaseObjectNotClosedException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -32,23 +32,25 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "s", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 0, -1, -1 },
   };
-  static const void *ptrTable[] = { &ComYahooAndroidSqliteDatabaseObjectNotClosedException_s };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteDatabaseObjectNotClosedException = { "DatabaseObjectNotClosedException", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 1, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteDatabaseObjectNotClosedException;
+  static const void *ptrTable[] = { &SquiDBDatabaseObjectNotClosedException_s };
+  static const J2ObjcClassInfo _SquiDBDatabaseObjectNotClosedException = { "DatabaseObjectNotClosedException", "com.yahoo.android.sqlite", ptrTable, methods, fields, 7, 0x1, 1, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBDatabaseObjectNotClosedException;
 }
 
 @end
 
-void ComYahooAndroidSqliteDatabaseObjectNotClosedException_init(ComYahooAndroidSqliteDatabaseObjectNotClosedException *self) {
-  JavaLangRuntimeException_initWithNSString_(self, ComYahooAndroidSqliteDatabaseObjectNotClosedException_s);
+void SquiDBDatabaseObjectNotClosedException_init(SquiDBDatabaseObjectNotClosedException *self) {
+  JavaLangRuntimeException_initWithNSString_(self, SquiDBDatabaseObjectNotClosedException_s);
 }
 
-ComYahooAndroidSqliteDatabaseObjectNotClosedException *new_ComYahooAndroidSqliteDatabaseObjectNotClosedException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteDatabaseObjectNotClosedException, init)
+SquiDBDatabaseObjectNotClosedException *new_SquiDBDatabaseObjectNotClosedException_init() {
+  J2OBJC_NEW_IMPL(SquiDBDatabaseObjectNotClosedException, init)
 }
 
-ComYahooAndroidSqliteDatabaseObjectNotClosedException *create_ComYahooAndroidSqliteDatabaseObjectNotClosedException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteDatabaseObjectNotClosedException, init)
+SquiDBDatabaseObjectNotClosedException *create_SquiDBDatabaseObjectNotClosedException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBDatabaseObjectNotClosedException, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteDatabaseObjectNotClosedException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBDatabaseObjectNotClosedException)
+
+J2OBJC_NAME_MAPPING(SquiDBDatabaseObjectNotClosedException, "com.yahoo.android.sqlite", "SquiDB")

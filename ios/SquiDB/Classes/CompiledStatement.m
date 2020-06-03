@@ -7,12 +7,12 @@
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 
-@implementation ComYahooSquidbSqlCompiledStatement
+@implementation SquiDBCompiledStatement
 
 - (instancetype)initWithNSString:(NSString *)sql
                withNSObjectArray:(IOSObjectArray *)args
                      withBoolean:(jboolean)needsValidation {
-  ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(self, sql, args, needsValidation);
+  SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(self, sql, args, needsValidation);
   return self;
 }
 
@@ -31,25 +31,27 @@
     { "needsValidation_", "Z", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSString;[LNSObject;Z" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlCompiledStatement = { "CompiledStatement", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 1, 3, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbSqlCompiledStatement;
+  static const J2ObjcClassInfo _SquiDBCompiledStatement = { "CompiledStatement", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x1, 1, 3, -1, -1, -1, -1, -1 };
+  return &_SquiDBCompiledStatement;
 }
 
 @end
 
-void ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(ComYahooSquidbSqlCompiledStatement *self, NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
+void SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(SquiDBCompiledStatement *self, NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
   NSObject_init(self);
   self->sql_ = sql;
   self->sqlArgs_ = args;
   self->needsValidation_ = needsValidation;
 }
 
-ComYahooSquidbSqlCompiledStatement *new_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlCompiledStatement, initWithNSString_withNSObjectArray_withBoolean_, sql, args, needsValidation)
+SquiDBCompiledStatement *new_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
+  J2OBJC_NEW_IMPL(SquiDBCompiledStatement, initWithNSString_withNSObjectArray_withBoolean_, sql, args, needsValidation)
 }
 
-ComYahooSquidbSqlCompiledStatement *create_ComYahooSquidbSqlCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbSqlCompiledStatement, initWithNSString_withNSObjectArray_withBoolean_, sql, args, needsValidation)
+SquiDBCompiledStatement *create_SquiDBCompiledStatement_initWithNSString_withNSObjectArray_withBoolean_(NSString *sql, IOSObjectArray *args, jboolean needsValidation) {
+  J2OBJC_CREATE_IMPL(SquiDBCompiledStatement, initWithNSString_withNSObjectArray_withBoolean_, sql, args, needsValidation)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlCompiledStatement)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBCompiledStatement)
+
+J2OBJC_NAME_MAPPING(SquiDBCompiledStatement, "com.yahoo.squidb.sql", "SquiDB")

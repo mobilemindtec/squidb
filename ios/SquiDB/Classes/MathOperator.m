@@ -9,51 +9,51 @@
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
-@interface ComYahooSquidbSqlMathOperator () {
+@interface SquiDBMathOperator () {
  @public
   NSString *value_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlMathOperator, value_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBMathOperator, value_, NSString *)
 
-__attribute__((unused)) static void ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlMathOperator *self, NSString *value, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void SquiDBMathOperator_initWithNSString_withNSString_withInt_(SquiDBMathOperator *self, NSString *value, NSString *__name, jint __ordinal);
 
-__attribute__((unused)) static ComYahooSquidbSqlMathOperator *new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+__attribute__((unused)) static SquiDBMathOperator *new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-J2OBJC_INITIALIZED_DEFN(ComYahooSquidbSqlMathOperator)
+J2OBJC_INITIALIZED_DEFN(SquiDBMathOperator)
 
-ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_values_[7];
+SquiDBMathOperator *SquiDBMathOperator_values_[7];
 
-@implementation ComYahooSquidbSqlMathOperator
+@implementation SquiDBMathOperator
 
-+ (ComYahooSquidbSqlMathOperator *)PLUS {
-  return JreEnum(ComYahooSquidbSqlMathOperator, PLUS);
++ (SquiDBMathOperator *)PLUS {
+  return JreEnum(SquiDBMathOperator, PLUS);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)MINUS {
-  return JreEnum(ComYahooSquidbSqlMathOperator, MINUS);
++ (SquiDBMathOperator *)MINUS {
+  return JreEnum(SquiDBMathOperator, MINUS);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)MULT {
-  return JreEnum(ComYahooSquidbSqlMathOperator, MULT);
++ (SquiDBMathOperator *)MULT {
+  return JreEnum(SquiDBMathOperator, MULT);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)DIVIDE {
-  return JreEnum(ComYahooSquidbSqlMathOperator, DIVIDE);
++ (SquiDBMathOperator *)DIVIDE {
+  return JreEnum(SquiDBMathOperator, DIVIDE);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)MODULO {
-  return JreEnum(ComYahooSquidbSqlMathOperator, MODULO);
++ (SquiDBMathOperator *)MODULO {
+  return JreEnum(SquiDBMathOperator, MODULO);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)BITWISE_AND {
-  return JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_AND);
++ (SquiDBMathOperator *)BITWISE_AND {
+  return JreEnum(SquiDBMathOperator, BITWISE_AND);
 }
 
-+ (ComYahooSquidbSqlMathOperator *)BITWISE_OR {
-  return JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_OR);
++ (SquiDBMathOperator *)BITWISE_OR {
+  return JreEnum(SquiDBMathOperator, BITWISE_OR);
 }
 
 - (NSString *)description {
@@ -61,22 +61,22 @@ ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_values_[7];
 }
 
 + (IOSObjectArray *)values {
-  return ComYahooSquidbSqlMathOperator_values();
+  return SquiDBMathOperator_values();
 }
 
-+ (ComYahooSquidbSqlMathOperator *)valueOfWithNSString:(NSString *)name {
-  return ComYahooSquidbSqlMathOperator_valueOfWithNSString_(name);
++ (SquiDBMathOperator *)valueOfWithNSString:(NSString *)name {
+  return SquiDBMathOperator_valueOfWithNSString_(name);
 }
 
-- (ComYahooSquidbSqlMathOperator_Enum)toNSEnum {
-  return (ComYahooSquidbSqlMathOperator_Enum)[self ordinal];
+- (SquiDBMathOperator_Enum)toNSEnum {
+  return (SquiDBMathOperator_Enum)[self ordinal];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
-    { NULL, "[LComYahooSquidbSqlMathOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbSqlMathOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "[LSquiDBMathOperator;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LSquiDBMathOperator;", 0x9, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -86,53 +86,53 @@ ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_values_[7];
   methods[2].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "PLUS", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "MINUS", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
-    { "MULT", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
-    { "DIVIDE", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
-    { "MODULO", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
-    { "BITWISE_AND", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
-    { "BITWISE_OR", "LComYahooSquidbSqlMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 9, -1, -1 },
+    { "PLUS", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "MINUS", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "MULT", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "DIVIDE", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "MODULO", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
+    { "BITWISE_AND", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
+    { "BITWISE_OR", "LSquiDBMathOperator;", .constantValue.asLong = 0, 0x4019, -1, 9, -1, -1 },
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(ComYahooSquidbSqlMathOperator, PLUS), &JreEnum(ComYahooSquidbSqlMathOperator, MINUS), &JreEnum(ComYahooSquidbSqlMathOperator, MULT), &JreEnum(ComYahooSquidbSqlMathOperator, DIVIDE), &JreEnum(ComYahooSquidbSqlMathOperator, MODULO), &JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_AND), &JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_OR), "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/MathOperator;>;" };
-  static const J2ObjcClassInfo _ComYahooSquidbSqlMathOperator = { "MathOperator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x4010, 3, 8, -1, -1, -1, 10, -1 };
-  return &_ComYahooSquidbSqlMathOperator;
+  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(SquiDBMathOperator, PLUS), &JreEnum(SquiDBMathOperator, MINUS), &JreEnum(SquiDBMathOperator, MULT), &JreEnum(SquiDBMathOperator, DIVIDE), &JreEnum(SquiDBMathOperator, MODULO), &JreEnum(SquiDBMathOperator, BITWISE_AND), &JreEnum(SquiDBMathOperator, BITWISE_OR), "Ljava/lang/Enum<Lcom/yahoo/squidb/sql/MathOperator;>;" };
+  static const J2ObjcClassInfo _SquiDBMathOperator = { "MathOperator", "com.yahoo.squidb.sql", ptrTable, methods, fields, 7, 0x4010, 3, 8, -1, -1, -1, 10, -1 };
+  return &_SquiDBMathOperator;
 }
 
 + (void)initialize {
-  if (self == [ComYahooSquidbSqlMathOperator class]) {
-    JreEnum(ComYahooSquidbSqlMathOperator, PLUS) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" + ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 0), 0);
-    JreEnum(ComYahooSquidbSqlMathOperator, MINUS) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" - ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 1), 1);
-    JreEnum(ComYahooSquidbSqlMathOperator, MULT) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" * ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 2), 2);
-    JreEnum(ComYahooSquidbSqlMathOperator, DIVIDE) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" / ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 3), 3);
-    JreEnum(ComYahooSquidbSqlMathOperator, MODULO) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" % ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 4), 4);
-    JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_AND) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" & ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 5), 5);
-    JreEnum(ComYahooSquidbSqlMathOperator, BITWISE_OR) = new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(@" | ", JreEnumConstantName(ComYahooSquidbSqlMathOperator_class_(), 6), 6);
-    J2OBJC_SET_INITIALIZED(ComYahooSquidbSqlMathOperator)
+  if (self == [SquiDBMathOperator class]) {
+    JreEnum(SquiDBMathOperator, PLUS) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" + ", JreEnumConstantName(SquiDBMathOperator_class_(), 0), 0);
+    JreEnum(SquiDBMathOperator, MINUS) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" - ", JreEnumConstantName(SquiDBMathOperator_class_(), 1), 1);
+    JreEnum(SquiDBMathOperator, MULT) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" * ", JreEnumConstantName(SquiDBMathOperator_class_(), 2), 2);
+    JreEnum(SquiDBMathOperator, DIVIDE) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" / ", JreEnumConstantName(SquiDBMathOperator_class_(), 3), 3);
+    JreEnum(SquiDBMathOperator, MODULO) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" % ", JreEnumConstantName(SquiDBMathOperator_class_(), 4), 4);
+    JreEnum(SquiDBMathOperator, BITWISE_AND) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" & ", JreEnumConstantName(SquiDBMathOperator_class_(), 5), 5);
+    JreEnum(SquiDBMathOperator, BITWISE_OR) = new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(@" | ", JreEnumConstantName(SquiDBMathOperator_class_(), 6), 6);
+    J2OBJC_SET_INITIALIZED(SquiDBMathOperator)
   }
 }
 
 @end
 
-void ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(ComYahooSquidbSqlMathOperator *self, NSString *value, NSString *__name, jint __ordinal) {
+void SquiDBMathOperator_initWithNSString_withNSString_withInt_(SquiDBMathOperator *self, NSString *value, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
   self->value_ = value;
 }
 
-ComYahooSquidbSqlMathOperator *new_ComYahooSquidbSqlMathOperator_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbSqlMathOperator, initWithNSString_withNSString_withInt_, value, __name, __ordinal)
+SquiDBMathOperator *new_SquiDBMathOperator_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
+  J2OBJC_NEW_IMPL(SquiDBMathOperator, initWithNSString_withNSString_withInt_, value, __name, __ordinal)
 }
 
-IOSObjectArray *ComYahooSquidbSqlMathOperator_values() {
-  ComYahooSquidbSqlMathOperator_initialize();
-  return [IOSObjectArray arrayWithObjects:ComYahooSquidbSqlMathOperator_values_ count:7 type:ComYahooSquidbSqlMathOperator_class_()];
+IOSObjectArray *SquiDBMathOperator_values() {
+  SquiDBMathOperator_initialize();
+  return [IOSObjectArray arrayWithObjects:SquiDBMathOperator_values_ count:7 type:SquiDBMathOperator_class_()];
 }
 
-ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_valueOfWithNSString_(NSString *name) {
-  ComYahooSquidbSqlMathOperator_initialize();
+SquiDBMathOperator *SquiDBMathOperator_valueOfWithNSString_(NSString *name) {
+  SquiDBMathOperator_initialize();
   for (int i = 0; i < 7; i++) {
-    ComYahooSquidbSqlMathOperator *e = ComYahooSquidbSqlMathOperator_values_[i];
+    SquiDBMathOperator *e = SquiDBMathOperator_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -141,12 +141,12 @@ ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_valueOfWithNSString
   return nil;
 }
 
-ComYahooSquidbSqlMathOperator *ComYahooSquidbSqlMathOperator_fromOrdinal(NSUInteger ordinal) {
-  ComYahooSquidbSqlMathOperator_initialize();
+SquiDBMathOperator *SquiDBMathOperator_fromOrdinal(NSUInteger ordinal) {
+  SquiDBMathOperator_initialize();
   if (ordinal >= 7) {
     return nil;
   }
-  return ComYahooSquidbSqlMathOperator_values_[ordinal];
+  return SquiDBMathOperator_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbSqlMathOperator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBMathOperator)

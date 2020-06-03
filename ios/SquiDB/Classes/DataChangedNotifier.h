@@ -15,15 +15,15 @@
 #include "J2ObjC_header.h"
 #include "java/lang/Enum.h"
 
-@class ComYahooSquidbDataAbstractModel;
-@class ComYahooSquidbDataDataChangedNotifier_DBOperation;
-@class ComYahooSquidbDataSquidDatabase;
-@class ComYahooSquidbSqlSqlTable;
 @class IOSObjectArray;
+@class SquiDBAbstractModel;
+@class SquiDBDataChangedNotifier_DBOperation;
+@class SquiDBSqlTable;
+@class SquiDBSquidDatabase;
 @protocol JavaUtilCollection;
 @protocol JavaUtilSet;
 
-@interface ComYahooSquidbDataDataChangedNotifier : NSObject
+@interface SquiDBDataChangedNotifier : NSObject
 
 #pragma mark Public
 
@@ -31,7 +31,7 @@
 
 - (instancetype __nonnull)initWithJavaUtilCollection:(id<JavaUtilCollection>)tables;
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlSqlTableArray:(IOSObjectArray *)tables;
+- (instancetype __nonnull)initWithSquiDBSqlTableArray:(IOSObjectArray *)tables;
 
 - (void)setEnabledWithBoolean:(jboolean)enabled;
 
@@ -40,91 +40,93 @@
 #pragma mark Protected
 
 - (jboolean)accumulateNotificationObjectsWithJavaUtilSet:(id<JavaUtilSet>)accumulatorSet
-                           withComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                     withComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-   withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)operation
-                     withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
+                                      withSquiDBSqlTable:(SquiDBSqlTable *)table
+                                 withSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+               withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)operation
+                                 withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
                                                 withLong:(jlong)rowId;
 
-- (void)sendNotificationWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                     withId:(id)notifyObject;
+- (void)sendNotificationWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                         withId:(id)notifyObject;
 
-- (void)sendNotificationsToAllWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                  withJavaUtilSet:(id<JavaUtilSet>)notifyObjects;
+- (void)sendNotificationsToAllWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                      withJavaUtilSet:(id<JavaUtilSet>)notifyObjects;
 
 #pragma mark Package-Private
 
-- (void)flushAccumulatedNotificationsWithComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
-                                                             withBoolean:(jboolean)shouldSendNotifications;
+- (void)flushAccumulatedNotificationsWithSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+                                                 withBoolean:(jboolean)shouldSendNotifications;
 
-- (jboolean)onDataChangedWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table
-                   withComYahooSquidbDataSquidDatabase:(ComYahooSquidbDataSquidDatabase *)database
- withComYahooSquidbDataDataChangedNotifier_DBOperation:(ComYahooSquidbDataDataChangedNotifier_DBOperation *)operation
-                   withComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)modelValues
-                                              withLong:(jlong)rowId;
+- (jboolean)onDataChangedWithSquiDBSqlTable:(SquiDBSqlTable *)table
+                    withSquiDBSquidDatabase:(SquiDBSquidDatabase *)database
+  withSquiDBDataChangedNotifier_DBOperation:(SquiDBDataChangedNotifier_DBOperation *)operation
+                    withSquiDBAbstractModel:(SquiDBAbstractModel *)modelValues
+                                   withLong:(jlong)rowId;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataDataChangedNotifier)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDataChangedNotifier)
 
-FOUNDATION_EXPORT void ComYahooSquidbDataDataChangedNotifier_init(ComYahooSquidbDataDataChangedNotifier *self);
+FOUNDATION_EXPORT void SquiDBDataChangedNotifier_init(SquiDBDataChangedNotifier *self);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataDataChangedNotifier_initWithComYahooSquidbSqlSqlTableArray_(ComYahooSquidbDataDataChangedNotifier *self, IOSObjectArray *tables);
+FOUNDATION_EXPORT void SquiDBDataChangedNotifier_initWithSquiDBSqlTableArray_(SquiDBDataChangedNotifier *self, IOSObjectArray *tables);
 
-FOUNDATION_EXPORT void ComYahooSquidbDataDataChangedNotifier_initWithJavaUtilCollection_(ComYahooSquidbDataDataChangedNotifier *self, id<JavaUtilCollection> tables);
+FOUNDATION_EXPORT void SquiDBDataChangedNotifier_initWithJavaUtilCollection_(SquiDBDataChangedNotifier *self, id<JavaUtilCollection> tables);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataDataChangedNotifier)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDataChangedNotifier)
 
-typedef NS_ENUM(NSUInteger, ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum) {
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum_INSERT = 0,
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum_UPDATE = 1,
-  ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum_DELETE = 2,
+@compatibility_alias ComYahooSquidbDataDataChangedNotifier SquiDBDataChangedNotifier;
+
+typedef NS_ENUM(NSUInteger, SquiDBDataChangedNotifier_DBOperation_Enum) {
+  SquiDBDataChangedNotifier_DBOperation_Enum_INSERT = 0,
+  SquiDBDataChangedNotifier_DBOperation_Enum_UPDATE = 1,
+  SquiDBDataChangedNotifier_DBOperation_Enum_DELETE = 2,
 };
 
-@interface ComYahooSquidbDataDataChangedNotifier_DBOperation : JavaLangEnum
+@interface SquiDBDataChangedNotifier_DBOperation : JavaLangEnum
 
-@property (readonly, class, nonnull) ComYahooSquidbDataDataChangedNotifier_DBOperation *INSERT NS_SWIFT_NAME(INSERT);
-@property (readonly, class, nonnull) ComYahooSquidbDataDataChangedNotifier_DBOperation *UPDATE NS_SWIFT_NAME(UPDATE);
-@property (readonly, class, nonnull) ComYahooSquidbDataDataChangedNotifier_DBOperation *DELETE NS_SWIFT_NAME(DELETE);
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation * __nonnull)INSERT;
+@property (readonly, class, nonnull) SquiDBDataChangedNotifier_DBOperation *INSERT NS_SWIFT_NAME(INSERT);
+@property (readonly, class, nonnull) SquiDBDataChangedNotifier_DBOperation *UPDATE NS_SWIFT_NAME(UPDATE);
+@property (readonly, class, nonnull) SquiDBDataChangedNotifier_DBOperation *DELETE NS_SWIFT_NAME(DELETE);
++ (SquiDBDataChangedNotifier_DBOperation * __nonnull)INSERT;
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation * __nonnull)UPDATE;
++ (SquiDBDataChangedNotifier_DBOperation * __nonnull)UPDATE;
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation * __nonnull)DELETE;
++ (SquiDBDataChangedNotifier_DBOperation * __nonnull)DELETE;
 
 #pragma mark Public
 
-+ (ComYahooSquidbDataDataChangedNotifier_DBOperation *)valueOfWithNSString:(NSString *)name;
++ (SquiDBDataChangedNotifier_DBOperation *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 #pragma mark Package-Private
 
-- (ComYahooSquidbDataDataChangedNotifier_DBOperation_Enum)toNSEnum;
+- (SquiDBDataChangedNotifier_DBOperation_Enum)toNSEnum;
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbDataDataChangedNotifier_DBOperation)
+J2OBJC_STATIC_INIT(SquiDBDataChangedNotifier_DBOperation)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_values_[];
+FOUNDATION_EXPORT SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_values_[];
 
-inline ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_get_INSERT(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbDataDataChangedNotifier_DBOperation, INSERT)
+inline SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_get_INSERT(void);
+J2OBJC_ENUM_CONSTANT(SquiDBDataChangedNotifier_DBOperation, INSERT)
 
-inline ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_get_UPDATE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbDataDataChangedNotifier_DBOperation, UPDATE)
+inline SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_get_UPDATE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBDataChangedNotifier_DBOperation, UPDATE)
 
-inline ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_get_DELETE(void);
-J2OBJC_ENUM_CONSTANT(ComYahooSquidbDataDataChangedNotifier_DBOperation, DELETE)
+inline SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_get_DELETE(void);
+J2OBJC_ENUM_CONSTANT(SquiDBDataChangedNotifier_DBOperation, DELETE)
 
-FOUNDATION_EXPORT IOSObjectArray *ComYahooSquidbDataDataChangedNotifier_DBOperation_values(void);
+FOUNDATION_EXPORT IOSObjectArray *SquiDBDataChangedNotifier_DBOperation_values(void);
 
-FOUNDATION_EXPORT ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbDataDataChangedNotifier_DBOperation *ComYahooSquidbDataDataChangedNotifier_DBOperation_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT SquiDBDataChangedNotifier_DBOperation *SquiDBDataChangedNotifier_DBOperation_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataDataChangedNotifier_DBOperation)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDataChangedNotifier_DBOperation)
 
 
 #if __has_feature(nullability)

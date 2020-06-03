@@ -15,52 +15,54 @@
 #include "J2ObjC_header.h"
 #include "QueryTable.h"
 
-@class ComYahooSquidbSqlQuery;
-@class ComYahooSquidbSqlSqlBuilder;
 @class IOSClass;
 @class IOSObjectArray;
+@class SquiDBQuery;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlSubqueryTable : ComYahooSquidbSqlQueryTable
+@interface SquiDBSubqueryTable : SquiDBQueryTable
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlSubqueryTable *)asWithNSString:(NSString *)newAlias;
+- (SquiDBSubqueryTable *)asWithNSString:(NSString *)newAlias;
 
-+ (ComYahooSquidbSqlSubqueryTable *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name;
++ (SquiDBSubqueryTable *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name;
 
-+ (ComYahooSquidbSqlSubqueryTable *)fromQueryWithComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)query
-                                                           withNSString:(NSString *)name
-                                                           withIOSClass:(IOSClass *)modelClass
-                                     withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)properties;
++ (SquiDBSubqueryTable *)fromQueryWithSquiDBQuery:(SquiDBQuery *)query
+                                     withNSString:(NSString *)name
+                                     withIOSClass:(IOSClass *)modelClass
+                          withSquiDBPropertyArray:(IOSObjectArray *)properties;
 
 #pragma mark Protected
 
-- (ComYahooSquidbSqlSubqueryTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
-                                           withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)newProperties;
+- (SquiDBSubqueryTable *)asNewAliasWithPropertiesArrayWithNSString:(NSString *)newAlias
+                                           withSquiDBPropertyArray:(IOSObjectArray *)newProperties;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithIOSClass:(IOSClass *)arg0
-        withComYahooSquidbSqlPropertyArray:(IOSObjectArray *)arg1
-                              withNSString:(NSString *)arg2
-                              withNSString:(NSString *)arg3
-                withComYahooSquidbSqlQuery:(ComYahooSquidbSqlQuery *)arg4 NS_UNAVAILABLE;
+- (instancetype __nonnull)initPackagePrivateWithIOSClass:(IOSClass *)arg0
+                                 withSquiDBPropertyArray:(IOSObjectArray *)arg1
+                                            withNSString:(NSString *)arg2
+                                            withNSString:(NSString *)arg3
+                                         withSquiDBQuery:(SquiDBQuery *)arg4 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlSubqueryTable)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSubqueryTable)
 
-FOUNDATION_EXPORT ComYahooSquidbSqlSubqueryTable *ComYahooSquidbSqlSubqueryTable_fromQueryWithComYahooSquidbSqlQuery_withNSString_(ComYahooSquidbSqlQuery *query, NSString *name);
+FOUNDATION_EXPORT SquiDBSubqueryTable *SquiDBSubqueryTable_fromQueryWithSquiDBQuery_withNSString_(SquiDBQuery *query, NSString *name);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlSubqueryTable *ComYahooSquidbSqlSubqueryTable_fromQueryWithComYahooSquidbSqlQuery_withNSString_withIOSClass_withComYahooSquidbSqlPropertyArray_(ComYahooSquidbSqlQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
+FOUNDATION_EXPORT SquiDBSubqueryTable *SquiDBSubqueryTable_fromQueryWithSquiDBQuery_withNSString_withIOSClass_withSquiDBPropertyArray_(SquiDBQuery *query, NSString *name, IOSClass *modelClass, IOSObjectArray *properties);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlSubqueryTable)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSubqueryTable)
+
+@compatibility_alias ComYahooSquidbSqlSubqueryTable SquiDBSubqueryTable;
 
 
 #if __has_feature(nullability)

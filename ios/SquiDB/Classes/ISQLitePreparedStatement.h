@@ -16,7 +16,7 @@
 
 @class IOSByteArray;
 
-@protocol ComYahooSquidbDataISQLitePreparedStatement < JavaObject >
+@protocol SquiDBISQLitePreparedStatement < JavaObject >
 
 - (void)close;
 
@@ -48,9 +48,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbDataISQLitePreparedStatement)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBISQLitePreparedStatement)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbDataISQLitePreparedStatement)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBISQLitePreparedStatement)
+
+#define ComYahooSquidbDataISQLitePreparedStatement SquiDBISQLitePreparedStatement
 
 
 #if __has_feature(nullability)

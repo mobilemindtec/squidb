@@ -14,79 +14,81 @@
 #include "SQLiteQuery.h"
 #include "SquidCursorFactory.h"
 
-@interface ComYahooSquidbIosSquidCursorFactory () {
+@interface SquiDBSquidCursorFactory () {
  @public
   IOSObjectArray *sqlArgs_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbIosSquidCursorFactory, sqlArgs_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(SquiDBSquidCursorFactory, sqlArgs_, IOSObjectArray *)
 
-@implementation ComYahooSquidbIosSquidCursorFactory
+@implementation SquiDBSquidCursorFactory
 
 - (instancetype)initWithNSObjectArray:(IOSObjectArray *)sqlArgs {
-  ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(self, sqlArgs);
+  SquiDBSquidCursorFactory_initWithNSObjectArray_(self, sqlArgs);
   return self;
 }
 
-- (id<ComYahooSquidbDataICursor>)newCursorWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                      withComYahooAndroidSqliteSQLiteCursorDriver:(id<ComYahooAndroidSqliteSQLiteCursorDriver>)masterQuery
-                                                                     withNSString:(NSString *)editTable
-                                             withComYahooAndroidSqliteSQLiteQuery:(ComYahooAndroidSqliteSQLiteQuery *)query {
-  ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(query, sqlArgs_);
-  return new_ComYahooAndroidSqliteSQLiteCursor_initWithComYahooAndroidSqliteSQLiteCursorDriver_withNSString_withComYahooAndroidSqliteSQLiteQuery_(masterQuery, editTable, query);
+- (id<SquiDBICursor>)newCursorWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                          withSquiDBSQLiteCursorDriver:(id<SquiDBSQLiteCursorDriver>)masterQuery
+                                          withNSString:(NSString *)editTable
+                                 withSquiDBSQLiteQuery:(SquiDBSQLiteQuery *)query {
+  SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(query, sqlArgs_);
+  return new_SquiDBSQLiteCursor_initWithSquiDBSQLiteCursorDriver_withNSString_withSquiDBSQLiteQuery_(masterQuery, editTable, query);
 }
 
-+ (void)bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram:(ComYahooAndroidSqliteSQLiteProgram *)program
-                                                   withNSObjectArray:(IOSObjectArray *)sqlArgs {
-  ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(program, sqlArgs);
++ (void)bindArgumentsToProgramWithSquiDBSQLiteProgram:(SquiDBSQLiteProgram *)program
+                                    withNSObjectArray:(IOSObjectArray *)sqlArgs {
+  SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(program, sqlArgs);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LComYahooSquidbDataICursor;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LSquiDBICursor;", 0x1, 1, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x9, 3, 4, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSObjectArray:);
-  methods[1].selector = @selector(newCursorWithComYahooAndroidSqliteSQLiteDatabase:withComYahooAndroidSqliteSQLiteCursorDriver:withNSString:withComYahooAndroidSqliteSQLiteQuery:);
-  methods[2].selector = @selector(bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram:withNSObjectArray:);
+  methods[1].selector = @selector(newCursorWithSquiDBSQLiteDatabase:withSquiDBSQLiteCursorDriver:withNSString:withSquiDBSQLiteQuery:);
+  methods[2].selector = @selector(bindArgumentsToProgramWithSquiDBSQLiteProgram:withNSObjectArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "sqlArgs_", "[LNSObject;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "[LNSObject;", "newCursor", "LComYahooAndroidSqliteSQLiteDatabase;LComYahooAndroidSqliteSQLiteCursorDriver;LNSString;LComYahooAndroidSqliteSQLiteQuery;", "bindArgumentsToProgram", "LComYahooAndroidSqliteSQLiteProgram;[LNSObject;" };
-  static const J2ObjcClassInfo _ComYahooSquidbIosSquidCursorFactory = { "SquidCursorFactory", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 3, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbIosSquidCursorFactory;
+  static const void *ptrTable[] = { "[LNSObject;", "newCursor", "LSquiDBSQLiteDatabase;LSquiDBSQLiteCursorDriver;LNSString;LSquiDBSQLiteQuery;", "bindArgumentsToProgram", "LSquiDBSQLiteProgram;[LNSObject;" };
+  static const J2ObjcClassInfo _SquiDBSquidCursorFactory = { "SquidCursorFactory", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 3, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBSquidCursorFactory;
 }
 
 @end
 
-void ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(ComYahooSquidbIosSquidCursorFactory *self, IOSObjectArray *sqlArgs) {
+void SquiDBSquidCursorFactory_initWithNSObjectArray_(SquiDBSquidCursorFactory *self, IOSObjectArray *sqlArgs) {
   NSObject_init(self);
   self->sqlArgs_ = sqlArgs;
 }
 
-ComYahooSquidbIosSquidCursorFactory *new_ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbIosSquidCursorFactory, initWithNSObjectArray_, sqlArgs)
+SquiDBSquidCursorFactory *new_SquiDBSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) {
+  J2OBJC_NEW_IMPL(SquiDBSquidCursorFactory, initWithNSObjectArray_, sqlArgs)
 }
 
-ComYahooSquidbIosSquidCursorFactory *create_ComYahooSquidbIosSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbIosSquidCursorFactory, initWithNSObjectArray_, sqlArgs)
+SquiDBSquidCursorFactory *create_SquiDBSquidCursorFactory_initWithNSObjectArray_(IOSObjectArray *sqlArgs) {
+  J2OBJC_CREATE_IMPL(SquiDBSquidCursorFactory, initWithNSObjectArray_, sqlArgs)
 }
 
-void ComYahooSquidbIosSquidCursorFactory_bindArgumentsToProgramWithComYahooAndroidSqliteSQLiteProgram_withNSObjectArray_(ComYahooAndroidSqliteSQLiteProgram *program, IOSObjectArray *sqlArgs) {
-  ComYahooSquidbIosSquidCursorFactory_initialize();
+void SquiDBSquidCursorFactory_bindArgumentsToProgramWithSquiDBSQLiteProgram_withNSObjectArray_(SquiDBSQLiteProgram *program, IOSObjectArray *sqlArgs) {
+  SquiDBSquidCursorFactory_initialize();
   if (sqlArgs == nil) {
     return;
   }
   for (jint i = 1; i <= sqlArgs->size_; i++) {
-    ComYahooAndroidSqliteDatabaseUtils_bindObjectToProgramWithComYahooAndroidSqliteSQLiteProgram_withInt_withId_(program, i, IOSObjectArray_Get(sqlArgs, i - 1));
+    SquiDBDatabaseUtils_bindObjectToProgramWithSquiDBSQLiteProgram_withInt_withId_(program, i, IOSObjectArray_Get(sqlArgs, i - 1));
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosSquidCursorFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBSquidCursorFactory)
+
+J2OBJC_NAME_MAPPING(SquiDBSquidCursorFactory, "com.yahoo.squidb.ios", "SquiDB")

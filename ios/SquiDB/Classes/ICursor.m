@@ -6,26 +6,26 @@
 #include "ICursor.h"
 #include "J2ObjC_source.h"
 
-@implementation ComYahooSquidbDataICursor
+@implementation SquiDBICursor
 
 + (jint)FIELD_TYPE_NULL {
-  return ComYahooSquidbDataICursor_FIELD_TYPE_NULL;
+  return SquiDBICursor_FIELD_TYPE_NULL;
 }
 
 + (jint)FIELD_TYPE_INTEGER {
-  return ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER;
+  return SquiDBICursor_FIELD_TYPE_INTEGER;
 }
 
 + (jint)FIELD_TYPE_FLOAT {
-  return ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT;
+  return SquiDBICursor_FIELD_TYPE_FLOAT;
 }
 
 + (jint)FIELD_TYPE_STRING {
-  return ComYahooSquidbDataICursor_FIELD_TYPE_STRING;
+  return SquiDBICursor_FIELD_TYPE_STRING;
 }
 
 + (jint)FIELD_TYPE_BLOB {
-  return ComYahooSquidbDataICursor_FIELD_TYPE_BLOB;
+  return SquiDBICursor_FIELD_TYPE_BLOB;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -92,17 +92,19 @@
   methods[27].selector = @selector(isClosed);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "FIELD_TYPE_NULL", "I", .constantValue.asInt = ComYahooSquidbDataICursor_FIELD_TYPE_NULL, 0x19, -1, -1, -1, -1 },
-    { "FIELD_TYPE_INTEGER", "I", .constantValue.asInt = ComYahooSquidbDataICursor_FIELD_TYPE_INTEGER, 0x19, -1, -1, -1, -1 },
-    { "FIELD_TYPE_FLOAT", "I", .constantValue.asInt = ComYahooSquidbDataICursor_FIELD_TYPE_FLOAT, 0x19, -1, -1, -1, -1 },
-    { "FIELD_TYPE_STRING", "I", .constantValue.asInt = ComYahooSquidbDataICursor_FIELD_TYPE_STRING, 0x19, -1, -1, -1, -1 },
-    { "FIELD_TYPE_BLOB", "I", .constantValue.asInt = ComYahooSquidbDataICursor_FIELD_TYPE_BLOB, 0x19, -1, -1, -1, -1 },
+    { "FIELD_TYPE_NULL", "I", .constantValue.asInt = SquiDBICursor_FIELD_TYPE_NULL, 0x19, -1, -1, -1, -1 },
+    { "FIELD_TYPE_INTEGER", "I", .constantValue.asInt = SquiDBICursor_FIELD_TYPE_INTEGER, 0x19, -1, -1, -1, -1 },
+    { "FIELD_TYPE_FLOAT", "I", .constantValue.asInt = SquiDBICursor_FIELD_TYPE_FLOAT, 0x19, -1, -1, -1, -1 },
+    { "FIELD_TYPE_STRING", "I", .constantValue.asInt = SquiDBICursor_FIELD_TYPE_STRING, 0x19, -1, -1, -1, -1 },
+    { "FIELD_TYPE_BLOB", "I", .constantValue.asInt = SquiDBICursor_FIELD_TYPE_BLOB, 0x19, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "move", "I", "moveToPosition", "getColumnIndex", "LNSString;", "getColumnIndexOrThrow", "LJavaLangIllegalArgumentException;", "getColumnName", "getBlob", "getString", "getShort", "getInt", "getLong", "getFloat", "getDouble", "getType", "isNull" };
-  static const J2ObjcClassInfo _ComYahooSquidbDataICursor = { "ICursor", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x609, 28, 5, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbDataICursor;
+  static const J2ObjcClassInfo _SquiDBICursor = { "ICursor", "com.yahoo.squidb.data", ptrTable, methods, fields, 7, 0x609, 28, 5, -1, -1, -1, -1, -1 };
+  return &_SquiDBICursor;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(ComYahooSquidbDataICursor)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(SquiDBICursor)
+
+J2OBJC_NAME_MAPPING(SquiDBICursor, "com.yahoo.squidb.data", "SquiDB")

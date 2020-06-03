@@ -15,18 +15,18 @@
 #include "J2ObjC_header.h"
 #include "java/util/LinkedHashMap.h"
 
-@class ComYahooSquidbSqlCompiledStatement;
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBCompiledStatement;
+@class SquiDBSqlBuilder;
 @protocol JavaUtilMap;
 @protocol JavaUtilMap_Entry;
 
-@interface ComYahooSquidbSqlCompiledArgumentResolver : NSObject
+@interface SquiDBCompiledArgumentResolver : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder;
+- (instancetype __nonnull)initPackagePrivateWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder;
 
-- (ComYahooSquidbSqlCompiledStatement *)resolveToCompiledStatement;
+- (SquiDBCompiledStatement *)resolveToCompiledStatement;
 
 // Disallowed inherited constructors, do not use.
 
@@ -34,17 +34,19 @@
 
 @end
 
-J2OBJC_STATIC_INIT(ComYahooSquidbSqlCompiledArgumentResolver)
+J2OBJC_STATIC_INIT(SquiDBCompiledArgumentResolver)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlCompiledArgumentResolver *self, ComYahooSquidbSqlSqlBuilder *builder);
+FOUNDATION_EXPORT void SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBCompiledArgumentResolver *self, SquiDBSqlBuilder *builder);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledArgumentResolver *new_ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlSqlBuilder *builder) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCompiledArgumentResolver *new_SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBSqlBuilder *builder) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledArgumentResolver *create_ComYahooSquidbSqlCompiledArgumentResolver_initWithComYahooSquidbSqlSqlBuilder_(ComYahooSquidbSqlSqlBuilder *builder);
+FOUNDATION_EXPORT SquiDBCompiledArgumentResolver *create_SquiDBCompiledArgumentResolver_initPackagePrivateWithSquiDBSqlBuilder_(SquiDBSqlBuilder *builder);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompiledArgumentResolver)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompiledArgumentResolver)
 
-@interface ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache : JavaUtilLinkedHashMap
+@compatibility_alias ComYahooSquidbSqlCompiledArgumentResolver SquiDBCompiledArgumentResolver;
+
+@interface SquiDBCompiledArgumentResolver_SimpleLruCache : JavaUtilLinkedHashMap
 
 #pragma mark Public
 
@@ -69,15 +71,15 @@ J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompiledArgumentResolver)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBCompiledArgumentResolver_SimpleLruCache)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *self, jint maxCapacity);
+FOUNDATION_EXPORT void SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(SquiDBCompiledArgumentResolver_SimpleLruCache *self, jint maxCapacity);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *new_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBCompiledArgumentResolver_SimpleLruCache *new_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache *create_ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity);
+FOUNDATION_EXPORT SquiDBCompiledArgumentResolver_SimpleLruCache *create_SquiDBCompiledArgumentResolver_SimpleLruCache_initWithInt_(jint maxCapacity);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlCompiledArgumentResolver_SimpleLruCache)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBCompiledArgumentResolver_SimpleLruCache)
 
 
 #if __has_feature(nullability)

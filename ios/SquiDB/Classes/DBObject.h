@@ -15,9 +15,9 @@
 #include "CompilableWithArguments.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooSquidbSqlSqlBuilder;
+@class SquiDBSqlBuilder;
 
-@interface ComYahooSquidbSqlDBObject : ComYahooSquidbSqlCompilableWithArguments < NSCopying > {
+@interface SquiDBDBObject : SquiDBCompilableWithArguments < NSCopying > {
  @public
   NSString *alias_;
   NSString *expression_;
@@ -26,7 +26,7 @@
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlDBObject *)asWithNSString:(NSString *)newAlias;
+- (SquiDBDBObject *)asWithNSString:(NSString *)newAlias;
 
 - (jboolean)isEqual:(id)o;
 
@@ -46,34 +46,40 @@
 
 #pragma mark Protected
 
-- (instancetype __nonnull)initWithNSString:(NSString *)expression;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)expression;
 
-- (instancetype __nonnull)initWithNSString:(NSString *)expression
-                              withNSString:(NSString *)qualifier;
+- (instancetype __nonnull)initPackagePrivateWithNSString:(NSString *)expression
+                                            withNSString:(NSString *)qualifier;
 
-- (void)appendQualifiedExpressionWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                                     withBoolean:(jboolean)forSqlValidation;
+- (void)appendQualifiedExpressionWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                          withBoolean:(jboolean)forSqlValidation;
 
 - (NSString *)expressionForComparison;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)initPackagePrivate NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlDBObject)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBDBObject)
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlDBObject, alias_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlDBObject, expression_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooSquidbSqlDBObject, qualifier_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBDBObject, alias_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBDBObject, expression_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBDBObject, qualifier_, NSString *)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlDBObject_initWithNSString_(ComYahooSquidbSqlDBObject *self, NSString *expression);
+FOUNDATION_EXPORT void SquiDBDBObject_initPackagePrivateWithNSString_(SquiDBDBObject *self, NSString *expression);
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlDBObject_initWithNSString_withNSString_(ComYahooSquidbSqlDBObject *self, NSString *expression, NSString *qualifier);
+FOUNDATION_EXPORT void SquiDBDBObject_initPackagePrivateWithNSString_withNSString_(SquiDBDBObject *self, NSString *expression, NSString *qualifier);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlDBObject)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBDBObject)
+
+@compatibility_alias ComYahooSquidbSqlDBObject SquiDBDBObject;
 
 
 #if __has_feature(nullability)

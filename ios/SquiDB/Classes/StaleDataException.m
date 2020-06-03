@@ -7,17 +7,17 @@
 #include "StaleDataException.h"
 #include "java/lang/RuntimeException.h"
 
-@implementation ComYahooAndroidSqliteStaleDataException
+@implementation SquiDBStaleDataException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteStaleDataException_init(self);
+  SquiDBStaleDataException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)description_ {
-  ComYahooAndroidSqliteStaleDataException_initWithNSString_(self, description_);
+  SquiDBStaleDataException_initWithNSString_(self, description_);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteStaleDataException = { "StaleDataException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteStaleDataException;
+  static const J2ObjcClassInfo _SquiDBStaleDataException = { "StaleDataException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBStaleDataException;
 }
 
 @end
 
-void ComYahooAndroidSqliteStaleDataException_init(ComYahooAndroidSqliteStaleDataException *self) {
+void SquiDBStaleDataException_init(SquiDBStaleDataException *self) {
   JavaLangRuntimeException_init(self);
 }
 
-ComYahooAndroidSqliteStaleDataException *new_ComYahooAndroidSqliteStaleDataException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteStaleDataException, init)
+SquiDBStaleDataException *new_SquiDBStaleDataException_init() {
+  J2OBJC_NEW_IMPL(SquiDBStaleDataException, init)
 }
 
-ComYahooAndroidSqliteStaleDataException *create_ComYahooAndroidSqliteStaleDataException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteStaleDataException, init)
+SquiDBStaleDataException *create_SquiDBStaleDataException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBStaleDataException, init)
 }
 
-void ComYahooAndroidSqliteStaleDataException_initWithNSString_(ComYahooAndroidSqliteStaleDataException *self, NSString *description_) {
+void SquiDBStaleDataException_initWithNSString_(SquiDBStaleDataException *self, NSString *description_) {
   JavaLangRuntimeException_initWithNSString_(self, description_);
 }
 
-ComYahooAndroidSqliteStaleDataException *new_ComYahooAndroidSqliteStaleDataException_initWithNSString_(NSString *description_) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteStaleDataException, initWithNSString_, description_)
+SquiDBStaleDataException *new_SquiDBStaleDataException_initWithNSString_(NSString *description_) {
+  J2OBJC_NEW_IMPL(SquiDBStaleDataException, initWithNSString_, description_)
 }
 
-ComYahooAndroidSqliteStaleDataException *create_ComYahooAndroidSqliteStaleDataException_initWithNSString_(NSString *description_) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteStaleDataException, initWithNSString_, description_)
+SquiDBStaleDataException *create_SquiDBStaleDataException_initWithNSString_(NSString *description_) {
+  J2OBJC_CREATE_IMPL(SquiDBStaleDataException, initWithNSString_, description_)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteStaleDataException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBStaleDataException)
+
+J2OBJC_NAME_MAPPING(SquiDBStaleDataException, "com.yahoo.android.sqlite", "SquiDB")

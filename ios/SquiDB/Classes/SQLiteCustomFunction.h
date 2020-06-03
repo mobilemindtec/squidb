@@ -14,20 +14,20 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComYahooAndroidSqliteSQLiteDatabase_CustomFunction;
+@protocol SquiDBSQLiteDatabase_CustomFunction;
 
-@interface ComYahooAndroidSqliteSQLiteCustomFunction : NSObject {
+@interface SquiDBSQLiteCustomFunction : NSObject {
  @public
   NSString *name_;
   jint numArgs_;
-  id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback_;
+  id<SquiDBSQLiteDatabase_CustomFunction> callback_;
 }
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)name
                                    withInt:(jint)numArgs
-withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction>)callback;
+   withSquiDBSQLiteDatabase_CustomFunction:(id<SquiDBSQLiteDatabase_CustomFunction>)callback;
 
 // Disallowed inherited constructors, do not use.
 
@@ -35,18 +35,20 @@ withComYahooAndroidSqliteSQLiteDatabase_CustomFunction:(id<ComYahooAndroidSqlite
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooAndroidSqliteSQLiteCustomFunction)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBSQLiteCustomFunction)
 
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteCustomFunction, name_, NSString *)
-J2OBJC_FIELD_SETTER(ComYahooAndroidSqliteSQLiteCustomFunction, callback_, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction>)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteCustomFunction, name_, NSString *)
+J2OBJC_FIELD_SETTER(SquiDBSQLiteCustomFunction, callback_, id<SquiDBSQLiteDatabase_CustomFunction>)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(ComYahooAndroidSqliteSQLiteCustomFunction *self, NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback);
+FOUNDATION_EXPORT void SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(SquiDBSQLiteCustomFunction *self, NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback);
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteCustomFunction *new_ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBSQLiteCustomFunction *new_SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooAndroidSqliteSQLiteCustomFunction *create_ComYahooAndroidSqliteSQLiteCustomFunction_initWithNSString_withInt_withComYahooAndroidSqliteSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<ComYahooAndroidSqliteSQLiteDatabase_CustomFunction> callback);
+FOUNDATION_EXPORT SquiDBSQLiteCustomFunction *create_SquiDBSQLiteCustomFunction_initWithNSString_withInt_withSquiDBSQLiteDatabase_CustomFunction_(NSString *name, jint numArgs, id<SquiDBSQLiteDatabase_CustomFunction> callback);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteCustomFunction)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteCustomFunction)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteCustomFunction SquiDBSQLiteCustomFunction;
 
 
 #if __has_feature(nullability)

@@ -15,10 +15,10 @@
 #include "ISQLitePreparedStatement.h"
 #include "J2ObjC_header.h"
 
-@class ComYahooAndroidSqliteSQLiteStatement;
 @class IOSByteArray;
+@class SquiDBSQLiteStatement;
 
-@interface ComYahooSquidbIosIOSSQLiteStatementAdapter : NSObject < ComYahooSquidbDataISQLitePreparedStatement >
+@interface SquiDBIOSSQLiteStatementAdapter : NSObject < SquiDBISQLitePreparedStatement >
 
 #pragma mark Public
 
@@ -52,7 +52,7 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteStatement:(ComYahooAndroidSqliteSQLiteStatement *)statement;
+- (instancetype __nonnull)initWithSquiDBSQLiteStatement:(SquiDBSQLiteStatement *)statement;
 
 // Disallowed inherited constructors, do not use.
 
@@ -60,15 +60,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbIosIOSSQLiteStatementAdapter)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBIOSSQLiteStatementAdapter)
 
-FOUNDATION_EXPORT void ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooSquidbIosIOSSQLiteStatementAdapter *self, ComYahooAndroidSqliteSQLiteStatement *statement);
+FOUNDATION_EXPORT void SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBIOSSQLiteStatementAdapter *self, SquiDBSQLiteStatement *statement);
 
-FOUNDATION_EXPORT ComYahooSquidbIosIOSSQLiteStatementAdapter *new_ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooAndroidSqliteSQLiteStatement *statement) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBIOSSQLiteStatementAdapter *new_SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBSQLiteStatement *statement) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbIosIOSSQLiteStatementAdapter *create_ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooAndroidSqliteSQLiteStatement *statement);
+FOUNDATION_EXPORT SquiDBIOSSQLiteStatementAdapter *create_SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBSQLiteStatement *statement);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbIosIOSSQLiteStatementAdapter)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBIOSSQLiteStatementAdapter)
+
+@compatibility_alias ComYahooSquidbIosIOSSQLiteStatementAdapter SquiDBIOSSQLiteStatementAdapter;
 
 
 #if __has_feature(nullability)

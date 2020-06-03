@@ -15,12 +15,12 @@
 #include "J2ObjC_header.h"
 #include "SQLiteClosable.h"
 
-@class ComYahooAndroidSqliteSQLiteDatabase;
-@class ComYahooAndroidSqliteSQLiteSession;
 @class IOSByteArray;
 @class IOSObjectArray;
+@class SquiDBSQLiteDatabase;
+@class SquiDBSQLiteSession;
 
-@interface ComYahooAndroidSqliteSQLiteProgram : ComYahooAndroidSqliteSQLiteClosable
+@interface SquiDBSQLiteProgram : SquiDBSQLiteClosable
 
 #pragma mark Public
 
@@ -48,7 +48,7 @@
 
 - (jint)getConnectionFlags;
 
-- (ComYahooAndroidSqliteSQLiteSession *)getSession;
+- (SquiDBSQLiteSession *)getSession;
 
 - (void)onAllReferencesReleased;
 
@@ -56,25 +56,31 @@
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithComYahooAndroidSqliteSQLiteDatabase:(ComYahooAndroidSqliteSQLiteDatabase *)db
-                                                         withNSString:(NSString *)sql
-                                                    withNSObjectArray:(IOSObjectArray *)bindArgs;
+- (instancetype __nonnull)initWithSquiDBSQLiteDatabase:(SquiDBSQLiteDatabase *)db
+                                          withNSString:(NSString *)sql
+                                     withNSObjectArray:(IOSObjectArray *)bindArgs;
 
 - (IOSObjectArray *)getBindArgs;
 
 - (IOSObjectArray *)getColumnNames;
 
-- (ComYahooAndroidSqliteSQLiteDatabase *)getDatabase;
+- (SquiDBSQLiteDatabase *)getDatabase;
 
 - (NSString *)getSql;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype __nonnull)init NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_STATIC_INIT(ComYahooAndroidSqliteSQLiteProgram)
+J2OBJC_STATIC_INIT(SquiDBSQLiteProgram)
 
-FOUNDATION_EXPORT void ComYahooAndroidSqliteSQLiteProgram_initWithComYahooAndroidSqliteSQLiteDatabase_withNSString_withNSObjectArray_(ComYahooAndroidSqliteSQLiteProgram *self, ComYahooAndroidSqliteSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
+FOUNDATION_EXPORT void SquiDBSQLiteProgram_initWithSquiDBSQLiteDatabase_withNSString_withNSObjectArray_(SquiDBSQLiteProgram *self, SquiDBSQLiteDatabase *db, NSString *sql, IOSObjectArray *bindArgs);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooAndroidSqliteSQLiteProgram)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBSQLiteProgram)
+
+@compatibility_alias ComYahooAndroidSqliteSQLiteProgram SquiDBSQLiteProgram;
 
 
 #if __has_feature(nullability)

@@ -15,52 +15,52 @@
 #include "J2ObjC_header.h"
 #include "TableStatement.h"
 
-@class ComYahooSquidbDataAbstractModel;
-@class ComYahooSquidbSqlCriterion;
-@class ComYahooSquidbSqlProperty;
-@class ComYahooSquidbSqlSqlBuilder;
-@class ComYahooSquidbSqlSqlTable;
-@class ComYahooSquidbSqlTable;
-@class ComYahooSquidbSqlView;
 @class IOSObjectArray;
+@class SquiDBAbstractModel;
+@class SquiDBCriterion;
+@class SquiDBProperty;
+@class SquiDBSqlBuilder;
+@class SquiDBSqlTable;
+@class SquiDBTable;
+@class SquiDBView;
 @protocol JavaUtilList;
 
-@interface ComYahooSquidbSqlUpdate : ComYahooSquidbSqlTableStatement
+@interface SquiDBUpdate : SquiDBTableStatement
 
 #pragma mark Public
 
-- (ComYahooSquidbSqlUpdate *)fromTemplateWithComYahooSquidbDataAbstractModel:(ComYahooSquidbDataAbstractModel *)template_;
+- (SquiDBUpdate *)fromTemplateWithSquiDBAbstractModel:(SquiDBAbstractModel *)template_;
 
-- (ComYahooSquidbSqlSqlTable *)getTable;
+- (SquiDBSqlTable *)getTable;
 
-- (ComYahooSquidbSqlUpdate *)onConflictWithComYahooSquidbSqlTableStatement_ConflictAlgorithm:(ComYahooSquidbSqlTableStatement_ConflictAlgorithm *)conflictAlgorithm;
+- (SquiDBUpdate *)onConflictWithSquiDBTableStatement_ConflictAlgorithm:(SquiDBTableStatement_ConflictAlgorithm *)conflictAlgorithm;
 
-- (ComYahooSquidbSqlUpdate *)setWithJavaUtilList:(id<JavaUtilList>)columns
-                                withJavaUtilList:(id<JavaUtilList>)values;
+- (SquiDBUpdate *)setWithJavaUtilList:(id<JavaUtilList>)columns
+                     withJavaUtilList:(id<JavaUtilList>)values;
 
-- (ComYahooSquidbSqlUpdate *)setWithComYahooSquidbSqlProperty:(ComYahooSquidbSqlProperty *)column
-                                                       withId:(id)value;
+- (SquiDBUpdate *)setWithSquiDBProperty:(SquiDBProperty *)column
+                                 withId:(id)value;
 
-- (ComYahooSquidbSqlUpdate *)setWithComYahooSquidbSqlPropertyArray:(IOSObjectArray *)columns
-                                                 withNSObjectArray:(IOSObjectArray *)values;
+- (SquiDBUpdate *)setWithSquiDBPropertyArray:(IOSObjectArray *)columns
+                           withNSObjectArray:(IOSObjectArray *)values;
 
-+ (ComYahooSquidbSqlUpdate *)tableWithComYahooSquidbSqlTable:(ComYahooSquidbSqlTable *)table;
++ (SquiDBUpdate *)tableWithSquiDBTable:(SquiDBTable *)table;
 
-+ (ComYahooSquidbSqlUpdate *)tableWithComYahooSquidbSqlView:(ComYahooSquidbSqlView *)view;
++ (SquiDBUpdate *)tableWithSquiDBView:(SquiDBView *)view;
 
-- (ComYahooSquidbSqlUpdate *)whereWithComYahooSquidbSqlCriterion:(ComYahooSquidbSqlCriterion *)criterion;
+- (SquiDBUpdate *)whereWithSquiDBCriterion:(SquiDBCriterion *)criterion;
 
 #pragma mark Protected
 
-- (instancetype __nonnull)initWithComYahooSquidbSqlSqlTable:(ComYahooSquidbSqlSqlTable *)table;
+- (instancetype __nonnull)initWithSquiDBSqlTable:(SquiDBSqlTable *)table;
 
-- (void)visitValuesWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                       withBoolean:(jboolean)forSqlValidation;
+- (void)visitValuesWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                            withBoolean:(jboolean)forSqlValidation;
 
 #pragma mark Package-Private
 
-- (void)appendToSqlBuilderWithComYahooSquidbSqlSqlBuilder:(ComYahooSquidbSqlSqlBuilder *)builder
-                                              withBoolean:(jboolean)forSqlValidation;
+- (void)appendToSqlBuilderWithSquiDBSqlBuilder:(SquiDBSqlBuilder *)builder
+                                   withBoolean:(jboolean)forSqlValidation;
 
 // Disallowed inherited constructors, do not use.
 
@@ -68,19 +68,21 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbSqlUpdate)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBUpdate)
 
-FOUNDATION_EXPORT void ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlUpdate *self, ComYahooSquidbSqlSqlTable *table);
+FOUNDATION_EXPORT void SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBUpdate *self, SquiDBSqlTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlUpdate *new_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT SquiDBUpdate *new_SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBSqlTable *table) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ComYahooSquidbSqlUpdate *create_ComYahooSquidbSqlUpdate_initWithComYahooSquidbSqlSqlTable_(ComYahooSquidbSqlSqlTable *table);
+FOUNDATION_EXPORT SquiDBUpdate *create_SquiDBUpdate_initWithSquiDBSqlTable_(SquiDBSqlTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlUpdate *ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlTable_(ComYahooSquidbSqlTable *table);
+FOUNDATION_EXPORT SquiDBUpdate *SquiDBUpdate_tableWithSquiDBTable_(SquiDBTable *table);
 
-FOUNDATION_EXPORT ComYahooSquidbSqlUpdate *ComYahooSquidbSqlUpdate_tableWithComYahooSquidbSqlView_(ComYahooSquidbSqlView *view);
+FOUNDATION_EXPORT SquiDBUpdate *SquiDBUpdate_tableWithSquiDBView_(SquiDBView *view);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbSqlUpdate)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBUpdate)
+
+@compatibility_alias ComYahooSquidbSqlUpdate SquiDBUpdate;
 
 
 #if __has_feature(nullability)

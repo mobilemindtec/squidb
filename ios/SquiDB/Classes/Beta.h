@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbBeta < JavaLangAnnotationAnnotation >
+@protocol SquiDBBeta < JavaLangAnnotationAnnotation >
 
 - (jboolean)isEqual:(id)obj;
 
@@ -25,15 +25,17 @@
 
 @end
 
-@interface ComYahooSquidbBeta : NSObject < ComYahooSquidbBeta >
+@interface SquiDBBeta : NSObject < SquiDBBeta >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbBeta)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBBeta)
 
-FOUNDATION_EXPORT id<ComYahooSquidbBeta> create_ComYahooSquidbBeta(void);
+FOUNDATION_EXPORT id<SquiDBBeta> create_SquiDBBeta(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbBeta)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBBeta)
+
+#define ComYahooSquidbBeta SquiDBBeta
 
 
 #if __has_feature(nullability)

@@ -8,72 +8,72 @@
 #include "J2ObjC_source.h"
 #include "SQLiteStatement.h"
 
-@interface ComYahooSquidbIosIOSSQLiteStatementAdapter () {
+@interface SquiDBIOSSQLiteStatementAdapter () {
  @public
-  ComYahooAndroidSqliteSQLiteStatement *statement_;
+  SquiDBSQLiteStatement *statement_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteStatementAdapter, statement_, ComYahooAndroidSqliteSQLiteStatement *)
+J2OBJC_FIELD_SETTER(SquiDBIOSSQLiteStatementAdapter, statement_, SquiDBSQLiteStatement *)
 
-@implementation ComYahooSquidbIosIOSSQLiteStatementAdapter
+@implementation SquiDBIOSSQLiteStatementAdapter
 
-- (instancetype)initWithComYahooAndroidSqliteSQLiteStatement:(ComYahooAndroidSqliteSQLiteStatement *)statement {
-  ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(self, statement);
+- (instancetype)initWithSquiDBSQLiteStatement:(SquiDBSQLiteStatement *)statement {
+  SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(self, statement);
   return self;
 }
 
 - (void)close {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) close];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) close];
 }
 
 - (void)bindNullWithInt:(jint)index {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) bindNullWithInt:index];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) bindNullWithInt:index];
 }
 
 - (void)bindLongWithInt:(jint)index
                withLong:(jlong)value {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) bindLongWithInt:index withLong:value];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) bindLongWithInt:index withLong:value];
 }
 
 - (void)bindDoubleWithInt:(jint)index
                withDouble:(jdouble)value {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) bindDoubleWithInt:index withDouble:value];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) bindDoubleWithInt:index withDouble:value];
 }
 
 - (void)bindStringWithInt:(jint)index
              withNSString:(NSString *)value {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) bindStringWithInt:index withNSString:value];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) bindStringWithInt:index withNSString:value];
 }
 
 - (void)bindBlobWithInt:(jint)index
           withByteArray:(IOSByteArray *)value {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) bindBlobWithInt:index withByteArray:value];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) bindBlobWithInt:index withByteArray:value];
 }
 
 - (void)clearBindings {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) clearBindings];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) clearBindings];
 }
 
 - (void)execute {
-  [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) execute];
+  [((SquiDBSQLiteStatement *) nil_chk(statement_)) execute];
 }
 
 - (jint)executeUpdateDelete {
-  return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) executeUpdateDelete];
+  return [((SquiDBSQLiteStatement *) nil_chk(statement_)) executeUpdateDelete];
 }
 
 - (jlong)executeInsert {
-  return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) executeInsert];
+  return [((SquiDBSQLiteStatement *) nil_chk(statement_)) executeInsert];
 }
 
 - (jlong)simpleQueryForLong {
-  return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) simpleQueryForLong];
+  return [((SquiDBSQLiteStatement *) nil_chk(statement_)) simpleQueryForLong];
 }
 
 - (NSString *)simpleQueryForString {
-  return [((ComYahooAndroidSqliteSQLiteStatement *) nil_chk(statement_)) simpleQueryForString];
+  return [((SquiDBSQLiteStatement *) nil_chk(statement_)) simpleQueryForString];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -95,7 +95,7 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteStatementAdapter, statement_, ComY
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithComYahooAndroidSqliteSQLiteStatement:);
+  methods[0].selector = @selector(initWithSquiDBSQLiteStatement:);
   methods[1].selector = @selector(close);
   methods[2].selector = @selector(bindNullWithInt:);
   methods[3].selector = @selector(bindLongWithInt:withLong:);
@@ -110,26 +110,28 @@ J2OBJC_FIELD_SETTER(ComYahooSquidbIosIOSSQLiteStatementAdapter, statement_, ComY
   methods[12].selector = @selector(simpleQueryForString);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "statement_", "LComYahooAndroidSqliteSQLiteStatement;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "statement_", "LSquiDBSQLiteStatement;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComYahooAndroidSqliteSQLiteStatement;", "bindNull", "I", "bindLong", "IJ", "bindDouble", "ID", "bindString", "ILNSString;", "bindBlob", "I[B" };
-  static const J2ObjcClassInfo _ComYahooSquidbIosIOSSQLiteStatementAdapter = { "IOSSQLiteStatementAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 13, 1, -1, -1, -1, -1, -1 };
-  return &_ComYahooSquidbIosIOSSQLiteStatementAdapter;
+  static const void *ptrTable[] = { "LSquiDBSQLiteStatement;", "bindNull", "I", "bindLong", "IJ", "bindDouble", "ID", "bindString", "ILNSString;", "bindBlob", "I[B" };
+  static const J2ObjcClassInfo _SquiDBIOSSQLiteStatementAdapter = { "IOSSQLiteStatementAdapter", "com.yahoo.squidb.ios", ptrTable, methods, fields, 7, 0x1, 13, 1, -1, -1, -1, -1, -1 };
+  return &_SquiDBIOSSQLiteStatementAdapter;
 }
 
 @end
 
-void ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooSquidbIosIOSSQLiteStatementAdapter *self, ComYahooAndroidSqliteSQLiteStatement *statement) {
+void SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBIOSSQLiteStatementAdapter *self, SquiDBSQLiteStatement *statement) {
   NSObject_init(self);
   self->statement_ = statement;
 }
 
-ComYahooSquidbIosIOSSQLiteStatementAdapter *new_ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooAndroidSqliteSQLiteStatement *statement) {
-  J2OBJC_NEW_IMPL(ComYahooSquidbIosIOSSQLiteStatementAdapter, initWithComYahooAndroidSqliteSQLiteStatement_, statement)
+SquiDBIOSSQLiteStatementAdapter *new_SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBSQLiteStatement *statement) {
+  J2OBJC_NEW_IMPL(SquiDBIOSSQLiteStatementAdapter, initWithSquiDBSQLiteStatement_, statement)
 }
 
-ComYahooSquidbIosIOSSQLiteStatementAdapter *create_ComYahooSquidbIosIOSSQLiteStatementAdapter_initWithComYahooAndroidSqliteSQLiteStatement_(ComYahooAndroidSqliteSQLiteStatement *statement) {
-  J2OBJC_CREATE_IMPL(ComYahooSquidbIosIOSSQLiteStatementAdapter, initWithComYahooAndroidSqliteSQLiteStatement_, statement)
+SquiDBIOSSQLiteStatementAdapter *create_SquiDBIOSSQLiteStatementAdapter_initWithSquiDBSQLiteStatement_(SquiDBSQLiteStatement *statement) {
+  J2OBJC_CREATE_IMPL(SquiDBIOSSQLiteStatementAdapter, initWithSquiDBSQLiteStatement_, statement)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooSquidbIosIOSSQLiteStatementAdapter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBIOSSQLiteStatementAdapter)
+
+J2OBJC_NAME_MAPPING(SquiDBIOSSQLiteStatementAdapter, "com.yahoo.squidb.ios", "SquiDB")

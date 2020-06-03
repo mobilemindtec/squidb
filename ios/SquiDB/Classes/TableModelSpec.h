@@ -17,7 +17,7 @@
 
 @class IOSClass;
 
-@protocol ComYahooSquidbAnnotationsTableModelSpec < JavaLangAnnotationAnnotation >
+@protocol SquiDBTableModelSpec < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *className__;
 @property (readonly) NSString *tableName;
@@ -31,7 +31,7 @@
 
 @end
 
-@interface ComYahooSquidbAnnotationsTableModelSpec : NSObject < ComYahooSquidbAnnotationsTableModelSpec > {
+@interface SquiDBTableModelSpec : NSObject < SquiDBTableModelSpec > {
  @public
   NSString *className___;
   NSString *tableName_;
@@ -42,11 +42,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComYahooSquidbAnnotationsTableModelSpec)
+J2OBJC_EMPTY_STATIC_INIT(SquiDBTableModelSpec)
 
-FOUNDATION_EXPORT id<ComYahooSquidbAnnotationsTableModelSpec> create_ComYahooSquidbAnnotationsTableModelSpec(NSString *className__, jboolean noRowIdAlias, NSString *tableConstraint, NSString *tableName, NSString *virtualModule);
+FOUNDATION_EXPORT id<SquiDBTableModelSpec> create_SquiDBTableModelSpec(NSString *className__, jboolean noRowIdAlias, NSString *tableConstraint, NSString *tableName, NSString *virtualModule);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComYahooSquidbAnnotationsTableModelSpec)
+J2OBJC_TYPE_LITERAL_HEADER(SquiDBTableModelSpec)
+
+#define ComYahooSquidbAnnotationsTableModelSpec SquiDBTableModelSpec
 
 
 #if __has_feature(nullability)

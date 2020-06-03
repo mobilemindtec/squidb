@@ -7,17 +7,17 @@
 #include "OperationCanceledException.h"
 #include "java/lang/RuntimeException.h"
 
-@implementation ComYahooAndroidSqliteOperationCanceledException
+@implementation SquiDBOperationCanceledException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype)init {
-  ComYahooAndroidSqliteOperationCanceledException_init(self);
+  SquiDBOperationCanceledException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype)initWithNSString:(NSString *)message {
-  ComYahooAndroidSqliteOperationCanceledException_initWithNSString_(self, message);
+  SquiDBOperationCanceledException_initWithNSString_(self, message);
   return self;
 }
 
@@ -33,34 +33,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;" };
-  static const J2ObjcClassInfo _ComYahooAndroidSqliteOperationCanceledException = { "OperationCanceledException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_ComYahooAndroidSqliteOperationCanceledException;
+  static const J2ObjcClassInfo _SquiDBOperationCanceledException = { "OperationCanceledException", "com.yahoo.android.sqlite", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_SquiDBOperationCanceledException;
 }
 
 @end
 
-void ComYahooAndroidSqliteOperationCanceledException_init(ComYahooAndroidSqliteOperationCanceledException *self) {
-  ComYahooAndroidSqliteOperationCanceledException_initWithNSString_(self, nil);
+void SquiDBOperationCanceledException_init(SquiDBOperationCanceledException *self) {
+  SquiDBOperationCanceledException_initWithNSString_(self, nil);
 }
 
-ComYahooAndroidSqliteOperationCanceledException *new_ComYahooAndroidSqliteOperationCanceledException_init() {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteOperationCanceledException, init)
+SquiDBOperationCanceledException *new_SquiDBOperationCanceledException_init() {
+  J2OBJC_NEW_IMPL(SquiDBOperationCanceledException, init)
 }
 
-ComYahooAndroidSqliteOperationCanceledException *create_ComYahooAndroidSqliteOperationCanceledException_init() {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteOperationCanceledException, init)
+SquiDBOperationCanceledException *create_SquiDBOperationCanceledException_init() {
+  J2OBJC_CREATE_IMPL(SquiDBOperationCanceledException, init)
 }
 
-void ComYahooAndroidSqliteOperationCanceledException_initWithNSString_(ComYahooAndroidSqliteOperationCanceledException *self, NSString *message) {
+void SquiDBOperationCanceledException_initWithNSString_(SquiDBOperationCanceledException *self, NSString *message) {
   JavaLangRuntimeException_initWithNSString_(self, message != nil ? message : @"The operation has been canceled.");
 }
 
-ComYahooAndroidSqliteOperationCanceledException *new_ComYahooAndroidSqliteOperationCanceledException_initWithNSString_(NSString *message) {
-  J2OBJC_NEW_IMPL(ComYahooAndroidSqliteOperationCanceledException, initWithNSString_, message)
+SquiDBOperationCanceledException *new_SquiDBOperationCanceledException_initWithNSString_(NSString *message) {
+  J2OBJC_NEW_IMPL(SquiDBOperationCanceledException, initWithNSString_, message)
 }
 
-ComYahooAndroidSqliteOperationCanceledException *create_ComYahooAndroidSqliteOperationCanceledException_initWithNSString_(NSString *message) {
-  J2OBJC_CREATE_IMPL(ComYahooAndroidSqliteOperationCanceledException, initWithNSString_, message)
+SquiDBOperationCanceledException *create_SquiDBOperationCanceledException_initWithNSString_(NSString *message) {
+  J2OBJC_CREATE_IMPL(SquiDBOperationCanceledException, initWithNSString_, message)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComYahooAndroidSqliteOperationCanceledException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(SquiDBOperationCanceledException)
+
+J2OBJC_NAME_MAPPING(SquiDBOperationCanceledException, "com.yahoo.android.sqlite", "SquiDB")
