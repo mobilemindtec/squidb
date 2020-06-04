@@ -303,7 +303,7 @@ public abstract class AbstractModel implements Cloneable {
      * @throws UnsupportedOperationException if the value is not found in the model
      */
     public <TYPE> TYPE get(Property<TYPE> property) {
-        return get(property, true);
+        return get(property, false);
     }
 
     /**

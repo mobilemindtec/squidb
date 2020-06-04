@@ -304,7 +304,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (id)getWithSquiDBProperty:(SquiDBProperty *)property {
-  return [self getWithSquiDBProperty:property withBoolean:true];
+  return [self getWithSquiDBProperty:property withBoolean:false];
 }
 
 - (id)getWithSquiDBProperty:(SquiDBProperty *)property
