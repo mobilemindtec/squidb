@@ -284,17 +284,29 @@ public abstract class Function<TYPE> extends Field<TYPE> {
         return new CaseBuilder(baseExpression);
     }
 
+    public static class CastArgumentFunction<T, R> extends ArgumentFunction<R> {
+
+        final Field<T> field;
+        final String newType;
+
+        public CastArgumentFunction(final Field<T> field, final String newType){
+            super("CAST");
+            this.field = field;
+            this.newType = newType;
+        }
+
+        @Override
+        protected void appendArgumentList(SqlBuilder builder, Object[] arguments, boolean forSqlValidation) {
+            builder.addValueToSql(field, forSqlValidation);
+            builder.sql.append(" AS ").append(newType);
+        }
+    }
+
     /**
      * Create a Function that casts the input to the specified type. Note this is a SQLite cast.
      */
     public static <T, R> Function<R> cast(final Field<T> field, final String newType) {
-        return new ArgumentFunction<R>("CAST") {
-            @Override
-            protected void appendArgumentList(SqlBuilder builder, Object[] arguments, boolean forSqlValidation) {
-                builder.addValueToSql(field, forSqlValidation);
-                builder.sql.append(" AS ").append(newType);
-            }
-        };
+        return new CastArgumentFunction<T, R>(field, newType);
     }
 
     /**

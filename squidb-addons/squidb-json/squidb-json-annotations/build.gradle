@@ -7,8 +7,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-sourceCompatibility = JavaVersion.VERSION_1_9
-targetCompatibility = JavaVersion.VERSION_1_9
+//sourceCompatibility = JavaVersion.VERSION_1_9
+//targetCompatibility = JavaVersion.VERSION_1_9
 
 sourceSets {
     main {
@@ -21,7 +21,7 @@ sourceSets {
 def siteUrl = 'https://github.com/yahoo/squidb'
 def gitUrl = 'https://github.com/yahoo/squidb.git'
 
-install {
+/*install {
     repositories.mavenInstaller {
         pom {
             project {
@@ -42,7 +42,7 @@ install {
             }
         }
     }
-}
+}*/
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.java.srcDirs

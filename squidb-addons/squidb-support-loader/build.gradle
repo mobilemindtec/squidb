@@ -5,14 +5,13 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 29
 
     defaultConfig {
-        targetSdkVersion 28
+        targetSdkVersion 29
         minSdkVersion 17
     }
 
@@ -43,7 +42,7 @@ dependencies {
 
 def siteUrl = 'https://github.com/yahoo/squidb'
 def gitUrl = 'https://github.com/yahoo/squidb.git'
-
+/*
 install {
     repositories.mavenInstaller {
         pom {
@@ -65,7 +64,7 @@ install {
             }
         }
     }
-}
+}*/
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs

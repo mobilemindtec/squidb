@@ -1,3 +1,10 @@
+#!/bin/bash
+
+OS="$(uname -s)"
+
+if [ "$OS" != "Darwin" ]; then 
+    exit 0
+fi
 
 BUILD="./build/j2objc"
 

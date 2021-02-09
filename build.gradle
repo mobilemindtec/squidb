@@ -12,8 +12,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.android.tools.build:gradle:4.1.2'
+        //classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
@@ -27,6 +27,8 @@ allprojects {
 subprojects {
     group = 'com.yahoo.squidb'
     version = '3.2.3'
+
+    tasks.withType(Javadoc).all { enabled = false }
 }
 
 if (JavaVersion.current().isJava8Compatible()) {

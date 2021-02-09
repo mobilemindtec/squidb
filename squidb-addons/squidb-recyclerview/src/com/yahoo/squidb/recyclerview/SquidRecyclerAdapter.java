@@ -5,8 +5,8 @@
  */
 package com.yahoo.squidb.recyclerview;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Adapter;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.yahoo.squidb.data.AbstractModel;
 import com.yahoo.squidb.data.SquidCursor;

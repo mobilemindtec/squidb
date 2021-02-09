@@ -7,12 +7,12 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+//sourceCompatibility = JavaVersion.VERSION_1_9
+//targetCompatibility = JavaVersion.VERSION_1_9
 
 dependencies {
-    compile 'com.yahoo.aptutils:apt-utils:1.0.4'
-    compile project(':squidb-annotations')
+    implementation 'com.yahoo.aptutils:apt-utils:1.0.4'
+    implementation project(':squidb-annotations')
 }
 
 sourceSets {
